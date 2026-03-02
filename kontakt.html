@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt | Geal Tak AB</title>
+    <meta
+      name="description"
+      content="Kontakta Geal Tak AB f&ouml;r offert, takbesiktning och r&aring;dgivning kring takarbete i Stockholm."
+    />
+    <meta property="og:title" content="Kontakt | Geal Tak AB" />
+    <meta
+      property="og:description"
+      content="Skicka f&ouml;rfr&aring;gan om takbyte, takrenovering eller annan takservice i Stockholm."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.gealtak.se/assets/images/1.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="index.html">Geal Tak AB</a>
+        <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
+          <ul>
+            <li><a data-nav href="index.html">Hem</a></li>
+            <li><a data-nav href="om-oss.html">Om oss</a></li>
+            <li><a data-nav href="tjanster.html">Tj&auml;nster</a></li>
+            <li><a data-nav href="artiklar.html">Artiklar</a></li>
+            <li><a data-nav href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary header-cta" href="#form">Offert</a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+          aria-label="Oppna meny"
+        >
+          Meny
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1 class="hero-title">Kontakt</h1>
+          <p class="section-lead">
+            Kontakta oss f&ouml;r offert, r&aring;dgivning eller om du vill boka en takbesiktning.
+            Vi &aring;terkommer snabbt med n&auml;sta steg.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="form">
+        <div class="container form-layout">
+          <aside class="contact-info-box">
+            <h2>Kontaktuppgifter</h2>
+            <p><strong>Telefon:</strong> <a href="tel:+46812410276">08 12 410 276</a></p>
+            <p><strong>E-post:</strong> <a href="mailto:info@gealtak.se">info@gealtak.se</a></p>
+            <p><strong>Adress:</strong> Lavettv&auml;gen 44, 174 59 Sundbyberg</p>
+            <p><strong>&Ouml;ppettider:</strong> M&aring;n-Fre 08:00-17:00</p>
+          </aside>
+
+          <div class="form-box">
+            <h2>Skicka meddelande</h2>
+            <form action="#" method="post">
+              <div class="field">
+                <label for="namn">Namn</label>
+                <input id="namn" name="namn" type="text" placeholder="Ange namn" required />
+              </div>
+              <div class="field">
+                <label for="telefon">Telefon</label>
+                <input id="telefon" name="telefon" type="tel" placeholder="Ange telefonnummer" required />
+              </div>
+              <div class="field">
+                <label for="epost">E-post</label>
+                <input id="epost" name="epost" type="email" placeholder="Ange e-postadress" required />
+              </div>
+              <div class="field">
+                <label for="tjanst">Tj&auml;nst</label>
+                <select id="tjanst" name="tjanst" required>
+                  <option value="">V&auml;lj tj&auml;nst</option>
+                  <option>Takbyte</option>
+                  <option>Takrenovering</option>
+                  <option>Pl&aring;ttak</option>
+                  <option>Takm&aring;lning</option>
+                  <option>Takbesiktning</option>
+                  <option>Taktv&auml;tt</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="meddelande">Meddelande</label>
+                <textarea
+                  id="meddelande"
+                  name="meddelande"
+                  placeholder="Beskriv kort vad du vill ha hj&auml;lp med"
+                  required
+                ></textarea>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" required />
+                Jag godk&auml;nner att mina uppgifter behandlas enligt GDPR.
+              </label>
+              <button class="btn btn-primary" type="submit">Skicka</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="map-embed" aria-label="Karta over Sundbyberg">
+            <iframe
+              title="Karta over Sundbyberg"
+              loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=17.943%2C59.349%2C18.043%2C59.397&amp;layer=mapnik&amp;marker=59.368%2C17.993"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-top">
+        <div>
+          <h3>Geal Tak AB</h3>
+          <p>
+            Vi utf&ouml;r takbyte, takrenovering och takservice f&ouml;r villa&auml;gare, BRF och
+            f&ouml;retag i Stockholm.
+          </p>
+        </div>
+        <div>
+          <h3>Tj&auml;nster</h3>
+          <ul>
+            <li><a href="tjanster.html#takbyte">Takbyte</a></li>
+            <li><a href="tjanster.html#takrenovering">Takrenovering</a></li>
+            <li><a href="tjanster.html#plattak">Pl&aring;ttak</a></li>
+            <li><a href="tjanster.html#taktvatt">Taktv&auml;tt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="tel:+46812410276">08 12 410 276</a></li>
+            <li><a href="mailto:info@gealtak.se">info@gealtak.se</a></li>
+            <li>Lavettv&auml;gen 44, 174 59 Sundbyberg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        &copy; <span data-year></span> Geal Tak AB. Alla r&auml;ttigheter f&ouml;rbeh&aring;llna.
+      </div>
+    </footer>
+  </body>
+</html>
