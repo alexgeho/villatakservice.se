@@ -1,11 +1,36 @@
 # Keyword Planner — анализ (2026-09-06)
 
-Данные: Avg monthly searches (Sverige, svenska). Сортировка по объёму.
+Avg monthly searches, Sverige/svenska. Сортировка по объёму.
 
 
-## Перестройка  (ombyggnad.csv, 1052 kw med volym)
+## Новое строительство (nybygge.csv, 1917 kw)
 
-| Sökord | Sökningar/mån | Konkurrens | Bid low–high (SEK) |
+| Sökord | Sök/mån | Konk. | Bid (SEK) |
+|---|---:|---|---|
+| attefallshuset | 50,000 | High | 0–1 |
+| nyckelfärdigt hus | 5,000 | High | 0–1 |
+| hustillverkare | 5,000 | High | 0–1 |
+| attefallshus regler | 5,000 | Medium | 0–0 |
+| bygga fritidshus | 5,000 | High | 0–1 |
+| fritidshus byggsats | 5,000 | High | 0–1 |
+| byggfirma | 5,000 | Low | 2–6 |
+| bygga ett hus | 5,000 | High | 0–1 |
+| nyproduktioner | 5,000 | Medium | 1–3 |
+| bygger hus | 5,000 | High | 0–1 |
+| fritidshus byggsatser | 5,000 | High | 0–1 |
+| bygga hem | 5,000 | High | 0–2 |
+| fritidshus att bygga | 5,000 | High | 0–1 |
+| bygga villa | 500 | High | 0–1 |
+| bygga nytt hus | 500 | High | 0–1 |
+| bygga hus online | 500 | High | 1–2 |
+| nyckelfärdiga hus | 500 | High | 1–2 |
+| bygga hus pris | 500 | High | 0–1 |
+| nyckelfärdigt hus pris | 500 | High | 0–1 |
+| bygg hus online | 500 | High | 1–2 |
+
+## Перестройка (ombyggnad.csv, 1052 kw)
+
+| Sökord | Sök/mån | Konk. | Bid (SEK) |
 |---|---:|---|---|
 | attefallshuset | 50,000 | High | 0–1 |
 | nyckelfärdigt hus | 5,000 | High | 0–1 |
@@ -25,10 +50,12 @@
 | färdiga hus | 500 | High | 0–1 |
 | nytt hus | 500 | High | 0–1 |
 | bygga eget hus | 500 | High | 0–1 |
+| kostnad bygga hus | 500 | High | 0–1 |
+| k ritning | 500 | Low | 3–101 |
 
-## Крыша  (tak.csv, 587 kw med volym)
+## Крыша (tak.csv, 587 kw)
 
-| Sökord | Sökningar/mån | Konkurrens | Bid low–high (SEK) |
+| Sökord | Sök/mån | Konk. | Bid (SEK) |
 |---|---:|---|---|
 | plåttak | 5,000 | High | 0–2 |
 | måla plåttak | 5,000 | High | 1–9 |
@@ -48,10 +75,12 @@
 | snörasskydd plåttak | 500 | High | 0–1 |
 | plannja plåttak | 500 | High | 0–1 |
 | plåttak pris | 500 | High | 0–2 |
+| takfirma stockholm | 500 | Medium | 4–13 |
+| måla plåttak pris | 500 | High | 1–8 |
 
-## Пристройка  (tillbyggnad.csv, 2601 kw med volym)
+## Пристройка (tillbyggnad.csv, 2601 kw)
 
-| Sökord | Sökningar/mån | Konkurrens | Bid low–high (SEK) |
+| Sökord | Sök/mån | Konk. | Bid (SEK) |
 |---|---:|---|---|
 | attefalls hus | 50,000 | High | 0–1 |
 | bygga hus | 5,000 | High | 0–1 |
@@ -71,10 +100,12 @@
 | bygga hem | 5,000 | High | 0–2 |
 | tillbyggnad bygglov | 500 | Low | 0–2 |
 | tillbyggnad | 500 | Low | 1–5 |
+| husleverantörer | 500 | High | 1–2 |
+| bygga hus online | 500 | High | 1–2 |
 
-## Реновация/Total  (villarenovering.csv, 190 kw med volym)
+## Реновация/Total (villarenovering.csv, 190 kw)
 
-| Sökord | Sökningar/mån | Konkurrens | Bid low–high (SEK) |
+| Sökord | Sök/mån | Konk. | Bid (SEK) |
 |---|---:|---|---|
 | byggfirma | 5,000 | Low | 2–6 |
 | hantverkare | 5,000 | Medium | 2–6 |
@@ -94,3 +125,5 @@
 | hantverkare offert | 50 | Medium | 4–7 |
 | anlita hantverkare | 50 | Medium | 2–5 |
 | hantverkare badrum | 50 | High | 2–10 |
+| sök hantverkare | 50 | High | 2–6 |
+| få offerter från hantverkare | 50 | High | 3–10 |
