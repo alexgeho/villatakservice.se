@@ -202,11 +202,12 @@ def render(p):
 {blocks}
   </head>
   <body>
+    <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
 {NAV}
     </header>
 
-    <main>
+    <main id="content">
 {p['body']}
 {faq_html}
 {cta_html}
@@ -254,11 +255,12 @@ def sec(title, paras, muted=False, sid=""):
         </div>
       </section>"""
 
-def sec_split(title, paras, aside_title, items, muted=True):
+def sec_split(title, paras, aside_title, items, muted=True, sid=""):
     body = "\n".join(f"            <p>{t}</p>" for t in paras)
     li = "\n".join(f"              <li>{i}</li>" for i in items)
     cls = "section section-muted seo-section" if muted else "section seo-section"
-    return f"""      <section class="{cls}">
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
         <div class="container section-layout section-layout--text">
           <div class="section-copy">
             <h2 class="section-title">{title}</h2>
@@ -301,7 +303,7 @@ def rot_box(text):
         </div>
       </section>"""
 
-def links_block(title, cards, muted=True):
+def links_block(title, cards, muted=True, sid=""):
     # cards: list of (href, heading, text)
     arts = "\n".join(f"""            <article class="service-snippet">
               <h3>{h}</h3>
@@ -309,7 +311,8 @@ def links_block(title, cards, muted=True):
               <a class="text-link" href="{href}">Läs mer</a>
             </article>""" for href,h,t in cards)
     cls = "section section-muted seo-section" if muted else "section seo-section"
-    return f"""      <section class="{cls}">
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">{title}</h2>
@@ -343,7 +346,7 @@ page(file="takbyte.html",
         "Det här ingår normalt", [
         "Rivning och bortforsling av befintligt tak.","Ny underlagspapp och kontroll av läkt.",
         "Nytt ytskikt: tegel, betongpannor eller plåt.","Plåtarbeten kring skorsten och genomföringar.",
-        "Ny hängränna och stuprör vid behov.","Slutkontroll och genomgång med dig som kund."])
+        "Ny hängränna och stuprör vid behov.","Slutkontroll och genomgång med dig som kund."], sid="ingar")
     + sec("Material: tegel, betong eller plåt?", [
         f"Valet av takmaterial påverkar både livslängd, uttryck och pris. Tegel och betongpannor är vanligast på villor i Stockholm, medan {a('plattak.html','plåttak')} passar bra på lägre lutningar och ger låg vikt. Vi hjälper dig jämföra alternativen utifrån ditt hus.",
         f"En djupare jämförelse hittar du i {a('tegel-betong-plattak.html','tegel vs betong vs plåt')} och i {a('takmaterial-livslangd.html','livslängd per takmaterial')}."], muted=True)
@@ -386,7 +389,7 @@ page(file="takrenovering.html",
         "Typiska åtgärder", [
         "Omläggning av tegel- eller betongpannor.","Byte av underlagspapp och läkt.",
         "Reparation av beslag och anslutningar.","Åtgärd av läckage och enskilda skador.",
-        "Byte av utsatta plåtdetaljer.","Prioriterad plan i etapper vid behov."])
+        "Byte av utsatta plåtdetaljer.","Prioriterad plan i etapper vid behov."], sid="ingar")
     + rot_box("Även takrenovering på villa ger normalt ROT-avdrag på arbetskostnaden.")
     + links_block("Relaterat", [
         ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så väljer du rätt åtgärd för ditt tak."),
@@ -417,7 +420,7 @@ page(file="takbesiktning.html",
         "Vi ser bland annat på", [
         "Takytor, pannor och plåtdetaljer.","Anslutningar mot skorsten och genomföringar.",
         "Hängrännor, stuprör och avvattning.","Tecken på fukt i undertak och på vind.",
-        "Taksäkerhet och infästningar.","Rekommendation: service, renovering eller byte."])
+        "Taksäkerhet och infästningar.","Rekommendation: service, renovering eller byte."], sid="ingar")
     + links_block("Relaterat", [
         ("nar-ska-taket-bytas.html","Tecken på att taket behöver bytas","Vanliga signaler att hålla koll på."),
         ("fuktskada-mogel-vind.html","Fuktskada och mögel på vinden","Orsaker, symptom och åtgärder."),
@@ -447,7 +450,7 @@ page(file="plattak.html",
         "Vi arbetar med", [
         "Nytt plåttak och bandtäckning (falsat plåt).","Beslag och anslutningar runt genomföringar.",
         "Plåtdetaljer: vindskivor, fotplåt, ståndskivor.","Avvattning och skydd mot korrosion.",
-        "Reparation av befintliga plåttak.","Råd om skötsel och underhåll."])
+        "Reparation av befintliga plåttak.","Råd om skötsel och underhåll."], sid="ingar")
     + links_block("Relaterat", [
         ("takmalning.html","Takmålning av plåttak","När målning ger plåttaket nytt skydd."),
         ("takmaterial-livslangd.html","Livslängd per takmaterial","Så länge håller plåt, tegel och betong."),
@@ -477,7 +480,7 @@ page(file="takmalning.html",
         "Det här ingår", [
         "Tvätt och borttagning av löst material.","Rostskydd och förbehandling där det behövs.",
         "Grund- och täckmålning med anpassat system.","Kontroll av detaljer och avvattning.",
-        "Råd om fortsatt underhåll."])
+        "Råd om fortsatt underhåll."], sid="ingar")
     + links_block("Relaterat", [
         ("taktvatt.html","Taktvätt","Rengöring innan målning eller som eget underhåll."),
         ("plattak.html","Plåttak","Nytt plåttak när målning inte räcker."),
@@ -507,7 +510,7 @@ page(file="taktvatt.html",
         "Det här ingår", [
         "Bedömning av taktyp och skick.","Metod anpassad efter yta (ofta lågtryck).",
         "Borttagning av mossa, smuts och påväxt.","Kontroll av rännor och avvattning.",
-        "Råd om fortsatt underhåll."])
+        "Råd om fortsatt underhåll."], sid="ingar")
     + links_block("Relaterat", [
         ("mossa-pa-taket.html","Mossa på taket – behandling","Orsaker, metoder och förebyggande."),
         ("hangrannor-stupror.html","Hängrännor & stuprör","Rensning och byte för god avvattning."),
@@ -542,7 +545,7 @@ page(file="villatak.html", localbiz=True,
         "Vanliga villaåtgärder", [
         "Takbyte av tegel-, betong- eller plåttak.","Takomläggning och renovering av utsatta delar.",
         "Byte av hängrännor, stuprör och plåtdetaljer.","Snörasskydd och taksäkerhet.",
-        "Taktvätt och behandling mot mossa.","Åtgärd av läckage och fuktskador."])
+        "Taktvätt och behandling mot mossa.","Åtgärd av läckage och fuktskador."], sid="atgarder")
     + sec("Kostnad och ROT för villatak", [
         f"Kostnaden för ett villatak beror på area, material, lutning och skick. Villaägare kan normalt använda {a('rot-avdrag-takarbete.html','ROT-avdrag')} på arbetskostnaden, vilket sänker slutpriset.",
         f"För prisintervall, se {a('vad-kostar-takbyte.html','vad kostar ett takbyte')} och {a('vad-kostar-takrenovering.html','vad kostar en takrenovering')}."], sid="kostnad", muted=True)
@@ -651,7 +654,7 @@ for _ort,(intro,localp,items) in LOC.items():
         + links_block(f"Våra tjänster i {_ort}", [
             ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
             ("takrenovering.html", f"Takrenovering i {_ort}", "Riktade åtgärder som förlänger takets liv."),
-            ("takbesiktning.html", f"Takbesiktning i {_ort}", "Bedömning av skick inför beslut.")], muted=False)
+            ("takbesiktning.html", f"Takbesiktning i {_ort}", "Bedömning av skick inför beslut.")], muted=False, sid="tjanster")
         + sec_split(f"Varför välja oss i {_ort}?", [
             f"Vi utgår från Bromma (Mariehäll), precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
             f"Läs mer om {a('villatak.html','tak på villa')} eller jämför {a('takbyte-eller-takrenovering.html','takbyte och takrenovering')} innan du bestämmer dig."],
