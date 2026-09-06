@@ -1218,6 +1218,24 @@ page(file="integritetspolicy.html", no_cta=True,
     + prose(_pol_blocks)
     + '\n        </article>\n      </section>')
 
+# ====================== TACK (form success) ============================
+page(file="tack.html", no_cta=True, noindex=True, nolist=True,
+  title="Tack för din förfrågan | Geal Entreprenad AB",
+  description="Tack! Vi har tagit emot din förfrågan och återkommer så snart vi kan.",
+  h1="Tack för din förfrågan!",
+  crumbs=[("Hem","index.html"),("Tack","tack.html")],
+  body=hero("Tack för din förfrågan!",
+    "Vi har tagit emot ditt meddelande och återkommer så snart vi kan, oftast inom 24 timmar. Behöver du nå oss direkt är du välkommen att ringa.",
+    [("Hem","index.html"),("Tack","tack.html")])
+    + f"""      <section class="section seo-section">
+        <div class="container">
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
+            <a class="btn btn-secondary" href="index.html">Till startsidan</a>
+          </div>
+        </div>
+      </section>""")
+
 # ====================== 404 =============================================
 page(file="404.html", no_cta=True, noindex=True, nolist=True,
   title="Sidan hittades inte (404) | Geal Entreprenad AB",

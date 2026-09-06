@@ -1062,3 +1062,22 @@ textarea:focus-visible,
     scroll-behavior: auto !important;
   }
 }
+
+/* ---- Kontaktformulär: honeypot + felmeddelande ---- */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.form-alert {
+  background: #fef2f2;
+  border: 1px solid #f3c2c2;
+  color: #9b1c1c;
+  padding: 12px 14px;
+  border-radius: 6px;
+  margin: 0 0 16px;
+  font-size: 0.95rem;
+}
