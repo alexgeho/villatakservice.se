@@ -1,0 +1,42 @@
+name: Deploy to hosting (FTP)
+
+# Laddar upp webbplatsen till hostingen via FTP vid varje push till main.
+# Kör även manuellt via fliken "Actions" -> "Deploy to hosting (FTP)" -> "Run workflow".
+#
+# KRÄVER 3 GitHub-secrets (Settings -> Secrets and variables -> Actions -> New repository secret):
+#   FTP_SERVER    t.ex. ftp.villatakservice.se  (eller IP/host från din hostingleverantör)
+#   FTP_USERNAME  ditt FTP-användarnamn
+#   FTP_PASSWORD  ditt FTP-lösenord
+#
+# OBS web-root: se "server-dir" nedan. Om filerna hamnar fel på servern, byt värdet
+# (vanligast: "./" om FTP-kontot redan pekar på webbroten, annars "/public_html/").
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps            # byt till "ftp" om din host inte stödjer FTPS
+          server-dir: ./            # byt till "/public_html/" om filerna hamnar fel
+          local-dir: ./
+          # Ladda INTE upp interna filer/mappar till webbservern:
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            docs/**
+            tools/**
+            README.md
