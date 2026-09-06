@@ -43,6 +43,24 @@ Säsong: ✅ takarbete-vintern ✅ var-checklista-tak
 - ☐ Data-driven: dra GSC Queries var 2–4 v, ta near-miss (pos 8–20) → nya sidor
 - ☐ När fakta bekräftats: fyll i priser, ROT-siffror 2026, garanti, sameAs/GBP
 
+## ROADMAP (SEO-strategi — kvalitet före kvantitet)
+> Princip: **inte** massproducera sidor. Google "scaled content abuse" (mars 2024) straffar det, särskilt på ung domän. Ett intent = en stark sida. Mål: ~5–15 nya kvalitetssidor/vecka, inbyggda i länkning. Expandera på DATA (GSC near-miss), inte blint.
+
+**✅ Fas 0 (klart):** money-kärna (tjänst×ort), villa-pillar, 22 artiklar, teknik/schema/sitemap, live-deploy, kontaktformulär.
+
+**▶️ Fas 1 (KLAR 2026-09-06) — Bygg & Renovering (utökad scope från Keyword Planner):**
+- ✅ bygg.html (hub) + byggfirma/total entreprenad, villarenovering, tillbyggnad, attefallshus, nybyggnad-villa (5 money-sidor, Service+FAQ-schema, korrekt ROT-info)
+- ✅ Förstärkt tak: artiklar `mala-plattak.html`, `falsat-plattak.html`
+- ✅ "Bygg" i nav + footer; intern länkning från tjanster/index/villatak; landing-sidor klara för Google Ads
+- Totalt 57 sidor, validering grön (0 trasiga, 0 orphans, 131 JSON-LD ok).
+- Data (Planner, Sverige/mån): attefallshus 50k · byggfirma 5k (Low konk!) · nyckelfärdigt hus/hustillverkare/bygga fritidshus 5k · hantverkare 5k · måla/falsat plåttak 5k.
+
+**▶️ Fas 2 (v 3–8) — trust + tempo:** GBP + omdömen + case (viktigast lokalt); 2–4 kvalitetsartiklar/vecka ur klusterplanen; 2–3 naturliga backlinks/mån (hitta.se, allabolag).
+
+**▶️ Fas 3 (mån 2+) — datadriven expansion:** varannan vecka (cron-agent "SEO-puls") dra GSC-queries pos 8–20 → punktvis nya/förstärkta sidor. Ingen massgenerering.
+
+**Mätning:** GSC-position på plattform-sökord + near-miss; visningar/klick; map-pack.
+
 ## Register: tema → sökord → URL → status → inkommande
 | Kluster | Målsökord | URL | Status |
 |---|---|---|---|

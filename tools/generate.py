@@ -41,6 +41,7 @@ NAV = """      <div class="container header-inner">
           <ul>
             <li><a data-nav href="index.html">Hem</a></li>
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
+            <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
@@ -66,7 +67,7 @@ FOOTER = f"""    <footer class="footer">
             <li><a href="takrenovering.html">Takrenovering</a></li>
             <li><a href="takbesiktning.html">Takbesiktning</a></li>
             <li><a href="plattak.html">Plåttak</a></li>
-            <li><a href="taktvatt.html">Taktvätt</a></li>
+            <li><a href="bygg.html">Bygg &amp; Renovering</a></li>
           </ul>
         </div>
         <div>
@@ -275,14 +276,15 @@ def sec_split(title, paras, aside_title, items, muted=True, sid=""):
         </div>
       </section>"""
 
-def sec_process(title, steps, muted=False):
+def sec_process(title, steps, muted=False, sid=""):
     cards = "\n".join(f"""            <article class="step-item">
               <span class="step-number">{i+1:02d}</span>
               <h3>{h}</h3>
               <p>{t}</p>
             </article>""" for i,(h,t) in enumerate(steps))
     cls = "section section-muted seo-section" if muted else "section seo-section"
-    return f"""      <section class="{cls}">
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">{title}</h2>
@@ -452,7 +454,8 @@ page(file="plattak.html",
         "Plåtdetaljer: vindskivor, fotplåt, ståndskivor.","Avvattning och skydd mot korrosion.",
         "Reparation av befintliga plåttak.","Råd om skötsel och underhåll."], sid="ingar")
     + links_block("Relaterat", [
-        ("takmalning.html","Takmålning av plåttak","När målning ger plåttaket nytt skydd."),
+        ("falsat-plattak.html","Falsat plåttak & bandtäckning","Klassiskt plåttak för låga lutningar."),
+        ("mala-plattak.html","Måla plåttak","Underhåll och nytt ytskydd."),
         ("takmaterial-livslangd.html","Livslängd per takmaterial","Så länge håller plåt, tegel och betong."),
         ("taklaggare-lidingo.html","Plåttak på Lidingö","Salt havsluft ställer extra krav på plåt.")]),
   faq=[
@@ -1217,6 +1220,245 @@ page(file="integritetspolicy.html", no_cta=True,
     + '      <section class="section">\n        <article class="container article-shell content-prose">\n'
     + prose(_pol_blocks)
     + '\n        </article>\n      </section>')
+
+# ====================== BYGG & RENOVERING ==============================
+BYGG_CRUMB = [("Hem","index.html"),("Bygg & Renovering","bygg.html")]
+
+page(file="bygg.html", localbiz=True,
+  title="Bygg & Renovering i Stockholm – total entreprenad | Geal Entreprenad AB",
+  description="Vi bygger och renoverar hela villan: total entreprenad, villarenovering, tillbyggnad, attefallshus och nybyggnad i Stockholm. Begär kostnadsfri offert.",
+  h1="Bygg & Renovering i Stockholm",
+  crumbs=BYGG_CRUMB,
+  cta=("Planerar du ett byggprojekt?","Vi tar hela villan – från tak till total entreprenad. Begär en kostnadsfri offert."),
+  body=hero("Bygg & Renovering i Stockholm",
+    "Geal Entreprenad AB gör mer än tak. Vi tar hela villan som total entreprenad – renovering, tillbyggnad, attefallshus och nybyggnad – med en kontakt genom hela projektet.",
+    BYGG_CRUMB)
+    + sec("En byggpartner för hela villan", [
+        "Att samordna flera hantverkare själv är krävande. Som total entreprenör håller vi ihop planering, hantverk och tidplan åt dig – oavsett om det gäller en renovering, en tillbyggnad eller ett helt nytt hus.",
+        f"Vi kombinerar vår takkompetens med bredare byggarbeten, vilket gör att du kan samordna t.ex. {a('takbyte.html','takbyte')} med fasad, fönster och andra åtgärder i samma projekt."])
+    + links_block("Våra byggtjänster", [
+        ("byggfirma.html","Byggfirma – total entreprenad","En entreprenör för hela projektet."),
+        ("villarenovering.html","Villarenovering","Total- och delrenovering av villa."),
+        ("tillbyggnad.html","Tillbyggnad","Bygg ut och få mer yta."),
+        ("attefallshus.html","Attefallshus","Nyckelfärdigt upp till 30 m²."),
+        ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt hus","Bygg villa från grunden."),
+        ("villatak.html","Tak på villa","Vår ursprungliga specialitet.")], muted=False),
+  faq=[
+    ("Vad betyder total entreprenad?","Att en entreprenör ansvarar för hela projektet – projektering, hantverk och samordning – så att du bara har en kontakt och ett avtal."),
+    ("Gör ni både tak och övrig bygg?","Ja. Vi startade med tak och gör i dag även renovering, tillbyggnad, attefallshus och nybyggnad, ofta i samma projekt."),
+    ("Kan jag få ROT-avdrag?","ROT gäller arbete på befintlig bostad (t.ex. renovering). Ny- och tillbyggnad ger normalt inte ROT. Vi reder ut vad som gäller i din offert.")])
+
+page(file="byggfirma.html", service=True, service_type="Total entreprenad / byggfirma",
+  title="Byggfirma i Stockholm – total entreprenad för villa | Geal Entreprenad AB",
+  description="Byggfirma i Stockholm för total entreprenad: en entreprenör för hela villaprojektet – renovering, tillbyggnad och nybyggnad. Kostnadsfri offert.",
+  h1="Byggfirma i Stockholm – total entreprenad",
+  crumbs=BYGG_CRUMB+[("Byggfirma","byggfirma.html")],
+  cta=("Söker du en byggfirma i Stockholm?","Vi tar helheten som total entreprenör – begär en kostnadsfri offert."),
+  body=hero("Byggfirma i Stockholm – total entreprenad",
+    "Som byggfirma och total entreprenör tar vi ansvar för hela ditt villaprojekt – en kontakt, ett avtal, en tidplan. Du slipper samordna flera hantverkare själv.",
+    BYGG_CRUMB+[("Byggfirma","byggfirma.html")],
+    [("#vad","Total entreprenad"),("#ingar","Vad ingår"),("#faq","Vanliga frågor")])
+    + sec("Vad är total entreprenad?", [
+        "Vid total entreprenad ansvarar vi för både projektering och utförande. Vi tar fram lösning, kalkyl och tidplan, anlitar och samordnar rätt yrkespersoner och levererar ett färdigt resultat enligt avtal.",
+        f"Det passar allt från {a('villarenovering.html','villarenovering')} och {a('tillbyggnad.html','tillbyggnad')} till {a('nybyggnad-villa.html','nybyggnad')} – och kan självklart inkludera {a('takbyte.html','tak')}."], sid="vad")
+    + sec_split("Vad ingår när du anlitar oss", [
+        "Du får en tydlig offert med omfattning, material och tidplan innan start, löpande återkoppling under arbetet och en genomgång vid avslut.",
+        "Vi arbetar med F-skatt, ansvarsförsäkring och ID06 och lämnar alltid skriftligt avtal."],
+        "Det här ingår", [
+        "Projektering och kalkyl.","Bygglovsunderlag vid behov.",
+        "Samordning av alla hantverkare.","Materialinköp och logistik.",
+        "Löpande avstämning och tidplan.","Slutbesiktning och dokumentation."], sid="ingar")
+    + f"""      <section class="section seo-section">
+        <div class="container"><div class="tips-box">
+          <h3>ROT-avdrag</h3>
+          <p>ROT gäller arbetskostnaden vid renovering av befintlig bostad (30 % 2026, max 50 000 kr/person/år). Ren nybyggnad och tillbyggnad ger normalt inte ROT – vi särskiljer detta i offerten. Mer i {a('rot-avdrag-takarbete.html','guiden om ROT-avdrag')}.</p>
+        </div></div>
+      </section>"""
+    + links_block("Relaterat", [
+        ("villarenovering.html","Villarenovering","Total- och delrenovering."),
+        ("tillbyggnad.html","Tillbyggnad","Utöka boytan."),
+        ("nybyggnad-villa.html","Nybyggnad","Bygg nytt från grunden.")]),
+  faq=[
+    ("Vad kostar en byggfirma / total entreprenad?","Det beror helt på projektets omfattning. Vi erbjuder gratis platsbesök och kostnadsförslag och lämnar ett fast pris efter genomgång."),
+    ("Tar ni bygglovet?","Vi hjälper till med bygglovsunderlag och ritningar; själva ansökan görs till kommunen och vi guidar dig genom den."),
+    ("Har ni försäkring och F-skatt?","Ja, vi är ett registrerat AB med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06.")])
+
+page(file="villarenovering.html", service=True, service_type="Villarenovering",
+  title="Villarenovering & totalrenovering i Stockholm | Geal Entreprenad AB",
+  description="Villarenovering och totalrenovering i Stockholm: kök, badrum, fasad och helhet med ROT-avdrag. Total entreprenad från en byggpartner. Kostnadsfri offert.",
+  h1="Villarenovering i Stockholm",
+  crumbs=BYGG_CRUMB+[("Villarenovering","villarenovering.html")],
+  cta=("Ska du renovera villan?","Vi tar helheten och drar av ROT direkt på fakturan. Begär offert."),
+  body=hero("Villarenovering i Stockholm",
+    "Från enstaka rum till totalrenovering – vi renoverar villor i hela Stockholm som total entreprenad. En kontakt för hela projektet och ROT-avdrag på arbetet.",
+    BYGG_CRUMB+[("Villarenovering","villarenovering.html")],
+    [("#nar","När renovera"),("#ingar","Vad vi gör"),("#faq","Vanliga frågor")])
+    + sec("Total- eller delrenovering?", [
+        "En delrenovering åtgärdar ett utrymme i taget – kök, badrum eller fasad. En totalrenovering tar helheten och passar när fler delar är slitna eller när du vill förnya planlösning och standard samtidigt.",
+        f"Ofta kombineras renovering med {a('takrenovering.html','takrenovering')} eller {a('tillbyggnad.html','tillbyggnad')} – vi samordnar allt i ett projekt."], sid="nar")
+    + sec_split("Vad vi renoverar", [
+        "Vi hjälper dig planera i rätt ordning och prioritera det som ger mest nytta, med tydlig offert och tidplan.",
+        f"Behöver taket åtgärdas passar det ofta att göra samtidigt – se {a('takbyte.html','takbyte')}."],
+        "Vanliga renoveringar", [
+        "Kök och badrum.","Golv, väggar och ytskikt.",
+        "Fasad och fönster.","Ny planlösning.",
+        "El och VVS (via behöriga).","Energiåtgärder och isolering."], sid="ingar")
+    + rot_box("Villarenovering på befintlig bostad ger normalt rätt till ROT-avdrag på arbetskostnaden.")
+    + links_block("Relaterat", [
+        ("byggfirma.html","Total entreprenad","En entreprenör för hela renoveringen."),
+        ("tillbyggnad.html","Tillbyggnad","Kombinera renovering med mer yta."),
+        ("takrenovering.html","Takrenovering","Renovera taket samtidigt.")]),
+  faq=[
+    ("Kan jag bo kvar under renoveringen?","Ofta ja vid delrenovering. Vid totalrenovering planerar vi etapper eller tidplan så att det påverkar dig så lite som möjligt."),
+    ("Får jag ROT-avdrag?","Ja, arbete på din befintliga bostad ger normalt ROT (30 % 2026, max 50 000 kr/person/år). Vi drar av det på fakturan."),
+    ("Vad kostar en villarenovering?","Det varierar med omfattning och standard. Vi ger gratis platsbesök och ett fast pris efter genomgång.")])
+
+page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
+  title="Tillbyggnad av villa i Stockholm – bygga till hus | Geal Entreprenad AB",
+  description="Tillbyggnad av villa i Stockholm: bygga till eller bygga ut huset för mer boyta. Vi hjälper med bygglov, projektering och byggnation. Kostnadsfri offert.",
+  h1="Tillbyggnad av villa i Stockholm",
+  crumbs=BYGG_CRUMB+[("Tillbyggnad","tillbyggnad.html")],
+  cta=("Vill du bygga till villan?","Vi hjälper dig från idé och bygglov till färdig tillbyggnad. Begär offert."),
+  body=hero("Tillbyggnad av villa i Stockholm",
+    "Behöver du mer yta? Vi bygger till och bygger ut villor i Stockholm – från extra rum och uterum till hela våningsplan – med hjälp genom bygglov, projektering och byggnation.",
+    BYGG_CRUMB+[("Tillbyggnad","tillbyggnad.html")],
+    [("#nar","Möjligheter"),("#bygglov","Bygglov"),("#faq","Vanliga frågor")])
+    + sec("Fler sätt att få mer yta", [
+        "En tillbyggnad ökar husets boyta permanent. Vanliga projekt är att bygga ut vardagsrummet, lägga till ett extra sovrum, bygga uterum/inglasat eller resa ett helt nytt våningsplan.",
+        f"Vill du hellre ha en fristående byggnad kan ett {a('attefallshus.html','attefallshus')} vara ett smidigare alternativ utan bygglov."], sid="nar")
+    + sec_split("Bygglov och process", [
+        "De flesta tillbyggnader kräver bygglov. Vi hjälper till med ritningar och bygglovsunderlag, och planerar sedan grund, stomme, tak och ytskikt så att tillbyggnaden ansluter tätt och snyggt mot befintligt hus.",
+        "En välplanerad anslutning mot tak och fasad är avgörande för att undvika framtida fukt- och läckageproblem."],
+        "Så går det till", [
+        "Behovsgenomgång och förslag.","Ritning och bygglovsunderlag.",
+        "Grund och stomme.","Tak, fasad och tät anslutning.",
+        "Invändig komplettering.","Slutbesiktning."], sid="bygglov")
+    + f"""      <section class="section seo-section">
+        <div class="container"><div class="tips-box">
+          <h3>ROT och tillbyggnad</h3>
+          <p>Observera: ny- och tillbyggnad ger normalt <strong>inte</strong> ROT-avdrag (det gäller renovering av befintlig bostad). Vi är tydliga med vad som gäller i offerten. Läs mer om {a('bygglov-takbyte.html','bygglov')} och {a('rot-avdrag-takarbete.html','ROT')}.</p>
+        </div></div>
+      </section>"""
+    + links_block("Relaterat", [
+        ("attefallshus.html","Attefallshus","Fristående yta utan bygglov."),
+        ("byggfirma.html","Total entreprenad","Vi tar hela projektet."),
+        ("nybyggnad-villa.html","Nybyggnad","Bygga nytt hus.")]),
+  faq=[
+    ("Behöver jag bygglov för tillbyggnad?","Oftast ja. Vissa mindre åtgärder (t.ex. attefallstillbyggnad) kan räcka med anmälan. Vi hjälper dig bedöma och du kontrollerar med kommunen."),
+    ("Hur mycket får jag bygga till?","Det styrs av detaljplan och tomt. Vi går igenom vad som är möjligt vid ett platsbesök."),
+    ("Får jag ROT för tillbyggnad?","Normalt nej – ROT gäller renovering av befintlig bostad, inte tillbyggnad av ny yta.")])
+
+page(file="attefallshus.html", service=True, service_type="Attefallshus",
+  title="Attefallshus i Stockholm – nyckelfärdigt upp till 30 m² | Geal Entreprenad AB",
+  description="Attefallshus i Stockholm, nyckelfärdigt upp till 30 m² – gäststuga, kontor eller uthyrning. Vi bygger och hjälper med anmälan. Kostnadsfri offert.",
+  h1="Attefallshus i Stockholm",
+  crumbs=BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
+  cta=("Funderar du på ett attefallshus?","Vi bygger nyckelfärdigt och hjälper med anmälan. Begär en kostnadsfri offert."),
+  body=hero("Attefallshus i Stockholm",
+    "Ett attefallshus ger upp till 30 m² extra – som gäststuga, hemmakontor, förråd eller uthyrning – utan bygglov (men med anmälan). Vi bygger nyckelfärdigt i hela Stockholm.",
+    BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
+    [("#vad","Om attefallshus"),("#regler","Regler"),("#faq","Vanliga frågor")])
+    + sec("Vad är ett attefallshus?", [
+        "Attefallshus är en fristående komplementbyggnad på upp till 30 m² som får byggas på de flesta villatomter utan bygglov. Det räcker med en anmälan till kommunen och startbesked innan du börjar.",
+        "Populära användningar är gäststuga, hemmakontor, gym, förråd eller ett litet hus för uthyrning. Vi bygger nyckelfärdigt – från grund till inflyttningsklart."], sid="vad")
+    + sec_split("Regler i korthet", [
+        "Reglerna kan ändras och tolkas av din kommun, men i grunden gäller att attefallshuset är fristående, håller sig inom ytan och avstånden nedan samt att du gjort anmälan och fått startbesked.",
+        "Vill du placera huset närmare tomtgräns än 4,5 meter krävs grannens medgivande. Vi hjälper dig med underlaget."],
+        "Vanliga krav", [
+        "Max 30 m² byggnadsarea.","Nockhöjd max 4,0 meter.",
+        "Fristående komplementbyggnad.","Minst 4,5 m till tomtgräns (annars grannmedgivande).",
+        "Anmälan + startbesked krävs.","Ej inom vissa kulturmiljöer."], sid="regler")
+    + f"""      <section class="section seo-section">
+        <div class="container"><div class="tips-box">
+          <h3>Bra att veta</h3>
+          <p>Ett attefallshus är nybyggnad och ger därför normalt <strong>inte</strong> ROT-avdrag. Ska huset hyras ut eller inredas för boende tillkommer krav – vi går igenom det vid platsbesöket. Se även {a('tillbyggnad.html','tillbyggnad')} om du hellre vill bygga ihop med huset.</p>
+        </div></div>
+      </section>"""
+    + links_block("Relaterat", [
+        ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt","Bygga större hus."),
+        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan."),
+        ("byggfirma.html","Total entreprenad","En entreprenör för allt.")]),
+  faq=[
+    ("Behöver jag bygglov för attefallshus?","Nej, men du måste göra en anmälan till kommunen och få startbesked innan du börjar bygga."),
+    ("Hur stort får ett attefallshus vara?","Upp till 30 m² byggnadsarea och max 4,0 meter nockhöjd, som fristående komplementbyggnad."),
+    ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett attefallshus får inredas för boende (komplementbostadshus) – då tillkommer krav på t.ex. VA och isolering som vi tar höjd för.")])
+
+page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
+  title="Bygga villa i Stockholm – nyckelfärdigt hus | Geal Entreprenad AB",
+  description="Bygga villa i Stockholm – nyckelfärdigt hus från grunden. Vi tar helheten som total entreprenör: projektering, bygglov och byggnation. Kostnadsfri offert.",
+  h1="Bygga villa i Stockholm – nyckelfärdigt",
+  crumbs=BYGG_CRUMB+[("Nybyggnad","nybyggnad-villa.html")],
+  cta=("Vill du bygga nytt hus?","Vi bygger villa från grunden som total entreprenör. Begär en kostnadsfri genomgång."),
+  body=hero("Bygga villa i Stockholm – nyckelfärdigt",
+    "Drömmer du om ett nytt hus? Vi bygger villor från grunden i Stockholm som total entreprenör – från ritning och bygglov till nyckelfärdigt och inflyttningsklart.",
+    BYGG_CRUMB+[("Nybyggnad","nybyggnad-villa.html")],
+    [("#nyckelfardigt","Nyckelfärdigt"),("#process","Process"),("#faq","Vanliga frågor")])
+    + sec("Nyckelfärdigt hus – vad innebär det?", [
+        "Nyckelfärdigt betyder att vi ansvarar för hela kedjan och lämnar över ett färdigt hus som du kan flytta in i. Du slipper samordna arkitekt, hantverkare och leverantörer själv.",
+        f"Vi hanterar även taket in i minsta detalj tack vare vår takkompetens – se {a('villatak.html','tak på villa')} – vilket ger en tät och hållbar konstruktion från dag ett."], sid="nyckelfardigt")
+    + sec_process("Från ritning till inflyttning", [
+        ("Genomgång","Vi går igenom dina önskemål, tomt och budget."),
+        ("Ritning & bygglov","Vi tar fram ritningar och bygglovsunderlag."),
+        ("Grund & stomme","Grundläggning, stomme och tätt hus."),
+        ("Nyckelfärdigt","Ytskikt, installationer och slutbesiktning.")], sid="process")
+    + f"""      <section class="section seo-section">
+        <div class="container"><div class="tips-box">
+          <h3>Bra att veta</h3>
+          <p>Nybyggnation ger normalt <strong>inte</strong> ROT-avdrag (ROT gäller renovering av befintlig bostad). Vi ger en tydlig kalkyl så att du ser hela kostnadsbilden. Ett mindre projekt? Se {a('attefallshus.html','attefallshus')}.</p>
+        </div></div>
+      </section>"""
+    + links_block("Relaterat", [
+        ("attefallshus.html","Attefallshus","Mindre nybyggnad utan bygglov."),
+        ("tillbyggnad.html","Tillbyggnad","Utöka befintligt hus."),
+        ("byggfirma.html","Total entreprenad","En kontakt för hela bygget.")]),
+  faq=[
+    ("Bygger ni nyckelfärdigt?","Ja, vi tar helheten som total entreprenör – från ritning och bygglov till inflyttningsklart hus."),
+    ("Hur lång tid tar det att bygga en villa?","Det beror på storlek, bygglovstider och markförhållanden. Vi ger en realistisk tidplan i offerten."),
+    ("Får jag ROT för att bygga nytt?","Nej, ROT gäller inte nybyggnation. Det gäller renovering och underhåll av befintlig bostad.")])
+
+# ---- Tak-artiklar (near-miss från Keyword Planner) ----
+article("mala-plattak.html",
+  "Måla plåttak – så gör du, kostnad och när det lönar sig | Geal Entreprenad AB",
+  "Måla plåttak: när det lönar sig, hur det går till, vilken färg och vad det kostar. Guide från takläggare i Stockholm.",
+  "Måla plåttak – guide",
+  "Att måla om plåttaket ger nytt skydd och fräschare uttryck till lägre kostnad än ett byte. Här är när det lönar sig och hur det går till.",
+  [("p","Ett plåttak som börjat tappa färg eller fått ytrost kan ofta målas om i stället för att bytas – förutsatt att grundkonstruktionen är hel. Rätt utfört förlänger målningen takets liv med många år."),
+   ("h2","När lönar det sig att måla plåttaket?"),
+   ("ul",["Ytan är matt, flagnad eller har begynnande rost.","Konstruktionen och infästningarna är hela.",
+          "Inga större genomrostningar eller läckage.","Du vill fräscha upp utan ett fullt takbyte."]),
+   ("h2","Så går det till"),
+   ("ol",["Tvätt och borttagning av löst material och mossa.","Skrapning och rostskydd där det behövs.",
+          "Grundfärg anpassad för plåt.","Täckmålning i två skikt."]),
+   ("p",f"Är rosten utbredd eller taket uttjänt är det bättre att byta – se {a('plattak.html','plåttak')}. Behöver taket först rengöras, läs om {a('taktvatt.html','taktvätt')}. Vår tjänst för själva målningen: {a('takmalning.html','takmålning')}."),
+   ("tips","Måla inte över rost eller smuts – förbehandlingen avgör hur länge resultatet håller."),
+   ("cta",("Vill du måla om plåttaket?","Vi bedömer skicket och ger gratis platsbesök och kostnadsförslag."))],
+  [("takmalning.html","Takmålning","Vår tjänst för målning av plåttak."),
+   ("plattak.html","Plåttak","Nytt plåttak när målning inte räcker."),
+   ("taktvatt.html","Taktvätt","Rengöring inför målning.")],
+  faq=[("Hur ofta behöver ett plåttak målas om?","Med rätt förbehandling håller en ommålning normalt 10–15 år beroende på exponering."),
+       ("Ger takmålning ROT-avdrag?","Ja, arbetskostnaden för att måla plåttak på villa ger normalt ROT-avdrag.")],
+  badge="Tak", read="4 min")
+
+article("falsat-plattak.html",
+  "Falsat plåttak & bandtäckning – guide och för- och nackdelar | Geal Entreprenad AB",
+  "Falsat plåttak (bandtäckning): hur det fungerar, för- och nackdelar, livslängd och när det passar din villa. Guide från takläggare i Stockholm.",
+  "Falsat plåttak & bandtäckning",
+  "Falsat plåttak – ofta kallat bandtäckning – är ett klassiskt, hållbart plåttak som passar även låga taklutningar. Här är hur det fungerar och när det passar.",
+  [("p","Bandtäckning innebär att plåten läggs i banor som falsas ihop i upphöjda skarvar (ståndfalsar). Det ger ett tätt, rent uttryck och fungerar där tegel- och betongpannor inte passar."),
+   ("h2","Fördelar och nackdelar"),
+   ("ul",["+ Låg vikt och lång livslängd (ofta 40–50 år).","+ Fungerar på låga taklutningar.",
+          "+ Rent, tidlöst uttryck.","– Kräver skickligt plåtslageri för täta falsar.",
+          "– Högre hantverksmoment än pannor."]),
+   ("h2","När passar falsat plåttak?"),
+   ("p",f"Det passar villor med lägre lutning, äldre hus där uttrycket ska bevaras, och där man vill ha ett underhållssnålt tak. Jämför material i {a('tegel-betong-plattak.html','tegel vs betong vs plåt')} och se livslängd i {a('takmaterial-livslangd.html','livslängd per takmaterial')}."),
+   ("p",f"Vill du installera eller renovera ett falsat plåttak hjälper vi dig – se {a('plattak.html','plåttak')}. Kan målas om vid behov, se {a('mala-plattak.html','måla plåttak')}."),
+   ("tips","Täthet i falsar och detaljer runt genomföringar är avgörande – låt ett erfaret plåtslageri utföra arbetet.")],
+  [("plattak.html","Plåttak","Vår tjänst för plåttak och bandtäckning."),
+   ("tegel-betong-plattak.html","Jämför takmaterial","Tegel vs betong vs plåt."),
+   ("mala-plattak.html","Måla plåttak","Underhåll av plåttak.")],
+  faq=[("Vad är skillnaden mellan bandtäckning och plåtpannor?","Bandtäckning läggs i hela banor som falsas ihop och ger ett sömlöst uttryck, medan plåtpannor efterliknar tegel i moduler. Bandtäckning passar bättre på låga lutningar."),
+       ("Hur länge håller ett falsat plåttak?","Ofta 40–50 år eller mer med rätt underhåll och eventuell ommålning.")],
+  badge="Tak", read="5 min")
 
 # ====================== TACK (form success) ============================
 page(file="tack.html", no_cta=True, noindex=True, nolist=True,
