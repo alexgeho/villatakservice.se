@@ -1241,7 +1241,9 @@ page(file="bygg.html", localbiz=True,
         ("villarenovering.html","Villarenovering","Total- och delrenovering av villa."),
         ("tillbyggnad.html","Tillbyggnad","Bygg ut och få mer yta."),
         ("attefallshus.html","Attefallshus","Nyckelfärdigt upp till 30 m²."),
+        ("friggebod.html","Friggebod","Upp till 15 m² – utan bygglov och anmälan."),
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt hus","Bygg villa från grunden."),
+        ("fritidshus.html","Bygga fritidshus","Nyckelfärdigt fritidshus."),
         ("villatak.html","Tak på villa","Vår ursprungliga specialitet.")], muted=False),
   faq=[
     ("Vad betyder total entreprenad?","Att en entreprenör ansvarar för hela projektet – projektering, hantverk och samordning – så att du bara har en kontakt och ett avtal."),
@@ -1375,9 +1377,10 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
         </div></div>
       </section>"""
     + links_block("Relaterat", [
+        ("attefallshus-regler.html","Attefallshus – regler 2026","Mått, anmälan och avstånd."),
+        ("friggebod.html","Friggebod","Upp till 15 m² utan anmälan."),
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt","Bygga större hus."),
-        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan."),
-        ("byggfirma.html","Total entreprenad","En entreprenör för allt.")]),
+        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")]),
   faq=[
     ("Behöver jag bygglov för attefallshus?","Nej, men du måste göra en anmälan till kommunen och få startbesked innan du börjar bygga."),
     ("Hur stort får ett attefallshus vara?","Upp till 30 m² byggnadsarea och max 4,0 meter nockhöjd, som fristående komplementbyggnad."),
@@ -1415,6 +1418,70 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
     ("Bygger ni nyckelfärdigt?","Ja, vi tar helheten som total entreprenör – från ritning och bygglov till inflyttningsklart hus."),
     ("Hur lång tid tar det att bygga en villa?","Det beror på storlek, bygglovstider och markförhållanden. Vi ger en realistisk tidplan i offerten."),
     ("Får jag ROT för att bygga nytt?","Nej, ROT gäller inte nybyggnation. Det gäller renovering och underhåll av befintlig bostad.")])
+
+page(file="friggebod.html", service=True, service_type="Friggebod",
+  title="Friggebod i Stockholm – bygga friggebod upp till 15 m² | Geal Entreprenad AB",
+  description="Bygga friggebod i Stockholm, upp till 15 m² utan bygglov och utan anmälan – förråd, växthus eller gäststuga. Vi bygger nyckelfärdigt. Kostnadsfri offert.",
+  h1="Friggebod i Stockholm",
+  crumbs=BYGG_CRUMB+[("Friggebod","friggebod.html")],
+  cta=("Vill du bygga en friggebod?","Vi bygger nyckelfärdigt. Begär en kostnadsfri offert."),
+  body=hero("Friggebod i Stockholm",
+    "En friggebod på upp till 15 m² får byggas på de flesta villatomter helt utan bygglov och utan anmälan. Perfekt som förråd, växthus, verkstad eller gäststuga. Vi bygger nyckelfärdigt.",
+    BYGG_CRUMB+[("Friggebod","friggebod.html")],
+    [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor")])
+    + sec_split("Regler för friggebod", [
+        "Friggeboden är en fristående komplementbyggnad som du får uppföra utan bygglov och utan anmälan, förutsatt att du håller dig inom måtten och avstånden nedan. Reglerna tolkas av din kommun.",
+        "Vill du placera boden närmare tomtgräns än 4,5 meter krävs grannens medgivande."],
+        "Vad som gäller", [
+        "Max 15 m² sammanlagd byggnadsarea.","Nockhöjd max 3,0 meter.",
+        "Fristående komplementbyggnad.","Minst 4,5 m till tomtgräns (annars grannmedgivande).",
+        "Inget bygglov och ingen anmälan.","Ej för permanent boende."], sid="regler")
+    + sec("Friggebod eller attefallshus?", [
+        f"En friggebod (max 15 m², utan anmälan) är enklare men mindre. Ett {a('attefallshus.html','attefallshus')} (max 30 m²) är större och får inredas för boende, men kräver anmälan och startbesked. Vi hjälper dig välja rätt.",
+        f"Vill du i stället bygga ihop med huset, se {a('tillbyggnad.html','tillbyggnad')}."], sid="skillnad")
+    + links_block("Relaterat", [
+        ("attefallshus.html","Attefallshus","Större – upp till 30 m²."),
+        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan."),
+        ("bygg.html","Bygg & Renovering","Alla våra byggtjänster.")]),
+  faq=[
+    ("Behöver jag bygglov för en friggebod?","Nej, en friggebod upp till 15 m² kräver varken bygglov eller anmälan, så länge du håller måtten och avstånden."),
+    ("Hur stor får en friggebod vara?","Sammanlagt max 15 m² byggnadsarea och max 3,0 meter i nockhöjd."),
+    ("Får man bo i en friggebod?","Nej, en friggebod får inte användas för permanent boende. Vill du ha en gäststuga för övernattning passar ett attefallshus bättre.")])
+
+page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
+  title="Bygga fritidshus i Stockholm – nyckelfärdigt | Geal Entreprenad AB",
+  description="Bygga fritidshus i Stockholm och Mälardalen – nyckelfärdigt eller platsbyggt. Vi tar helheten från ritning och bygglov till inflyttningsklart. Kostnadsfri offert.",
+  h1="Bygga fritidshus i Stockholm",
+  crumbs=BYGG_CRUMB+[("Fritidshus","fritidshus.html")],
+  cta=("Drömmer du om ett fritidshus?","Vi bygger nyckelfärdigt fritidshus. Begär en kostnadsfri genomgång."),
+  body=hero("Bygga fritidshus i Stockholm",
+    "Vi bygger fritidshus i Stockholm med omnejd – nyckelfärdigt eller platsbyggt. Från ritning och bygglov till ett inflyttningsklart hus, med en byggpartner genom hela projektet.",
+    BYGG_CRUMB+[("Fritidshus","fritidshus.html")],
+    [("#nyckelfardigt","Nyckelfärdigt"),("#faq","Vanliga frågor")])
+    + sec("Nyckelfärdigt eller platsbyggt fritidshus", [
+        "Ett nyckelfärdigt fritidshus levereras helt färdigt att flytta in i – vi ansvarar för hela kedjan. Platsbyggt ger mer frihet i utformningen. Vi hjälper dig välja utifrån tomt, budget och önskemål.",
+        f"Ett mindre projekt kan lösas som {a('attefallshus.html','attefallshus')} (upp till 30 m²) eller {a('friggebod.html','friggebod')} (upp till 15 m²) – ofta utan eller med förenklat tillstånd."], sid="nyckelfardigt")
+    + sec_split("Vi tar helheten", [
+        "Från första skiss till slutbesiktning håller vi ihop projektet. Tack vare vår takkompetens blir taket tätt och hållbart från start.",
+        "Vi hjälper dig med ritningar och bygglovsunderlag; ansökan görs till kommunen."],
+        "Det här ingår", [
+        "Genomgång av tomt, önskemål och budget.","Ritning och bygglovsunderlag.",
+        "Grund, stomme och tätt hus.","Tak, fasad och installationer.",
+        "Ytskikt och inredning.","Slutbesiktning."])
+    + f"""      <section class="section seo-section">
+        <div class="container"><div class="tips-box">
+          <h3>Bra att veta</h3>
+          <p>Nybyggnation av fritidshus ger normalt <strong>inte</strong> ROT-avdrag. Renoverar du ett befintligt fritidshus kan ROT gälla. Se även {a('nybyggnad-villa.html','bygga villa')}.</p>
+        </div></div>
+      </section>"""
+    + links_block("Relaterat", [
+        ("nybyggnad-villa.html","Bygga villa","Nyckelfärdigt permanenthus."),
+        ("attefallshus.html","Attefallshus","Mindre komplementbyggnad."),
+        ("byggfirma.html","Total entreprenad","En kontakt för hela bygget.")]),
+  faq=[
+    ("Bygger ni nyckelfärdiga fritidshus?","Ja, vi bygger nyckelfärdigt – från ritning och bygglov till inflyttningsklart – och även platsbyggt efter dina önskemål."),
+    ("Behöver jag bygglov för fritidshus?","Ja, ett fritidshus kräver normalt bygglov. Mindre komplementbyggnader (attefallshus/friggebod) har enklare regler. Vi hjälper dig bedöma."),
+    ("Får jag ROT för att bygga fritidshus?","Nej, nybyggnation ger inte ROT. Renovering av ett befintligt fritidshus kan däremot ge ROT-avdrag.")])
 
 # ---- Tak-artiklar (near-miss från Keyword Planner) ----
 article("mala-plattak.html",
@@ -1459,6 +1526,52 @@ article("falsat-plattak.html",
   faq=[("Vad är skillnaden mellan bandtäckning och plåtpannor?","Bandtäckning läggs i hela banor som falsas ihop och ger ett sömlöst uttryck, medan plåtpannor efterliknar tegel i moduler. Bandtäckning passar bättre på låga lutningar."),
        ("Hur länge håller ett falsat plåttak?","Ofta 40–50 år eller mer med rätt underhåll och eventuell ommålning.")],
   badge="Tak", read="5 min")
+
+# ---- Bygg-artiklar (near-miss) ----
+article("attefallshus-regler.html",
+  "Attefallshus – regler 2026: mått, anmälan och avstånd | Geal Entreprenad AB",
+  "Attefallshus regler 2026: max 30 m², nockhöjd, anmälan och startbesked, avstånd till tomtgräns och skillnaden mot friggebod. Guide för dig i Stockholm.",
+  "Attefallshus – regler 2026",
+  "Ett attefallshus får byggas utan bygglov, men reglerna måste följas. Här är måtten, anmälan och avstånden – enkelt förklarat.",
+  [("p","Attefallsreglerna gör att du får uppföra en komplementbyggnad på de flesta villatomter utan bygglov. Men det krävs en anmälan till kommunen och ett startbesked innan du börjar. Reglerna tolkas lokalt, så kontrollera alltid med din kommun."),
+   ("h2","Mått och krav i korthet"),
+   ("ul",["<strong>Max 30 m²</strong> byggnadsarea.","<strong>Nockhöjd max 4,0 m.</strong>",
+          "Fristående komplementbyggnad.","Minst <strong>4,5 m till tomtgräns</strong> (annars grannens medgivande).",
+          "<strong>Anmälan + startbesked</strong> krävs innan byggstart.","Kan inredas för boende (komplementbostadshus) – då tillkommer krav."]),
+   ("h2","Attefallshus eller friggebod?"),
+   ("p",f"En {a('friggebod.html','friggebod')} (max 15 m²) kräver varken bygglov eller anmälan, men får inte användas för boende. Ett attefallshus (max 30 m²) är större och får inredas för boende, men kräver anmälan. Se vår tjänst {a('attefallshus.html','attefallshus')}."),
+   ("tips","Ligger tomten inom strandskydd eller kulturmiljö kan reglerna vara strängare – hör med kommunen först."),
+   ("cta",("Vill du bygga attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med anmälan. Gratis platsbesök och kostnadsförslag."))],
+  [("attefallshus.html","Attefallshus","Vi bygger nyckelfärdigt."),
+   ("friggebod.html","Friggebod","Upp till 15 m² utan anmälan."),
+   ("tillbyggnad.html","Tillbyggnad","Bygg ihop med huset.")],
+  faq=[("Krävs bygglov för attefallshus?","Nej, men en anmälan till kommunen och ett startbesked krävs innan du börjar bygga."),
+       ("Hur nära tomtgränsen får attefallshuset stå?","Minst 4,5 meter, om du inte har grannens skriftliga medgivande.")],
+  badge="Regler", read="4 min")
+
+article("vad-kostar-bygga-hus.html",
+  "Vad kostar det att bygga hus? Prisguide 2026 | Geal Entreprenad AB",
+  "Vad kostar det att bygga hus eller ett nyckelfärdigt hus? Vi går igenom vad som driver priset och hur du får ett tillförlitligt kostnadsförslag i Stockholm.",
+  "Vad kostar det att bygga hus?",
+  "Priset för att bygga hus varierar kraftigt med tomt, storlek och standard. Här är kostnadsdrivarna och hur du får en trygg kalkyl.",
+  [("p","Att bygga hus är ett av livets större projekt, och priset beror på många faktorer. Färdiga schablonsiffror blir ofta missvisande eftersom tomt, grundläggning och val av standard påverkar mycket."),
+   ("h2","Vad påverkar priset?"),
+   ("ul",["<strong>Tomt och grundläggning</strong> – markförhållanden, sprängning, dragningar.",
+          "<strong>Storlek och planlösning</strong> – kvadratmeter och komplexitet.",
+          "<strong>Nyckelfärdigt vs platsbyggt</strong> – grad av färdigställande.",
+          "<strong>Standard och materialval</strong> – kök, bad, ytskikt.",
+          "<strong>Anslutningar</strong> – VA, el, fjärrvärme."]),
+   ("h2","Så får du ett tillförlitligt pris"),
+   ("p",f"Eftersom förutsättningarna skiljer sig ger vi alltid pris efter en genomgång av tomt och önskemål – gratis platsbesök och kostnadsförslag. Se våra tjänster {a('nybyggnad-villa.html','bygga villa (nyckelfärdigt)')} och {a('fritidshus.html','bygga fritidshus')}."),
+   ("p","Ett mindre projekt kan bli mer ekonomiskt: ett <a class=\"text-link\" href=\"attefallshus.html\">attefallshus</a> (upp till 30 m²) eller en <a class=\"text-link\" href=\"friggebod.html\">friggebod</a> (upp till 15 m²)."),
+   ("tips","Jämför alltid offerter på samma omfattning – vad som ingår (grund, anslutningar, mark) styr slutpriset mer än kvadratmeterpriset."),
+   ("cta",("Vill du veta vad ditt husbygge kostar?","Boka en genomgång så får du ett tydligt kostnadsförslag."))],
+  [("nybyggnad-villa.html","Bygga villa","Nyckelfärdigt hus från grunden."),
+   ("fritidshus.html","Bygga fritidshus","Nyckelfärdigt fritidshus."),
+   ("byggfirma.html","Total entreprenad","En entreprenör för hela bygget.")],
+  faq=[("Är nyckelfärdigt dyrare än att bygga själv?","Nyckelfärdigt kostar mer i entreprenad men sparar tid, risk och samordning. Att bygga mer själv sänker arbetskostnaden men kräver egen insats och kunskap."),
+       ("Får jag ROT när jag bygger nytt?","Nej, ROT gäller inte nybyggnation, bara renovering av befintlig bostad.")],
+  badge="Kostnad", read="5 min")
 
 # ====================== TACK (form success) ============================
 page(file="tack.html", no_cta=True, noindex=True, nolist=True,
