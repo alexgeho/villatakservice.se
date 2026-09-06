@@ -4,6 +4,31 @@
 > Statuslegend: ☐ ej påbörjad · 🔄 pågår · ✅ klar. Vid omstart: fortsätt från första ☐/🔄.
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
+---
+## ▶️ RESUME — börja här nästa gång (uppdaterad 2026-09-06)
+
+**Läge:** Sajten är LIVE i prod. **61 sidor.** Autodeploy (push till main → FTP till hostingen, se `docs/DEPLOY.md`). Sitemap **Success** i GSC (Google indexerar själv).
+
+**Klart hittills:**
+- Teknik/SEO: NAP (Geal Entreprenad AB, Byggmästarvägen 18 Bromma, org 559303-7566, info@villatakservice.se), RoofingContractor/Service/FAQ/Article/Breadcrumb-schema, canonical, sitemap.xml, robots.txt.
+- Money-kärna: 6 taktjänster + villa-pillar + områdes-hub + 10 ort-sidor.
+- **Bygg & Renovering (7 sidor):** bygg (hub), byggfirma/total entreprenad, villarenovering, tillbyggnad, attefallshus, friggebod, nybyggnad-villa, fritidshus.
+- Artiklar: 24 st (kluster + near-miss: mala-plattak, falsat-plattak, attefallshus-regler, vad-kostar-bygga-hus).
+- UX/perf/a11y: self-hostat Inter, lokala webp, favicon, 404, tack, skip-link/focus, 0 externa resurser.
+- **Kontaktformulär funkar** (egen `sendmail.php` → info@villatakservice.se, testat OK).
+- Data: `docs/keywords/*.csv` + `analys.md`. Ads: `docs/ads-plan.md`.
+- Cron "SEO-puls" (routine `trig_01EF7TMEUzn3jvNkZ2PjX6Fg`): 1 & 15 varje månad, rapport i routines-UI.
+
+**NÄSTA STEG (prio):**
+1. **Ägaren (viktigast):** GBP + Google-omdömen + backlinks (hitta.se/allabolag); starta Google Ads enligt `docs/ads-plan.md` + koppla konvertering (mål `/tack.html`) FÖRE skalning; Request indexing topp-3 (bygg/byggfirma/attefallshus) när kvoten nollställts.
+2. **~15 sep (nästa byggomgång):** läs GSC-queries pos 8–20 (near-miss) → gör 3–5 riktade sidor/förstärkningar (Fas 3, datadrivet).
+3. **Content-tempo:** 2–4 kvalitetsartiklar/vecka ur klusterplanen (inte massgenerering).
+4. **Case före/efter:** när ägaren skickar foton → bygg referens-sektion (E-E-A-T).
+5. **Ev. fler near-miss** (kolla volym i `docs/keywords`): uterum/inglasat, garage/carport, badrums-/köksrenovering, ta bort takmossa m.fl.
+
+**Så fortsätter du:** läs `docs/seo-agent-brief.md` + denna fil → plocka första öppna punkten ovan. Sidor: redigera `tools/generate.py`, kör `python3 tools/generate.py`, validera, commit+push (auto-deploy). Skriv "продолжаем" för att dra igång.
+---
+
 ## Audit — nuläge (2026-09-06)
 - **Stack:** ren statisk HTML, ingen byggprocess. 6 sidor i repo-roten + `assets/`.
 - **Kritiskt:** all schema/og pekar på fel domän `www.gealtak.se` (ska vara villatakservice.se). Namn växlar "Geal Tak AB" / "Geal entreprenad ab" → ska vara **Geal Entreprenad AB**.
