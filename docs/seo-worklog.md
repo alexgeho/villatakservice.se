@@ -111,7 +111,18 @@ Tillämpat på villatakservice.se:
 - ☐ Ägare: samla omdömen (Google/Trustpilot), case före/efter, backlinks, säkerställ stabilt SSL på hosting.
 - ☐ Ev. senare: sidan "Villkor" + "Referenser/Omdömen" (bygg när case/omdömen finns).
 
+## 7. UX/UI + prestanda/integritet (självständigt)  ✅
+- ✅ A11y: `:focus-visible`, skip-to-content, `prefers-reduced-motion`, `scroll-margin-top` (sticky header).
+- ✅ Bugg: 17 trasiga in-page-ankare (Snabblänkar) → sektioner fick riktiga id:n.
+- ✅ Favicon (`assets/favicon.svg`, tak-ikon) + `theme-color` på alla sidor.
+- ✅ 404-sida (`404.html`, noindex, ej i sitemap) med populära länkar.
+- ✅ **Självhostat typsnitt**: Inter (variabel, latin-subset) i `assets/fonts/` + `@font-face`. Google Fonts borttaget överallt → inga externa font-requests (GDPR/prestanda).
+- ✅ **Lokala bilder**: pexels-hotlinks på startsidan nedladdade, komprimerade till webp i `assets/images/` → 0 externa bild-requests.
+- ✅ Resultat: 48 sidor, 0 externa resurser (font/bild), 0 trasiga länkar/ankare, 106 JSON-LD ok.
+- ☐ Kvar (ägare/funktion): kontaktformulärets `action="#"` behöver riktig hanterare (Formspree/Getform/hosting); ev. äkta dark-tema via `prefers-color-scheme`.
+
 ## Logg
+- 2026-09-06: UX/UI + a11y + prestanda: focus/skip-link/reduced-motion/scroll-margin, favicon, 404, självhostat Inter, lokala webp-bilder. 0 externa resurser kvar.
 - 2026-09-06: E-E-A-T-audit (bygghub.nu) genomläst; tillämpliga punkter inarbetade — integritetspolicy, FAQ-sida, förstärkt kontakt/om-oss. 47 sidor totalt, validering grön (0 trasiga, 0 orphans, 105 JSON-LD ok).
 - 2026-09-06: Audit klar. Brief + worklog uppdaterade med autonomt läge + topical-authority-addendum.
 - 2026-09-06: Byggt generator + 40 nya sidor (6 tjänster, villa-pillar, områdes-hub, 10 orter, 22 artiklar), patchat 6 ursprungssidor (NAP/domän/nav/footer/schema), skapat sitemap.xml + robots.txt, byggt om artiklar-hubben, tagit bort dubblett artikel.html. Verifiering grön (0 trasiga länkar, 0 orphans, 102 valida JSON-LD). Totalt 45 sidor.

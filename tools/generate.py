@@ -141,6 +141,7 @@ def jsonld(obj):
             json.dumps(obj, ensure_ascii=False, indent=6) + "\n    </script>")
 
 def render(p):
+    robots_meta = '\n    <meta name="robots" content="noindex, follow" />' if p.get("noindex") else ""
     schemas = [local_business_schema() if p.get("localbiz") else None,
                breadcrumb_schema(p["crumbs"]),
                faq_schema(p["faq"]) if p.get("faq") else None,
@@ -194,9 +195,8 @@ def render(p):
     <meta property="og:url" content="{canon}" />
     <meta property="og:image" content="{IMG}" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#1f2f46" />{robots_meta}
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <script src="assets/js/main.js" defer></script>
 {blocks}
@@ -1218,6 +1218,23 @@ page(file="integritetspolicy.html", no_cta=True,
     + prose(_pol_blocks)
     + '\n        </article>\n      </section>')
 
+# ====================== 404 =============================================
+page(file="404.html", no_cta=True, noindex=True, nolist=True,
+  title="Sidan hittades inte (404) | Geal Entreprenad AB",
+  description="Sidan kunde inte hittas. Gå till startsidan eller våra tjänster för takbyte, takrenovering och takbesiktning i Stockholm.",
+  h1="Sidan hittades inte",
+  crumbs=[("Hem","index.html"),("404","404.html")],
+  body=hero("Sidan hittades inte (404)",
+    "Sidan du letade efter finns inte längre eller har flyttat. Använd länkarna nedan så hittar du rätt.",
+    [("Hem","index.html"),("404","404.html")])
+    + links_block("Populära sidor", [
+        ("index.html","Till startsidan","Takläggare i Sundbyberg och Stockholm."),
+        ("tjanster.html","Våra tjänster","Takbyte, renovering, besiktning m.m."),
+        ("omraden.html","Områden","Se var vi arbetar."),
+        ("artiklar.html","Artiklar","Guider om tak och takarbete."),
+        ("faq.html","Vanliga frågor","Svar på det vanligaste."),
+        ("kontakt.html","Kontakt","Begär offert eller ställ en fråga.")], muted=False))
+
 # ====================== WRITE FILES + SITEMAP =============================
 # Existing hand-maintained pages (regenereras ej men ska med i sitemap)
 STATIC_PAGES = ["index.html","tjanster.html","om-oss.html","kontakt.html",
@@ -1230,8 +1247,8 @@ def main():
         with open(os.path.join(ROOT, p["file"]), "w", encoding="utf-8") as f:
             f.write(html)
         written.append(p["file"])
-    # sitemap.xml
-    urls = STATIC_PAGES + [p["file"] for p in PAGES]
+    # sitemap.xml (exclude noindex/nolist pages such as 404)
+    urls = STATIC_PAGES + [p["file"] for p in PAGES if not p.get("nolist")]
     # dedupe, keep order
     seen=set(); ordered=[u for u in urls if not (u in seen or seen.add(u))]
     def loc(u):
