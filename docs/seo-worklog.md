@@ -139,6 +139,15 @@ Tillämpat på villatakservice.se:
 - ✅ Resultat: 48 sidor, 0 externa resurser (font/bild), 0 trasiga länkar/ankare, 106 JSON-LD ok.
 - ☐ Kvar (ägare/funktion): kontaktformulärets `action="#"` behöver riktig hanterare (Formspree/Getform/hosting); ev. äkta dark-tema via `prefers-color-scheme`.
 
+## ⏰ Öppna ägaruppgifter — PÅMINN OM DESSA (läses av cron-agenten "SEO-puls")
+- [ ] **Google Business Profile** – skapa/fyll (kategori Roofing contractor, adress Bromma, foton, områden). Största lokala hävstången.
+- [ ] **Google-omdömen** – be nöjda kunder om 3–5 recensioner.
+- [ ] **Backlinks** – hitta.se, eniro, allabolag, branschkataloger (2–3/mån).
+- [ ] **Google Ads** – starta enligt `docs/ads-plan.md` (prio Tak + Byggfirma). Koppla konvertering (mål = /tack.html) FÖRE skalning.
+- [ ] **Request indexing** (imorgon, kvot nollställd) – bygg.html, byggfirma.html, attefallshus.html. Ev. re-submit sitemap för snabbare omläsning.
+- [ ] **Case före/efter** – skicka foton + ort → bygg referens-sektion.
+- [ ] Nästa contentomgång: efter GSC-data (near-miss pos 8–20) ~15 sep.
+
 ## Logg
 - 2026-09-06: Fas 1b — +friggebod, +fritidshus (bygg), +attefallshus-regler, +vad-kostar-bygga-hus (near-miss). Ads-kampanjplan i docs/ads-plan.md. 61 sidor, validering grön (0 trasiga/orphans, 143 JSON-LD).
 - 2026-09-06: LIVE i prod via FTP-autodeploy (GitHub Actions). Sitemap submittad + "Success" i GSC (47 URL). Kontaktformulär byggt utan tredjepart (`sendmail.php` → info@villatakservice.se, honeypot + validering + tack.html). Testat: valid→tack, ogiltig→fel, honeypot→tyst.
