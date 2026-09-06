@@ -30,8 +30,8 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps            # byt till "ftp" om din host inte stödjer FTPS
-          # FTP-kontot (s154755) landar i /home/s154755/ ; webbroten är domänens public_html:
-          server-dir: /home/s154755/domains/villatakservice.se/public_html/
+          # FTP-kontot landar i /home/s154755/ (FTP-roten). Relativ sökväg till webbroten:
+          server-dir: domains/villatakservice.se/public_html/
           local-dir: ./
           # Ladda INTE upp interna filer/mappar till webbservern:
           exclude: |
