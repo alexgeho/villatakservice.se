@@ -122,6 +122,7 @@ Tillämpat på villatakservice.se:
 - ☐ Kvar (ägare/funktion): kontaktformulärets `action="#"` behöver riktig hanterare (Formspree/Getform/hosting); ev. äkta dark-tema via `prefers-color-scheme`.
 
 ## Logg
+- 2026-09-06: LIVE i prod via FTP-autodeploy (GitHub Actions). Sitemap submittad + "Success" i GSC (47 URL). Kontaktformulär byggt utan tredjepart (`sendmail.php` → info@villatakservice.se, honeypot + validering + tack.html). Testat: valid→tack, ogiltig→fel, honeypot→tyst.
 - 2026-09-06: UX/UI + a11y + prestanda: focus/skip-link/reduced-motion/scroll-margin, favicon, 404, självhostat Inter, lokala webp-bilder. 0 externa resurser kvar.
 - 2026-09-06: E-E-A-T-audit (bygghub.nu) genomläst; tillämpliga punkter inarbetade — integritetspolicy, FAQ-sida, förstärkt kontakt/om-oss. 47 sidor totalt, validering grön (0 trasiga, 0 orphans, 105 JSON-LD ok).
 - 2026-09-06: Audit klar. Brief + worklog uppdaterade med autonomt läge + topical-authority-addendum.
