@@ -174,6 +174,7 @@ Tillämpat på villatakservice.se:
 - [ ] Nästa contentomgång: efter GSC-data (near-miss pos 8–20) ~15 sep.
 
 ## Logg
+- 2026-09-07: **GSC-fix "Duplicate without user-selected canonical"** → `.htaccess` med 301 (http→https, www→icke-www, /index.html→/) + säkerhetsheaders (HSTS, nosniff, X-Frame, Referrer/Permissions-Policy) + cache-headers. Verifierat LIVE: alla redirects 301 rätt, headers aktiva. Full teknisk audit körd: 0 dubbletttitlar/desc, alla canonicals rätt host, 59/59 sitemap-URL:er = 200, 404 ger 404, 143 JSON-LD valida, sitemap lastmod färsk. **Ägaren:** klicka "VALIDATE FIX" i GSC på duplicate-felet. Kvar (valfritt): titlar >60 tecken (kosmetiskt), OSM-kart-iframe på kontakt = enda externa requesten.
 - 2026-09-06: Fas 1b — +friggebod, +fritidshus (bygg), +attefallshus-regler, +vad-kostar-bygga-hus (near-miss). Ads-kampanjplan i docs/ads-plan.md. 61 sidor, validering grön (0 trasiga/orphans, 143 JSON-LD).
 - 2026-09-06: LIVE i prod via FTP-autodeploy (GitHub Actions). Sitemap submittad + "Success" i GSC (47 URL). Kontaktformulär byggt utan tredjepart (`sendmail.php` → info@villatakservice.se, honeypot + validering + tack.html). Testat: valid→tack, ogiltig→fel, honeypot→tyst.
 - 2026-09-06: UX/UI + a11y + prestanda: focus/skip-link/reduced-motion/scroll-margin, favicon, 404, självhostat Inter, lokala webp-bilder. 0 externa resurser kvar.
