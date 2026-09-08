@@ -87,3 +87,129 @@
     node.textContent = String(new Date().getFullYear());
   });
 })();
+
+/* =====================================================================
+   Consent Mode v2 + GA4 + Meta Pixel  (samtyckesstyrd spårning)
+   ---------------------------------------------------------------------
+   All spårning är avstängd (denied) tills besökaren aktivt accepterar.
+   [OWNER] Fyll i era ID:n nedan – tomma värden = ingen spårning laddas.
+   ===================================================================== */
+(function () {
+  // [OWNER] GA4 Measurement ID, t.ex. "G-XXXXXXXXXX". Tomt = GA4 laddas ej.
+  var GA4_ID = "";
+  // [OWNER] Meta (Facebook) Pixel ID, t.ex. "123456789012345". Tomt = pixel laddas ej.
+  var META_PIXEL_ID = "";
+  var STORAGE_KEY = "vts_consent"; // "granted" | "denied"
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = window.gtag || gtag;
+
+  // Consent Mode v2 – DEFAULT DENIED (måste sättas före all laddning)
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+    functionality_storage: "granted",
+    security_storage: "granted",
+    wait_for_update: 500
+  });
+
+  var gaLoaded = false, metaLoaded = false;
+
+  function currentFile() {
+    return (window.location.pathname.split("/").pop() || "").toLowerCase();
+  }
+
+  function fireLeadConversion() {
+    if (!GA4_ID) return;
+    if (currentFile() === "tack.html") {
+      gtag("event", "generate_lead", {
+        currency: "SEK",
+        value: 0,
+        event_category: "contact",
+        event_label: "kontaktformular"
+      });
+    }
+  }
+
+  function loadGA4() {
+    if (gaLoaded || !GA4_ID) return;
+    gaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA4_ID);
+    document.head.appendChild(s);
+    gtag("js", new Date());
+    gtag("config", GA4_ID, { anonymize_ip: true });
+    fireLeadConversion();
+  }
+
+  function loadMetaPixel() {
+    if (metaLoaded || !META_PIXEL_ID) return;
+    metaLoaded = true;
+    /* Standard Meta Pixel bootstrap – laddas endast efter samtycke */
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = "2.0";
+      n.queue = []; t = b.createElement(e); t.async = !0; t.src = v;
+      s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+    }(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
+    window.fbq("init", META_PIXEL_ID);
+    window.fbq("track", "PageView");
+    if (currentFile() === "tack.html") { window.fbq("track", "Lead"); }
+  }
+
+  function grantConsent() {
+    gtag("consent", "update", {
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      analytics_storage: "granted"
+    });
+    loadGA4();
+    loadMetaPixel();
+  }
+
+  function persist(v) { try { window.localStorage.setItem(STORAGE_KEY, v); } catch (e) {} }
+  function read() { try { return window.localStorage.getItem(STORAGE_KEY); } catch (e) { return null; } }
+
+  function showBanner() {
+    if (document.getElementById("cookie-banner")) return;
+    var b = document.createElement("div");
+    b.id = "cookie-banner";
+    b.className = "cookie-banner";
+    b.setAttribute("role", "dialog");
+    b.setAttribute("aria-live", "polite");
+    b.setAttribute("aria-label", "Samtycke till cookies");
+    b.innerHTML =
+      '<div class="cookie-banner__inner">' +
+      '<p class="cookie-banner__text">Vi använder cookies för att mäta och förbättra webbplatsen. ' +
+      'Du väljer själv – inget laddas innan du samtycker. Läs mer i vår ' +
+      '<a href="integritetspolicy.html">integritetspolicy</a>.</p>' +
+      '<div class="cookie-banner__actions">' +
+      '<button type="button" class="btn btn-secondary" data-cc="deny">Endast nödvändiga</button>' +
+      '<button type="button" class="btn btn-primary" data-cc="accept">Acceptera alla</button>' +
+      '</div>' +
+      '</div>';
+    (document.body || document.documentElement).appendChild(b);
+    b.querySelector('[data-cc="accept"]').addEventListener("click", function () {
+      persist("granted"); grantConsent(); b.parentNode && b.parentNode.removeChild(b);
+    });
+    b.querySelector('[data-cc="deny"]').addEventListener("click", function () {
+      persist("denied"); b.parentNode && b.parentNode.removeChild(b);
+    });
+  }
+
+  var stored = read();
+  if (stored === "granted") {
+    grantConsent();
+  } else if (stored === "denied") {
+    /* behåll denied – ingen spårning */
+  } else {
+    showBanner();
+  }
+})();

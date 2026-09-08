@@ -1081,3 +1081,99 @@ textarea:focus-visible,
   margin: 0 0 16px;
   font-size: 0.95rem;
 }
+
+/* ---- Cookie-/samtyckesbanner ---- */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background: var(--color-dark);
+  color: #fff;
+  box-shadow: 0 -2px 16px rgba(0, 0, 0, 0.25);
+}
+.cookie-banner__inner {
+  width: min(100% - 40px, var(--container));
+  margin: 0 auto;
+  padding: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  justify-content: space-between;
+}
+.cookie-banner__text {
+  margin: 0;
+  flex: 1 1 320px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #e5e7eb;
+}
+.cookie-banner__text a {
+  color: #fff;
+  text-decoration: underline;
+}
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+@media (max-width: 560px) {
+  .cookie-banner__actions {
+    width: 100%;
+  }
+  .cookie-banner__actions .btn {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
+
+/* ---- Kalkylator (takbyte-uppskattning) ---- */
+.calc-wrap {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: start;
+}
+@media (max-width: 820px) {
+  .calc-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+.calc-form .field {
+  margin-bottom: 16px;
+}
+.calc-result {
+  background: var(--color-section);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.calc-result__figure {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 4px 0 2px;
+  line-height: 1.15;
+}
+.calc-result__label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  margin: 0;
+}
+.calc-result__rot {
+  margin: 16px 0;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+.calc-disclaimer {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  margin-top: 16px;
+}
+.calc-result[hidden] {
+  display: none;
+}
