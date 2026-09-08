@@ -598,50 +598,143 @@ page(file="omraden.html",
       </section>""")
 
 # ====================== LOCATION PAGES ====================================
-# Per ort: (intro, lokalt stycke, aside-items)
+# Per ort: dict med intro (hero-lead), paras (>=3 unika lokala stycken),
+# items (aside-punkter) och faq (unik lokal FAQ). [OWNER] Riktiga lokala
+# priser/kundcase kan tillföras senare för ännu starkare E-E-A-T.
 LOC = {
- "Sundbyberg": (
-   "Sundbyberg är ett av våra närmaste arbetsområden – vi finns precis intill i Bromma (Mariehäll). Här känner vi husen, taken och de lokala förutsättningarna, från äldre villor i Duvbo och Storskogen till nyare bebyggelse. Vi är takläggare i Sundbyberg för takbyte, takrenovering och takbesiktning.",
-   "Duvbos äldre trävillor har ofta branta tegeltak där underlagspapp och läkt kan behöva bytas, medan flerbostadshus närmare centrum ofta har plåt- eller papptak. Vår närhet gör att vi snabbt kan komma ut på besiktning.",
-   ["Grannområde till vår bas i Bromma – kort inställelsetid.","Erfarenhet av Duvbos äldre trävillor.","Takbyte, renovering och besiktning."]),
- "Solna": (
-   "Solna gränsar till Sundbyberg och är ett av våra vanligaste arbetsområden. Vi hjälper villaägare i bland annat Bergshamra, Huvudsta och Råsunda med takbyte, takrenovering och plåtarbeten.",
-   "Villaområdena i Solna blandar hus från olika epoker, och många tak från mitten av 1900-talet börjar nå slutet av sin livslängd. Det gör att både takomläggning och fullt takbyte är vanligt här.",
-   ["Nära Sundbyberg – snabb service.","Erfarenhet av 1900-talsvillor.","Villatak i Bergshamra, Huvudsta, Råsunda."]),
- "Bromma": (
-   "Bromma i västerort är vårt hemmaområde – vi utgår härifrån (Mariehäll) och känner västerorts villor väl. Vi är takläggare i Bromma för villor i bland annat Ängby, Nockeby, Äppelviken och Bromma Kyrka.",
-   "Många villor i Ängby och Äppelviken är från 1920–40-talet med tegeltak och karaktärsfulla detaljer. Här är det viktigt att bevara husets uttryck vid takbyte, samtidigt som underlag och plåt moderniseras.",
-   ["Lokal takfirma med bas i Bromma.","Varsamt takbyte på äldre villor.","Tegel-, betong- och plåttak."]),
- "Spånga": (
-   "Spånga och Tensta–Spånga är ett stort villaområde i nordvästra Stockholm. Vi hjälper villaägare i Spånga, Bromsten och Solhem med takbyte, takrenovering och takbesiktning.",
-   "Spångas villabebyggelse är blandad, med både äldre trävillor och 1960–70-talshus. Många tak från den perioden är nu mogna för omläggning eller byte, ofta i kombination med nya hängrännor och taksäkerhet.",
-   ["Villatak i Spånga, Bromsten, Solhem.","Erfarenhet av 60–70-talshus.","Takbyte med ny avvattning."]),
- "Sollentuna": (
-   "Sollentuna norr om Stockholm har omfattande villabebyggelse. Vi är takläggare i Sollentuna för villor i bland annat Edsberg, Helenelund, Tureberg och Viby.",
-   "Kupolen av villor i Sollentuna spänner från äldre hus till moderna. Snölaster och trädnära lägen gör att många tak behöver taktvätt och kontroll av avvattning utöver själva takbytet.",
-   ["Villatak i Edsberg och Helenelund.","Kontroll av snölast och avvattning.","Takbyte, renovering och taktvätt."]),
- "Järfälla": (
-   "Järfälla med Jakobsberg, Kallhäll och Viksjö är ett växande villaområde nordväst om Stockholm. Vi hjälper villaägare i Järfälla med takbyte, takrenovering och plåtarbeten.",
-   "Viksjös stora villaområde byggdes till stor del på 1970–80-talet, och många av dessa tak når nu en ålder där byte eller omläggning är aktuellt. Vi ser ofta slitna betongpannor och underlagspapp här.",
-   ["Villatak i Jakobsberg, Kallhäll, Viksjö.","Byte av mogna 70–80-talstak.","Betongpannor och plåt."]),
- "Täby": (
-   "Täby nordost om Stockholm är ett av regionens största villaområden. Vi är takläggare i Täby för villor i bland annat Näsbypark, Gribbylund, Viggbyholm och Roslags-Näsby.",
-   "Näsbypark och Viggbyholm har många äldre, påkostade villor där takets uttryck är viktigt, medan nyare områden har moderna tak. Vi anpassar material och lösningar efter husets karaktär.",
-   ["Villatak i Näsbypark och Gribbylund.","Varsamt takbyte på påkostade villor.","Anpassat materialval."]),
- "Danderyd": (
-   "Danderyd med Djursholm, Stocksund och Enebyberg har några av regionens mest påkostade villor. Vi är takläggare i Danderyd för takbyte, takrenovering och plåtarbeten på villatak.",
-   "Djursholms äldre villor har ofta komplexa tak med torn, valmar och detaljerade plåtarbeten. Här krävs erfarenhet av att kombinera bevarat uttryck med moderna, täta lösningar.",
-   ["Villatak i Djursholm och Stocksund.","Erfarenhet av komplexa villatak.","Detaljerade plåtarbeten."]),
- "Lidingö": (
-   "Lidingö är en ö öster om Stockholm med stor villabebyggelse. Vi hjälper villaägare på Lidingö i bland annat Bodal, Larsberg, Sticklinge och Käppala med takbyte och plåtarbeten.",
-   "Det havsnära läget innebär salt luft som ställer extra krav på plåt och infästningar – korrosion är vanligare här. Vi väljer material och ytbehandling som klarar Lidingös kustklimat.",
-   ["Villatak på Lidingö.","Materialval för salt havsluft.","Plåttak och korrosionsskydd."]),
- "Nacka": (
-   "Nacka öster om Stockholm har omfattande villabebyggelse i bland annat Saltsjöbaden, Boo, Älta och Fisksätra. Vi är takläggare i Nacka för takbyte, takrenovering och takbesiktning.",
-   "Saltsjöbadens äldre, ofta stora villor har varierade tak med både tegel och plåt, och det kustnära läget påverkar slitaget. Vi anpassar åtgärder efter husets ålder och exponering.",
-   ["Villatak i Saltsjöbaden och Boo.","Erfarenhet av stora, äldre villor.","Kustnära materialval."]),
+ "Sundbyberg": {
+   "intro": "Sundbyberg är ett av våra närmaste arbetsområden – vi finns precis intill i Bromma (Mariehäll). Här känner vi husen, taken och de lokala förutsättningarna, från äldre villor i Duvbo och Storskogen till nyare bebyggelse. Vi är takläggare i Sundbyberg för takbyte, takrenovering och takbesiktning.",
+   "paras": [
+     "Sundbyberg är en av Sveriges till ytan minsta men tätaste kommuner, och bebyggelsen växlar snabbt mellan äldre trävillor och nyare flerbostadshus. I villaområden som Duvbo, Storskogen och Lilla Alby dominerar branta sadeltak med tegel- eller betongpannor, ofta från tidigt 1900-tal, där underlagspapp och läkt hunnit bli spröda.",
+     "Duvbos kulturhistoriska trähusmiljö ställer särskilda krav – här är det viktigt att bevara takets uttryck och detaljer vid ett takbyte, samtidigt som vi moderniserar underlag, plåt och avvattning. Närmare centrum och Rissne finns fler flerbostadshus med plåt- och papptak, där vi arbetar med tätskikt och plåtdetaljer.",
+     "Eftersom vår bas ligger i Mariehäll i Bromma, bara minuter från Sundbyberg, har vi kort inställelsetid för besiktning och kan snabbt vara på plats vid akuta läckage. Vi känner de lokala förutsättningarna – från smala gator i Duvbo som påverkar ställning och etablering till snölaster på norrvända tak.",
+   ],
+   "items": ["Grannområde till vår bas i Bromma – kort inställelsetid.","Erfarenhet av Duvbos äldre trävillor och kulturmiljö.","Takbyte, renovering, besiktning och plåtarbeten."],
+   "faq": [
+     ("Hur snabbt kan ni vara på plats i Sundbyberg?","Eftersom vi utgår från Mariehäll i Bromma, granne med Sundbyberg, har vi mycket kort inställelsetid och kan oftast boka en besiktning inom några dagar – och rycka ut snabbare vid akuta läckage."),
+     ("Får jag byta tak i Duvbo utan tillstånd?","Duvbo har en kulturhistoriskt värdefull trähusmiljö där kommunen kan ha särskilda krav vid byte av material eller kulör. Ett byte med likvärdigt utseende kräver oftast inte bygglov, men vi hjälper dig bedöma och du stämmer av med Sundbybergs stad."),
+     ("Arbetar ni med både villor och flerbostadshus i Sundbyberg?","Ja. Vi byter och renoverar villatak i Duvbo och Storskogen och utför plåt- och tätskiktsarbeten på flerbostadshus närmare centrum och Rissne."),
+   ]},
+ "Solna": {
+   "intro": "Solna gränsar till Sundbyberg och är ett av våra vanligaste arbetsområden. Vi hjälper villaägare i bland annat Bergshamra, Huvudsta och Råsunda med takbyte, takrenovering och plåtarbeten.",
+   "paras": [
+     "Solna gränsar direkt till både Sundbyberg och Bromma, och villabebyggelsen är koncentrerad till områden som Bergshamra, Huvudsta, Råsunda och Skytteholm. Många villor är byggda mellan 1920- och 1960-talet, och en stor andel av taken närmar sig nu slutet av sin tekniska livslängd.",
+     "I Råsunda och Huvudsta ser vi ofta klassiska tegeltak där pannorna är hela men underlagspapp och läkt är uttjänta – då räcker det ibland med en takomläggning istället för fullt byte. I Bergshamra, med inslag av 1960-talshus och lägre lutningar, är plåt- och papptak vanligare.",
+     "Solnas blandning av epoker gör att vi nästan alltid börjar med en besiktning för att avgöra rätt åtgärdsnivå. Vår närhet till Solna innebär att vi kan hålla tät kontakt genom hela projektet och snabbt komma ut på uppföljning.",
+   ],
+   "items": ["Granne med vår bas – snabb service i hela Solna.","Erfarenhet av 1920–60-talsvillor.","Villatak i Bergshamra, Huvudsta, Råsunda."],
+   "faq": [
+     ("Vilka delar av Solna arbetar ni i?","Vi tar takuppdrag i hela Solna, bland annat Bergshamra, Huvudsta, Råsunda, Skytteholm och Järva – både villor och mindre fastigheter."),
+     ("Räcker det med takomläggning på mitt Solna-hus?","På många äldre tegeltak i Råsunda och Huvudsta är pannorna hela medan underlaget är slitet – då kan en omläggning räcka. En besiktning ger säkert svar."),
+     ("Hur nära ligger ni Solna?","Vi utgår från Mariehäll i Bromma, som gränsar till Solna, vilket ger korta restider och snabb service."),
+   ]},
+ "Bromma": {
+   "intro": "Bromma i västerort är vårt hemmaområde – vi utgår härifrån (Mariehäll) och känner västerorts villor väl. Vi är takläggare i Bromma för villor i bland annat Ängby, Nockeby, Äppelviken och Bromma Kyrka.",
+   "paras": [
+     "Bromma i västra Stockholm är vårt hemmaområde – vi utgår från Mariehäll och känner västerorts villor in i minsta detalj. I klassiska trädgårdsstäder som Ängby, Äppelviken, Nockeby och Smedslätten är många hus från 1920–40-talet, ofta med branta tegeltak och karaktärsfulla takdetaljer som vi är vana att bevara.",
+     "Äppelviken och Ålsten har en enhetlig villakaraktär där husens uttryck värnas; vid takbyte här är det avgörande att välja pannor och plåtkulörer som passar områdets stil. I nyare delar och radhusområden förekommer också låglutande tak och plåtlösningar.",
+     "Som lokal takfirma med bas mitt i Bromma har vi mycket korta avstånd till jobben, vilket gör etablering, ställning och uppföljning enkla. Vi känner de lokala förutsättningarna – från stora lövträd som fyller hängrännor till snölaster på norrsidor.",
+   ],
+   "items": ["Lokal takfirma med bas mitt i Bromma.","Varsamt takbyte i trädgårdsstäderna Ängby/Äppelviken.","Tegel-, betong- och plåttak."],
+   "faq": [
+     ("Ni utgår från Bromma – vad betyder det för mig?","Att vi har hemmaplan: kort inställelsetid, enkel etablering och snabb uppföljning eftersom våra jobb ofta ligger bara minuter bort."),
+     ("Kan ni bevara husets stil vid takbyte i Äppelviken eller Ängby?","Ja, det är en av våra specialiteter. Vi väljer pannor, plåt och detaljer som bevarar trädgårdsstadens uttryck och moderniserar samtidigt underlag och avvattning."),
+     ("Vilka takmaterial passar Brommas villor?","Tegel och betong dominerar på de branta sadeltaken, medan plåt passar lägre lutningar. Vi anpassar valet efter husets ålder och områdets karaktär."),
+   ]},
+ "Spånga": {
+   "intro": "Spånga och Tensta–Spånga är ett stort villaområde i nordvästra Stockholm. Vi hjälper villaägare i Spånga, Bromsten och Solhem med takbyte, takrenovering och takbesiktning.",
+   "paras": [
+     "Spånga i nordvästra Stockholm är ett stort och blandat villaområde som omfattar bland annat Bromsten, Solhem, Sundby och Flysta. Bebyggelsen spänner från äldre trävillor till 1960- och 70-talshus, och många av taken från efterkrigstiden är nu mogna för omläggning eller byte.",
+     "I Solhem och Flysta ser vi ofta betongpannor från 60–70-talet som börjat vittra, tillsammans med underlagspapp som passerat sin livslängd. I sådana projekt byter vi gärna hängrännor, stuprör och taksäkerhet i samma omgång för ett komplett resultat.",
+     "Spånga ligger nära vår bas i Bromma, vilket gör det enkelt för oss att komma ut på besiktning och hålla tempo i projekten. Vi anpassar alltid åtgärderna efter husets ålder och det aktuella takets skick.",
+   ],
+   "items": ["Villatak i Spånga, Bromsten, Solhem, Flysta.","Erfarenhet av 60–70-talens betongpannetak.","Takbyte med ny avvattning och taksäkerhet."],
+   "faq": [
+     ("Vilka områden i Spånga arbetar ni i?","Vi tar takuppdrag i hela Spånga, bland annat Bromsten, Solhem, Sundby och Flysta."),
+     ("Mina betongpannor från 70-talet vittrar – måste jag byta hela taket?","Ofta ja, om både pannor och underlag är uttjänta. Men en besiktning avgör – ibland räcker en omläggning med nytt underlag."),
+     ("Byter ni hängrännor samtidigt som taket i Spånga?","Ja, vi rekommenderar ofta att byta avvattning och taksäkerhet i samma projekt för ett komplett och långsiktigt resultat."),
+   ]},
+ "Sollentuna": {
+   "intro": "Sollentuna norr om Stockholm har omfattande villabebyggelse. Vi är takläggare i Sollentuna för villor i bland annat Edsberg, Helenelund, Tureberg och Viby.",
+   "paras": [
+     "Sollentuna norr om Stockholm har omfattande villabebyggelse i områden som Edsberg, Helenelund, Tureberg, Viby och Norrviken. Husen varierar från äldre villor till moderna, och de trädnära, ibland kuperade lägena påverkar hur taken slits.",
+     "Många villor i Sollentuna ligger nära skog och stora träd, vilket ger mer mossa, löv i hängrännor och skuggiga takytor som håller kvar fukt. Här är taktvätt, rensning av avvattning och kontroll av norrvända ytor ofta lika viktigt som själva takbytet.",
+     "Snölaster är också en faktor i Sollentuna, särskilt på större tak, och vi ser gärna över taksäkerhet och snörasskydd i samband med ett byte. Vi når Sollentuna smidigt och planerar projekten efter husets läge och exponering.",
+   ],
+   "items": ["Villatak i Edsberg, Helenelund, Tureberg, Viby.","Taktvätt och avvattning för trädnära, skuggiga tak.","Snörasskydd och taksäkerhet vid snölaster."],
+   "faq": [
+     ("Mitt tak i Sollentuna är mossigt och skuggigt – vad gör ni?","Skuggiga, trädnära tak håller kvar fukt och drar åt sig mossa. Vi tvättar skonsamt, rensar avvattningen och kan förebygga ny påväxt – och bedömer om taket samtidigt behöver åtgärdas."),
+     ("Behöver jag snörasskydd i Sollentuna?","På många tak, särskilt över entréer och gångytor, är snörasskydd klokt med tanke på snölasterna. Vi ser över taksäkerheten vid besiktning."),
+     ("Vilka delar av Sollentuna arbetar ni i?","Hela kommunen – bland annat Edsberg, Helenelund, Tureberg, Viby och Norrviken."),
+   ]},
+ "Järfälla": {
+   "intro": "Järfälla med Jakobsberg, Kallhäll och Viksjö är ett växande villaområde nordväst om Stockholm. Vi hjälper villaägare i Järfälla med takbyte, takrenovering och plåtarbeten.",
+   "paras": [
+     "Järfälla nordväst om Stockholm växer snabbt och har stora villaområden i Jakobsberg, Kallhäll, Viksjö och Barkarby. Särskilt Viksjö byggdes ut kraftigt under 1970- och 80-talet, och många av dessa tak når nu en ålder där byte eller omläggning är aktuellt.",
+     "I Viksjö och Kallhäll ser vi ofta slitna betongpannor och uttjänt underlagspapp på hus av liknande årgång – ibland hela gaturader med samma behov. Det gör att vi kan planera effektivt och ge tydliga besked om vad som behöver göras.",
+     "Vi hjälper Järfällas villaägare med allt från punktinsatser mot läckage till kompletta takbyten med ny avvattning och taksäkerhet. Barkarbys expansion innebär också nyare bebyggelse där vi utför plåtarbeten och detaljlösningar.",
+   ],
+   "items": ["Villatak i Jakobsberg, Kallhäll, Viksjö, Barkarby.","Byte av mogna 70–80-talstak.","Betongpannor, plåt och ny avvattning."],
+   "faq": [
+     ("Många hus i Viksjö har samma ålder – kan ni ge pris snabbt?","Ofta går det snabbt. Eftersom bebyggelsen är enhetlig känner vi igen konstruktionerna väl, men vi ger alltid fast pris efter ett platsbesök."),
+     ("Vilka områden i Järfälla arbetar ni i?","Hela Järfälla, bland annat Jakobsberg, Kallhäll, Viksjö och Barkarby."),
+     ("Mina betongpannor i Kallhäll är från 80-talet – hur länge håller de?","Betongpannor håller ofta 30–50 år, men underlagspappen har kortare liv. Efter 40 år är det klokt att låta besikta både pannor och underlag."),
+   ]},
+ "Täby": {
+   "intro": "Täby nordost om Stockholm är ett av regionens största villaområden. Vi är takläggare i Täby för villor i bland annat Näsbypark, Gribbylund, Viggbyholm och Roslags-Näsby.",
+   "paras": [
+     "Täby nordost om Stockholm är ett av regionens största villaområden, med stadsdelar som Näsbypark, Gribbylund, Viggbyholm, Roslags-Näsby och Skarpäng. Bebyggelsen spänner från äldre, påkostade villor till moderna hus, vilket ställer olika krav på takarbetet.",
+     "I Näsbypark och Viggbyholm finns många större, arkitektoniskt påkostade villor där takets uttryck och detaljer är viktiga – valmade tak, takkupor och synlig plåt kräver erfarenhet och noggrant hantverk. I nyare områden som Gribbylund och Arninge är taken ofta enklare men med moderna materialkrav.",
+     "Vi anpassar alltid material och lösningar efter husets karaktär och ålder, och lägger stor vikt vid täta anslutningar och snygga plåtdetaljer. Täby når vi smidigt och vi planerar projekten efter husets stil och läge.",
+   ],
+   "items": ["Villatak i Näsbypark, Gribbylund, Viggbyholm.","Varsamt takbyte på påkostade villor med valmade tak.","Anpassat materialval och detaljerade plåtarbeten."],
+   "faq": [
+     ("Kan ni hantera påkostade villatak i Näsbypark?","Ja, vi är vana vid större villor med valmade tak, kupor och detaljerade plåtarbeten där både täthet och utseende måste bli rätt."),
+     ("Vilka delar av Täby arbetar ni i?","Hela Täby, bland annat Näsbypark, Gribbylund, Viggbyholm, Roslags-Näsby och Skarpäng."),
+     ("Vi har ett modernt hus i Gribbylund – tar ni mindre takjobb också?","Ja, allt från punktinsatser och plåtdetaljer till kompletta byten – oavsett husets ålder."),
+   ]},
+ "Danderyd": {
+   "intro": "Danderyd med Djursholm, Stocksund och Enebyberg har några av regionens mest påkostade villor. Vi är takläggare i Danderyd för takbyte, takrenovering och plåtarbeten på villatak.",
+   "paras": [
+     "Danderyd med Djursholm, Stocksund, Enebyberg och Danderyds villastad har några av Stockholmsregionens mest påkostade villor. Här är taken ofta stora och komplexa, med torn, valmar, kupor och detaljerade plåtarbeten som kräver van hand.",
+     "Djursholms sekelskiftesvillor har ofta kulturhistoriskt värde där husets uttryck måste bevaras vid takbyte – rätt val av tegel eller plåt och ett varsamt utförande är avgörande. Samtidigt moderniserar vi underlag, tätskikt och avvattning så att taket blir tätt för lång tid framåt.",
+     "Komplexa tak innebär fler anslutningar och riskpunkter, och vi lägger särskild vikt vid plåt kring skorstenar, takfönster och genomföringar. Vi arbetar noggrant och dokumenterat, vilket passar den här typen av fastigheter.",
+   ],
+   "items": ["Villatak i Djursholm, Stocksund, Enebyberg.","Erfarenhet av komplexa tak med torn, valmar och kupor.","Detaljerade, dokumenterade plåtarbeten."],
+   "faq": [
+     ("Har ni erfarenhet av Djursholms äldre, komplexa villatak?","Ja. Vi arbetar med torn, valmar, kupor och detaljerad plåt, och kombinerar bevarat uttryck med moderna, täta lösningar."),
+     ("Kan husets karaktär bevaras vid takbyte i Djursholm?","Absolut – vi väljer material och kulörer som bevarar sekelskiftesvillans stil och utför arbetet varsamt."),
+     ("Vilka områden i Danderyd arbetar ni i?","Hela Danderyd, bland annat Djursholm, Stocksund, Enebyberg och Danderyds villastad."),
+   ]},
+ "Lidingö": {
+   "intro": "Lidingö är en ö öster om Stockholm med stor villabebyggelse. Vi hjälper villaägare på Lidingö i bland annat Bodal, Larsberg, Sticklinge och Käppala med takbyte och plåtarbeten.",
+   "paras": [
+     "Lidingö är en ö öster om Stockholm med stor och varierad villabebyggelse i områden som Bodal, Larsberg, Sticklinge, Käppala och Brevik. Det havsnära läget präglar både husen och deras tak.",
+     "Den salta, fuktiga havsluften ställer extra krav på plåt, beslag och infästningar – korrosion är betydligt vanligare här än inåt land. Vi väljer material, ytbehandling och rostskydd som klarar Lidingös kustklimat och ser noga över plåtdetaljer och avvattning.",
+     "Många villor på Lidingö har utsatta lägen med både vind och sol, vilket sliter på ytskikt. Vid takbyte och plåtarbeten här prioriterar vi korrosionsbeständiga lösningar och täta anslutningar för lång livslängd.",
+   ],
+   "items": ["Villatak i Bodal, Larsberg, Sticklinge, Käppala.","Materialval och rostskydd för salt havsluft.","Plåttak och korrosionsbeständiga lösningar."],
+   "faq": [
+     ("Varför är plåt extra utsatt på Lidingö?","Den salta havsluften påskyndar korrosion. Vi väljer korrosionsbeständig plåt och rätt ytbehandling så att taket håller trots kustklimatet."),
+     ("Vilka delar av Lidingö arbetar ni i?","Hela Lidingö, bland annat Bodal, Larsberg, Sticklinge, Käppala och Brevik."),
+     ("Kan ni rostskydda och måla befintligt plåttak på Lidingö?","Ja, om konstruktionen är sund kan tvätt, rostskydd och målning förlänga takets liv – ett kostnadseffektivt alternativ till byte."),
+   ]},
+ "Nacka": {
+   "intro": "Nacka öster om Stockholm har omfattande villabebyggelse i bland annat Saltsjöbaden, Boo, Älta och Fisksätra. Vi är takläggare i Nacka för takbyte, takrenovering och takbesiktning.",
+   "paras": [
+     "Nacka öster om Stockholm har omfattande villabebyggelse i bland annat Saltsjöbaden, Boo, Älta, Fisksätra och Nacka strand. Terrängen är ofta kuperad och kustnära, vilket påverkar både hus och tak.",
+     "Saltsjöbadens äldre, ofta stora villor har varierade tak med både tegel och plåt, och det kustnära läget innebär salt luft och väderexponering som sliter på ytskikt och plåt. I Boo och Älta finns en blandning av äldre och nyare hus med skiftande takbehov.",
+     "Vi anpassar åtgärder efter husets ålder, läge och exponering, och lägger vikt vid korrosionsbeständiga plåtlösningar och god avvattning på de kustnära taken. Nacka når vi via goda förbindelser och planerar projekten efter tomtens förutsättningar.",
+   ],
+   "items": ["Villatak i Saltsjöbaden, Boo, Älta, Fisksätra.","Erfarenhet av stora, äldre villatak i tegel och plåt.","Kustnära, korrosionsbeständigt materialval."],
+   "faq": [
+     ("Har ni erfarenhet av stora villatak i Saltsjöbaden?","Ja, vi arbetar med äldre, stora villor som ofta har komplexa tak i både tegel och plåt, och anpassar lösningarna efter det kustnära läget."),
+     ("Vilka delar av Nacka arbetar ni i?","Hela Nacka, bland annat Saltsjöbaden, Boo, Älta, Fisksätra och Nacka strand."),
+     ("Påverkar det kustnära läget mitt tak i Nacka?","Ja, salt luft och väder sliter mer på plåt och ytskikt. Vi väljer korrosionsbeständiga material och ser extra noga över avvattning."),
+   ]},
 }
-for _ort,(intro,localp,items) in LOC.items():
+for _ort, _d in LOC.items():
+    intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]; cityfaq = _d["faq"]
     f = _area_files[_ort]
     others = [o for o in AREAS if o!=_ort][:3]
     page(file=f,
@@ -653,7 +746,7 @@ for _ort,(intro,localp,items) in LOC.items():
       body=hero(f"Takläggare i {_ort}", intro,
         [("Hem","index.html"),("Områden","omraden.html"),(_ort,f)],
         [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
-        + sec(f"Takläggare i {_ort} – lokalt och nära", [localp,
+        + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar även i grannområden – se alla {a('omraden.html','områden vi arbetar i')}."], sid="lokalt")
         + links_block(f"Våra tjänster i {_ort}", [
             ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
@@ -665,10 +758,7 @@ for _ort,(intro,localp,items) in LOC.items():
             f"Takläggare i {_ort}", items)
         + links_block("Närliggande områden", [
             (_area_files[o], f"Takläggare i {o}", f"Vi arbetar även i {o}.") for o in others]),
-      faq=[
-        (f"Arbetar ni med villatak i {_ort}?", f"Ja, vi är takläggare specialiserade på villatak och arbetar i hela {_ort} med takbyte, takrenovering, besiktning och plåtarbeten."),
-        (f"Hur snabbt kan ni komma ut i {_ort}?", f"Eftersom vi utgår från Bromma når vi {_ort} snabbt och kan oftast boka en besiktning inom kort. Kontakta oss så återkommer vi med tid."),
-        ("Får jag ROT-avdrag?","Ja, som villaägare får du normalt ROT-avdrag på arbetskostnaden för takarbete. Vi drar av det direkt på fakturan.")])
+      faq=cityfaq)
 
 # ====================== ARTICLES (cluster) ================================
 ART_CRUMB = [("Hem","index.html"),("Artiklar","artiklar.html")]
