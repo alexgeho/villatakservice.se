@@ -362,6 +362,7 @@ page(file="takbyte.html",
         ("Utförande","Vi river, förbereder underlag och lägger nytt tak enligt plan."),
         ("Slutkontroll","Vi går igenom resultatet med dig och dokumenterar arbetet.")], muted=True)
     + links_block("Relaterat", [
+        ("kalkylator-takbyte.html","Takbyte-kalkylator","Uppskatta priset direkt – area, material och ROT."),
         ("villatak.html","Tak på villa – komplett guide","Allt om tak på villa: material, kostnad och underhåll."),
         ("taklaggare-sundbyberg.html","Takbyte i Sundbyberg","Vi är lokala takläggare i Sundbyberg och närområdet."),
         ("bygglov-takbyte.html","Behövs bygglov för takbyte?","När takbyte kräver bygglov eller anmälan.")]),
@@ -725,7 +726,8 @@ article("vad-kostar-takbyte.html",
    ("h2","ROT-avdrag sänker kostnaden"),
    ("p",f"Som villaägare får du normalt ROT-avdrag på arbetskostnaden, vilket sänker slutpriset. Läs mer i {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."),
    ("cta",("Få ett fast pris på ditt takbyte","Boka en kostnadsfri besiktning så får du en tydlig offert med ROT-avdrag inräknat."))],
-  [("takbyte.html","Takbyte","Vår tjänst för komplett takbyte."),
+  [("kalkylator-takbyte.html","Takbyte-kalkylator","Räkna fram ett ungefärligt spann direkt."),
+   ("takbyte.html","Takbyte","Vår tjänst för komplett takbyte."),
    ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så avgör du vilket som lönar sig."),
    ("rot-avdrag-takarbete.html","ROT-avdrag för takarbete","Så mycket kan du dra av.")],
   faq=[("Är takbyte dyrare med tegel eller plåt?","Det varierar. Betongpannor är ofta billigast, medan tegel och kvalitetsplåt kostar mer. Materialvalet påverkar även livslängd och underhåll."),
@@ -1573,6 +1575,70 @@ article("vad-kostar-bygga-hus.html",
   faq=[("Är nyckelfärdigt dyrare än att bygga själv?","Nyckelfärdigt kostar mer i entreprenad men sparar tid, risk och samordning. Att bygga mer själv sänker arbetskostnaden men kräver egen insats och kunskap."),
        ("Får jag ROT när jag bygger nytt?","Nej, ROT gäller inte nybyggnation, bara renovering av befintlig bostad.")],
   badge="Kostnad", read="5 min")
+
+# ====================== KALKYLATOR (lead-magnet) =======================
+_kalkyl_tool = """      <section class="section seo-section">
+        <div class="container">
+          <div class="calc-wrap">
+            <form id="kalkyl-form" class="calc-form" novalidate>
+              <div class="field">
+                <label for="area">Takarea (m²)</label>
+                <input id="area" name="area" type="number" min="10" max="1000" step="1"
+                  placeholder="t.ex. 130" required />
+              </div>
+              <div class="field">
+                <label for="material">Takmaterial</label>
+                <select id="material" name="material" required>
+                  <option value="betong">Betongpannor</option>
+                  <option value="tegel">Tegelpannor</option>
+                  <option value="plat">Plåt (band-/profilplåt)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="lutning">Taklutning / komplexitet</label>
+                <select id="lutning" name="lutning" required>
+                  <option value="lag">Låg lutning, enkelt tak</option>
+                  <option value="normal" selected>Normalt sadeltak</option>
+                  <option value="brant">Brant eller komplext tak</option>
+                </select>
+              </div>
+              <button class="btn btn-primary" type="submit">Beräkna uppskattning</button>
+            </form>
+
+            <aside id="kalkyl-result" class="calc-result" hidden aria-live="polite">
+              <p class="calc-result__label">Ungefärligt spann (före ROT)</p>
+              <p class="calc-result__figure"><span id="kalkyl-low">–</span>–<span id="kalkyl-high">–</span> kr</p>
+              <div class="calc-result__rot">
+                <p class="calc-result__label">Uppskattat efter ROT-avdrag</p>
+                <p class="calc-result__figure"><span id="kalkyl-rot-low">–</span>–<span id="kalkyl-rot-high">–</span> kr</p>
+              </div>
+              <a id="kalkyl-cta" class="btn btn-primary" href="kontakt.html?tjanst=Takbyte#form">Få en exakt offert</a>
+              <p class="calc-disclaimer">Detta är en grov, icke-bindande uppskattning baserad på branschtypiska
+                spann – inte en offert. Verkligt pris beror på takets skick, tillgänglighet, plåtdetaljer och
+                underlag. Vi lämnar alltid fast pris efter gratis platsbesök. ROT-avdraget är beräknat på
+                uppskattad arbetskostnad (30 % 2026, max 50 000 kr/person/år, 1 ägare).</p>
+            </aside>
+          </div>
+        </div>
+      </section>"""
+
+page(file="kalkylator-takbyte.html",
+  title="Takbyte-kalkylator – uppskatta priset direkt | Geal Entreprenad AB",
+  description="Räkna ut ett ungefärligt pris för takbyte på villa: ange area, material och taklutning så får du ett prisspann före och efter ROT. Grov uppskattning, inte en offert.",
+  h1="Takbyte-kalkylator – uppskatta priset",
+  crumbs=[("Hem","index.html"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")],
+  cta=("Vill du ha ett exakt pris?","En kalkylator ger ett spann – vi ger ett fast pris efter kostnadsfritt platsbesök. Begär offert."),
+  body=hero("Takbyte-kalkylator – uppskatta priset",
+    "Få en snabb känsla för vad ett takbyte kan kosta. Ange takets area, material och lutning så visar kalkylatorn ett ungefärligt spann – både före och efter ROT-avdrag. Det är en grov uppskattning, inte en bindande offert.",
+    [("Hem","index.html"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")])
+    + _kalkyl_tool
+    + sec("Så fungerar uppskattningen", [
+        "Kalkylatorn utgår från branschtypiska kvadratmeterpriser för olika takmaterial och justerar för takets lutning och komplexitet. Priset inkluderar normalt material och arbete, men varje tak är unikt – underlagets skick, plåtdetaljer, ställningsbehov och tillgänglighet påverkar slutpriset mer än kvadratmeterpriset.",
+        f"Vill du förstå vad som styr kostnaden i detalj läser du {a('vad-kostar-takbyte.html','vad kostar ett takbyte')}. När du är redo hjälper vi dig med ett fast pris efter ett kostnadsfritt {a('takbesiktning.html','platsbesök och besiktning')}."])
+    + links_block("Nästa steg", [
+        ("takbyte.html","Takbyte","Så går ett komplett takbyte till."),
+        ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Prisguide och vad som påverkar kostnaden."),
+        ("rot-avdrag-takarbete.html","ROT-avdrag","Så mycket kan du dra av 2026.")]))
 
 # ====================== TACK (form success) ============================
 page(file="tack.html", no_cta=True, noindex=True, nolist=True,

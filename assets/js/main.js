@@ -213,3 +213,92 @@
     showBanner();
   }
 })();
+
+/* =====================================================================
+   Kalkylator: grov uppskattning av takbyte  (lead-magnet)
+   ---------------------------------------------------------------------
+   [OWNER] RATES nedan är branschtypiska spann (kr/m² inkl. material,
+   före ROT) – verifiera/justera mot era egna kalkyler. Verktyget ger
+   en icke-bindande uppskattning, aldrig en offert.
+   ===================================================================== */
+(function () {
+  var form = document.getElementById("kalkyl-form");
+  if (!form) return;
+
+  var RATES = {           // kr per m², totalt inkl. material, före ROT
+    betong: [1400, 2000],
+    tegel:  [1800, 2600],
+    plat:   [1600, 2400]
+  };
+  var COMPLEX = { lag: 0.97, normal: 1.0, brant: 1.18 };
+  var MAT_LABEL = { betong: "Betongpannor", tegel: "Tegelpannor", plat: "Plåt" };
+  var LABOUR_SHARE = 0.35;   // ungefärlig arbetskostnadsandel
+  var ROT_PCT = 0.30;        // ROT 2026: 30 % av arbetskostnaden
+  var ROT_CAP = 50000;       // kr/person/år (1 ägare)
+
+  var result = document.getElementById("kalkyl-result");
+  var elLow = document.getElementById("kalkyl-low");
+  var elHigh = document.getElementById("kalkyl-high");
+  var elRotLow = document.getElementById("kalkyl-rot-low");
+  var elRotHigh = document.getElementById("kalkyl-rot-high");
+  var elCta = document.getElementById("kalkyl-cta");
+
+  function grp(n) {
+    return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var area = parseFloat(form.elements["area"].value);
+    var mat = form.elements["material"].value;
+    var comp = form.elements["lutning"].value;
+    if (!area || area <= 0 || !RATES[mat] || !COMPLEX[comp]) {
+      form.reportValidity && form.reportValidity();
+      return;
+    }
+    var m = COMPLEX[comp];
+    var low = RATES[mat][0] * area * m;
+    var high = RATES[mat][1] * area * m;
+    var rotLow = Math.min(low * LABOUR_SHARE * ROT_PCT, ROT_CAP);
+    var rotHigh = Math.min(high * LABOUR_SHARE * ROT_PCT, ROT_CAP);
+
+    elLow.textContent = grp(low);
+    elHigh.textContent = grp(high);
+    elRotLow.textContent = grp(low - rotLow);
+    elRotHigh.textContent = grp(high - rotHigh);
+    result.hidden = false;
+
+    var msg = "Hej! Jag har använt takbyte-kalkylatorn och vill ha en kostnadsfri offert.\n\n" +
+      "Takarea: ca " + area + " m²\n" +
+      "Material: " + (MAT_LABEL[mat] || mat) + "\n" +
+      "Taklutning/komplexitet: " + form.elements["lutning"].options[form.elements["lutning"].selectedIndex].text + "\n" +
+      "Uppskattat spann (kalkylator): " + grp(low) + "–" + grp(high) + " kr, efter ROT ca " +
+      grp(low - rotLow) + "–" + grp(high - rotHigh) + " kr.";
+    if (elCta) {
+      elCta.href = "kontakt.html?tjanst=Takbyte&meddelande=" + encodeURIComponent(msg) + "#form";
+    }
+  });
+})();
+
+/* =====================================================================
+   Prefyll kontaktformuläret från query (?tjanst=&meddelande=)
+   ===================================================================== */
+(function () {
+  var form = document.querySelector('form[action="sendmail.php"]');
+  if (!form) return;
+  var p = new URLSearchParams(window.location.search);
+  var tjanst = p.get("tjanst");
+  var meddelande = p.get("meddelande");
+  if (tjanst) {
+    var sel = form.querySelector("#tjanst");
+    if (sel) {
+      Array.prototype.forEach.call(sel.options, function (o) {
+        if (o.value === tjanst || o.text === tjanst) { sel.value = o.value || o.text; }
+      });
+    }
+  }
+  if (meddelande) {
+    var ta = form.querySelector("#meddelande");
+    if (ta && !ta.value) { ta.value = meddelande; }
+  }
+})();
