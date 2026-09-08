@@ -35,6 +35,20 @@ AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
 def a(href, text):
     return f'<a class="text-link" href="{href}">{text}</a>'
 
+# Inline Consent Mode v2 default (DENIED) – körs i <head> FÖRE main.js.
+# Future-proof för GTM; main.js gör bara consent-update efter samtycke.
+CONSENT_INLINE = """    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent','default',{
+        ad_storage:'denied', ad_user_data:'denied', ad_personalization:'denied',
+        analytics_storage:'denied', functionality_storage:'granted',
+        security_storage:'granted', wait_for_update:500
+      });
+      window.__vtsConsentDefault = true;
+    </script>"""
+
 NAV = """      <div class="container header-inner">
         <a class="logo" href="index.html">Geal Entreprenad AB</a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
@@ -46,6 +60,7 @@ NAV = """      <div class="container header-inner">
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
             <li><a data-nav href="kontakt.html">Kontakt</a></li>
+            <li><a data-nav href="sok.html">Sök</a></li>
           </ul>
         </nav>
         <a class="btn btn-primary header-cta" href="kontakt.html#form">Offert</a>
@@ -90,6 +105,7 @@ FOOTER = f"""    <footer class="footer">
       </div>
       <div class="container footer-bottom">
         &copy; <span data-year></span> {BRAND} &middot; Org.nr {ORGNR} &middot;
+        <a href="sok.html">Sök</a> &middot;
         <a href="integritetspolicy.html">Integritetspolicy</a> &middot;
         <a href="faq.html">Vanliga frågor</a>. Alla rättigheter förbehållna.
       </div>
@@ -206,6 +222,7 @@ def render(p):
     <meta name="theme-color" content="#1f2f46" />{robots_meta}
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css" />
+{CONSENT_INLINE}
     <script src="assets/js/main.js" defer></script>
 {blocks}
   </head>

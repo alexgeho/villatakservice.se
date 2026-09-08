@@ -73,6 +73,16 @@
 7. Case-sida (referens/omdömen) när ägaren skickar foton — bygg E-E-A-T-sektion.
 8. Konverteringsspårning för telefon/mail-klick (event `contact`) när GA4 är aktivt.
 
+## Follow-up (2026-09-08) — inline consent + sök i nav/footer ✅
+
+- **Consent Mode v2 default (denied) flyttat INLINE till `<head>`** i generatorns mall
+  (`CONSENT_INLINE`), placerat FÖRE `main.js`. Future-proof för GTM. `main.js` gör nu bara
+  consent-**update** efter samtycke (idempotent fallback om inline saknas via `__vtsConsentDefault`).
+- **Samma inline-block tillagt i de 5 handunderhållna sidorna** (index/tjanster/om-oss/kontakt/artiklar).
+- **`sok.html` inte längre föräldralös:** länk i huvudnavigationen (`Sök`) OCH i footern på alla sidor.
+- Verifierat: 63/63 sidor har inline-consent före main.js (0 fel ordning) och Sök i nav + footer.
+- AC1 ✅ (inline consent-default före main.js på alla genererade sidor) · AC2 ✅ (sok.html i nav på alla sidor).
+
 ## [OWNER] — blockerande fakta / åtgärder
 
 - **GA4_ID** (Google Analytics 4 Measurement-ID) → `main.js`.

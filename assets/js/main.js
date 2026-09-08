@@ -101,20 +101,23 @@
   var META_PIXEL_ID = "";
   var STORAGE_KEY = "vts_consent"; // "granted" | "denied"
 
+  // Consent Mode v2 DEFAULT DENIED sätts inline i <head> före denna fil.
+  // Här hålls bara en idempotent fallback + consent-update efter samtycke.
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
-
-  // Consent Mode v2 – DEFAULT DENIED (måste sättas före all laddning)
-  gtag("consent", "default", {
-    ad_storage: "denied",
-    ad_user_data: "denied",
-    ad_personalization: "denied",
-    analytics_storage: "denied",
-    functionality_storage: "granted",
-    security_storage: "granted",
-    wait_for_update: 500
-  });
+  if (!window.__vtsConsentDefault) {
+    // Fallback om inline-blocket saknas (t.ex. äldre cachead sida)
+    window.gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+      functionality_storage: "granted",
+      security_storage: "granted",
+      wait_for_update: 500
+    });
+  }
 
   var gaLoaded = false, metaLoaded = false;
 
