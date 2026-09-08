@@ -302,3 +302,59 @@
     if (ta && !ta.value) { ta.value = meddelande; }
   }
 })();
+
+/* =====================================================================
+   Klientbaserad sök (sok.html) – matchar mot window.SEARCH_INDEX
+   ===================================================================== */
+(function () {
+  var form = document.getElementById("sok-form");
+  var input = document.getElementById("sok-input");
+  var out = document.getElementById("sok-results");
+  if (!form || !input || !out || !window.SEARCH_INDEX) return;
+
+  function norm(s) { return (s || "").toLowerCase(); }
+
+  function run(q) {
+    q = norm(q).trim();
+    if (!q) { out.innerHTML = ""; return; }
+    var terms = q.split(/\s+/);
+    var hits = window.SEARCH_INDEX.map(function (it) {
+      var hay = norm(it.t + " " + it.d);
+      var score = 0;
+      terms.forEach(function (t) { if (hay.indexOf(t) !== -1) score++; });
+      if (norm(it.t).indexOf(q) !== -1) score += 2;
+      return { it: it, score: score };
+    }).filter(function (r) { return r.score > 0; })
+      .sort(function (a, b) { return b.score - a.score; });
+
+    out.innerHTML = "";
+    if (!hits.length) {
+      var none = document.createElement("p");
+      none.textContent = "Inga träffar för “" + q + "”. Prova ett annat sökord.";
+      out.appendChild(none);
+      return;
+    }
+    var frag = document.createDocumentFragment();
+    hits.slice(0, 20).forEach(function (r) {
+      var art = document.createElement("article");
+      art.className = "service-snippet";
+      var h = document.createElement("h3");
+      var link = document.createElement("a");
+      link.className = "text-link";
+      link.href = r.it.u;
+      link.textContent = r.it.t;
+      h.appendChild(link);
+      var p = document.createElement("p");
+      p.textContent = r.it.d;
+      art.appendChild(h);
+      art.appendChild(p);
+      frag.appendChild(art);
+    });
+    out.appendChild(frag);
+  }
+
+  var q0 = new URLSearchParams(window.location.search).get("q");
+  if (q0) { input.value = q0; run(q0); }
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(input.value); });
+  input.addEventListener("input", function () { run(input.value); });
+})();

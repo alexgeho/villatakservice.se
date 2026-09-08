@@ -137,6 +137,12 @@ def service_schema(p):
         "areaServed":[{"@type":"City","name":n} for n in ["Stockholm"]+AREAS],
         "name":p["h1"],"description":p["description"]}
 
+def howto_schema(p):
+    name, steps = p["howto"]
+    return {"@context":"https://schema.org","@type":"HowTo","name":name,
+        "step":[{"@type":"HowToStep","position":i+1,"name":h,"text":t}
+                for i,(h,t) in enumerate(steps)]}
+
 def jsonld(obj):
     return ('    <script type="application/ld+json">\n' +
             json.dumps(obj, ensure_ascii=False, indent=6) + "\n    </script>")
@@ -147,7 +153,8 @@ def render(p):
                breadcrumb_schema(p["crumbs"]),
                faq_schema(p["faq"]) if p.get("faq") else None,
                article_schema(p) if p.get("article") else None,
-               service_schema(p) if p.get("service") else None]
+               service_schema(p) if p.get("service") else None,
+               howto_schema(p) if p.get("howto") else None]
     blocks = "\n".join(jsonld(s) for s in schemas if s)
     canon = f"{DOMAIN}/{p['file']}"
     faq_html = ""
@@ -333,6 +340,11 @@ page(file="takbyte.html",
   description="Takbyte på villa i Sundbyberg och Stockholm. Vi byter tegel-, betong- och plåttak med tydlig offert, ROT-avdrag och slutkontroll. Begär kostnadsfri offert.",
   h1="Takbyte i Sundbyberg och Stockholm",
   service=True, service_type="Takbyte", localbiz=False,
+  howto=("Så går ett takbyte till", [
+    ("Förfrågan","Du kontaktar oss med kort info om huset och taket."),
+    ("Besiktning & offert","Vi bedömer taket och lämnar tydlig offert med material och tidplan."),
+    ("Utförande","Vi river, förbereder underlag och lägger nytt tak enligt plan."),
+    ("Slutkontroll","Vi går igenom resultatet med dig och dokumenterar arbetet.")]),
   crumbs=SVC_CRUMB+[("Takbyte","takbyte.html")],
   cta=("Dags för takbyte?","Begär en kostnadsfri offert på ditt takbyte – vi bedömer taket och ger tydligt pris med ROT-avdrag."),
   body=hero("Takbyte i Sundbyberg och Stockholm",
@@ -1483,6 +1495,11 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
   title="Bygga villa i Stockholm – nyckelfärdigt hus | Geal Entreprenad AB",
   description="Bygga villa i Stockholm – nyckelfärdigt hus från grunden. Vi tar helheten som total entreprenör: projektering, bygglov och byggnation. Kostnadsfri offert.",
   h1="Bygga villa i Stockholm – nyckelfärdigt",
+  howto=("Från ritning till inflyttning – så bygger vi din villa", [
+    ("Genomgång","Vi går igenom dina önskemål, tomt och budget."),
+    ("Ritning & bygglov","Vi tar fram ritningar och bygglovsunderlag."),
+    ("Grund & stomme","Grundläggning, stomme och tätt hus."),
+    ("Nyckelfärdigt","Ytskikt, installationer och slutbesiktning.")]),
   crumbs=BYGG_CRUMB+[("Nybyggnad","nybyggnad-villa.html")],
   cta=("Vill du bygga nytt hus?","Vi bygger villa från grunden som total entreprenör. Begär en kostnadsfri genomgång."),
   body=hero("Bygga villa i Stockholm – nyckelfärdigt",
@@ -1764,6 +1781,46 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
         ("artiklar.html","Artiklar","Guider om tak och takarbete."),
         ("faq.html","Vanliga frågor","Svar på det vanligaste."),
         ("kontakt.html","Kontakt","Begär offert eller ställ en fråga.")], muted=False))
+
+# ====================== SÖK (klientbaserad) ============================
+# Metadata för de handunderhållna sidorna (för sökindex).
+STATIC_META = {
+  "index.html": ("Takläggare i Sundbyberg & Stockholm", "Takbyte, takrenovering och takservice för villa, BRF och företag i Sundbyberg och Stockholm."),
+  "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
+  "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
+  "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
+  "artiklar.html": ("Artiklar & guider", "Guider om takbyte, takrenovering, ROT-avdrag, material och underhåll."),
+}
+# Bygg sökindex av alla indexerbara sidor (PAGES är komplett här).
+_search_index = [{"t": t, "u": u, "d": d} for u, (t, d) in STATIC_META.items()]
+_search_index += [{"t": p["h1"], "u": p["file"], "d": p["description"]}
+                  for p in PAGES if not p.get("noindex") and not p.get("nolist")]
+_search_json = json.dumps(_search_index, ensure_ascii=False)
+
+_sok_tool = f"""      <section class="section seo-section">
+        <div class="container">
+          <form id="sok-form" class="calc-form" role="search" novalidate>
+            <div class="field">
+              <label for="sok-input">Sök på webbplatsen</label>
+              <input id="sok-input" name="q" type="search" autocomplete="off"
+                placeholder="t.ex. takbyte, ROT, plåttak, Sundbyberg" />
+            </div>
+            <button class="btn btn-primary" type="submit">Sök</button>
+          </form>
+          <div id="sok-results" class="service-grid" aria-live="polite"></div>
+        </div>
+      </section>
+      <script>window.SEARCH_INDEX = {_search_json};</script>"""
+
+page(file="sok.html", noindex=True, nolist=True, no_cta=True,
+  title="Sök på villatakservice.se | Geal Entreprenad AB",
+  description="Sök bland våra tjänster, orter och guider om tak, takbyte och takrenovering.",
+  h1="Sök på webbplatsen",
+  crumbs=[("Hem","index.html"),("Sök","sok.html")],
+  body=hero("Sök på webbplatsen",
+    "Sök bland våra tjänster, områden och guider om tak, takbyte, takrenovering och ROT.",
+    [("Hem","index.html"),("Sök","sok.html")])
+    + _sok_tool)
 
 # ====================== WRITE FILES + SITEMAP =============================
 # Existing hand-maintained pages (regenereras ej men ska med i sitemap)
