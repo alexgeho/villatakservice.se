@@ -31,7 +31,7 @@
 
 ## Audit — nuläge (2026-09-06)
 - **Stack:** ren statisk HTML, ingen byggprocess. 6 sidor i repo-roten + `assets/`.
-- **Kritiskt:** all schema/og pekar på fel domän `www.gealtak.se` (ska vara villatakservice.se). Namn växlar "Geal Tak AB" / "Geal entreprenad ab" → ska vara **Geal Entreprenad AB**.
+- **Kritiskt:** all schema/og pekar på fel domän `www.gealtak.se` (ska vara villatakservice.se). Namn växlar "Geal Entreprenad AB" / "Geal Entreprenad AB" → ska vara **Geal Entreprenad AB**.
 - **Saknas:** canonical, og:url, geo-meta, sitemap.xml, robots.txt, RoofingContractor/Breadcrumb-schema, location-sidor, per-tjänst money pages, riktiga artikelsidor (bloggen = 1 statisk `artikel.html`).
 - ** Warning:** obekräftade påståenden redan på sajten ("10+ års erfarenhet", "5 års garanti", "offert inom 24h", artikeldatum). → frågelista.
 
