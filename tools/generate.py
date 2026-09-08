@@ -24,7 +24,8 @@ CITY    = "Bromma"
 GEO_LAT = "59.3566"
 GEO_LON = "17.9540"
 IMG     = DOMAIN + "/assets/images/1.webp"
-TODAY   = "2026-09-06"
+TODAY   = "2026-09-06"                          # stabilt datePublished för artiklar
+BUILD_DATE = datetime.date.today().isoformat()  # dynamisk sitemap-lastmod (freshness)
 ORGNR   = "559303-7566"
 VATNR   = "SE559303756601"
 
@@ -1859,7 +1860,7 @@ def main():
         u = "" if u=="index.html" else u
         return f"{DOMAIN}/{u}"
     items = "\n".join(
-        f"  <url>\n    <loc>{loc(u)}</loc>\n    <lastmod>{TODAY}</lastmod>\n"
+        f"  <url>\n    <loc>{loc(u)}</loc>\n    <lastmod>{BUILD_DATE}</lastmod>\n"
         f"    <changefreq>monthly</changefreq>\n    <priority>{'1.0' if u=='index.html' else '0.8'}</priority>\n  </url>"
         for u in ordered)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
