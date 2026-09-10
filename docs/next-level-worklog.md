@@ -115,3 +115,33 @@ ovan. Skriv "продолжаем" för att dra igång.
 - **Verifiera kr/m²-spann** (`RATES` i `main.js`) för kalkylatorn — eller be om att stänga av verktyget om det krockar med "inga fasta priser"-policyn (nuvarande lösning använder branschtypiska spann med tydlig disclaimer).
 - **Kör Rich Results Test** på index.html (WebSite/SearchAction) + takbyte.html (HowTo) för extern bekräftelse.
 - **GBP, omdömen, foto före/efter, backlinks** — kräver ägarens identitet/inloggning (kan ej skapas av agent).
+
+## Follow-up (2026-09-10) — GSC: 404-redirects, canonical-validering, indexering ✅
+
+**Utgångsläge (GSC Page indexing, "villatakservice.se" domän-property):** 4 indexerade, 6 ej indexerade i 2 grupper.
+
+### Gjort
+- **Not found (404) × 3** — gamla borttagna URL:er som Google mindes. Löst med 301 i `.htaccess` (regel 4):
+  - `/takrenovering-stockholm.html` → `/takrenovering.html`
+  - `/takreparation-stockholm.html` → `/takrenovering.html` (ingen egen takreparation-sida finns)
+  - `/bygg-renovering.html` → `/villarenovering.html`
+  - Committad + pushad + auto-deployad. Verifierat live: alla tre svarar `301` mot rätt mål.
+  - **"Validate fix" startad i GSC** (Started 9/10/26).
+- **Duplicate without user-selected canonical × 3** — `http://…/`, `http://…/index.html`, `https://…/index.html`.
+  - Redan täckt av befintliga `.htaccess`-regler (http→https, www→icke-www, index.html→/). Verifierat live: alla 301 → kanonisk `https://villatakservice.se/`.
+  - **"Validate fix" startad i GSC** (Started 9/10/26).
+- **Sitemap** — `sitemap.xml`: 60 URL, alla svarar 200, inga gamla 404-URL, lokal == live. `robots.txt` OK (Allow: /, pekar på sitemap). Var läst 6/9 (Google kände bara till 47 sidor) → **åter-submittad** för färsk läsning av alla 60.
+- **Request Indexing (prioriterad crawl-kö):**
+  - ✅ `https://villatakservice.se/` (startsidan) — skickad.
+  - ⚠️ `https://villatakservice.se/takbyte.html` — **Quota Exceeded** (dagskvoten ~10-12 URL slut). Ej skickad.
+
+### RESUME — nästa gång (börja här)
+1. **[imorgon / när kvot återställts] Request Indexing** för:
+   - `https://villatakservice.se/takbyte.html`
+   - `https://villatakservice.se/takrenovering.html`
+   - (URL Inspection-fältet uppe i GSC → klistra URL → Enter → "REQUEST INDEXING". Kräver full https-URL.)
+2. **[om ~3-7 dagar] Kolla valideringsstatus** i GSC → Indexing → Pages → klicka "Not found (404)" resp. "Duplicate without user-selected canonical" → status ska gå Passed. Om "Failed": inspektera vilken URL och varför.
+3. **[om ~1 vecka] Kolla sitemap** GSC → Sitemaps: "Discovered pages" bör stiga mot 60 (var 47).
+4. Kvarstående [OWNER]-blockerare oförändrade: **GA4_ID + META_PIXEL_ID** i `main.js`, GBP/omdömen/backlinks (se backlog ovan).
+
+**Not:** Request Indexing snabbar bara på crawl — ingen garanti. Valideringarna löper på egen hand (dagar–~2 v).
