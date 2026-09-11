@@ -145,3 +145,34 @@ ovan. Skriv "продолжаем" för att dra igång.
 4. Kvarstående [OWNER]-blockerare oförändrade: **GA4_ID + META_PIXEL_ID** i `main.js`, GBP/omdömen/backlinks (se backlog ovan).
 
 **Not:** Request Indexing snabbar bara på crawl — ingen garanti. Valideringarna löper på egen hand (dagar–~2 v).
+
+## Follow-up (2026-09-11) — Request Indexing (batch) + GBP skapad
+
+### A. Request Indexing — 10 URL (dagskvot ~10-12)
+Skickade "Request Indexing" i GSC (URL Inspection) för sidor som INTE var indexerade
+(unknown / discovered / crawled-not-indexed):
+1. tjanster.html · 2. takbesiktning.html · 3. takmalning.html · 4. taktvatt.html ·
+5. villatak.html · 6. vad-kostar-takbyte.html · 7. rot-avdrag-takarbete.html ·
+8. taklackage.html · 9. vad-kostar-takrenovering.html · 10. sa-valjer-du-taklaggare.html
+
+Redan indexerade (hoppade över, sparade kvot): takbyte, takrenovering, plattak,
+taklaggare-solna, hangrannor-stupror. **Not:** GSC "known pages" var stale (10 st) —
+i verkligheten är fler indexerade. ~35 sidor kvar att köa nästa dagar (kvot/dag).
+
+### B. GBP (Google Business Profile) skapad för **Geal Entreprenad AB** ✅
+- Adress: Byggmästarvägen 18, 168 32 Bromma · Tel i profilen: 08-124 102 76 ·
+  Website: villatakservice.se · WhatsApp-chat: https://wa.me/46707577575
+- Service-area: Bromma, Sundbyberg, Solna, Spånga, Sollentuna, Järfälla, Täby, Danderyd, Lidingö, Nacka.
+- Beskrivning (SE) med nyckelord (tak + villarenovering/tillbyggnad/totalentreprenad) tillagd.
+- **Konton:** GBP hanteras via `870717ag@gmail.com` (samma konto som RealMar AB).
+  `aleksandrgerhard@gmail.com` = 0 profiler. GBP hanteras "nya vägen" via Google Sök, ej Manager-listan.
+
+### RESUME — GBP-nästa steg (börja här nästa gång)
+1. **[VIKTIGT] Byt primär kategori** i GBP: `Construction company` → **`Takläggare` (Roofing contractor)**.
+   Behåll Byggföretag/Byggnadsentreprenör som sekundära. Största hävstången för map-pack.
+2. **Verifiera** profilen (annars syns den ej i Maps) — kort/video/telefon. Kräver ägaren.
+3. **Foton**: logo, team, bil, före/efter-bilder.
+4. **Edit services**: takbyte, takrenovering, takmålning, taktvätt, takbesiktning, villarenovering, tillbyggnad.
+5. **Google-omdömen**: dela review-länk till nöjda kunder (starkaste map-pack-faktorn).
+6. **NAP-konsistens**: samma telefon/adress på sajt = GBP = allabolag (Geal Entreprenad AB, org 559303-7566).
+7. Fortsätt Request Indexing för resterande ~35 sidor (kvot/dag).
