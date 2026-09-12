@@ -201,6 +201,9 @@ def render(p):
           </div>
         </div>
       </section>"""
+    # Offert-CTA-mål: standard kontakt.html, men regionsidor (Dalarna) pekar
+    # på en enkel offertformulär-sida utan Stockholmsadress/karta.
+    contact_url = p.get("contact_url", "kontakt.html")
     cta = p.get("cta", ("Behöver du hjälp med taket?",
         "Kontakta oss så återkommer vi med en tydlig bedömning och offert för ditt tak."))
     cta_html = "" if p.get("no_cta") else f"""
@@ -209,7 +212,7 @@ def render(p):
           <h2>{cta[0]}</h2>
           <p>{cta[1]}</p>
           <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="kontakt.html#form">Få offert</a>
+            <a class="btn btn-light" href="{contact_url}#form">Få offert</a>
             <a class="btn btn-outline-light" href="tel:{PHONE_T}">Ring oss</a>
           </div>
         </div>
@@ -240,7 +243,7 @@ def render(p):
   <body>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
-{NAV}
+{NAV.replace('href="kontakt.html#form"', f'href="{contact_url}#form"')}
     </header>
 
     <main id="content">
@@ -955,6 +958,7 @@ _dal_cards = "\n".join(f"""            <article class="service-snippet">
             </article>""" for n in DALARNA_AREAS)
 page(file="dalarna.html",
   geo_region="SE-W", geo_placename="Borlänge, Dalarna",
+  contact_url="offert-dalarna.html",
   title="Takläggare i Dalarna – Borlänge, Falun & hela regionen | Geal Entreprenad AB",
   description="Vi utför takbyte, takrenovering och takbesiktning i Dalarna – Borlänge, Falun, Ludvika, Avesta, Mora, Leksand m.fl. Lokala takläggare via vår samarbetspartner. Begär kostnadsfri offert.",
   h1="Takläggare i Dalarna",
@@ -1001,6 +1005,7 @@ for _ort, _d in DAL.items():
     others = [o for o in DALARNA_AREAS if o!=_ort][:3]
     page(file=f,
       geo_region="SE-W", geo_placename=f"{_ort}, Dalarna",
+      contact_url="offert-dalarna.html",
       title=f"Takläggare i {_ort} – takbyte & takrenovering i Dalarna | Geal Entreprenad AB",
       description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Dalarna – via lokal samarbetspartner. Begär kostnadsfri offert.",
       h1=f"Takläggare i {_ort}",
@@ -1022,6 +1027,87 @@ for _ort, _d in DAL.items():
         + links_block("Fler orter i Dalarna", [
             (_dal_files[o], f"Takläggare i {o}", f"Vi arbetar även i {o}.") for o in others]),
       faq=cityfaq)
+
+# ---- Enkel offertformulär-sida för Dalarna (utan Stockholmsadress/karta) --
+_offert_form = """      <section class="section section-muted" id="form">
+        <div class="container">
+          <div class="form-box" style="max-width:720px;margin:0 auto">
+            <h2>Begär offert – Dalarna</h2>
+            <p class="section-lead">Fyll i formuläret så återkommer vi med en tydlig
+              bedömning och offert. Du kan också ringa
+              <a class="text-link" href="tel:%s">%s</a> eller mejla
+              <a class="text-link" href="mailto:%s">%s</a>.</p>
+            <p id="form-fel" class="form-alert" role="alert" hidden>
+              Något blev fel när meddelandet skulle skickas. Kontrollera uppgifterna och
+              försök igen, eller ring oss på <a href="tel:%s">%s</a>.
+            </p>
+            <form action="sendmail.php" method="post">
+              <div class="hp-field" aria-hidden="true">
+                <label for="website">Lämna detta fält tomt</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="namn">Namn</label>
+                <input id="namn" name="namn" type="text" placeholder="Ange namn" required />
+              </div>
+              <div class="field">
+                <label for="ort">Ort i Dalarna</label>
+                <input id="ort" name="ort" type="text" placeholder="T.ex. Borlänge" />
+              </div>
+              <div class="field">
+                <label for="telefon">Telefon</label>
+                <input id="telefon" name="telefon" type="tel" placeholder="Ange telefonnummer" required />
+              </div>
+              <div class="field">
+                <label for="epost">E-post</label>
+                <input id="epost" name="epost" type="email" placeholder="Ange e-postadress" required />
+              </div>
+              <div class="field">
+                <label for="tjanst">Tjänst</label>
+                <select id="tjanst" name="tjanst" required>
+                  <option value="">Välj tjänst</option>
+                  <option>Takbyte</option>
+                  <option>Takrenovering</option>
+                  <option>Plåttak</option>
+                  <option>Takmålning</option>
+                  <option>Takbesiktning</option>
+                  <option>Taktvätt</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="meddelande">Meddelande</label>
+                <textarea id="meddelande" name="meddelande"
+                  placeholder="Beskriv kort vad du vill ha hjälp med" required></textarea>
+              </div>
+              <label class="checkbox-row">
+                <input type="checkbox" name="gdpr" required />
+                Jag godkänner att mina uppgifter behandlas enligt <a class="text-link" href="integritetspolicy.html">integritetspolicyn</a>.
+              </label>
+              <button class="btn btn-primary" type="submit">Skicka</button>
+            </form>
+            <script>
+              (function () {
+                var p = new URLSearchParams(location.search);
+                if (p.get("fel")) {
+                  var el = document.getElementById("form-fel");
+                  if (el) { el.hidden = false; }
+                }
+              })();
+            </script>
+          </div>
+        </div>
+      </section>""" % (PHONE_T, PHONE_D, EMAIL, EMAIL, PHONE_T, PHONE_D)
+page(file="offert-dalarna.html",
+  geo_region="SE-W", geo_placename="Dalarna",
+  noindex=True, nolist=True, no_cta=True, contact_url="offert-dalarna.html",
+  title="Begär offert – takläggare i Dalarna | Geal Entreprenad AB",
+  description="Begär kostnadsfri offert på takbyte, takrenovering eller takbesiktning i Dalarna. Fyll i formuläret så återkommer vi.",
+  h1="Begär offert – Dalarna",
+  crumbs=[("Hem","index.html"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")],
+  body=hero("Begär offert – Dalarna",
+    "Berätta kort om ditt takprojekt i Dalarna så återkommer vi med en tydlig bedömning och offert. Arbetet utförs av vår lokala samarbetspartner på plats.",
+    [("Hem","index.html"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")])
+    + _offert_form)
 
 # ====================== ARTICLES (cluster) ================================
 ART_CRUMB = [("Hem","index.html"),("Artiklar","artiklar.html")]
