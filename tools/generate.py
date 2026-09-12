@@ -32,6 +32,15 @@ VATNR   = "SE559303756601"
 AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
          "Järfälla","Täby","Danderyd","Lidingö","Nacka"]
 
+# Dalarna: Geal samordnar/förmedlar takprojekt och utför via lokal
+# samarbetspartner på plats i Dalarna. Ingen egen adress i regionen anges.
+DALARNA_AREAS = ["Borlänge","Falun","Ludvika","Avesta","Hedemora",
+                 "Säter","Mora","Leksand","Rättvik","Smedjebacken"]
+
+def slug(name):
+    return (name.lower().replace("ä","a").replace("å","a").replace("ö","o")
+            .replace(" ","-"))
+
 # ---- shared markup --------------------------------------------------------
 def a(href, text):
     return f'<a class="text-link" href="{href}">{text}</a>'
@@ -92,6 +101,7 @@ FOOTER = f"""    <footer class="footer">
             <li><a href="taklaggare-sundbyberg.html">Sundbyberg</a></li>
             <li><a href="taklaggare-solna.html">Solna</a></li>
             <li><a href="taklaggare-bromma.html">Bromma</a></li>
+            <li><a href="dalarna.html">Dalarna</a></li>
             <li><a href="omraden.html">Alla områden</a></li>
           </ul>
         </div>
@@ -212,8 +222,8 @@ def render(p):
     <title>{p['title']}</title>
     <meta name="description" content="{p['description']}" />
     <link rel="canonical" href="{canon}" />
-    <meta name="geo.region" content="SE-AB" />
-    <meta name="geo.placename" content="Bromma, Stockholm" />
+    <meta name="geo.region" content="{p.get('geo_region','SE-AB')}" />
+    <meta name="geo.placename" content="{p.get('geo_placename','Bromma, Stockholm')}" />
     <meta property="og:title" content="{p['title']}" />
     <meta property="og:description" content="{p['description']}" />
     <meta property="og:type" content="{p.get('og_type','website')}" />
@@ -625,6 +635,14 @@ page(file="omraden.html",
 {_area_cards}
           </div>
         </div>
+      </section>"""
+    + f"""      <section class="section seo-section">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">Vi arbetar även i Dalarna</h2>
+            <p>Utöver Storstockholm tar vi takuppdrag i Dalarna – Borlänge, Falun, Ludvika, Mora, Leksand med flera. Där samordnar vi projektet och utför arbetet via vår lokala samarbetspartner på plats. {a('dalarna.html','Se takläggare i Dalarna')}.</p>
+          </div>
+        </div>
       </section>""")
 
 # ====================== LOCATION PAGES ====================================
@@ -788,6 +806,221 @@ for _ort, _d in LOC.items():
             f"Takläggare i {_ort}", items)
         + links_block("Närliggande områden", [
             (_area_files[o], f"Takläggare i {o}", f"Vi arbetar även i {o}.") for o in others]),
+      faq=cityfaq)
+
+# ====================== DALARNA (Borlänge + regionen) =====================
+# Geal förmedlar/samordnar och utför via lokal samarbetspartner på plats i
+# Dalarna. Egen adress i regionen anges INTE (NAP-ärlighet). Gemensamma
+# lokala vinklar: tunga snölaster, frys–tö, istappar, äldre trä-/faluröda
+# villor och fritidshus. geo.region = SE-W (Dalarna).
+DAL = {
+ "Borlänge": {
+   "intro": "Borlänge är Dalarnas industri- och handelscentrum vid Dalälven, och en av de orter där vi är mest aktiva i regionen. Vi hjälper villaägare i bland annat Tjärna, Jakobsgårdarna, Kvarnsveden och Torsång med takbyte, takrenovering och takbesiktning – med takläggare på plats i Borlänge.",
+   "paras": [
+     "Borlänge växte fram kring Domnarvets järnverk och pappersbruket i Kvarnsveden, och bebyggelsen speglar det: villaområden från 1940–70-talet blandas med äldre trähus och nyare områden. Många av dessa efterkrigstak har betongpannor och underlagspapp som passerat sin tekniska livslängd och är mogna för byte eller omläggning.",
+     "Klimatet i Borlänge ställer hårdare krav än i Stockholmstrakten. Rejäla snölaster vintertid, återkommande tö och köldperioder sliter på tätskikt och plåt och skapar istappar och isbildning vid takfot och hängrännor. Vid takarbeten här lägger vi stor vikt vid snörasskydd, taksäkerhet och genomtänkt avvattning som klarar snösmältning.",
+     "I villaområden nära Dalälven och skogen, som Torsång och Kvarnsveden, är fukt och mossa på norrvända, skuggiga takytor vanligt. Vi bedömer alltid om det räcker med taktvätt och riktade åtgärder eller om taket behöver läggas om helt, och anpassar materialvalet efter husets ålder och läge.",
+   ],
+   "items": ["Takläggare på plats i Borlänge, Tjärna, Kvarnsveden, Torsång.","Snörasskydd och taksäkerhet för Dalarnas snölaster.","Byte av mogna 40–70-talstak i betong och plåt."],
+   "faq": [
+     ("Arbetar ni verkligen i Borlänge?","Ja. Geal Entreprenad AB tar takuppdrag i Borlänge tillsammans med vår lokala samarbetspartner i Dalarna – du får kontakt och offert av oss, och arbetet utförs av takläggare på plats."),
+     ("Hur påverkar snölasten mitt tak i Borlänge?","Tunga snölaster och återkommande tö belastar både konstruktion och tätskikt och ger istappar vid takfoten. Vi ser över snörasskydd, infästningar och avvattning så att taket klarar vintern."),
+     ("Måste jag byta hela taket eller räcker en renovering?","Det avgörs av en besiktning. Är pannorna hela men underlagspappen slut kan en omläggning räcka; är både pannor och underlag uttjänta rekommenderar vi byte."),
+   ]},
+ "Falun": {
+   "intro": "Falun är Dalarnas residensstad, känd för koppargruvan och den faluröda färgen, med gott om äldre trähus och kulturhistoriskt värdefulla miljöer. Vi hjälper villaägare i bland annat Britsarvet, Källviken, Herrhagen och Främby med takbyte och takrenovering.",
+   "paras": [
+     "Falu koppargruva och trähusbebyggelsen i Elsborg och Östanfors är världsarv, och stora delar av Falun präglas av äldre trävillor med branta sadeltak. På sådana hus är det avgörande att bevara takets uttryck och proportioner vid ett byte, samtidigt som vi förnyar underlag, plåt och avvattning.",
+     "Faluns läge i Dalarna innebär kalla, snörika vintrar. Tegel- och betongpannor utsätts för upprepade frys- och töcykler som kan spränga sprickor, och snötryck belastar konstruktionen. Vi prioriterar täta anslutningar, rätt underlagspapp och snörasskydd som skyddar entréer och gångytor.",
+     "I områden som Britsarvet, Herrhagen och Hälsinggården finns villor från olika epoker, medan Främby och Källviken har inslag av nyare hus. Vi anpassar åtgärder och material efter husets ålder – från varsam omläggning på äldre trävillor till moderna plåtlösningar på lägre lutningar.",
+   ],
+   "items": ["Varsamt takbyte på Faluns äldre trävillor.","Material som tål frys–tö och snötryck.","Villatak i Britsarvet, Källviken, Herrhagen, Främby."],
+   "faq": [
+     ("Kan ni bevara husets stil vid takbyte i Faluns trähuskvarter?","Ja. På äldre trävillor väljer vi pannor, plåt och kulörer som bevarar husets och områdets karaktär, och moderniserar samtidigt underlag och tätskikt."),
+     ("Behöver jag bygglov för takbyte i Falun?","Ett byte med likvärdigt material och utseende kräver oftast inte bygglov, men i kulturhistoriskt känsliga miljöer kan särskilda krav gälla. Vi hjälper dig bedöma och du stämmer av med Falu kommun."),
+     ("Vilka delar av Falun arbetar ni i?","Hela Falun med omnejd, bland annat Britsarvet, Källviken, Herrhagen, Främby och Hälsinggården."),
+   ]},
+ "Ludvika": {
+   "intro": "Ludvika i sydvästra Dalarna har en stark industrihistoria med kraftteknik och gruvdrift. Vi hjälper villaägare i Ludvika, Grängesberg, Håksberg och Sunnansjö med takbyte, takrenovering och besiktning.",
+   "paras": [
+     "Ludvika växte kring gruvnäringen och kraftindustrin, och villabebyggelsen består till stor del av hus från 1900-talets mitt tillsammans med äldre trähus i Grängesberg och de mindre orterna. Många av dessa tak närmar sig nu slutet på sin livslängd.",
+     "Det sjörika, skogsnära landskapet och de snörika vintrarna sätter tydliga spår på taken: mossa och löv på skuggiga ytor, tunga snölaster och isbildning vid takfot. Vi ser gärna över avvattning, snörasskydd och taksäkerhet i samband med byte eller renovering.",
+     "I Grängesberg och Sunnansjö finns äldre trävillor där utseendet är viktigt, medan centrala Ludvika och Marnäs har mer blandad bebyggelse. Vi bedömer varje tak individuellt och föreslår rätt åtgärdsnivå – från punktinsats mot läckage till komplett takbyte.",
+   ],
+   "items": ["Villatak i Ludvika, Grängesberg, Håksberg, Sunnansjö.","Åtgärder för mossa, snölast och isbildning.","Allt från läckagelagning till komplett takbyte."],
+   "faq": [
+     ("Tar ni takuppdrag i hela Ludvika kommun?","Ja, i Ludvika tätort och kringliggande orter som Grängesberg, Håksberg, Sunnansjö och Nyhammar, via vår lokala samarbetspartner i Dalarna."),
+     ("Mitt tak är mossigt och skuggigt – vad gör ni?","Skuggiga, trädnära tak håller kvar fukt och drar åt sig mossa. Vi tvättar skonsamt, rensar avvattningen och bedömer om taket behöver ytterligare åtgärder."),
+     ("Hur snabbt kan jag få en offert?","Vi bokar ett platsbesök och lämnar en tydlig, fast offert efter besiktning av takets skick."),
+   ]},
+ "Avesta": {
+   "intro": "Avesta vid Dalälven i sydöstra Dalarna har en lång järnbrukshistoria. Vi hjälper villaägare i Avesta, Krylbo, Horndal och Fors med takbyte, takrenovering och plåtarbeten.",
+   "paras": [
+     "Avesta präglas av järn- och stålindustrin, från de gamla bruken till dagens rostfria stål i Koppardalen. Villabebyggelsen består av allt från äldre bruksbostäder och trävillor till efterkrigstidens småhus, där många tak nu är mogna för åtgärd.",
+     "Läget vid Dalälven och de kalla vintrarna innebär fukt, snölast och frys–töväxlingar som sliter på tätskikt och pannor. Vi lägger vikt vid rätt underlagspapp, täta plåtdetaljer och snörasskydd som klarar regionens klimat.",
+     "I Krylbo och Horndal finns äldre bebyggelse där vi arbetar varsamt, medan centrala Avesta och Skogsbo har en blandning av hustyper. Vi anpassar material och metod efter husets ålder och takets skick.",
+   ],
+   "items": ["Villatak i Avesta, Krylbo, Horndal, Fors.","Tätskikt och plåt som tål fukt och frys–tö.","Snörasskydd och komplett avvattning."],
+   "faq": [
+     ("Arbetar ni i Krylbo och de mindre orterna kring Avesta?","Ja, i hela Avesta kommun inklusive Krylbo, Horndal, Fors och By, via vår lokala partner i Dalarna."),
+     ("Räcker en takomläggning på mitt äldre hus?","Om pannorna är hela men underlaget slitet kan en omläggning räcka. En besiktning ger säkert besked."),
+     ("Byter ni hängrännor och stuprör samtidigt?","Ja, vi rekommenderar ofta att förnya avvattning och taksäkerhet i samma projekt för ett komplett resultat."),
+   ]},
+ "Hedemora": {
+   "intro": "Hedemora är Dalarnas äldsta stad med medeltida anor och välbevarad trähusbebyggelse. Vi hjälper villaägare i Hedemora, Långshyttan, Vikmanshyttan och Stjärnsund med takbyte och takrenovering.",
+   "paras": [
+     "Som Dalarnas äldsta stad har Hedemora en värdefull trästadskärna och gott om äldre trävillor. På dessa hus är varsamhet vid takbyte avgörande – vi bevarar takets uttryck och detaljer och moderniserar samtidigt underlag och tätskikt.",
+     "Snörika vintrar och stora temperaturväxlingar belastar taken hårt. Snötryck, istappar och frys–töcykler kräver robusta lösningar; vi ser över snörasskydd, infästningar och avvattning vid varje projekt.",
+     "I bruksorter som Långshyttan och Vikmanshyttan finns äldre bebyggelse med egen karaktär, medan centrala Hedemora blandar epoker. Vi bedömer varje tak för sig och föreslår rätt åtgärd.",
+   ],
+   "items": ["Varsamt takarbete i Hedemoras trästad.","Villatak i Långshyttan, Vikmanshyttan, Stjärnsund.","Snörasskydd och robusta vinterlösningar."],
+   "faq": [
+     ("Kan husets karaktär bevaras vid takbyte i Hedemora?","Ja, särskilt viktigt i trästaden. Vi väljer material och kulörer som bevarar husets stil och utför arbetet varsamt."),
+     ("Vilka orter kring Hedemora arbetar ni i?","Hela kommunen, bland annat Långshyttan, Vikmanshyttan, Stjärnsund och Garpenberg."),
+     ("Hur ofta bör taket kontrolleras i Dalarnas klimat?","En översyn vår och höst är klokt, särskilt efter snörika vintrar då snötryck och istappar kan ha skadat plåt och tätskikt."),
+   ]},
+ "Säter": {
+   "intro": "Säter är känt för sin välbevarade trästad och den natursköna Säterdalen. Vi hjälper villaägare i Säter, Gustafs och Stora Skedvi med takbyte, takrenovering och takbesiktning.",
+   "paras": [
+     "Säters trästad är en av landets bäst bevarade, och orten har många äldre trävillor med branta tak. Här är det viktigt att bevara husens uttryck vid takbyte samtidigt som underlag och plåt förnyas för lång livslängd.",
+     "Det inlandsklimat som råder i Säter ger kalla, snörika vintrar. Snölast, isbildning och frys–töväxlingar sliter på tätskikt och pannor, och vi prioriterar snörasskydd och genomtänkt avvattning.",
+     "I Gustafs och Stora Skedvi finns lantligt belägna villor och gårdar, ofta trädnära, där mossa och fukt på skuggiga takytor är vanligt. Vi anpassar åtgärderna efter husets läge och takets skick.",
+   ],
+   "items": ["Varsamt takarbete i Säters trästad.","Villatak i Gustafs och Stora Skedvi.","Snörasskydd och avvattning för snörika vintrar."],
+   "faq": [
+     ("Arbetar ni med äldre trävillor i Säter?","Ja. Vi är vana vid varsamt takarbete där husets och trästadens karaktär ska bevaras."),
+     ("Tar ni uppdrag i Gustafs och Stora Skedvi?","Ja, i hela Säters kommun via vår lokala samarbetspartner i Dalarna."),
+     ("Behöver mitt trädnära tak taktvätt?","Skuggiga, trädnära tak samlar mossa och fukt. Vi tvättar skonsamt och bedömer om taket behöver ytterligare åtgärder."),
+   ]},
+ "Mora": {
+   "intro": "Mora vid Siljan är norra Dalarnas centrum, känt för Vasaloppet och dalahästarna i Nusnäs. Vi hjälper villa- och fritidshusägare i Mora, Noret, Färnäs och Sollerön med takbyte och takrenovering.",
+   "paras": [
+     "Kring Mora och Siljan finns både åretruntvillor och många fritidshus, ofta äldre timmerhus och trävillor. På dessa tak är varsamhet och rätt materialval viktigt, och för fritidshus lägger vi vikt vid lösningar som tål att stå oövervakade under vintern.",
+     "Norra Dalarnas klimat är kärvt med långa, snörika vintrar. Tunga snölaster och isbildning ställer höga krav på konstruktion, snörasskydd och avvattning – något vi alltid ser över vid takarbeten i Moratrakten.",
+     "I Noret och Färnäs finns tätare villabebyggelse, medan Sollerön och byarna runt Siljan har mer utspridda hus. Vi anpassar planering och material efter läget och takets skick, och samordnar arbetet via vår lokala partner.",
+   ],
+   "items": ["Villor och fritidshus i Mora, Noret, Färnäs, Sollerön.","Robusta lösningar för tunga snölaster.","Varsamt arbete på äldre timmer- och trähus."],
+   "faq": [
+     ("Tar ni takuppdrag på fritidshus kring Siljan?","Ja. Vi hjälper både åretruntboende och fritidshusägare, och väljer lösningar som klarar snörika vintrar även när huset står oövervakat."),
+     ("Hur påverkar snön taket i Mora?","Norra Dalarna har tunga snölaster. Vi kontrollerar konstruktion, snörasskydd och infästningar så att taket klarar belastningen."),
+     ("Vilka orter kring Mora arbetar ni i?","Mora tätort samt Noret, Färnäs, Vika, Nusnäs och Sollerön, via vår lokala samarbetspartner."),
+   ]},
+ "Leksand": {
+   "intro": "Leksand vid Siljan är känt för midsommar, dalahästkultur och timmerhus. Vi hjälper villa- och fritidshusägare i Leksand, Insjön, Tällberg och Siljansnäs med takbyte och takrenovering.",
+   "paras": [
+     "Leksandsbygden har gott om äldre timmerhus, faluröda trävillor och fritidshus, särskilt i Tällberg och längs Siljan. Här är det viktigt att bevara husens traditionella uttryck vid takbyte samtidigt som underlag och plåt förnyas.",
+     "De snörika vintrarna vid Siljan innebär tunga snölaster, isbildning och frys–töväxlingar. Vi prioriterar snörasskydd, robusta infästningar och avvattning som klarar snösmältning och skyddar entréer och gångytor.",
+     "I Insjön och centrala Leksand finns tätare villabebyggelse, medan Tällberg och Siljansnäs har många fritidshus i natursköna lägen. Vi anpassar material och metod efter husets karaktär och läge.",
+   ],
+   "items": ["Villor och fritidshus i Leksand, Insjön, Tällberg, Siljansnäs.","Varsamt arbete på timmerhus och faluröda villor.","Snörasskydd och avvattning för Siljansklimatet."],
+   "faq": [
+     ("Arbetar ni med timmerhus och fritidshus i Leksand?","Ja. Vi är vana vid varsamt takarbete på timmer- och trähus, och väljer lösningar som klarar vintern även på oövervakade fritidshus."),
+     ("Tar ni uppdrag i Tällberg och Siljansnäs?","Ja, i hela Leksands kommun via vår lokala partner i Dalarna."),
+     ("Behöver jag snörasskydd i Leksand?","På de flesta tak, särskilt över entréer och gångytor, är snörasskydd klokt med tanke på snölasterna vid Siljan."),
+   ]},
+ "Rättvik": {
+   "intro": "Rättvik vid Siljan är känt för sin långa kyrkbrygga, kalkstenen och natursköna byar. Vi hjälper villa- och fritidshusägare i Rättvik, Vikarbyn, Boda och Furudal med takbyte och takrenovering.",
+   "paras": [
+     "Rättviksbygden har många äldre trävillor, timmerhus och fritidshus, ofta i sluttningar mot Siljan. På dessa tak är varsamhet och rätt materialval viktigt, och vi förnyar underlag och plåt utan att förändra husets uttryck.",
+     "Klimatet vid Siljan är snörikt med kalla vintrar. Snölast, isbildning och frys–töcykler sliter på tätskikt och pannor; vi lägger vikt vid snörasskydd, infästningar och avvattning som klarar snösmältning.",
+     "I Vikarbyn, Boda och Furudal finns utspridd bebyggelse i natursköna lägen, medan centrala Rättvik har tätare villaområden. Vi planerar projekten efter läge och tillgänglighet och samordnar arbetet lokalt.",
+   ],
+   "items": ["Villor och fritidshus i Rättvik, Vikarbyn, Boda, Furudal.","Varsamt arbete på timmer- och trähus.","Snörasskydd och avvattning för snörika vintrar."],
+   "faq": [
+     ("Tar ni takuppdrag i byarna kring Rättvik?","Ja, i hela Rättviks kommun inklusive Vikarbyn, Boda och Furudal, via vår lokala samarbetspartner."),
+     ("Hur hanterar ni sluttande, svåråtkomliga tomter?","Vi planerar etablering, ställning och säkerhet efter tomtens förutsättningar och takets tillgänglighet."),
+     ("Kan ni arbeta på fritidshus vintertid?","Vi bedömer varje projekt; vissa arbeten planeras till barmarkssäsong, medan akuta läckage åtgärdas när det behövs."),
+   ]},
+ "Smedjebacken": {
+   "intro": "Smedjebacken vid Norra Barken i södra Dalarna har en stark bruks- och stålhistoria. Vi hjälper villaägare i Smedjebacken, Söderbärke och Vad med takbyte, takrenovering och besiktning.",
+   "paras": [
+     "Smedjebacken präglas av järn- och stålindustrin och det sjönära läget vid Norra Barken. Villabebyggelsen består av allt från äldre trähus och bruksbostäder till efterkrigstidens småhus, där många tak nu är mogna för byte eller omläggning.",
+     "Det sjörika, skogsnära landskapet och de snörika vintrarna ger fukt, mossa på skuggiga ytor samt tunga snölaster och isbildning. Vi ser över taktvätt, avvattning, snörasskydd och taksäkerhet i samband med takarbeten.",
+     "I Söderbärke och Vad finns lantligt belägna villor, medan centrala Smedjebacken har tätare bebyggelse. Vi bedömer varje tak individuellt och föreslår rätt åtgärdsnivå efter husets ålder och skick.",
+   ],
+   "items": ["Villatak i Smedjebacken, Söderbärke, Vad.","Åtgärder mot mossa, snölast och isbildning.","Från läckagelagning till komplett takbyte."],
+   "faq": [
+     ("Arbetar ni i hela Smedjebackens kommun?","Ja, i Smedjebacken, Söderbärke, Vad och kringliggande byar, via vår lokala partner i Dalarna."),
+     ("Mitt sjönära tak är mossigt – vad gör ni?","Fuktiga, skuggiga lägen ger mer mossa. Vi tvättar skonsamt, rensar avvattningen och bedömer takets skick."),
+     ("Hur får jag en offert?","Vi bokar ett platsbesök och lämnar en tydlig, fast offert efter besiktning."),
+   ]},
+}
+_dal_files = {n: f"taklaggare-{slug(n)}.html" for n in DALARNA_AREAS}
+
+# ---- Dalarna hub (dalarna.html) ------------------------------------------
+_dal_cards = "\n".join(f"""            <article class="service-snippet">
+              <h3>{n}</h3>
+              <p>Takläggare i {n} – takbyte, takrenovering och besiktning.</p>
+              <a class="text-link" href="{_dal_files[n]}">Takläggare i {n}</a>
+            </article>""" for n in DALARNA_AREAS)
+page(file="dalarna.html",
+  geo_region="SE-W", geo_placename="Borlänge, Dalarna",
+  title="Takläggare i Dalarna – Borlänge, Falun & hela regionen | Geal Entreprenad AB",
+  description="Vi utför takbyte, takrenovering och takbesiktning i Dalarna – Borlänge, Falun, Ludvika, Avesta, Mora, Leksand m.fl. Lokala takläggare via vår samarbetspartner. Begär kostnadsfri offert.",
+  h1="Takläggare i Dalarna",
+  crumbs=[("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
+  cta=("Behöver du takläggare i Dalarna?","Skicka en förfrågan – vi samordnar ditt takprojekt med erfarna takläggare på plats i Dalarna."),
+  body=hero("Takläggare i Dalarna",
+    "Geal Entreprenad AB tar takuppdrag i hela Dalarna. Vi samordnar projektet och lämnar offert, medan arbetet på taket utförs av vår lokala samarbetspartner med takläggare på plats – från Borlänge och Falun till orterna runt Siljan.",
+    [("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
+    [("#orter","Orter"),("#klimat","Dalarnas klimat"),("#tjanster","Tjänster")])
+    + sec("Tak i Dalarnas klimat – snölast, is och frys–tö", [
+        "Dalarna har ett kärvare klimat än Stockholmsregionen: tunga snölaster, långa köldperioder och återkommande töväxlingar. Det sätter hård press på taket – snötryck belastar konstruktionen, medan frys–töcykler spränger sprickor i pannor och tätskikt.",
+        "Vid takfot och hängrännor bildas istappar och isvallar när smältvatten fryser om, vilket kan tvinga in vatten under tätskiktet. Därför är snörasskydd, robust infästning, rätt underlagspapp och genomtänkt avvattning extra viktigt på dalatak.",
+        "Regionen har också gott om äldre trä- och faluröda villor samt fritidshus, där vi arbetar varsamt för att bevara husets uttryck. Se alla orter nedan eller jämför "
+        + a('takbyte-eller-takrenovering.html','takbyte och takrenovering') + " innan du bestämmer dig."], sid="klimat")
+    + f"""      <section class="section section-muted seo-section" id="orter">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">Orter vi arbetar i – Dalarna</h2>
+            <p>Välj din ort för lokal information om takbyte, takrenovering och takbesiktning.</p>
+          </div>
+          <div class="service-grid">
+{_dal_cards}
+          </div>
+        </div>
+      </section>"""
+    + links_block("Våra tjänster i Dalarna", [
+        ("takbyte.html","Takbyte","Byte av tegel-, betong- och plåttak."),
+        ("takrenovering.html","Takrenovering","Riktade åtgärder som förlänger takets liv."),
+        ("takbesiktning.html","Takbesiktning","Bedömning av skick inför beslut."),
+        ("taksakerhet-snorasskydd.html","Snörasskydd & taksäkerhet","Extra viktigt i Dalarnas snöklimat."),
+        ("taktvatt.html","Taktvätt","Mot mossa på skuggiga, trädnära tak."),
+        ("hangrannor-stupror.html","Hängrännor & stuprör","Avvattning som klarar snösmältning.")],
+        muted=False, sid="tjanster"),
+  faq=[
+    ("Har ni egen personal i Dalarna?","Vi samordnar och lämnar offert centralt, medan takarbetet utförs av vår lokala samarbetspartner med erfarna takläggare på plats i Dalarna. Du har en tydlig kontakt genom hela projektet."),
+    ("Vilka orter i Dalarna arbetar ni i?","Bland annat Borlänge, Falun, Ludvika, Avesta, Hedemora, Säter, Mora, Leksand, Rättvik och Smedjebacken – hör av dig även om din ort inte står med."),
+    ("Vad kostar ett takbyte i Dalarna?","Priset beror på takets storlek, material och skick. Vi lämnar alltid en tydlig offert efter besiktning; ROT-avdrag kan sänka arbetskostnaden."),
+  ])
+
+# ---- Dalarna ort-sidor ---------------------------------------------------
+for _ort, _d in DAL.items():
+    intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]; cityfaq = _d["faq"]
+    f = _dal_files[_ort]
+    others = [o for o in DALARNA_AREAS if o!=_ort][:3]
+    page(file=f,
+      geo_region="SE-W", geo_placename=f"{_ort}, Dalarna",
+      title=f"Takläggare i {_ort} – takbyte & takrenovering i Dalarna | Geal Entreprenad AB",
+      description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Dalarna – via lokal samarbetspartner. Begär kostnadsfri offert.",
+      h1=f"Takläggare i {_ort}",
+      crumbs=[("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
+      cta=(f"Behöver du takläggare i {_ort}?", f"Begär en kostnadsfri offert – vi samordnar ditt takprojekt i {_ort} med takläggare på plats i Dalarna."),
+      body=hero(f"Takläggare i {_ort}", intro,
+        [("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
+        [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
+        + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
+            f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar i hela {a('dalarna.html','Dalarna')} – se fler orter nedan."], sid="lokalt")
+        + links_block(f"Våra tjänster i {_ort}", [
+            ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
+            ("takrenovering.html", f"Takrenovering i {_ort}", "Riktade åtgärder som förlänger takets liv."),
+            ("takbesiktning.html", f"Takbesiktning i {_ort}", "Bedömning av skick inför beslut.")], muted=False, sid="tjanster")
+        + sec_split(f"Så arbetar vi i {_ort}", [
+            f"Geal Entreprenad AB samordnar ditt takprojekt i {_ort} och lämnar offert, medan arbetet på taket utförs av vår lokala samarbetspartner med erfarna takläggare på plats i Dalarna. Du har en tydlig kontakt genom hela projektet.",
+            f"Vi anpassar alltid material och metod efter Dalarnas klimat med tunga snölaster och frys–tö. Läs mer om {a('taksakerhet-snorasskydd.html','snörasskydd och taksäkerhet')} eller {a('villatak.html','tak på villa')}."],
+            f"Takläggare i {_ort}", items)
+        + links_block("Fler orter i Dalarna", [
+            (_dal_files[o], f"Takläggare i {o}", f"Vi arbetar även i {o}.") for o in others]),
       faq=cityfaq)
 
 # ====================== ARTICLES (cluster) ================================
