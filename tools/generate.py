@@ -32,7 +32,7 @@ VATNR   = "SE559303756601"
 AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
          "Järfälla","Täby","Danderyd","Lidingö","Nacka"]
 
-# Dalarna: Geal samordnar/förmedlar takprojekt och utför via lokal
+# Dalarna: Geal Entreprenad AB samordnar/förmedlar takprojekt och utför via lokal
 # samarbetspartner på plats i Dalarna. Ingen egen adress i regionen anges.
 DALARNA_AREAS = ["Borlänge","Falun","Ludvika","Avesta","Hedemora",
                  "Säter","Mora","Leksand","Rättvik","Smedjebacken"]
@@ -809,7 +809,7 @@ for _ort, _d in LOC.items():
       faq=cityfaq)
 
 # ====================== DALARNA (Borlänge + regionen) =====================
-# Geal förmedlar/samordnar och utför via lokal samarbetspartner på plats i
+# Geal Entreprenad AB förmedlar/samordnar och utför via lokal samarbetspartner på plats i
 # Dalarna. Egen adress i regionen anges INTE (NAP-ärlighet). Gemensamma
 # lokala vinklar: tunga snölaster, frys–tö, istappar, äldre trä-/faluröda
 # villor och fritidshus. geo.region = SE-W (Dalarna).

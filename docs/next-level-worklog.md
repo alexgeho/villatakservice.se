@@ -187,7 +187,7 @@ i verkligheten är fler indexerade. ~35 sidor kvar att köa nästa dagar (kvot/d
 
 ## Follow-up (2026-09-12) — Dalarna-kluster (Borlänge + regionen) ✅
 
-**Affärsmodell:** Geal fångar leads via egen sajt; utförande via lokal
+**Affärsmodell:** Geal Entreprenad AB fångar leads via egen sajt; utförande via lokal
 samarbetspartner (bekant med byggföretag) på plats i Dalarna. → Samma varumärke,
 en sajt. Ingen egen NAP/adress i Dalarna anges (ärlighet); ingen GBP i regionen.
 

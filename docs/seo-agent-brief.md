@@ -64,7 +64,7 @@ Informationsartiklar som länkar internt till money pages. Prioritet efter köpi
 Varje: Article-schema, interna länkar till tjänst + område, ärlig fakta.
 
 ## On-page-krav (per sida)
-- `title` ≤ ~60 tecken, sökord först + lokal krok. Ex: `Takbyte i Sundbyberg – fast pris & ROT | Geal Entreprenad`.
+- `title` ≤ ~60 tecken, sökord först + lokal krok. Ex: `Takbyte i Sundbyberg – fast pris & ROT | Geal Entreprenad AB`.
 - `meta description` ≤ ~155 tecken, sökord + CTA.
 - Exakt en H1 med huvudsökord; logisk H2/H3-hierarki.
 - Unika title/description/H1 per sida (kolla dubbletter på hela sajten).
