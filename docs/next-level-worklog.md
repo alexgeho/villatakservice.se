@@ -184,3 +184,32 @@ i verkligheten är fler indexerade. ~35 sidor kvar att köa nästa dagar (kvot/d
    Kolla att GBP-tel 08-124 102 76 matchar sajten (annars byt till mobil 070-757 75 75 på båda).
 7. **GSC:** fortsätt Request Indexing för resterande ~35 sidor (kvot ~10/dag).
    Kolla även valideringsstatus (404/canonical) + sitemap "Discovered pages" (mål 60).
+
+## Follow-up (2026-09-12) — Dalarna-kluster (Borlänge + regionen) ✅
+
+**Affärsmodell:** Geal fångar leads via egen sajt; utförande via lokal
+samarbetspartner (bekant med byggföretag) på plats i Dalarna. → Samma varumärke,
+en sajt. Ingen egen NAP/adress i Dalarna anges (ärlighet); ingen GBP i regionen.
+
+### Gjort (committat + pushat, autodeploy)
+- **11 nya sidor:** `dalarna.html` (hub) + `taklaggare-{borlange,falun,ludvika,
+  avesta,hedemora,sater,mora,leksand,rattvik,smedjebacken}.html`.
+- Unikt lokalt innehåll/ort (industri-/trähus-/bruks-historia, Siljan/fritidshus,
+  snölast, frys–tö, istappar) + unik lokal FAQ. Matchar Stockholm-sidornas nivå.
+- Generator: `DALARNA_AREAS` + `DAL`-dict + `slug()` + egen ort-loop
+  (partner-ramverk, snörasskydd-vinkel) + hub. `render()` fick geo-override →
+  `geo.region=SE-W`, `geo.placename="<ort>, Dalarna"` (Stockholm kvar SE-AB).
+- Länkat: hub från `omraden.html` + footer (generator **och** 5 statiska sidor).
+  Auto in i `sitemap.xml` + `sok.html`-index. `validate.py` grönt: **74 sidor, 170 JSON-LD, 0 fel**.
+- Tjänster återanvänds (länkar till takbyte/takrenovering/besiktning/snörasskydd/
+  taktvätt/hängrännor) — inga dubblettservice-sidor per ort (undviker doorway).
+
+### RESUME — Dalarna nästa steg (prio)
+1. **[OWNER] Partner-fakta** om товарищ vill synas: firmanamn/org.nr/ev. lokal
+   adress+tel. Då kan vi lägga separat LocalBusiness/GBP i Borlänge (starkaste
+   map-pack-signalen för Dalarna) — annars rankar Dalarna-sidorna organiskt.
+2. `service_schema`/`local_business_schema` `areaServed` listar bara Stockholm —
+   överväg per-sida-override som lägger Dalarna-orter på Dalarna-sidorna.
+3. **GSC:** Request Indexing för de 11 nya URL:erna (efter deploy verifierad live).
+4. Fler orter vid behov: Gagnef, Vansbro, Malung, Orsa, Älvdalen.
+5. [OWNER] ev. lokala kundcase/foton från Dalarna-partnern → E-E-A-T.
