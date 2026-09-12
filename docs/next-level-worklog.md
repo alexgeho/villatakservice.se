@@ -203,13 +203,45 @@ en sajt. Ingen egen NAP/adress i Dalarna anges (ärlighet); ingen GBP i regionen
   Auto in i `sitemap.xml` + `sok.html`-index. `validate.py` grönt: **74 sidor, 170 JSON-LD, 0 fel**.
 - Tjänster återanvänds (länkar till takbyte/takrenovering/besiktning/snörasskydd/
   taktvätt/hängrännor) — inga dubblettservice-sidor per ort (undviker doorway).
+- **Namn:** enhetligt "Geal Entreprenad AB" överallt (inga bara "Geal" kvar,
+  äv. i kommentarer/docs).
 
-### RESUME — Dalarna nästa steg (prio)
-1. **[OWNER] Partner-fakta** om товарищ vill synas: firmanamn/org.nr/ev. lokal
-   adress+tel. Då kan vi lägga separat LocalBusiness/GBP i Borlänge (starkaste
-   map-pack-signalen för Dalarna) — annars rankar Dalarna-sidorna organiskt.
-2. `service_schema`/`local_business_schema` `areaServed` listar bara Stockholm —
+### Uppföljning samma dag — offert-flöde utan Stockholmsadress
+Problem: på Dalarna-sidorna ledde **Offert**-knappen till `kontakt.html` som visar
+Stockholmsadressen (Byggmästarvägen 18, Bromma) + Stockholmskarta → förvirrande för
+en Borlänge-besökare. Ägarens beslut: "regionsidor → enkel CTA-form, rör ej kontakt".
+- **Ny `offert-dalarna.html`** = rent offertformulär (namn/ort/tel/e-post/tjänst/
+  meddelande + honeypot + GDPR), INGEN Stockholmsadress/karta. `noindex`+`nolist`,
+  `contact_url=self`, `no_cta=True`.
+- `render()`: ny **`contact_url`**-parameter (default `kontakt.html`). Offert-knapp
+  i headern (NAV via `.replace`) + CTA-strip ("Få offert") använder den.
+  Dalarna-hub + 10 ort-sidor sätter `contact_url="offert-dalarna.html"`.
+- `kontakt.html` + alla Stockholm-sidor OFÖRÄNDRADE. `validate.py` grönt: **75 sidor**.
+- **Honeypot-fältet** "Lämna detta fält tomt" = spamfälla, döljs av CSS
+  `.hp-field{left:-9999px}` (assets/css/style.css:1067). Syns bara i lokal fil utan
+  CSS — på live är det dolt. Inget att fixa.
+
+### Öppet / ej gjort (medvetet)
+- **Footer-adressen** `Byggmästarvägen 18, Bromma` visas fortfarande i sidfoten på
+  ALLA sidor (även Dalarna) = sajtens gemensamma NAP. Ägaren sa "rör ej kontakter"
+  → lämnad kvar. Ev. TODO: ta bort gatuadressen ur footern enbart på Dalarna-sidor
+  (behåll orten). Kräver footer-parameter i generatorn + patch av statiska sidor.
+
+### RESUME — Dalarna nästa steg (börja här, prio-ordning)
+1. **[OWNER] Verifiera live** att de 11 sidorna + `offert-dalarna.html` svarar 200
+   efter autodeploy. Testa Offert-knappen på t.ex. taklaggare-borlange.html → ska
+   landa på offert-dalarna.html (ingen Stockholmsadress i huvudinnehållet).
+2. **[OWNER] Partner-fakta** om товарищ vill synas: firmanamn/org.nr/ev. lokal
+   adress+tel. Då: separat LocalBusiness/GBP i Borlänge (starkaste map-pack-signalen
+   för Dalarna) — annars rankar Dalarna-sidorna organiskt.
+3. **GSC:** Request Indexing för de 11 nya URL:erna (offert-dalarna är noindex →
+   köa EJ den). Kolla att de kommer med i "Discovered pages".
+4. `service_schema`/`local_business_schema` `areaServed` listar bara Stockholm —
    överväg per-sida-override som lägger Dalarna-orter på Dalarna-sidorna.
-3. **GSC:** Request Indexing för de 11 nya URL:erna (efter deploy verifierad live).
-4. Fler orter vid behov: Gagnef, Vansbro, Malung, Orsa, Älvdalen.
-5. [OWNER] ev. lokala kundcase/foton från Dalarna-partnern → E-E-A-T.
+5. (Ev.) footer-adress-frågan ovan — vänta på ägarens besked.
+6. Fler orter vid behov: Gagnef, Vansbro, Malung, Orsa, Älvdalen (lägg i `DAL`-dict).
+7. [OWNER] ev. lokala kundcase/foton från Dalarna-partnern → E-E-A-T.
+
+**Arbetsflöde-påminnelse:** redigera `tools/generate.py` → `python3 tools/generate.py`
+→ `python3 tools/validate.py` (ska vara grön) → commit + push (autodeploy).
+Statiska sidor (index/tjanster/om-oss/kontakt/artiklar) genereras EJ — patcha för hand.
