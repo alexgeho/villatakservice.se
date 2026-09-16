@@ -2,31 +2,38 @@
 
 > Genomförande av `docs/next-level-brief.md`. Autonomt läge, blockerande ägarfakta = **[OWNER]**.
 > Bygg: `python3 tools/generate.py` · Lint: `python3 tools/validate.py` (bägge gröna).
-> Status: **5/5 uppgifter klara + follow-up klar.** 63 sidor, 148 JSON-LD-block, 0 lint-fel.
+> Status: **5/5 uppgifter klara + follow-ups klara.** 75 sidor, 171 JSON-LD-block, 0 lint-fel.
 
 ---
-## ▶️ RESUME — börja här nästa gång (uppdaterad 2026-09-08)
+## ▶️ RESUME — börja här nästa gång (uppdaterad 2026-09-16)
 
-**Läge:** Hela `next-level-brief.md` (1–5) + follow-up (inline consent, sök i nav/footer) är
-GENOMFÖRT, committat och pushat till `main` (autodeploy). Allt kod-arbete är klart och grönt.
+**Läge:** All kod är klar, committad och pushad till `main` (autodeploy), `validate.py` grön.
+Senaste jobb (2026-09-16): GSC-genomgång (inga kodfel) + intern länkning för svaga sidor.
+Full logg längst ner i "Follow-up (2026-09-16)".
 
 **Arbetsflöde (memorera):** redigera `tools/generate.py` → `python3 tools/generate.py` →
-`python3 tools/validate.py` (ska vara grön) → commit + push. Statiska sidor
-(index/tjanster/om-oss/kontakt/artiklar) genereras EJ – patcha dem för hand/skript.
+`python3 tools/validate.py` (ska vara grön) → commit + push. Statiska sidor som EJ genereras:
+index/tjanster/om-oss/kontakt/artiklar (patcha för hand). **OBS: `bygg.html` GENERERAS** —
+patcha i generate.py, inte filen direkt.
 
 **NÄSTA STEG (prio-ordning):**
-1. **[OWNER] – kod väntar bara på ID:n.** Fyll i `GA4_ID` + `META_PIXEL_ID` i `assets/js/main.js`.
+1. **[imorgon / när GSC-kvot återställts] Request Indexing** för ~19 kvarvarande
+   "Discovered - currently not indexed" (full lista i Follow-up 2026-09-16 → RESUME).
+   ~10-12 URL/dag. GSC → URL Inspection → klistra full https-URL → Enter → REQUEST INDEXING.
+2. **[om ~1-2 v] Kontrollera i GSC:** "Discovered"-antalet sjunker, "Last crawled" får datum,
+   404-valideringen (startad 9/10) går Passed.
+3. **[OWNER] – kod väntar bara på ID:n.** Fyll i `GA4_ID` + `META_PIXEL_ID` i `assets/js/main.js`.
    Utan dem laddas ingen spårning. Verifiera sedan `RATES` (kr/m²) i kalkylatorn.
-2. **[OWNER] Rich Results Test** på index.html (WebSite/SearchAction) + takbyte.html (HowTo).
-3. **[OWNER] GBP + Google-omdömen + foto före/efter + backlinks** (hitta/eniro/allabolag).
-   Kräver ägarens inloggning – kan ej göras av agent.
-4. **Case-sida** (referens/omdömen) när ägaren skickar foton → E-E-A-T-sektion.
-5. **Konverteringsspårning** för tel/mailto-klick (event `contact`) när GA4 är aktivt.
-6. **HowTo på fler processidor** (byggfirma, villarenovering) när de får riktiga steg.
-7. **Fas 3 (datadrivet):** dra GSC-queries pos 8–20 → punktvisa nya/förstärkta sidor. Ingen massgenerering.
+4. **[OWNER] Rich Results Test** på index.html (WebSite/SearchAction) + takbyte.html (HowTo).
+5. **[OWNER] GBP-verifiering + Google-omdömen + foto före/efter + backlinks** (hitta/eniro/
+   allabolag). Kräver ägarens inloggning. **Sajtauktoritet/backlinks = största kvarvarande
+   hävstången** för att få "Discovered"-sidorna indexerade snabbare.
+6. **Case-sida** (referens/omdömen) när ägaren skickar foton → E-E-A-T-sektion.
+7. **Konverteringsspårning** för tel/mailto-klick (event `contact`) när GA4 är aktivt.
+8. **Fas 3 (datadrivet):** dra GSC-queries pos 8–20 → punktvisa nya/förstärkta sidor.
 
-**Så fortsätter du:** läs denna fil + `docs/next-level-brief.md` → plocka första öppna punkten
-ovan. Skriv "продолжаем" för att dra igång.
+**Så fortsätter du:** läs denna fil (denna RESUME + Follow-up 2026-09-16 längst ner) →
+plocka första öppna punkten. Skriv "продолжаем" för att dra igång.
 ---
 
 ## Genomfört (2026-09-08)
