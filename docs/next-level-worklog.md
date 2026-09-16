@@ -245,3 +245,41 @@ en Borlänge-besökare. Ägarens beslut: "regionsidor → enkel CTA-form, rör e
 **Arbetsflöde-påminnelse:** redigera `tools/generate.py` → `python3 tools/generate.py`
 → `python3 tools/validate.py` (ska vara grön) → commit + push (autodeploy).
 Statiska sidor (index/tjanster/om-oss/kontakt/artiklar) genereras EJ — patcha för hand.
+**OBS:** `bygg.html` GENERERAS (page(file="bygg.html")) — patcha i generate.py, ej filen.
+
+## Follow-up (2026-09-16) — GSC-genomgång + intern länkning ✅
+
+### A. GSC Page indexing (uppdaterad 9/14): 37 indexerade, 33 ej — INGA kodfel
+Alla "not indexed" är antingen avsiktligt, redan åtgärdat eller Googles kö:
+- **noindex (1)** = `sok.html` (avsiktligt). **Page with redirect (3)** = våra
+  kanoniska 301 (http/www/index.html). **404 (3)** = 301 finns, validering igång
+  sedan 9/10. **Duplicate canonical = Passed ✅** (var 3, nu 0 — förra jobbet bet).
+- **Discovered/Crawled not indexed (26)** = legitima sidor i Googles crawl-kö,
+  alla "Last crawled: N/A". Inget kodfel — löses av Request Indexing + tid.
+
+### B. Request Indexing — 5 sidor, sedan dagskvot slut ("Quota Exceeded")
+Köade (priority crawl): villarenovering, tillbyggnad, byggfirma,
+kalkylator-takbyte, nybyggnad-villa. Kvot ~10-12/dag/property tog slut.
+
+### C. Intern länkning (committat + pushat) — mot "Referring page: None detected"
+Alla immarkerade sidor hade svag intern länkning → Google deprioriterar crawl.
+- **tjanster.html** (statisk): ny sektion "Fler taktjänster & verktyg" → takfonster,
+  solceller-tak, skorstensrenovering, energieffektivt-tak, tegel-betong-plattak,
+  mala-plattak, vindsisolering, hangrannor-stupror, kalkylator-takbyte.
+- **index.html** (statisk): kalkylator + vad-kostar-takbyte + ROT i "Pris och offert".
+- **generate.py → bygg.html**: kort för vad-kostar-bygga-hus i byggtjänster.
+- Resultat: kalkylator 2→4, takfonster 1→2, vad-kostar-bygga-hus 1→2 (nu från
+  nav-hub), m.fl. `validate.py` grön: 75 sidor, 171 JSON-LD, 0 fel.
+
+### RESUME — nästa gång (börja här)
+1. **[imorgon, när kvot återställts] Request Indexing** för resterande ~19
+   "Discovered not indexed": attefallshus-regler, bygglov-takbyte, energieffektivt-tak,
+   friggebod, fritidshus, istappar-isbildning, mala-plattak, omraden,
+   skorstensrenovering, solceller-tak, takarbete-vintern, takbyte-eller-takrenovering,
+   takfonster, taklaggare-jarfalla, taksakerhet-snorasskydd, tegel-betong-plattak,
+   vad-kostar-bygga-hus, var-checklista-tak, vindsisolering. (GSC → URL Inspection →
+   klistra full https-URL → Enter → REQUEST INDEXING. ~10/dag.)
+2. **[om ~1-2 v] Kolla** att "Discovered" sjunker + "Last crawled" får datum.
+   404-validering (9/10) → ska gå Passed.
+3. Kvarstående [OWNER]-blockerare oförändrade: **GA4_ID + META_PIXEL_ID** i `main.js`,
+   GBP-verifiering/foton/omdömen, backlinks (sajtauktoritet = största kvarvarande hävstång).
