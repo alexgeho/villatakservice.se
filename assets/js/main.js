@@ -96,7 +96,7 @@
    ===================================================================== */
 (function () {
   // [OWNER] GA4 Measurement ID, t.ex. "G-XXXXXXXXXX". Tomt = GA4 laddas ej.
-  var GA4_ID = "";
+  var GA4_ID = "G-66ELQJF51F";
   // [OWNER] Meta (Facebook) Pixel ID, t.ex. "123456789012345". Tomt = pixel laddas ej.
   var META_PIXEL_ID = "";
   var STORAGE_KEY = "vts_consent"; // "granted" | "denied"
