@@ -5,6 +5,16 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 2026-09-26 — SEO-audit-fixar (`c023c9f`, live)
+Audit → `~/sites-hub/audits/2026-09-26/villatakservice-audit.md`. Klart och verifierat live (71 URL = 200):
+- ✅ Ortsidor länkar geografiska grannar (`NEIGHBORS` i generate.py) – svaga orter 1–2 → 3–8 inlänkar; Service-schema per ort med egen areaServed.
+- ✅ 286 «Läs mer» → beskrivande ankare; `href="/"` i stället för index.html; titlar > 60 tappar suffixet (56 → 1).
+- ✅ Kannibalisering: startsida «Takläggare i Stockholm – takbyte & takrenovering för villa», takbyte «Takbyte på villa i Stockholm» (Sundbyberg-fokus = taklaggare-sundbyberg).
+- ✅ sendmail.php: lead loggas i `domains/villatakservice.se/leads/leads-ÅÅÅÅ-MM.jsonl` (utanför webroot) före mail(); rate-limit 5/h per IP; tidsfälla 3 s (ts från main.js); fel → tillbaka till rätt formulär; Dalarna-fältet «ort» med i mejlet.
+- ✅ .htaccess: http/www → https i ett hopp, egen 404, README.md nekad; CSS/JS med `?v=hash`; Breadcrumb-schema på tjanster/om-oss.
+- ☐ Kvar: GA4_ID/META_PIXEL_ID (ägaren); tunna money-sidor (takbesiktning 323 ord, vad-kostar-takbyte 374) → 1000–1500 ord; riktiga foton; GBP/omdömen; Dalarna-partner/adress.
+
+---
 ## ▶️ RESUME — börja här nästa gång (uppdaterad 2026-09-06)
 
 **Läge:** Sajten är LIVE i prod. **61 sidor.** Autodeploy (push till main → FTP till hostingen, se `docs/DEPLOY.md`). Sitemap **Success** i GSC (Google indexerar själv).
