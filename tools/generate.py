@@ -37,6 +37,32 @@ AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
 DALARNA_AREAS = ["Borlänge","Falun","Ludvika","Avesta","Hedemora",
                  "Säter","Mora","Leksand","Rättvik","Smedjebacken"]
 
+# Geografiska grannar för "Närliggande områden". Tidigare länkade varje ortsida
+# till de tre FÖRSTA orterna i listan, så Sundbyberg/Solna/Bromma fick ~74 inlänkar
+# och t.ex. Täby/Nacka/Mora bara 1–2 (→ "Discovered – not indexed").
+NEIGHBORS = {
+  "Sundbyberg": ["Solna","Bromma","Spånga","Järfälla"],
+  "Solna":      ["Sundbyberg","Bromma","Danderyd","Sollentuna"],
+  "Bromma":     ["Sundbyberg","Spånga","Solna","Järfälla"],
+  "Spånga":     ["Bromma","Järfälla","Sundbyberg","Sollentuna"],
+  "Sollentuna": ["Järfälla","Täby","Danderyd","Solna"],
+  "Järfälla":   ["Spånga","Sollentuna","Bromma","Sundbyberg"],
+  "Täby":       ["Danderyd","Sollentuna","Lidingö","Solna"],
+  "Danderyd":   ["Täby","Solna","Lidingö","Sollentuna"],
+  "Lidingö":    ["Danderyd","Nacka","Täby","Solna"],
+  "Nacka":      ["Lidingö","Danderyd","Täby","Solna"],
+  "Borlänge":   ["Falun","Säter","Ludvika","Smedjebacken"],
+  "Falun":      ["Borlänge","Rättvik","Säter","Leksand"],
+  "Ludvika":    ["Smedjebacken","Borlänge","Säter"],
+  "Avesta":     ["Hedemora","Säter","Borlänge"],
+  "Hedemora":   ["Avesta","Säter","Borlänge"],
+  "Säter":      ["Hedemora","Borlänge","Falun","Avesta"],
+  "Mora":       ["Rättvik","Leksand","Falun"],
+  "Leksand":    ["Rättvik","Mora","Falun","Borlänge"],
+  "Rättvik":    ["Leksand","Mora","Falun"],
+  "Smedjebacken": ["Ludvika","Borlänge","Säter"],
+}
+
 def slug(name):
     return (name.lower().replace("ä","a").replace("å","a").replace("ö","o")
             .replace(" ","-"))
@@ -60,10 +86,10 @@ CONSENT_INLINE = """    <script>
     </script>"""
 
 NAV = """      <div class="container header-inner">
-        <a class="logo" href="index.html">Geal Entreprenad AB</a>
+        <a class="logo" href="/">Geal Entreprenad AB</a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="index.html">Hem</a></li>
+            <li><a data-nav href="/">Hem</a></li>
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
@@ -142,7 +168,7 @@ def local_business_schema():
 def breadcrumb_schema(crumbs):
     return {"@context":"https://schema.org","@type":"BreadcrumbList",
         "itemListElement":[{"@type":"ListItem","position":i+1,"name":n,
-            "item":DOMAIN+"/"+u} for i,(n,u) in enumerate(crumbs)]}
+            "item":DOMAIN+"/"+("" if u in ("/","index.html") else u)} for i,(n,u) in enumerate(crumbs)]}
 
 def faq_schema(faq):
     return {"@context":"https://schema.org","@type":"FAQPage",
@@ -158,10 +184,11 @@ def article_schema(p):
         "mainEntityOfPage":DOMAIN+"/"+p["file"]}
 
 def service_schema(p):
+    areas = p.get("area_served") or ["Stockholm"]+AREAS
     return {"@context":"https://schema.org","@type":"Service",
         "serviceType":p.get("service_type",p["h1"]),
         "provider":{"@type":"RoofingContractor","name":BRAND,"url":DOMAIN+"/"},
-        "areaServed":[{"@type":"City","name":n} for n in ["Stockholm"]+AREAS],
+        "areaServed":[{"@type":"City","name":n} for n in areas],
         "name":p["h1"],"description":p["description"]}
 
 def howto_schema(p):
@@ -173,6 +200,19 @@ def howto_schema(p):
 def jsonld(obj):
     return ('    <script type="application/ld+json">\n' +
             json.dumps(obj, ensure_ascii=False, indent=6) + "\n    </script>")
+
+def _asset_version(rel):
+    import hashlib
+    with open(os.path.join(ROOT, rel), "rb") as fh:
+        return hashlib.md5(fh.read()).hexdigest()[:8]
+
+# CSS/JS cachas 1 år (.htaccess) – versionera URL:en så en deploy syns direkt.
+CSS_URL = "assets/css/style.css?v=" + _asset_version("assets/css/style.css")
+JS_URL  = "assets/js/main.js?v=" + _asset_version("assets/js/main.js")
+
+def short_title(t):
+    # Google kortar vid ~60 tecken – offra varumärkessuffixet först.
+    return t.replace(" | Geal Entreprenad AB", "") if len(t) > 60 else t
 
 def render(p):
     robots_meta = '\n    <meta name="robots" content="noindex, follow" />' if p.get("noindex") else ""
@@ -222,12 +262,12 @@ def render(p):
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{p['title']}</title>
+    <title>{short_title(p['title'])}</title>
     <meta name="description" content="{p['description']}" />
     <link rel="canonical" href="{canon}" />
     <meta name="geo.region" content="{p.get('geo_region','SE-AB')}" />
     <meta name="geo.placename" content="{p.get('geo_placename','Bromma, Stockholm')}" />
-    <meta property="og:title" content="{p['title']}" />
+    <meta property="og:title" content="{short_title(p['title'])}" />
     <meta property="og:description" content="{p['description']}" />
     <meta property="og:type" content="{p.get('og_type','website')}" />
     <meta property="og:url" content="{canon}" />
@@ -235,9 +275,9 @@ def render(p):
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1f2f46" />{robots_meta}
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="{CSS_URL}" />
 {CONSENT_INLINE}
-    <script src="assets/js/main.js" defer></script>
+    <script src="{JS_URL}" defer></script>
 {blocks}
   </head>
   <body>
@@ -348,7 +388,7 @@ def links_block(title, cards, muted=True, sid=""):
     arts = "\n".join(f"""            <article class="service-snippet">
               <h3>{h}</h3>
               <p>{t}</p>
-              <a class="text-link" href="{href}">Läs mer</a>
+              <a class="text-link" href="{href}">{h} &rarr;</a>
             </article>""" for href,h,t in cards)
     cls = "section section-muted seo-section" if muted else "section seo-section"
     idattr = f' id="{sid}"' if sid else ""
@@ -364,12 +404,12 @@ def links_block(title, cards, muted=True, sid=""):
       </section>"""
 
 # ====================== MONEY: SERVICE PAGES ==============================
-SVC_CRUMB = [("Hem","index.html"),("Tjänster","tjanster.html")]
+SVC_CRUMB = [("Hem","/"),("Tjänster","tjanster.html")]
 
 page(file="takbyte.html",
-  title="Takbyte i Sundbyberg & Stockholm – fast pris & ROT | Geal Entreprenad AB",
+  title="Takbyte på villa i Stockholm – fast pris & ROT | Geal Entreprenad AB",
   description="Takbyte på villa i Sundbyberg och Stockholm. Vi byter tegel-, betong- och plåttak med tydlig offert, ROT-avdrag och slutkontroll. Begär kostnadsfri offert.",
-  h1="Takbyte i Sundbyberg och Stockholm",
+  h1="Takbyte på villa i Stockholm",
   service=True, service_type="Takbyte", localbiz=False,
   howto=("Så går ett takbyte till", [
     ("Förfrågan","Du kontaktar oss med kort info om huset och taket."),
@@ -378,7 +418,7 @@ page(file="takbyte.html",
     ("Slutkontroll","Vi går igenom resultatet med dig och dokumenterar arbetet.")]),
   crumbs=SVC_CRUMB+[("Takbyte","takbyte.html")],
   cta=("Dags för takbyte?","Begär en kostnadsfri offert på ditt takbyte – vi bedömer taket och ger tydligt pris med ROT-avdrag."),
-  body=hero("Takbyte i Sundbyberg och Stockholm",
+  body=hero("Takbyte på villa i Stockholm",
     "Ett takbyte är en av villans större investeringar. Vi byter tegeltak, betongpannor och plåttak med tydlig offert, fast pris och slutbesiktning – i hela Storstockholm.",
     SVC_CRUMB+[("Takbyte","takbyte.html")],
     [("#nar","När behövs takbyte"),("#ingar","Vad ingår"),("#pris","Pris & ROT"),("#faq","Vanliga frågor")])
@@ -573,11 +613,11 @@ page(file="villatak.html", localbiz=True,
   title="Tak på villa – komplett guide till villatak i Stockholm | Geal Entreprenad AB",
   description="Villatak i Stockholm: allt om takbyte, material, kostnad, ROT och underhåll för tak på villa. Guide och lokala takläggare för ditt villatak.",
   h1="Tak på villa – komplett guide till villatak",
-  crumbs=[("Hem","index.html"),("Villatak","villatak.html")],
+  crumbs=[("Hem","/"),("Villatak","villatak.html")],
   cta=("Ska du åtgärda ditt villatak?","Vi är takläggare specialiserade på villatak i Stockholm – begär en kostnadsfri offert."),
   body=hero("Tak på villa – komplett guide till villatak",
     "Villatak har egna förutsättningar: taklutning, material och detaljer skiljer sig från större fastigheter. Här samlar vi allt om takbyte, renovering, material, kostnad och underhåll för tak på villa i Stockholm.",
-    [("Hem","index.html"),("Villatak","villatak.html")],
+    [("Hem","/"),("Villatak","villatak.html")],
     [("#material","Material"),("#atgarder","Åtgärder"),("#kostnad","Kostnad & ROT"),("#faq","Vanliga frågor")])
     + sec("Villatak i Stockholm – vad är särskilt?", [
         "De flesta villor i Stockholmsområdet har sadeltak med tegel- eller betongpannor, medan hus med lägre lutning ofta har plåttak. Villans tak är mer utsatt för lokala förhållanden än man tror – vindriktning, beskuggning av träd och snölaster påverkar slitaget.",
@@ -623,11 +663,11 @@ page(file="omraden.html",
   title="Områden – takläggare i Sundbyberg, Solna & Stockholm | Geal Entreprenad AB",
   description="Vi är takläggare i Sundbyberg, Solna, Bromma, Spånga, Sollentuna, Järfälla, Täby, Danderyd, Lidingö och Nacka. Se alla områden vi arbetar i.",
   h1="Områden vi arbetar i",
-  crumbs=[("Hem","index.html"),("Områden","omraden.html")],
+  crumbs=[("Hem","/"),("Områden","omraden.html")],
   cta=("Finns ditt område inte med?","Skicka en förfrågan – vi tar uppdrag i hela Storstockholm."),
   body=hero("Områden vi arbetar i",
     "Vi utgår från Bromma (Mariehäll) och arbetar som takläggare i hela Storstockholm. Lokalkännedom spelar roll – byggnadstyper, taklutningar och vanliga skador skiljer sig mellan områdena.",
-    [("Hem","index.html"),("Områden","omraden.html")])
+    [("Hem","/"),("Områden","omraden.html")])
     + f"""      <section class="section section-muted seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
@@ -787,15 +827,16 @@ LOC = {
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]; cityfaq = _d["faq"]
     f = _area_files[_ort]
-    others = [o for o in AREAS if o!=_ort][:3]
+    others = NEIGHBORS[_ort]
     page(file=f,
       title=f"Takläggare i {_ort} – takbyte & takrenovering | Geal Entreprenad AB",
       description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Stockholm. Lokal takfirma – begär kostnadsfri offert.",
       h1=f"Takläggare i {_ort}",
-      crumbs=[("Hem","index.html"),("Områden","omraden.html"),(_ort,f)],
+      service=True, service_type="Takläggning", area_served=[_ort],
+      crumbs=[("Hem","/"),("Områden","omraden.html"),(_ort,f)],
       cta=(f"Behöver du takläggare i {_ort}?", f"Vi är lokala takläggare i {_ort} – begär en kostnadsfri offert på ditt takprojekt."),
       body=hero(f"Takläggare i {_ort}", intro,
-        [("Hem","index.html"),("Områden","omraden.html"),(_ort,f)],
+        [("Hem","/"),("Områden","omraden.html"),(_ort,f)],
         [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
         + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar även i grannområden – se alla {a('omraden.html','områden vi arbetar i')}."], sid="lokalt")
@@ -962,11 +1003,11 @@ page(file="dalarna.html",
   title="Takläggare i Dalarna – Borlänge, Falun & hela regionen | Geal Entreprenad AB",
   description="Vi utför takbyte, takrenovering och takbesiktning i Dalarna – Borlänge, Falun, Ludvika, Avesta, Mora, Leksand m.fl. Lokala takläggare via vår samarbetspartner. Begär kostnadsfri offert.",
   h1="Takläggare i Dalarna",
-  crumbs=[("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
+  crumbs=[("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
   cta=("Behöver du takläggare i Dalarna?","Skicka en förfrågan – vi samordnar ditt takprojekt med erfarna takläggare på plats i Dalarna."),
   body=hero("Takläggare i Dalarna",
     "Geal Entreprenad AB tar takuppdrag i hela Dalarna. Vi samordnar projektet och lämnar offert, medan arbetet på taket utförs av vår lokala samarbetspartner med takläggare på plats – från Borlänge och Falun till orterna runt Siljan.",
-    [("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
+    [("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
     [("#orter","Orter"),("#klimat","Dalarnas klimat"),("#tjanster","Tjänster")])
     + sec("Tak i Dalarnas klimat – snölast, is och frys–tö", [
         "Dalarna har ett kärvare klimat än Stockholmsregionen: tunga snölaster, långa köldperioder och återkommande töväxlingar. Det sätter hård press på taket – snötryck belastar konstruktionen, medan frys–töcykler spränger sprickor i pannor och tätskikt.",
@@ -1002,17 +1043,18 @@ page(file="dalarna.html",
 for _ort, _d in DAL.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]; cityfaq = _d["faq"]
     f = _dal_files[_ort]
-    others = [o for o in DALARNA_AREAS if o!=_ort][:3]
+    others = NEIGHBORS[_ort]
     page(file=f,
       geo_region="SE-W", geo_placename=f"{_ort}, Dalarna",
       contact_url="offert-dalarna.html",
       title=f"Takläggare i {_ort} – takbyte & takrenovering i Dalarna | Geal Entreprenad AB",
       description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Dalarna – via lokal samarbetspartner. Begär kostnadsfri offert.",
       h1=f"Takläggare i {_ort}",
-      crumbs=[("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
+      service=True, service_type="Takläggning", area_served=[_ort],
+      crumbs=[("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
       cta=(f"Behöver du takläggare i {_ort}?", f"Begär en kostnadsfri offert – vi samordnar ditt takprojekt i {_ort} med takläggare på plats i Dalarna."),
       body=hero(f"Takläggare i {_ort}", intro,
-        [("Hem","index.html"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
+        [("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
         [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
         + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar i hela {a('dalarna.html','Dalarna')} – se fler orter nedan."], sid="lokalt")
@@ -1046,6 +1088,7 @@ _offert_form = """      <section class="section section-muted" id="form">
                 <label for="website">Lämna detta fält tomt</label>
                 <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
               </div>
+              <input type="hidden" name="retur" value="offert-dalarna.html" />
               <div class="field">
                 <label for="namn">Namn</label>
                 <input id="namn" name="namn" type="text" placeholder="Ange namn" required />
@@ -1103,14 +1146,14 @@ page(file="offert-dalarna.html",
   title="Begär offert – takläggare i Dalarna | Geal Entreprenad AB",
   description="Begär kostnadsfri offert på takbyte, takrenovering eller takbesiktning i Dalarna. Fyll i formuläret så återkommer vi.",
   h1="Begär offert – Dalarna",
-  crumbs=[("Hem","index.html"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")],
+  crumbs=[("Hem","/"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")],
   body=hero("Begär offert – Dalarna",
     "Berätta kort om ditt takprojekt i Dalarna så återkommer vi med en tydlig bedömning och offert. Arbetet utförs av vår lokala samarbetspartner på plats.",
-    [("Hem","index.html"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")])
+    [("Hem","/"),("Dalarna","dalarna.html"),("Begär offert","offert-dalarna.html")])
     + _offert_form)
 
 # ====================== ARTICLES (cluster) ================================
-ART_CRUMB = [("Hem","index.html"),("Artiklar","artiklar.html")]
+ART_CRUMB = [("Hem","/"),("Artiklar","artiklar.html")]
 
 def prose(blocks):
     out=[]
@@ -1610,11 +1653,11 @@ page(file="faq.html",
   title="Vanliga frågor om tak och takarbete | Geal Entreprenad AB",
   description="Vanliga frågor om takbyte, takrenovering, ROT-avdrag, pris, garanti och besiktning. Svar från takläggare i Bromma, Sundbyberg och Stockholm.",
   h1="Vanliga frågor om tak",
-  crumbs=[("Hem","index.html"),("Vanliga frågor","faq.html")],
+  crumbs=[("Hem","/"),("Vanliga frågor","faq.html")],
   cta=("Har du en fråga vi inte besvarat?","Kontakta oss så hjälper vi dig – gratis platsbesök och kostnadsförslag."),
   body=hero("Vanliga frågor om tak",
     "Här har vi samlat de vanligaste frågorna vi får om takbyte, takrenovering, pris, ROT-avdrag och garanti. Hittar du inte svaret är du välkommen att kontakta oss.",
-    [("Hem","index.html"),("Vanliga frågor","faq.html")])
+    [("Hem","/"),("Vanliga frågor","faq.html")])
     + links_block("Läs mer om våra tjänster", [
         ("takbyte.html","Takbyte","Komplett byte av tegel-, betong- och plåttak."),
         ("takrenovering.html","Takrenovering","Riktade åtgärder som förlänger takets liv."),
@@ -1655,16 +1698,16 @@ page(file="integritetspolicy.html", no_cta=True,
   title="Integritetspolicy | Geal Entreprenad AB",
   description="Integritetspolicy för villatakservice.se (Geal Entreprenad AB). Så behandlar vi dina personuppgifter enligt GDPR när du kontaktar oss.",
   h1="Integritetspolicy",
-  crumbs=[("Hem","index.html"),("Integritetspolicy","integritetspolicy.html")],
+  crumbs=[("Hem","/"),("Integritetspolicy","integritetspolicy.html")],
   body=hero("Integritetspolicy",
     "Vi värnar om din integritet. Här beskriver vi hur Geal Entreprenad AB behandlar dina personuppgifter enligt dataskyddsförordningen (GDPR).",
-    [("Hem","index.html"),("Integritetspolicy","integritetspolicy.html")])
+    [("Hem","/"),("Integritetspolicy","integritetspolicy.html")])
     + '      <section class="section">\n        <article class="container article-shell content-prose">\n'
     + prose(_pol_blocks)
     + '\n        </article>\n      </section>')
 
 # ====================== BYGG & RENOVERING ==============================
-BYGG_CRUMB = [("Hem","index.html"),("Bygg & Renovering","bygg.html")]
+BYGG_CRUMB = [("Hem","/"),("Bygg & Renovering","bygg.html")]
 
 page(file="bygg.html", localbiz=True,
   title="Bygg & Renovering i Stockholm – total entreprenad | Geal Entreprenad AB",
@@ -2071,11 +2114,11 @@ page(file="kalkylator-takbyte.html",
   title="Takbyte-kalkylator – uppskatta priset direkt | Geal Entreprenad AB",
   description="Räkna ut ett ungefärligt pris för takbyte på villa: ange area, material och taklutning så får du ett prisspann före och efter ROT. Grov uppskattning, inte en offert.",
   h1="Takbyte-kalkylator – uppskatta priset",
-  crumbs=[("Hem","index.html"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")],
+  crumbs=[("Hem","/"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")],
   cta=("Vill du ha ett exakt pris?","En kalkylator ger ett spann – vi ger ett fast pris efter kostnadsfritt platsbesök. Begär offert."),
   body=hero("Takbyte-kalkylator – uppskatta priset",
     "Få en snabb känsla för vad ett takbyte kan kosta. Ange takets area, material och lutning så visar kalkylatorn ett ungefärligt spann – både före och efter ROT-avdrag. Det är en grov uppskattning, inte en bindande offert.",
-    [("Hem","index.html"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")])
+    [("Hem","/"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")])
     + _kalkyl_tool
     + sec("Så fungerar uppskattningen", [
         "Kalkylatorn utgår från branschtypiska kvadratmeterpriser för olika takmaterial och justerar för takets lutning och komplexitet. Priset inkluderar normalt material och arbete, men varje tak är unikt – underlagets skick, plåtdetaljer, ställningsbehov och tillgänglighet påverkar slutpriset mer än kvadratmeterpriset.",
@@ -2090,15 +2133,15 @@ page(file="tack.html", no_cta=True, noindex=True, nolist=True,
   title="Tack för din förfrågan | Geal Entreprenad AB",
   description="Tack! Vi har tagit emot din förfrågan och återkommer så snart vi kan.",
   h1="Tack för din förfrågan!",
-  crumbs=[("Hem","index.html"),("Tack","tack.html")],
+  crumbs=[("Hem","/"),("Tack","tack.html")],
   body=hero("Tack för din förfrågan!",
     "Vi har tagit emot ditt meddelande och återkommer så snart vi kan, oftast inom 24 timmar. Behöver du nå oss direkt är du välkommen att ringa.",
-    [("Hem","index.html"),("Tack","tack.html")])
+    [("Hem","/"),("Tack","tack.html")])
     + f"""      <section class="section seo-section">
         <div class="container">
           <div class="hero-actions">
             <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
-            <a class="btn btn-secondary" href="index.html">Till startsidan</a>
+            <a class="btn btn-secondary" href="/">Till startsidan</a>
           </div>
         </div>
       </section>""")
@@ -2108,12 +2151,12 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
   title="Sidan hittades inte (404) | Geal Entreprenad AB",
   description="Sidan kunde inte hittas. Gå till startsidan eller våra tjänster för takbyte, takrenovering och takbesiktning i Stockholm.",
   h1="Sidan hittades inte",
-  crumbs=[("Hem","index.html"),("404","404.html")],
+  crumbs=[("Hem","/"),("404","404.html")],
   body=hero("Sidan hittades inte (404)",
     "Sidan du letade efter finns inte längre eller har flyttat. Använd länkarna nedan så hittar du rätt.",
-    [("Hem","index.html"),("404","404.html")])
+    [("Hem","/"),("404","404.html")])
     + links_block("Populära sidor", [
-        ("index.html","Till startsidan","Takläggare i Sundbyberg och Stockholm."),
+        ("/","Till startsidan","Takläggare i Stockholm."),
         ("tjanster.html","Våra tjänster","Takbyte, renovering, besiktning m.m."),
         ("omraden.html","Områden","Se var vi arbetar."),
         ("artiklar.html","Artiklar","Guider om tak och takarbete."),
@@ -2123,14 +2166,14 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
 # ====================== SÖK (klientbaserad) ============================
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
-  "index.html": ("Takläggare i Sundbyberg & Stockholm", "Takbyte, takrenovering och takservice för villa, BRF och företag i Sundbyberg och Stockholm."),
+  "index.html": ("Takläggare i Stockholm – takbyte & takrenovering", "Takbyte, takrenovering och takservice för villa, BRF och företag i Sundbyberg och Stockholm."),
   "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
   "artiklar.html": ("Artiklar & guider", "Guider om takbyte, takrenovering, ROT-avdrag, material och underhåll."),
 }
 # Bygg sökindex av alla indexerbara sidor (PAGES är komplett här).
-_search_index = [{"t": t, "u": u, "d": d} for u, (t, d) in STATIC_META.items()]
+_search_index = [{"t": t, "u": "/" if u == "index.html" else u, "d": d} for u, (t, d) in STATIC_META.items()]
 _search_index += [{"t": p["h1"], "u": p["file"], "d": p["description"]}
                   for p in PAGES if not p.get("noindex") and not p.get("nolist")]
 _search_json = json.dumps(_search_index, ensure_ascii=False)
@@ -2154,10 +2197,10 @@ page(file="sok.html", noindex=True, nolist=True, no_cta=True,
   title="Sök på villatakservice.se | Geal Entreprenad AB",
   description="Sök bland våra tjänster, orter och guider om tak, takbyte och takrenovering.",
   h1="Sök på webbplatsen",
-  crumbs=[("Hem","index.html"),("Sök","sok.html")],
+  crumbs=[("Hem","/"),("Sök","sok.html")],
   body=hero("Sök på webbplatsen",
     "Sök bland våra tjänster, områden och guider om tak, takbyte, takrenovering och ROT.",
-    [("Hem","index.html"),("Sök","sok.html")])
+    [("Hem","/"),("Sök","sok.html")])
     + _sok_tool)
 
 # ====================== WRITE FILES + SITEMAP =============================
@@ -2193,6 +2236,19 @@ def main():
               f"Sitemap: {DOMAIN}/sitemap.xml\n")
     with open(os.path.join(ROOT,"robots.txt"),"w",encoding="utf-8") as f:
         f.write(robots)
+    # Handunderhållna sidor: samma versionerade asset-URL:er.
+    import re
+    for fn in STATIC_PAGES + ["artikel.html"]:
+        fp = os.path.join(ROOT, fn)
+        if not os.path.exists(fp):
+            continue
+        with open(fp, encoding="utf-8") as fh:
+            src = fh.read()
+        out = re.sub(r'assets/css/style\.css(\?v=[0-9a-f]+)?', CSS_URL, src)
+        out = re.sub(r'assets/js/main\.js(\?v=[0-9a-f]+)?', JS_URL, out)
+        if out != src:
+            with open(fp, "w", encoding="utf-8") as fh:
+                fh.write(out)
     print(f"Genererade {len(written)} sidor.")
     print(f"Sitemap: {len(ordered)} URL:er. robots.txt skriven.")
     for w in written: print("  +", w)

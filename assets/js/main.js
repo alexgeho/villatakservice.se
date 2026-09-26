@@ -361,3 +361,16 @@
   form.addEventListener("submit", function (e) { e.preventDefault(); run(input.value); });
   input.addEventListener("input", function () { run(input.value); });
 })();
+
+// Tidsfälla för kontaktformulären: sendmail.php avvisar förfrågningar som
+// skickas inom 3 s efter att sidan laddats (typiskt för bottar).
+(function () {
+  var started = Date.now();
+  document.querySelectorAll('form[action="sendmail.php"]').forEach(function (form) {
+    var ts = document.createElement("input");
+    ts.type = "hidden";
+    ts.name = "ts";
+    ts.value = String(started);
+    form.appendChild(ts);
+  });
+})();

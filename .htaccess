@@ -4,13 +4,11 @@
 
 RewriteEngine On
 
-# 1) Tvinga HTTPS (http -> https)
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-
-# 2) Tvinga icke-www (www -> icke-www)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+# 1+2) http och/eller www -> https://villatakservice.se i ETT hopp
+# (tidigare http://www -> https://www -> https:// = två hopp).
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://villatakservice.se%{REQUEST_URI} [R=301,L]
 
 # 3) Redirecta /index.html -> / (undvik dubblettadress)
 RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
@@ -20,6 +18,14 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^takrenovering-stockholm\.html$ /takrenovering.html [R=301,L]
 RewriteRule ^takreparation-stockholm\.html$ /takrenovering.html [R=301,L]
 RewriteRule ^bygg-renovering\.html$ /villarenovering.html [R=301,L]
+
+# README.md ligger kvar på servern från tidiga deployer (FTP raderar inte).
+<Files "README.md">
+  Require all denied
+</Files>
+
+# Egen 404-sida (live visade LiteSpeeds standardsida).
+ErrorDocument 404 /404.html
 
 # ---- Säkerhetsheaders ----
 <IfModule mod_headers.c>
