@@ -5,6 +5,9 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 2026-09-26 (kväll) — GA4 live
+- ✅ GA4-konto «Geal Entreprenad AB» → property villatakservice.se, `G-66ELQJF51F` i assets/js/main.js (laddas efter cookie-samtycke). Kolla Realtime efter «Acceptera alla». ☐ META_PIXEL_ID (ägaren).
+
 ## 🟢 2026-09-26 — SEO-audit-fixar (`c023c9f`, live)
 Audit → `~/sites-hub/audits/2026-09-26/villatakservice-audit.md`. Klart och verifierat live (71 URL = 200):
 - ✅ Ortsidor länkar geografiska grannar (`NEIGHBORS` i generate.py) – svaga orter 1–2 → 3–8 inlänkar; Service-schema per ort med egen areaServed.
