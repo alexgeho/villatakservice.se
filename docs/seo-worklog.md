@@ -5,6 +5,17 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 SESSION 2026-09-29 — GSC-fixar (Bromma, takbesiktning, takbyte-pris)
+### KLART
+- ✅ `1c42808` Startsidan: Bromma i title/description (GSC: startsidan rankar ~pos 10 på "takläggare bromma", 0 klick); og:description var intern anteckning.
+- ✅ `3c6833e` takbesiktning.html 320 → ~1300 ord (när, process, per material, checklista, lokalt, FAQ).
+- ✅ `0f9415c` vad-kostar-takbyte.html utan priser (ägarbeslut: "Gratis besök och kostnadsförslag"), ~1200 ord, ROT-regler 2026 + räkneexempel på arbetskostnad.
+### 🔜 NÄSTA STEG
+1. ~13.10: jämför GSC (takläggare bromma, takbesiktning, takbyte pris) mot `~/sites-hub/audits/2026-09-29/gsc-snapshot.md`.
+2. Beslut: kalkylator-takbyte visar kr/m² ([OWNER]) fast priser inte ska publiceras – ta bort eller behåll?
+### ⚠️ Väntar på ägaren
+- GBP + riktiga omdömen (största hävstången lokalt).
+
 ## 🟢 2026-09-26 (kväll) — GA4 live
 - ✅ GA4-konto «Geal Entreprenad AB» → property villatakservice.se, `G-66ELQJF51F` i assets/js/main.js (laddas efter cookie-samtycke). Kolla Realtime efter «Acceptera alla». ☐ META_PIXEL_ID (ägaren).
 
