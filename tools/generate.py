@@ -2166,7 +2166,7 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
 # ====================== SÖK (klientbaserad) ============================
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
-  "index.html": ("Takläggare i Stockholm – takbyte & takrenovering", "Takbyte, takrenovering och takservice för villa, BRF och företag i Sundbyberg och Stockholm."),
+  "index.html": ("Takläggare i Stockholm & Bromma – takbyte och takrenovering", "Takläggare med kontor i Bromma. Takbyte, takrenovering, plåttak och takbesiktning på villa i Stockholm, Sundbyberg och Solna."),
   "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
