@@ -496,7 +496,7 @@ page(file="takbesiktning.html",
   body=hero("Takbesiktning i Stockholm",
     "Att besikta taket är ofta det bästa första steget. Vi går igenom takets skick, riskpunkter och avvattning och ger dig ett tydligt underlag – innan du beslutar om renovering eller takbyte.",
     SVC_CRUMB+[("Takbesiktning","takbesiktning.html")],
-    [("#varfor","Varför besikta"),("#ingar","Vad kontrolleras"),("#faq","Vanliga frågor")])
+    [("#varfor","Varför besikta"),("#nar","När besikta"),("#ingar","Vad kontrolleras"),("#sjalv","Kolla själv"),("#faq","Vanliga frågor")])
     + sec("Varför besiktning av tak lönar sig", [
         "Utan en korrekt bedömning är det svårt att veta om ett problem kräver akut insats eller kan planeras längre fram. Många hör av sig efter att ha sett en missfärgning i undertaket, lösa pannor eller mossa på utsatta ytor.",
         f"En besiktning ger svar på om det är ett isolerat problem eller ett tecken på större belastning – och är ett bra underlag inför {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}."], sid="varfor")
@@ -507,6 +507,36 @@ page(file="takbesiktning.html",
         "Takytor, pannor och plåtdetaljer.","Anslutningar mot skorsten och genomföringar.",
         "Hängrännor, stuprör och avvattning.","Tecken på fukt i undertak och på vind.",
         "Taksäkerhet och infästningar.","Rekommendation: service, renovering eller byte."], sid="ingar")
+    + sec_split("När ska du besikta taket?", [
+        "Det bästa tillfället är innan problemen syns inomhus. En besiktning är särskilt värdefull i några lägen:",
+        f"Är du osäker på hur gammalt taket är kan du jämföra med normal livslängd för olika material i vår guide om {a('takmaterial-livslangd.html','takmaterial och livslängd')}."],
+        "Boka besiktning när", [
+        "Du köper eller säljer villa och vill veta takets skick.",
+        "Det har stormat eller varit en snötung vinter.",
+        "Du ser fuktfläckar i taket, droppar på vinden eller mögellukt.",
+        "Du funderar på takbyte eller renovering och vill ha rätt underlag.",
+        "Taket närmar sig slutet av sin livslängd.",
+        "Det har gått 5–10 år sedan senaste genomgången."], muted=False, sid="nar")
+    + sec_process("Så går en takbesiktning till", [
+        ("Bokning","Du berättar kort om huset, taket och vad du har sett. Vi bokar en tid som passar."),
+        ("Besiktning på plats","Vi går igenom takytan, plåtdetaljer, anslutningar, avvattning och – om det går – vinden."),
+        ("Bedömning","Vi dokumenterar fynden med foton och bedömer vad som är akut och vad som kan planeras."),
+        ("Rekommendation","Du får en tydlig rekommendation: service, renovering eller takbyte – och offert om du vill.")], muted=True)
+    + sec("Vad vi tittar extra på – per takmaterial", [
+        f"<strong>Tegel- och betongpannor:</strong> spruckna eller förskjutna pannor, frostskador, lösa nockpannor, mossa och påväxt samt skicket på underlagspappen där den syns. Läs mer om {a('tegel-betong-plattak.html','tegel, betong och plåttak')}.",
+        f"<strong>Plåttak:</strong> rost, lösa eller otäta falsar, infästningar och skruvar, färgskikt och skarvar. Se även {a('mala-plattak.html','måla plåttak')} och {a('falsat-plattak.html','falsat plåttak')}.",
+        f"<strong>Detaljer på alla tak:</strong> skorstenens beslag och fogar, genomföringar, takfönster, {a('hangrannor-stupror.html','hängrännor och stuprör')} samt taksäkerhet som stegar och snörasskydd."])
+    + sec_split("Kolla taket själv – enkel checklista", [
+        "Mellan besiktningarna kan du själv hålla koll på det mesta från marken och från vinden. Gå inte upp på taket själv – ett halt tak är farligt, och trampade pannor kan börja läcka.",
+        f"Ser du något av punkterna i listan är det dags att låta en takläggare titta närmare. Läs mer om {a('nar-ska-taket-bytas.html','tecken på att taket behöver bytas')}."],
+        "Titta efter", [
+        "Pannor som saknas, har spruckit eller glidit (använd gärna kikare).",
+        "Mossa och påväxt på de skuggiga takfallen.",
+        "Hängrännor som svämmar över eller hänger snett.",
+        "Fuktfläckar, mörka partier eller dagsljus på vinden.",
+        "Mögellukt eller kondens på vinden efter kalla nätter."], sid="sjalv")
+    + sec("Takbesiktning i Stockholm och närområdet", [
+        f"Vi har kontor i Bromma och besiktar tak i hela Stockholm – bland annat i {a('taklaggare-bromma.html','Bromma')}, {a('taklaggare-sundbyberg.html','Sundbyberg')}, {a('taklaggare-solna.html','Solna')}, {a('taklaggare-sollentuna.html','Sollentuna')}, {a('taklaggare-danderyd.html','Danderyd')} och {a('taklaggare-taby.html','Täby')}. Besiktningen är ett bra första steg innan du tar in offerter på {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}."], muted=True)
     + links_block("Relaterat", [
         ("nar-ska-taket-bytas.html","Tecken på att taket behöver bytas","Vanliga signaler att hålla koll på."),
         ("fuktskada-mogel-vind.html","Fuktskada och mögel på vinden","Orsaker, symptom och åtgärder."),
@@ -514,7 +544,9 @@ page(file="takbesiktning.html",
   faq=[
     ("Vad kostar en takbesiktning?","Vi erbjuder alltid gratis platsbesök och kostnadsförslag inför ett takprojekt. Kontakta oss så bokar vi en tid som passar."),
     ("Hur ofta bör man besikta taket?","En översiktlig kontroll två gånger per år (vår och höst) är en bra grund. En professionell besiktning är klok vart 5–10:e år eller vid tecken på problem."),
-    ("Får jag en rapport?","Ja, du får en tydlig bedömning av skick, riskpunkter och rekommenderad åtgärd som underlag för offert.")])
+    ("Får jag en rapport?","Ja, du får en tydlig bedömning av skick, riskpunkter och rekommenderad åtgärd som underlag för offert."),
+    ("Kan man besikta taket på vintern?","Snötäckta takytor går inte att bedöma ordentligt, men vind, genomföringar och avvattning kan kontrolleras. En fullständig bedömning av takytan görs när taket är snöfritt."),
+    ("Är det farligt att kontrollera taket själv?","Ja, gå inte upp på taket själv. Kontrollera i stället från marken, gärna med kikare, och från vinden. Det räcker för att upptäcka de flesta varningstecken.")])
 
 page(file="plattak.html",
   title="Plåttak i Stockholm – nytt plåttak & plåtarbeten | Geal Entreprenad AB",
