@@ -144,7 +144,7 @@ FOOTER = f"""    <footer class="footer">
         &copy; <span data-year></span> {BRAND} &middot; Org.nr {ORGNR} &middot;
         <a href="sok.html">Sök</a> &middot;
         <a href="integritetspolicy.html">Integritetspolicy</a> &middot;
-        <a href="faq.html">Vanliga frågor</a>. Alla rättigheter förbehållna.
+        <a href="faq.html">Vanliga frågor</a>. Alla rättigheter förbehållna. &middot; Webbplats av <a href="https://nordkod.se/">Nordkod</a>
       </div>
     </footer>"""
 
