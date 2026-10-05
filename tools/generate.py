@@ -439,6 +439,24 @@ page(file="takbyte.html",
         "Rivning och bortforsling av befintligt tak.","Ny underlagspapp och kontroll av läkt.",
         "Nytt ytskikt: tegel, betongpannor eller plåt.","Plåtarbeten kring skorsten och genomföringar.",
         "Ny hängränna och stuprör vid behov.","Slutkontroll och genomgång med dig som kund."], sid="ingar")
+    + sec_split("Tecken på att taket behöver bytas", [
+        "Ett tak slits sällan ut på en gång. Oftast är det underlagspappen under pannorna som tar slut först, och då syns problemen på vinden innan de syns från gatan. Det lönar sig att gå upp på vinden en gång om året, gärna efter ett kraftigt regn eller när snön smälter.",
+        "Är pannorna dessutom porösa, frostsprängda eller av en modell som inte längre tillverkas är ett helt nytt tak oftast mer lönsamt än att lägga om."],
+        "Vanliga tecken", [
+        "Fuktfläckar eller mögel på råsponten.","Dagsljus genom taket från vinden.",
+        "Spröd underlagspapp vid takfoten.","Många spruckna eller vittrade pannor.",
+        "Återkommande läckage trots reparationer.","Taket är 40–50 år eller äldre."], muted=False, sid="tecken")
+    + sec("Takbyte på villor i Stockholm – olika epoker, olika tak", [
+        "I trädgårdsstäderna i Bromma, Danderyd och Sundbyberg är många villor från 1920–40-talet med branta tegeltak, kupor och detaljrika vindskivor. Vid takbyte på de husen väljer vi pannor och plåt som behåller husets karaktär och förnyar samtidigt underlaget helt.",
+        "Villorna från 1960–70-talet i bland annat Sollentuna, Spånga, Täby och Järfälla har oftast betongpannor och originalunderlag som nu är 50 år gammalt. Där är takbyte eller takomläggning det vanligaste uppdraget. Funkishus och radhus med låg lutning får ofta nytt plåt- eller papptak.",
+        f"Vi arbetar i hela Storstockholm – se {a('omraden.html','alla områden')}."], muted=True, sid="epoker")
+    + sec("Passa på vid takbytet", [
+        f"Ett takbyte är rätt tillfälle att göra allt som annars kräver ställning: byta {a('hangrannor-stupror.html','hängrännor och stuprör')}, montera snörasskydd och takstege, byta takfönster och se över ventilationen vid takfoten.",
+        "Funderar du på solceller är det klokt att planera dem samtidigt. Ett nytt tak håller i 40–60 år, medan solcellerna har en livslängd på runt 25–30 år – därför ska de monteras på ett tak som inte behöver bytas inom kort. Infästningarna för solcellerna kan förberedas redan när taket läggs.",
+        "Vill du tilläggsisolera vinden kan även det samordnas, men ventilationen måste fungera så att det inte blir fukt under taket."])
+    + sec("Bästa tiden för takbyte", [
+        "Takbyten görs i Stockholm från tidig vår till sen höst. Huset hålls tätt varje kväll med presenning eller nytt underlag, så ett kort regn är inget problem. Under vintern utför vi främst akuta reparationer.",
+        "Våren och sommaren bokas snabbt. Begär besiktning och offert redan under vintern om du vill ha taket klart till sommaren."])
     + sec("Material: tegel, betong eller plåt?", [
         f"Valet av takmaterial påverkar både livslängd, uttryck och pris. Tegel och betongpannor är vanligast på villor i Stockholm, medan {a('plattak.html','plåttak')} passar bra på lägre lutningar och ger låg vikt. Vi hjälper dig jämföra alternativen utifrån ditt hus.",
         f"En djupare jämförelse hittar du i {a('tegel-betong-plattak.html','tegel vs betong vs plåt')} och i {a('takmaterial-livslangd.html','livslängd per takmaterial')}."], muted=True)
@@ -460,7 +478,10 @@ page(file="takbyte.html",
     ("Hur lång tid tar ett takbyte på en villa?","De flesta villatakbyten tar ungefär 1–2 veckor beroende på takets storlek, väder och eventuella underliggande skador. Vi ger en preliminär tidplan i offerten."),
     ("Kan jag använda ROT-avdrag för takbyte?","Ja, arbetskostnaden för takbyte på villa ger normalt rätt till ROT-avdrag. Vi drar av det direkt på fakturan. Exakt nivå för 2026 anges i offerten."),
     ("Måste jag byta hela taket eller räcker en renovering?","Det beror på skicket. Om grundkonstruktionen är sund kan en takrenovering räcka. En takbesiktning ger svar innan du beslutar."),
-    ("Vilket takmaterial är bäst?","Det beror på husets lutning, stil och budget. Tegel och betong är vanligast, plåt passar låga lutningar. Vi går igenom alternativen med dig.")])
+    ("Vilket takmaterial är bäst?","Det beror på husets lutning, stil och budget. Tegel och betong är vanligast, plåt passar låga lutningar. Vi går igenom alternativen med dig."),
+    ("Kan man bo kvar i huset under takbytet?","Ja. Huset hålls tätt varje kväll och du kan bo kvar som vanligt under arbetet."),
+    ("Ska man byta tak innan man sätter solceller?","Ja, om taket är äldre än 25–30 år. Solcellerna håller länge, och det blir dyrt att ta ner dem för att byta tak senare."),
+    ("Behövs bygglov för takbyte?","Inte vid byte till samma material och utseende. Vid ändring av material, kulör eller takform kan bygglov krävas – stäm av med kommunen.")])
 
 page(file="takrenovering.html",
   title="Takrenovering i Stockholm – takomläggning & reparation | Geal Entreprenad AB",
@@ -606,7 +627,7 @@ page(file="plattak.html",
   body=hero("Plåttak i Stockholm",
     "Plåttak är ett populärt val i Stockholm tack vare låg vikt, lång livslängd och rent uttryck. Vi utför nytt plåttak, bandtäckning och plåtdetaljer med precision i skarvar, beslag och avvattning.",
     SVC_CRUMB+[("Plåttak","plattak.html")],
-    [("#fordelar","Fördelar"),("#ingar","Vad vi gör"),("#faq","Vanliga frågor")])
+    [("#fordelar","Fördelar"),("#typer","Bandtäckning eller profil"),("#tata","Täta plåttak"),("#pris","Kostnad & ROT"),("#faq","Vanliga frågor")])
     + sec("Fördelar med plåttak", [
         "Plåttak har låg vikt, tål temperaturväxlingar bra och passar även på lägre taklutningar där pannor inte fungerar. Rätt utfört ger det en tät konstruktion som är enkel att underhålla.",
         f"Samtidigt ställer plåtarbeten höga krav på precision – små fel i infästning eller skarvar kan ge läckage eller korrosion över tid. Jämför material i {a('tegel-betong-plattak.html','tegel vs betong vs plåt')}."], sid="fordelar")
@@ -617,6 +638,30 @@ page(file="plattak.html",
         "Nytt plåttak och bandtäckning (falsat plåt).","Beslag och anslutningar runt genomföringar.",
         "Plåtdetaljer: vindskivor, fotplåt, ståndskivor.","Avvattning och skydd mot korrosion.",
         "Reparation av befintliga plåttak.","Råd om skötsel och underhåll."], sid="ingar")
+    + sec("Bandtäckning eller profilplåt?", [
+        "Bandtäckning, även kallad falsat plåttak, är den klassiska metoden: långa plåtband som fogas ihop med dubbelfals direkt på råsponten. Den ger ett slätt, stilrent tak, fungerar ner till mycket låga lutningar och passar äldre hus och funkisvillor. Bandtäckning läggs av plåtslagare och tar längre tid, men håller mycket länge.",
+        "Profilplåt (till exempel trapetsprofil eller pannprofil) levereras i färdiga skivor som skruvas fast. Den är snabbare att montera och oftast billigare, och passar många villor och komplementbyggnader. Skruvarnas gummibrickor behöver ses över med åren.",
+        f"Vilket som passar beror på husets stil, lutning och budget. Mer om den klassiska metoden finns i {a('falsat-plattak.html','falsat plåttak och bandtäckning')}."], muted=True, sid="typer")
+    + sec_split("Täta och reparera falsat plåttak", [
+        "Äldre falsade plåttak från 1950–70-talet läcker oftast vid falsarna, vid skorstenen och vid genomföringar. Plåten kan vara frisk men falsarna ha öppnat sig av rörelser och frost. Då kan taket tätas genom att falsarna efterfalsas och tätas och skadade partier byts.",
+        f"Är plåten frisk men färgen sliten är {a('takmalning.html','takmålning')} ett bra nästa steg efter tätningen. Är plåten genomrostad på flera ställen blir nytt plåttak mer lönsamt."],
+        "Vanliga läckagepunkter", [
+        "Öppna eller rostiga falsar.","Plåt runt skorsten.",
+        "Ventilationshuvar och genomföringar.","Ränndalar och takfot.","Skarvar mot vägg och kupor."], muted=False, sid="tata")
+    + sec("Byta från pannor till plåt", [
+        "Många väljer att gå från betong- eller tegelpannor till plåt vid takbyte, eftersom plåt är lättare och kräver mindre underhåll. Lägre vikt avlastar takstolarna på äldre hus.",
+        f"Ett byte av takmaterial ändrar husets utseende och kan kräva bygglov, särskilt i områden med detaljplan eller kulturmiljö. Stäm av med kommunen innan du bestämmer dig – läs mer i {a('bygglov-takbyte.html','bygglov för takbyte')}."], muted=True)
+    + sec("Vad kostar ett plåttak?", [
+        "Priset beror på takets yta och form, valet mellan bandtäckning och profilplåt, plåtkvalitet och kulör, antal genomföringar och kupor samt ställningsbehov. Bandtäckning kostar mer än profilplåt men har lång livslängd.",
+        "Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag där alternativen står sida vid sida."], sid="pris")
+    + rot_box("Arbetskostnaden för plåttak och plåtarbeten på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")
+    + links_block("Plåttak i ditt område", [
+        ("taklaggare-bromma.html","Bromma","Funkisvillor med låga plåttak."),
+        ("taklaggare-danderyd.html","Danderyd","Stora villor med falsad plåt."),
+        ("taklaggare-lidingo.html","Lidingö","Havsnära tak och korrosionsskydd."),
+        ("taklaggare-nacka.html","Nacka","Kustnära tak i Saltsjöbaden."),
+        ("taklaggare-solna.html","Solna","Låglutande tak i Bergshamra."),
+        ("taklaggare-sundbyberg.html","Sundbyberg","Plåtdetaljer på radhus och villor.")], muted=False, sid="orter")
     + links_block("Relaterat", [
         ("falsat-plattak.html","Falsat plåttak & bandtäckning","Klassiskt plåttak för låga lutningar."),
         ("mala-plattak.html","Måla plåttak","Underhåll och nytt ytskydd."),
@@ -625,7 +670,11 @@ page(file="plattak.html",
   faq=[
     ("Hur länge håller ett plåttak?","Ett väl utfört plåttak håller ofta 40–50 år eller mer med rätt underhåll och eventuell ommålning."),
     ("Kan man lägga plåttak på låg lutning?","Ja, plåt (särskilt bandtäckning) fungerar på lägre lutningar där tegel- och betongpannor inte är lämpliga."),
-    ("Är plåttak bullrigt vid regn?","Med korrekt underlag och isolering är ljudnivån normalt inget problem i bostadshus.")])
+    ("Är plåttak bullrigt vid regn?","Med korrekt underlag och isolering är ljudnivån normalt inget problem i bostadshus."),
+    ("Kan man täta ett gammalt falsat plåttak?","Ja, om plåten är frisk kan falsarna efterfalsas och tätas och skadade partier bytas. Därefter kan taket målas."),
+    ("Vad är skillnaden mellan bandtäckning och profilplåt?","Bandtäckning är falsade plåtband som läggs på plats av plåtslagare. Profilplåt är färdiga skivor som skruvas fast – snabbare och oftast billigare."),
+    ("Behövs bygglov för att byta till plåttak?","Det kan krävas eftersom utseendet ändras. Stäm av med kommunen innan du bestämmer dig."),
+    ("Ger plåttak ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 page(file="takmalning.html",
   title="Takmålning i Stockholm – måla plåttak rätt | Geal Entreprenad AB",
