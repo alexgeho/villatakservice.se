@@ -1208,3 +1208,25 @@ textarea:focus-visible,
   left: 0;
   font-weight: 700;
 }
+
+.figure-section {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.content-figure {
+  max-width: 860px;
+  margin: 0;
+}
+
+.content-figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+.content-figure figcaption {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}

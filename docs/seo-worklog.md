@@ -13,7 +13,7 @@ Plan + prompt: `docs/top10-plan.md`. GSC/SERP-bas: `~/sites-hub/audits/2026-10-0
 - ✅ Trust-rad under H1 på alla hero-sidor: Gratis besök och kostnadsförslag · ROT-avdrag direkt på fakturan · Ring.
 - ✅ 10 Stockholmsorter: +2 unika sektioner (taktyper/problem, planering/bygglov) +3 FAQ + länkar till takmålning/taktvätt/plåttak. 700–870 ord, max likhet mellan orter 23 %.
 ### 🔜 NÄSTA
-1. Bilder (steg 4): REPLICATE_API_TOKEN saknas i env → ägaren lägger in, sedan Recraft-promptarna i top10-plan.md.
+1. ✅ Bilder: 16 Recraft v3-illustrationer (Replicate) i assets/images – 8 tjänstebilder + 8 ort-bilder, WebP 1600px, IPTC DigitalSourceType=trainedAlgorithmicMedia (webpmux), figcaption «Illustration». Generator: fig() + ORT_IMG i generate.py. Saknas: Järfälla, Lidingö. Riktiga projektfoton → assets/images/projekt/ när ägaren skickar.
 2. ✅ takbyte 690 → ~1150, plattak 345 → ~850 (klart 2026-10-05).
 3. ~02.11: GSC mot basen 05.10 (takmålning, takrenovering <ort>, takläggare <ort>).
 ### ⚠️ [OWNER]

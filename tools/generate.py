@@ -380,6 +380,18 @@ def sec_process(title, steps, muted=False, sid=""):
         </div>
       </section>"""
 
+def fig(name, alt, muted=False):
+    # AI-genererad illustration (Recraft) – märkt "Illustration", aldrig som eget projektfoto.
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    return f"""      <section class="{cls} figure-section">
+        <div class="container">
+          <figure class="content-figure">
+            <img src="assets/images/{name}.webp" alt="{alt}" width="1600" height="1067" loading="lazy" decoding="async" />
+            <figcaption>Illustration</figcaption>
+          </figure>
+        </div>
+      </section>"""
+
 def rot_box(text):
     return f"""      <section class="section seo-section">
         <div class="container">
@@ -432,6 +444,7 @@ page(file="takbyte.html",
     + sec("När är det dags för ett takbyte?", [
         "Ett takbyte blir aktuellt när taket nått slutet av sin tekniska livslängd eller när skadorna är så omfattande att löpande reparationer inte längre lönar sig. Vanliga tecken är återkommande läckage, spruckna eller frostskadade pannor, fuktfläckar på vinden och underlagspapp som blivit spröd.",
         f"Är du osäker på om taket behöver bytas eller om en renovering räcker? Börja med en {a('takbesiktning.html','takbesiktning')} – då får du ett tydligt underlag innan du beslutar. Vi går också igenom skillnaden i vår guide {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."], sid="nar")
+    + fig("takbyte-lager", "Nytt tak läggs på en villa – ny underlagspapp och läkt överst, nya betongpannor nederst")
     + sec_split("Vad ingår i ett takbyte?", [
         "Vid ett takbyte ser vi till hela takets konstruktion, inte bara ytskiktet. Vi river det gamla taket, kontrollerar och byter läkt och underlagspapp vid behov, och åtgärdar detaljer runt skorsten, takfönster och genomföringar.",
         f"Vi byter även utsatta plåtdetaljer och ser över {a('hangrannor-stupror.html','hängrännor och stuprör')} samt {a('taksakerhet-snorasskydd.html','taksäkerhet som snörasskydd och takstege')} så att taket blir komplett och godkänt."],
@@ -450,6 +463,7 @@ page(file="takbyte.html",
         "I trädgårdsstäderna i Bromma, Danderyd och Sundbyberg är många villor från 1920–40-talet med branta tegeltak, kupor och detaljrika vindskivor. Vid takbyte på de husen väljer vi pannor och plåt som behåller husets karaktär och förnyar samtidigt underlaget helt.",
         "Villorna från 1960–70-talet i bland annat Sollentuna, Spånga, Täby och Järfälla har oftast betongpannor och originalunderlag som nu är 50 år gammalt. Där är takbyte eller takomläggning det vanligaste uppdraget. Funkishus och radhus med låg lutning får ofta nytt plåt- eller papptak.",
         f"Vi arbetar i hela Storstockholm – se {a('omraden.html','alla områden')}."], muted=True, sid="epoker")
+    + fig("takmaterial-jamforelse", "Takmaterial sida vid sida: tegelpannor, betongpannor, plåt och takpapp")
     + sec("Passa på vid takbytet", [
         f"Ett takbyte är rätt tillfälle att göra allt som annars kräver ställning: byta {a('hangrannor-stupror.html','hängrännor och stuprör')}, montera snörasskydd och takstege, byta takfönster och se över ventilationen vid takfoten.",
         "Funderar du på solceller är det klokt att planera dem samtidigt. Ett nytt tak håller i 40–60 år, medan solcellerna har en livslängd på runt 25–30 år – därför ska de monteras på ett tak som inte behöver bytas inom kort. Infästningarna för solcellerna kan förberedas redan när taket läggs.",
@@ -505,6 +519,7 @@ page(file="takrenovering.html",
         "Takrenovering är rätt när takets bärande delar är sunda men skikten under eller runt pannorna har gjort sitt. Det vanligaste exemplet är ett betong- eller tegeltak från 1960–80-talet där pannorna fortfarande är hela, men där underlagspappen har blivit spröd, läkten har börjat ruttna eller plåten runt skorstenen läcker.",
         "Ytan på taket ser ofta bra ut från gatan. Problemen syns i stället på vinden: fuktfläckar på råsponten, mögellukt, droppmärken på isoleringen eller dagsljus genom taket. Det är tecken på att vatten tar sig förbi pannorna och att underlaget inte längre är tätt.",
         f"Vi hjälper dig välja rätt nivå efter en {a('takbesiktning.html','takbesiktning')}: punktvis reparation, takomläggning eller {a('takbyte.html','takbyte')}. Jämförelsen finns också i guiden {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."], sid="nar")
+    + fig("takrenovering-omlaggning", "Takomläggning på villa: pannorna plockade ner, ny underlagspapp och läkt monterad")
     + sec_split("Tecken på att taket behöver renoveras", [
         "Underlagspapp från 60- och 70-talet var ofta tunn och har efter 40–50 år förlorat sin täthet. Pannorna kan ha flera decennier kvar, men utan ett tätt underlag blir taket bara så bra som sitt svagaste skikt.",
         "Vänta inte tills läckaget syns i taket inomhus. Fukt som får verka i flera år kan skada råspont och takstolar, och då blir en renovering snabbt ett byte."],
@@ -569,6 +584,7 @@ page(file="takbesiktning.html",
     + sec("Varför besiktning av tak lönar sig", [
         "Utan en korrekt bedömning är det svårt att veta om ett problem kräver akut insats eller kan planeras längre fram. Många hör av sig efter att ha sett en missfärgning i undertaket, lösa pannor eller mossa på utsatta ytor.",
         f"En besiktning ger svar på om det är ett isolerat problem eller ett tecken på större belastning – och är ett bra underlag inför {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}."], sid="varfor")
+    + fig("takbesiktning-checklista", "Kontrollpunkter vid takbesiktning: nock, skorsten, ränndal, hängrännor, takfönster och takfot")
     + sec_split("Vad kontrolleras vid en takbesiktning?", [
         "Vi gör en samlad bedömning av skick, funktion och rekommenderad åtgärdsnivå, och dokumenterar fynden så att du kan prioritera rätt.",
         f"Vanliga fynd är otäta anslutningar, {a('taklackage.html','takläckage')}, begynnande {a('fuktskada-mogel-vind.html','fuktskador på vinden')} och slitna beslag."],
@@ -631,6 +647,7 @@ page(file="plattak.html",
     + sec("Fördelar med plåttak", [
         "Plåttak har låg vikt, tål temperaturväxlingar bra och passar även på lägre taklutningar där pannor inte fungerar. Rätt utfört ger det en tät konstruktion som är enkel att underhålla.",
         f"Samtidigt ställer plåtarbeten höga krav på precision – små fel i infästning eller skarvar kan ge läckage eller korrosion över tid. Jämför material i {a('tegel-betong-plattak.html','tegel vs betong vs plåt')}."], sid="fordelar")
+    + fig("plattak-falsat", "Svart falsat plåttak på en vit funkisvilla")
     + sec_split("Vad vi gör inom plåttak", [
         "Vi hjälper både dig som vill installera nytt plåttak och fastighetsägare som behöver renovera ett befintligt system. I varje projekt tittar vi på taklutning, avvattning och detaljlösningar.",
         f"Har plåttaket börjat rosta kan {a('takmalning.html','takmålning')} vara ett alternativ när konstruktionen fortfarande är sund."],
@@ -698,6 +715,7 @@ page(file="takmalning.html",
         "Takmålning passar när plåttakets ytskikt har slitits men själva plåten fortfarande är hel. Typiska tecken är att färgen har mattats och kritar (det blir vitt på fingret när du drar över ytan), att kulören har bleknat ojämnt, eller att det har uppstått rostprickar vid skruvar, falsar, nockar och vid takfoten. I det läget skyddar en ny färgfilm plåten innan rosten hinner äta sig igenom.",
         "Målning är däremot fel åtgärd när plåten är genomrostad, när läckage redan har skadat underlagspapp och råspont, eller när taket ändå närmar sig slutet av sin livslängd. Då blir resultatet kortlivat och pengarna gör mer nytta i ett nytt tak. Därför börjar vi alltid med att gå upp på taket och titta – inte med att räkna kvadratmeter.",
         f"Osäker på skicket? En {a('takbesiktning.html','takbesiktning')} ger ett skriftligt underlag. Är taket uttjänt läser du mer om {a('plattak.html','nytt plåttak')}."], sid="nar")
+    + fig("takmalning-plattak-process", "Plåttak som målas om – sliten rostig plåt till vänster, nymålad grafitgrå plåt till höger")
     + sec_split("Tecken på att plåttaket behöver målas", [
         "Ett plåttak på en villa i Stockholmsområdet målas vanligen om med 10–20 års mellanrum, beroende på färgsystem, väderstreck och hur mycket träd som står runt huset. Söderläge och mycket sol bryter ner färgen snabbare, medan skuggiga tak under björk och tall får mer påväxt och fukt.",
         "Vänta inte tills rosten syns från gatan. Ytrost som åtgärdas tidigt kostar lite, medan rost som har gått igenom plåten kräver lagning eller byte av hela plåtar."],
@@ -725,6 +743,7 @@ page(file="takmalning.html",
     + sec("Kan man måla betongpannor eller tegel?", [
         "Betongpannor kan behandlas med en särskild takfärg för betong, men det förlänger främst utseendet – inte pannornas tekniska livslängd. Är pannorna porösa eller underlagspappen gammal hjälper inte färg mot läckage. Tegeltak målar vi inte: teglet behöver kunna andas, och färg kan göra att fukt stängs inne och att pannorna fryser sönder.",
         f"Har du betong- eller tegeltak med mossa och smuts räcker det oftast med {a('taktvatt.html','taktvätt')} och behandling mot påväxt. Läs mer i guiden {a('mossa-pa-taket.html','mossa på taket')}."], muted=True, sid="betong")
+    + fig("takmalning-betongpannor", "Betongpannor där halva ytan är rengjord och målad med svart takfärg")
     + sec("Vad kostar takmålning?", [
         "Kostnaden beror på takets storlek och lutning, hur mycket rost som måste åtgärdas, om falsar behöver tätas, vilken färg som används och hur lätt det är att komma åt taket med ställning eller lift. Två tak med samma yta kan därför få helt olika pris.",
         "Vi publicerar inga fasta priser. I stället kommer vi ut gratis, tittar på taket och lämnar ett skriftligt kostnadsförslag med vad som ingår – tvätt, rostbehandling, antal färgskikt, kulör och ställning. Då kan du jämföra offerter på lika villkor.",
@@ -777,6 +796,7 @@ page(file="taktvatt.html",
         "Mossa fungerar som en svamp. Den suger upp regnvatten och håller taket fuktigt långt efter att det har slutat regna. På vintern fryser fukten, och när mossan växer in under pannornas överlapp kan den lyfta dem så att vatten blåser in under. Samtidigt spolas mossa och smuts ner i hängrännorna, som sätts igen och svämmar över.",
         "I Stockholmsområdet är påväxt särskilt vanlig på villor med mycket träd runt huset – tall, gran och björk ger skugga och barr som håller kvar fukten. Norrsidan av taket drabbas nästan alltid först.",
         f"Regelbunden taktvätt är därför underhåll, inte bara utseende. Läs mer om orsaker och förebyggande i guiden {a('mossa-pa-taket.html','mossa på taket')}."], sid="varfor")
+    + fig("taktvatt-mossa", "Lågtryckstvätt av mossbeväxt betongtak")
     + sec_split("Metod efter taktyp", [
         "Fel metod kan göra mer skada än mossan. Högtryckstvätt nära ytan blåser bort betongpannornas ytskikt, gör dem porösa och tar sig in under pannorna. Därför arbetar vi med lågtryck och rengöringsmedel som är anpassade för materialet.",
         f"Betongpannor tvättas skonsamt och behandlas mot ny påväxt. Tegelpannor är känsligare för hårda metoder och rengörs försiktigt. Plåttak tvättas fritt från smuts och krita – ofta som första steg inför {a('takmalning.html','takmålning')}."],
@@ -1184,6 +1204,16 @@ LOC_EXTRA = {
    ]},
 }
 
+ORT_IMG = {
+ "Bromma": ("ort-bromma-villa","Villa med rött tegeltak i en av Brommas trädgårdsstäder"),
+ "Sundbyberg": ("ort-sundbyberg-villa","Äldre trävilla med brant tegeltak och takkupa, typisk för Duvbo"),
+ "Danderyd": ("ort-danderyd-villa","Stor stenvilla med svart plåttak, kupor och torn, typisk för Djursholm"),
+ "Sollentuna": ("ort-sollentuna-villa","70-talsvilla med betongpannor och mossa på norrsidan bland tallar"),
+ "Solna": ("ort-solna-villa","Mindre 40-talsvilla med tegeltak i Solna"),
+ "Täby": ("ort-taby-radhus","Radhuslänga från 70-talet med låglutande svarta tak"),
+ "Spånga": ("ort-spanga-villa","60-talsvilla i tegel med bruna betongpannor"),
+ "Nacka": ("ort-nacka-villa","Havsnära villa på berg med plåttak, typisk för Saltsjöbaden"),
+}
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]
     _x = LOC_EXTRA.get(_ort, {"secs": [], "faq": []})
@@ -1203,6 +1233,7 @@ for _ort, _d in LOC.items():
         [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
         + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar även i grannområden – se alla {a('omraden.html','områden vi arbetar i')}."], sid="lokalt")
+        + (fig(*ORT_IMG[_ort]) if _ort in ORT_IMG else "")
         + extra_html
         + links_block(f"Våra tjänster i {_ort}", [
             ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
