@@ -13,9 +13,10 @@ Plan + prompt: `docs/top10-plan.md`. GSC/SERP-bas: `~/sites-hub/audits/2026-10-0
 - ✅ Trust-rad under H1 på alla hero-sidor: Gratis besök och kostnadsförslag · ROT-avdrag direkt på fakturan · Ring.
 - ✅ 10 Stockholmsorter: +2 unika sektioner (taktyper/problem, planering/bygglov) +3 FAQ + länkar till takmålning/taktvätt/plåttak. 700–870 ord, max likhet mellan orter 23 %.
 ### 🔜 NÄSTA
-1. ✅ Bilder: 16 Recraft v3-illustrationer (Replicate) i assets/images – 8 tjänstebilder + 8 ort-bilder, WebP 1600px, IPTC DigitalSourceType=trainedAlgorithmicMedia (webpmux), figcaption «Illustration». Generator: fig() + ORT_IMG i generate.py. Saknas: Järfälla, Lidingö. Riktiga projektfoton → assets/images/projekt/ när ägaren skickar.
-2. ✅ takbyte 690 → ~1150, plattak 345 → ~850 (klart 2026-10-05).
-3. ~02.11: GSC mot basen 05.10 (takmålning, takrenovering <ort>, takläggare <ort>).
+1. **02.11 (påminnelse finns):** GSC 28 d (Queries + Pages med position) mot `~/sites-hub/audits/2026-10-05/gsc-3m.md` – takmålning, takrenovering <ort>, takläggare <ort>, takbyte. Det som rört sig → förstärk; det som står still → SERP-analys.
+2. Bilder för Järfälla + Lidingö: lägg till i JOBS i `tools/gen_images.py` → `zsh -ic "python3 tools/gen_images.py"` → `cwebp -q 78 -resize 1600 0` + `webpmux -set xmp tools/ai.xmp` → `ORT_IMG` i generate.py.
+3. /projekt-hub med case före/efter – först när ägaren skickar riktiga foton.
+4. Beslut kalkylator-takbyte (kr/m²) – står kvar.
 ### ⚠️ [OWNER]
 - F-skatt/ansvarsförsäkring/garanti (för trust-raden) · GBP-länk för sameAs · 3–5 projekt med foto före/efter (/projekt) · omdömen.
 
