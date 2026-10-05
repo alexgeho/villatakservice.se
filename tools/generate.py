@@ -463,35 +463,76 @@ page(file="takbyte.html",
     ("Vilket takmaterial är bäst?","Det beror på husets lutning, stil och budget. Tegel och betong är vanligast, plåt passar låga lutningar. Vi går igenom alternativen med dig.")])
 
 page(file="takrenovering.html",
-  title="Takrenovering i Stockholm – pris & takomläggning | Geal Entreprenad AB",
-  description="Takrenovering och takomläggning i Stockholm och Sundbyberg. Riktade åtgärder som förlänger takets livslängd. Tydlig plan, ROT-avdrag och kostnadsfri offert.",
+  title="Takrenovering i Stockholm – takomläggning & reparation | Geal Entreprenad AB",
+  description="Takrenovering och takomläggning på villa i Stockholm. Ny underlagspapp och läkt, omlagda pannor och tät plåt – utan att byta hela taket. Gratis besök och ROT.",
   h1="Takrenovering och takomläggning i Stockholm",
   service=True, service_type="Takrenovering", localbiz=False,
+  howto=("Så går en takomläggning till", [
+    ("Besiktning","Vi kontrollerar pannor, underlagspapp, läkt, råspont och plåt och lämnar en åtgärdsplan."),
+    ("Ställning & skydd","Ställning och fallskydd sätts upp, fasad och tomt skyddas."),
+    ("Nedplockning","Pannorna plockas ner och sorteras; hela pannor sparas för återläggning."),
+    ("Nytt underlag","Ny underlagspapp, ströläkt och bärläkt monteras; skadad råspont byts."),
+    ("Återläggning","Pannorna läggs tillbaka och kompletteras med nya där det behövs."),
+    ("Plåt & slutkontroll","Plåt runt skorsten, nock och genomföringar görs om och arbetet kontrolleras.")]),
   crumbs=SVC_CRUMB+[("Takrenovering","takrenovering.html")],
-  cta=("Behöver taket renoveras?","Vi bedömer vilka åtgärder som är mest lönsamma och ger en tydlig offert."),
+  cta=("Behöver taket renoveras?","Vi kommer ut gratis, visar vad som behöver göras och lämnar ett skriftligt kostnadsförslag."),
   body=hero("Takrenovering och takomläggning i Stockholm",
-    "Takrenovering passar när grundkonstruktionen är sund men delar av taket behöver åtgärdas. Ofta bästa balansen mellan kostnad och livslängd – på villor och äldre fastigheter i Stockholm.",
+    "Är pannorna fortfarande hela men underlaget slitet? Då kan en takomläggning ge taket 30–40 år till – för en lägre kostnad än ett helt nytt tak. Vi renoverar villatak i hela Storstockholm.",
     SVC_CRUMB+[("Takrenovering","takrenovering.html")],
-    [("#nar","När passar det"),("#ingar","Vad ingår"),("#faq","Vanliga frågor")])
+    [("#nar","När passar det"),("#omlaggning","Takomläggning"),("#ingar","Så går det till"),("#pris","Kostnad & ROT"),("#faq","Vanliga frågor")])
     + sec("När passar takrenovering?", [
-        "Takrenovering är rätt när takets stomme och stora ytor fortfarande fungerar, men enskilda delar behöver repareras – slitna beslag, spruckna pannor, otäta anslutningar eller begränsade fuktskador.",
-        f"Vid en takomläggning lägger vi om befintliga pannor med ny underlagspapp och läkt, vilket kan förlänga takets liv rejält utan ett fullständigt {a('takbyte.html','takbyte')}. Vi hjälper dig välja rätt nivå efter en {a('takbesiktning.html','takbesiktning')}."], sid="nar")
-    + sec_split("Vad ingår i en takrenovering?", [
-        "Vi börjar med att skilja på kosmetiskt slitage och verkliga riskpunkter, och ger sedan en prioriterad åtgärdsplan. Arbetet kan delas upp i etapper om det passar din budget.",
-        f"Vanliga moment är omläggning av pannor, byte av underlagspapp, plåtarbeten och åtgärder mot {a('taklackage.html','takläckage')} och {a('mossa-pa-taket.html','mossa på taket')}."],
-        "Typiska åtgärder", [
-        "Omläggning av tegel- eller betongpannor.","Byte av underlagspapp och läkt.",
-        "Reparation av beslag och anslutningar.","Åtgärd av läckage och enskilda skador.",
-        "Byte av utsatta plåtdetaljer.","Prioriterad plan i etapper vid behov."], sid="ingar")
-    + rot_box("Även takrenovering på villa ger normalt ROT-avdrag på arbetskostnaden.")
+        "Takrenovering är rätt när takets bärande delar är sunda men skikten under eller runt pannorna har gjort sitt. Det vanligaste exemplet är ett betong- eller tegeltak från 1960–80-talet där pannorna fortfarande är hela, men där underlagspappen har blivit spröd, läkten har börjat ruttna eller plåten runt skorstenen läcker.",
+        "Ytan på taket ser ofta bra ut från gatan. Problemen syns i stället på vinden: fuktfläckar på råsponten, mögellukt, droppmärken på isoleringen eller dagsljus genom taket. Det är tecken på att vatten tar sig förbi pannorna och att underlaget inte längre är tätt.",
+        f"Vi hjälper dig välja rätt nivå efter en {a('takbesiktning.html','takbesiktning')}: punktvis reparation, takomläggning eller {a('takbyte.html','takbyte')}. Jämförelsen finns också i guiden {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."], sid="nar")
+    + sec_split("Tecken på att taket behöver renoveras", [
+        "Underlagspapp från 60- och 70-talet var ofta tunn och har efter 40–50 år förlorat sin täthet. Pannorna kan ha flera decennier kvar, men utan ett tätt underlag blir taket bara så bra som sitt svagaste skikt.",
+        "Vänta inte tills läckaget syns i taket inomhus. Fukt som får verka i flera år kan skada råspont och takstolar, och då blir en renovering snabbt ett byte."],
+        "Vanliga tecken", [
+        "Fuktfläckar eller mögel på vinden.","Spröd eller trasig underlagspapp vid takfoten.",
+        "Sneda, spruckna eller lösa pannor.","Läckage vid skorsten eller takfönster.",
+        "Mossa som lyfter pannorna.","Taket är över 40 år och aldrig omlagt."], sid="tecken")
+    + sec("Takomläggning – vad innebär det?", [
+        "Vid en takomläggning plockar vi ner alla pannor, byter underlagspapp och läkt och lägger sedan tillbaka samma pannor. Trasiga pannor ersätts med nya eller begagnade av samma modell. Resultatet är ett tak med helt nytt tätskikt men med husets ursprungliga karaktär kvar.",
+        "Takomläggning lönar sig när pannorna är i gott skick. Betongpannor håller ofta 40–60 år och tegelpannor betydligt längre. Är pannorna däremot porösa, frostsprängda eller av en modell som inte längre tillverkas kan nya pannor vara ett bättre val.",
+        "Vid omläggningen passar vi på att åtgärda allt som är svårt att komma åt annars: ventilation av takfoten, infästning av nock, plåtdetaljer, vindskivor och genomföringar."], muted=True, sid="omlaggning")
+    + sec_process("Så går takrenoveringen till", [
+        ("Besiktning","Vi går igenom pannor, papp, läkt, råspont och plåt och lämnar en skriftlig åtgärdsplan."),
+        ("Ställning & skydd","Ställning och fallskydd sätts upp och tomten skyddas."),
+        ("Nedplockning","Pannorna plockas ner och hela pannor sparas för återläggning."),
+        ("Nytt underlag","Ny underlagspapp och läkt; skadad råspont byts."),
+        ("Återläggning","Pannorna läggs tillbaka och kompletteras där det behövs."),
+        ("Plåt & kontroll","Plåt runt skorsten, nock och genomföringar görs om och vi gör slutkontroll.")], sid="ingar")
+    + sec_split("Mindre reparationer", [
+        f"Alla tak behöver inte omläggning. Ofta räcker det att byta några spruckna pannor, laga plåten runt skorstenen eller täta ett takfönster. Vi gör även takreparationer och åtgärder vid akut {a('taklackage.html','takläckage')}.",
+        "En liten reparation i tid förhindrar en stor skada senare. Vid besiktningen får du veta vad som är bråttom och vad som kan vänta."],
+        "Typiska reparationer", [
+        "Byte av enstaka pannor.","Plåtarbeten runt skorsten.",
+        "Tätning av takfönster och genomföringar.","Ny nockpanna och nockbruk.",
+        "Byte av vindskivor och takfotsbrädor."])
+    + sec("Vad kostar en takrenovering?", [
+        "Kostnaden styrs av takets storlek och lutning, hur många pannor som kan återanvändas, hur mycket råspont som måste bytas, plåtarbeten och ställningsbehov. Därför kan två villor med samma yta få olika pris.",
+        f"Vi publicerar inga fasta priser. Vi kommer ut gratis, tittar på taket och lämnar ett skriftligt kostnadsförslag där varje moment står med. Faktorerna som påverkar priset går vi igenom i {a('vad-kostar-takrenovering.html','vad kostar en takrenovering')}.",
+        "Arbetet kan också delas upp i etapper – till exempel den mest utsatta takfallet först och resten året efter."], sid="pris")
+    + rot_box("Takrenovering och takomläggning på villa ger ROT-avdrag på arbetskostnaden. Vi gör avdraget direkt på fakturan.")
+    + links_block("Takrenovering i ditt område", [
+        ("taklaggare-sollentuna.html","Sollentuna","Betongtak från 60–70-talet i Edsberg och Tureberg."),
+        ("taklaggare-danderyd.html","Danderyd","Större villor med tegel och plåt."),
+        ("taklaggare-spanga.html","Spånga","Villaområden i Bromsten, Solhem och Sundby."),
+        ("taklaggare-sundbyberg.html","Sundbyberg","Duvbo, Lilla Alby och Ör."),
+        ("taklaggare-taby.html","Täby","Radhus och villor från 70-talet."),
+        ("taklaggare-nacka.html","Nacka","Kustnära tak med hård väderexponering.")], sid="orter")
     + links_block("Relaterat", [
         ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så väljer du rätt åtgärd för ditt tak."),
-        ("vad-kostar-takrenovering.html","Vad kostar en takrenovering?","Prisintervall och vad som påverkar kostnaden."),
-        ("taklaggare-solna.html","Takrenovering i Solna","Lokala takläggare i Solna och närområdet.")]),
+        ("vad-kostar-takrenovering.html","Vad kostar en takrenovering?","Vad som påverkar kostnaden."),
+        ("takmaterial-livslangd.html","Livslängd per takmaterial","Hur länge pannor och papp håller.")]),
   faq=[
-    ("Vad är skillnaden mellan takrenovering och takomläggning?","Takomläggning innebär att befintliga pannor läggs om med ny underlagspapp och läkt. Takrenovering är ett bredare begrepp som även omfattar reparation av beslag, plåt och enskilda skador."),
-    ("Hur vet jag om det räcker med renovering?","En takbesiktning visar om stommen är sund. Är den det räcker ofta renovering; annars rekommenderar vi takbyte."),
-    ("Kan arbetet delas upp i etapper?","Ja, vi kan prioritera de mest utsatta delarna först och planera resten längre fram efter din budget.")])
+    ("Vad är skillnaden mellan takrenovering och takomläggning?","Takomläggning innebär att befintliga pannor läggs om med ny underlagspapp och läkt. Takrenovering är ett bredare begrepp som även omfattar reparationer av plåt, pannor och enskilda skador."),
+    ("Hur länge håller en takomläggning?","Med ny underlagspapp och läkt håller taket normalt 30–40 år till, så länge pannorna är i gott skick."),
+    ("Kan man återanvända gamla betongpannor?","Ja, om de är hela och inte porösa. Trasiga pannor ersätts med nya eller begagnade av samma modell."),
+    ("Hur vet jag om det räcker med renovering?","En takbesiktning visar om stommen och pannorna är sunda. Är de det räcker ofta renovering, annars rekommenderar vi takbyte."),
+    ("Hur lång tid tar en takomläggning?","För en normal villa oftast en till två veckor beroende på storlek, väder och hur mycket råspont som behöver bytas."),
+    ("Kan arbetet delas upp i etapper?","Ja, vi kan börja med de mest utsatta delarna och planera resten senare."),
+    ("Ger takrenovering ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 page(file="takbesiktning.html",
   title="Takbesiktning i Stockholm – besikta tak | Geal Entreprenad AB",
@@ -666,34 +707,71 @@ page(file="takmalning.html",
     ("Vad kostar takmålning?","Det beror på yta, lutning, rost och åtkomst. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag.")])
 
 page(file="taktvatt.html",
-  title="Taktvätt i Stockholm – ta bort mossa | Geal Entreprenad AB",
-  description="Taktvätt i Stockholm och Sundbyberg. Skonsam rengöring av tak från mossa, smuts och påväxt med rätt metod för din taktyp. Begär kostnadsfri offert.",
+  title="Taktvätt i Stockholm – ta bort mossa skonsamt | Geal Entreprenad AB",
+  description="Taktvätt i Stockholm: skonsam lågtryckstvätt av betong-, tegel- och plåttak, mossbehandling och rensning av hängrännor. Gratis besök och ROT-avdrag.",
   h1="Taktvätt i Stockholm",
   service=True, service_type="Taktvätt", localbiz=False,
+  howto=("Så går en taktvätt till", [
+    ("Bedömning","Vi kontrollerar taktyp, skick och mängd påväxt och väljer metod."),
+    ("Skydd","Fasad, fönster, rabatter och hängrännor skyddas."),
+    ("Mekanisk rengöring","Grov mossa tas bort försiktigt för hand eller med borste."),
+    ("Lågtryckstvätt","Taket tvättas med lågtryck och rengöringsmedel anpassat för materialet."),
+    ("Behandling","Taket behandlas mot ny påväxt."),
+    ("Rännor & kontroll","Hängrännor och stuprör rensas och vi rapporterar skador vi har sett.")]),
   crumbs=SVC_CRUMB+[("Taktvätt","taktvatt.html")],
-  cta=("Behöver taket tvättas?","Vi rengör taket skonsamt med rätt metod – begär en offert."),
+  cta=("Behöver taket tvättas?","Vi kommer ut gratis, bedömer taket och lämnar ett skriftligt kostnadsförslag."),
   body=hero("Taktvätt i Stockholm",
-    "Skonsam tvätt av takytor när mossa, smuts och påväxt bör tas bort utan onödigt slitage. Rätt metod för din taktyp förlänger takets liv och förbättrar avvattningen.",
+    "Mossa och påväxt håller kvar fukt, lyfter pannor och sätter igen hängrännorna. En skonsam taktvätt med rätt metod för din taktyp förlänger takets liv – utan högtryck som sliter på ytan.",
     SVC_CRUMB+[("Taktvätt","taktvatt.html")],
-    [("#varfor","Varför taktvätt"),("#ingar","Så går det till"),("#faq","Vanliga frågor")])
-    + sec("Varför taktvätt?", [
-        "Mossa och påväxt håller kvar fukt, kan lyfta pannor och försämra avvattningen. Regelbunden taktvätt minskar slitage och gör det lättare att upptäcka begynnande skador i tid.",
-        f"Vi väljer metod efter taktyp och skick – på känsliga tak används lågtrycksmetoder. Vill du förstå hur mossa uppstår och förebyggs läser du {a('mossa-pa-taket.html','mossa på taket')}."], sid="varfor")
-    + sec_split("Så går taktvätten till", [
-        "Vi bedömer underlaget innan arbetet startar, väljer rätt metod och rengör taket skonsamt. Efter tvätt kan vi rekommendera ytterligare underhåll som förebygger ny påväxt.",
-        f"Är plåttaket samtidigt i behov av nytt ytskydd kan {a('takmalning.html','takmålning')} göras i anslutning."],
-        "Det här ingår", [
-        "Bedömning av taktyp och skick.","Metod anpassad efter yta (ofta lågtryck).",
-        "Borttagning av mossa, smuts och påväxt.","Kontroll av rännor och avvattning.",
-        "Råd om fortsatt underhåll."], sid="ingar")
+    [("#varfor","Varför taktvätt"),("#metod","Metod per taktyp"),("#ingar","Så går det till"),("#pris","Kostnad & ROT"),("#faq","Vanliga frågor")])
+    + sec("Varför ska man tvätta taket?", [
+        "Mossa fungerar som en svamp. Den suger upp regnvatten och håller taket fuktigt långt efter att det har slutat regna. På vintern fryser fukten, och när mossan växer in under pannornas överlapp kan den lyfta dem så att vatten blåser in under. Samtidigt spolas mossa och smuts ner i hängrännorna, som sätts igen och svämmar över.",
+        "I Stockholmsområdet är påväxt särskilt vanlig på villor med mycket träd runt huset – tall, gran och björk ger skugga och barr som håller kvar fukten. Norrsidan av taket drabbas nästan alltid först.",
+        f"Regelbunden taktvätt är därför underhåll, inte bara utseende. Läs mer om orsaker och förebyggande i guiden {a('mossa-pa-taket.html','mossa på taket')}."], sid="varfor")
+    + sec_split("Metod efter taktyp", [
+        "Fel metod kan göra mer skada än mossan. Högtryckstvätt nära ytan blåser bort betongpannornas ytskikt, gör dem porösa och tar sig in under pannorna. Därför arbetar vi med lågtryck och rengöringsmedel som är anpassade för materialet.",
+        f"Betongpannor tvättas skonsamt och behandlas mot ny påväxt. Tegelpannor är känsligare för hårda metoder och rengörs försiktigt. Plåttak tvättas fritt från smuts och krita – ofta som första steg inför {a('takmalning.html','takmålning')}."],
+        "Vi anpassar metoden till", [
+        "Betongpannor.","Tegelpannor.","Plåttak och falsat plåttak.",
+        "Papptak och shingel.","Takets lutning och åtkomst."], sid="metod")
+    + sec_process("Så går taktvätten till", [
+        ("Bedömning","Vi kontrollerar taktyp, skick och mängd påväxt och väljer metod."),
+        ("Skydd","Fasad, fönster, rabatter och rännor skyddas."),
+        ("Mekanisk rengöring","Grov mossa tas bort försiktigt för hand eller med borste."),
+        ("Lågtryckstvätt","Taket tvättas med lågtryck och anpassat rengöringsmedel."),
+        ("Behandling","Taket behandlas mot ny påväxt."),
+        ("Rännor & rapport","Hängrännor rensas och vi berättar om skador vi har sett.")], muted=True, sid="ingar")
+    + sec_split("Taktvätt är också en kontroll", [
+        f"När vi ändå är uppe på taket ser vi allt som är svårt att se från marken: spruckna pannor, lös nockpanna, dålig plåt runt skorstenen eller underlagspapp som syns vid takfoten. Du får veta vad vi har hittat, och om något bör åtgärdas kan det ofta göras samtidigt. Vill du ha ett skriftligt utlåtande gör vi en {a('takbesiktning.html','takbesiktning')}.",
+        f"Vi rensar även {a('hangrannor-stupror.html','hängrännor och stuprör')} som en del av tvätten, så att mossan inte bara flyttar från taket till rännan."],
+        "Vi tittar efter", [
+        "Spruckna eller lösa pannor.","Plåt runt skorsten och ventilation.",
+        "Nockpannor och nockbruk.","Underlagspapp vid takfoten.","Hängrännor och stuprör."])
+    + sec("Hur ofta ska taket tvättas?", [
+        "Det beror på läge. Ett tak i öppet, soligt läge klarar sig ofta 8–10 år mellan tvättarna, medan ett tak under höga träd kan behöva tvättas var 3–5:e år. En behandling mot påväxt efter tvätten gör att intervallet blir längre.",
+        "Bästa tiden för taktvätt är vår och höst, när det är plusgrader och mossan är fuktig och lätt att få bort. Vi tvättar inte vid frost."])
+    + sec("Vad kostar taktvätt?", [
+        "Priset beror på takets storlek och lutning, taktyp, mängden mossa och hur lätt det är att komma åt taket. Rensning av hängrännor och behandling mot påväxt ingår ofta i samma arbete.",
+        "Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag med vad som ingår."], sid="pris")
+    + rot_box("Arbetskostnaden för taktvätt på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")
+    + links_block("Taktvätt i ditt område", [
+        ("taklaggare-sollentuna.html","Sollentuna","Villor under tall och björk med mycket påväxt."),
+        ("taklaggare-bromma.html","Bromma","Äldre villaträdgårdar och skuggiga tak."),
+        ("taklaggare-danderyd.html","Danderyd","Stora tomter med hög växtlighet."),
+        ("taklaggare-taby.html","Täby","Radhus och villor från 70-talet."),
+        ("taklaggare-spanga.html","Spånga","Betongtak på 60-talsvillor."),
+        ("taklaggare-nacka.html","Nacka","Skuggiga tomter i skog och vid vatten.")], sid="orter")
     + links_block("Relaterat", [
         ("mossa-pa-taket.html","Mossa på taket – behandling","Orsaker, metoder och förebyggande."),
         ("hangrannor-stupror.html","Hängrännor & stuprör","Rensning och byte för god avvattning."),
-        ("takbesiktning.html","Takbesiktning","Kontrollera skicket samtidigt.")]),
+        ("takmalning.html","Takmålning","Nytt ytskydd på plåttak efter tvätt.")]),
   faq=[
-    ("Skadar högtryckstvätt taket?","Högtryck kan skada pannor och ytskikt. Vi använder ofta lågtryck och metoder anpassade efter taktyp för att undvika slitage."),
-    ("Hur ofta bör taket tvättas?","Det beror på läge och beskuggning. Tak i skuggiga, trädnära lägen behöver oftare tvätt än öppna, soliga tak."),
-    ("Kan ni behandla mot ny mossa?","Ja, vi kan rekommendera och utföra förebyggande behandling efter tvätt. Vi bedömer vad som passar din taktyp.")])
+    ("Skadar högtryckstvätt taket?","Ja, högtryck nära ytan kan skada pannornas ytskikt och tränga in under pannorna. Vi använder lågtryck och metoder anpassade efter taktyp."),
+    ("Hur ofta bör taket tvättas?","Var 3–5:e år under träd och var 8–10:e år i öppet läge. Behandling mot påväxt förlänger intervallet."),
+    ("När på året tvättar man taket?","Vår och höst vid plusgrader, när mossan är fuktig och lätt att få bort. Inte vid frost."),
+    ("Kan ni behandla mot ny mossa?","Ja, efter tvätten behandlar vi taket mot ny påväxt med medel anpassat för taktypen."),
+    ("Rensar ni hängrännorna samtidigt?","Ja, rensning av hängrännor och stuprör ingår normalt i taktvätten."),
+    ("Ger taktvätt ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 
 # ====================== VILLA PILLAR ======================================
