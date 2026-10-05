@@ -1177,3 +1177,34 @@ textarea:focus-visible,
 .calc-result[hidden] {
   display: none;
 }
+
+.trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 22px;
+}
+
+.trust-strip ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trust-strip li {
+  position: relative;
+  padding-left: 22px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.trust-strip li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}

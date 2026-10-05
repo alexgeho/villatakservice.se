@@ -317,7 +317,14 @@ def hero(h1, lead, crumbs, anchors=None):
         <div class="container">
           {breadcrumb_html(crumbs)}
           <h1 class="hero-title">{h1}</h1>
-          <p class="section-lead">{lead}</p>{an}
+          <p class="section-lead">{lead}</p>
+          <div class="trust-strip">
+            <ul>
+              <li>Gratis besök och kostnadsförslag</li>
+              <li>ROT-avdrag direkt på fakturan</li>
+            </ul>
+            <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
+          </div>{an}
         </div>
       </section>"""
 
@@ -580,34 +587,83 @@ page(file="plattak.html",
     ("Är plåttak bullrigt vid regn?","Med korrekt underlag och isolering är ljudnivån normalt inget problem i bostadshus.")])
 
 page(file="takmalning.html",
-  title="Takmålning i Stockholm – måla plåttak | Geal Entreprenad AB",
-  description="Takmålning av plåttak i Stockholm och Sundbyberg. Tvätt, rostskydd och anpassat målningssystem som ger taket nytt skydd. Begär kostnadsfri offert.",
+  title="Takmålning i Stockholm – måla plåttak rätt | Geal Entreprenad AB",
+  description="Takmålning av plåttak och falsade tak i Stockholm. Tvätt, rostskydd och rätt färgsystem – så går det till, när det lönar sig och vad ROT ger. Gratis besök.",
   h1="Takmålning i Stockholm",
   service=True, service_type="Takmålning", localbiz=False,
+  howto=("Så går en takmålning till", [
+    ("Besiktning","Vi går upp på taket, bedömer rost, färgskikt, falsar och detaljer och avgör om målning är rätt åtgärd."),
+    ("Tvätt","Taket tvättas med lågtryck och rengöringsmedel så att smuts, påväxt och krita försvinner."),
+    ("Rostbehandling","Rost skrapas eller borstas ner till fast underlag och punktgrundas med rostskyddsgrund."),
+    ("Tätning","Falsar, skarvar och genomföringar ses över och tätas där det behövs."),
+    ("Målning","Grundfärg och täckfärg läggs i rätt skikttjocklek enligt färgtillverkarens system."),
+    ("Slutkontroll","Vi kontrollerar resultatet tillsammans med dig och ger råd om underhåll.")]),
   crumbs=SVC_CRUMB+[("Takmålning","takmalning.html")],
-  cta=("Dags att måla taket?","Vi bedömer om takmålning är rätt åtgärd och ger dig en tydlig offert."),
+  cta=("Dags att måla taket?","Vi kommer ut gratis, bedömer om målning räcker och lämnar ett skriftligt kostnadsförslag."),
   body=hero("Takmålning i Stockholm",
-    "För vissa plåttak är målning en kostnadseffektiv åtgärd när ytan behöver nytt skydd men konstruktionen fortfarande är sund. Vi tvättar, rostskyddar och målar med anpassat system.",
+    "Ett plåttak som har börjat blekna, krita eller rosta behöver inte alltid bytas. Rätt utförd takmålning – tvätt, rostskydd och ett färgsystem för plåt – ger taket ett nytt skydd för många år framåt.",
     SVC_CRUMB+[("Takmålning","takmalning.html")],
-    [("#nar","När passar det"),("#ingar","Så går det till"),("#faq","Vanliga frågor")])
+    [("#nar","När passar det"),("#ingar","Så går det till"),("#farg","Färgsystem"),("#pris","Kostnad & ROT"),("#faq","Vanliga frågor")])
     + sec("När är takmålning rätt åtgärd?", [
-        "Takmålning passar när ett plåttak har börjat tappa sitt ytskydd, mattats av eller fått begynnande rost – men där grundkonstruktionen är hel. Då kan målning förlänga takets liv och förbättra utseendet till en lägre kostnad än byte.",
-        f"Är rosten eller skadorna mer omfattande kan {a('plattak.html','byte av plåttaket')} vara mer lönsamt. Vi bedömer alltid skicket innan vi rekommenderar målning."], sid="nar")
-    + sec_split("Så går takmålningen till", [
-        "Vi börjar med rengöring och förbehandling, åtgärdar rost och målar sedan med ett system anpassat för aktuell plåt och miljö. Målning gäller normalt plåttak – tegel- och betongpannor målas sällan med gott resultat.",
-        f"Behöver taket först rengöras från påväxt läser du mer under {a('taktvatt.html','taktvätt')}."],
-        "Det här ingår", [
-        "Tvätt och borttagning av löst material.","Rostskydd och förbehandling där det behövs.",
-        "Grund- och täckmålning med anpassat system.","Kontroll av detaljer och avvattning.",
-        "Råd om fortsatt underhåll."], sid="ingar")
+        "Takmålning passar när plåttakets ytskikt har slitits men själva plåten fortfarande är hel. Typiska tecken är att färgen har mattats och kritar (det blir vitt på fingret när du drar över ytan), att kulören har bleknat ojämnt, eller att det har uppstått rostprickar vid skruvar, falsar, nockar och vid takfoten. I det läget skyddar en ny färgfilm plåten innan rosten hinner äta sig igenom.",
+        "Målning är däremot fel åtgärd när plåten är genomrostad, när läckage redan har skadat underlagspapp och råspont, eller när taket ändå närmar sig slutet av sin livslängd. Då blir resultatet kortlivat och pengarna gör mer nytta i ett nytt tak. Därför börjar vi alltid med att gå upp på taket och titta – inte med att räkna kvadratmeter.",
+        f"Osäker på skicket? En {a('takbesiktning.html','takbesiktning')} ger ett skriftligt underlag. Är taket uttjänt läser du mer om {a('plattak.html','nytt plåttak')}."], sid="nar")
+    + sec_split("Tecken på att plåttaket behöver målas", [
+        "Ett plåttak på en villa i Stockholmsområdet målas vanligen om med 10–20 års mellanrum, beroende på färgsystem, väderstreck och hur mycket träd som står runt huset. Söderläge och mycket sol bryter ner färgen snabbare, medan skuggiga tak under björk och tall får mer påväxt och fukt.",
+        "Vänta inte tills rosten syns från gatan. Ytrost som åtgärdas tidigt kostar lite, medan rost som har gått igenom plåten kräver lagning eller byte av hela plåtar."],
+        "Kontrollera själv från marken", [
+        "Kulören har bleknat eller blivit flammig.","Färgen kritar eller flagnar.",
+        "Rostprickar vid skruvar, falsar eller nock.","Rost i hängrännor och vid takfot.",
+        "Påväxt och mossa i skuggiga partier."], sid="tecken")
+    + sec_process("Så går takmålningen till", [
+        ("Besiktning","Vi bedömer rost, färgskikt, falsar och detaljer och berättar ärligt om målning räcker."),
+        ("Skydd & tvätt","Vi skyddar fasad, rabatter och fönster och tvättar taket med lågtryck och rengöringsmedel."),
+        ("Rostbehandling","Rost borstas ner till fast underlag och grundas med rostskyddsgrund."),
+        ("Tätning","Falsar, skarvar och genomföringar ses över och tätas vid behov."),
+        ("Målning","Grund- och täckfärg i rätt skikttjocklek enligt tillverkarens system."),
+        ("Slutkontroll","Vi går igenom resultatet med dig och dokumenterar arbetet.")], muted=True, sid="ingar")
+    + sec("Färgsystem för plåttak", [
+        "Det finns ingen färg som passar alla tak. Valet beror på vilken plåt taket är gjort av och hur det är behandlat sedan tidigare. Varmförzinkad plåt, plastbelagd plåt (till exempel polyester eller PVC-belagd profilplåt) och äldre målad plåt kräver olika förbehandling och grundfärg för att färgen ska fästa.",
+        "Vi följer alltid färgtillverkarens system – samma tvättmedel, grund och täckfärg som är provade ihop – och lägger färgen i rätt skikttjocklek. Det är den vanligaste orsaken till att en takmålning håller i 5 år i stället för 15: för tunt lager eller fel grund på fel plåt.",
+        "Vill du byta kulör går det bra. Mörka kulörer som svart och grafit är vanligast på villor i Bromma, Spånga och Sollentuna, men tegelröd och grön förekommer också – särskilt på äldre hus där kulören bör passa husets epok."], sid="farg")
+    + sec_split("Falsat plåttak, profilplåt och detaljer", [
+        "Falsade plåttak (bandtäckning) har ofta trettio, fyrtio år på nacken på villor från 1950–70-talen. De går i regel utmärkt att måla, men falsarna måste kontrolleras. Är en fals öppen eller rostig tätas den innan målning – annars kan vatten tränga in under färgen.",
+        f"Profilplåt (trapetsprofil) har skruvar med gummibricka som torkar ut med åren. Vid målning byter vi skruvar och brickor där de har släppt. Vi ser också över {a('hangrannor-stupror.html','hängrännor och stuprör')}, ventilationshuvar och plåt runt skorstenen, eftersom det är där läckage oftast börjar."],
+        "Vi kontrollerar alltid", [
+        "Falsar och skarvar.","Skruvar och gummibrickor.",
+        "Plåt runt skorsten och ventilation.","Nockplåt och vindskivor.","Hängrännor och takavvattning."])
+    + sec("Kan man måla betongpannor eller tegel?", [
+        "Betongpannor kan behandlas med en särskild takfärg för betong, men det förlänger främst utseendet – inte pannornas tekniska livslängd. Är pannorna porösa eller underlagspappen gammal hjälper inte färg mot läckage. Tegeltak målar vi inte: teglet behöver kunna andas, och färg kan göra att fukt stängs inne och att pannorna fryser sönder.",
+        f"Har du betong- eller tegeltak med mossa och smuts räcker det oftast med {a('taktvatt.html','taktvätt')} och behandling mot påväxt. Läs mer i guiden {a('mossa-pa-taket.html','mossa på taket')}."], muted=True, sid="betong")
+    + sec("Vad kostar takmålning?", [
+        "Kostnaden beror på takets storlek och lutning, hur mycket rost som måste åtgärdas, om falsar behöver tätas, vilken färg som används och hur lätt det är att komma åt taket med ställning eller lift. Två tak med samma yta kan därför få helt olika pris.",
+        "Vi publicerar inga fasta priser. I stället kommer vi ut gratis, tittar på taket och lämnar ett skriftligt kostnadsförslag med vad som ingår – tvätt, rostbehandling, antal färgskikt, kulör och ställning. Då kan du jämföra offerter på lika villkor.",
+        "Jämfört med ett nytt plåttak är målning i regel en bråkdel av kostnaden, förutsatt att plåten är frisk. Det är därför det lönar sig att måla i tid."], sid="pris")
+    + rot_box("Arbetskostnaden för takmålning på din villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan, så du betalar bara din del.")
+    + sec("Bästa tiden att måla taket i Stockholm", [
+        "Takfärg behöver torr plåt och plusgrader för att härda rätt. I Stockholmsområdet målar vi normalt från maj till och med september. Vi planerar efter väderprognosen och väntar hellre en dag än målar på fuktig plåt.",
+        "Planera gärna under vintern och våren – då hinner vi göra besiktningen och boka in arbetet innan högsäsongen."])
+    + links_block("Vi målar plåttak i hela Stockholm", [
+        ("taklaggare-bromma.html","Bromma","Funkisvillor och 50-talshus med falsade plåttak."),
+        ("taklaggare-sundbyberg.html","Sundbyberg","Villor i Duvbo, Lilla Alby och Ör."),
+        ("taklaggare-spanga.html","Spånga","Villaområden från 50- till 70-talet."),
+        ("taklaggare-danderyd.html","Danderyd","Större villor med svart bandtäckt plåt."),
+        ("taklaggare-sollentuna.html","Sollentuna","Plåt och betong på 60–70-talsvillor."),
+        ("taklaggare-lidingo.html","Lidingö","Havsnära tak som utsätts för saltluft.")], sid="orter")
     + links_block("Relaterat", [
         ("taktvatt.html","Taktvätt","Rengöring innan målning eller som eget underhåll."),
         ("plattak.html","Plåttak","Nytt plåttak när målning inte räcker."),
-        ("mossa-pa-taket.html","Mossa på taket","Behandling och förebyggande underhåll.")]),
+        ("takbesiktning.html","Takbesiktning","Skriftligt underlag innan du bestämmer dig."),
+        ("takmaterial-livslangd.html","Livslängd per takmaterial","Hur länge plåt, betong och tegel håller.")]),
   faq=[
-    ("Kan man måla alla tak?","Nej. Takmålning görs främst på plåttak. Tegel- och betongpannor målas sällan med bra långsiktigt resultat."),
-    ("Hur länge håller en takmålning?","Med rätt förbehandling och system håller en takmålning normalt runt 10–15 år beroende på exponering."),
-    ("Ger takmålning ROT-avdrag?","Arbetskostnaden för takmålning på villa ger normalt ROT-avdrag. Nivån för 2026 anges i offerten.")])
+    ("Hur ofta behöver ett plåttak målas?","Vanligen var 10–20:e år beroende på färgsystem, väderstreck och påväxt. Kritar färgen eller syns rost är det dags att planera."),
+    ("Hur länge håller en takmålning?","Med rätt tvätt, rostbehandling och färgsystem håller en takmålning normalt 10–15 år, ofta längre på skyddade tak."),
+    ("Kan man måla ett falsat plåttak?","Ja. Falsade plåttak går bra att måla, men falsar och skarvar måste kontrolleras och tätas innan målning."),
+    ("Kan man måla betongpannor?","Det går med särskild betongfärg, men det förbättrar främst utseendet. Tegeltak målar vi inte eftersom färgen kan stänga inne fukt."),
+    ("Vilken tid på året målar man tak?","Från maj till september, på torr plåt och vid plusgrader. Boka gärna besiktning redan under våren."),
+    ("Kan man byta färg på taket?","Ja, med rätt grundfärg kan du byta kulör. Vi hjälper dig välja en kulör som passar husets stil."),
+    ("Ger takmålning ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan."),
+    ("Vad kostar takmålning?","Det beror på yta, lutning, rost och åtkomst. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag.")])
 
 page(file="taktvatt.html",
   title="Taktvätt i Stockholm – ta bort mossa | Geal Entreprenad AB",
