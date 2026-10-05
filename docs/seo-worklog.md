@@ -5,6 +5,20 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 SESSION 2026-10-05 — Topp-10-plan (deep research) + genomförande steg 1–3
+Plan + prompt: `docs/top10-plan.md`. GSC/SERP-bas: `~/sites-hub/audits/2026-10-05/gsc-3m.md` (0 klick, 4,3K visn, pos 49).
+### KLART
+- ✅ takmalning 390 → ~1270 ord (färgsystem, falsat/profilplåt, betong/tegel, säsong, HowTo, FAQ 8).
+- ✅ takrenovering 405 → ~1000 (takomläggning, reparationer, HowTo, FAQ 7); taktvatt 320 → ~850 (metod per taktyp, HowTo, FAQ 6).
+- ✅ Trust-rad under H1 på alla hero-sidor: Gratis besök och kostnadsförslag · ROT-avdrag direkt på fakturan · Ring.
+- ✅ 10 Stockholmsorter: +2 unika sektioner (taktyper/problem, planering/bygglov) +3 FAQ + länkar till takmålning/taktvätt/plåttak. 700–870 ord, max likhet mellan orter 23 %.
+### 🔜 NÄSTA
+1. Bilder (steg 4): REPLICATE_API_TOKEN saknas i env → ägaren lägger in, sedan Recraft-promptarna i top10-plan.md.
+2. takbyte (690) och plattak (345) → 1200 ord.
+3. ~02.11: GSC mot basen 05.10 (takmålning, takrenovering <ort>, takläggare <ort>).
+### ⚠️ [OWNER]
+- F-skatt/ansvarsförsäkring/garanti (för trust-raden) · GBP-länk för sameAs · 3–5 projekt med foto före/efter (/projekt) · omdömen.
+
 ## 🟢 SESSION 2026-09-29 — GSC-fixar (Bromma, takbesiktning, takbyte-pris)
 ### KLART
 - ✅ `1c42808` Startsidan: Bromma i title/description (GSC: startsidan rankar ~pos 10 på "takläggare bromma", 0 klick); og:description var intern anteckning.
