@@ -5,6 +5,18 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 SESSION 2026-10-08 (2) — Hela Stockholm: 17 nya ortsidor + PBL 1 dec 2025 (`b9a64de`, live)
+### KLART
+- ✅ 17 nya `taklaggare-<ort>.html`: Hässelby, Vällingby, Kista, Ekerö, Hägersten, Älvsjö, Enskede, Farsta, Skärholmen, Huddinge, Tyresö, Haninge, Värmdö, Upplands Väsby, Vallentuna, Österåker, Botkyrka. Innehåll i `tools/omraden_stockholm.py` (bebyggelse/epoker, taktyper/problem, planering + bygglov hos Stockholms stad resp. kommun, 6 FAQ, egen "why"-text, grannlänkar). 640–770 ord. Inga priser, inget lokalt kontor.
+- ✅ Likhet: nytt `tools/similarity.py` (Jaccard 5-ords-shingles, `<main>`, ortnamn maskat) → 27 orter, **max 22,1 %**, snitt 14,5 %. Kör `python3 tools/similarity.py` efter ändringar (exit 1 om > 25 %).
+- ✅ omraden.html: grupperad "Stadsdelar i Stockholm" / "Kommuner runt Stockholm"; title/description "hela Stockholm". RoofingContractor areaServed = alla 27. Befintliga orter länkar till nya grannar (NEIGHBORS_ADD). Sitemap 92 sidor.
+- ✅ Bilder: 19 fotorealistiska Recraft-bilder (17 nya + Järfälla, Lidingö) via `tools/gen_images.py` (hoppar över befintliga webp), cwebp q78 + XMP AI-märkning. 6 bilder fick göras om (människor i bild).
+- ✅ PBL 1 dec 2025 (källa Boverket): attefallshus → komplementbostadshus, friggebod → komplementbyggnad (30 m²/4,0 m inom DP, 50 m²/4,5 m utanför, pott 45/65 m², ingen anmälan för huset – anmälan för VA/ventilation), tillbyggnad 30 m² under nock, fasadändring (byte takmaterial/kulör) på villa/radhus lovfri utom särskilt värdefulla miljöer. Uppdaterat: attefallshus, attefallshus-regler, friggebod, tillbyggnad, bygglov-takbyte, takbyte/plattak/faq-FAQ, fritidshus, vad-kostar-bygga-hus, Solna-FAQ.
+### 🔜 NÄSTA
+1. **Request Indexing (GSC, max ~10/dag):** taklaggare-hasselby, -vallingby, -ekero, -enskede, -alvsjo, -farsta, -hagersten, -varmdo, omraden, bygglov-takbyte → nästa dag: -kista, -skarholmen, -huddinge, -tyreso, -haninge, -upplands-vasby, -vallentuna, -osteraker, -botkyrka, attefallshus-regler.
+2. Övriga 10 Stockholmsorter: formuleringar "byte av material kan kräva bygglov" är ok i kulturmiljöer (Bromma, Duvbo, Djursholm) men kan ses över mot PBL 2025 vid nästa genomgång.
+3. 02.11: GSC – följ takläggare <ny ort> (KP ~50/mån: ekerö, hässelby, enskede, vällingby, älvsjö, farsta, hägersten; värmdö takrenovering/takläggning).
+
 ## 🟢 SESSION 2026-10-08 — GSC-genomgång + snabba vinster (`cec37ef`, live)
 GSC 28 d (8.9–5.10): 0 klick / 5,18K visn (föreg. 28 d: 82) / CTR 0 % / pos 50 (49,5). Index 54 / ej 27 (18 Discovered, 4 redirect, 2 noindex, 2 404 validering startad, 1 alternate).
 Near-miss: takläggare bromma 117 visn pos 9,8 · totalentreprenad bromma 55/11,0 · takläggning bromma 36/13,8 · entreprenad bromma 29/4,1 · solceller på tak 50/17,5 · takrenovering i spånga 23/15 · takrenovering sundbyberg 22/16,2 · takläggare säter 27/20,6. Bromma-frågor rankar via startsidan (Google visar fortfarande http://villatakservice.se/, 461 visn pos 9,5 – 301 → https är korrekt, konsolideras); taklaggare-bromma.html bara pos 44 → håll startsidan som Bromma-sida.
