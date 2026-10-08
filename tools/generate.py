@@ -31,6 +31,10 @@ VATNR   = "SE559303756601"
 
 AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
          "Järfälla","Täby","Danderyd","Lidingö","Nacka"]
+# Resten av Storstockholm (2026-10-08) – innehåll i tools/omraden_stockholm.py.
+from omraden_stockholm import (AREAS_NEW, STOCKHOLM_STAD, NEIGHBORS_NEW,
+    NEIGHBORS_ADD, LOC_NEW, LOC_EXTRA_NEW, ORT_IMG_NEW)
+AREAS = AREAS + AREAS_NEW
 
 # Dalarna: Geal Entreprenad AB samordnar/förmedlar takprojekt och utför via lokal
 # samarbetspartner på plats i Dalarna. Ingen egen adress i regionen anges.
@@ -62,6 +66,9 @@ NEIGHBORS = {
   "Rättvik":    ["Leksand","Mora","Falun"],
   "Smedjebacken": ["Ludvika","Borlänge","Säter"],
 }
+NEIGHBORS.update(NEIGHBORS_NEW)
+for _o, _add in NEIGHBORS_ADD.items():
+    NEIGHBORS[_o] = NEIGHBORS[_o] + [x for x in _add if x not in NEIGHBORS[_o]]
 
 def slug(name):
     return (name.lower().replace("ä","a").replace("å","a").replace("ö","o")
@@ -495,7 +502,7 @@ page(file="takbyte.html",
     ("Vilket takmaterial är bäst?","Det beror på husets lutning, stil och budget. Tegel och betong är vanligast, plåt passar låga lutningar. Vi går igenom alternativen med dig."),
     ("Kan man bo kvar i huset under takbytet?","Ja. Huset hålls tätt varje kväll och du kan bo kvar som vanligt under arbetet."),
     ("Ska man byta tak innan man sätter solceller?","Ja, om taket är äldre än 25–30 år. Solcellerna håller länge, och det blir dyrt att ta ner dem för att byta tak senare."),
-    ("Behövs bygglov för takbyte?","Inte vid byte till samma material och utseende. Vid ändring av material, kulör eller takform kan bygglov krävas – stäm av med kommunen.")])
+    ("Behövs bygglov för takbyte?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial eller kulör på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden. Höjs taket över befintlig nock krävs bygglov.")])
 
 page(file="takrenovering.html",
   title="Takrenovering i Stockholm – takomläggning & reparation | Geal Entreprenad AB",
@@ -690,7 +697,7 @@ page(file="plattak.html",
     ("Är plåttak bullrigt vid regn?","Med korrekt underlag och isolering är ljudnivån normalt inget problem i bostadshus."),
     ("Kan man täta ett gammalt falsat plåttak?","Ja, om plåten är frisk kan falsarna efterfalsas och tätas och skadade partier bytas. Därefter kan taket målas."),
     ("Vad är skillnaden mellan bandtäckning och profilplåt?","Bandtäckning är falsade plåtband som läggs på plats av plåtslagare. Profilplåt är färdiga skivor som skruvas fast – snabbare och oftast billigare."),
-    ("Behövs bygglov för att byta till plåttak?","Det kan krävas eftersom utseendet ändras. Stäm av med kommunen innan du bestämmer dig."),
+    ("Behövs bygglov för att byta till plåttak?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial eller kulör på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden."),
     ("Ger plåttak ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 page(file="takmalning.html",
@@ -889,33 +896,39 @@ page(file="villatak.html", localbiz=True,
     ("Hur ofta behöver ett villatak underhållas?","En översiktlig kontroll vår och höst plus taktvätt vid behov räcker långt. Ett komplett tak håller i decennier med rätt underhåll.")])
 
 # ====================== OMRÅDEN HUB =======================================
-_area_files = {n: f"taklaggare-{n.lower().replace('ä','a').replace('å','a').replace('ö','o')}.html" for n in AREAS}
-_area_cards = "\n".join(f"""            <article class="service-snippet">
+_area_files = {n: f"taklaggare-{slug(n)}.html" for n in AREAS}
+def _cards(names):
+    return "\n".join(f"""            <article class="service-snippet">
               <h3>{n}</h3>
               <p>Takläggare i {n} – takbyte, renovering och besiktning.</p>
               <a class="text-link" href="{_area_files[n]}">Takläggare i {n}</a>
-            </article>""" for n in AREAS)
+            </article>""" for n in names)
+def _area_section(title, names, muted):
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    return f"""      <section class="{cls}">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">{title}</h2>
+          </div>
+          <div class="service-grid">
+{_cards(names)}
+          </div>
+        </div>
+      </section>"""
+_stad = [n for n in AREAS if n in STOCKHOLM_STAD]
+_kommuner = [n for n in AREAS if n not in STOCKHOLM_STAD]
 page(file="omraden.html",
-  title="Områden – takläggare i Sundbyberg, Solna & Stockholm | Geal Entreprenad AB",
-  description="Vi är takläggare i Sundbyberg, Solna, Bromma, Spånga, Sollentuna, Järfälla, Täby, Danderyd, Lidingö och Nacka. Se alla områden vi arbetar i.",
+  title="Områden – takläggare i hela Stockholm | Geal Entreprenad AB",
+  description="Takläggare i alla Stockholms stadsdelar och kranskommuner – från Bromma, Hässelby och Enskede till Täby, Värmdö och Haninge. Välj ditt område.",
   h1="Områden vi arbetar i",
   crumbs=[("Hem","/"),("Områden","omraden.html")],
   cta=("Finns ditt område inte med?","Skicka en förfrågan – vi tar uppdrag i hela Storstockholm."),
   body=hero("Områden vi arbetar i",
-    "Vi utgår från Bromma (Mariehäll) och arbetar som takläggare i hela Storstockholm. Lokalkännedom spelar roll – byggnadstyper, taklutningar och vanliga skador skiljer sig mellan områdena.",
+    "Vi utgår från Bromma (Mariehäll) och arbetar i alla stadsdelar i Stockholm och i kranskommunerna runt omkring.",
     [("Hem","/"),("Områden","omraden.html")])
+    + _area_section("Stadsdelar i Stockholm", _stad, True)
+    + _area_section("Kommuner runt Stockholm", _kommuner, False)
     + f"""      <section class="section section-muted seo-section">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Takläggare nära dig</h2>
-            <p>Välj ditt område för lokal information om takbyte, takrenovering och takbesiktning.</p>
-          </div>
-          <div class="service-grid">
-{_area_cards}
-          </div>
-        </div>
-      </section>"""
-    + f"""      <section class="section seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">Vi arbetar även i Dalarna</h2>
@@ -924,6 +937,7 @@ page(file="omraden.html",
         </div>
       </section>""")
 
+SRCA = '<a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>'
 # ====================== LOCATION PAGES ====================================
 # Per ort: dict med intro (hero-lead), paras (>=3 unika lokala stycken),
 # items (aside-punkter) och faq (unik lokal FAQ). [OWNER] Riktiga lokala
@@ -1089,7 +1103,7 @@ LOC_EXTRA = {
    "faq": [
      ("Är takomläggning vanligt i Råsunda?","Ja. Många tegeltak i Råsunda och Huvudsta har hela pannor men slitet underlag, och då är omläggning ofta det mest lönsamma."),
      ("Hur ofta ska ett låglutande tak i Bergshamra kontrolleras?","Minst en gång per år, helst efter vintern. Skarvar, genomföringar och avvattning är de vanligaste läckagepunkterna."),
-     ("Behöver jag bygglov för att byta från tegel till plåt i Solna?","Det kan krävas. Stäm av med Solna stad innan du bestämmer dig – vi hjälper dig med underlag."),
+     ("Behöver jag bygglov för att byta från tegel till plåt i Solna?","För en villa eller ett radhus normalt inte sedan 1 december 2025. I kulturhistoriskt värdefulla miljöer kan lov ändå krävas – stäm av med Solna stad."),
    ]},
  "Bromma": {
    "secs": [
@@ -1215,6 +1229,10 @@ ORT_IMG = {
  "Spånga": ("ort-spanga-villa","60-talsvilla i tegel med bruna betongpannor"),
  "Nacka": ("ort-nacka-villa","Havsnära villa på berg med plåttak, typisk för Saltsjöbaden"),
 }
+LOC.update(LOC_NEW)
+LOC_EXTRA.update(LOC_EXTRA_NEW)
+ORT_IMG.update({k: v for k, v in ORT_IMG_NEW.items()
+                if os.path.exists(os.path.join(ROOT, "assets", "images", v[0] + ".webp"))})
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]
     _x = LOC_EXTRA.get(_ort, {"secs": [], "faq": []})
@@ -1244,7 +1262,7 @@ for _ort, _d in LOC.items():
             ("taktvatt.html", f"Taktvätt i {_ort}", "Skonsam tvätt och mossbehandling."),
             ("plattak.html", f"Plåttak i {_ort}", "Nytt plåttak och plåtarbeten.")], muted=False, sid="tjanster")
         + sec_split(f"Varför välja oss i {_ort}?", [
-            f"Vi utgår från Bromma (Mariehäll), precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
+            _d.get("why") or f"Vi utgår från Bromma (Mariehäll), precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
             f"Läs mer om {a('villatak.html','tak på villa')} eller jämför {a('takbyte-eller-takrenovering.html','takbyte och takrenovering')} innan du bestämmer dig."],
             f"Takläggare i {_ort}", items)
         + links_block("Närliggande områden", [
@@ -1717,24 +1735,26 @@ article("sa-valjer-du-taklaggare.html",
   badge="Checklista", read="4 min")
 
 article("bygglov-takbyte.html",
-  "Behövs bygglov för takbyte? Så gäller reglerna | Geal Entreprenad AB",
-  "Behövs bygglov för takbyte? Vi förklarar när takbyte kräver bygglov eller anmälan, och vad som gäller om du byter takmaterial eller färg.",
+  "Bygglov för takbyte – regler från 1 december 2025 | Geal Entreprenad AB",
+  "Sedan 1 december 2025 krävs normalt inget bygglov för att byta takmaterial eller kulör på villa och radhus. Här är undantagen och vad som fortfarande gäller.",
   "Behövs bygglov för takbyte?",
-  "Ett vanligt takbyte med samma material kräver oftast inte bygglov – men det finns undantag. Här är vad som gäller för villor i Stockholmsområdet.",
-  [("p","Om du byter tak med samma typ av material och behåller takets utseende krävs normalt inte bygglov. Men om bytet väsentligt ändrar byggnadens yttre utseende kan bygglov eller anmälan behövas."),
-   ("h2","När kan bygglov krävas?"),
-   ("ul",["Byte till ett takmaterial med tydligt annat utseende (t.ex. tegel till plåt).",
-          "Byte av takets färg om det väsentligt ändrar utseendet.",
-          "Om huset ligger i ett kulturhistoriskt värdefullt område.",
-          "Om du samtidigt ändrar takkonstruktion eller lutning."]),
-   ("p","Reglerna tolkas av din kommun, och detaljplaner skiljer sig mellan områden. Kontrollera alltid med kommunens bygglovsenhet innan du byter material eller färg. Vi hjälper dig gärna att bedöma om ditt planerade takbyte kan påverkas."),
-   ("tips","Ligger huset inom detaljplan eller i ett känsligt område? Hör med kommunen först – det är billigare än att åtgärda i efterhand."),
+  "Plan- och bygglagen ändrades 1 december 2025. För villor och radhus blev takbyte enklare – men inte helt regelfritt.",
+  [("p","Med de nya reglerna i 9 kap. plan- och bygglagen (PBL) krävs inte längre bygglov för fasadändringar på en- och tvåbostadshus – villor, parhus och radhus. Det gäller även taket: att byta takmaterial, till exempel från betongpannor till plåt, eller att byta kulör kräver normalt inget bygglov."),
+   ("h2","När krävs ändå bygglov?"),
+   ("ul",["Huset eller området är särskilt värdefullt ur historisk, kulturhistorisk, miljömässig eller konstnärlig synpunkt – då gäller utökad lovplikt för fasadändringar.",
+          "Det är ett flerbostadshus eller en annan byggnad inom detaljplan, och taket vetter mot gata eller annan allmän plats.",
+          "Taket höjs över befintlig taknock – då räknas det som en tillbyggnad som kräver bygglov."]),
+   ("h2","Lovfritt är inte regelfritt"),
+   ("p","Varsamhetskravet och förbudet mot att förvanska byggnader i 8 kap. PBL gäller fortfarande. Ett nytt tak ska passa husets karaktär, och kommunen kan ingripa i efterhand om en lovfri åtgärd förvanskar ett värdefullt hus. Tekniska krav gäller också – till exempel att takstolarna klarar vikten när ett lätt plåttak byts mot tegel."),
+   ("p",'Källa: <a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>. Gäller från 1 december 2025.'),
+   ("tips","Osäker på om ditt hus räknas som särskilt värdefullt? Fråga kommunens bygglovsenhet. Du kan också söka frivilligt bygglov för att få besked i förväg."),
    ("cta",("Planerar du ett takbyte?","Vi hjälper dig bedöma materialval och vad som gäller – begär en offert."))],
   [("takbyte.html","Takbyte","Vår tjänst för takbyte."),
-   ("tegel-betong-plattak.html","Tegel vs betong vs plåt","Byte av material kan påverka bygglov."),
+   ("tegel-betong-plattak.html","Tegel vs betong vs plåt","Jämför material inför takbytet."),
    ("rot-avdrag-takarbete.html","ROT-avdrag","Ekonomin kring takbyte.")],
-  faq=[("Krävs bygglov om jag byter tegel mot likadant tegel?","Nej, normalt inte. Byte till samma typ av material som behåller utseendet är oftast bygglovsfritt, men kontrollera med din kommun."),
-       ("Vem ansvarar för att söka bygglov?","Fastighetsägaren ansvarar för att nödvändiga tillstånd finns. Vi kan hjälpa till att bedöma behovet.")],
+  faq=[("Krävs bygglov för att byta från tegel till plåt på en villa?","Normalt inte sedan 1 december 2025. Undantaget är särskilt värdefulla byggnader och områden, där bygglov fortfarande krävs."),
+       ("Krävs bygglov om jag byter tegel mot likadant tegel?","Nej."),
+       ("Vem ansvarar för att reglerna följs?","Fastighetsägaren. Vi hjälper dig bedöma materialval och om huset kan räknas som särskilt värdefullt.")],
   badge="Regler", read="4 min")
 
 # ---- problem / symptom ----
@@ -1935,7 +1955,7 @@ article("tegel-betong-plattak.html",
    ("ul",["Låg vikt – passar även låga lutningar.","Livslängd 40–50 år, kan ommålas.",
           "Snabb montering.","Kräver noggranna plåtarbeten för täthet."]),
    ("p",f"Se hur länge materialen håller i {a('takmaterial-livslangd.html','livslängd per takmaterial')}. Vill du ha plåt hjälper vi dig med {a('plattak.html','plåttak')}, och byte sköts via {a('takbyte.html','takbyte')}."),
-   ("tips","Byter du från pannor till plåt eller tvärtom – kolla vikt och ev. bygglov, se guiden om bygglov för takbyte.")],
+   ("tips","Byter du från plåt till pannor – kontrollera att takstolarna klarar den högre vikten. Bygglov krävs normalt inte för villor sedan 1 december 2025, se guiden om bygglov för takbyte.")],
   [("takmaterial-livslangd.html","Livslängd per material","Så länge håller taken."),
    ("plattak.html","Plåttak","Vår tjänst för plåttak."),
    ("bygglov-takbyte.html","Bygglov för takbyte","Vid byte av material.")],
@@ -2084,8 +2104,8 @@ page(file="faq.html",
     ("Behöver jag byta hela taket eller räcker en renovering?","Det beror på skicket. Om grundkonstruktionen är sund kan en takrenovering räcka. En takbesiktning ger svar innan du beslutar."),
     ("Lämnar ni garanti på arbetet?","Ja, garanti och villkor framgår alltid i offert och avtal så att du vet vad som gäller för just ditt projekt."),
     ("Är offert och platsbesök kostnadsfritt?","Ja, vi erbjuder gratis platsbesök och kostnadsförslag. Du binder dig inte till något genom att begära offert."),
-    ("Vilka områden arbetar ni i?","Vi utgår från Bromma (Mariehäll) och arbetar i hela Storstockholm, bland annat Sundbyberg, Solna, Spånga, Sollentuna, Järfälla, Täby, Danderyd, Lidingö och Nacka."),
-    ("Behövs bygglov för takbyte?","Ett vanligt takbyte med samma material kräver oftast inte bygglov, men byte av material eller färg kan kräva det. Vi hjälper dig bedöma och du kontrollerar med kommunen."),
+    ("Vilka områden arbetar ni i?","Vi utgår från Bromma (Mariehäll) och arbetar i alla stadsdelar i Stockholm och i kranskommunerna – från Sundbyberg, Solna och Hässelby till Huddinge, Värmdö och Österåker."),
+    ("Behövs bygglov för takbyte?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial eller kulör på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden."),
     ("Har ni försäkring och F-skatt?","Ja, vi är ett registrerat aktiebolag med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06."),
     ("Kan ni ta hand om hela renoveringen?","Ja, vi utför även total entreprenad och kan samordna taket med fasad, fönster och annan renovering av villan.")])
 
@@ -2141,7 +2161,7 @@ page(file="bygg.html", localbiz=True,
         ("villarenovering.html","Villarenovering","Total- och delrenovering av villa."),
         ("tillbyggnad.html","Tillbyggnad","Bygg ut och få mer yta."),
         ("attefallshus.html","Attefallshus","Nyckelfärdigt upp till 30 m²."),
-        ("friggebod.html","Friggebod","Upp till 15 m² – utan bygglov och anmälan."),
+        ("friggebod.html","Friggebod","Komplementbyggnad upp till 30 m²."),
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt hus","Bygg villa från grunden."),
         ("fritidshus.html","Bygga fritidshus","Nyckelfärdigt fritidshus."),
         ("villatak.html","Tak på villa","Vår ursprungliga specialitet."),
@@ -2230,7 +2250,7 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
         "En tillbyggnad ökar husets boyta permanent. Vanliga projekt är att bygga ut vardagsrummet, lägga till ett extra sovrum, bygga uterum/inglasat eller resa ett helt nytt våningsplan.",
         f"Vill du hellre ha en fristående byggnad kan ett {a('attefallshus.html','attefallshus')} vara ett smidigare alternativ utan bygglov."], sid="nar")
     + sec_split("Bygglov och process", [
-        "De flesta tillbyggnader kräver bygglov. Vi hjälper till med ritningar och bygglovsunderlag, och planerar sedan grund, stomme, tak och ytskikt så att tillbyggnaden ansluter tätt och snyggt mot befintligt hus.",
+        "Sedan 1 december 2025 får du bygga till sammanlagt 30 m² utan bygglov, om tillbyggnaden inte går över husets taknock och håller 4,5 meter till tomtgräns. Större tillbyggnader kräver bygglov – vi hjälper till med ritningar och bygglovsunderlag, och planerar sedan grund, stomme, tak och ytskikt så att tillbyggnaden ansluter tätt och snyggt mot befintligt hus.",
         "En välplanerad anslutning mot tak och fasad är avgörande för att undvika framtida fukt- och läckageproblem."],
         "Så går det till", [
         "Behovsgenomgång och förslag.","Ritning och bygglovsunderlag.",
@@ -2248,30 +2268,30 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
         ("nybyggnad-villa.html","Nybyggnad","Bygga nytt hus."),
         ("attefallshus-regler.html","Attefallsregler","Vad som gäller utan bygglov.")]),
   faq=[
-    ("Behöver jag bygglov för tillbyggnad?","Oftast ja. Vissa mindre åtgärder (t.ex. attefallstillbyggnad) kan räcka med anmälan. Vi hjälper dig bedöma och du kontrollerar med kommunen."),
+    ("Behöver jag bygglov för tillbyggnad?","Inte för tillbyggnader på sammanlagt högst 30 m² som inte går över taknocken (gäller från 1 december 2025). Närmare än 4,5 m från tomtgräns krävs bygglov, om inte grannen skriftligen medgett det. Större tillbyggnader kräver alltid bygglov."),
     ("Hur mycket får jag bygga till?","Det styrs av detaljplan och tomt. Vi går igenom vad som är möjligt vid ett platsbesök."),
     ("Får jag ROT för tillbyggnad?","Normalt nej – ROT gäller renovering av befintlig bostad, inte tillbyggnad av ny yta.")])
 
 page(file="attefallshus.html", service=True, service_type="Attefallshus",
-  title="Attefallshus i Stockholm – nyckelfärdigt upp till 30 m² | Geal Entreprenad AB",
-  description="Attefallshus i Stockholm, nyckelfärdigt upp till 30 m² – gäststuga, kontor eller uthyrning. Vi bygger och hjälper med anmälan. Kostnadsfri offert.",
+  title="Attefallshus i Stockholm – nya regler, upp till 30 m² | Geal Entreprenad AB",
+  description="Attefallshus heter nu komplementbostadshus: upp till 30 m² utan bygglov och utan anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt i Stockholm.",
   h1="Attefallshus i Stockholm",
   crumbs=BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
-  cta=("Funderar du på ett attefallshus?","Vi bygger nyckelfärdigt och hjälper med anmälan. Begär en kostnadsfri offert."),
+  cta=("Funderar du på ett attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med reglerna. Begär en kostnadsfri offert."),
   body=hero("Attefallshus i Stockholm",
-    "Ett attefallshus ger upp till 30 m² extra – som gäststuga, hemmakontor, förråd eller uthyrning – utan bygglov (men med anmälan). Vi bygger nyckelfärdigt i hela Stockholm.",
+    "Sedan 1 december 2025 heter attefallshuset komplementbostadshus. Inom detaljplan får det vara upp till 30 m² och byggas utan bygglov och utan anmälan. Vi bygger nyckelfärdigt i hela Stockholm.",
     BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
     [("#vad","Om attefallshus"),("#regler","Regler"),("#faq","Vanliga frågor")])
     + sec("Vad är ett attefallshus?", [
-        "Attefallshus är en fristående komplementbyggnad på upp till 30 m² som får byggas på de flesta villatomter utan bygglov. Det räcker med en anmälan till kommunen och startbesked innan du börjar.",
+        f"Attefallsreglerna har ersatts av regler om komplementbyggnad och komplementbostadshus i plan- och bygglagen. Ett komplementbostadshus är ett litet hus för boende som kompletterar en villa eller ett tvåbostadshus. Själva huset kräver inte längre anmälan eller startbesked – men installationer som vatten, avlopp och ventilation kräver fortfarande anmälan. Se {a('attefallshus-regler.html','nya regler för attefallshus')}.",
         "Populära användningar är gäststuga, hemmakontor, gym, förråd eller ett litet hus för uthyrning. Vi bygger nyckelfärdigt – från grund till inflyttningsklart."], sid="vad")
     + sec_split("Regler i korthet", [
-        "Reglerna kan ändras och tolkas av din kommun, men i grunden gäller att attefallshuset är fristående, håller sig inom ytan och avstånden nedan samt att du gjort anmälan och fått startbesked.",
-        "Vill du placera huset närmare tomtgräns än 4,5 meter krävs grannens medgivande. Vi hjälper dig med underlaget."],
+        "Reglerna gäller från 1 december 2025. Huset ska vara mindre än villan det kompletterar och stå på tomten. Lovfritt är inte regelfritt – tekniska krav och varsamhetskrav gäller, och i särskilt värdefulla miljöer krävs bygglov.",
+        f"Vill du placera huset närmare tomtgräns än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen. Källa: {SRCA}."],
         "Vanliga krav", [
-        "Max 30 m² byggnadsarea.","Nockhöjd max 4,0 meter.",
-        "Fristående komplementbyggnad.","Minst 4,5 m till tomtgräns (annars grannmedgivande).",
-        "Anmälan + startbesked krävs.","Ej inom vissa kulturmiljöer."], sid="regler")
+        "Max 30 m² inom detaljplan, 50 m² utanför.","Taknockshöjd max 4,0 m (4,5 m utanför detaljplan).",
+        "Högst 45 m² lovfritt per tomt (65 m² utanför detaljplan).","Minst 4,5 m till tomtgräns (annars skriftligt grannmedgivande).",
+        "Ingen anmälan för huset – men för VA och ventilation.","Bygglov i särskilt värdefulla miljöer."], sid="regler")
     + f"""      <section class="section seo-section">
         <div class="container"><div class="tips-box">
           <h3>Bra att veta</h3>
@@ -2279,14 +2299,14 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
         </div></div>
       </section>"""
     + links_block("Relaterat", [
-        ("attefallshus-regler.html","Attefallshus – regler 2026","Mått, anmälan och avstånd."),
-        ("friggebod.html","Friggebod","Upp till 15 m² utan anmälan."),
+        ("attefallshus-regler.html","Attefallshus – nya regler","Mått, avstånd och anmälan."),
+        ("friggebod.html","Friggebod","Nu komplementbyggnad."),
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt","Bygga större hus."),
         ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")]),
   faq=[
-    ("Behöver jag bygglov för attefallshus?","Nej, men du måste göra en anmälan till kommunen och få startbesked innan du börjar bygga."),
-    ("Hur stort får ett attefallshus vara?","Upp till 30 m² byggnadsarea och max 4,0 meter nockhöjd, som fristående komplementbyggnad."),
-    ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett attefallshus får inredas för boende (komplementbostadshus) – då tillkommer krav på t.ex. VA och isolering som vi tar höjd för.")])
+    ("Behöver jag bygglov eller anmälan för attefallshus?","Sedan 1 december 2025 krävs varken bygglov eller anmälan för själva huset om det håller sig inom måtten. Anmälan krävs för vatten, avlopp och ventilation."),
+    ("Hur stort får ett attefallshus vara?","Inom detaljplan upp till 30 m² och 4,0 m taknockshöjd, utanför detaljplan upp till 50 m² och 4,5 m. Alla lovfria komplementbyggnader på tomten får tillsammans vara högst 45 m² respektive 65 m²."),
+    ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett komplementbostadshus är till för boende. Det får byggas vid en- och tvåbostadshus och ska uppfylla kraven på bostäder, till exempel VA och isolering, som vi tar höjd för.")])
 
 page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
   title="Bygga villa i Stockholm – nyckelfärdigt hus | Geal Entreprenad AB",
@@ -2329,33 +2349,33 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
     ("Får jag ROT för att bygga nytt?","Nej, ROT gäller inte nybyggnation. Det gäller renovering och underhåll av befintlig bostad.")])
 
 page(file="friggebod.html", service=True, service_type="Friggebod",
-  title="Friggebod i Stockholm – bygga friggebod upp till 15 m² | Geal Entreprenad AB",
-  description="Bygga friggebod i Stockholm, upp till 15 m² utan bygglov och utan anmälan – förråd, växthus eller gäststuga. Vi bygger nyckelfärdigt. Kostnadsfri offert.",
+  title="Friggebod i Stockholm – nya regler, upp till 30 m² | Geal Entreprenad AB",
+  description="Friggebod heter nu komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov och utan anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt i Stockholm.",
   h1="Friggebod i Stockholm",
   crumbs=BYGG_CRUMB+[("Friggebod","friggebod.html")],
   cta=("Vill du bygga en friggebod?","Vi bygger nyckelfärdigt. Begär en kostnadsfri offert."),
   body=hero("Friggebod i Stockholm",
-    "En friggebod på upp till 15 m² får byggas på de flesta villatomter helt utan bygglov och utan anmälan. Perfekt som förråd, växthus, verkstad eller gäststuga. Vi bygger nyckelfärdigt.",
+    "Sedan 1 december 2025 ersätts friggeboden av komplementbyggnad – och den får vara större: upp till 30 m² inom detaljplan, utan bygglov och utan anmälan. Vi bygger förråd, växthus och verkstad nyckelfärdigt.",
     BYGG_CRUMB+[("Friggebod","friggebod.html")],
     [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor")])
     + sec_split("Regler för friggebod", [
-        "Friggeboden är en fristående komplementbyggnad som du får uppföra utan bygglov och utan anmälan, förutsatt att du håller dig inom måtten och avstånden nedan. Reglerna tolkas av din kommun.",
-        "Vill du placera boden närmare tomtgräns än 4,5 meter krävs grannens medgivande."],
+        "Friggebodsreglerna (15 m², 3,0 m) gäller inte längre. I stället får du bygga en komplementbyggnad – förråd, garage, växthus eller verkstad – utan bygglov och utan anmälan, om den håller sig inom måtten nedan.",
+        f"Närmare tomtgräns än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen. Källa: {SRCA}. Gäller från 1 december 2025."],
         "Vad som gäller", [
-        "Max 15 m² sammanlagd byggnadsarea.","Nockhöjd max 3,0 meter.",
-        "Fristående komplementbyggnad.","Minst 4,5 m till tomtgräns (annars grannmedgivande).",
-        "Inget bygglov och ingen anmälan.","Ej för permanent boende."], sid="regler")
+        "Max 30 m² inom detaljplan, 50 m² utanför.","Taknockshöjd max 4,0 m (4,5 m utanför detaljplan).",
+        "Mindre än huvudbyggnaden, placerad på tomten.","Minst 4,5 m till tomtgräns (annars skriftligt grannmedgivande).",
+        "Inget bygglov och ingen anmälan.","Boende kräver komplementbostadshus."], sid="regler")
     + sec("Friggebod eller attefallshus?", [
-        f"En friggebod (max 15 m², utan anmälan) är enklare men mindre. Ett {a('attefallshus.html','attefallshus')} (max 30 m²) är större och får inredas för boende, men kräver anmälan och startbesked. Vi hjälper dig välja rätt.",
+        f"Sedan 1 december 2025 gäller samma mått för båda. Skillnaden är användningen: en komplementbyggnad är till för förråd, garage eller verkstad, medan ett komplementbostadshus – tidigare {a('attefallshus.html','attefallshus')} – får inredas för boende. Alla lovfria komplementbyggnader på tomten delar på 45 m² inom detaljplan.",
         f"Vill du i stället bygga ihop med huset, se {a('tillbyggnad.html','tillbyggnad')}."], sid="skillnad")
     + links_block("Relaterat", [
-        ("attefallshus.html","Attefallshus","Större – upp till 30 m²."),
+        ("attefallshus.html","Attefallshus","Komplementbostadshus för boende."),
         ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan."),
         ("bygg.html","Bygg & Renovering","Alla våra byggtjänster.")]),
   faq=[
-    ("Behöver jag bygglov för en friggebod?","Nej, en friggebod upp till 15 m² kräver varken bygglov eller anmälan, så länge du håller måtten och avstånden."),
-    ("Hur stor får en friggebod vara?","Sammanlagt max 15 m² byggnadsarea och max 3,0 meter i nockhöjd."),
-    ("Får man bo i en friggebod?","Nej, en friggebod får inte användas för permanent boende. Vill du ha en gäststuga för övernattning passar ett attefallshus bättre.")])
+    ("Behöver jag bygglov för en friggebod?","Nej. Sedan 1 december 2025 gäller reglerna för komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov och utan anmälan, om måtten och avstånden hålls."),
+    ("Hur stor får en friggebod vara?","Inom detaljplan max 30 m² och 4,0 m taknockshöjd, utanför detaljplan max 50 m² och 4,5 m."),
+    ("Får man bo i en friggebod?","En komplementbyggnad är inte till för boende. Vill du kunna bo i huset ska det byggas som komplementbostadshus (tidigare attefallshus).")])
 
 page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
   title="Bygga fritidshus i Stockholm – nyckelfärdigt | Geal Entreprenad AB",
@@ -2369,7 +2389,7 @@ page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
     [("#nyckelfardigt","Nyckelfärdigt"),("#faq","Vanliga frågor")])
     + sec("Nyckelfärdigt eller platsbyggt fritidshus", [
         "Ett nyckelfärdigt fritidshus levereras helt färdigt att flytta in i – vi ansvarar för hela kedjan. Platsbyggt ger mer frihet i utformningen. Vi hjälper dig välja utifrån tomt, budget och önskemål.",
-        f"Ett mindre projekt kan lösas som {a('attefallshus.html','attefallshus')} (upp till 30 m²) eller {a('friggebod.html','friggebod')} (upp till 15 m²) – ofta utan eller med förenklat tillstånd."], sid="nyckelfardigt")
+        f"Ett mindre projekt kan lösas som {a('attefallshus.html','attefallshus')} (upp till 30 m²) eller {a('friggebod.html','friggebod')} – sedan 1 december 2025 upp till 30 m² inom detaljplan utan bygglov."], sid="nyckelfardigt")
     + sec_split("Vi tar helheten", [
         "Från första skiss till slutbesiktning håller vi ihop projektet. Tack vare vår takkompetens blir taket tätt och hållbart från start.",
         "Vi hjälper dig med ritningar och bygglovsunderlag; ansökan görs till kommunen."],
@@ -2389,7 +2409,7 @@ page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
         ("byggfirma.html","Total entreprenad","En kontakt för hela bygget.")]),
   faq=[
     ("Bygger ni nyckelfärdiga fritidshus?","Ja, vi bygger nyckelfärdigt – från ritning och bygglov till inflyttningsklart – och även platsbyggt efter dina önskemål."),
-    ("Behöver jag bygglov för fritidshus?","Ja, ett fritidshus kräver normalt bygglov. Mindre komplementbyggnader (attefallshus/friggebod) har enklare regler. Vi hjälper dig bedöma."),
+    ("Behöver jag bygglov för fritidshus?","Ja, ett fritidshus kräver normalt bygglov. Mindre komplementbyggnader (tidigare attefallshus/friggebod) kan byggas utan bygglov. Vi hjälper dig bedöma."),
     ("Får jag ROT för att bygga fritidshus?","Nej, nybyggnation ger inte ROT. Renovering av ett befintligt fritidshus kan däremot ge ROT-avdrag.")])
 
 # ---- Tak-artiklar (near-miss från Keyword Planner) ----
@@ -2438,24 +2458,31 @@ article("falsat-plattak.html",
 
 # ---- Bygg-artiklar (near-miss) ----
 article("attefallshus-regler.html",
-  "Attefallshus – regler 2026: mått, anmälan och avstånd | Geal Entreprenad AB",
-  "Attefallshus regler 2026: max 30 m², nockhöjd, anmälan och startbesked, avstånd till tomtgräns och skillnaden mot friggebod. Guide för dig i Stockholm.",
-  "Attefallshus – regler 2026",
-  "Ett attefallshus får byggas utan bygglov, men reglerna måste följas. Här är måtten, anmälan och avstånden – enkelt förklarat.",
-  [("p","Attefallsreglerna gör att du får uppföra en komplementbyggnad på de flesta villatomter utan bygglov. Men det krävs en anmälan till kommunen och ett startbesked innan du börjar. Reglerna tolkas lokalt, så kontrollera alltid med din kommun."),
+  "Attefallshus – nya regler 2026: mått och avstånd | Geal Entreprenad AB",
+  "Från 1 december 2025 ersätts attefallshus av komplementbostadshus: 30 m² inom detaljplan, 50 m² utanför, ingen anmälan. Så gäller reglerna i Stockholm.",
+  "Attefallshus – nya regler 2026",
+  "Den 1 december 2025 ersattes attefallsreglerna av regler om komplementbostadshus. Här är måtten, avstånden och vad som fortfarande kräver anmälan.",
+  [("p","Plan- och bygglagen fick ett nytt 9 kapitel den 1 december 2025. Attefallshus och friggebod försvann som begrepp och ersattes av komplementbostadshus och komplementbyggnad. För dig som villaägare innebär det större yta utanför detaljplan, en gemensam pott per tomt och ingen anmälan för själva huset."),
    ("h2","Mått och krav i korthet"),
-   ("ul",["<strong>Max 30 m²</strong> byggnadsarea.","<strong>Nockhöjd max 4,0 m.</strong>",
-          "Fristående komplementbyggnad.","Minst <strong>4,5 m till tomtgräns</strong> (annars grannens medgivande).",
-          "<strong>Anmälan + startbesked</strong> krävs innan byggstart.","Kan inredas för boende (komplementbostadshus) – då tillkommer krav."]),
+   ("ul",["<strong>Inom detaljplan:</strong> max 30 m² byggnadsarea och 4,0 m taknockshöjd.","<strong>Utanför detaljplan:</strong> max 50 m² och 4,5 m taknockshöjd.",
+          "Alla lovfria komplementbyggnader och komplementbostadshus på tomten får tillsammans vara högst <strong>45 m²</strong> (65 m² utanför detaljplan).",
+          "Huset ska vara mindre än villan det kompletterar och stå på tomten.","Komplementbostadshus får bara byggas vid en- och tvåbostadshus.",
+          "Närmare än <strong>4,5 m från tomtgräns</strong> krävs bygglov, om inte grannen skriftligen medgett placeringen."]),
+   ("h2","Behövs anmälan och startbesked?"),
+   ("p","Inte för själva huset. Men installationer av till exempel vatten, avlopp och ventilation kräver fortfarande anmälan och startbesked innan de görs – och ett hus att bo i behöver i praktiken nästan alltid sådana installationer."),
+   ("h2","Tillbyggnad utan bygglov"),
+   ("p",f"Attefallstillbyggnaden på 15 m² finns inte längre. I stället får du bygga till en byggnad med sammanlagt högst 30 m² utan bygglov, så länge tillbyggnaden inte går över husets taknock. Läs mer om {a('tillbyggnad.html','tillbyggnad av villa')}."),
    ("h2","Attefallshus eller friggebod?"),
-   ("p",f"En {a('friggebod.html','friggebod')} (max 15 m²) kräver varken bygglov eller anmälan, men får inte användas för boende. Ett attefallshus (max 30 m²) är större och får inredas för boende, men kräver anmälan. Se vår tjänst {a('attefallshus.html','attefallshus')}."),
+   ("p",f"Måtten är nu desamma. En {a('friggebod.html','friggebod')} – komplementbyggnad – är till för förråd, garage eller verkstad. Ett attefallshus – komplementbostadshus – får inredas för boende. Se vår tjänst {a('attefallshus.html','attefallshus')}."),
+   ("p",'Lovfritt är inte regelfritt: tekniska krav, varsamhetskrav och förbudet mot förvanskning gäller fortfarande, och i särskilt värdefulla miljöer krävs bygglov. Källa: <a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>. Gäller från 1 december 2025.'),
    ("tips","Ligger tomten inom strandskydd eller kulturmiljö kan reglerna vara strängare – hör med kommunen först."),
-   ("cta",("Vill du bygga attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med anmälan. Gratis platsbesök och kostnadsförslag."))],
+   ("cta",("Vill du bygga attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med reglerna. Gratis platsbesök och kostnadsförslag."))],
   [("attefallshus.html","Attefallshus","Vi bygger nyckelfärdigt."),
-   ("friggebod.html","Friggebod","Upp till 15 m² utan anmälan."),
+   ("friggebod.html","Friggebod","Nu komplementbyggnad."),
    ("tillbyggnad.html","Tillbyggnad","Bygg ihop med huset.")],
-  faq=[("Krävs bygglov för attefallshus?","Nej, men en anmälan till kommunen och ett startbesked krävs innan du börjar bygga."),
-       ("Hur nära tomtgränsen får attefallshuset stå?","Minst 4,5 meter, om du inte har grannens skriftliga medgivande.")],
+  faq=[("Krävs bygglov eller anmälan för attefallshus 2026?","Nej, inte för själva huset om måtten hålls. Anmälan krävs för vatten, avlopp och ventilation."),
+       ("Hur nära tomtgränsen får attefallshuset stå?","Närmare än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen."),
+       ("Hur stort får ett attefallshus vara utanför detaljplan?","Upp till 50 m² och 4,5 meter taknockshöjd.")],
   badge="Regler", read="4 min")
 
 article("vad-kostar-bygga-hus.html",
@@ -2472,7 +2499,7 @@ article("vad-kostar-bygga-hus.html",
           "<strong>Anslutningar</strong> – VA, el, fjärrvärme."]),
    ("h2","Så får du ett tillförlitligt pris"),
    ("p",f"Eftersom förutsättningarna skiljer sig ger vi alltid pris efter en genomgång av tomt och önskemål – gratis platsbesök och kostnadsförslag. Se våra tjänster {a('nybyggnad-villa.html','bygga villa (nyckelfärdigt)')} och {a('fritidshus.html','bygga fritidshus')}."),
-   ("p","Ett mindre projekt kan bli mer ekonomiskt: ett <a class=\"text-link\" href=\"attefallshus.html\">attefallshus</a> (upp till 30 m²) eller en <a class=\"text-link\" href=\"friggebod.html\">friggebod</a> (upp till 15 m²)."),
+   ("p","Ett mindre projekt kan bli mer ekonomiskt: ett <a class=\"text-link\" href=\"attefallshus.html\">attefallshus</a> (upp till 30 m²) eller en <a class=\"text-link\" href=\"friggebod.html\">friggebod</a> – båda upp till 30 m² utan bygglov inom detaljplan sedan 1 december 2025."),
    ("tips","Jämför alltid offerter på samma omfattning – vad som ingår (grund, anslutningar, mark) styr slutpriset mer än kvadratmeterpriset."),
    ("cta",("Vill du veta vad ditt husbygge kostar?","Boka en genomgång så får du ett tydligt kostnadsförslag."))],
   [("nybyggnad-villa.html","Bygga villa","Nyckelfärdigt hus från grunden."),
