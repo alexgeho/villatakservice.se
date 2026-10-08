@@ -299,7 +299,7 @@ LOC_EXTRA_NEW = {
        "Äldre fibercementplattor, så kallad eternit, kan innehålla asbest om de lagts före början av 1980-talet. De ska inte högtryckstvättas eller brytas sönder, utan rivas av behörig personal. Vi bedömer materialet vid besiktningen och planerar rivningen därefter."]),
      ("Planera takprojektet i Hässelby", [
        "Tomterna i villastaden är ofta smala med hus nära gatan, så ställning och container behöver placeras med omsorg. Vi går igenom etableringen med dig vid platsbesöket.",
-       "Hässelby tillhör Stockholms stad, och bygglovsfrågor hanteras av stadsbyggnadskontoret. Att byta till samma material och kulör kräver normalt inget lov, men detaljplanen kan innehålla varsamhetsbestämmelser – byter du till exempel från tegel till plåt bör du stämma av först."]),
+       "Hässelby tillhör Stockholms stad, och bygglovsfrågor hanteras av stadsbyggnadskontoret. Sedan 1 december 2025 är byte av takmaterial och kulör på villor normalt lovfritt, men har detaljplanen skyddsbestämmelser för huset krävs fortfarande bygglov – kontrollera planen innan du går från tegel till plåt."]),
    ],
    "faq": [
      ("Vad gör ni om taket har eternitplattor?", "Vi bedömer om plattorna kan innehålla asbest. I så fall rivs de av behörig personal enligt Arbetsmiljöverkets regler innan det nya taket läggs."),
@@ -317,7 +317,7 @@ LOC_EXTRA_NEW = {
    ],
    "faq": [
      ("Varför luktar det mögel på vinden i vårt 50-talsradhus?", "Ofta beror det på dålig ventilation efter tilläggsisolering. Vi kontrollerar takfot och luftspalt vid besiktningen."),
-     ("Behöver vi bygglov för att byta tak i Vällingby?", "Inte för likvärdigt material och kulör. Vid ändringar kan lov krävas – stäm av med stadsbyggnadskontoret i Stockholm."),
+     ("Behöver vi bygglov för att byta tak i Vällingby?", "För radhus och villor normalt inte, inte heller vid byte av material eller kulör. Omfattas området av skyddsbestämmelser i detaljplanen krävs lov – stäm av med stadsbyggnadskontoret i Stockholm."),
      ("Kan ett enskilt radhus i en länga få nytt tak?", "Ja, men anslutningen mot grannhusen måste göras noggrant. Ofta är det bättre att samordna med grannarna."),
    ]},
  "Kista": {
@@ -327,7 +327,7 @@ LOC_EXTRA_NEW = {
        "Husen ligger i öppna lägen nära Järvafältet där vinden tar i. Lösa plåtdetaljer och dåligt fästa nockar blir ofta synliga efter en stormvinter, och då lönar det sig att se över infästningen innan skadorna växer."]),
      ("Planera takprojektet i Kista", [
        "I föreningar och samfälligheter är det styrelsen som beslutar om tak. Vi lämnar en besiktningsrapport och ett kostnadsförslag som går att ta upp på stämman, och planerar arbetet så att de boende påverkas så lite som möjligt.",
-       "Kista tillhör Stockholms stad. Ett nytt tätskikt eller tak i samma material och kulör kräver normalt inget bygglov, men byter ni material eller ändrar takets form bör ni stämma av med stadsbyggnadskontoret."]),
+       "Kista tillhör Stockholms stad. På radhus är byte av tätskikt, material eller kulör normalt lovfritt. På flerbostadshus inom detaljplan kräver en fasadändring bygglov om taket vetter mot gata eller annan allmän plats, och höjs taket krävs alltid lov."]),
    ],
    "faq": [
      ("Hur ofta ska ett låglutande papptak kontrolleras?", "Minst en gång om året, helst efter vintern. Skarvar, brunnar och uppvik är de vanligaste läckagepunkterna."),
@@ -340,11 +340,11 @@ LOC_EXTRA_NEW = {
        "Ombyggda fritidshus har ofta tak som lagts för säsongsboende: papp på råspont, tunn läkt eller plåt utan ordentligt underlag. När huset värms året runt och vinden isoleras uppstår kondens om luftspalten inte räcker. Vi ser också tak där flera tillbyggnader lagts ihop med olika lutningar och material.",
        "På äldre gårdar på Färingsö och Munsö finns lertegel och skivtäckningar av olika slag, och på ekonomibyggnader ibland gamla fibercementskivor som kan innehålla asbest. De ska hanteras av behörig personal vid rivning."]),
      ("Planera takprojektet på Ekerö", [
-       "Bygglov och anmälan hanteras av Ekerö kommun. Ett byte till samma material och kulör kräver normalt inget lov, men kring Drottningholm, som är världsarv, och i andra kulturmiljöer kan det finnas särskilda krav. Stäm av med kommunen innan du byter material eller kulör.",
+       "Bygglov och anmälan hanteras av Ekerö kommun. Att byta material eller kulör på taket till en villa kräver normalt inget lov sedan 1 december 2025. Kring Drottningholm, som är världsarv, och i andra särskilt värdefulla miljöer gäller dock bygglovsplikt – stäm av med kommunen först.",
        "Många tomter på öarna nås via smala grusvägar. Vi kontrollerar framkomligheten för lastbil, container och ställning vid platsbesöket och planerar leveranserna därefter."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för takbyte på Ekerö?", "Normalt inte vid byte till samma material och kulör. Vid ändringar, eller i kulturmiljöer som kring Drottningholm, bör du stämma av med Ekerö kommun."),
+     ("Behöver jag bygglov för takbyte på Ekerö?", "Normalt inte, även om du byter material eller kulör. I särskilt värdefulla miljöer som kring Drottningholm krävs lov – stäm av med Ekerö kommun."),
      ("Kan ni lägga plåttak på ett gammalt torp?", "Ja, falsad plåt passar många äldre hus. Vi bedömer underlaget och anpassar detaljerna efter huset."),
      ("Kommer lastbilen fram till vår tomt?", "Det kontrollerar vi vid platsbesöket. Vid trånga vägar planerar vi mindre leveranser eller annan placering av container."),
    ]},
@@ -355,10 +355,10 @@ LOC_EXTRA_NEW = {
        "De branta tomterna ner mot Mälaren och de stora träden ger skuggiga takfall med mossa och hängrännor som fylls av löv. På radhusen i Hägerstensåsen och Västertorp ser vi ofta trötta betongpannor och slitna plåtavtäckningar mellan husen."]),
      ("Planera takprojektet i Hägersten", [
        "I Mälarhöjden står många hus i slänt, vilket kräver ställning anpassad efter terrängen och ibland lift. Vi bedömer etableringen på plats innan vi lämnar kostnadsförslag.",
-       "Hägersten tillhör Stockholms stad och bygglov söks hos stadsbyggnadskontoret. Delar av villabebyggelsen har varsamhetsbestämmelser i detaljplanen – samma material och kulör kräver normalt inget lov, men vid förändringar bör du stämma av med staden först."]),
+       "Hägersten tillhör Stockholms stad och bygglov söks hos stadsbyggnadskontoret. Material- och kulörbyte på villatak är i regel lovfritt sedan 1 december 2025, men omfattas huset av skyddsbestämmelser i detaljplanen krävs bygglov, och varsamhetskravet gäller alltid. Kontrollera planen för just din tomt."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för att byta tak i Mälarhöjden?", "Inte om du byter till samma material och kulör. Vid förändringar kan varsamhetsbestämmelser gälla – kontakta Stockholms stad."),
+     ("Behöver jag bygglov för att byta tak i Mälarhöjden?", "I regel inte. Har detaljplanen skyddsbestämmelser för huset krävs lov även för material- eller kulörbyte – kontakta Stockholms stad."),
      ("Byter ni gamla plåtdetaljer kring skorstenen?", "Ja, nya beslag, ränndalar och skorstensplåt ingår ofta i en omläggning."),
      ("Hur hanterar ni tomter i slänt?", "Vi anpassar ställningen efter terrängen och använder lift där det behövs."),
    ]},
@@ -368,11 +368,11 @@ LOC_EXTRA_NEW = {
        "På hus från 1910–30-talet har taket ofta redan lagts om en gång, ibland med bitumenpapp som nu är spröd. Fuktfläckar i vindsbjälklaget, rostiga spikar i läkten och vatten som rinner längs skorstenen är typiska tecken. Verandor och burspråk har ofta egna små tak med plåt som behöver ny falsning.",
        "Egnahemmen från 1940–50-talet har ofta betongpannor som börjat vittra. Ytan blir porös, pannorna suger vatten och mossan får fäste – särskilt på norrsidan under träden."]),
      ("Planera takprojektet i Älvsjö", [
-       "Älvsjö hör till Stockholms stad, och bygglov hanteras av stadsbyggnadskontoret. Byter du till samma material och kulör behövs normalt inget lov. I de äldre villaområdena kan detaljplanen innehålla bestämmelser som värnar villastadens karaktär – stäm av innan du byter material eller kulör.",
+       "Älvsjö hör till Stockholms stad, och bygglov hanteras av stadsbyggnadskontoret. Sedan 1 december 2025 behövs normalt inget lov för att byta takmaterial eller kulör på en villa. I de äldre villaområdena kan detaljplanen ha skyddsbestämmelser som gör att lov ändå krävs – kolla det innan du väljer nytt material.",
        "Gatorna i villaområdena är ofta smala med parkering längs kanten. Vi planerar container och leveranser så att grannarna kan ta sig fram under hela arbetet."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för takbyte i Långbro?", "Normalt inte vid samma material och kulör. Vid ändringar – stäm av med Stockholms stad."),
+     ("Behöver jag bygglov för takbyte i Långbro?", "Normalt inte, inte ens vid nytt material eller ny kulör. Undantag gäller om detaljplanen har skyddsbestämmelser – stäm av med Stockholms stad."),
      ("Varför växer det mossa på mina betongpannor?", "Äldre betongpannor blir porösa och håller fukt. Taktvätt kan hjälpa, men är pannorna vittrade är byte ofta bättre."),
      ("Hur vet jag om pappen under teglet är slut?", "Fuktfläckar på vinden och rost på spik är tecken. En besiktning ger säkert besked."),
    ]},
@@ -382,7 +382,7 @@ LOC_EXTRA_NEW = {
        "På de drygt hundraåriga husen i Gamla Enskede har taken i regel lagts om minst en gång. Kupor, brutna takfall och skorstenar mellan parhushalvorna är vanliga läckagepunkter, liksom gamla ränndalar av zink. I parhusen hänger halvornas tak ihop, och en skada på ena sidan kan visa sig hos grannen.",
        "Radhusen i Enskede gård och småhusen i Stureby och Svedmyra har oftare enklare sadeltak med betongpannor eller tegel, där underlaget är det som tagit slut. Gamla fruktträd och stora lövträd ger mycket löv i hängrännorna på hösten."]),
      ("Planera takprojektet i Enskede", [
-       "Gamla Enskede är en kulturhistoriskt värdefull miljö, och detaljplanerna kan innehålla skydds- eller varsamhetsbestämmelser. Byter du till samma material och kulör krävs normalt inget lov, men vid förändring av material, kulör, kupor eller takfönster är det viktigt att stämma av med stadsbyggnadskontoret i Stockholms stad först.",
+       "Gamla Enskede är en kulturhistoriskt värdefull miljö. Fasadändringar på villor blev visserligen lovfria 1 december 2025, men i särskilt värdefulla områden och där detaljplanen har skyddsbestämmelser krävs fortfarande bygglov. Ska du ändra material, kulör, kupor eller takfönster här – stäm av med stadsbyggnadskontoret i Stockholms stad först.",
        "Tomterna är små och gatorna smala, så ställning och container planeras tillsammans med grannarna. I parhus lönar det sig ofta att samordna så att båda halvorna får nytt tak samtidigt."]),
    ],
    "faq": [
@@ -410,7 +410,7 @@ LOC_EXTRA_NEW = {
        "På 1960–70-talens radhus är låglutande tak med papp eller betongpannor vanliga. Typiska problem är läckage vid uppvik mot högre längor, igensatta takbrunnar och rostiga takfotsplåtar. Där taken tilläggsisolerats utan att luftspalten anpassats kan det bildas kondens på vinden.",
        "Fibercementskivor på tak och fasader förekommer i bebyggelse från den här tiden och kan innehålla asbest. Vid rivning krävs behörig personal och rätt hantering, vilket vi planerar in redan i kostnadsförslaget."]),
      ("Planera takprojektet i Skärholmen", [
-       "Skärholmen tillhör Stockholms stad. Ett nytt tak med samma material och kulör kräver normalt inget bygglov, men en övergång till annat material eller ändrad takform bör stämmas av med stadsbyggnadskontoret.",
+       "Skärholmen tillhör Stockholms stad. För radhus är nytt tak – även i annat material eller annan kulör – normalt lovfritt. Flerbostadshus inom detaljplan kan kräva lov om taket vetter mot allmän plats, och ändrad takhöjd kräver lov.",
        "I radhusområden med gemensamma gårdar och smala gångvägar planerar vi var ställning, container och material ska stå, så att framkomligheten för boende och räddningstjänst behålls."]),
    ],
    "faq": [
@@ -424,11 +424,11 @@ LOC_EXTRA_NEW = {
        "På äldre villor i Stuvsta och Snättringe ser vi ofta tak där plåt och tegel blandats efter tidigare reparationer, rostiga ränndalar och läckage vid skorstenar. Egnahemmen i Segeltorp har ofta byggts på med kupor eller vindsinredning, vilket ger fler anslutningar att hålla täta.",
        "Radhus och villor från 1960–70-talet i Trångsund och Skogås har nått åldern då både pannor och underlag behöver bytas. Skogsnära lägen ger mossa och barr i hängrännor, och på skuggiga takfall håller pannorna kvar fukt längre."]),
      ("Planera takprojektet i Huddinge", [
-       "Huddinge är egen kommun, så bygglov och anmälan hanteras av Huddinge kommun – inte Stockholms stad. Byte till samma material och kulör kräver normalt inget lov. I äldre villaområden kan detaljplanen innehålla krav på utseende, så stäm av med kommunen innan du byter material eller kulör.",
+       "Huddinge är egen kommun, så bygglov och anmälan hanteras av Huddinge kommun – inte Stockholms stad. Material- och kulörbyte på villatak kräver normalt inget lov. I äldre villaområden kan detaljplanen ha skyddsbestämmelser, och då krävs lov – stäm av med kommunen.",
        "Många tomter i Huddinge sluttar eller ligger på berg. Vi bedömer vid platsbesöket hur ställning och materialhantering ska lösas."]),
    ],
    "faq": [
-     ("Var söker jag bygglov för takbyte i Huddinge?", "Hos Huddinge kommun. Vid byte till samma material och kulör behövs normalt inget lov."),
+     ("Var söker jag bygglov för takbyte i Huddinge?", "Hos Huddinge kommun. För takbyte på villa behövs normalt inget lov, även om materialet ändras."),
      ("Ska man byta hängrännor samtidigt?", "Ofta ja. Gamla rännor och stuprör har sällan lika lång livslängd kvar som det nya taket."),
      ("Har ni erfarenhet av kupor och vindsinredningar?", "Ja, anslutningar kring kupor och takfönster är en vanlig del av våra uppdrag."),
    ]},
@@ -438,11 +438,11 @@ LOC_EXTRA_NEW = {
        "På permanentade fritidshus möter vi ofta tak med flera lutningar och material efter olika tillbyggnader, papp direkt på råspont och för liten luftspalt efter att vinden isolerats. Det ger kondens och mögel på vinden, och ibland läckage där takdelarna möts.",
        "I villaområdena från 1960–70-talet är betongpannor vanligast. Närheten till vatten och skog ger fuktiga takytor där mossa trivs och plåtdetaljer korroderar snabbare. Vattnet i vikarna är bräckt och mindre salt än ute i havsbandet, men vind och fukt sliter ändå på exponerade tak."]),
      ("Planera takprojektet i Tyresö", [
-       "Bygglov och anmälan hanteras av Tyresö kommun. Byte till samma material och kulör kräver normalt inget lov, men vid ändrad takform – till exempel när ett fritidshus byggs på – behövs ofta lov. Stäm av med kommunen innan.",
+       "Bygglov och anmälan hanteras av Tyresö kommun. Nytt takmaterial eller ny kulör på en villa är normalt lovfritt, men höjs taket – till exempel när ett fritidshus byggs på – krävs bygglov. Byts takstolarna krävs anmälan.",
        "Många tomter i de gamla sommarstugeområdena nås via smala vägar och ligger på berg. Vi kontrollerar framkomlighet och var container och ställning kan stå vid platsbesöket."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för takbyte i Tyresö?", "Inte vid byte till samma material och kulör. Ändrar du takets form eller höjd krävs normalt lov hos Tyresö kommun."),
+     ("Behöver jag bygglov för takbyte i Tyresö?", "Inte för att byta material eller kulör. Höjer du taket över befintlig nock krävs lov hos Tyresö kommun."),
      ("Varför bildas kondens på vinden i vårt ombyggda fritidshus?", "Ofta för att isoleringen ökats utan att ventilationen anpassats. Vi ser över luftspalt och takfot."),
      ("Kommer ni fram på smala vägar?", "Vi bedömer framkomligheten vid platsbesöket och anpassar leveranserna."),
    ]},
@@ -452,11 +452,11 @@ LOC_EXTRA_NEW = {
        "I 70- och 80-talsområdena i Vendelsö och Brandbergen är det betongpannor och underlagspapp som åldrats. Typiskt är vittrade pannor, spröd papp vid takfoten och läckage kring ventilationshuvar. På radhus är plåten på brandväggarna ofta det första som ger efter.",
        "På Dalarö och längs kusten sliter salt och vind på plåt, spik och beslag. Där väljer vi korrosionsbeständig plåt och fästelement och lägger extra vikt vid infästningen av nock, vindskivor och takfotsplåt."]),
      ("Planera takprojektet i Haninge", [
-       "Bygglov hanteras av Haninge kommun. Byte till samma material och kulör kräver normalt inget lov. Dalarö har kulturhistoriskt värdefulla miljöer där detaljplanen kan ställa krav på material och utseende – stäm av med kommunen innan du ändrar något.",
+       "Bygglov hanteras av Haninge kommun. Byte av takmaterial eller kulör på villa kräver normalt inget lov. Dalarö har kulturhistoriskt värdefulla miljöer där skyddsbestämmelser kan göra att lov ändå krävs – stäm av med kommunen innan du ändrar något.",
        "Avståndet från vår bas i Bromma gör att vi samlar besiktningar och planerar etableringen noga, så att arbetet kan pågå i ett sammanhang när det väl har startat."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för takbyte på Dalarö?", "Vid samma material och kulör normalt inte, men kulturmiljön kan ställa krav – stäm av med Haninge kommun."),
+     ("Behöver jag bygglov för takbyte på Dalarö?", "Det kan krävas, eftersom delar av Dalarö är kulturhistoriskt värdefulla miljöer där lovplikten finns kvar. Stäm av med Haninge kommun."),
      ("Rostar plåten snabbare vid kusten?", "Ja, salt luft påskyndar korrosionen. Rätt plåt och regelbundet underhåll ger ändå lång livslängd."),
      ("Byter ni tak på radhus i Brandbergen?", "Ja, enskilda hus och hela längor."),
    ]},
@@ -466,11 +466,11 @@ LOC_EXTRA_NEW = {
        "På permanentade fritidshus är det vanligt med tak där underlaget aldrig byggdes för helårsboende: tunn råspont, papp utan luftspalt och plåt som skruvats direkt på läkt. När vinden isoleras och huset värms året runt uppstår kondens och mögel om ventilationen inte följer med.",
        "Plåttak i havsnära lägen rostar ofta först vid skruvar, skarvar och takfot. Vi ser också vindskador där nockplåtar och vindskivor lossnat efter höststormar. Tidigt underhåll – tvätt, rostskydd och efterdragning av skruv – förlänger livet betydligt."]),
      ("Planera takprojektet på Värmdö", [
-       "Bygglov och anmälan hanteras av Värmdö kommun. Ett takbyte med samma material och kulör kräver normalt inget lov, men vid ändrad takform, höjd eller kulör – och i kulturmiljöer som delar av Gustavsberg – bör du stämma av med kommunen först. Planerar du samtidigt att bygga till kan strandskyddet spela in.",
+       "Bygglov och anmälan hanteras av Värmdö kommun. Takbyte på villa är normalt lovfritt även med nytt material eller ny kulör, men höjs taket krävs lov, och i värdefulla kulturmiljöer som delar av Gustavsberg kan lovplikten finnas kvar. Planerar du samtidigt att bygga till kan strandskyddet spela in.",
        "Höst och vinter ger hårdare väder i skärgården. Vi planerar takbyten här i första hand till perioder med stabilare väder och ser till att taket är tätt varje kväll."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för att byta tak på Värmdö?", "Normalt inte vid samma material och kulör. Vid ändringar, eller om du bygger till samtidigt, kontakta Värmdö kommun."),
+     ("Behöver jag bygglov för att byta tak på Värmdö?", "Normalt inte, även vid byte av material. Höjer du taket eller bygger till samtidigt – kontakta Värmdö kommun."),
      ("När på året är det bäst att byta tak i skärgården?", "Vår till tidig höst ger oftast stabilast väder, men det går att arbeta även senare med rätt planering."),
      ("Kan ni efterdra och rostskydda vårt plåttak?", "Ja, det är ett kostnadseffektivt sätt att förlänga livslängden om plåten fortfarande är sund."),
    ]},
@@ -480,11 +480,11 @@ LOC_EXTRA_NEW = {
        "Typiskt för hus från 1960–80-talet är betongpannor med sliten yta, underlagspapp som spricker vid takfoten och läkt som börjat ruttna där vatten letat sig in. Takfönster och genomföringar från senare ombyggnader är ofta dåligt inplåtade.",
        "Många villor har kvar hängrännor och stuprör från när huset byggdes. Rostiga rännkrokar och läckande skarvar gör att vatten rinner längs fasaden och ner vid grunden – därför byter vi ofta avvattningen i samma projekt som taket."]),
      ("Planera takprojektet i Upplands Väsby", [
-       "Bygglov hanteras av Upplands Väsby kommun. Samma material och kulör kräver normalt inget lov. I områden där husen byggts med enhetlig gestaltning kan detaljplanen reglera tak och kulör – kontrollera med kommunen innan ni byter material.",
+       "Bygglov hanteras av Upplands Väsby kommun. Sedan 1 december 2025 kräver material- eller kulörbyte på villor och radhus normalt inget lov. Samfälligheter kan ändå ha egna regler för enhetligt utseende, och är huset skyddat i detaljplanen krävs lov.",
        "Besikta gärna taket på våren eller hösten, så att ett eventuellt byte kan planeras till en period med torrt väder och god framförhållning."]),
    ],
    "faq": [
-     ("Var söker jag bygglov i Upplands Väsby?", "Hos Upplands Väsby kommun. För byte till samma material och kulör behövs normalt inget lov."),
+     ("Var söker jag bygglov i Upplands Väsby?", "Hos Upplands Väsby kommun. Ett vanligt takbyte på villa eller radhus kräver normalt inget lov."),
      ("Byter ni hängrännor och stuprör samtidigt?", "Ja, det rekommenderar vi ofta när avvattningen är lika gammal som taket."),
      ("Hur gamla är taken i Bollstanäs?", "Många hus är från 1960–70-talet. Har taket inte bytts sedan dess är underlaget ofta slut."),
    ]},
@@ -494,11 +494,11 @@ LOC_EXTRA_NEW = {
        "I villaområdena från 1970–80-talet ser vi betongpannor som tappat ytan, underlagspapp som spruckit och läkt som tagit fukt vid takfoten. På äldre gårdshus är det ofta takstolar och underlag som behöver förstärkas innan ett tyngre tak kan läggas.",
        "På ekonomibyggnader och äldre bostadshus förekommer korrugerade fibercementskivor. Om de lagts före början av 1980-talet kan de innehålla asbest och ska rivas av behörig personal – något vi planerar in innan arbetet startar."]),
      ("Planera takprojektet i Vallentuna", [
-       "Bygglov hanteras av Vallentuna kommun. Ett byte till samma material och kulör kräver normalt inget lov. Ligger huset inom detaljplan eller i en kulturmiljö kan det finnas krav på utseende – stäm av med kommunen innan du byter material.",
+       "Bygglov hanteras av Vallentuna kommun. Nytt takmaterial på ett bostadshus kräver normalt inget lov. För särskilt värdefulla gårdsmiljöer och hus med skyddsbestämmelser krävs lov, och förstärks takstolarna krävs anmälan.",
        "På gårdar med långa uppfarter och mjuk mark planerar vi var container och ställning ska stå och när leveranser kan ske, så att marken klarar tunga transporter."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för plåttak på en gård i Vallentuna?", "Inte om du byter till samma material och kulör. Vid byte från tegel till plåt – stäm av med Vallentuna kommun."),
+     ("Behöver jag bygglov för plåttak på en gård i Vallentuna?", "Normalt inte. Är gården utpekad som särskilt värdefull kan lov krävas – stäm av med Vallentuna kommun."),
      ("Vad gör ni om gamla skivor kan innehålla asbest?", "Vi bedömer materialet och planerar rivning med behörig personal innan det nya taket läggs."),
      ("Klarar takstolarna ett tyngre tak?", "Det kontrollerar vi vid besiktning. Ibland krävs förstärkning innan tegel kan läggas."),
    ]},
@@ -508,11 +508,11 @@ LOC_EXTRA_NEW = {
        "Sekelskiftesvillorna har ofta plåttak eller tegel med många detaljer: verandatak, kupor, burspråk och dekorativa vindskivor. Gammal plåt kan ha rostat igenom vid falsar och ränndalar, och tidigare lagningar med takpapp eller fogmassa döljer ibland större skador.",
        "Fritidshus som permanentats har ofta tak som inte är byggda för helårsuppvärmning, med för liten luftspalt och enkla underlag. Kombinationen av havsnära fukt och varm vind ger kondens om ventilationen inte är rätt."]),
      ("Planera takprojektet i Österåker", [
-       "Bygglov hanteras av Österåkers kommun. Byte till samma material och kulör kräver normalt inget lov, men i äldre villamiljöer som Österskär kan detaljplanen innehålla varsamhetskrav. Stäm av med kommunen innan du byter material eller kulör.",
+       "Bygglov hanteras av Österåkers kommun. Material- och kulörbyte på villatak är normalt lovfritt, men i äldre villamiljöer som Österskär kan skyddsbestämmelser göra att lov krävs. Varsamhetskravet gäller alltid – stäm av med kommunen.",
        "För hus på öar planerar vi färje- eller båttransporter av material och container. På fastlandet bedömer vi framkomlighet och tomtens förutsättningar vid platsbesöket."]),
    ],
    "faq": [
-     ("Behöver jag bygglov för takbyte i Österskär?", "Normalt inte vid samma material och kulör. Vid ändringar kan varsamhetskrav gälla – kontakta Österåkers kommun."),
+     ("Behöver jag bygglov för takbyte i Österskär?", "Normalt inte. Har huset skyddsbestämmelser i detaljplanen krävs lov – kontakta Österåkers kommun."),
      ("Vårt plåttak har lagats med fogmassa – är det tätt?", "Sällan på sikt. Fogmassa döljer ofta rost under. Vi bedömer om plåten kan lagas eller bör bytas."),
      ("Varför blir det kondens på vinden i vårt sommarhus?", "Oftast för att huset värms året runt utan att takets ventilation anpassats. Vi ser över luftspalt och takfot."),
    ]},
@@ -522,11 +522,11 @@ LOC_EXTRA_NEW = {
        "Tullinges äldre villor har ofta branta tak med tegel eller plåt som lagts om tidigare, där underlaget nu åter är slut. Skuggiga lägen under tallar ger mossa på pannorna och barr i rännorna, och stora takytor mot sjön får mer vind.",
        "I radhus- och villaområdena från 1960–80-talet är betongpannor och papp vanligast. Vi ser ofta spruckna takfotsplåtar, läckande genomföringar och bristande ventilation där vindar tilläggsisolerats."]),
      ("Planera takprojektet i Botkyrka", [
-       "Bygglov hanteras av Botkyrka kommun. Byte till samma material och kulör kräver normalt inget lov. Vill du byta material eller ändra takets form, eller ligger huset i en kulturmiljö, bör du stämma av med kommunen innan arbetet planeras.",
+       "Bygglov hanteras av Botkyrka kommun. Att byta takmaterial eller kulör på villa och radhus kräver normalt inget lov. Höjs taket, eller ligger huset i en skyddad kulturmiljö, krävs lov – stäm av med kommunen innan arbetet planeras.",
        "I samfälligheter är det bra att börja med en gemensam besiktning av alla tak. Då kan ni prioritera vilka längor som ska göras först och fördela kostnaderna över tid."]),
    ],
    "faq": [
-     ("Var söker jag bygglov för takbyte i Botkyrka?", "Hos Botkyrka kommun. Vid byte till samma material och kulör behövs normalt inget lov."),
+     ("Var söker jag bygglov för takbyte i Botkyrka?", "Hos Botkyrka kommun. Ett vanligt takbyte på villa kräver normalt inget lov."),
      ("Kan ni besikta alla tak i vår samfällighet?", "Ja, vi gör en samlad besiktning och föreslår en prioriteringsordning."),
      ("Tvättar ni tak i Tullinge?", "Ja, taktvätt och mossbehandling är vanligt i de skogsnära delarna."),
    ]},

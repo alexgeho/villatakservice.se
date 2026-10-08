@@ -674,7 +674,7 @@ page(file="plattak.html",
         "Ventilationshuvar och genomföringar.","Ränndalar och takfot.","Skarvar mot vägg och kupor."], muted=False, sid="tata")
     + sec("Byta från pannor till plåt", [
         "Många väljer att gå från betong- eller tegelpannor till plåt vid takbyte, eftersom plåt är lättare och kräver mindre underhåll. Lägre vikt avlastar takstolarna på äldre hus.",
-        f"Ett byte av takmaterial ändrar husets utseende och kan kräva bygglov, särskilt i områden med detaljplan eller kulturmiljö. Stäm av med kommunen innan du bestämmer dig – läs mer i {a('bygglov-takbyte.html','bygglov för takbyte')}."], muted=True)
+        f"Sedan 1 december 2025 kräver byte av takmaterial på villa och radhus normalt inget bygglov. Undantaget är hus med skyddsbestämmelser och särskilt värdefulla miljöer – där krävs lov, så stäm av med kommunen – läs mer i {a('bygglov-takbyte.html','bygglov för takbyte')}."], muted=True)
     + sec("Vad kostar ett plåttak?", [
         "Priset beror på takets yta och form, valet mellan bandtäckning och profilplåt, plåtkvalitet och kulör, antal genomföringar och kupor samt ställningsbehov. Bandtäckning kostar mer än profilplåt men har lång livslängd.",
         "Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag där alternativen står sida vid sida."], sid="pris")
@@ -953,7 +953,7 @@ LOC = {
    "items": ["Grannområde till vår bas i Bromma – kort inställelsetid.","Erfarenhet av Duvbos äldre trävillor och kulturmiljö.","Takbyte, renovering, besiktning och plåtarbeten."],
    "faq": [
      ("Hur snabbt kan ni vara på plats i Sundbyberg?","Eftersom vi utgår från Mariehäll i Bromma, granne med Sundbyberg, har vi mycket kort inställelsetid och kan oftast boka en besiktning inom några dagar – och rycka ut snabbare vid akuta läckage."),
-     ("Får jag byta tak i Duvbo utan tillstånd?","Duvbo har en kulturhistoriskt värdefull trähusmiljö där kommunen kan ha särskilda krav vid byte av material eller kulör. Ett byte med likvärdigt utseende kräver oftast inte bygglov, men vi hjälper dig bedöma och du stämmer av med Sundbybergs stad."),
+     ("Får jag byta tak i Duvbo utan tillstånd?","Duvbo är en kulturhistoriskt värdefull trähusmiljö. Fasadändringar på villor är sedan 1 december 2025 i regel lovfria, men för särskilt värdefulla byggnader och områden krävs fortfarande bygglov. Stäm av med Sundbybergs stad innan du byter material eller kulör."),
      ("Arbetar ni med både villor och flerbostadshus i Sundbyberg?","Ja. Vi byter och renoverar villatak i Duvbo och Storskogen och utför plåt- och tätskiktsarbeten på flerbostadshus närmare centrum och Rissne."),
    ]},
  "Solna": {
@@ -1084,7 +1084,7 @@ LOC_EXTRA = {
        "Lilla Alby och Ör har fler hus från 1940–60-talet med betongpannor och enklare takformer. Här ser vi ofta vittrade pannor på norrsidan, mossa som lyfter pannorna och hängrännor som sätts igen av de stora träden i villaträdgårdarna. På radhus och parhus är plåtdetaljerna mellan husen en återkommande läckagepunkt."]),
      ("Planera takprojektet i Sundbyberg", [
        "Gatorna i Duvbo är smala och tomterna ofta trånga, så ställning, container och materialleveranser behöver planeras i förväg. Vi lägger upp etableringen så att grannar och infarter störs så lite som möjligt.",
-       "Byter du till samma material och kulör krävs normalt inget bygglov. Duvbo är däremot utpekat som kulturhistoriskt värdefullt, och vill du byta material eller kulör är det klokt att stämma av med Sundbybergs stad först. Vi hjälper dig ta fram underlag om det behövs."]),
+       "Ett takbyte på villa kräver normalt inget bygglov sedan 1 december 2025. Duvbo är däremot utpekat som kulturhistoriskt värdefullt, där lovplikten kan finnas kvar – vill du byta material eller kulör, stäm av med Sundbybergs stad först. Vi hjälper dig ta fram underlag om det behövs."]),
    ],
    "faq": [
      ("Vilka tak är vanligast i Duvbo?","Branta tak med lertegel på villor från 1910–40-talet, ofta med takkupor. Teglet är ofta i gott skick medan underlagspappen behöver bytas."),
@@ -1098,7 +1098,7 @@ LOC_EXTRA = {
        "Bergshamra har mer bebyggelse från 1950–60-talet med lägre taklutningar, där plåt och papp är vanligare. Låglutande tak är känsligare för läckage i skarvar och genomföringar, och här lönar det sig att regelbundet kontrollera plåtdetaljer och avvattning. Närheten till Brunnsviken och Ulriksdals grönområden ger också mer löv och påväxt på taken."]),
      ("Planera takprojektet i Solna", [
        "Solna har en blandning av äldre villor och tät stadsbebyggelse. På tomter nära gata planerar vi ställning och avspärrning så att arbetet går säkert, och vid behov hjälper vi till med tillstånd för att ställa container på allmän mark.",
-       "Byte till likvärdigt tak kräver normalt inget bygglov. Vill du byta material, till exempel från tegel till plåt, eller ändra takets form bör du stämma av med Solna stad innan arbetet planeras."]),
+       "Att byta material, till exempel från tegel till plåt, kräver normalt inget bygglov för villor sedan 1 december 2025. Ska takets form eller höjd ändras, eller har huset skyddsbestämmelser, krävs lov – stäm av med Solna stad innan arbetet planeras."]),
    ],
    "faq": [
      ("Är takomläggning vanligt i Råsunda?","Ja. Många tegeltak i Råsunda och Huvudsta har hela pannor men slitet underlag, och då är omläggning ofta det mest lönsamma."),
@@ -1111,12 +1111,12 @@ LOC_EXTRA = {
        "Bromma har några av Stockholms mest välbevarade villaområden. I trädgårdsstäderna Ängby, Äppelviken, Ålsten och Smedslätten är många hus från 1920–40-talet, ofta med branta tak i lertegel eller med falsad plåt. Funkisvillorna från 1930-talet i bland annat Ålsten och Nockeby har låga, ibland nästan platta tak med papp eller plåt, som kräver noggrant tätskikt och bra avvattning.",
        "De stora, gamla trädgårdarna är Brommas charm men också en utmaning för taken: löv och barr sätter igen hängrännor, och skuggiga takfall får mossa som håller kvar fukt. Vi ser ofta att läckage börjar vid ränndalar och skorstenar där löv har samlats."]),
      ("Planera takprojektet i Bromma", [
-       "Flera områden i Bromma har detaljplaner med varsamhetsbestämmelser. Ett takbyte till samma material och kulör kräver normalt inget bygglov, men vid byte av material, kulör eller takform kan bygglov behövas. Stäm av med stadsbyggnadskontoret i Stockholm – vi hjälper dig med underlag och materialval som passar området.",
+       "Sedan 1 december 2025 är byte av takmaterial och kulör på villor i regel lovfritt. Flera områden i Bromma har dock detaljplaner med skyddsbestämmelser, och där krävs fortfarande bygglov – liksom när takformen ändras. Stäm av med stadsbyggnadskontoret i Stockholm – vi hjälper dig med underlag och materialval som passar området.",
        "Eftersom vi utgår från Mariehäll i Bromma kan vi göra besiktning med kort varsel och följa projektet på plats varje dag. Det gör det enkelt att stämma av detaljer under arbetets gång."]),
    ],
    "faq": [
      ("Lägger ni plåttak på funkisvillor i Bromma?","Ja, falsad plåt och papptak på låglutande funkistak hör till våra vanliga uppdrag. Rätt tätskikt och avvattning är avgörande på låga taklutningar."),
-     ("Behöver jag bygglov för takbyte i Äppelviken?","Inte om du byter till samma material och kulör. Vid ändring kan bygglov krävas på grund av varsamhetsbestämmelser – stäm av med Stockholms stad."),
+     ("Behöver jag bygglov för takbyte i Äppelviken?","Normalt inte. Omfattas huset av skyddsbestämmelser i detaljplanen krävs lov även för material- och kulörbyte – stäm av med Stockholms stad."),
      ("Rensar ni hängrännor samtidigt som ni byter tak?","Ja, och vi rekommenderar ofta lövskydd eller större rännor i Brommas trädrika områden."),
    ]},
  "Spånga": {
@@ -1140,7 +1140,7 @@ LOC_EXTRA = {
        "Rotebro och Vaxmora har fler äldre villor och sekelskifteshus med branta tegeltak. Sollentuna är också trädrikt, och skuggiga tak under tall och gran får ofta kraftig mossa som lyfter pannorna och sätter igen hängrännorna."]),
      ("Planera takprojektet i Sollentuna", [
        "Har flera hus i samma område samma ålder är det vanligt att grannar byter tak inom några år. Planerar ni samtidigt kan etablering och ställning samordnas.",
-       "Byte till likvärdigt tak kräver normalt inget bygglov. Vill du byta från betong till plåt eller ändra kulör kraftigt, stäm av med Sollentuna kommun – vissa områden har detaljplaner med krav på utseende."]),
+       "Att byta från betong till plåt eller byta kulör kräver normalt inget bygglov för villor sedan 1 december 2025. Har ditt område skyddsbestämmelser i detaljplanen gäller lovplikt – kontrollera med Sollentuna kommun."]),
    ],
    "faq": [
      ("Hur gamla är taken i Edsberg och Tureberg?","Många är från 1960–70-talet med originalunderlag. Efter 50 år är det oftast dags för omläggning eller byte."),
@@ -1154,7 +1154,7 @@ LOC_EXTRA = {
        "I Viksjö och Kallhäll ligger många hus nära skog, vilket ger mer påväxt och fuktiga tak. Vi ser ofta att takfoten har för dålig ventilation, vilket ger fukt och mögel på vinden även när själva taket är tätt."]),
      ("Planera takprojektet i Järfälla", [
        "I radhusområden är det ofta en samfällighet eller förening som beslutar om tak. Byter flera hus samtidigt blir resultatet enhetligt och anslutningarna mellan husen kan göras om ordentligt.",
-       "Byte till samma material och kulör kräver normalt inget bygglov. I områden med enhetlig gestaltning kan detaljplanen styra kulör och material – stäm av med Järfälla kommun."]),
+       "Material- och kulörbyte på radhus och villor kräver normalt inget bygglov. Samfälligheten kan ändå ha regler om enhetligt utseende, och skyddade hus kräver lov – stäm av med Järfälla kommun vid osäkerhet."]),
    ],
    "faq": [
      ("Byter ni tak på radhus i Järfälla?","Ja, både enskilda radhus och hela längor. Anslutningarna mellan husen är viktiga att göra rätt."),
@@ -1168,7 +1168,7 @@ LOC_EXTRA = {
        "Näsby Park har även äldre villor från 1920-talet med tegeltak. Nära Stora Värtan i Hägernäs och Näsby Park är taken mer utsatta för vind, vilket ställer krav på infästning av pannor, nock och plåtdetaljer."]),
      ("Planera takprojektet i Täby", [
        "Många radhusområden i Täby förvaltas av samfälligheter med egna regler för tak och kulör. Kontrollera vad som gäller innan du väljer material – vi hjälper dig med underlag till föreningen.",
-       "Vid byte till samma material och kulör behövs normalt inget bygglov. Vill du byta till plåt eller ändra takets utseende, stäm av med Täby kommun."]),
+       "Även byte till plåt eller ny kulör kräver normalt inget bygglov för villor och radhus sedan 1 december 2025. Undantag är hus med skyddsbestämmelser – stäm av med Täby kommun om du är osäker."]),
    ],
    "faq": [
      ("Är betongtaken i Gribbylund dags att byta?","Många är från 1960–70-talet med originalunderlag. En besiktning visar om omläggning räcker eller om pannorna också behöver bytas."),
@@ -1181,12 +1181,12 @@ LOC_EXTRA = {
        "Djursholm, Stocksund och Enebyberg har många större villor från tidigt 1900-tal med komplexa tak: flera takfall, kupor, torn och ränndalar. Lertegel och falsad plåt är vanligast. Komplexa tak har fler anslutningar – och fler ställen där läckage kan uppstå, särskilt i ränndalar och vid kupor.",
        "Danderyds stora tomter med gamla ekar och tallar ger mycket löv och barr i rännorna och skuggiga takfall med påväxt. Kopparplåt och zink förekommer på äldre hus och kräver plåtslagare med erfarenhet av traditionella material."]),
      ("Planera takprojektet i Danderyd", [
-       "Delar av Djursholm och Stocksund har detaljplaner med skyddsbestämmelser. Ett byte till samma material kräver normalt inget bygglov, men vid ändring av material, kulör eller detaljer är det viktigt att stämma av med Danderyds kommun först.",
+       "Delar av Djursholm och Stocksund har detaljplaner med skyddsbestämmelser. Där krävs bygglov även för material-, kulör- och detaljändringar, trots att fasadändringar på villor annars blev lovfria 1 december 2025. Stäm av med Danderyds kommun först.",
        "Stora villor kräver ofta mer ställning och längre byggtid. Vi lägger upp en tidplan med etapper så att huset är tätt varje kväll och arbetet störs så lite som möjligt av väder."]),
    ],
    "faq": [
      ("Kan ni lägga tak på stora villor med många takfall i Djursholm?","Ja, komplexa tak med kupor, ränndalar och flera takfall är en vanlig typ av uppdrag."),
-     ("Behöver jag bygglov för takbyte i Djursholm?","Inte vid byte till samma material och utseende. Vid ändringar kan skyddsbestämmelser gälla – stäm av med Danderyds kommun."),
+     ("Behöver jag bygglov för takbyte i Djursholm?","Inte vid byte till samma material och utseende. Har huset skyddsbestämmelser krävs lov vid ändringar – stäm av med Danderyds kommun."),
      ("Hur lång tid tar ett takbyte på en större villa?","Ofta två till fyra veckor beroende på storlek, takets form och väder."),
    ]},
  "Lidingö": {
@@ -1196,7 +1196,7 @@ LOC_EXTRA = {
        "Läget vid vattnet påverkar taken. Salt luft från Saltsjön och Lilla Värtan påskyndar korrosion på plåt, skruvar och beslag, och vinden från vattnet ställer krav på infästning. Vi väljer korrosionsbeständig plåt och fästelement för havsnära hus."]),
      ("Planera takprojektet på Lidingö", [
        "Många tomter på Lidingö är kuperade och ligger i slänt, vilket påverkar hur ställning och lift kan placeras. Vi gör alltid ett platsbesök innan vi planerar etableringen.",
-       "Byte till likvärdigt tak kräver normalt inget bygglov, men delar av Lidingö har kulturmiljöer med särskilda krav. Stäm av med Lidingö stad vid byte av material eller kulör."]),
+       "Takbyte på villa kräver normalt inget bygglov, även med nytt material. Delar av Lidingö är dock värdefulla kulturmiljöer där lovplikten finns kvar – stäm av med Lidingö stad."]),
    ],
    "faq": [
      ("Rostar plåttak snabbare på Lidingö?","Havsnära hus utsätts för mer salt och fukt. Med rätt plåt, ytbeläggning och underhåll håller ett plåttak ändå länge."),
@@ -1210,7 +1210,7 @@ LOC_EXTRA = {
        "Det kustnära läget med salt luft och hård vind sliter på plåtdetaljer, skruvar och infästningar. I skogsnära delar av Boo och Älta får taken mycket barr och påväxt. Vi ser ofta läckage vid skorstenar och genomföringar där plåten har korroderat."]),
      ("Planera takprojektet i Nacka", [
        "Många tomter i Nacka ligger i kuperad terräng och på berg, vilket påverkar ställning och materialhantering. Vi gör alltid platsbesök innan vi lämnar kostnadsförslag.",
-       "Byte till samma material och kulör kräver normalt inget bygglov. Saltsjöbaden har delvis skyddsbestämmelser för äldre villor – stäm av med Nacka kommun vid ändringar."]),
+       "Material- och kulörbyte på villatak är normalt lovfritt. Saltsjöbaden har delvis skyddsbestämmelser för äldre villor, och där krävs lov – stäm av med Nacka kommun."]),
    ],
    "faq": [
      ("Vilken plåt passar havsnära hus i Saltsjöbaden?","Korrosionsbeständig plåt med kraftig ytbeläggning och rostfria fästelement. Vi anpassar valet efter läget."),
@@ -1298,7 +1298,7 @@ DAL = {
    "items": ["Varsamt takbyte på Faluns äldre trävillor.","Material som tål frys–tö och snötryck.","Villatak i Britsarvet, Källviken, Herrhagen, Främby."],
    "faq": [
      ("Kan ni bevara husets stil vid takbyte i Faluns trähuskvarter?","Ja. På äldre trävillor väljer vi pannor, plåt och kulörer som bevarar husets och områdets karaktär, och moderniserar samtidigt underlag och tätskikt."),
-     ("Behöver jag bygglov för takbyte i Falun?","Ett byte med likvärdigt material och utseende kräver oftast inte bygglov, men i kulturhistoriskt känsliga miljöer kan särskilda krav gälla. Vi hjälper dig bedöma och du stämmer av med Falu kommun."),
+     ("Behöver jag bygglov för takbyte i Falun?","Normalt inte för villor, inte heller vid material- eller kulörbyte (gäller från 1 december 2025). I kulturhistoriskt värdefulla miljöer krävs lov – stäm av med Falu kommun."),
      ("Vilka delar av Falun arbetar ni i?","Hela Falun med omnejd, bland annat Britsarvet, Källviken, Herrhagen, Främby och Hälsinggården."),
    ]},
  "Ludvika": {
@@ -1744,9 +1744,11 @@ article("bygglov-takbyte.html",
    ("ul",["Huset eller området är särskilt värdefullt ur historisk, kulturhistorisk, miljömässig eller konstnärlig synpunkt – då gäller utökad lovplikt för fasadändringar.",
           "Det är ett flerbostadshus eller en annan byggnad inom detaljplan, och taket vetter mot gata eller annan allmän plats.",
           "Taket höjs över befintlig taknock – då räknas det som en tillbyggnad som kräver bygglov."]),
+   ("h2","När krävs anmälan?"),
+   ("p","Även utan bygglov kräver vissa takarbeten anmälan och startbesked enligt plan- och byggförordningen (PBF 6 kap. 1 §): när bärande delar som takstolar ändras väsentligt, och vid installation eller väsentlig ändring av eldstad, rökkanal eller ventilation – till exempel om skorstenen byggs om."),
    ("h2","Lovfritt är inte regelfritt"),
    ("p","Varsamhetskravet och förbudet mot att förvanska byggnader i 8 kap. PBL gäller fortfarande. Ett nytt tak ska passa husets karaktär, och kommunen kan ingripa i efterhand om en lovfri åtgärd förvanskar ett värdefullt hus. Tekniska krav gäller också – till exempel att takstolarna klarar vikten när ett lätt plåttak byts mot tegel."),
-   ("p",'Källa: <a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>. Gäller från 1 december 2025.'),
+   ("p",'Källa: <a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>. Lagtext: <a class="text-link" href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/" rel="noopener">PBL 9 kap. 15 och 37 §§</a> och <a class="text-link" href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-byggforordning-2011338_sfs-2011-338/" rel="noopener">PBF 6 kap. 1 §</a> (riksdagen.se). Gäller från 1 december 2025.'),
    ("tips","Osäker på om ditt hus räknas som särskilt värdefullt? Fråga kommunens bygglovsenhet. Du kan också söka frivilligt bygglov för att få besked i förväg."),
    ("cta",("Planerar du ett takbyte?","Vi hjälper dig bedöma materialval och vad som gäller – begär en offert."))],
   [("takbyte.html","Takbyte","Vår tjänst för takbyte."),
@@ -2283,7 +2285,7 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
     BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
     [("#vad","Om attefallshus"),("#regler","Regler"),("#faq","Vanliga frågor")])
     + sec("Vad är ett attefallshus?", [
-        f"Attefallsreglerna har ersatts av regler om komplementbyggnad och komplementbostadshus i plan- och bygglagen. Ett komplementbostadshus är ett litet hus för boende som kompletterar en villa eller ett tvåbostadshus. Själva huset kräver inte längre anmälan eller startbesked – men installationer som vatten, avlopp och ventilation kräver fortfarande anmälan. Se {a('attefallshus-regler.html','nya regler för attefallshus')}.",
+        f"Attefallsreglerna har ersatts av regler om komplementbyggnad och komplementbostadshus i plan- och bygglagen. Ett komplementbostadshus är ett litet hus för boende som kompletterar en villa eller ett tvåbostadshus. Själva huset kräver inte längre anmälan eller startbesked – men installation av vatten, avlopp, ventilation, eldstad eller rökkanal kräver fortfarande anmälan. Se {a('attefallshus-regler.html','nya regler för attefallshus')}.",
         "Populära användningar är gäststuga, hemmakontor, gym, förråd eller ett litet hus för uthyrning. Vi bygger nyckelfärdigt – från grund till inflyttningsklart."], sid="vad")
     + sec_split("Regler i korthet", [
         "Reglerna gäller från 1 december 2025. Huset ska vara mindre än villan det kompletterar och stå på tomten. Lovfritt är inte regelfritt – tekniska krav och varsamhetskrav gäller, och i särskilt värdefulla miljöer krävs bygglov.",
@@ -2291,7 +2293,7 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
         "Vanliga krav", [
         "Max 30 m² inom detaljplan, 50 m² utanför.","Taknockshöjd max 4,0 m (4,5 m utanför detaljplan).",
         "Högst 45 m² lovfritt per tomt (65 m² utanför detaljplan).","Minst 4,5 m till tomtgräns (annars skriftligt grannmedgivande).",
-        "Ingen anmälan för huset – men för VA och ventilation.","Bygglov i särskilt värdefulla miljöer."], sid="regler")
+        "Ingen anmälan för huset – men för VA, ventilation och eldstad.","Bygglov i särskilt värdefulla miljöer."], sid="regler")
     + f"""      <section class="section seo-section">
         <div class="container"><div class="tips-box">
           <h3>Bra att veta</h3>
@@ -2304,7 +2306,7 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt","Bygga större hus."),
         ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")]),
   faq=[
-    ("Behöver jag bygglov eller anmälan för attefallshus?","Sedan 1 december 2025 krävs varken bygglov eller anmälan för själva huset om det håller sig inom måtten. Anmälan krävs för vatten, avlopp och ventilation."),
+    ("Behöver jag bygglov eller anmälan för attefallshus?","Sedan 1 december 2025 krävs varken bygglov eller anmälan för själva huset om det håller sig inom måtten. Anmälan krävs för vatten, avlopp, ventilation och eldstad eller rökkanal."),
     ("Hur stort får ett attefallshus vara?","Inom detaljplan upp till 30 m² och 4,0 m taknockshöjd, utanför detaljplan upp till 50 m² och 4,5 m. Alla lovfria komplementbyggnader på tomten får tillsammans vara högst 45 m² respektive 65 m²."),
     ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett komplementbostadshus är till för boende. Det får byggas vid en- och tvåbostadshus och ska uppfylla kraven på bostäder, till exempel VA och isolering, som vi tar höjd för.")])
 
@@ -2469,7 +2471,7 @@ article("attefallshus-regler.html",
           "Huset ska vara mindre än villan det kompletterar och stå på tomten.","Komplementbostadshus får bara byggas vid en- och tvåbostadshus.",
           "Närmare än <strong>4,5 m från tomtgräns</strong> krävs bygglov, om inte grannen skriftligen medgett placeringen."]),
    ("h2","Behövs anmälan och startbesked?"),
-   ("p","Inte för själva huset. Men installationer av till exempel vatten, avlopp och ventilation kräver fortfarande anmälan och startbesked innan de görs – och ett hus att bo i behöver i praktiken nästan alltid sådana installationer."),
+   ("p","Inte för själva huset. Men installation eller väsentlig ändring av vatten och avlopp, ventilation, eldstad eller rökkanal kräver fortfarande anmälan och startbesked (<a class=\"text-link\" href=\"https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-byggforordning-2011338_sfs-2011-338/\" rel=\"noopener\">PBF 6 kap. 1 §</a>) innan de görs – och ett hus att bo i behöver i praktiken nästan alltid sådana installationer."),
    ("h2","Tillbyggnad utan bygglov"),
    ("p",f"Attefallstillbyggnaden på 15 m² finns inte längre. I stället får du bygga till en byggnad med sammanlagt högst 30 m² utan bygglov, så länge tillbyggnaden inte går över husets taknock. Läs mer om {a('tillbyggnad.html','tillbyggnad av villa')}."),
    ("h2","Attefallshus eller friggebod?"),
@@ -2480,7 +2482,7 @@ article("attefallshus-regler.html",
   [("attefallshus.html","Attefallshus","Vi bygger nyckelfärdigt."),
    ("friggebod.html","Friggebod","Nu komplementbyggnad."),
    ("tillbyggnad.html","Tillbyggnad","Bygg ihop med huset.")],
-  faq=[("Krävs bygglov eller anmälan för attefallshus 2026?","Nej, inte för själva huset om måtten hålls. Anmälan krävs för vatten, avlopp och ventilation."),
+  faq=[("Krävs bygglov eller anmälan för attefallshus 2026?","Nej, inte för själva huset om måtten hålls. Anmälan krävs för vatten och avlopp, ventilation, eldstad och rökkanal."),
        ("Hur nära tomtgränsen får attefallshuset stå?","Närmare än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen."),
        ("Hur stort får ett attefallshus vara utanför detaljplan?","Upp till 50 m² och 4,5 meter taknockshöjd.")],
   badge="Regler", read="4 min")
