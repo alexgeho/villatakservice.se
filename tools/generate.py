@@ -763,7 +763,8 @@ page(file="takmalning.html",
         ("taktvatt.html","Taktvätt","Rengöring innan målning eller som eget underhåll."),
         ("plattak.html","Plåttak","Nytt plåttak när målning inte räcker."),
         ("takbesiktning.html","Takbesiktning","Skriftligt underlag innan du bestämmer dig."),
-        ("takmaterial-livslangd.html","Livslängd per takmaterial","Hur länge plåt, betong och tegel håller.")]),
+        ("takmaterial-livslangd.html","Livslängd per takmaterial","Hur länge plåt, betong och tegel håller."),
+        ("mala-plattak.html","Måla plåttak – guide","När det lönar sig och hur det går till.")]),
   faq=[
     ("Hur ofta behöver ett plåttak målas?","Vanligen var 10–20:e år beroende på färgsystem, väderstreck och påväxt. Kritar färgen eller syns rost är det dags att planera."),
     ("Hur länge håller en takmålning?","Med rätt tvätt, rostbehandling och färgsystem håller en takmålning normalt 10–15 år, ofta längre på skyddade tak."),
@@ -2244,7 +2245,8 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
     + links_block("Relaterat", [
         ("attefallshus.html","Attefallshus","Fristående yta utan bygglov."),
         ("byggfirma.html","Total entreprenad","Vi tar hela projektet."),
-        ("nybyggnad-villa.html","Nybyggnad","Bygga nytt hus.")]),
+        ("nybyggnad-villa.html","Nybyggnad","Bygga nytt hus."),
+        ("attefallshus-regler.html","Attefallsregler","Vad som gäller utan bygglov.")]),
   faq=[
     ("Behöver jag bygglov för tillbyggnad?","Oftast ja. Vissa mindre åtgärder (t.ex. attefallstillbyggnad) kan räcka med anmälan. Vi hjälper dig bedöma och du kontrollerar med kommunen."),
     ("Hur mycket får jag bygga till?","Det styrs av detaljplan och tomt. Vi går igenom vad som är möjligt vid ett platsbesök."),
@@ -2318,7 +2320,9 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
     + links_block("Relaterat", [
         ("attefallshus.html","Attefallshus","Mindre nybyggnad utan bygglov."),
         ("tillbyggnad.html","Tillbyggnad","Utöka befintligt hus."),
-        ("byggfirma.html","Total entreprenad","En kontakt för hela bygget.")]),
+        ("byggfirma.html","Total entreprenad","En kontakt för hela bygget."),
+        ("vad-kostar-bygga-hus.html","Vad kostar det att bygga hus?","Vad som påverkar kostnaden."),
+        ("fritidshus.html","Fritidshus","Bygga fritidshus.")]),
   faq=[
     ("Bygger ni nyckelfärdigt?","Ja, vi tar helheten som total entreprenör – från ritning och bygglov till inflyttningsklart hus."),
     ("Hur lång tid tar det att bygga en villa?","Det beror på storlek, bygglovstider och markförhållanden. Vi ger en realistisk tidplan i offerten."),
@@ -2580,7 +2584,7 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
 # ====================== SÖK (klientbaserad) ============================
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
-  "index.html": ("Takläggare i Stockholm & Bromma – takbyte och takrenovering", "Takläggare med kontor i Bromma. Takbyte, takrenovering, plåttak och takbesiktning på villa i Stockholm, Sundbyberg och Solna."),
+  "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och byggfirma i Bromma (Mariehäll). Takbyte, takrenovering, plåttak och totalentreprenad på villa i Stockholm. Gratis besök och kostnadsförslag."),
   "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
@@ -2636,8 +2640,20 @@ def main():
     def loc(u):
         u = "" if u=="index.html" else u
         return f"{DOMAIN}/{u}"
+    import subprocess
+    def lastmod(u):
+        # Senaste commit som ändrade filen (ärlig lastmod); ändrad men ej committad = idag.
+        fp = os.path.join(ROOT, u)
+        try:
+            dirty = subprocess.run(["git","status","--porcelain","--",u], cwd=ROOT,
+                                   capture_output=True, text=True).stdout.strip()
+            d = subprocess.run(["git","log","-1","--format=%cs","--",u], cwd=ROOT,
+                               capture_output=True, text=True).stdout.strip()
+        except Exception:
+            return BUILD_DATE
+        return BUILD_DATE if (dirty or not d) else d
     items = "\n".join(
-        f"  <url>\n    <loc>{loc(u)}</loc>\n    <lastmod>{BUILD_DATE}</lastmod>\n"
+        f"  <url>\n    <loc>{loc(u)}</loc>\n    <lastmod>{lastmod(u)}</lastmod>\n"
         f"    <changefreq>monthly</changefreq>\n    <priority>{'1.0' if u=='index.html' else '0.8'}</priority>\n  </url>"
         for u in ordered)
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
