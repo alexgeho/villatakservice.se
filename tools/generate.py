@@ -315,7 +315,10 @@ def page(**kw):
     PAGES.append(kw)
 
 # ---- section helpers ------------------------------------------------------
-def hero(h1, lead, crumbs, anchors=None):
+def hero(h1, lead, crumbs, anchors=None, trust=None):
+    # trust: egna bockpunkter (t.ex. B2B-sidor där ROT/besök inte gäller).
+    trust = trust or ["Gratis besök och kostnadsförslag", "ROT-avdrag direkt på fakturan"]
+    trust_li = "\n".join(f"              <li>{t}</li>" for t in trust)
     an = ""
     if anchors:
         links = "\n".join(f'            <a href="{h}">{t}</a>' for h,t in anchors)
@@ -327,8 +330,7 @@ def hero(h1, lead, crumbs, anchors=None):
           <p class="section-lead">{lead}</p>
           <div class="trust-strip">
             <ul>
-              <li>Gratis besök och kostnadsförslag</li>
-              <li>ROT-avdrag direkt på fakturan</li>
+{trust_li}
             </ul>
             <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
           </div>{an}
@@ -368,7 +370,7 @@ def sec_split(title, paras, aside_title, items, muted=True, sid=""):
         </div>
       </section>"""
 
-def sec_process(title, steps, muted=False, sid=""):
+def sec_process(title, steps, muted=False, sid="", grid="process-grid"):
     cards = "\n".join(f"""            <article class="step-item">
               <span class="step-number">{i+1:02d}</span>
               <h3>{h}</h3>
@@ -381,7 +383,7 @@ def sec_process(title, steps, muted=False, sid=""):
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">{title}</h2>
           </div>
-          <div class="process-grid">
+          <div class="{grid}">
 {cards}
           </div>
         </div>
@@ -2167,7 +2169,8 @@ page(file="bygg.html", localbiz=True,
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt hus","Bygg villa från grunden."),
         ("fritidshus.html","Bygga fritidshus","Nyckelfärdigt fritidshus."),
         ("villatak.html","Tak på villa","Vår ursprungliga specialitet."),
-        ("vad-kostar-bygga-hus.html","Vad kostar det att bygga hus?","Prisbild och vad som påverkar kostnaden.")], muted=False),
+        ("vad-kostar-bygga-hus.html","Vad kostar det att bygga hus?","Prisbild och vad som påverkar kostnaden."),
+        ("hyra-taklaggare.html","Hyra takläggare","Bemanning bygg: takläggare, plåtslagare och byggarbetare.")], muted=False),
   faq=[
     ("Vad betyder total entreprenad?","Att en entreprenör ansvarar för hela projektet – projektering, hantverk och samordning – så att du bara har en kontakt och ett avtal."),
     ("Gör ni både tak och övrig bygg?","Ja. Vi startade med tak och gör i dag även renovering, tillbyggnad, attefallshus och nybyggnad, ofta i samma projekt."),
@@ -2207,6 +2210,50 @@ page(file="byggfirma.html", service=True, service_type="Total entreprenad / bygg
     ("Vad kostar en byggfirma / total entreprenad?","Det beror helt på projektets omfattning. Vi erbjuder gratis platsbesök och kostnadsförslag och lämnar ett fast pris efter genomgång."),
     ("Tar ni bygglovet?","Vi hjälper till med bygglovsunderlag och ritningar; själva ansökan görs till kommunen och vi guidar dig genom den."),
     ("Har ni försäkring och F-skatt?","Ja, vi är ett registrerat AB med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06.")])
+
+def tiles(title, items, muted=False, sid=""):
+    # Enkla rutor utan länk (samma mönster som "Värderingar" på Om oss).
+    arts = "\n".join(f"""            <article class="service-snippet">
+              <h3>{h}</h3>
+              <p>{t}</p>
+            </article>""" for h,t in items)
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
+        <div class="container">
+          <h2 class="section-title">{title}</h2>
+          <div class="grid-3">
+{arts}
+          </div>
+        </div>
+      </section>"""
+
+HYRA_CRUMB = SVC_CRUMB+[("Hyra takläggare","hyra-taklaggare.html")]
+page(file="hyra-taklaggare.html", service=True,
+  service_type="Bemanning bygg – uthyrning av takläggare, plåtslagare och byggarbetare",
+  title="Hyra takläggare – bemanning bygg i Stockholm | Geal Entreprenad AB",
+  description="Hyra takläggare, plåtslagare eller byggarbetare till ert bygge i Stockholm. Bemanning bygg från en takfirma – pris per timme eller per jobb.",
+  h1="Hyra takläggare – bemanning bygg i Stockholm",
+  crumbs=HYRA_CRUMB,
+  cta=("Behöver ni fler på bygget?","Berätta vad ni behöver – vi lämnar offert."),
+  body=hero("Hyra takläggare – bemanning bygg i Stockholm",
+    "Behöver ert bygge fler händer? Vi hyr ut egna takläggare, plåtslagare och byggarbetare till byggföretag och entreprenörer.",
+    HYRA_CRUMB,
+    trust=["Pris per timme eller per jobb","F-skatt, ansvarsförsäkring och ID06"])
+    + tiles("Vilka vi hyr ut", [
+        ("Takläggare","Takbyte, takomläggning och nya tak."),
+        ("Plåtslagare","Plåttak, beslag, hängrännor och stuprör."),
+        ("Byggarbetare","Rivning, tillbyggnad och allmänt bygg.")], muted=True)
+    + sec_process("Så går det till", [
+        ("Förfrågan","Yrke, antal, plats och period."),
+        ("Vi bekräftar","Vilka som kommer och när de börjar."),
+        ("På plats","Våra hantverkare börjar på ert bygge.")], grid="grid-3"),
+  faq=[
+    ("Vad kostar det att hyra takläggare?","Pris per timme eller per jobb – vi lämnar offert."),
+    ("Kan vi hyra plåtslagare och byggarbetare också?","Ja. Vi hyr ut takläggare, plåtslagare och byggarbetare – var för sig eller tillsammans."),
+    ("Har ni F-skatt och ID06?","Ja, vi är ett registrerat AB med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06."),
+    ("Hur länge kan vi hyra?","Det bestämmer vi tillsammans utifrån ert projekt."),
+    ("Var kan ni jobba?","I Stockholm med omnejd. Fråga oss gärna om andra orter.")])
 
 page(file="villarenovering.html", service=True, service_type="Villarenovering",
   title="Villarenovering & totalrenovering i Stockholm | Geal Entreprenad AB",
