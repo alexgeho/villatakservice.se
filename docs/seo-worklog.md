@@ -5,6 +5,18 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 SESSION 2026-10-08 — GSC-genomgång + snabba vinster (`cec37ef`, live)
+GSC 28 d (8.9–5.10): 0 klick / 5,18K visn (föreg. 28 d: 82) / CTR 0 % / pos 50 (49,5). Index 54 / ej 27 (18 Discovered, 4 redirect, 2 noindex, 2 404 validering startad, 1 alternate).
+Near-miss: takläggare bromma 117 visn pos 9,8 · totalentreprenad bromma 55/11,0 · takläggning bromma 36/13,8 · entreprenad bromma 29/4,1 · solceller på tak 50/17,5 · takrenovering i spånga 23/15 · takrenovering sundbyberg 22/16,2 · takläggare säter 27/20,6. Bromma-frågor rankar via startsidan (Google visar fortfarande http://villatakservice.se/, 461 visn pos 9,5 – 301 → https är korrekt, konsolideras); taklaggare-bromma.html bara pos 44 → håll startsidan som Bromma-sida.
+Discovered (18): omraden, takbyte-eller-takrenovering, tegel-betong-plattak, bygglov-takbyte, mala-plattak, attefallshus-regler, friggebod, fritidshus, vad-kostar-bygga-hus + 9 Dalarna-orter (avesta, borlange, falun, hedemora, leksand, ludvika, mora, rattvik, smedjebacken).
+### KLART
+- ✅ Startsida: title/description Bromma först + totalentreprenad, «Gratis besök och kostnadsförslag».
+- ✅ Kontextlänkar till Discovered: takmalning → mala-plattak; tillbyggnad → attefallshus-regler; nybyggnad-villa → vad-kostar-bygga-hus + fritidshus.
+- ✅ sitemap lastmod = senaste git-commit per fil (inte byggdatum för alla).
+### 🔜 NÄSTA
+1. **09.10:** Request Indexing (inspektionen hängde 08.10): https://villatakservice.se/, omraden, takbyte-eller-takrenovering, mala-plattak, bygglov-takbyte, tegel-betong-plattak, attefallshus-regler, vad-kostar-bygga-hus, taklaggare-falun, taklaggare-borlange.
+2. 02.11: GSC-jämförelse (se 2026-10-05).
+
 ## 🟢 SESSION 2026-10-05 — Topp-10-plan (deep research) + genomförande steg 1–3
 Plan + prompt: `docs/top10-plan.md`. GSC/SERP-bas: `~/sites-hub/audits/2026-10-05/gsc-3m.md` (0 klick, 4,3K visn, pos 49).
 ### KLART
