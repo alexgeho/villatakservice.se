@@ -272,6 +272,11 @@ ol {
   max-width: 620px;
 }
 
+.hero-home .hero-title {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
 .hero-home .hero-side-visual {
   display: flex;
   justify-content: flex-end;
@@ -930,6 +935,7 @@ ol {
 
   .menu-toggle {
     display: inline-flex;
+    margin-left: auto;
   }
 
   .header-cta {
@@ -1008,6 +1014,54 @@ ol {
 
   .hero-home .hero-side-visual img {
     width: min(100%, 360px);
+  }
+
+  /* Mobil hero: rubrik, CTA och fakta inom första skärmen */
+  .hero-home {
+    padding-top: 28px;
+    padding-bottom: 32px;
+  }
+
+  .hero-home .hero-grid {
+    gap: 24px;
+  }
+
+  .hero-home .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .hero-home .section-lead {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .hero-home .hero-actions {
+    margin-top: 20px;
+  }
+
+  .hero-home .hero-actions .btn {
+    flex: 1 1 0;
+    min-height: 48px;
+  }
+
+  .hero-home .facts-pills {
+    margin-top: 16px;
+  }
+
+  .hero-home .facts-pills {
+    gap: 6px;
+  }
+
+  .hero-home .facts-pills li {
+    width: auto;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+  }
+
+  .hero-home .hero-side-visual img {
+    width: min(100%, 300px);
   }
 }
 
