@@ -158,7 +158,7 @@ FOOTER = f"""    <footer class="footer">
 def local_business_schema():
     return {
         "@context":"https://schema.org","@type":"RoofingContractor",
-        "name":BRAND,"image":IMG,"url":DOMAIN+"/","telephone":PHONE_T,
+        "@id":DOMAIN+"/#foretag","name":BRAND,"image":IMG,"url":DOMAIN+"/","telephone":PHONE_T,
         "email":EMAIL,"priceRange":"$$",
         "identifier":ORGNR,"vatID":VATNR,
         "address":{"@type":"PostalAddress","streetAddress":STREET,
@@ -168,8 +168,7 @@ def local_business_schema():
         "areaServed":[{"@type":"City","name":n} for n in ["Stockholm"]+AREAS],
         "openingHoursSpecification":[{"@type":"OpeningHoursSpecification",
             "dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens":"08:00","closes":"17:00"}],
-        "sameAs":[]
+            "opens":"08:00","closes":"17:00"}]
     }
 
 def breadcrumb_schema(crumbs):
@@ -194,7 +193,7 @@ def service_schema(p):
     areas = p.get("area_served") or ["Stockholm"]+AREAS
     return {"@context":"https://schema.org","@type":"Service",
         "serviceType":p.get("service_type",p["h1"]),
-        "provider":{"@type":"RoofingContractor","name":BRAND,"url":DOMAIN+"/"},
+        "provider":{"@type":"RoofingContractor","@id":DOMAIN+"/#foretag","name":BRAND,"url":DOMAIN+"/"},
         "areaServed":[{"@type":"City","name":n} for n in areas],
         "name":p["h1"],"description":p["description"]}
 
@@ -508,7 +507,7 @@ page(file="takbyte.html",
 
 page(file="takrenovering.html",
   title="Takrenovering i Stockholm – takomläggning & reparation | Geal Entreprenad AB",
-  description="Takrenovering och takomläggning på villa i Stockholm. Ny underlagspapp och läkt, omlagda pannor och tät plåt – utan att byta hela taket. Gratis besök och ROT.",
+  description="Takrenovering och takomläggning på villa i Stockholm: ny underlagspapp och läkt, omlagda pannor och tät plåt – utan nytt tak. Gratis besök och ROT.",
   h1="Takrenovering och takomläggning i Stockholm",
   service=True, service_type="Takrenovering", localbiz=False,
   howto=("Så går en takomläggning till", [
@@ -644,7 +643,7 @@ page(file="takbesiktning.html",
 
 page(file="plattak.html",
   title="Plåttak i Stockholm – nytt plåttak & plåtarbeten | Geal Entreprenad AB",
-  description="Plåttak i Stockholm och Sundbyberg: nytt plåttak, bandtäckning och plåtarbeten med fokus på täthet och avvattning. Kostnadsfri offert från lokala takläggare.",
+  description="Plåttak i Stockholm och Sundbyberg: nytt plåttak, bandtäckning och plåtarbeten med fokus på täthet och avvattning. Gratis offert från lokala takläggare.",
   h1="Plåttak i Stockholm",
   service=True, service_type="Plåttak", localbiz=False,
   crumbs=SVC_CRUMB+[("Plåttak","plattak.html")],
@@ -703,7 +702,7 @@ page(file="plattak.html",
     ("Ger plåttak ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 page(file="takmalning.html",
-  title="Takmålning i Stockholm – måla plåttak rätt | Geal Entreprenad AB",
+  title="Takmålning i Stockholm – målning av plåttak med ROT | Geal Entreprenad AB",
   description="Takmålning av plåttak och falsade tak i Stockholm. Tvätt, rostskydd och rätt färgsystem – så går det till, när det lönar sig och vad ROT ger. Gratis besök.",
   h1="Takmålning i Stockholm",
   service=True, service_type="Takmålning", localbiz=False,
@@ -773,7 +772,7 @@ page(file="takmalning.html",
         ("plattak.html","Plåttak","Nytt plåttak när målning inte räcker."),
         ("takbesiktning.html","Takbesiktning","Skriftligt underlag innan du bestämmer dig."),
         ("takmaterial-livslangd.html","Livslängd per takmaterial","Hur länge plåt, betong och tegel håller."),
-        ("mala-plattak.html","Måla plåttak – guide","När det lönar sig och hur det går till.")]),
+        ("mala-plattak.html","Måla om eller byta plåttaket?","Så avgör du om målning räcker.")]),
   faq=[
     ("Hur ofta behöver ett plåttak målas?","Vanligen var 10–20:e år beroende på färgsystem, väderstreck och påväxt. Kritar färgen eller syns rost är det dags att planera."),
     ("Hur länge håller en takmålning?","Med rätt tvätt, rostbehandling och färgsystem håller en takmålning normalt 10–15 år, ofta längre på skyddade tak."),
@@ -934,7 +933,7 @@ page(file="omraden.html",
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">Vi arbetar även i Dalarna</h2>
-            <p>Utöver Storstockholm tar vi takuppdrag i Dalarna – Borlänge, Falun, Ludvika, Mora, Leksand med flera. Där samordnar vi projektet och utför arbetet via vår lokala samarbetspartner på plats. {a('dalarna.html','Se takläggare i Dalarna')}.</p>
+            <p>Utöver Storstockholm tar vi takuppdrag i Dalarna – {a('taklaggare-borlange.html','Borlänge')}, {a('taklaggare-falun.html','Falun')}, {a('taklaggare-ludvika.html','Ludvika')}, {a('taklaggare-mora.html','Mora')}, {a('taklaggare-leksand.html','Leksand')} med flera. Där samordnar vi projektet och utför arbetet via vår lokala samarbetspartner på plats. {a('dalarna.html','Se takläggare i Dalarna')}.</p>
           </div>
         </div>
       </section>""")
@@ -1235,16 +1234,56 @@ LOC.update(LOC_NEW)
 LOC_EXTRA.update(LOC_EXTRA_NEW)
 ORT_IMG.update({k: v for k, v in ORT_IMG_NEW.items()
                 if os.path.exists(os.path.join(ROOT, "assets", "images", v[0] + ".webp"))})
+# GSC near-miss (28 d t.o.m. 2026-10-11): egna title/description + en tjänstesektion
+# för orter där tjänstesökord (takbyte/takrenovering/omläggning + ort) ligger på pos 15–30.
+# title <= 65, description <= 155 tecken. Övriga orter använder mallen nedan.
+ORT_SEO = {
+ "Danderyd": {
+   "title": "Takläggare i Danderyd & Djursholm – takbyte, takrenovering",
+   "desc": "Takbyte, takrenovering och takreparation i Danderyd, Djursholm och Stocksund. Gratis besök, fast pris och ROT-avdrag direkt på fakturan.",
+   "svc": ("Takbyte och takrenovering i Danderyd", [
+     f"De flesta som hör av sig från Danderyd står inför samma val: räcker det att renovera taket, eller är det dags att byta? På äldre villor i Djursholm och Stocksund är teglet eller den falsade plåten ofta i gott skick medan underlagspappen är uttjänt. Då kan en {a('takrenovering.html','takrenovering eller takomläggning')} räcka – pannorna tas ner, nytt underlag läggs och samma pannor läggs tillbaka.",
+     f"Är både pannor och underlag slut blir ett {a('takbyte.html','takbyte på villan')} mer lönsamt i längden. På stora tak med torn och kupor gör vi bytet i etapper så att huset är tätt varje kväll. Läcker det redan? Läs vad du gör vid {a('taklackage.html','takläckage')} – vi gör även enstaka takreparationer kring skorsten, ränndalar och kupor."]),
+   "faq": [("Gör ni takreparationer och lagar läckage i Danderyd?","Ja. Vi lagar läckage kring skorstenar, kupor och ränndalar och byter enstaka pannor och plåtdetaljer. Vid besöket bedömer vi om en reparation räcker eller om taket behöver renoveras.")]},
+ "Sundbyberg": {
+   "title": "Takläggare i Sundbyberg – takbyte, takrenovering & plåt",
+   "desc": "Takläggare i Sundbyberg: takbyte, takrenovering och plåtarbeten i Duvbo och Storskogen. Granne med vår bas i Bromma. Gratis besök och fast pris.",
+   "svc": ("Takbyte, takrenovering och plåtarbeten i Sundbyberg", [
+     f"I Duvbo och Storskogen handlar många uppdrag om {a('takrenovering.html','takrenovering')}: det gamla lertegelet sitter kvar, men underlagspapp och läkt byts. Är pannorna spruckna eller porösa gör vi i stället ett komplett {a('takbyte.html','takbyte')} med nytt underlag, nya pannor och nya plåtdetaljer.",
+     f"Plåtarbeten är en stor del av jobben i Sundbyberg – skorstensbeslag, vindskivor, fotplåt och plåten mellan radhus och parhus. Vi lägger även nya {a('plattak.html','plåttak')} på låglutande tak och byter {a('hangrannor-stupror.html','hängrännor och stuprör')} i samma etablering."]),
+   "faq": [("Utför ni plåtarbeten i Sundbyberg?","Ja, både nya plåttak och plåtdetaljer som skorstensbeslag, vindskivor, fotplåt och anslutningar mellan radhus.")]},
+ "Spånga": {
+   "title": "Takläggare i Spånga – takbyte, takrenovering & omläggning",
+   "desc": "Takläggare i Spånga, Bromsten och Solhem: takbyte, takrenovering och takomläggning på villa. Gratis besök, fast pris och ROT-avdrag på fakturan.",
+   "svc": ("Takrenovering och takomläggning i Spånga", [
+     f"På 50–70-talsvillorna i Sundby och Flysta är takomläggning vanligt: pannorna lyfts av, ny underlagspapp och ny läkt läggs och hela pannor läggs tillbaka. Det är en form av {a('takrenovering.html','takrenovering')} som ger ett tätt tak för lång tid framåt till lägre kostnad än ett nytt tak.",
+     f"Är betongpannorna porösa eller frostskadade räcker inte en omläggning – då gör vi ett {a('takbyte.html','takbyte')}. Osäker på vilket som gäller ditt hus? Läs {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')} eller boka en {a('takbesiktning.html','takbesiktning')}."]),
+   "faq": [("Vad är skillnaden mellan takomläggning och takbyte?","Vid en takomläggning återanvänds hela pannor medan underlagspapp och läkt byts. Vid ett takbyte byts även pannorna. Vilket som passar avgörs av pannornas skick.")]},
+ "Solna": {
+   "title": "Takläggare i Solna – takrenovering & takbyte på villa",
+   "desc": "Takläggare i Solna: takrenovering, takomläggning och takbyte i Råsunda, Huvudsta och Bergshamra. Gratis besök, fast pris och ROT-avdrag.",
+   "svc": ("Takrenovering i Solna", [
+     f"I Råsunda och Huvudsta är {a('takrenovering.html','takrenovering')} med nytt underlag ofta rätt nivå, eftersom tegelpannorna klarar sig längre än pappen under dem. I Bergshamra, med lägre taklutningar, handlar det oftare om plåt- och papptak där skarvar och genomföringar ses över.",
+     f"Är pannorna slut gör vi ett {a('takbyte.html','takbyte')} med nya pannor, nytt underlag och nya plåtdetaljer. Vi börjar alltid med ett gratis besök och ger fast pris på den åtgärd taket faktiskt behöver."])},
+ "Bromma": {
+   "title": "Takläggare i Bromma – Mariehäll, Nockeby, Ängby & Ålsten",
+   "desc": "Takbyte och takrenovering i Brommas villaområden: Mariehäll, Nockeby, Ängby, Äppelviken och Ålsten. Vår bas ligger i Mariehäll. Gratis besök.",
+ },
+}
+
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]
     _x = LOC_EXTRA.get(_ort, {"secs": [], "faq": []})
-    cityfaq = _d["faq"] + _x["faq"]
+    _seo = ORT_SEO.get(_ort, {})
+    cityfaq = _d["faq"] + _x["faq"] + _seo.get("faq", [])
     extra_html = "".join(sec(t, ps, muted=(i % 2 == 0)) for i,(t,ps) in enumerate(_x["secs"]))
+    if _seo.get("svc"):
+        extra_html += sec(_seo["svc"][0], _seo["svc"][1], muted=(len(_x["secs"]) % 2 == 0), sid="takbyte-takrenovering")
     f = _area_files[_ort]
     others = NEIGHBORS[_ort]
     page(file=f,
-      title=f"Takläggare i {_ort} – takbyte & takrenovering | Geal Entreprenad AB",
-      description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Stockholm. Lokal takfirma – begär kostnadsfri offert.",
+      title=_seo.get("title") or f"Takläggare i {_ort} – takbyte & takrenovering | Geal Entreprenad AB",
+      description=_seo.get("desc") or f"Takläggare i {_ort}: takbyte, takrenovering och takbesiktning på villa. Gratis besök, fast pris och ROT-avdrag direkt på fakturan.",
       h1=f"Takläggare i {_ort}",
       service=True, service_type="Takläggning", area_served=[_ort],
       crumbs=[("Hem","/"),("Områden","omraden.html"),(_ort,f)],
@@ -1420,7 +1459,7 @@ page(file="dalarna.html",
   geo_region="SE-W", geo_placename="Borlänge, Dalarna",
   contact_url="offert-dalarna.html",
   title="Takläggare i Dalarna – Borlänge, Falun & hela regionen | Geal Entreprenad AB",
-  description="Vi utför takbyte, takrenovering och takbesiktning i Dalarna – Borlänge, Falun, Ludvika, Avesta, Mora, Leksand m.fl. Lokala takläggare via vår samarbetspartner. Begär kostnadsfri offert.",
+  description="Takbyte, takrenovering och takbesiktning i Dalarna – Borlänge, Falun, Säter, Ludvika, Mora m.fl. Takläggare på plats via vår lokala partner.",
   h1="Takläggare i Dalarna",
   crumbs=[("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html")],
   cta=("Behöver du takläggare i Dalarna?","Skicka en förfrågan – vi samordnar ditt takprojekt med erfarna takläggare på plats i Dalarna."),
@@ -1437,7 +1476,7 @@ page(file="dalarna.html",
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">Orter vi arbetar i – Dalarna</h2>
-            <p>Välj din ort för lokal information om takbyte, takrenovering och takbesiktning.</p>
+            <p>Välj din ort för lokal information om takbyte, takrenovering och takbesiktning – till exempel {a(_dal_files['Borlänge'],'takbyte i Borlänge')}, {a(_dal_files['Falun'],'takläggare i Falun')} eller {a(_dal_files['Säter'],'takbyte i Säter och Stora Skedvi')}.</p>
           </div>
           <div class="service-grid">
 {_dal_cards}
@@ -1459,6 +1498,13 @@ page(file="dalarna.html",
   ])
 
 # ---- Dalarna ort-sidor ---------------------------------------------------
+# GSC 28 d: "takläggare säter" pos 19,8, "takbyte säter" 24,6, "takbyte stora skedvi" 2,1.
+DAL_SEO = {
+ "Säter": {
+   "title": "Takläggare i Säter & Stora Skedvi – takbyte i Dalarna",
+   "desc": "Takbyte och takrenovering i Säter, Gustafs och Stora Skedvi – varsamt på trästadens villor, via vår lokala partner i Dalarna. Fast pris efter besök.",
+ },
+}
 for _ort, _d in DAL.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]; cityfaq = _d["faq"]
     f = _dal_files[_ort]
@@ -1466,8 +1512,8 @@ for _ort, _d in DAL.items():
     page(file=f,
       geo_region="SE-W", geo_placename=f"{_ort}, Dalarna",
       contact_url="offert-dalarna.html",
-      title=f"Takläggare i {_ort} – takbyte & takrenovering i Dalarna | Geal Entreprenad AB",
-      description=f"Takläggare i {_ort}. Vi utför takbyte, takrenovering, takbesiktning och plåttak på villa i {_ort} och Dalarna – via lokal samarbetspartner. Begär kostnadsfri offert.",
+      title=DAL_SEO.get(_ort, {}).get("title") or f"Takläggare i {_ort} – takbyte & takrenovering i Dalarna | Geal Entreprenad AB",
+      description=DAL_SEO.get(_ort, {}).get("desc") or f"Takläggare i {_ort}: takbyte, takrenovering och takbesiktning på villa via vår lokala partner i Dalarna. Fast pris efter besök.",
       h1=f"Takläggare i {_ort}",
       service=True, service_type="Takläggning", area_served=[_ort],
       crumbs=[("Hem","/"),("Områden","omraden.html"),("Dalarna","dalarna.html"),(_ort,f)],
@@ -1611,7 +1657,7 @@ def article(file, title, description, h1, lead, blocks, related, faq=None, badge
 
 article("vad-kostar-takbyte.html",
   "Vad kostar ett takbyte? Det här styr priset + ROT | Geal Entreprenad AB",
-  "Vad kostar ett takbyte på villa? Så påverkar area, material och underlag priset, så jämför du offerter och så räknas ROT-avdraget. Gratis besök och kostnadsförslag.",
+  "Vad kostar ett takbyte på villa? Så påverkar area, material och underlag priset, så jämför du offerter och räknar ROT-avdraget. Gratis besök.",
   "Vad kostar ett takbyte?",
   "Priset för ett takbyte varierar mycket beroende på tak och material. Här går vi igenom vad som driver kostnaden, hur du jämför offerter på rätt sätt och hur ROT-avdraget räknas – och varför vi alltid ger pris först efter ett gratis besök.",
   [("p","En av de vanligaste frågorna vi får är vad ett takbyte kostar. Det ärliga svaret är att det beror på taket – två villor med samma yta kan landa långt ifrån varandra. Kostnaden styrs framför allt av takets area och form, val av material, taklutning, tillgänglighet och underlagets skick. Därför lämnar vi inga schablonpriser, utan kommer ut gratis, tittar på taket och ger ett kostnadsförslag med fast pris."),
@@ -1738,7 +1784,7 @@ article("sa-valjer-du-taklaggare.html",
 
 article("bygglov-takbyte.html",
   "Bygglov för takbyte – regler från 1 december 2025 | Geal Entreprenad AB",
-  "Sedan 1 december 2025 krävs normalt inget bygglov för att byta takmaterial eller kulör på villa och radhus. Här är undantagen och vad som fortfarande gäller.",
+  "Sedan 1 december 2025 krävs normalt inget bygglov för att byta takmaterial eller kulör på villa och radhus. Här är undantagen som fortfarande gäller.",
   "Behövs bygglov för takbyte?",
   "Plan- och bygglagen ändrades 1 december 2025. För villor och radhus blev takbyte enklare – men inte helt regelfritt.",
   [("p","Med de nya reglerna i 9 kap. plan- och bygglagen (PBL) krävs inte längre bygglov för fasadändringar på en- och tvåbostadshus – villor, parhus och radhus. Det gäller även taket: att byta takmaterial, till exempel från betongpannor till plåt, eller att byta kulör kräver normalt inget bygglov."),
@@ -2027,8 +2073,8 @@ article("energieffektivt-tak.html",
   badge="Energi", read="4 min")
 
 article("solceller-tak.html",
-  "Solceller på tak – vad du bör tänka på | Geal Entreprenad AB",
-  "Solceller på taket: hur de påverkar taket, varför takets skick är avgörande och varför du bör samordna solceller med takbyte.",
+  "Solceller på tak – kolla taket först, sedan montering",
+  "Solceller på tak: varför takets skick avgör, när du ska byta tak först och hur infästningarna hålls täta. Vi monterar solceller och byter tak.",
   "Solceller på tak – tänk på detta",
   "Solceller och tak hänger ihop. Här förklarar vi varför takets skick är avgörande innan du monterar solceller – och varför timing spelar roll.",
   [("p","Solceller monteras på taket och sitter där i decennier. Därför är takets skick avgörande: du vill inte upptäcka att taket behöver bytas strax efter att panelerna satts upp."),
@@ -2399,7 +2445,7 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
 
 page(file="friggebod.html", service=True, service_type="Friggebod",
   title="Friggebod i Stockholm – nya regler, upp till 30 m² | Geal Entreprenad AB",
-  description="Friggebod heter nu komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov och utan anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt i Stockholm.",
+  description="Friggebod heter nu komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov eller anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt.",
   h1="Friggebod i Stockholm",
   crumbs=BYGG_CRUMB+[("Friggebod","friggebod.html")],
   cta=("Vill du bygga en friggebod?","Vi bygger nyckelfärdigt. Begär en kostnadsfri offert."),
@@ -2428,7 +2474,7 @@ page(file="friggebod.html", service=True, service_type="Friggebod",
 
 page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
   title="Bygga fritidshus i Stockholm – nyckelfärdigt | Geal Entreprenad AB",
-  description="Bygga fritidshus i Stockholm och Mälardalen – nyckelfärdigt eller platsbyggt. Vi tar helheten från ritning och bygglov till inflyttningsklart. Kostnadsfri offert.",
+  description="Bygga fritidshus i Stockholm och Mälardalen – nyckelfärdigt eller platsbyggt. Vi tar helheten från ritning och bygglov till inflyttning. Gratis offert.",
   h1="Bygga fritidshus i Stockholm",
   crumbs=BYGG_CRUMB+[("Fritidshus","fritidshus.html")],
   cta=("Drömmer du om ett fritidshus?","Vi bygger nyckelfärdigt fritidshus. Begär en kostnadsfri genomgång."),
@@ -2463,14 +2509,20 @@ page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
 
 # ---- Tak-artiklar (near-miss från Keyword Planner) ----
 article("mala-plattak.html",
-  "Måla plåttak – så gör du, kostnad och när det lönar sig | Geal Entreprenad AB",
-  "Måla plåttak: när det lönar sig, hur det går till, vilken färg och vad det kostar. Guide från takläggare i Stockholm.",
-  "Måla plåttak – guide",
+  "Måla om plåttaket eller byta? Så avgör du | Geal Entreprenad AB",
+  "Måla om plåttaket eller byta det? Tecken på att målning räcker, när rosten kräver nytt plåttak och hur förbehandlingen avgör livslängden.",
+  "Måla om plåttaket eller byta?",
   "Att måla om plåttaket ger nytt skydd och fräschare uttryck till lägre kostnad än ett byte. Här är när det lönar sig och hur det går till.",
   [("p","Ett plåttak som börjat tappa färg eller fått ytrost kan ofta målas om i stället för att bytas – förutsatt att grundkonstruktionen är hel. Rätt utfört förlänger målningen takets liv med många år."),
    ("h2","När lönar det sig att måla plåttaket?"),
    ("ul",["Ytan är matt, flagnad eller har begynnande rost.","Konstruktionen och infästningarna är hela.",
           "Inga större genomrostningar eller läckage.","Du vill fräscha upp utan ett fullt takbyte."]),
+   ("h2","När är det bättre att byta plåttaket?"),
+   ("ul",["Rosten har gått igenom plåten och det finns hål eller läckage.",
+          "Falsar och skarvar har släppt på flera ställen.",
+          "Underlaget under plåten är fuktskadat eller mjukt.",
+          "Taket har redan målats om flera gånger och färgen släpper igen."]),
+   ("p",f"Då ger ett {a('plattak.html','nytt plåttak')} mer för pengarna än en ommålning. Är du osäker gör vi en {a('takbesiktning.html','takbesiktning')} och ger besked om vilket som gäller ditt tak."),
    ("h2","Så går det till"),
    ("ol",["Tvätt och borttagning av löst material och mossa.","Skrapning och rostskydd där det behövs.",
           "Grundfärg anpassad för plåt.","Täckmålning i två skikt."]),
@@ -2536,7 +2588,7 @@ article("attefallshus-regler.html",
 
 article("vad-kostar-bygga-hus.html",
   "Vad kostar det att bygga hus? Prisguide 2026 | Geal Entreprenad AB",
-  "Vad kostar det att bygga hus eller ett nyckelfärdigt hus? Vi går igenom vad som driver priset och hur du får ett tillförlitligt kostnadsförslag i Stockholm.",
+  "Vad kostar det att bygga hus eller ett nyckelfärdigt hus? Vi går igenom vad som driver priset och hur du får ett tillförlitligt kostnadsförslag.",
   "Vad kostar det att bygga hus?",
   "Priset för att bygga hus varierar kraftigt med tomt, storlek och standard. Här är kostnadsdrivarna och hur du får en trygg kalkyl.",
   [("p","Att bygga hus är ett av livets större projekt, och priset beror på många faktorer. Färdiga schablonsiffror blir ofta missvisande eftersom tomt, grundläggning och val av standard påverkar mycket."),
@@ -2606,7 +2658,7 @@ _kalkyl_tool = """      <section class="section seo-section">
 
 page(file="kalkylator-takbyte.html",
   title="Takbyte-kalkylator – uppskatta priset direkt | Geal Entreprenad AB",
-  description="Räkna ut ett ungefärligt pris för takbyte på villa: ange area, material och taklutning så får du ett prisspann före och efter ROT. Grov uppskattning, inte en offert.",
+  description="Räkna ut ett ungefärligt pris för takbyte på villa: ange area, material och taklutning och få ett prisspann före och efter ROT. Ingen offert.",
   h1="Takbyte-kalkylator – uppskatta priset",
   crumbs=[("Hem","/"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")],
   cta=("Vill du ha ett exakt pris?","En kalkylator ger ett spann – vi ger ett fast pris efter kostnadsfritt platsbesök. Begär offert."),
