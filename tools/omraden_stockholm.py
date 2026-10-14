@@ -5,7 +5,7 @@ och följer exakt samma mönster som LOC/LOC_EXTRA där (intro, paras, items, fa
 secs/faq i EXTRA). Extra nyckel "why" = egen text i "Varför välja oss"-sektionen
 (den gamla mallen säger "precis intill Sundbyberg … snabbt", som inte stämmer för
 t.ex. Haninge). Regler: unik lokal text per ort, inga priser, inga påhittade
-siffror, inget kontor i området (bas = Bromma/Mariehäll). Bygglov: Stockholms
+siffror, inget kontor i området (bas = Byggmästarvägen 18, Abrahamsberg, Bromma). Bygglov: Stockholms
 stad för stadsdelar, respektive kommun för övriga.
 """
 
@@ -59,7 +59,7 @@ LOC_NEW = {
      "Många egnahem har byggts till eller fått inredd vind genom åren. Då behöver taket bedömas som en helhet, inte bara den ursprungliga delen – det är ofta i skarven mellan gammalt och nytt som problemen börjar.",
    ],
    "items": ["Egnahem från 1920–50-talet i villastaden.", "Om- och tillbyggda tak bedöms som helhet.", "Tegel, betongpannor och radhustak med papp."],
-   "why": "Hässelby ligger i västerort, samma del av Stockholm som vår bas i Mariehäll i Bromma. Det gör det enkelt att boka besiktning och följa projektet på plats.",
+   "why": "Hässelby ligger i västerort, samma del av Stockholm som vår bas i Bromma. Det gör det enkelt att boka besiktning och följa projektet på plats.",
    "faq": [
      ("Har ni erfarenhet av egnahemmen i Hässelby villastad?", "Ja. Små hus med branta tak, murade skorstenar och tillbyggda kupor är vanliga här. Vi lägger om eller byter taket och anpassar detaljerna efter husets ursprungliga stil."),
      ("Vilka delar av Hässelby arbetar ni i?", "Hela Hässelby – villastaden, Hässelby gård och Hässelby strand."),
@@ -73,7 +73,7 @@ LOC_NEW = {
      "Många radhus förvaltas av samfälligheter eller bostadsrättsföreningar, där taket är en gemensam fråga. Vi lämnar underlag som styrelsen kan fatta beslut på och planerar arbetet länga för länga.",
    ],
    "items": ["Radhus och kedjehus från 1950–70-talet.", "Underlag för samfälligheter och BRF.", "Betongpannor, papp och plåt på låga lutningar."],
-   "why": "Vällingby ligger bara några kilometer från vår bas i Mariehäll, Bromma. Vi kan därför komma ut på besiktning med kort varsel och följa arbetet på plats.",
+   "why": "Vällingby ligger bara några kilometer från vår bas i Bromma. Vi kan därför komma ut på besiktning med kort varsel och följa arbetet på plats.",
    "faq": [
      ("Kan ni lämna offert till vår samfällighet i Vällingby?", "Ja. Vi besiktar längorna, beskriver åtgärderna och lämnar ett kostnadsförslag som styrelsen kan ta ställning till."),
      ("Vilka delar av Vällingby arbetar ni i?", "Hela Vällingby med bland annat Råcksta, Grimsta, Kälvesta, Nälsta och Vinsta."),
@@ -87,7 +87,7 @@ LOC_NEW = {
      "Nära Kista ligger Helenelund i Sollentuna och villaområdena i Spånga, som vi också arbetar i. Har ni flera byggnader i en förening tar vi gärna ett samlat grepp om alla tak.",
    ],
    "items": ["Radhus och föreningar från 1970-talet.", "Låglutande tak med papp och plåt.", "Besiktning och underlag för styrelser."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Kista via Spånga på kort tid. Det gör det enkelt att komma ut på besiktning och följa projektet.",
+   "why": "Vi utgår från Bromma och når Kista via Spånga på kort tid. Det gör det enkelt att komma ut på besiktning och följa projektet.",
    "faq": [
      ("Tar ni takuppdrag åt bostadsrättsföreningar i Kista?", "Ja, vi besiktar och lämnar kostnadsförslag på takbyte, omläggning och plåtarbeten för föreningar och samfälligheter."),
      ("Vilka delar arbetar ni i?", "Kista, Husby och Akalla, och vidare mot Helenelund och Spånga."),
@@ -101,7 +101,7 @@ LOC_NEW = {
      "Till Adelsö går bilfärjan, och flera öar nås via smala vägar. Vi planerar materialleveranser och etablering i förväg så att vi kan arbeta effektivt även längre ut.",
    ],
    "items": ["Villor, gårdar och permanentade fritidshus.", "Vindutsatta lägen vid Mälaren.", "Granne till Bromma via Nockebybron."],
-   "why": "Ekerö är vår närmaste granne västerut – från Mariehäll i Bromma når vi Ekerö via Nockebybron. Det ger korta restider för besiktning och uppföljning.",
+   "why": "Ekerö är vår närmaste granne västerut – från Bromma når vi Ekerö via Nockebybron. Det ger korta restider för besiktning och uppföljning.",
    "faq": [
      ("Arbetar ni även på Färingsö, Munsö och Adelsö?", "Ja, vi tar uppdrag i hela Ekerö kommun. För öar med färja planerar vi transporter och leveranser i förväg."),
      ("Vårt fritidshus har blivit permanentbostad – räcker det gamla taket?", "Fritidshus byggdes ofta med enklare tak och tunnare underlag. Vid permanentning är det klokt att besikta taket, särskilt ventilation, underlag och isolering på vinden."),
@@ -115,7 +115,7 @@ LOC_NEW = {
      "Epokerna gör att åtgärderna skiljer sig mycket inom samma stadsdel – från varsam omläggning av ett hundraårigt tegeltak till nytt tätskikt på ett 60-talsradhus. Vi börjar alltid med en besiktning.",
    ],
    "items": ["Villor i Mälarhöjden med branta tegeltak.", "Radhus i Hägerstensåsen, Västertorp och Fruängen.", "Varsam omläggning eller komplett takbyte."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Hägersten via Essingeleden. Vi kommer ut på besiktning och håller tät kontakt under projektet.",
+   "why": "Vi utgår från Bromma och når Hägersten via Essingeleden. Vi kommer ut på besiktning och håller tät kontakt under projektet.",
    "faq": [
      ("Kan ni lägga om ett gammalt tegeltak i Mälarhöjden?", "Ja. Är teglet i gott skick kan vi återanvända det och byta läkt och underlag – det bevarar husets karaktär."),
      ("Vilka delar av Hägersten arbetar ni i?", "Bland annat Mälarhöjden, Hägerstensåsen, Västertorp, Fruängen och Hägersten."),
@@ -129,7 +129,7 @@ LOC_NEW = {
      "De stora trädgårdarna i Långbro och Herrängen ger skugga och löv, och många hus har byggts ut med kupor och vindsinredning. Vi bedömer hela taket – även de delar som tillkommit senare.",
    ],
    "items": ["Villor från 1910–50-talet i Långbro och Herrängen.", "Omläggning med återanvänt originaltegel.", "Kupor, verandor och utbyggda vindar."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Älvsjö via E4:an söderut. Vi bokar in besiktning och följer projektet på plats.",
+   "why": "Vi utgår från Bromma och når Älvsjö via E4:an söderut. Vi bokar in besiktning och följer projektet på plats.",
    "faq": [
      ("Arbetar ni i Långbro och Herrängen?", "Ja, och i hela Älvsjö – även Solberga, Liseberg och Örby."),
      ("Mitt hus har kvar originalteglet – går det att återanvända?", "Ofta ja. Hela pannor kan läggas tillbaka på nytt underlag och ny läkt, och trasiga ersätts med likvärdiga."),
@@ -143,7 +143,7 @@ LOC_NEW = {
      "Trädgårdsstadens karaktär bygger på enhetlighet: liknande takmaterial, kulörer och detaljer hus efter hus. Vid ett takbyte här är målet att taket ser ut som förut men blir tätt för lång tid.",
    ],
    "items": ["Trädgårdsstaden Gamla Enskede.", "Parhus, radhus och 1930–40-talsvillor.", "Takbyte som bevarar områdets uttryck."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Enskede via Essingeleden och Södra länken. Vi kommer ut på besiktning och följer arbetet på plats.",
+   "why": "Vi utgår från Bromma och når Enskede via Essingeleden och Södra länken. Vi kommer ut på besiktning och följer arbetet på plats.",
    "faq": [
      ("Kan ni byta tak på ett parhus där bara vår halva ska göras?", "Ja. Vi gör en tät anslutning mot grannhalvan och väljer pannor som matchar. Det kan ändå vara klokt att prata med grannen om att göra båda samtidigt."),
      ("Vilka delar av Enskede arbetar ni i?", "Gamla Enskede, Enskededalen, Enskede gård, Stureby, Svedmyra och närliggande områden."),
@@ -157,7 +157,7 @@ LOC_NEW = {
      "Takbehoven skiljer sig därför från kvarter till kvarter. Vi besiktar först och föreslår omläggning, renovering eller byte efter takets faktiska skick.",
    ],
    "items": ["Egnahem i Sköndal och Tallkrogen.", "Radhus och kedjehus i Fagersjö och Larsboda.", "Samfälligheter och enskilda villor."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag i hela söderort, däribland Farsta. Vi bokar in besiktning och följer projektet tills taket är klart.",
+   "why": "Vi utgår från Bromma och tar uppdrag i hela söderort, däribland Farsta. Vi bokar in besiktning och följer projektet tills taket är klart.",
    "faq": [
      ("Byter ni tak på radhus i Fagersjö och Larsboda?", "Ja, enskilda radhus och hela längor. Vi lämnar underlag till samfälligheten om det behövs."),
      ("Vilka delar av Farsta arbetar ni i?", "Hela stadsdelsområdet, bland annat Sköndal, Fagersjö, Larsboda, Farsta strand, Tallkrogen, Gubbängen och Hökarängen."),
@@ -171,7 +171,7 @@ LOC_NEW = {
      "Taken från den här epoken har nått en ålder där underlaget ofta är slut, även om ytmaterialet ser helt ut. Vi besiktar, dokumenterar och föreslår åtgärder i en ordning som föreningen kan planera ekonomin efter.",
    ],
    "items": ["Radhus och kedjehus från 1960–70-talet.", "Trappade längor och suterränghus.", "Besiktningsrapport för förening och samfällighet."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Skärholmen via Essingeleden och E4/E20. Vi håller kontakt med styrelse eller husägare under hela projektet.",
+   "why": "Vi utgår från Bromma och når Skärholmen via Essingeleden och E4/E20. Vi håller kontakt med styrelse eller husägare under hela projektet.",
    "faq": [
      ("Kan ni hjälpa vår förening i Sätra med en takplan?", "Ja. Vi besiktar taken, prioriterar åtgärderna och lämnar kostnadsförslag som går att dela upp i etapper."),
      ("Vilka delar arbetar ni i?", "Skärholmen, Sätra, Bredäng och Vårberg, och vidare mot Hägersten och Huddinge."),
@@ -185,7 +185,7 @@ LOC_NEW = {
      "Huddinge är kuperat med mycket skog och flera sjöar, bland annat Trehörningen och Orlången. Skogsnära tak får mer barr och påväxt, och sluttande tomter påverkar hur ställning kan placeras.",
    ],
    "items": ["Sekelskiftesvillor i Stuvsta och Snättringe.", "Egnahem i Segeltorp.", "60–70-talshus i Trångsund och Skogås."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag söderut i hela Huddinge kommun. Vi bokar besiktning och följer projektet på plats.",
+   "why": "Vi utgår från Bromma och tar uppdrag söderut i hela Huddinge kommun. Vi bokar besiktning och följer projektet på plats.",
    "faq": [
      ("Vilka delar av Huddinge arbetar ni i?", "Hela kommunen, bland annat Stuvsta, Snättringe, Segeltorp, Fullersta, Trångsund, Skogås och Vårby."),
      ("Kan ni lägga falsat plåttak på en gammal villa i Stuvsta?", "Ja, falsad plåt passar väl på äldre villor och kan utformas så att husets stil bevaras."),
@@ -199,7 +199,7 @@ LOC_NEW = {
      "De permanentade fritidshusen har ofta tak som byggts på i etapper. Vi bedömer hela taket och föreslår en lösning som håller för helårsboende.",
    ],
    "items": ["Permanentade fritidshus i Brevik och Öringe.", "Radhus och villor i Krusboda och Trollbäcken.", "Skogs- och vattennära lägen."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag i hela Storstockholm, även Tyresö. Vi samlar platsbesök och leveranser så att projektet flyter.",
+   "why": "Vi utgår från Bromma och tar uppdrag i hela Storstockholm, även Tyresö. Vi samlar platsbesök och leveranser så att projektet flyter.",
    "faq": [
      ("Vårt hus var ett fritidshus från början – håller taket?", "Det beror på hur det byggts om. Tak på gamla fritidshus saknar ofta ordentligt underlag och ventilation. En besiktning visar vad som behövs."),
      ("Vilka delar av Tyresö arbetar ni i?", "Hela kommunen, bland annat Trollbäcken, Bollmora, Krusboda, Tyresö strand, Brevik, Öringe och Raksta."),
@@ -213,7 +213,7 @@ LOC_NEW = {
      "Fritidshus på öar som Ornö och Utö kräver båt- eller färjetransport av material, vilket vi i så fall planerar särskilt.",
    ],
    "items": ["Villor och radhus i Vendelsö och Brandbergen.", "Sekelskiftesvillor på Dalarö.", "Salt och vind vid kusten."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag i hela Storstockholm, även Haninge. Vi planerar resor och etablering så att arbetet går effektivt trots avståndet.",
+   "why": "Vi utgår från Bromma och tar uppdrag i hela Storstockholm, även Haninge. Vi planerar resor och etablering så att arbetet går effektivt trots avståndet.",
    "faq": [
      ("Vilka delar av Haninge arbetar ni i?", "Bland annat Handen, Vendelsö, Brandbergen, Jordbro, Västerhaninge, Tungelsta och Dalarö."),
      ("Kan ni bevara detaljerna på en gammal villa på Dalarö?", "Ja, vi väljer material och plåtdetaljer som stämmer med husets stil och utför arbetet varsamt."),
@@ -227,7 +227,7 @@ LOC_NEW = {
      "Många fastigheter nås via smala, ibland privata vägar, och vissa öar bara med båt. Vi planerar därför transporter och leveranser i förväg och samlar arbetsmomenten så att taket blir tätt snabbt.",
    ],
    "items": ["Permanentade fritidshus på Ingarö och i Hemmesta.", "Korrosionsbeständig plåt för skärgårdsklimat.", "Takrenovering och takläggning i utsatta lägen."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag på Värmdö med planerade resor över Skurubron. Besiktning och leveranser samlas så att projektet går smidigt.",
+   "why": "Vi utgår från Bromma och tar uppdrag på Värmdö med planerade resor över Skurubron. Besiktning och leveranser samlas så att projektet går smidigt.",
    "faq": [
      ("Vilka delar av Värmdö arbetar ni i?", "Bland annat Gustavsberg, Hemmesta, Brunn, Ingarö, Djurö och Stavsnäs. Öar utan fast förbindelse bedömer vi från fall till fall."),
      ("Vilken plåt håller i skärgården?", "Plåt med kraftig ytbeläggning och korrosionsskyddade eller rostfria fästelement. Vi väljer efter hur utsatt huset ligger."),
@@ -241,7 +241,7 @@ LOC_NEW = {
      "I Fresta och Smedby finns äldre gårdsbebyggelse och villor, och längs Edssjön och Fysingen ligger hus i mer öppna, vindutsatta lägen.",
    ],
    "items": ["Villor och radhus från 1960–80-talet.", "Betongpannor, plåt och nya hängrännor.", "Samordnade byten i radhusområden."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Upplands Väsby via E4 norrut. Vi kommer ut på besiktning och följer projektet tills taket är klart.",
+   "why": "Vi utgår från Bromma och når Upplands Väsby via E4 norrut. Vi kommer ut på besiktning och följer projektet tills taket är klart.",
    "faq": [
      ("Vilka delar av Upplands Väsby arbetar ni i?", "Hela kommunen, bland annat Bollstanäs, Vilunda, Runby, Fresta och Smedby."),
      ("Vårt radhusområde har lika gamla tak – kan vi byta samtidigt?", "Ja. Samordnade byten ger ett enhetligt resultat och enklare etablering. Vi lämnar underlag till samfälligheten."),
@@ -255,7 +255,7 @@ LOC_NEW = {
      "Vallentunasjön och de många skogsdungarna ger fukt och påväxt på en del tak. Vi anpassar åtgärderna efter husets ålder, material och läge.",
    ],
    "items": ["Villor och radhus från 1970–80-talet.", "Gårdar och äldre hus på landsbygden.", "Tegel, plåt och betongpannor."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag i hela Vallentuna kommun, även på landsbygden. Vi samlar platsbesök och planerar etableringen i förväg.",
+   "why": "Vi utgår från Bromma och tar uppdrag i hela Vallentuna kommun, även på landsbygden. Vi samlar platsbesök och planerar etableringen i förväg.",
    "faq": [
      ("Tar ni uppdrag på landsbygden i Vallentuna?", "Ja, både i tätorten och på gårdar i till exempel Lindholmen, Kårsta och Brottby."),
      ("Lägger ni plåttak på ekonomibyggnader?", "Ja, plåttak på lador, garage och förråd hör till de uppdrag vi tar."),
@@ -269,7 +269,7 @@ LOC_NEW = {
      "Närheten till Trälhavet och Roslagens skärgård ger salt luft och vind, särskilt på uddar och öar. Det påverkar val av plåt, infästning och underhåll.",
    ],
    "items": ["Sekelskiftesvillor i Österskär och Täljö.", "Permanentade fritidshus i Svinninge och på Ljusterö.", "Kustanpassad plåt och infästning."],
-   "why": "Vi utgår från Bromma (Mariehäll) och tar uppdrag i hela Österåker, från Åkersberga till öarna. Resor och leveranser planeras så att arbetet kan göras i ett sammanhang.",
+   "why": "Vi utgår från Bromma och tar uppdrag i hela Österåker, från Åkersberga till öarna. Resor och leveranser planeras så att arbetet kan göras i ett sammanhang.",
    "faq": [
      ("Vilka delar av Österåker arbetar ni i?", "Åkersberga, Österskär, Täljö, Svinninge, Margretelund och Ljusterö med flera."),
      ("Kan ni renovera taket på en gammal sommarvilla i Österskär?", "Ja, vi bevarar husets uttryck – plåtdetaljer, verandatak och takform – och moderniserar underlag och tätskikt."),
@@ -283,7 +283,7 @@ LOC_NEW = {
      "Variationen gör att takarbetet i Botkyrka spänner från varsam omläggning av äldre villatak i Tullinge till byte av hela radhuslängor i Tumba.",
    ],
    "items": ["Villor i Tullinge och Tumba.", "Radhus och samfälligheter.", "Gårdar och fritidshus i Grödinge."],
-   "why": "Vi utgår från Bromma (Mariehäll) och når Botkyrka via E4/E20 söderut. Vi bokar besiktning och följer projektet tills taket är klart.",
+   "why": "Vi utgår från Bromma och når Botkyrka via E4/E20 söderut. Vi bokar besiktning och följer projektet tills taket är klart.",
    "faq": [
      ("Vilka delar av Botkyrka arbetar ni i?", "Hela kommunen, bland annat Tullinge, Tumba, Grödinge, Vårsta, Norsborg, Hallunda och Alby."),
      ("Byter ni tak på hela radhuslängor i Tumba?", "Ja, vi lämnar underlag till samfälligheten och planerar arbetet länga för länga."),

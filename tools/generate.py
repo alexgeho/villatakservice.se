@@ -925,7 +925,7 @@ page(file="omraden.html",
   crumbs=[("Hem","/"),("Områden","omraden.html")],
   cta=("Finns ditt område inte med?","Skicka en förfrågan – vi tar uppdrag i hela Storstockholm."),
   body=hero("Områden vi arbetar i",
-    "Vi utgår från Bromma (Mariehäll) och arbetar i alla stadsdelar i Stockholm och i kranskommunerna runt omkring.",
+    "Vi utgår från Bromma och arbetar i alla stadsdelar i Stockholm och i kranskommunerna runt omkring.",
     [("Hem","/"),("Områden","omraden.html")])
     + _area_section("Stadsdelar i Stockholm", _stad, True)
     + _area_section("Kommuner runt Stockholm", _kommuner, False)
@@ -945,15 +945,15 @@ SRCA = '<a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/
 # priser/kundcase kan tillföras senare för ännu starkare E-E-A-T.
 LOC = {
  "Sundbyberg": {
-   "intro": "Sundbyberg är ett av våra närmaste arbetsområden – vi finns precis intill i Bromma (Mariehäll). Här känner vi husen, taken och de lokala förutsättningarna, från äldre villor i Duvbo och Storskogen till nyare bebyggelse. Vi är takläggare i Sundbyberg för takbyte, takrenovering och takbesiktning.",
+   "intro": "Sundbyberg är ett av våra närmaste arbetsområden – vi finns precis intill i Bromma. Här känner vi husen, taken och de lokala förutsättningarna, från äldre villor i Duvbo och Storskogen till nyare bebyggelse. Vi är takläggare i Sundbyberg för takbyte, takrenovering och takbesiktning.",
    "paras": [
      "Sundbyberg är en av Sveriges till ytan minsta men tätaste kommuner, och bebyggelsen växlar snabbt mellan äldre trävillor och nyare flerbostadshus. I villaområden som Duvbo, Storskogen och Lilla Alby dominerar branta sadeltak med tegel- eller betongpannor, ofta från tidigt 1900-tal, där underlagspapp och läkt hunnit bli spröda.",
      "Duvbos kulturhistoriska trähusmiljö ställer särskilda krav – här är det viktigt att bevara takets uttryck och detaljer vid ett takbyte, samtidigt som vi moderniserar underlag, plåt och avvattning. Närmare centrum och Rissne finns fler flerbostadshus med plåt- och papptak, där vi arbetar med tätskikt och plåtdetaljer.",
-     "Eftersom vår bas ligger i Mariehäll i Bromma, bara minuter från Sundbyberg, har vi kort inställelsetid för besiktning och kan snabbt vara på plats vid akuta läckage. Vi känner de lokala förutsättningarna – från smala gator i Duvbo som påverkar ställning och etablering till snölaster på norrvända tak.",
+     "Eftersom vår bas ligger i Bromma, bara minuter från Sundbyberg, har vi kort inställelsetid för besiktning och kan snabbt vara på plats vid akuta läckage. Vi känner de lokala förutsättningarna – från smala gator i Duvbo som påverkar ställning och etablering till snölaster på norrvända tak.",
    ],
    "items": ["Grannområde till vår bas i Bromma – kort inställelsetid.","Erfarenhet av Duvbos äldre trävillor och kulturmiljö.","Takbyte, renovering, besiktning och plåtarbeten."],
    "faq": [
-     ("Hur snabbt kan ni vara på plats i Sundbyberg?","Eftersom vi utgår från Mariehäll i Bromma, granne med Sundbyberg, har vi mycket kort inställelsetid och kan oftast boka en besiktning inom några dagar – och rycka ut snabbare vid akuta läckage."),
+     ("Hur snabbt kan ni vara på plats i Sundbyberg?","Eftersom vi utgår från Bromma, granne med Sundbyberg, har vi mycket kort inställelsetid och kan oftast boka en besiktning inom några dagar – och rycka ut snabbare vid akuta läckage."),
      ("Får jag byta tak i Duvbo utan tillstånd?","Duvbo är en kulturhistoriskt värdefull trähusmiljö. Fasadändringar på villor är sedan 1 december 2025 i regel lovfria, men för särskilt värdefulla byggnader och områden krävs fortfarande bygglov. Stäm av med Sundbybergs stad innan du byter material eller kulör."),
      ("Arbetar ni med både villor och flerbostadshus i Sundbyberg?","Ja. Vi byter och renoverar villatak i Duvbo och Storskogen och utför plåt- och tätskiktsarbeten på flerbostadshus närmare centrum och Rissne."),
    ]},
@@ -968,12 +968,12 @@ LOC = {
    "faq": [
      ("Vilka delar av Solna arbetar ni i?","Vi tar takuppdrag i hela Solna, bland annat Bergshamra, Huvudsta, Råsunda, Skytteholm och Järva – både villor och mindre fastigheter."),
      ("Räcker det med takomläggning på mitt Solna-hus?","På många äldre tegeltak i Råsunda och Huvudsta är pannorna hela medan underlaget är slitet – då kan en omläggning räcka. En besiktning ger säkert svar."),
-     ("Hur nära ligger ni Solna?","Vi utgår från Mariehäll i Bromma, som gränsar till Solna, vilket ger korta restider och snabb service."),
+     ("Hur nära ligger ni Solna?","Vi utgår från Bromma, som gränsar till Solna, vilket ger korta restider och snabb service."),
    ]},
  "Bromma": {
-   "intro": "Bromma i västerort är vårt hemmaområde – vi utgår härifrån (Mariehäll) och känner västerorts villor väl. Vi är takläggare i Bromma för villor i bland annat Ängby, Nockeby, Äppelviken och Bromma Kyrka.",
+   "intro": "Bromma i västerort är vårt hemmaområde – vi utgår härifrån (Abrahamsberg) och känner västerorts villor väl. Vi är takläggare i Bromma för villor i bland annat Ängby, Nockeby, Äppelviken och Bromma Kyrka.",
    "paras": [
-     "Bromma i västra Stockholm är vårt hemmaområde – vi utgår från Mariehäll och känner västerorts villor in i minsta detalj. I klassiska trädgårdsstäder som Ängby, Äppelviken, Nockeby och Smedslätten är många hus från 1920–40-talet, ofta med branta tegeltak och karaktärsfulla takdetaljer som vi är vana att bevara.",
+     "Bromma i västra Stockholm är vårt hemmaområde – vi utgår från Abrahamsberg och känner västerorts villor in i minsta detalj. I klassiska trädgårdsstäder som Ängby, Äppelviken, Nockeby och Smedslätten är många hus från 1920–40-talet, ofta med branta tegeltak och karaktärsfulla takdetaljer som vi är vana att bevara.",
      "Äppelviken och Ålsten har en enhetlig villakaraktär där husens uttryck värnas; vid takbyte här är det avgörande att välja pannor och plåtkulörer som passar områdets stil. I nyare delar och radhusområden förekommer också låglutande tak och plåtlösningar.",
      "Som lokal takfirma med bas mitt i Bromma har vi mycket korta avstånd till jobben, vilket gör etablering, ställning och uppföljning enkla. Vi känner de lokala förutsättningarna – från stora lövträd som fyller hängrännor till snölaster på norrsidor.",
    ],
@@ -1113,7 +1113,7 @@ LOC_EXTRA = {
        "De stora, gamla trädgårdarna är Brommas charm men också en utmaning för taken: löv och barr sätter igen hängrännor, och skuggiga takfall får mossa som håller kvar fukt. Vi ser ofta att läckage börjar vid ränndalar och skorstenar där löv har samlats."]),
      ("Planera takprojektet i Bromma", [
        "Sedan 1 december 2025 är byte av takmaterial och kulör på villor i regel lovfritt. Flera områden i Bromma har dock detaljplaner med skyddsbestämmelser, och där krävs fortfarande bygglov – liksom när takformen ändras. Stäm av med stadsbyggnadskontoret i Stockholm – vi hjälper dig med underlag och materialval som passar området.",
-       "Eftersom vi utgår från Mariehäll i Bromma kan vi göra besiktning med kort varsel och följa projektet på plats varje dag. Det gör det enkelt att stämma av detaljer under arbetets gång."]),
+       "Eftersom vi utgår från Abrahamsberg i Bromma kan vi göra besiktning med kort varsel och följa projektet på plats varje dag. Det gör det enkelt att stämma av detaljer under arbetets gång."]),
    ],
    "faq": [
      ("Lägger ni plåttak på funkisvillor i Bromma?","Ja, falsad plåt och papptak på låglutande funkistak hör till våra vanliga uppdrag. Rätt tätskikt och avvattning är avgörande på låga taklutningar."),
@@ -1301,7 +1301,7 @@ for _ort, _d in LOC.items():
             ("taktvatt.html", f"Taktvätt i {_ort}", "Skonsam tvätt och mossbehandling."),
             ("plattak.html", f"Plåttak i {_ort}", "Nytt plåttak och plåtarbeten.")], muted=False, sid="tjanster")
         + sec_split(f"Varför välja oss i {_ort}?", [
-            _d.get("why") or f"Vi utgår från Bromma (Mariehäll), precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
+            _d.get("why") or f"Vi utgår från Bromma, precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
             f"Läs mer om {a('villatak.html','tak på villa')} eller jämför {a('takbyte-eller-takrenovering.html','takbyte och takrenovering')} innan du bestämmer dig."],
             f"Takläggare i {_ort}", items)
         + links_block("Närliggande områden", [
@@ -2152,7 +2152,7 @@ page(file="faq.html",
     ("Behöver jag byta hela taket eller räcker en renovering?","Det beror på skicket. Om grundkonstruktionen är sund kan en takrenovering räcka. En takbesiktning ger svar innan du beslutar."),
     ("Lämnar ni garanti på arbetet?","Ja, garanti och villkor framgår alltid i offert och avtal så att du vet vad som gäller för just ditt projekt."),
     ("Är offert och platsbesök kostnadsfritt?","Ja, vi erbjuder gratis platsbesök och kostnadsförslag. Du binder dig inte till något genom att begära offert."),
-    ("Vilka områden arbetar ni i?","Vi utgår från Bromma (Mariehäll) och arbetar i alla stadsdelar i Stockholm och i kranskommunerna – från Sundbyberg, Solna och Hässelby till Huddinge, Värmdö och Österåker."),
+    ("Vilka områden arbetar ni i?","Vi utgår från Bromma och arbetar i alla stadsdelar i Stockholm och i kranskommunerna – från Sundbyberg, Solna och Hässelby till Huddinge, Värmdö och Österåker."),
     ("Behövs bygglov för takbyte?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial eller kulör på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden."),
     ("Har ni försäkring och F-skatt?","Ja, vi är ett registrerat aktiebolag med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06."),
     ("Kan ni ta hand om hela renoveringen?","Ja, vi utför även total entreprenad och kan samordna taket med fasad, fönster och annan renovering av villan.")])
@@ -2710,7 +2710,7 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
 # ====================== SÖK (klientbaserad) ============================
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
-  "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och byggfirma i Bromma (Mariehäll). Takbyte, takrenovering, plåttak och totalentreprenad på villa i Stockholm. Gratis besök och kostnadsförslag."),
+  "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och byggfirma i Bromma. Takbyte, takrenovering, plåttak och totalentreprenad på villa i Stockholm. Gratis besök och kostnadsförslag."),
   "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
