@@ -18,6 +18,9 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^takrenovering-stockholm\.html$ /takrenovering.html [R=301,L]
 RewriteRule ^takreparation-stockholm\.html$ /takrenovering.html [R=301,L]
 RewriteRule ^bygg-renovering\.html$ /villarenovering.html [R=301,L]
+# artikel.html (?id=…) finns kvar på servern från första versionen (gammalt namn "Geal Tak AB",
+# ingen canonical) och syns i GSC -> 301 till FAQ, query-strängen tas bort.
+RewriteRule ^artikel\.html$ /faq.html? [R=301,L]
 
 # README.md ligger kvar på servern från tidiga deployer (FTP raderar inte).
 <Files "README.md">
