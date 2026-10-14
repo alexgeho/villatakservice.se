@@ -21,8 +21,8 @@ EMAIL   = "info@villatakservice.se"
 STREET  = "Byggmästarvägen 18"
 ZIP     = "168 32"
 CITY    = "Bromma"
-GEO_LAT = "59.3566"
-GEO_LON = "17.9540"
+GEO_LAT = "59.3328"
+GEO_LON = "17.9514"
 IMG     = DOMAIN + "/assets/images/1.webp"
 TODAY   = "2026-09-06"                          # stabilt datePublished för artiklar
 BUILD_DATE = datetime.date.today().isoformat()  # dynamisk sitemap-lastmod (freshness)
@@ -1242,32 +1242,30 @@ ORT_SEO = {
    "title": "Takläggare i Danderyd & Djursholm – takbyte, takrenovering",
    "desc": "Takbyte, takrenovering och takreparation i Danderyd, Djursholm och Stocksund. Gratis besök, fast pris och ROT-avdrag direkt på fakturan.",
    "svc": ("Takbyte och takrenovering i Danderyd", [
-     f"De flesta som hör av sig från Danderyd står inför samma val: räcker det att renovera taket, eller är det dags att byta? På äldre villor i Djursholm och Stocksund är teglet eller den falsade plåten ofta i gott skick medan underlagspappen är uttjänt. Då kan en {a('takrenovering.html','takrenovering eller takomläggning')} räcka – pannorna tas ner, nytt underlag läggs och samma pannor läggs tillbaka.",
-     f"Är både pannor och underlag slut blir ett {a('takbyte.html','takbyte på villan')} mer lönsamt i längden. På stora tak med torn och kupor gör vi bytet i etapper så att huset är tätt varje kväll. Läcker det redan? Läs vad du gör vid {a('taklackage.html','takläckage')} – vi gör även enstaka takreparationer kring skorsten, ränndalar och kupor."]),
+     f"De flesta som hör av sig från Danderyd står inför samma val: räcker det att renovera taket, eller är det dags att byta? På äldre villor i Djursholm och Stocksund är teglet ofta i gott skick medan underlagspappen är uttjänt. Då kan en {a('takrenovering.html','takrenovering eller takomläggning')} räcka – pannorna tas ner, nytt underlag läggs och samma pannor läggs tillbaka.",
+     f"Är både pannor och underlag slut blir ett {a('takbyte.html','takbyte på villan')} mer lönsamt i längden. Läcker det redan? Läs vad du gör vid {a('taklackage.html','takläckage')}."]),
    "faq": [("Gör ni takreparationer och lagar läckage i Danderyd?","Ja. Vi lagar läckage kring skorstenar, kupor och ränndalar och byter enstaka pannor och plåtdetaljer. Vid besöket bedömer vi om en reparation räcker eller om taket behöver renoveras.")]},
  "Sundbyberg": {
    "title": "Takläggare i Sundbyberg – takbyte, takrenovering & plåt",
    "desc": "Takläggare i Sundbyberg: takbyte, takrenovering och plåtarbeten i Duvbo och Storskogen. Granne med vår bas i Bromma. Gratis besök och fast pris.",
    "svc": ("Takbyte, takrenovering och plåtarbeten i Sundbyberg", [
      f"I Duvbo och Storskogen handlar många uppdrag om {a('takrenovering.html','takrenovering')}: det gamla lertegelet sitter kvar, men underlagspapp och läkt byts. Är pannorna spruckna eller porösa gör vi i stället ett komplett {a('takbyte.html','takbyte')} med nytt underlag, nya pannor och nya plåtdetaljer.",
-     f"Plåtarbeten är en stor del av jobben i Sundbyberg – skorstensbeslag, vindskivor, fotplåt och plåten mellan radhus och parhus. Vi lägger även nya {a('plattak.html','plåttak')} på låglutande tak och byter {a('hangrannor-stupror.html','hängrännor och stuprör')} i samma etablering."]),
-   "faq": [("Utför ni plåtarbeten i Sundbyberg?","Ja, både nya plåttak och plåtdetaljer som skorstensbeslag, vindskivor, fotplåt och anslutningar mellan radhus.")]},
+     f"Plåtarbeten är en stor del av jobben i Sundbyberg – skorstensbeslag, vindskivor, fotplåt och anslutningar mellan radhus och parhus. Vi lägger även nya {a('plattak.html','plåttak')} på låglutande tak och byter {a('hangrannor-stupror.html','hängrännor och stuprör')} i samma omgång."])},
  "Spånga": {
    "title": "Takläggare i Spånga – takbyte, takrenovering & omläggning",
    "desc": "Takläggare i Spånga, Bromsten och Solhem: takbyte, takrenovering och takomläggning på villa. Gratis besök, fast pris och ROT-avdrag på fakturan.",
    "svc": ("Takrenovering och takomläggning i Spånga", [
-     f"På 50–70-talsvillorna i Sundby och Flysta är takomläggning vanligt: pannorna lyfts av, ny underlagspapp och ny läkt läggs och hela pannor läggs tillbaka. Det är en form av {a('takrenovering.html','takrenovering')} som ger ett tätt tak för lång tid framåt till lägre kostnad än ett nytt tak.",
-     f"Är betongpannorna porösa eller frostskadade räcker inte en omläggning – då gör vi ett {a('takbyte.html','takbyte')}. Osäker på vilket som gäller ditt hus? Läs {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')} eller boka en {a('takbesiktning.html','takbesiktning')}."]),
-   "faq": [("Vad är skillnaden mellan takomläggning och takbyte?","Vid en takomläggning återanvänds hela pannor medan underlagspapp och läkt byts. Vid ett takbyte byts även pannorna. Vilket som passar avgörs av pannornas skick.")]},
+     f"Är pannorna fortfarande hela räcker ofta en takomläggning: pannorna lyfts av, ny underlagspapp och ny läkt läggs och hela pannor läggs tillbaka. Det är en form av {a('takrenovering.html','takrenovering')} som ger ett tätt tak för lång tid framåt till lägre kostnad än ett nytt tak.",
+     f"Är betongpannorna porösa eller frostskadade räcker inte en omläggning – då gör vi ett {a('takbyte.html','takbyte')}. Osäker på vilket som gäller ditt hus? Läs {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')} eller boka en {a('takbesiktning.html','takbesiktning')}."])},
  "Solna": {
    "title": "Takläggare i Solna – takrenovering & takbyte på villa",
    "desc": "Takläggare i Solna: takrenovering, takomläggning och takbyte i Råsunda, Huvudsta och Bergshamra. Gratis besök, fast pris och ROT-avdrag.",
    "svc": ("Takrenovering i Solna", [
-     f"I Råsunda och Huvudsta är {a('takrenovering.html','takrenovering')} med nytt underlag ofta rätt nivå, eftersom tegelpannorna klarar sig längre än pappen under dem. I Bergshamra, med lägre taklutningar, handlar det oftare om plåt- och papptak där skarvar och genomföringar ses över.",
+     f"Vid en {a('takrenovering.html','takrenovering')} byter vi underlagspapp och läkt och lägger tillbaka samma pannor. Samtidigt ser vi över plåtdetaljer, vindskivor och genomföringar, så att hela taket håller lika länge.",
      f"Är pannorna slut gör vi ett {a('takbyte.html','takbyte')} med nya pannor, nytt underlag och nya plåtdetaljer. Vi börjar alltid med ett gratis besök och ger fast pris på den åtgärd taket faktiskt behöver."])},
  "Bromma": {
-   "title": "Takläggare i Bromma – Mariehäll, Nockeby, Ängby & Ålsten",
-   "desc": "Takbyte och takrenovering i Brommas villaområden: Mariehäll, Nockeby, Ängby, Äppelviken och Ålsten. Vår bas ligger i Mariehäll. Gratis besök.",
+   "title": "Takläggare i Bromma – takbyte i Mariehäll, Nockeby & Ängby",
+   "desc": "Takbyte och takrenovering i Brommas villaområden: Mariehäll, Nockeby, Ängby, Äppelviken och Ålsten. Vår bas ligger i Bromma. Gratis besök.",
  },
 }
 
