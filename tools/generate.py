@@ -971,6 +971,7 @@ LOC = {
      ("Hur nära ligger ni Solna?","Vi utgår från Bromma, som gränsar till Solna, vilket ger korta restider och snabb service."),
    ]},
  "Bromma": {
+   "why": "Med vår bas i Abrahamsberg har vi nära till villorna i Ängby, Nockeby, Äppelviken och Ålsten. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
    "intro": "Bromma i västerort är vårt hemmaområde – vi utgår härifrån (Abrahamsberg) och känner västerorts villor väl. Vi är takläggare i Bromma för villor i bland annat Ängby, Nockeby, Äppelviken och Bromma Kyrka.",
    "paras": [
      "Bromma i västra Stockholm är vårt hemmaområde – vi utgår från Abrahamsberg och känner västerorts villor in i minsta detalj. I klassiska trädgårdsstäder som Ängby, Äppelviken, Nockeby och Smedslätten är många hus från 1920–40-talet, ofta med branta tegeltak och karaktärsfulla takdetaljer som vi är vana att bevara.",
@@ -1301,7 +1302,7 @@ for _ort, _d in LOC.items():
             ("taktvatt.html", f"Taktvätt i {_ort}", "Skonsam tvätt och mossbehandling."),
             ("plattak.html", f"Plåttak i {_ort}", "Nytt plåttak och plåtarbeten.")], muted=False, sid="tjanster")
         + sec_split(f"Varför välja oss i {_ort}?", [
-            _d.get("why") or f"Vi utgår från Bromma, precis intill Sundbyberg, och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
+            _d.get("why") or f"Vi utgår från Bromma och når {_ort} snabbt. Det gör att vi kan komma ut på besiktning utan långa väntetider och hålla nära kontakt genom hela projektet.",
             f"Läs mer om {a('villatak.html','tak på villa')} eller jämför {a('takbyte-eller-takrenovering.html','takbyte och takrenovering')} innan du bestämmer dig."],
             f"Takläggare i {_ort}", items)
         + links_block("Närliggande områden", [
