@@ -1284,3 +1284,16 @@ textarea:focus-visible,
   font-size: 0.8rem;
   color: var(--color-muted);
 }
+
+/* ROT-räknare i artikeltext: luft före nästa stycke */
+.content-prose .calc-wrap {
+  margin: 8px 0 28px;
+}
+
+/* Startsidans ortslista (27 orter): två kolumner även på mobil */
+@media (max-width: 760px) {
+  .side-panel .area-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+}

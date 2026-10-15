@@ -1676,6 +1676,7 @@ def prose(blocks):
           </div>''')
     return "\n".join(out)
 
+PLANNJA_FAQ = '<a class="text-link" href="https://www.plannja.se/konsument/support/faq" rel="noopener">Plannja – vanliga frågor</a>'
 SKV_ROT = '<a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete.4.2e56d4ba1202f95012080002966.html" rel="noopener">Skatteverket – rot- och rutarbete</a>'
 
 # ROT-räknare: ren Skatteverket-matematik (30 %, max 50 000 kr/person/år 2026), inga priser.
@@ -1785,7 +1786,7 @@ article("vad-kostar-takrenovering.html",
           "Tillgänglighet för material, container och ställning på tomten."]),
    ("h2","Takomläggning eller takbyte – vad blir billigast?"),
    ("p",f"Vid en omläggning återanvänds pannorna, så materialkostnaden blir lägre än vid ett nytt tak. Men om många pannor är porösa eller frostskadade och ändå måste bytas, krymper skillnaden. Då kan ett {a('takbyte.html','takbyte')} bli bättre på sikt. Jämför i {a('vad-kostar-takbyte.html','vad ett takbyte kostar')} och {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."),
-   ("h2","Vad kostar en takbesiktning?"),
+   ("h2","Platsbesök och kostnadsförslag"),
    ("p",f"Inför en takrenovering gör vi alltid ett gratis platsbesök och lämnar kostnadsförslag. Vid besöket bedömer vi pannor, underlag och plåt och föreslår rätt nivå. Läs mer om {a('takbesiktning.html','takbesiktning')}."),
    ("h2","ROT-avdrag på takrenovering"),
    ("p",f"Takrenovering och takomläggning räknas som reparation och underhåll och ger ROT-avdrag på arbetskostnaden: 30 % under 2026, högst 50 000 kr per person och år. Material ger inget avdrag. Räkna på ditt fall i guiden om {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."),
@@ -1802,7 +1803,7 @@ article("vad-kostar-takrenovering.html",
   faq=[("Vad kostar en takomläggning?","Det beror på takets storlek, hur många pannor som måste bytas, underlagets skick och plåtdetaljerna. Vi ger fast pris efter ett gratis besök."),
        ("Är takomläggning billigare än takbyte?","Oftast, eftersom pannorna återanvänds. Är många pannor skadade krymper skillnaden och ett takbyte kan bli bättre på sikt."),
        ("Får man ROT-avdrag på takrenovering?","Ja, på arbetskostnaden: 30 % under 2026, högst 50 000 kr per person och år."),
-       ("Kostar besiktningen inför en takrenovering något?","Inför ett takprojekt gör vi ett gratis platsbesök och lämnar kostnadsförslag.")],
+       ("Kostar det något att få ett kostnadsförslag?","Nej. Inför ett takprojekt gör vi ett gratis platsbesök och lämnar kostnadsförslag med fast pris.")],
   badge="Kostnad", read="6 min")
 
 article("takbyte-eller-takrenovering.html",
@@ -2130,7 +2131,7 @@ article("tegel-betong-plattak.html",
    ("bygglov-takbyte.html","Bygglov för takbyte","Vid byte av material.")],
   faq=[("Vilket takmaterial är billigast?","Betongpannor har oftast lägst materialkostnad. Totalkostnaden beror dock även på tak, underlag och arbete."),
        ("Är plåttak bättre än tegel?","Inget är objektivt bäst. Plåt passar låga lutningar och ger låg vikt; tegel ger lång livslängd och klassiskt utseende."),
-       ("Kan man byta från betongpannor till plåttak?","Ja. Plåt är lättare, så takstolarna klarar det. Bygglov krävs normalt inte för villor sedan 1 december 2025, utom där detaljplanen har skyddsbestämmelser."),
+       ("Kan man byta från betongpannor till plåttak?","Ja. Plåt är lättare än pannor, så takstolarna klarar normalt vikten. Bygglov krävs normalt inte för villor sedan 1 december 2025, utom där detaljplanen har skyddsbestämmelser."),
        ("Låter plåttak mer när det regnar?","Ja, regn hörs mer på plåt än på pannor, särskilt med oisolerad vind.")],
   badge="Material", read="6 min")
 
@@ -2145,13 +2146,13 @@ article("takmaterial-livslangd.html",
           "<strong>Plåttak:</strong> 40–50 år, kan ommålas.","<strong>Papptak:</strong> 20–30 år.",
           "<strong>Underlagspapp:</strong> 30–40 år (ofta takets svaga länk)."]),
    ("h2","Hur länge håller ett tegeltak?"),
-   ("p","Lertegel är det mest långlivade pannmaterialet och håller ofta 50 år eller mer. Det är sällan teglet som tar slut först – på äldre tegeltak är det oftast underlagspappen och läkten som är uttjänta. Då räcker en omläggning där samma pannor läggs tillbaka."),
+   ("p","Lertegel är det mest långlivade pannmaterialet, och livslängden brukar anges till 50 år eller mer. Det är sällan teglet som tar slut först – på äldre tegeltak är det oftast underlagspappen och läkten som är uttjänta. Då räcker en omläggning där samma pannor läggs tillbaka."),
    ("h2","Hur länge håller betongpannor?"),
-   ("p","Betongpannor håller ofta 30–50 år. Med åren slits ytskiktet, pannorna suger mer vatten och blir känsligare för frost och mossa. Vittrar pannorna eller spricker de i kyla är det dags för nya pannor, inte bara nytt underlag."),
+   ("p","För betongpannor brukar livslängden anges till 30–50 år, beroende på läge, lutning och underhåll. Med åren slits ytskiktet, pannorna suger mer vatten och blir känsligare för frost och mossa. Vittrar pannorna eller spricker de i kyla är det dags för nya pannor, inte bara nytt underlag."),
    ("h2","Hur länge håller ett plåttak?"),
-   ("p",f"Ett plåttak håller ofta 40–50 år och kan förlängas med {a('takmalning.html','takmålning')} när färgskiktet börjat släppa. Rost vid falsar, skruvar och infästningar är tecken på att taket behöver åtgärdas."),
+   ("p",f"Ett plåttak brukar hålla 40–50 år, och tillverkare anger att den tekniska livslängden kan nå upp emot 50 år om taket hålls rent från mossa och smuts ({PLANNJA_FAQ}). Livslängden kan förlängas med {a('takmalning.html','takmålning')} när färgskiktet börjat släppa. Rost vid falsar, skruvar och infästningar är tecken på att taket behöver åtgärdas."),
    ("h2","Hur länge håller ett papptak?"),
-   ("p","Papptak håller ofta 20–30 år, kortare på låglutande tak där vatten blir stående. Blåsor, sprickor och lösa skarvar är varningstecken. Även under pannor och plåt finns papp – underlagspappen – som ofta håller 30–40 år och därför är takets svaga länk."),
+   ("p","Papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående. Blåsor, sprickor och lösa skarvar är varningstecken. Även under pannor och plåt finns papp – underlagspappen – som ofta håller 30–40 år och därför är takets svaga länk."),
    ("h2","Vad förlänger livslängden?"),
    ("ul",[f"Regelbunden {a('taktvatt.html','taktvätt')} och borttagning av mossa.",
           "Fungerande avvattning och ventilation.","Åtgärd av små skador i tid.",
@@ -2161,10 +2162,10 @@ article("takmaterial-livslangd.html",
   [("tegel-betong-plattak.html","Jämför takmaterial","För- och nackdelar."),
    ("takbesiktning.html","Takbesiktning","Bedöm ditt taks status."),
    ("takbyte.html","Takbyte","När livslängden är nådd.")],
-  faq=[("Hur länge håller ett tegeltak?","Tegelpannor håller ofta 50 år eller mer. Underlagspappen under dem har kortare liv och avgör ofta när taket behöver läggas om."),
-       ("Hur länge håller betongpannor?","Ofta 30–50 år, beroende på läge, lutning och underhåll."),
-       ("Hur länge håller ett plåttak?","Ofta 40–50 år, och livslängden kan förlängas med ommålning."),
-       ("Hur länge håller ett papptak?","Ofta 20–30 år. Låg lutning och stående vatten förkortar livslängden.")],
+  faq=[("Vilket takmaterial håller längst?","Lertegel brukar ha längst livslängd, ofta 50 år eller mer. Plåt och betongpannor ligger lägre, och papptak har kortast livslängd."),
+       ("Hur länge håller underlagspappen?","Underlagspapp brukar hålla 30–40 år. Den är ofta takets svaga länk och avgör när ett tegel- eller betongtak behöver läggas om."),
+       ("Kan man förlänga takets livslängd?","Ja. Regelbunden taktvätt, fungerande avvattning och ventilation och att små skador åtgärdas i tid förlänger livslängden. Plåttak kan målas om."),
+       ("Hur vet jag att taket är slut?","Spruckna eller vittrande pannor, rost på plåten, blåsor i papp och fukt på vinden är vanliga tecken. En takbesiktning ger besked.")],
   badge="Material", read="5 min")
 
 article("vindsisolering.html",
