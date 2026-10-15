@@ -5,6 +5,22 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 SESSION 2026-10-15 — "topp som gjuta": diagnos + 10 fixar (gren `seo/top-2026-10-15`, ej live)
+GSC 90 d (16.7–13.10): 1 klick / 7 229 visn / pos ~50; trend: 1 704 → 1 945 → 3 114 visn per halvmånad. Index (URL Inspection, sitemap 89): 62 indexerade, 10 Discovered, 17 okända (mest 17 nya stadsdelssidor + 6 Dalarna-orter + omraden). "takläggare stockholm" (KP 500/mån) och "takfirma stockholm" (500) = 0 visn. Pris-sökord (takbyte pris/kostnad) pos 64–75; besikta tak 56, besikta tak stockholm 27, takbesiktning 78. Off-topic (totalentreprenad/tillbyggnad/badrum m.m.) 13 % av visn, pos 45–66 utom startsidan (entreprenad bromma 4, totalentreprenad bromma 7).
+### KLART
+- ✅ takbesiktning: title/H1 "besikta tak", nya sektioner husköp vs överlåtelsebesiktning (ärligt: vi är inte oberoende besiktningsmän), storm/försäkring, "vad händer efter", Dalarna-länk, +3 FAQ.
+- ✅ vad-kostar-takbyte: arbetskostnad (vad räknas som arbete, Skatteverket) + ROT-räknare (30 %, max 50 000/person, 1–2 ägare) + 50 %-perioden 12.5–31.12.2025 + källa. Inga egna priser (ägarbeslut).
+- ✅ rot-avdrag-takarbete: title "takbyte och takomläggning 2026 – räkna själv", ROT-räknare, vilka takarbeten, villkor, +2 FAQ.
+- ✅ vad-kostar-takrenovering: 251 → ~700 ord (nivåer, prisfaktorer, omläggning vs byte, offertjämförelse, FAQ 4).
+- ✅ Sollentuna + Täby (521/351 visn, pos 56–65): egna title/desc + tjänstesektion + 1 FAQ (som 14.10-rundan). Max likhet 21,8 %.
+- ✅ takmaterial-livslangd: CTR-title "Hur länge håller ett tak?" + H2 per material + FAQ 4 (befintliga riktvärden). tegel-betong-plattak: "Plåttak eller betongpannor?" + jämförelse (lutning, vikt, ljud, snö), underhåll, +2 FAQ.
+- ✅ Startsidan: alla 27 Stockholmsorter i "Vanliga områden" (17 nya var bara länkade från omraden/grannar); description med "takfirma".
+- ✅ noindex,follow + ur sitemap: friggebod, fritidshus, vad-kostar-bygga-hus, attefallshus-regler (aldrig indexerade, nybygge-tema). Sitemap 89 → 85.
+### 🔜 NÄSTA
+1. Efter deploy: Request Indexing takbesiktning, vad-kostar-takbyte, rot-avdrag-takarbete, vad-kostar-takrenovering, taklaggare-sollentuna, -taby, takmaterial-livslangd, tegel-betong-plattak, omraden, / .
+2. ☐ kalkylator-takbyte: RATES kr/m² saknar källa (strider mot "inga egna priser") – ägaren bekräftar egna spann eller byt till ROT-räknare.
+3. 11.11: GSC – besikta tak*, takbyte kostnad/pris, rot avdrag*, Sollentuna/Täby, index för stadsdelar.
+
 ## 🟢 SESSION 2026-10-08 (2) — Hela Stockholm: 17 nya ortsidor + PBL 1 dec 2025 (`b9a64de`, live)
 ### KLART
 - ✅ 17 nya `taklaggare-<ort>.html`: Hässelby, Vällingby, Kista, Ekerö, Hägersten, Älvsjö, Enskede, Farsta, Skärholmen, Huddinge, Tyresö, Haninge, Värmdö, Upplands Väsby, Vallentuna, Österåker, Botkyrka. Innehåll i `tools/omraden_stockholm.py` (bebyggelse/epoker, taktyper/problem, planering + bygglov hos Stockholms stad resp. kommun, 6 FAQ, egen "why"-text, grannlänkar). 640–770 ord. Inga priser, inget lokalt kontor.
@@ -237,6 +253,7 @@ Tillämpat på villatakservice.se:
 - [ ] Nästa contentomgång: efter GSC-data (near-miss pos 8–20) ~15 sep.
 
 ## Logg
+- 2026-10-15: topp-runda (se session överst): takbesiktning, kostnad/ROT-räknare, Sollentuna/Täby, material-CTR, startsidans ortslänkar, 4 off-topic-sidor noindex.
 - 2026-10-14: **GSC near-miss-runda** (28 d t.o.m. 11.10: 1 klick / 5 448 visn. / pos 48). Ortsidor: egna title/desc + ny sektion "Takbyte och takrenovering i …" + FAQ för Danderyd (377 visn., takrenovering/takbyte danderyd pos 18–20, djursholm 26), Sundbyberg (pos 25, plåtarbeten 28), Spånga (takrenovering i spånga 15, takomläggning 27), Solna (takrenovering solna 25); Säter-title med Stora Skedvi. Kannibalisering: taklaggare-bromma.html → stadsdelar (Mariehäll/Nockeby/Ängby/Ålsten) så att startsidan bär "takläggare bromma" (pos 10,9); mala-plattak.html → beslutsintent "måla om eller byta" (takmalning.html tar alla målnings-sökord). Dalarna: kontextlänkar Borlänge/Falun/Säter från dalarna.html + omraden.html (ortsidorna utom Säter har 0 visn.; hubben tar "takläggare falun"). Teknik: alla desc ≤155 (37 sidor var över), startsidans JSON-LD utan å/ä/ö → fullständig RoofingContractor (@id, geo, öppettider, 27 orter) + FAQPage = synlig text, geo.placename Bromma, @id i Service.provider, 301 artikel.html → faq.html (gammal sida "Geal Tak AB" låg kvar på servern, 200 utan canonical). **Ägare efter deploy:** GSC URL-inspektion → begär indexering av https://villatakservice.se/ (GSC visar http://-varianten med 430 visn.), taklaggare-falun/-borlange, Danderyd/Sundbyberg/Spånga/Solna. Uppföljning i GSC: 2026-11-11.
 - 2026-10-08: **Ny sida /hyra-taklaggare.html** (bemanning bygg, B2B: takläggare/plåtslagare/byggarbetare). Title "Hyra takläggare – bemanning bygg i Stockholm", H1 "Hyra takläggare i Stockholm", Service+FAQPage+Breadcrumb, sitemap, rutor i tjanster.html + bygg.html. Inga priser/kollektivavtal/antal/svarstider; trust = F-skatt, ansvarsförsäkring och ID06 (som byggfirma.html). Kritikergranskad 1280/390, validering grön.
 - 2026-09-07: **GSC-fix "Duplicate without user-selected canonical"** → `.htaccess` med 301 (http→https, www→icke-www, /index.html→/) + säkerhetsheaders (HSTS, nosniff, X-Frame, Referrer/Permissions-Policy) + cache-headers. Verifierat LIVE: alla redirects 301 rätt, headers aktiva. Full teknisk audit körd: 0 dubbletttitlar/desc, alla canonicals rätt host, 59/59 sitemap-URL:er = 200, 404 ger 404, 143 JSON-LD valida, sitemap lastmod färsk. **Ägaren:** klicka "VALIDATE FIX" i GSC på duplicate-felet. Kvar (valfritt): titlar >60 tecken (kosmetiskt), OSM-kart-iframe på kontakt = enda externa requesten.
