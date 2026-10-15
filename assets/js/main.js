@@ -284,6 +284,35 @@
 })();
 
 /* =====================================================================
+   ROT-räknare (Skatteverket 2026: 30 % av arbetskostnaden,
+   max 50 000 kr per person och år). Bara matematik – inga priser.
+   ===================================================================== */
+(function () {
+  var forms = document.querySelectorAll("[data-rot-form]");
+  Array.prototype.forEach.call(forms, function (form) {
+    var out = form.parentNode.querySelector("[data-rot-result]");
+    if (!out) return;
+    var elRot = out.querySelector("[data-rot-avdrag]");
+    var elPay = out.querySelector("[data-rot-betala]");
+    function grp(n) {
+      return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+    function calc() {
+      var arb = parseFloat(String(form.elements["arbete"].value).replace(/\s/g, "").replace(",", "."));
+      var agare = parseInt(form.elements["agare"].value, 10) || 1;
+      if (!arb || arb <= 0) { out.hidden = true; return; }
+      var rot = Math.min(arb * 0.30, 50000 * agare);
+      elRot.textContent = grp(rot);
+      elPay.textContent = grp(arb - rot);
+      out.hidden = false;
+    }
+    form.addEventListener("input", calc);
+    form.addEventListener("change", calc);
+    form.addEventListener("submit", function (e) { e.preventDefault(); calc(); });
+  });
+})();
+
+/* =====================================================================
    Prefyll kontaktformuläret från query (?tjanst=&meddelande=)
    ===================================================================== */
 (function () {

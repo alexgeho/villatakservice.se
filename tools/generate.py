@@ -579,16 +579,16 @@ page(file="takrenovering.html",
     ("Ger takrenovering ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
 
 page(file="takbesiktning.html",
-  title="Takbesiktning i Stockholm – besikta tak | Geal Entreprenad AB",
-  description="Takbesiktning i Stockholm och Sundbyberg. Vi besiktar tak, bedömer skick och riskpunkter och ger underlag för offert. Boka en takbesiktning idag.",
-  h1="Takbesiktning i Stockholm",
+  title="Besikta tak i Stockholm – takbesiktning av villatak",
+  description="Besikta taket före husköp, efter storm eller inför takbyte. Vi kontrollerar pannor, plåt, underlag och vind och dokumenterar med foton. Stockholm.",
+  h1="Takbesiktning i Stockholm – besikta taket på villan",
   service=True, service_type="Takbesiktning", localbiz=False,
   crumbs=SVC_CRUMB+[("Takbesiktning","takbesiktning.html")],
   cta=("Vill du besikta taket?","Boka en takbesiktning så får du ett tydligt underlag inför beslut och offert."),
-  body=hero("Takbesiktning i Stockholm",
+  body=hero("Takbesiktning i Stockholm – besikta taket på villan",
     "Att besikta taket är ofta det bästa första steget. Vi går igenom takets skick, riskpunkter och avvattning och ger dig ett tydligt underlag – innan du beslutar om renovering eller takbyte.",
     SVC_CRUMB+[("Takbesiktning","takbesiktning.html")],
-    [("#varfor","Varför besikta"),("#nar","När besikta"),("#ingar","Vad kontrolleras"),("#sjalv","Kolla själv"),("#faq","Vanliga frågor")])
+    [("#varfor","Varför besikta"),("#nar","När besikta"),("#ingar","Vad kontrolleras"),("#huskop","Vid husköp"),("#sjalv","Kolla själv"),("#faq","Vanliga frågor")])
     + sec("Varför besiktning av tak lönar sig", [
         "Utan en korrekt bedömning är det svårt att veta om ett problem kräver akut insats eller kan planeras längre fram. Många hör av sig efter att ha sett en missfärgning i undertaket, lösa pannor eller mossa på utsatta ytor.",
         f"En besiktning ger svar på om det är ett isolerat problem eller ett tecken på större belastning – och är ett bra underlag inför {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}."], sid="varfor")
@@ -619,6 +619,21 @@ page(file="takbesiktning.html",
         f"<strong>Tegel- och betongpannor:</strong> spruckna eller förskjutna pannor, frostskador, lösa nockpannor, mossa och påväxt samt skicket på underlagspappen där den syns. Läs mer om {a('tegel-betong-plattak.html','tegel, betong och plåttak')}.",
         f"<strong>Plåttak:</strong> rost, lösa eller otäta falsar, infästningar och skruvar, färgskikt och skarvar. Se även {a('mala-plattak.html','måla plåttak')} och {a('falsat-plattak.html','falsat plåttak')}.",
         f"<strong>Detaljer på alla tak:</strong> skorstenens beslag och fogar, genomföringar, takfönster, {a('hangrannor-stupror.html','hängrännor och stuprör')} samt taksäkerhet som stegar och snörasskydd."])
+    + sec("Besikta taket vid husköp – takbesiktning eller överlåtelsebesiktning?", [
+        "Inför ett husköp görs ofta en överlåtelsebesiktning av hela huset. Den är okulär, och taket bedöms då i regel från marken och från vinden. Det räcker för att hitta tydliga brister, men säger mindre om hur länge pannor och underlagspapp håller och vad en åtgärd skulle innebära.",
+        "Vill du veta mer om just taket kan du komplettera med en takbesiktning. Då tittar en takläggare närmare på takytan, plåtdetaljerna och underlaget där det syns, och du får besked om taket behöver underhåll, omläggning eller byte inom överskådlig tid.",
+        "Var medveten om skillnaden: vi är takläggare, inte oberoende besiktningsmän. Vår bedömning är ett underlag för åtgärd och offert. Behöver du ett formellt protokoll till ett köpeavtal eller en tvist ska du anlita en certifierad besiktningsman."], muted=True, sid="huskop")
+    + sec("Efter storm, snötung vinter eller läckage", [
+        f"Efter en storm eller en vinter med mycket snö och is är det klokt att besikta taket innan vårregnen. Lösa nockpannor, skadade plåtdetaljer och igensatta rännor upptäcks då innan de orsakar {a('taklackage.html','läckage')}.",
+        "Har skadan redan skett dokumenterar vi den med foton och beskriver vad som behöver åtgärdas. Underlaget kan du använda i kontakten med ditt försäkringsbolag – kontrollera alltid med bolaget vad de kräver."])
+    + sec_split("Vad händer efter besiktningen?", [
+        "Besiktningen slutar med en rekommendation. Den kan peka på någon av tre nivåer – och du bestämmer själv om och när du vill gå vidare.",
+        f"ROT-avdraget gäller arbetet med själva åtgärden, till exempel omläggning eller takbyte. Läs mer om {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."],
+        "Vanliga utfall", [
+        f"Underhåll: {a('taktvatt.html','taktvätt')}, rensning av rännor eller {a('takmalning.html','takmålning')}.",
+        f"{a('takrenovering.html','Takrenovering eller takomläggning')}: nytt underlag, samma pannor.",
+        f"{a('takbyte.html','Takbyte')}: nya pannor eller plåt och nytt underlag.",
+        f"Osäker på priset? Läs {a('vad-kostar-takbyte.html','vad ett takbyte kostar')}."])
     + sec_split("Kolla taket själv – enkel checklista", [
         "Mellan besiktningarna kan du själv hålla koll på det mesta från marken och från vinden. Gå inte upp på taket själv – ett halt tak är farligt, och trampade pannor kan börja läcka.",
         f"Ser du något av punkterna i listan är det dags att låta en takläggare titta närmare. Läs mer om {a('nar-ska-taket-bytas.html','tecken på att taket behöver bytas')}."],
@@ -627,9 +642,10 @@ page(file="takbesiktning.html",
         "Mossa och påväxt på de skuggiga takfallen.",
         "Hängrännor som svämmar över eller hänger snett.",
         "Fuktfläckar, mörka partier eller dagsljus på vinden.",
-        "Mögellukt eller kondens på vinden efter kalla nätter."], sid="sjalv")
+        "Mögellukt eller kondens på vinden efter kalla nätter."], muted=False, sid="sjalv")
     + sec("Takbesiktning i Stockholm och närområdet", [
-        f"Vi har kontor i Bromma och besiktar tak i hela Stockholm – bland annat i {a('taklaggare-bromma.html','Bromma')}, {a('taklaggare-sundbyberg.html','Sundbyberg')}, {a('taklaggare-solna.html','Solna')}, {a('taklaggare-sollentuna.html','Sollentuna')}, {a('taklaggare-danderyd.html','Danderyd')} och {a('taklaggare-taby.html','Täby')}. Besiktningen är ett bra första steg innan du tar in offerter på {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}."], muted=True)
+        f"Vi har kontor i Bromma och besiktar tak i hela Stockholm – bland annat i {a('taklaggare-bromma.html','Bromma')}, {a('taklaggare-sundbyberg.html','Sundbyberg')}, {a('taklaggare-solna.html','Solna')}, {a('taklaggare-sollentuna.html','Sollentuna')}, {a('taklaggare-danderyd.html','Danderyd')}, {a('taklaggare-taby.html','Täby')}, {a('taklaggare-nacka.html','Nacka')}, {a('taklaggare-lidingo.html','Lidingö')} och {a('taklaggare-jarfalla.html','Järfälla')}. Besiktningen är ett bra första steg innan du tar in offerter på {a('takbyte.html','takbyte')} eller {a('takrenovering.html','takrenovering')}.",
+        f"Bor du i Dalarna? Där besiktar vi tak via vår lokala partner – se {a('dalarna.html','takbesiktning och takbyte i Dalarna')}."], muted=True)
     + links_block("Relaterat", [
         ("nar-ska-taket-bytas.html","Tecken på att taket behöver bytas","Vanliga signaler att hålla koll på."),
         ("fuktskada-mogel-vind.html","Fuktskada och mögel på vinden","Orsaker, symptom och åtgärder."),
@@ -639,7 +655,10 @@ page(file="takbesiktning.html",
     ("Hur ofta bör man besikta taket?","En översiktlig kontroll två gånger per år (vår och höst) är en bra grund. En professionell besiktning är klok vart 5–10:e år eller vid tecken på problem."),
     ("Får jag en rapport?","Ja, du får en tydlig bedömning av skick, riskpunkter och rekommenderad åtgärd som underlag för offert."),
     ("Kan man besikta taket på vintern?","Snötäckta takytor går inte att bedöma ordentligt, men vind, genomföringar och avvattning kan kontrolleras. En fullständig bedömning av takytan görs när taket är snöfritt."),
-    ("Är det farligt att kontrollera taket själv?","Ja, gå inte upp på taket själv. Kontrollera i stället från marken, gärna med kikare, och från vinden. Det räcker för att upptäcka de flesta varningstecken.")])
+    ("Är det farligt att kontrollera taket själv?","Ja, gå inte upp på taket själv. Kontrollera i stället från marken, gärna med kikare, och från vinden. Det räcker för att upptäcka de flesta varningstecken."),
+    ("Vad är skillnaden mellan takbesiktning och överlåtelsebesiktning?","En överlåtelsebesiktning gäller hela huset inför köp och är okulär – taket bedöms oftast från marken och vinden. En takbesiktning gäller bara taket och ger besked om vilken åtgärd som behövs."),
+    ("Gör ni oberoende takbesiktning?","Nej, vi är takläggare och vår bedömning är underlag för åtgärd och offert. Behöver du ett oberoende protokoll, till exempel vid tvist, anlitar du en certifierad besiktningsman."),
+    ("Besiktar ni tak i Dalarna?","Ja, via vår lokala partner i Dalarna, bland annat i Borlänge, Falun och Säter.")])
 
 page(file="plattak.html",
   title="Plåttak i Stockholm – nytt plåttak & plåtarbeten | Geal Entreprenad AB",
@@ -1264,6 +1283,20 @@ ORT_SEO = {
    "svc": ("Takrenovering i Solna", [
      f"Vid en {a('takrenovering.html','takrenovering')} byter vi underlagspapp och läkt och lägger tillbaka samma pannor. Samtidigt ser vi över plåtdetaljer, vindskivor och genomföringar, så att hela taket håller lika länge.",
      f"Är pannorna slut gör vi ett {a('takbyte.html','takbyte')} med nya pannor, nytt underlag och nya plåtdetaljer. Vi börjar alltid med ett gratis besök och ger fast pris på den åtgärd taket faktiskt behöver."])},
+ "Sollentuna": {
+   "title": "Takläggare i Sollentuna – takbyte, takrenovering & taktvätt",
+   "desc": "Takfirma i Sollentuna: byta tak, takrenovering, takomläggning och taktvätt i Edsberg, Tureberg och Rotebro. Gratis besök, fast pris och ROT.",
+   "svc": ("Byta tak eller lägga om taket i Sollentuna", [
+     f"När ett 60- eller 70-talstak i Sollentuna börjar läcka är frågan oftast om det räcker att lägga om eller om det är dags att byta tak. Är betongpannorna hela och har inte sugit fukt kan en {a('takrenovering.html','takomläggning')} ge ett tätt tak för lång tid: pannorna tas ner, ny underlagspapp och läkt läggs och pannorna läggs tillbaka.",
+     f"Har pannorna vittrat eller spruckit i frost gör vi i stället ett komplett {a('takbyte.html','takbyte')}, med nya pannor eller plåt. Är taket bara mossigt men i övrigt helt räcker ofta en {a('taktvatt.html','taktvätt med mossbehandling')}. Vid besöket får du besked om vilken nivå ditt tak behöver."]),
+   "faq": [("Vad är skillnaden på att byta tak och lägga om taket?","Vid en takomläggning återanvänds pannorna och underlagspapp och läkt byts. Vid ett takbyte byts även pannorna, eller så går du över till plåt.")]},
+ "Täby": {
+   "title": "Takläggare i Täby – takbyte, takomläggning & takrenovering",
+   "desc": "Takläggare i Täby: byta tak, takomläggning och takrenovering på villor och radhus i Näsby Park, Gribbylund och Ensta. Gratis besök och ROT-avdrag.",
+   "svc": ("Takbyte och takomläggning i Täby", [
+     f"På villor med betongpannor där pannorna fortfarande är hela räcker ofta en {a('takrenovering.html','takomläggning')}: nytt underlag och ny läkt, samma pannor. Har pannorna börjat vittra blir ett {a('takbyte.html','takbyte')} med nya pannor eller ett {a('plattak.html','plåttak')} mer lönsamt i längden.",
+     f"För radhus lämnar vi offert per hus eller för hela längan, så att plåt och anslutningar mellan husen görs om i samma omgång. Vill du först veta vad taket behöver bokar du en {a('takbesiktning.html','takbesiktning')}, och vad ett nytt tak kan kosta går vi igenom i {a('vad-kostar-takbyte.html','vad kostar ett takbyte')}."]),
+   "faq": [("Vad kostar det att byta tak i Täby?","Det beror på takets storlek, material, lutning och underlagets skick. Vi kommer ut gratis och ger ett fast pris med ROT-avdraget uträknat.")]},
  "Bromma": {
    "title": "Takläggare i Bromma – takbyte i Mariehäll, Nockeby & Ängby",
    "desc": "Takbyte och takrenovering i Brommas villaområden: Mariehäll, Nockeby, Ängby, Äppelviken och Ålsten. Vår bas ligger i Bromma. Gratis besök.",
@@ -1630,6 +1663,7 @@ def prose(blocks):
         elif kind=="ol":
             out.append("          <ol>\n"+"\n".join(f"            <li>{i}</li>" for i in val)+"\n          </ol>")
         elif kind=="quote": out.append(f"          <blockquote>{val}</blockquote>")
+        elif kind=="html": out.append(val)
         elif kind=="tips":
             out.append(f'          <div class="tips-box"><h3>Tips</h3><p>{val}</p></div>')
         elif kind=="cta":
@@ -1641,6 +1675,34 @@ def prose(blocks):
             </div>
           </div>''')
     return "\n".join(out)
+
+SKV_ROT = '<a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete.4.2e56d4ba1202f95012080002966.html" rel="noopener">Skatteverket – rot- och rutarbete</a>'
+
+# ROT-räknare: ren Skatteverket-matematik (30 %, max 50 000 kr/person/år 2026), inga priser.
+ROT_TOOL = """          <div class="calc-wrap" id="rot-raknare">
+            <form class="calc-form" data-rot-form novalidate>
+              <div class="field">
+                <label for="rot-arbete">Arbetskostnad i offerten (kr inkl. moms)</label>
+                <input id="rot-arbete" name="arbete" type="number" min="0" step="1000" inputmode="numeric" placeholder="t.ex. 120000" />
+              </div>
+              <div class="field">
+                <label for="rot-agare">Ägare som delar avdraget</label>
+                <select id="rot-agare" name="agare">
+                  <option value="1">1 person</option>
+                  <option value="2">2 personer</option>
+                </select>
+              </div>
+            </form>
+            <aside class="calc-result" data-rot-result hidden aria-live="polite">
+              <p class="calc-result__label">ROT-avdrag</p>
+              <p class="calc-result__figure"><span data-rot-avdrag>–</span> kr</p>
+              <div class="calc-result__rot">
+                <p class="calc-result__label">Du betalar för arbetet</p>
+                <p class="calc-result__figure"><span data-rot-betala>–</span> kr</p>
+              </div>
+              <p class="calc-disclaimer">30 % av arbetskostnaden, högst 50 000 kr per person och år (2026). Material ingår inte. Har du redan använt ROT i år blir utrymmet mindre.</p>
+            </aside>
+          </div>"""
 
 def article(file, title, description, h1, lead, blocks, related, faq=None, badge="Guide", read="5 min"):
     body = (hero(h1, lead, ART_CRUMB+[(h1,file)])
@@ -1655,8 +1717,8 @@ def article(file, title, description, h1, lead, blocks, related, faq=None, badge
          crumbs=ART_CRUMB+[(h1,file)], article=True, og_type="article", faq=faq)
 
 article("vad-kostar-takbyte.html",
-  "Vad kostar ett takbyte? Det här styr priset + ROT | Geal Entreprenad AB",
-  "Vad kostar ett takbyte på villa? Så påverkar area, material och underlag priset, så jämför du offerter och räknar ROT-avdraget. Gratis besök.",
+  "Vad kostar ett takbyte? Arbetskostnad, material & ROT 2026",
+  "Vad kostar ett takbyte på villa? Så styr area, material och underlag priset, vad som räknas som arbetskostnad och hur mycket ROT du får – räkna själv.",
   "Vad kostar ett takbyte?",
   "Priset för ett takbyte varierar mycket beroende på tak och material. Här går vi igenom vad som driver kostnaden, hur du jämför offerter på rätt sätt och hur ROT-avdraget räknas – och varför vi alltid ger pris först efter ett gratis besök.",
   [("p","En av de vanligaste frågorna vi får är vad ett takbyte kostar. Det ärliga svaret är att det beror på taket – två villor med samma yta kan landa långt ifrån varandra. Kostnaden styrs framför allt av takets area och form, val av material, taklutning, tillgänglighet och underlagets skick. Därför lämnar vi inga schablonpriser, utan kommer ut gratis, tittar på taket och ger ett kostnadsförslag med fast pris."),
@@ -1680,9 +1742,15 @@ article("vad-kostar-takbyte.html",
           "Tidplan och vad som händer vid dåligt väder.",
           "Att ROT-avdraget är uträknat och att firman sköter ansökan."]),
    ("tips","Be om en specificerad offert där arbete och material står var för sig. Det gör det lättare att jämföra – och det är arbetskostnaden som ger ROT-avdrag."),
+   ("h2","Arbetskostnad vid takbyte – vad räknas som arbete?"),
+   ("p","Arbetskostnaden är det som takläggarna gör på plats: rivning av det gamla taket, ny underlagspapp, läkt, läggning av pannor eller plåt och plåtarbeten kring nock, skorsten och genomföringar. Material, utrustning och resor räknas inte som arbete och ger inget ROT-avdrag, enligt Skatteverket."),
+   ("p","Hur stor del av totalpriset som är arbete varierar mellan tak. Ett brant tak med många kupor och ränndalar tar fler arbetstimmar än ett enkelt sadeltak av samma storlek, och plåttak har en annan fördelning än pannor. Därför ska arbete och material alltid stå på egna rader i offerten – annars går det varken att jämföra offerter eller räkna ROT rätt."),
    ("h2","Så räknas ROT-avdraget på ett takbyte"),
    ("p",f"Som villaägare får du normalt ROT-avdrag på <strong>arbetskostnaden</strong> – inte på material, utrustning eller resor. Under 2026 är avdraget 30 % av arbetskostnaden, med ett tak på 50 000 kr per person och år. Äger ni huset två kan ni alltså få upp till 100 000 kr tillsammans. Avdraget görs direkt på fakturan. Läs mer i {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."),
    ("p","Räkneexempel: är arbetskostnaden i offerten 120 000 kr blir ROT-avdraget 30 % av det, alltså 36 000 kr – under taket på 50 000 kr för en ägare. Du betalar då 84 000 kr för arbetet, plus material och övriga kostnader."),
+   ("h3","Räkna ut ditt ROT-avdrag"),
+   ("html",ROT_TOOL),
+   ("p",f"Den tillfälliga höjningen till 50 % gällde bara arbeten som betalades mellan 12 maj och 31 december 2025. Från 1 januari 2026 gäller 30 % igen. ROT och RUT delar dessutom ett tak på 75 000 kr per person och år. Källa: {SKV_ROT}."),
    ("h2","Behövs ett helt takbyte – eller räcker en renovering?"),
    ("p",f"Är stommen sund och skadorna begränsade kan en {a('takrenovering.html','takrenovering')} eller omläggning räcka, och den kostar oftast mindre än ett fullt byte. Är taket i slutet av sin livslängd blir ett {a('takbyte.html','takbyte')} bättre på sikt. En {a('takbesiktning.html','takbesiktning')} ger svar, och vi går igenom skillnaden i {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."),
    ("cta",("Gratis besök och kostnadsförslag","Vi tittar på ditt tak och ger ett skriftligt kostnadsförslag med fast pris – ROT-avdraget uträknat."))],
@@ -1693,28 +1761,49 @@ article("vad-kostar-takbyte.html",
   faq=[("Vad kostar ett takbyte?","Det beror på takets area och form, material, lutning, tillgänglighet och underlagets skick. Vi kommer ut gratis och ger ett kostnadsförslag med fast pris för just ditt tak."),
        ("Är takbyte dyrare med tegel eller plåt?","Det varierar. Materialen skiljer sig i pris, vikt och läggningstid, och valet påverkar även livslängd och underhåll. Vi går igenom alternativen vid besöket."),
        ("Ingår rivning i priset?","I en komplett offert från oss ingår rivning och bortforsling av det gamla taket. Kontrollera alltid att det ingår när du jämför offerter."),
-       ("Hur mycket ROT-avdrag får man på ett takbyte?","Under 2026 är ROT-avdraget 30 % av arbetskostnaden, högst 50 000 kr per person och år. Material ger inget avdrag. Avdraget görs direkt på fakturan.")],
+       ("Hur mycket ROT-avdrag får man på ett takbyte?","Under 2026 är ROT-avdraget 30 % av arbetskostnaden, högst 50 000 kr per person och år. Material ger inget avdrag. Avdraget görs direkt på fakturan."),
+       ("Vad räknas som arbetskostnad vid ett takbyte?","Rivning, läggning av underlagspapp, läkt och pannor eller plåt samt plåtarbeten. Material, utrustning och resor räknas inte som arbetskostnad och ger inget ROT-avdrag."),
+       ("Gäller 50 % ROT fortfarande?","Nej. Den tillfälliga höjningen till 50 % gällde betalningar mellan 12 maj och 31 december 2025. Från 2026 är ROT-avdraget 30 % av arbetskostnaden.")],
   badge="Kostnad", read="7 min")
 
 article("vad-kostar-takrenovering.html",
-  "Vad kostar en takrenovering? Pris & påverkan | Geal Entreprenad AB",
-  "Vad kostar en takrenovering på villa? Vi förklarar prisintervall, vad som påverkar kostnaden och när renovering lönar sig jämfört med takbyte.",
+  "Vad kostar takrenovering och takomläggning? Det styr priset",
+  "Vad kostar en takrenovering eller takomläggning på villa? Så påverkar omfattning, underlag, plåt och ställning priset – och så räknar du ROT-avdraget.",
   "Vad kostar en takrenovering?",
-  "En takrenovering kostar oftast mindre än ett fullt takbyte, men spannet är stort beroende på omfattning. Här går vi igenom vad som styr priset.",
-  [("p","Takrenovering omfattar allt från byte av enstaka pannor till full omläggning med ny underlagspapp. Därför varierar priset kraftigt. Kostnaden avgörs av hur stor del av taket som åtgärdas, materialet och hur utsatta detaljerna är."),
+  "En takrenovering kostar oftast mindre än ett fullt takbyte, men spannet är stort beroende på omfattning. Här går vi igenom vad som styr priset – från byte av enstaka pannor till en hel takomläggning.",
+  [("p","Takrenovering omfattar allt från byte av enstaka pannor till full omläggning med ny underlagspapp. Därför varierar priset kraftigt. Kostnaden avgörs av hur stor del av taket som åtgärdas, materialet och hur utsatta detaljerna är. Vi lämnar inga schablonpriser – du får ett fast pris efter ett gratis besök."),
+   ("h2","Tre nivåer av takrenovering"),
+   ("ul",["<strong>Punktinsats</strong> – byte av spruckna pannor, en lös nockpanna eller ett otätt skorstensbeslag. Liten omfattning, men ställning eller lift kan ändå behövas.",
+          f"<strong>Takomläggning</strong> – pannorna lyfts av, ny underlagspapp och ny läkt läggs och hela pannor läggs tillbaka. Läs mer om {a('takrenovering.html','takrenovering och takomläggning')}.",
+          f"<strong>Plåt- och detaljarbeten</strong> – nya vindskivor, fotplåt, ränndalar, {a('hangrannor-stupror.html','hängrännor och stuprör')}, ofta i samma omgång som omläggningen."]),
    ("h2","Vad påverkar priset?"),
    ("ul",["Omfattning – punktinsats eller omläggning av hela takytan.",
-          "Om underlagspapp och läkt behöver bytas.",
-          "Antal plåtdetaljer och anslutningar som åtgärdas.",
-          "Tillgänglighet och behov av ställning."]),
-   ("h2","När lönar sig renovering framför byte?"),
-   ("p",f"Om stommen är sund och skadorna är begränsade är renovering oftast mest lönsamt. Är taket vid slutet av sin livslängd blir ett {a('takbyte.html','takbyte')} bättre på sikt. En {a('takbesiktning.html','takbesiktning')} ger svar. Se även {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."),
-   ("p","Vi erbjuder gratis platsbesök och kostnadsförslag – du får ett fast pris efter att vi sett taket."),
-   ("cta",("Vill du veta vad din takrenovering kostar?","Boka besiktning så får du en tydlig åtgärdsplan och offert."))],
+          "Om underlagspapp och läkt behöver bytas, och om råsponten är skadad under pappen.",
+          "Hur många pannor som är trasiga och måste ersättas med nya.",
+          "Antal plåtdetaljer och anslutningar: skorsten, takfönster, kupor och ränndalar.",
+          "Taklutning, höjd och behov av ställning.",
+          "Tillgänglighet för material, container och ställning på tomten."]),
+   ("h2","Takomläggning eller takbyte – vad blir billigast?"),
+   ("p",f"Vid en omläggning återanvänds pannorna, så materialkostnaden blir lägre än vid ett nytt tak. Men om många pannor är porösa eller frostskadade och ändå måste bytas, krymper skillnaden. Då kan ett {a('takbyte.html','takbyte')} bli bättre på sikt. Jämför i {a('vad-kostar-takbyte.html','vad ett takbyte kostar')} och {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')}."),
+   ("h2","Vad kostar en takbesiktning?"),
+   ("p",f"Inför en takrenovering gör vi alltid ett gratis platsbesök och lämnar kostnadsförslag. Vid besöket bedömer vi pannor, underlag och plåt och föreslår rätt nivå. Läs mer om {a('takbesiktning.html','takbesiktning')}."),
+   ("h2","ROT-avdrag på takrenovering"),
+   ("p",f"Takrenovering och takomläggning räknas som reparation och underhåll och ger ROT-avdrag på arbetskostnaden: 30 % under 2026, högst 50 000 kr per person och år. Material ger inget avdrag. Räkna på ditt fall i guiden om {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."),
+   ("h2","Så jämför du offerter på takrenovering"),
+   ("ul",["Står det vilken nivå som ingår – punktinsats, omläggning eller båda?",
+          "Ingår ny underlagspapp och läkt, och vad händer om råsponten är skadad?",
+          "Hur många nya pannor räknar offerten med?",
+          "Ingår ställning, rivning och bortforsling?",
+          "Står arbete och material på separata rader så att ROT kan räknas?"]),
+   ("cta",("Vill du veta vad din takrenovering kostar?","Vi tittar på taket gratis och ger ett fast pris med ROT-avdraget uträknat."))],
   [("takrenovering.html","Takrenovering","Vår tjänst för takrenovering och omläggning."),
    ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Jämför med kostnaden för byte."),
    ("rot-avdrag-takarbete.html","ROT-avdrag","Sänk kostnaden med ROT.")],
-  badge="Kostnad", read="5 min")
+  faq=[("Vad kostar en takomläggning?","Det beror på takets storlek, hur många pannor som måste bytas, underlagets skick och plåtdetaljerna. Vi ger fast pris efter ett gratis besök."),
+       ("Är takomläggning billigare än takbyte?","Oftast, eftersom pannorna återanvänds. Är många pannor skadade krymper skillnaden och ett takbyte kan bli bättre på sikt."),
+       ("Får man ROT-avdrag på takrenovering?","Ja, på arbetskostnaden: 30 % under 2026, högst 50 000 kr per person och år."),
+       ("Kostar besiktningen inför en takrenovering något?","Inför ett takprojekt gör vi ett gratis platsbesök och lämnar kostnadsförslag.")],
+  badge="Kostnad", read="6 min")
 
 article("takbyte-eller-takrenovering.html",
   "Takbyte eller takrenovering – vad ska jag välja? | Geal Entreprenad AB",
@@ -1738,13 +1827,30 @@ article("takbyte-eller-takrenovering.html",
   badge="Guide", read="5 min")
 
 article("rot-avdrag-takarbete.html",
-  "ROT-avdrag för takarbete 2026 – så mycket kan du dra av | Geal Entreprenad AB",
-  "ROT-avdrag för takbyte och takrenovering: vad som gäller, hur avdraget fungerar och hur mycket du kan dra av på arbetskostnaden. Guide för villaägare.",
+  "ROT-avdrag för takbyte och takomläggning 2026 – räkna själv",
+  "ROT-avdrag 2026 för takbyte, takomläggning och takrenovering: 30 % av arbetskostnaden, max 50 000 kr per person. Villkor, exempel och ROT-räknare.",
   "ROT-avdrag för takarbete",
   "Takarbete på villa ger normalt rätt till ROT-avdrag på arbetskostnaden. Här förklarar vi hur det fungerar och vad du behöver tänka på.",
   [("p","ROT-avdraget gör att du får dra av en del av arbetskostnaden för renovering och underhåll av din bostad. Takbyte, takrenovering och de flesta takarbeten på villa omfattas, förutsatt att du äger bostaden och uppfyller villkoren."),
    ("h2","Hur mycket är ROT-avdraget?"),
    ("p","Avdraget gäller arbetskostnaden – inte material, resor eller administration. För 2026 är ROT-avdraget 30 % av arbetskostnaden, med ett tak på 50 000 kr per person och år. ROT och RUT delar dessutom ett gemensamt tak på 75 000 kr per person och år (Skatteverket)."),
+   ("p","Den tillfälliga höjningen till 50 % gällde bara arbeten som betalades mellan 12 maj och 31 december 2025. Får du en offert under 2026 är det alltså 30 % som gäller."),
+   ("h2","Räkna ut ROT-avdraget"),
+   ("html",ROT_TOOL),
+   ("h2","Vilka takarbeten ger ROT-avdrag?"),
+   ("p","ROT gäller reparation, underhåll, ombyggnad och tillbyggnad av din bostad. På ett villatak omfattar det normalt arbetet vid:"),
+   ("ul",[f"{a('takbyte.html','Takbyte')} – rivning, nytt underlag och nya pannor eller plåt.",
+          f"{a('takrenovering.html','Takomläggning och takrenovering')} – samma pannor läggs tillbaka på nytt underlag.",
+          f"Plåtarbeten, {a('hangrannor-stupror.html','hängrännor och stuprör')} och {a('skorstensrenovering.html','skorstensrenovering')}.",
+          f"{a('takmalning.html','Målning av plåttak')} och reparation av läckage."]),
+   ("p","Avdraget gäller bara arbetet. Pannor, plåt, papp, container och resor betalar du fullt för."),
+   ("h2","Villkor för ROT-avdrag på taket"),
+   ("ul",["Du äger bostaden och bor i den eller använder den som fritidshus.",
+          "Arbetet utförs av ett företag med F-skatt.",
+          "Arbetskostnaden står separat på fakturan.",
+          "Du har tillräckligt med skatt att reducera och har inte redan använt hela ditt utrymme för året.",
+          "Är huset nybyggt kan särskilda regler gälla – kontrollera med Skatteverket."]),
+   ("p",f"Källa: {SKV_ROT}. Vi har F-skatt och sköter ansökan om utbetalning åt dig."),
    ("h2","Så fungerar det i praktiken"),
    ("ol",["Vi bedömer taket och lämnar offert.","Arbetskostnaden specificeras separat.",
           "Avdraget dras direkt på fakturan.","Vi begär utbetalning från Skatteverket."]),
@@ -1754,6 +1860,8 @@ article("rot-avdrag-takarbete.html",
    ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Se hur ROT påverkar slutpriset."),
    ("bygglov-takbyte.html","Bygglov för takbyte","Vad som gäller kring tillstånd.")],
   faq=[("Gäller ROT för materialkostnaden?","Nej, ROT-avdraget gäller endast arbetskostnaden, inte material eller resekostnader."),
+       ("Får man ROT-avdrag för takomläggning?","Ja. Takomläggning är reparation och underhåll av bostaden, så arbetskostnaden ger ROT-avdrag på 30 % under 2026, högst 50 000 kr per person och år."),
+       ("Är ROT-avdraget 50 % 2026?","Nej. 50 % gällde tillfälligt för betalningar mellan 12 maj och 31 december 2025. Från 2026 är det 30 % av arbetskostnaden."),
        ("Får jag ROT för takarbete på fritidshus?","ROT kan gälla även fritidshus om du äger det och betalar skatt i Sverige. Villkoren avgör – kontrollera med oss.")],
   badge="ROT & pengar", read="5 min")
 
@@ -1989,8 +2097,8 @@ article("skorstensrenovering.html",
 
 # ---- material / energy ----
 article("tegel-betong-plattak.html",
-  "Tegeltak vs betongpannor vs plåttak – för- och nackdelar | Geal Entreprenad AB",
-  "Tegeltak, betongpannor eller plåttak? Vi jämför pris, livslängd, vikt, underhåll och utseende så att du kan välja rätt takmaterial för din villa.",
+  "Plåttak eller betongpannor? Jämför tegel, betong och plåt",
+  "Plåttak, betongpannor eller tegeltak? Vi jämför livslängd, vikt, lutning, underhåll och utseende så att du väljer rätt takmaterial vid takbytet.",
   "Tegeltak vs betongpannor vs plåttak",
   "Valet av takmaterial påverkar pris, livslängd och utseende i decennier framåt. Här jämför vi de tre vanligaste materialen för villatak.",
   [("p","Tegel, betong och plåt dominerar villataken i Stockholm. Alla tre fungerar bra – men de har olika styrkor. Rätt val beror på husets lutning, stil, budget och hur mycket underhåll du vill ha."),
@@ -2003,18 +2111,32 @@ article("tegel-betong-plattak.html",
    ("h2","Plåttak"),
    ("ul",["Låg vikt – passar även låga lutningar.","Livslängd 40–50 år, kan ommålas.",
           "Snabb montering.","Kräver noggranna plåtarbeten för täthet."]),
+   ("h2","Plåttak eller betongpannor – vad passar ditt hus?"),
+   ("ul",["<strong>Taklutning:</strong> pannor kräver en minsta lutning enligt tillverkarens anvisningar. Låglutande tak blir oftast plåt.",
+          "<strong>Vikt:</strong> plåt är betydligt lättare än pannor. Ska du gå från plåt till pannor måste takstolarna klara den högre vikten.",
+          "<strong>Ljud:</strong> regn hörs mer på plåt, särskilt om vinden är oisolerad.",
+          "<strong>Snö:</strong> snön glider lättare av plåt, så snörasskydd över entréer och gångar är extra viktigt.",
+          "<strong>Utseende:</strong> husets stil och grannskapet väger tungt – i äldre områden passar ofta tegel eller falsad plåt bäst."]),
+   ("h2","Tegeltak eller plåttak?"),
+   ("p",f"Tegel ger lång livslängd och ett klassiskt uttryck men är tungt. Plåt är lätt, klarar låga lutningar och kan målas om, men kräver noggranna plåtarbeten för att bli tätt. På äldre hus med tegeltak är en {a('takrenovering.html','takomläggning')} där teglet läggs tillbaka ofta ett alternativ till att byta material."),
+   ("h2","Underhåll per material"),
+   ("ul",[f"Betongpannor: {a('taktvatt.html','taktvätt')} och mossbehandling när påväxten tar fart.",
+          f"Plåt: {a('takmalning.html','ommålning')} när färgskiktet släpper, kontroll av falsar och skruvar.",
+          "Tegel: byte av enstaka spruckna pannor och kontroll av nock och anslutningar."]),
    ("p",f"Se hur länge materialen håller i {a('takmaterial-livslangd.html','livslängd per takmaterial')}. Vill du ha plåt hjälper vi dig med {a('plattak.html','plåttak')}, och byte sköts via {a('takbyte.html','takbyte')}."),
    ("tips","Byter du från plåt till pannor – kontrollera att takstolarna klarar den högre vikten. Bygglov krävs normalt inte för villor sedan 1 december 2025, se guiden om bygglov för takbyte.")],
   [("takmaterial-livslangd.html","Livslängd per material","Så länge håller taken."),
    ("plattak.html","Plåttak","Vår tjänst för plåttak."),
    ("bygglov-takbyte.html","Bygglov för takbyte","Vid byte av material.")],
   faq=[("Vilket takmaterial är billigast?","Betongpannor har oftast lägst materialkostnad. Totalkostnaden beror dock även på tak, underlag och arbete."),
-       ("Är plåttak bättre än tegel?","Inget är objektivt bäst. Plåt passar låga lutningar och ger låg vikt; tegel ger lång livslängd och klassiskt utseende.")],
+       ("Är plåttak bättre än tegel?","Inget är objektivt bäst. Plåt passar låga lutningar och ger låg vikt; tegel ger lång livslängd och klassiskt utseende."),
+       ("Kan man byta från betongpannor till plåttak?","Ja. Plåt är lättare, så takstolarna klarar det. Bygglov krävs normalt inte för villor sedan 1 december 2025, utom där detaljplanen har skyddsbestämmelser."),
+       ("Låter plåttak mer när det regnar?","Ja, regn hörs mer på plåt än på pannor, särskilt med oisolerad vind.")],
   badge="Material", read="6 min")
 
 article("takmaterial-livslangd.html",
-  "Livslängd per takmaterial – så länge håller taket | Geal Entreprenad AB",
-  "Hur länge håller olika tak? Livslängd för tegel, betongpannor, plåttak och papptak – och vad som påverkar hur länge ditt tak håller.",
+  "Hur länge håller ett tak? Livslängd för tegel, plåt & papp",
+  "Hur länge håller ett tak? Riktvärden för tegelpannor, betongpannor, plåttak och papptak – och varför underlagspappen ofta avgör när taket måste bytas.",
   "Livslängd per takmaterial",
   "Hur länge ett tak håller beror på material, utförande och underhåll. Här är typiska livslängder och vad som förlänger dem.",
   [("p","Att känna till takets förväntade livslängd hjälper dig planera ekonomiskt. Siffrorna nedan är riktvärden – läge, lutning och underhåll påverkar utfallet mycket."),
@@ -2022,6 +2144,14 @@ article("takmaterial-livslangd.html",
    ("ul",["<strong>Tegelpannor:</strong> 50+ år.","<strong>Betongpannor:</strong> 30–50 år.",
           "<strong>Plåttak:</strong> 40–50 år, kan ommålas.","<strong>Papptak:</strong> 20–30 år.",
           "<strong>Underlagspapp:</strong> 30–40 år (ofta takets svaga länk)."]),
+   ("h2","Hur länge håller ett tegeltak?"),
+   ("p","Lertegel är det mest långlivade pannmaterialet och håller ofta 50 år eller mer. Det är sällan teglet som tar slut först – på äldre tegeltak är det oftast underlagspappen och läkten som är uttjänta. Då räcker en omläggning där samma pannor läggs tillbaka."),
+   ("h2","Hur länge håller betongpannor?"),
+   ("p","Betongpannor håller ofta 30–50 år. Med åren slits ytskiktet, pannorna suger mer vatten och blir känsligare för frost och mossa. Vittrar pannorna eller spricker de i kyla är det dags för nya pannor, inte bara nytt underlag."),
+   ("h2","Hur länge håller ett plåttak?"),
+   ("p",f"Ett plåttak håller ofta 40–50 år och kan förlängas med {a('takmalning.html','takmålning')} när färgskiktet börjat släppa. Rost vid falsar, skruvar och infästningar är tecken på att taket behöver åtgärdas."),
+   ("h2","Hur länge håller ett papptak?"),
+   ("p","Papptak håller ofta 20–30 år, kortare på låglutande tak där vatten blir stående. Blåsor, sprickor och lösa skarvar är varningstecken. Även under pannor och plåt finns papp – underlagspappen – som ofta håller 30–40 år och därför är takets svaga länk."),
    ("h2","Vad förlänger livslängden?"),
    ("ul",[f"Regelbunden {a('taktvatt.html','taktvätt')} och borttagning av mossa.",
           "Fungerande avvattning och ventilation.","Åtgärd av små skador i tid.",
@@ -2031,7 +2161,11 @@ article("takmaterial-livslangd.html",
   [("tegel-betong-plattak.html","Jämför takmaterial","För- och nackdelar."),
    ("takbesiktning.html","Takbesiktning","Bedöm ditt taks status."),
    ("takbyte.html","Takbyte","När livslängden är nådd.")],
-  badge="Material", read="4 min")
+  faq=[("Hur länge håller ett tegeltak?","Tegelpannor håller ofta 50 år eller mer. Underlagspappen under dem har kortare liv och avgör ofta när taket behöver läggas om."),
+       ("Hur länge håller betongpannor?","Ofta 30–50 år, beroende på läge, lutning och underhåll."),
+       ("Hur länge håller ett plåttak?","Ofta 40–50 år, och livslängden kan förlängas med ommålning."),
+       ("Hur länge håller ett papptak?","Ofta 20–30 år. Låg lutning och stående vatten förkortar livslängden.")],
+  badge="Material", read="5 min")
 
 article("vindsisolering.html",
   "Vindsisolering och tilläggsisolering | Geal Entreprenad AB",
@@ -2708,10 +2842,23 @@ page(file="404.html", no_cta=True, noindex=True, nolist=True,
         ("faq.html","Vanliga frågor","Svar på det vanligaste."),
         ("kontakt.html","Kontakt","Begär offert eller ställ en fråga.")], muted=False))
 
+# ====================== TEMATISK FOKUS (2026-10-15) =====================
+# Rena nybygge-/infosidor utan takkoppling: aldrig indexerade av Google (GSC URL-
+# inspektion 15.10: "okänd"/"Discovered"), drar crawl och späder ut taktemat.
+# noindex,follow + ur sitemap. Sidorna finns kvar för besökare och Ads; kommersiella
+# byggsidor (bygg, byggfirma, villarenovering, tillbyggnad, attefallshus,
+# nybyggnad-villa) ligger kvar i index.
+OFFTOPIC_NOINDEX = {"friggebod.html", "fritidshus.html", "vad-kostar-bygga-hus.html",
+                    "attefallshus-regler.html"}
+for _p in PAGES:
+    if _p["file"] in OFFTOPIC_NOINDEX:
+        _p["noindex"] = True
+        _p["nolist"] = True
+
 # ====================== SÖK (klientbaserad) ============================
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
-  "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och byggfirma i Bromma. Takbyte, takrenovering, plåttak och totalentreprenad på villa i Stockholm. Gratis besök och kostnadsförslag."),
+  "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och takfirma i Bromma. Takbyte, takrenovering, plåttak och totalentreprenad på villa i hela Stockholm. Gratis besök och kostnadsförslag."),
   "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),

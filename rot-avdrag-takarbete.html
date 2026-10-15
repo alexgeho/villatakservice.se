@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ROT-avdrag för takarbete 2026 – så mycket kan du dra av</title>
-    <meta name="description" content="ROT-avdrag för takbyte och takrenovering: vad som gäller, hur avdraget fungerar och hur mycket du kan dra av på arbetskostnaden. Guide för villaägare." />
+    <title>ROT-avdrag för takbyte och takomläggning 2026 – räkna själv</title>
+    <meta name="description" content="ROT-avdrag 2026 för takbyte, takomläggning och takrenovering: 30 % av arbetskostnaden, max 50 000 kr per person. Villkor, exempel och ROT-räknare." />
     <link rel="canonical" href="https://villatakservice.se/rot-avdrag-takarbete.html" />
     <meta name="geo.region" content="SE-AB" />
     <meta name="geo.placename" content="Bromma, Stockholm" />
-    <meta property="og:title" content="ROT-avdrag för takarbete 2026 – så mycket kan du dra av" />
-    <meta property="og:description" content="ROT-avdrag för takbyte och takrenovering: vad som gäller, hur avdraget fungerar och hur mycket du kan dra av på arbetskostnaden. Guide för villaägare." />
+    <meta property="og:title" content="ROT-avdrag för takbyte och takomläggning 2026 – räkna själv" />
+    <meta property="og:description" content="ROT-avdrag 2026 för takbyte, takomläggning och takrenovering: 30 % av arbetskostnaden, max 50 000 kr per person. Villkor, exempel och ROT-räknare." />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://villatakservice.se/rot-avdrag-takarbete.html" />
     <meta property="og:image" content="https://villatakservice.se/assets/images/1.webp" />
@@ -28,7 +28,7 @@
       });
       window.__vtsConsentDefault = true;
     </script>
-    <script src="assets/js/main.js?v=f55253d0" defer></script>
+    <script src="assets/js/main.js?v=b53d979e" defer></script>
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
@@ -66,6 +66,22 @@
                   "acceptedAnswer": {
                         "@type": "Answer",
                         "text": "Nej, ROT-avdraget gäller endast arbetskostnaden, inte material eller resekostnader."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Får man ROT-avdrag för takomläggning?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Ja. Takomläggning är reparation och underhåll av bostaden, så arbetskostnaden ger ROT-avdrag på 30 % under 2026, högst 50 000 kr per person och år."
+                  }
+            },
+            {
+                  "@type": "Question",
+                  "name": "Är ROT-avdraget 50 % 2026?",
+                  "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Nej. 50 % gällde tillfälligt för betalningar mellan 12 maj och 31 december 2025. Från 2026 är det 30 % av arbetskostnaden."
                   }
             },
             {
@@ -146,6 +162,50 @@
           <p>ROT-avdraget gör att du får dra av en del av arbetskostnaden för renovering och underhåll av din bostad. Takbyte, takrenovering och de flesta takarbeten på villa omfattas, förutsatt att du äger bostaden och uppfyller villkoren.</p>
           <h2>Hur mycket är ROT-avdraget?</h2>
           <p>Avdraget gäller arbetskostnaden – inte material, resor eller administration. För 2026 är ROT-avdraget 30 % av arbetskostnaden, med ett tak på 50 000 kr per person och år. ROT och RUT delar dessutom ett gemensamt tak på 75 000 kr per person och år (Skatteverket).</p>
+          <p>Den tillfälliga höjningen till 50 % gällde bara arbeten som betalades mellan 12 maj och 31 december 2025. Får du en offert under 2026 är det alltså 30 % som gäller.</p>
+          <h2>Räkna ut ROT-avdraget</h2>
+          <div class="calc-wrap" id="rot-raknare">
+            <form class="calc-form" data-rot-form novalidate>
+              <div class="field">
+                <label for="rot-arbete">Arbetskostnad i offerten (kr inkl. moms)</label>
+                <input id="rot-arbete" name="arbete" type="number" min="0" step="1000" inputmode="numeric" placeholder="t.ex. 120000" />
+              </div>
+              <div class="field">
+                <label for="rot-agare">Ägare som delar avdraget</label>
+                <select id="rot-agare" name="agare">
+                  <option value="1">1 person</option>
+                  <option value="2">2 personer</option>
+                </select>
+              </div>
+            </form>
+            <aside class="calc-result" data-rot-result hidden aria-live="polite">
+              <p class="calc-result__label">ROT-avdrag</p>
+              <p class="calc-result__figure"><span data-rot-avdrag>–</span> kr</p>
+              <div class="calc-result__rot">
+                <p class="calc-result__label">Du betalar för arbetet</p>
+                <p class="calc-result__figure"><span data-rot-betala>–</span> kr</p>
+              </div>
+              <p class="calc-disclaimer">30 % av arbetskostnaden, högst 50 000 kr per person och år (2026). Material ingår inte. Har du redan använt ROT i år blir utrymmet mindre.</p>
+            </aside>
+          </div>
+          <h2>Vilka takarbeten ger ROT-avdrag?</h2>
+          <p>ROT gäller reparation, underhåll, ombyggnad och tillbyggnad av din bostad. På ett villatak omfattar det normalt arbetet vid:</p>
+          <ul>
+            <li><a class="text-link" href="takbyte.html">Takbyte</a> – rivning, nytt underlag och nya pannor eller plåt.</li>
+            <li><a class="text-link" href="takrenovering.html">Takomläggning och takrenovering</a> – samma pannor läggs tillbaka på nytt underlag.</li>
+            <li>Plåtarbeten, <a class="text-link" href="hangrannor-stupror.html">hängrännor och stuprör</a> och <a class="text-link" href="skorstensrenovering.html">skorstensrenovering</a>.</li>
+            <li><a class="text-link" href="takmalning.html">Målning av plåttak</a> och reparation av läckage.</li>
+          </ul>
+          <p>Avdraget gäller bara arbetet. Pannor, plåt, papp, container och resor betalar du fullt för.</p>
+          <h2>Villkor för ROT-avdrag på taket</h2>
+          <ul>
+            <li>Du äger bostaden och bor i den eller använder den som fritidshus.</li>
+            <li>Arbetet utförs av ett företag med F-skatt.</li>
+            <li>Arbetskostnaden står separat på fakturan.</li>
+            <li>Du har tillräckligt med skatt att reducera och har inte redan använt hela ditt utrymme för året.</li>
+            <li>Är huset nybyggt kan särskilda regler gälla – kontrollera med Skatteverket.</li>
+          </ul>
+          <p>Källa: <a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete.4.2e56d4ba1202f95012080002966.html" rel="noopener">Skatteverket – rot- och rutarbete</a>. Vi har F-skatt och sköter ansökan om utbetalning åt dig.</p>
           <h2>Så fungerar det i praktiken</h2>
           <ol>
             <li>Vi bedömer taket och lämnar offert.</li>
@@ -196,6 +256,18 @@
                 <span data-sign>+</span>
               </button>
               <div class="faq-answer" hidden>Nej, ROT-avdraget gäller endast arbetskostnaden, inte material eller resekostnader.</div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Får man ROT-avdrag för takomläggning?
+                <span data-sign>+</span>
+              </button>
+              <div class="faq-answer" hidden>Ja. Takomläggning är reparation och underhåll av bostaden, så arbetskostnaden ger ROT-avdrag på 30 % under 2026, högst 50 000 kr per person och år.</div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Är ROT-avdraget 50 % 2026?
+                <span data-sign>+</span>
+              </button>
+              <div class="faq-answer" hidden>Nej. 50 % gällde tillfälligt för betalningar mellan 12 maj och 31 december 2025. Från 2026 är det 30 % av arbetskostnaden.</div>
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Får jag ROT för takarbete på fritidshus?
