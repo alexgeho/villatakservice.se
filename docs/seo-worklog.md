@@ -5,7 +5,11 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
-## 🟢 SESSION 2026-10-15 — "topp som gjuta": diagnos + 10 fixar (gren `seo/top-2026-10-15`, ej live)
+## 🟡 2026-10-15 (kväll) — LEADS: nästa steg (HANDOFF i ~/sites-hub/worklog.md)
+- Konkurrentens länknätverk kartlagt: ~/sites-hub/audits/2026-10-15/konkurent-lanknatverk.md (EMD-sajter på N.nu + bloggdonatorer, byrå AIM Partner).
+- NÄSTA: 3 EMD-domäner "takläggare + ort" (ägaren köper) → enkelsidor med formulär; Google Ads enligt ads-plan.md när ägaren gett konto + kort; kalkylatorn i hero + trust-block.
+
+## 🟢 SESSION 2026-10-15 — "topp som gjuta": diagnos + 10 fixar (`d0e001b`, LIVE)
 GSC 90 d (16.7–13.10): 1 klick / 7 229 visn / pos ~50; trend: 1 704 → 1 945 → 3 114 visn per halvmånad. Index (URL Inspection, sitemap 89): 62 indexerade, 10 Discovered, 17 okända (mest 17 nya stadsdelssidor + 6 Dalarna-orter + omraden). "takläggare stockholm" (KP 500/mån) och "takfirma stockholm" (500) = 0 visn. Pris-sökord (takbyte pris/kostnad) pos 64–75; besikta tak 56, besikta tak stockholm 27, takbesiktning 78. Off-topic (totalentreprenad/tillbyggnad/badrum m.m.) 13 % av visn, pos 45–66 utom startsidan (entreprenad bromma 4, totalentreprenad bromma 7).
 ### KLART
 - ✅ takbesiktning: title/H1 "besikta tak", nya sektioner husköp vs överlåtelsebesiktning (ärligt: vi är inte oberoende besiktningsmän), storm/försäkring, "vad händer efter", Dalarna-länk, +3 FAQ.
