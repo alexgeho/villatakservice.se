@@ -1758,7 +1758,8 @@ article("vad-kostar-takbyte.html",
   [("takbyte.html","Takbyte","Vår tjänst för komplett takbyte."),
    ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så avgör du vilket som lönar sig."),
    ("rot-avdrag-takarbete.html","ROT-avdrag för takarbete","Så mycket kan du dra av."),
-   ("takbesiktning.html","Takbesiktning","Få takets skick bedömt först.")],
+   ("takbesiktning.html","Takbesiktning","Få takets skick bedömt först."),
+   ("https://takbytepris.nu/","Takbyte pris","Räkna på din takyta – pris per m² för betong, tegel och plåt.")],
   faq=[("Vad kostar ett takbyte?","Det beror på takets area och form, material, lutning, tillgänglighet och underlagets skick. Vi kommer ut gratis och ger ett kostnadsförslag med fast pris för just ditt tak."),
        ("Är takbyte dyrare med tegel eller plåt?","Det varierar. Materialen skiljer sig i pris, vikt och läggningstid, och valet påverkar även livslängd och underhåll. Vi går igenom alternativen vid besöket."),
        ("Ingår rivning i priset?","I en komplett offert från oss ingår rivning och bortforsling av det gamla taket. Kontrollera alltid att det ingår när du jämför offerter."),
@@ -2806,7 +2807,8 @@ page(file="kalkylator-takbyte.html",
     + links_block("Nästa steg", [
         ("takbyte.html","Takbyte","Så går ett komplett takbyte till."),
         ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Prisguide och vad som påverkar kostnaden."),
-        ("rot-avdrag-takarbete.html","ROT-avdrag","Så mycket kan du dra av 2026.")]))
+        ("rot-avdrag-takarbete.html","ROT-avdrag","Så mycket kan du dra av 2026."),
+        ("https://takbytepris.nu/","Takbyte pris","Detaljerad kalkyl med materiallista och ROT.")]))
 
 # ====================== TACK (form success) ============================
 page(file="tack.html", no_cta=True, noindex=True, nolist=True,
