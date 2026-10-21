@@ -5,6 +5,11 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟡 2026-10-21 — SEO-runda (branch seo-2026-10-21, ej pushad)
+- GSC 28 d: 3 klick / 6 811 visn / pos 50,2. Index ~65/85; ej indexerade: 13 okända (stadsdelar + 3 Dalarna + tegel-betong-plattak), 7 Discovered.
+- ✅ Kort "Takbyte pris" → takbytepris.nu på vad-kostar-takbyte + kalkylator (sökordet ägs av takbytepris).
+- 🔜 Request Indexing: se ~/sites-hub/audits/2026-10-21/villatakservice.md. Ägaren: synka kalkylator-RATES med takbytepris, GBP, reco.se.
+
 ## 🟡 2026-10-15 (kväll) — LEADS: nästa steg (HANDOFF i ~/sites-hub/worklog.md)
 - Konkurrentens länknätverk kartlagt: ~/sites-hub/audits/2026-10-15/konkurent-lanknatverk.md (EMD-sajter på N.nu + bloggdonatorer, byrå AIM Partner).
 - NÄSTA: 3 EMD-domäner "takläggare + ort" (ägaren köper) → enkelsidor med formulär; Google Ads enligt ads-plan.md när ägaren gett konto + kort; kalkylatorn i hero + trust-block.
