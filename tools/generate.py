@@ -469,7 +469,7 @@ page(file="takbyte.html",
         "Återkommande läckage trots reparationer.","Taket är 40–50 år eller äldre."], muted=False, sid="tecken")
     + sec("Takbyte på villor i Stockholm – olika epoker, olika tak", [
         "I trädgårdsstäderna i Bromma, Danderyd och Sundbyberg är många villor från 1920–40-talet med branta tegeltak, kupor och detaljrika vindskivor. Vid takbyte på de husen väljer vi pannor och plåt som behåller husets karaktär och förnyar samtidigt underlaget helt.",
-        "Villorna från 1960–70-talet i bland annat Sollentuna, Spånga, Täby och Järfälla har oftast betongpannor och originalunderlag som nu är 50 år gammalt. Där är takbyte eller takomläggning det vanligaste uppdraget. Funkishus och radhus med låg lutning får ofta nytt plåt- eller papptak.",
+        f"Villorna från 1960–70-talet i bland annat Sollentuna, Spånga, Täby och Järfälla har oftast betongpannor och originalunderlag som nu är 50 år gammalt. Där är takbyte eller takomläggning det vanligaste uppdraget. Funkishus och radhus med låg lutning får ofta nytt plåt- eller {a('papptak.html','papptak')}.",
         f"Vi arbetar i hela Storstockholm – se {a('omraden.html','alla områden')}."], muted=True, sid="epoker")
     + fig("takmaterial-jamforelse", "Takmaterial sida vid sida: tegelpannor, betongpannor, plåt och takpapp")
     + sec("Passa på vid takbytet", [
@@ -709,6 +709,7 @@ page(file="plattak.html",
     + links_block("Relaterat", [
         ("falsat-plattak.html","Falsat plåttak & bandtäckning","Klassiskt plåttak för låga lutningar."),
         ("mala-plattak.html","Måla plåttak","Underhåll och nytt ytskydd."),
+        ("papptak.html","Papptak","Byta eller lägga nytt papptak."),
         ("takmaterial-livslangd.html","Livslängd per takmaterial","Så länge håller plåt, tegel och betong."),
         ("taklaggare-lidingo.html","Plåttak på Lidingö","Salt havsluft ställer extra krav på plåt.")]),
   faq=[
@@ -719,6 +720,69 @@ page(file="plattak.html",
     ("Vad är skillnaden mellan bandtäckning och profilplåt?","Bandtäckning är falsade plåtband som läggs på plats av plåtslagare. Profilplåt är färdiga skivor som skruvas fast – snabbare och oftast billigare."),
     ("Behövs bygglov för att byta till plåttak?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial eller kulör på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden."),
     ("Ger plåttak ROT-avdrag?","Ja, arbetskostnaden ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")])
+
+page(file="papptak.html",
+  title="Papptak i Stockholm – byta & lägga papptak | Geal Entreprenad AB",
+  description="Byta eller lägga nytt papptak på villa, radhus och funkishus i Stockholm. Ny underlagspapp och ytpapp, täta detaljer och ROT. Gratis besök och fast pris.",
+  h1="Papptak i Stockholm",
+  service=True, service_type="Papptak", localbiz=False,
+  howto=("Så lägger vi nytt papptak", [
+    ("Besiktning","Vi går upp på taket och vinden, bedömer pappen, råsponten och detaljerna och avgör om taket ska lagas eller läggas om."),
+    ("Rivning","Den gamla pappen tas bort och forslas bort, så att underlaget kan kontrolleras."),
+    ("Underlag","Råsponten kontrolleras och skadade eller fuktskadade partier byts."),
+    ("Underlagspapp","Ett första lager papp läggs över hela takytan med täta skarvar."),
+    ("Ytpapp","Ytpappen läggs ovanpå och skyddar mot sol, regn och slitage."),
+    ("Detaljer och slutkontroll","Fotplåt, vindskivor, genomföringar och avvattning görs täta, och vi går igenom taket tillsammans med dig.")]),
+  crumbs=SVC_CRUMB+[("Papptak","papptak.html")],
+  cta=("Dags att byta papptaket?","Vi kommer ut gratis, bedömer taket och lämnar ett skriftligt kostnadsförslag med fast pris."),
+  body=hero("Papptak i Stockholm",
+    "Vi byter och lägger nytt papptak på villor, radhus och funkishus med låg taklutning. Ett papptak brukar hålla 20–30 år, och när det är slut lägger vi ny underlagspapp och ytpapp och gör alla detaljer täta. Du får fast pris efter ett gratis besök.",
+    SVC_CRUMB+[("Papptak","papptak.html")],
+    [("#nar","När byta"),("#ingar","Så går det till"),("#plat","Papp eller plåt"),("#pris","Kostnad & ROT"),("#faq","Vanliga frågor")])
+    + sec_split("När behöver papptaket bytas?", [
+        "Papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående. Papp är vanligt på funkisvillor, radhus och hus med nästan platta tak, där pannor inte fungerar.",
+        f"Ett gammalt papptak kan ofta lagas punktvis så länge pappen är hel i övrigt. Är den spröd över hela ytan, eller har fukt nått råsponten, är det dags att lägga om. Osäker? En {a('takbesiktning.html','takbesiktning')} ger besked."],
+        "Tecken på att pappen är slut", [
+        "Blåsor och sprickor i ytan.","Lösa eller öppna skarvar.",
+        "Stående vatten efter regn.","Granulat som spolas ner i hängrännorna.",
+        "Fuktfläckar i tak eller på vinden.","Mossa och påväxt som håller fukt."], sid="nar")
+    + sec_process("Så går ett byte av papptak till", [
+        ("Besiktning","Vi går upp på taket och vinden, bedömer pappen, råsponten och detaljerna och avgör om taket ska lagas eller läggas om."),
+        ("Rivning","Den gamla pappen tas bort och forslas bort, så att underlaget kan kontrolleras."),
+        ("Underlag","Råsponten kontrolleras och skadade eller fuktskadade partier byts."),
+        ("Underlagspapp","Ett första lager papp läggs över hela takytan med täta skarvar."),
+        ("Ytpapp","Ytpappen läggs ovanpå och skyddar mot sol, regn och slitage."),
+        ("Detaljer och slutkontroll","Fotplåt, vindskivor, genomföringar och avvattning görs täta, och vi går igenom taket tillsammans med dig.")], muted=True, sid="ingar")
+    + sec("Det mesta läckaget sitter i detaljerna", [
+        "På ett låglutande tak rinner vattnet långsamt, så skarvar, takfot och anslutningar måste vara helt täta. De vanligaste läckagepunkterna är runt skorsten, ventilation och andra genomföringar, vid takfoten och där taket möter en vägg.",
+        f"Därför byter vi plåtdetaljer som fotplåt och vindskivor när de är slitna, och ser över {a('hangrannor-stupror.html','hängrännor och stuprör')} i samma omgång."])
+    + sec("Papp eller plåt på låg lutning?", [
+        f"Både papp och plåt fungerar på låga taklutningar. Papp har kortare livslängd, 20–30 år, medan ett {a('plattak.html','plåttak')} brukar hålla 40–50 år. Falsad plåt är det klassiska alternativet på funkishus, se {a('falsat-plattak.html','falsat plåttak och bandtäckning')}.",
+        f"Vill du byta från papp till plåt bedömer vi underlaget och lutningen vid besöket. Sedan 1 december 2025 kräver byte av takmaterial på villa och radhus normalt inget bygglov, utom i skyddade miljöer – läs mer i {a('bygglov-takbyte.html','bygglov för takbyte')}. Jämför fler material i {a('takmaterial-livslangd.html','livslängd per takmaterial')}."], muted=True, sid="plat")
+    + sec("Vad kostar ett papptak?", [
+        "Priset beror på takets yta, lutning och form, om råsponten behöver bytas, antal genomföringar och plåtdetaljer samt ställning och åtkomst. Rivning och bortforsling av den gamla pappen ingår i ett komplett byte.",
+        f"Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag med fast pris. Vill du ha en första uppskattning per kvadratmeter kan du {a('https://takbytepris.nu/','räkna på papptak på takbytepris.nu')}. Mer om vad som styr priset finns i {a('vad-kostar-takbyte.html','vad kostar ett takbyte')}."], sid="pris")
+    + rot_box("Arbetskostnaden för att byta papptak på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")
+    + links_block("Papptak i ditt område", [
+        ("taklaggare-bromma.html","Bromma","Funkisvillor med låga tak."),
+        ("taklaggare-solna.html","Solna","Låglutande tak i Bergshamra."),
+        ("taklaggare-jarfalla.html","Järfälla","Radhus med låglutande tak."),
+        ("taklaggare-taby.html","Täby","Villor och radhus från 60–70-talet."),
+        ("taklaggare-sundbyberg.html","Sundbyberg","Plåt- och papptak i Rissne.")], muted=False, sid="orter")
+    + links_block("Relaterat", [
+        ("plattak.html","Plåttak","Nytt plåttak på låg lutning."),
+        ("takmaterial-livslangd.html","Livslängd per takmaterial","Så länge håller papp, plåt och pannor."),
+        ("takbyte.html","Takbyte","Komplett takbyte på villa."),
+        ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Pris per kvm och ROT.")]),
+  faq=[
+    ("Hur länge håller ett papptak?","Ett papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående."),
+    ("Hur vet jag att papptaket behöver bytas?","Blåsor, sprickor, lösa skarvar, stående vatten och fuktfläckar på vinden är vanliga tecken. Vi bedömer taket vid ett gratis besök."),
+    ("Kan man laga ett papptak i stället för att byta?","Ja, om pappen är hel i övrigt kan enstaka skador lagas. Är den spröd över hela ytan eller har fukt nått råsponten lönar sig en omläggning."),
+    ("Vad kostar det att byta papptak?","Det beror på yta, lutning, underlagets skick och detaljer. Vi lämnar fast pris efter ett gratis besök. Arbetskostnaden ger ROT-avdrag."),
+    ("Kan man lägga papptak själv?","Det går, men arbete på tak innebär fallrisk och på ett bostadshus avgör täta skarvar och detaljer om taket håller. ROT-avdrag får du bara när ett företag utför arbetet."),
+    ("Vad är tjärpapp?","Tjärpapp är det vardagliga namnet på takpapp. Modern takpapp är bitumenbaserad, inte tjärbaserad."),
+    ("Kan man byta från papptak till plåttak?","Ja, plåt fungerar också på låg lutning och håller längre. Vi bedömer underlaget och lutningen vid besöket."),
+    ("Behövs bygglov för att byta papptak?","Normalt inte för villa eller radhus: sedan 1 december 2025 krävs inget bygglov för att byta takmaterial på en- och tvåbostadshus. Undantaget är särskilt kulturhistoriskt värdefulla hus och områden.")])
 
 page(file="takmalning.html",
   title="Takmålning i Stockholm – målning av plåttak med ROT | Geal Entreprenad AB",
@@ -1718,18 +1782,26 @@ def article(file, title, description, h1, lead, blocks, related, faq=None, badge
          crumbs=ART_CRUMB+[(h1,file)], article=True, og_type="article", faq=faq)
 
 article("vad-kostar-takbyte.html",
-  "Vad kostar ett takbyte? Arbetskostnad, material & ROT 2026",
-  "Vad kostar ett takbyte på villa? Så styr area, material och underlag priset, vad som räknas som arbetskostnad och hur mycket ROT du får – räkna själv.",
-  "Vad kostar ett takbyte?",
-  "Priset för ett takbyte varierar mycket beroende på tak och material. Här går vi igenom vad som driver kostnaden, hur du jämför offerter på rätt sätt och hur ROT-avdraget räknas – och varför vi alltid ger pris först efter ett gratis besök.",
+  "Vad kostar ett takbyte? Pris per kvm, arbete & ROT 2026",
+  "Vad kostar ett takbyte på villa – totalt och per kvm? Så styr takyta, material och underlag priset, så mäter du taket och räknar ROT 2026.",
+  "Vad kostar ett takbyte – totalt och per kvm?",
+  "Priset för ett takbyte räknas oftast per kvadratmeter takyta, men kvm-priset varierar mycket med material, lutning och underlag. Här går vi igenom vad som driver kostnaden, hur du mäter takytan, hur du jämför offerter och hur ROT-avdraget räknas – och varför vi alltid ger pris först efter ett gratis besök.",
   [("p","En av de vanligaste frågorna vi får är vad ett takbyte kostar. Det ärliga svaret är att det beror på taket – två villor med samma yta kan landa långt ifrån varandra. Kostnaden styrs framför allt av takets area och form, val av material, taklutning, tillgänglighet och underlagets skick. Därför lämnar vi inga schablonpriser, utan kommer ut gratis, tittar på taket och ger ett kostnadsförslag med fast pris."),
    ("h2","Vad påverkar priset på ett takbyte?"),
    ("ul",["<strong>Takarea och form</strong> – fler kvadratmeter kostar mer, och ett tak med många vinklar, kupor och ränndalar tar längre tid än ett enkelt sadeltak.",
-          f"<strong>Material</strong> – betongpannor, tegel och plåt skiljer sig i både materialpris, vikt och läggningstid. Materialet påverkar också livslängd och underhåll, se {a('takmaterial-livslangd.html','takmaterial och livslängd')}.",
+          f"<strong>Material</strong> – betongpannor, tegel, plåt och {a('papptak.html','papp')} skiljer sig i både materialpris, vikt och läggningstid. Materialet påverkar också livslängd och underhåll, se {a('takmaterial-livslangd.html','takmaterial och livslängd')}.",
           "<strong>Underlagets skick</strong> – om råspont, läkt eller underlagspapp behöver bytas ökar omfattningen. Det syns ofta först när det gamla taket rivs, därför bedömer vi det redan vid besöket.",
           "<strong>Taklutning och höjd</strong> – branta och höga tak kräver mer säkerhetsutrustning och ställning.",
           "<strong>Tillgänglighet</strong> – plats för ställning, container och materialleverans påverkar arbetet.",
           f"<strong>Detaljer</strong> – skorstensbeslag, genomföringar, {a('takfonster.html','takfönster')}, {a('hangrannor-stupror.html','hängrännor och stuprör')} och {a('taksakerhet-snorasskydd.html','taksäkerhet')} kan ingå eller tillkomma."]),
+   ("h2","Takbyte pris per kvm – så räknar du"),
+   ("p","Kvm-priset för ett takbyte gäller takets yta, inte husets boyta. Takytan är större än ytan under taket, eftersom taket lutar och sticker ut vid takfoten. Ju brantare tak, desto större skillnad."),
+   ("p","Så räknar du ut takytan ungefärligt: ta ytan under taket inklusive takutsprång och dela med cosinus för taklutningen. Det motsvarar att multiplicera med omkring:"),
+   ("ul",["<strong>1,12</strong> vid 27 graders lutning.",
+          "<strong>1,27</strong> vid 38 graders lutning.",
+          "<strong>1,41</strong> vid 45 graders lutning."]),
+   ("p","Exempel: ett hus med 150 kvm under taket och 27 graders lutning har omkring 170 kvm takyta. Ett tak på 100, 150 eller 200 kvm takyta får alltså olika totalpris, men kvm-priset är sällan detsamma. Ställning, container, skorstensbeslag och andra plåtdetaljer kostar ungefär lika mycket oavsett yta, och kupor och ränndalar ökar arbetet."),
+   ("p",f"Vill du räkna på din egen takyta kan du använda vår {a('kalkylator-takbyte.html','takbyte-kalkylator')} eller räkna pris per kvm för betong, tegel, plåt och papp på {a('https://takbytepris.nu/','takbytepris.nu')}. Det ger ett spann – det fasta priset får du efter besöket."),
    ("h2","Därför får du pris först efter ett gratis besök"),
    ("p","Siffror i olika prisguider varierar kraftigt och säger lite om just ditt tak. Ett pris som ges utan att någon sett taket blir antingen för högt för att täcka osäkerheten, eller för lågt och följs av tilläggsarbeten. Vi gör därför alltid ett kostnadsfritt besök och ger ett skriftligt kostnadsförslag med fast pris – så vet du vad takbytet kostar innan du bestämmer dig."),
    ("h2","Så jämför du offerter på takbyte"),
@@ -1765,6 +1837,7 @@ article("vad-kostar-takbyte.html",
        ("Ingår rivning i priset?","I en komplett offert från oss ingår rivning och bortforsling av det gamla taket. Kontrollera alltid att det ingår när du jämför offerter."),
        ("Hur mycket ROT-avdrag får man på ett takbyte?","Under 2026 är ROT-avdraget 30 % av arbetskostnaden, högst 50 000 kr per person och år. Material ger inget avdrag. Avdraget görs direkt på fakturan."),
        ("Vad räknas som arbetskostnad vid ett takbyte?","Rivning, läggning av underlagspapp, läkt och pannor eller plåt samt plåtarbeten. Material, utrustning och resor räknas inte som arbetskostnad och ger inget ROT-avdrag."),
+       ("Vad kostar ett takbyte per kvm?","Kvm-priset beror på material, lutning, underlagets skick och detaljer som kupor och skorsten. Räkna med takytan, inte husets boyta – takytan är större ju brantare taket är. Vi ger fast pris efter ett gratis besök."),
        ("Gäller 50 % ROT fortfarande?","Nej. Den tillfälliga höjningen till 50 % gällde betalningar mellan 12 maj och 31 december 2025. Från 2026 är ROT-avdraget 30 % av arbetskostnaden.")],
   badge="Kostnad", read="7 min")
 
@@ -2153,7 +2226,7 @@ article("takmaterial-livslangd.html",
    ("h2","Hur länge håller ett plåttak?"),
    ("p",f"Ett plåttak brukar hålla 40–50 år, och tillverkare anger att den tekniska livslängden kan nå upp emot 50 år om taket hålls rent från mossa och smuts ({PLANNJA_FAQ}). Livslängden kan förlängas med {a('takmalning.html','takmålning')} när färgskiktet börjat släppa. Rost vid falsar, skruvar och infästningar är tecken på att taket behöver åtgärdas."),
    ("h2","Hur länge håller ett papptak?"),
-   ("p","Papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående. Blåsor, sprickor och lösa skarvar är varningstecken. Även under pannor och plåt finns papp – underlagspappen – som ofta håller 30–40 år och därför är takets svaga länk."),
+   ("p",f"Papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående. Blåsor, sprickor och lösa skarvar är varningstecken – då är det dags att {a('papptak.html','byta papptaket')}. Även under pannor och plåt finns papp – underlagspappen – som ofta håller 30–40 år och därför är takets svaga länk."),
    ("h2","Vad förlänger livslängden?"),
    ("ul",[f"Regelbunden {a('taktvatt.html','taktvätt')} och borttagning av mossa.",
           "Fungerande avvattning och ventilation.","Åtgärd av små skador i tid.",
