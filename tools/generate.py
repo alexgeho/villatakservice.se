@@ -8,7 +8,7 @@ Gemensam header/footer/head/schema har; sidinnehall i PAGES + kluster-listor.
 De 6 ursprungssidorna (index/tjanster/om-oss/kontakt/artiklar/artikel)
 redigeras direkt i sina filer och genereras INTE har (delad nav/footer maste matcha).
 """
-import os, json, datetime
+import os, re, json, datetime
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -148,9 +148,10 @@ FOOTER = f"""    <footer class="footer">
         </div>
       </div>
       <div class="container footer-bottom">
-        &copy; <span data-year></span> {BRAND} &middot; Org.nr {ORGNR} &middot;
+        &copy; <span data-year>2026</span> {BRAND} &middot; Org.nr {ORGNR} &middot;
         <a href="sok.html">Sök</a> &middot;
         <a href="integritetspolicy.html">Integritetspolicy</a> &middot;
+        <a href="villkor.html">Villkor</a> &middot;
         <a href="faq.html">Vanliga frågor</a>. Alla rättigheter förbehållna.
       </div>
     </footer>"""
@@ -179,7 +180,7 @@ def breadcrumb_schema(crumbs):
 def faq_schema(faq):
     return {"@context":"https://schema.org","@type":"FAQPage",
         "mainEntity":[{"@type":"Question","name":q,
-            "acceptedAnswer":{"@type":"Answer","text":x}} for q,x in faq]}
+            "acceptedAnswer":{"@type":"Answer","text":re.sub(r"<[^>]+>","",x)}} for q,x in faq]}
 
 def article_schema(p):
     return {"@context":"https://schema.org","@type":"Article",
@@ -1956,7 +1957,7 @@ article("sa-valjer-du-taklaggare.html",
    ("ol",["Ingår rivning, underlagsbyte och plåtdetaljer i priset?",
           "Vem ansvarar om något oförutsett upptäcks under arbetet?",
           "Hur hanteras ROT-avdraget?","När kan arbetet påbörjas och hur lång tid tar det?"]),
-   ("tips","Var vaksam på ovanligt låga priser och krav på stora förskott. Seriösa företag ger tydliga, jämförbara offerter."),
+   ("tips","Var vaksam på ovanligt låga priser och krav på stora förskott. Seriösa företag ger tydliga, jämförbara offerter. Vill du jämföra fler kan du <a href=\"https://byggtorg.se/takarbeten/\">få offerter på takarbeten</a> via Byggtorg."),
    ("cta",("Begär en tydlig offert av oss","Vi ger en specificerad offert med omfattning, material och tidplan – enkel att jämföra."))],
   [("takbesiktning.html","Takbesiktning","Bra underlag inför offertjämförelse."),
    ("om-oss.html","Om oss","Så arbetar vi."),
@@ -2399,6 +2400,31 @@ page(file="integritetspolicy.html", no_cta=True,
     + prose(_pol_blocks)
     + '\n        </article>\n      </section>')
 
+_villkor_blocks = [
+  ("p","<em>Senast uppdaterad 2026-10-24.</em>"),
+  ("h2","Offert"),
+  ("p","Platsbesök och offert är kostnadsfria, och du binder dig inte till något genom att begära offert. Offerten anger omfattning, material, fast pris och preliminär tidplan."),
+  ("h2","Garanti"),
+  ("p","Garanti och villkor för ditt projekt framgår alltid av offert och avtal."),
+  ("h2","Betalning och ROT-avdrag"),
+  ("p",f"Du betalar mot faktura. ROT-avdraget dras direkt på fakturan, så du betalar bara din del, och vi begär utbetalningen från Skatteverket. Avdraget gäller enligt Skatteverkets regler, se {SKV_ROT} och vår guide om {a('rot-avdrag-takarbete.html','ROT-avdrag för takarbete')}."),
+  ("h2","Konsumenttjänstlagen"),
+  ("p","Anlitar du oss som privatperson gäller konsumenttjänstlagen (1985:716)."),
+  ("h2","Företagsuppgifter"),
+  ("p",f"{BRAND}, org.nr {ORGNR}, {STREET}, {ZIP} {CITY}. F-skatt och ansvarsförsäkring. Kontakt: <a class=\"text-link\" href=\"mailto:{EMAIL}\">{EMAIL}</a>, <a class=\"text-link\" href=\"tel:{PHONE_T}\">{PHONE_D}</a>."),
+]
+page(file="villkor.html", no_cta=True,
+  title="Villkor | Geal Entreprenad AB",
+  description="Villkor för takarbete hos Geal Entreprenad AB: kostnadsfri offert, betalning mot faktura, ROT-avdrag och konsumenttjänstlagen.",
+  h1="Villkor",
+  crumbs=[("Hem","/"),("Villkor","villkor.html")],
+  body=hero("Villkor",
+    "Så fungerar offert, garanti, betalning och ROT-avdrag när du anlitar Geal Entreprenad AB.",
+    [("Hem","/"),("Villkor","villkor.html")])
+    + '      <section class="section">\n        <article class="container article-shell content-prose">\n'
+    + prose(_villkor_blocks)
+    + '\n        </article>\n      </section>')
+
 # ====================== BYGG & RENOVERING ==============================
 BYGG_CRUMB = [("Hem","/"),("Bygg & Renovering","bygg.html")]
 
@@ -2504,7 +2530,7 @@ page(file="hyra-taklaggare.html", service=True,
         ("På plats","Våra hantverkare börjar på ert bygge.")], grid="grid-3"),
   faq=[
     ("Vad kostar det att hyra takläggare?","Pris per timme eller per jobb – vi lämnar offert."),
-    ("Kan vi hyra plåtslagare och byggarbetare också?","Ja. Vi hyr ut takläggare, plåtslagare och byggarbetare – var för sig eller tillsammans."),
+    ("Kan vi hyra plåtslagare och byggarbetare också?","Ja. Vi hyr ut takläggare, plåtslagare och byggarbetare – var för sig eller tillsammans. Snickare, betongarbetare och armerare hittar ni på <a href=\"https://gealab.nu/bemanning/\">bemanning bygg hos Geal</a>."),
     ("Har ni F-skatt och ID06?","Ja, vi är ett registrerat AB med F-skatt och ansvarsförsäkring, och våra hantverkare är anslutna till ID06."),
     ("Hur länge kan vi hyra?","Det bestämmer vi tillsammans utifrån ert projekt."),
     ("Var kan ni jobba?","I Stockholm med omnejd. Fråga oss gärna om andra orter.")])
