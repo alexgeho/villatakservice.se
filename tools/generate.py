@@ -3347,10 +3347,17 @@ page(file="sok.html", noindex=True, nolist=True, no_cta=True,
 STATIC_PAGES = ["index.html","tjanster.html","om-oss.html","kontakt.html",
                 "artiklar.html"]
 
+import re as _re
+# Öar och innerstadsdelar tar "på": "på Lidingö", inte "i Lidingö" (men "i Lidingö stad/kommun").
+_PA = _re.compile(r'\b([Ii]) (Södermalm|Kungsholmen|Östermalm|Lidingö|Värmdö|Ekerö)\b(?! (?:kommun|stad|stads|centrum))')
+def fix_prep(html):
+    # Gäller även title/alt/meta; URL:er innehåller inga "i <Ort>" med mellanslag.
+    return _PA.sub(lambda m: ("På" if m.group(1) == "I" else "på") + " " + m.group(2), html)
+
 def main():
     written = []
     for p in PAGES:
-        html = render(p)
+        html = fix_prep(render(p))
         with open(os.path.join(ROOT, p["file"]), "w", encoding="utf-8") as f:
             f.write(html)
         written.append(p["file"])
