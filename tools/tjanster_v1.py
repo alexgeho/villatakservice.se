@@ -32,7 +32,9 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            # v13 (2026-10-25): 18 ortsidor badrumsrenovering/byggföretag/plåtslagare
            "tj_v13_badrum", "tj_v13_bygg", "tj_v13_plat",
            # v14 (2026-10-25): 18 ortsidor snickare/golvläggare/tillbyggnad
-           "tj_v14_snickare", "tj_v14_golv", "tj_v14_tillbyggnad"]
+           "tj_v14_snickare", "tj_v14_golv", "tj_v14_tillbyggnad",
+           # v15 (2026-10-25): 18 ortsidor fasadmålning/tapetsering (hubb malare.html) och golvslipning (hubb golvlaggning.html)
+           "tj_v15_fasadmalning", "tj_v15_golvslipning", "tj_v15_tapetsering"]
 # Moduler vars ortsidor korslänkas med ortens övriga tjänstesidor (åt båda hållen).
 V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte",
               "tj_v6_golv", "tj_v6_snickare", "tj_v6_fasad",
@@ -43,7 +45,8 @@ V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5
               "tj_v11_bygg", "tj_v11_plat", "tj_v11_golv",
               "tj_v12_bygg", "tj_v12_fasad", "tj_v12_fonster",
               "tj_v13_badrum", "tj_v13_bygg", "tj_v13_plat",
-              "tj_v14_snickare", "tj_v14_golv", "tj_v14_tillbyggnad"}
+              "tj_v14_snickare", "tj_v14_golv", "tj_v14_tillbyggnad",
+              "tj_v15_fasadmalning", "tj_v15_golvslipning", "tj_v15_tapetsering"}
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
@@ -58,6 +61,10 @@ TJ_SERVICES = {
   "takbyte":           {"crumb": "Takbyte", "service_type": "Takbyte", "card": "Byte av tegel-, betong- och plåttak."},
   "tillbyggnad":       {"crumb": "Tillbyggnad", "service_type": "Tillbyggnad", "card": "Mer boyta i samma hus."},
   "byggforetag":       {"crumb": "Byggfirma", "service_type": "Byggföretag – total entreprenad", "card": "Total entreprenad för villan."},
+  # v15: deltjänster utan egen hubb – brödsmulan pekar på huvudtjänstens hubb.
+  "fasadmalning":      {"crumb": "Målare", "service_type": "Fasadmålning", "card": "Utvändig målning av fasaden."},
+  "tapetsering":       {"crumb": "Målare", "service_type": "Tapetsering", "card": "Ny tapet på väggarna."},
+  "golvslipning":      {"crumb": "Golvläggning", "service_type": "Golvslipning", "card": "Slipa och ytbehandla trägolv."},
 }
 # Hubb per tjänst. byggforetag-<ort> hör till befintliga byggfirma.html (samma intent).
 TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html",
@@ -67,7 +74,9 @@ TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html"
           # v5: takbyte.html är en vanlig tjänstesida i generate.py (inte i TJ) men listar ortsidorna.
           "takbyte": "takbyte.html",
           # v8: tillbyggnad.html är en vanlig sida i generate.py men listar ortsidorna.
-          "tillbyggnad": "tillbyggnad.html"}
+          "tillbyggnad": "tillbyggnad.html",
+          # v15: deltjänster – listas på huvudtjänstens hubb ("Fasadmålning per område" m.fl.).
+          "fasadmalning": "malare.html", "tapetsering": "malare.html", "golvslipning": "golvlaggning.html"}
 
 TJ = {}
 V4_FILES = set()

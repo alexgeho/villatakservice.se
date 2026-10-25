@@ -67,7 +67,9 @@ BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "koksrenovering": ["koksrenovering", "koksrenovering-nacka", "koksrenovering-danderyd", "koksrenovering-bromma", "vad-kostar-koksrenovering"], "golvlaggning": ["golvlaggning", "vad-kostar-golvslipning"],
           "fasadrenovering": ["fasadrenovering"], "fonsterbyte": ["fonsterbyte", "vad-kostar-fonsterbyte"], "snickare": [], "platslagare": ["platslagare", "platslagare-stockholm"],
           "byggforetag": ["byggforetag-stockholm", "byggforetag-taby", "byggforetag-lidingo"],
-          "tillbyggnad": ["tillbyggnad", "bygglov-tillbyggnad"]}
+          "tillbyggnad": ["tillbyggnad", "bygglov-tillbyggnad"],
+          "fasadmalning": ["fasadmalning", "malare"], "tapetsering": ["tapetsering", "malare"],
+          "golvslipning": ["golvslipning", "vad-kostar-golvslipning", "golvlaggning"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}
 # Sidor som skrivs parallellt (andra moduler) – länkar dit räknas inte som trasiga.

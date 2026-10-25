@@ -1709,6 +1709,10 @@ for _f, _d in TJ.items():
     if _d["kind"] == "hub":
         if _others:
             _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} per område", o, muted=m, sid="omraden"))
+        # v15: deltjänster med samma hubb (t.ex. fasadmålning och tapetsering under malare.html).
+        for _s2 in sorted(s for s, h in TJ_HUB.items() if h == _f and s != _d["service"] and TJ_DISTRICTS.get(s)):
+            _fs2 = TJ_DISTRICTS[_s2]
+            _parts.append(lambda m, fs=_fs2, s2=_s2: tj_list_html(f"{TJ[fs[0]]['svc_label']} per område", fs, muted=m, sid=f"omraden-{s2}"))
         _parts.append(lambda m, d=_d: links_block("Relaterade tjänster", d["related"], muted=m, sid="lankar"))
     else:
         _ort = _d["ort"]
