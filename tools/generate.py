@@ -85,6 +85,8 @@ from takreno_orter import TRP
 TRP_ORTER = ["Bromma","Solna","Nacka","Täby","Danderyd","Lidingö","Huddinge","Järfälla",
              "Sollentuna","Vallentuna","Upplands Väsby","Värmdö","Tyresö","Haninge",
              "Enskede","Älvsjö","Norrtälje","Södertälje"]
+# v8 (2026-10-25): orter med spår "<10" men många småhus; läggs till när innehållet finns i TRP.
+TRP_ORTER += [o for o in ["Österåker", "Ekerö", "Botkyrka", "Sigtuna", "Hässelby", "Spånga"] if o in TRP]
 TRP_FILES = {o: f"takrenovering-{slug(o)}.html" for o in TRP_ORTER}
 TRP_NEIGHBORS = {
   "Bromma": ["Solna","Älvsjö","Järfälla"], "Solna": ["Bromma","Danderyd","Sollentuna"],
@@ -96,7 +98,12 @@ TRP_NEIGHBORS = {
   "Tyresö": ["Haninge","Nacka","Huddinge"], "Haninge": ["Tyresö","Huddinge","Värmdö"],
   "Enskede": ["Älvsjö","Huddinge","Nacka"], "Älvsjö": ["Enskede","Huddinge","Bromma"],
   "Norrtälje": ["Vallentuna","Täby","Upplands Väsby"], "Södertälje": ["Huddinge","Älvsjö","Haninge"],
+  # v8
+  "Österåker": ["Vallentuna","Täby","Norrtälje"], "Ekerö": ["Bromma","Hässelby","Spånga"],
+  "Botkyrka": ["Huddinge","Södertälje","Älvsjö"], "Sigtuna": ["Upplands Väsby","Vallentuna","Sollentuna"],
+  "Hässelby": ["Spånga","Bromma","Järfälla"], "Spånga": ["Hässelby","Bromma","Sollentuna"],
 }
+TRP_NEIGHBORS = {o: [n for n in v if n in TRP] for o, v in TRP_NEIGHBORS.items()}
 # Bilder (tools/gen_images_flux.py): <sida>-1 = hero, <sida>-2 = i innehållet.
 # Alt-texten beskriver motivet – aldrig som eget utfört projekt.
 TRP_IMG_ALT = {
@@ -119,6 +126,10 @@ TRP_IMG_ALT = {
  "Norrtälje": ("Rött trähus med svart tak på klipporna vid vattnet i Roslagen", "Fritidshus med låglutande tak bland tallar i Roslagen"),
  "Södertälje": ("Putsad villa med tegeltak i en sluttning ovanför en sjö i Södertälje", "Villa med grå takpannor vid skogskanten i Södertälje"),
 }
+# v8: nya orters alt-texter ligger i TRP[ort]["img"] (samma schema som PAGES_TJ).
+for _o, _t in TRP.items():
+    if "img" in _t:
+        TRP_IMG_ALT.setdefault(_o, (_t["img"][0][0], _t["img"][1][0]))
 ORT_HERO_ALT = {
  "Norrtälje": ("Faluröd gård med tegeltak i odlingslandskapet kring Norrtälje", "Röda trähus längs en stenig strand i Roslagen"),
  "Södertälje": ("Rött trähus med svart plåttak på landet i Järna", "Tegelvilla med mörka betongpannor i Södertälje"),
@@ -2770,7 +2781,7 @@ page(file="bygg.html", localbiz=True,
   faq=[
     ("Vad betyder total entreprenad?","Att en entreprenör ansvarar för hela projektet – projektering, hantverk och samordning – så att du bara har en kontakt och ett avtal."),
     ("Gör ni både tak och övrig bygg?","Ja. Vi startade med tak och gör i dag även renovering, tillbyggnad, attefallshus och nybyggnad, ofta i samma projekt."),
-    ("Kan jag få ROT-avdrag?","ROT gäller arbete på befintlig bostad (t.ex. renovering). Ny- och tillbyggnad ger normalt inte ROT. Vi reder ut vad som gäller i din offert.")])
+    ("Kan jag få ROT-avdrag?","ROT gäller arbete på befintlig bostad, till exempel renovering. Nybyggnad ger inte ROT, men en tillbyggnad kan ge det om den sitter ihop med husets yttervägg till minst 75 procent eller har en dörr emellan. Vi reder ut vad som gäller i din offert.")])
 
 page(file="byggfirma.html", service=True, service_type="Total entreprenad / byggfirma",
   title="Byggfirma i Stockholm – total entreprenad för villa | Geal Entreprenad AB",
@@ -2795,14 +2806,14 @@ page(file="byggfirma.html", service=True, service_type="Total entreprenad / bygg
     + f"""      <section class="section seo-section">
         <div class="container"><div class="tips-box">
           <h3>ROT-avdrag</h3>
-          <p>ROT gäller arbetskostnaden vid renovering av befintlig bostad (30 % 2026, max 50 000 kr/person/år). Ren nybyggnad och tillbyggnad ger normalt inte ROT – vi särskiljer detta i offerten. Mer i {a('rot-avdrag-takarbete.html','guiden om ROT-avdrag')}.</p>
+          <p>ROT gäller arbetskostnaden vid renovering av befintlig bostad (30 % 2026, max 50 000 kr/person/år). Nybyggnad ger inte ROT. En tillbyggnad kan ge ROT om den sitter ihop med husets yttervägg till minst 75 procent eller har en dörr emellan – vi särskiljer detta i offerten. Mer i {a('rot-avdrag-takarbete.html','guiden om ROT-avdrag')}.</p>
         </div></div>
       </section>"""
+    + (tj_list_html("Byggföretag per område", TJ_DISTRICTS["byggforetag"], muted=True, sid="omraden") if TJ_DISTRICTS.get("byggforetag") else "")
     + links_block("Relaterat", [
         ("villarenovering.html","Villarenovering","Total- och delrenovering."),
         ("tillbyggnad.html","Tillbyggnad","Utöka boytan."),
-        ("nybyggnad-villa.html","Nybyggnad","Bygg nytt från grunden.")]
-        + [(f, TJ[f]["h1"], TJ[f]["card"]) for f in TJ_DISTRICTS.get("byggforetag", [])]),
+        ("nybyggnad-villa.html","Nybyggnad","Bygg nytt från grunden.")], muted=not TJ_DISTRICTS.get("byggforetag")),
   faq=[
     ("Vad kostar en byggfirma / total entreprenad?","Det beror helt på projektets omfattning. Vi erbjuder gratis platsbesök och kostnadsförslag och lämnar ett fast pris efter genomgång."),
     ("Tar ni bygglovet?","Vi hjälper till med bygglovsunderlag och ritningar; själva ansökan görs till kommunen och vi guidar dig genom den."),
@@ -2896,7 +2907,7 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
         "En tillbyggnad ökar husets boyta permanent. Vanliga projekt är att bygga ut vardagsrummet, lägga till ett extra sovrum, bygga uterum/inglasat eller resa ett helt nytt våningsplan.",
         f"Vill du hellre ha en fristående byggnad kan ett {a('attefallshus.html','attefallshus')} vara ett smidigare alternativ utan bygglov."], sid="nar")
     + sec_split("Bygglov och process", [
-        "Sedan 1 december 2025 får du bygga till sammanlagt 30 m² utan bygglov, om tillbyggnaden inte går över husets taknock och håller 4,5 meter till tomtgräns. Större tillbyggnader kräver bygglov – vi hjälper till med ritningar och bygglovsunderlag, och planerar sedan grund, stomme, tak och ytskikt så att tillbyggnaden ansluter tätt och snyggt mot befintligt hus.",
+        "Sedan 1 december 2025 får du bygga till sammanlagt 30 m² utan bygglov, om tillbyggnaden inte går över husets taknock och håller 4,5 meter till tomtgräns eller har grannens skriftliga medgivande. Större tillbyggnader kräver bygglov – vi hjälper till med ritningar och bygglovsunderlag, och planerar sedan grund, stomme, tak och ytskikt så att tillbyggnaden ansluter tätt och snyggt mot befintligt hus.",
         "En välplanerad anslutning mot tak och fasad är avgörande för att undvika framtida fukt- och läckageproblem."],
         "Så går det till", [
         "Behovsgenomgång och förslag.","Ritning och bygglovsunderlag.",
@@ -2905,18 +2916,19 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
     + f"""      <section class="section seo-section">
         <div class="container"><div class="tips-box">
           <h3>ROT och tillbyggnad</h3>
-          <p>Observera: ny- och tillbyggnad ger normalt <strong>inte</strong> ROT-avdrag (det gäller renovering av befintlig bostad). Vi är tydliga med vad som gäller i offerten. Läs mer om {a('bygglov-takbyte.html','bygglov')} och {a('rot-avdrag-takarbete.html','ROT')}.</p>
+          <p>En tillbyggnad av ett småhus kan ge ROT-avdrag om någon av tillbyggnadens sidor sitter ihop med husets yttervägg till minst 75 procent eller om det finns en dörr emellan, och om huset är äldre än fem år. Nybyggnad av ett fristående hus ger inte ROT. Vi är tydliga med vad som gäller i offerten. Läs mer om {a('bygglov-takbyte.html','bygglov')} och {a('rot-avdrag-takarbete.html','ROT')}.</p>
         </div></div>
       </section>"""
+    + (tj_list_html("Tillbyggnad per område", TJ_DISTRICTS["tillbyggnad"], muted=True, sid="omraden") if TJ_DISTRICTS.get("tillbyggnad") else "")
     + links_block("Relaterat", [
         ("attefallshus.html","Attefallshus","Fristående yta utan bygglov."),
         ("byggfirma.html","Total entreprenad","Vi tar hela projektet."),
         ("nybyggnad-villa.html","Nybyggnad","Bygga nytt hus."),
-        ("attefallshus-regler.html","Attefallsregler","Vad som gäller utan bygglov.")]),
+        ("attefallshus-regler.html","Attefallsregler","Vad som gäller utan bygglov.")], muted=not TJ_DISTRICTS.get("tillbyggnad")),
   faq=[
     ("Behöver jag bygglov för tillbyggnad?","Inte för tillbyggnader på sammanlagt högst 30 m² som inte går över taknocken (gäller från 1 december 2025). Närmare än 4,5 m från tomtgräns krävs bygglov, om inte grannen skriftligen medgett det. Större tillbyggnader kräver alltid bygglov."),
     ("Hur mycket får jag bygga till?","Det styrs av detaljplan och tomt. Vi går igenom vad som är möjligt vid ett platsbesök."),
-    ("Får jag ROT för tillbyggnad?","Normalt nej – ROT gäller renovering av befintlig bostad, inte tillbyggnad av ny yta.")])
+    ("Får jag ROT för tillbyggnad?","Ja, för ett småhus om tillbyggnaden sitter ihop med husets yttervägg till minst 75 procent av en sida eller har en dörr mot huset, och huset är äldre än fem år. Avdraget gäller arbetskostnaden, inte material.")])
 
 # Källor för attefall-/friggebodssidorna (kontrollerade 2026-10-25 mot riksdagen.se och boverket.se).
 PBL_URL = "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/"

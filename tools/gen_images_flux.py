@@ -68,6 +68,14 @@ for _f, _d in TJ.items():
     JOBS[_f[:-5] + "-1"] = ("4:3", _d["img"][0][1])
     JOBS[_f[:-5] + "-2"] = ("3:2", _d["img"][1][1])
 
+# v8: nya takrenovering-<ort> har prompter i TRP[ort]["img"] (tools/takreno_orter.py).
+from takreno_orter import TRP  # noqa: E402
+_slug = lambda n: n.lower().replace("ä", "a").replace("å", "a").replace("ö", "o").replace(" ", "-")
+for _o, _t in TRP.items():
+    if "img" in _t:
+        JOBS[f"takrenovering-{_slug(_o)}-1"] = ("4:3", _t["img"][0][1])
+        JOBS[f"takrenovering-{_slug(_o)}-2"] = ("3:2", _t["img"][1][1])
+
 def run(name):
     aspect, prompt = JOBS[name]
     out = os.path.join(IMG, name + ".webp")

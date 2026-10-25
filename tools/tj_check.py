@@ -66,7 +66,8 @@ def byggtorg(slug):
 BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "koksrenovering": ["koksrenovering", "koksrenovering-nacka", "koksrenovering-danderyd", "koksrenovering-bromma", "vad-kostar-koksrenovering"], "golvlaggning": ["golvlaggning", "vad-kostar-golvslipning"],
           "fasadrenovering": ["fasadrenovering"], "fonsterbyte": ["fonsterbyte", "vad-kostar-fonsterbyte"], "snickare": [], "platslagare": ["platslagare", "platslagare-stockholm"],
-          "byggforetag": ["byggforetag-stockholm"]}
+          "byggforetag": ["byggforetag-stockholm", "byggforetag-taby", "byggforetag-lidingo"],
+          "tillbyggnad": ["tillbyggnad", "bygglov-tillbyggnad"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}
 # Sidor som skrivs parallellt (andra moduler) – länkar dit räknas inte som trasiga.

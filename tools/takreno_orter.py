@@ -3361,3 +3361,540 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                             ('Skatteverket – Så fungerar rotavdraget',
                              'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html')]}}
+
+
+# ====================================================================== v8 (2026-10-25)
+# Sex nya orter: Österåker, Ekerö, Botkyrka, Sigtuna, Hässelby, Spånga. Sökordet "takrenovering <ort>"
+# har "<10"/mån i Keyword Planner (alla orter med 10–100 hade redan sidor); orterna valdes för att de har
+# flest småhus: SCB BO0104 2024 Österåker 13 488, Botkyrka 12 555, Ekerö 9 131, Sigtuna 7 387 småhus;
+# Stockholms stads områdesfakta 2025 Hässelby villastad 5 009 småhus, Spånga villastäder (Bromsten 1 066,
+# Solhem 2 038, Flysta 663, Sundby 559). Alternativen Farsta (4 713, hela stadsdelsområdet) och Hägersten
+# hade färre villor.
+# Källor öppnade och lästa 2026-10-25: SCB statistikdatabasen BO0104T04; Österåkers kommun (Kulturmiljöprogram
+# för Svinninge 2008; Kulturhistoriska byggnader och kulturmiljöer i bygglovsguiden); Ekerö kommun
+# (Kulturmiljöprogram 2015: Södra Färingsö/Stenhamra, Kungshatt, Adelsö; Vad vill du bygga?); Botkyrka kommun
+# (Kulturmiljöprogram antaget 2014: Tullinge, Uttran, Tuna, Tumba bruk, riksintressen; Förändringar i PBL
+# från 1 december 2025); Sigtuna kommun (Bevarande- och förnyelseplan för Sigtuna stad 2019; Tak; Flygbuller);
+# Stockholms stad (Varsam utveckling av småhus- och villaområden; områdesfakta Hässelby villastad, Bromsten,
+# Solhem, Flysta, Sundby; Stadsmuseets kulturhistoriska klassificering); Stockholmskällan (Uppkomsten av
+# Stor-Stockholm, Stockholms stads minnesbok; Stadsmuseets artikel Solbacken – en trädgårdssaga);
+# Boverket (Fasadändring, PBL kunskapsbanken); Skatteverket (Så fungerar rotavdraget).
+# Strukna (ej verifierade): Österskärs villahistoria och Roslagsbanans årtal dit (bara Wikipedia), salt luft i
+# Österåker, Hässelby villastads municipalsamhälle 1913 (bara Svenska kyrkan), att Lövsta-arbetarna byggde de
+# första villorna (källan säger bara att de var de först bosatta), takmaterial i Hässelby villastad och i
+# Bromsten/Flysta/Sundby (ingen källa), att Solhems klassning gäller varje hus, Arlandas påverkan på enskilda
+# Märstaområden, att Botkyrkas radhus har betongpannor. Inga priser, garantier, omdömen, egna uppdrag eller cert.
+
+_SKV = "https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html"
+_BOV = "https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/"
+_SCB = ("SCB – Antal lägenheter efter region och hustyp (BO0104), 2024",
+        "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__BO__BO0104__BO0104D/BO0104T04/")
+_VARSAM = ("Stockholms stad – Varsam utveckling av småhus- och villaområden",
+           "https://vaxer.stockholm/siteassets/stockholm-vaxer/tema/stockholms-arkitektur/varsam-utveckling-ta.pdf")
+_KLASS = ("Stockholms stad – Stadsmuseets kulturhistoriska klassificering (bygglov)",
+          "https://bygglov.stockholm/nar-behovs-bygglov/andra-byggnads-yttre-utseende/stadsmuseets-kulturhistoriska-klassificering/")
+_MINNES = ("Stockholmskällan – Uppkomsten av Stor-Stockholm i geografisk tidsföljd (Stockholms stads minnesbok)",
+           "https://stockholmskallan.stockholm.se/postfiles/SPM/Minnesbok/19_uppkomst.pdf")
+_L = '<a class="text-link" href="{0}">{1}</a>'
+_X = '<a class="text-link" href="{0}" rel="noopener">{1}</a>'
+
+TRP.update({
+# ---------------------------------------------------------------------------------------- ÖSTERÅKER
+'Österåker': {
+ 'title': 'Takrenovering i Österåker – när sommarvillan blir helårshus',
+ 'description': 'Takrenovering i Österåker: sekelskiftesvillor och sportstugor i Svinninge, kommunens klassning blå och grön och tak på hus som nu värms året runt.',
+ 'lead': 'I Österåker handlar en takrenovering ofta om ett hus som byggdes för sommaren och i dag är ett helårshem. Det kan vara en sekelskiftesvilla med glasveranda vid Resarö ström, en sportstuga från 1930-talet eller ett fritidshus från 1950–60-talen. Taket ska då fungera för ett hus som värms hela vintern, utan att det tar bort det som gör miljön värdefull.',
+ 'card': 'Svinninge, sommarvillor och sportstugor.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Från sommarnöjen till permanentboende',
+   'paras': [
+     'Enligt SCB fanns det 13 488 bostäder i småhus i Österåker år 2024. Ett område där övergången från sommarboende till helårsboende syns tydligt är Svinninge. Kommunens kulturmiljöprogram för halvön, framtaget 2008 som underlag för planarbete och bygglov, beskriver ett blandområde där helårsboendet stadigt ökar: vid inventeringen var drygt 60 procent av fastigheterna bebodda året runt.',
+     'Halvön har tre årsringar som syns tydligt. Kring Nantes brygga byggdes ett trettiotal grosshandlarvillor på stora strandtomter runt sekelskiftet 1900, och den äldsta, Olivehäll, uppfördes 1884. På 1930-talet kom sportstugorna, och först på 1950–60-talen tog byggandet av fritidshus och permanentbostäder fart. 1969 tillkom tolv kedjehus vid Korallstigen.',
+     'Programmet konstaterar att omvandlingen till permanentboende har pågått under lång tid. Därför börjar vi med frågan om när huset byggdes och för vilken säsong, innan vi pratar material.',
+   ],
+   'aside': {'title': 'Riksintressen i Österåker', 'items': ['Roslags-Kulla', 'Rydboholm', 'Vira bruk', 'Åkers kanal']}},
+  {'id': 'villor', 'h2': 'Tegel eller ståndfalsad plåt på sekelskiftesvillorna',
+   'paras': [
+     'Programmet räknar upp vad som bär värdet i de stora sommarvillorna: hög naturstensgrund, stomme av resvirke, liggande fasspontpanel, murade skorstenar, utskjutande taksprång och taktäckning av rött tegel eller ståndfalsad plåt i skivtäckning. I Nantes och Svinningeudd är herrgårdsvillan med frontespis och veranda mot vattnet den klart vanligaste typen, men det finns också villor i engelsk cottagestil med torn, kupor och burspråk.',
+     'För en takrenovering betyder det att materialet oftast ska vara detsamma som förut. Ett plåttak läggs om med skivor och falsar som liknar de gamla, och ett tegeltak får tillbaka sina hela pannor. Det är detaljerna som kräver mest arbete: taksprånget, vindskivorna, plåten runt torn och kupor och avslutningen mot verandataket.',
+     'De röda stugorna med vita knutar, som blev populära efter sekelskiftet, har sadeltak, brutet tak eller valmat tak. På de två senare finns fler takfall och fler hörn där vatten kan leta sig in, och det är vid de vinklarna vi lägger mest tid när underlaget byts. Läs mer om ' + _L.format('falsat-plattak.html', 'falsade plåttak') + ' eller om ' + _L.format('platslagare.html', 'plåtslageri') + '.',
+   ],
+   'aside': {'title': 'Karaktärsdrag att behålla', 'items': ['Utskjutande taksprång', 'Murade skorstenar', 'Rött tegel eller skivtäckt plåt', 'Verandatak mot vattnet']}},
+  {'id': 'klass', 'h2': 'Blå och grön: kommunens två nivåer',
+   'paras': [
+     'I Svinninge har bebyggelsen klassificerats i två nivåer. En byggnad som är markerad blå räknas som särskilt värdefull och en omistlig del av miljön. En grön byggnad är värdefull från kulturhistorisk synpunkt eller ingår i ett område av den karaktären. Vad som gäller för det enskilda huset står i respektive detaljplan. Därtill är delar av Nantes och Svinningeudd utpekade som värdefullt område, där alla husens utformning har betydelse för helheten.',
+     'På kommunens sida om kulturhistoriska byggnader står att bygglov i regel krävs för till exempel fasadändring om fastigheten ligger i ett särskilt värdefullt område eller om byggnaden är särskilt värdefull. Kommunen rekommenderar att man kontaktar bygglovenheten innan arbetet börjar och påpekar att det går att söka frivilligt bygglov för att få åtgärden prövad.',
+     'Utanför sådana områden behövs normalt inget lov för att byta takmaterial eller kulör på ett en- eller tvåbostadshus sedan den 1 december 2025, enligt ' + _X.format(_BOV, 'Boverket') + '. Varsamhetskravet gäller ändå för alla hus, oavsett ålder och oavsett om lov krävs. Mer om reglerna finns under ' + _L.format('bygglov-takbyte.html', 'bygglov vid takbyte') + '.',
+   ],
+   'aside': None},
+  {'id': 'vinter', 'h2': 'Ett sommartak som ska klara vintern',
+   'paras': [
+     'Sportstugorna byggdes som enkla envåningshus, ofta typhus, och vinterbonades för att kunna användas även på vintern. När ett sådant hus blir helårsbostad och vinden isoleras ändras förhållandena under taket. Varm inomhusluft når kallare ytor, och om luftspalten är för liten eller takfoten saknar ventilation samlas fukt mot råsponten.',
+     'Vi tittar därför på vinden innan vi bestämmer något om ytskiktet. Behöver isoleringen kompletteras gör vi det samtidigt som taket läggs om, så att ventilationen planeras för det nya läget. Läs mer under ' + _L.format('vindsisolering.html', 'isolering av vinden') + '.',
+   ],
+   'aside': None},
+  {'id': 'plats', 'h2': 'Grusvägar, berg i dagen och sjötomter',
+   'paras': [
+     'Programmet beskriver ett kuperat landskap med skog, våtmark och berg i dagen, och ett vägnät från mitten av 1800-talet med smala, slingrande grusvägar som är en del av kulturvärdet. Många tomter sluttar ner mot stranden, och den obebyggda sluttande marken mellan hus och strand räknas till det som bär kulturvärdet.',
+     'Det påverkar hur ett takjobb planeras. Var kan containern stå utan att skada vägkanten, var kan ställningen förankras på en sluttande tomt, och hur når en lastbil fram? Det reder vi ut vid platsbesöket. Se även ' + _L.format('taklaggare-osteraker.html', 'takläggare i Österåker') + ' och ' + _L.format('fasadrenovering-osteraker.html', 'fasadrenovering i Österåker') + ' om panelen ska ses över samtidigt.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Husets säsong och klassning', 'Vi tar reda på när huset byggdes, om det är markerat blått eller grönt och vad detaljplanen säger.'),
+  ('Vinden och luftspalten', 'Råspont, papp och ventilation kontrolleras, särskilt på hus som byggts för sommarbruk.'),
+  ('Material som förut', 'Tegel läggs tillbaka och plåt ersätts med skivor och falsar som liknar originalet.'),
+  ('Detaljer runt verandor och torn', 'Taksprång, vindskivor och plåt runt kupor och verandatak görs om i samma arbete.'),
+  ('Etablering på smal väg', 'Container, ställning och leveranser planeras efter grusväg och sluttande tomt.'),
+  ('Rännor och genomgång', 'Vi rensar eller byter rännor och går igenom taket tillsammans med dig.'),
+ ],
+ 'rot': [
+  'Rotavdraget ger 30 procent av arbetskostnaden tillbaka, med ett tak på 50 000 kr per person och år. Tillsammans med rutavdrag kan det bli högst 75 000 kr. Material och resor räknas inte in, och vi drar av beloppet på fakturan, enligt ' + _X.format(_SKV, 'Skatteverkets regler') + '.',
+  'Avdraget gäller även för ett fritidshus som du äger och använder, så det spelar ingen roll om villan vid Nantes ännu bara används på sommaren. Mer finns under ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'I Österåker styrs kostnaden mest av hur mycket råspont som är skadad, hur många takfall, kupor och verandatak huset har, om plåten ska formas efter originalet och hur lätt det är att etablera sig på tomten. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Vår sommarvilla i Svinninge är klassad som grön – vad betyder det för taket?',
+   'Att huset räknas som kulturhistoriskt värdefullt eller ingår i en sådan miljö. Exakt vad som gäller står i detaljplanen, och lov kan krävas för att ändra takets utseende. Kontakta kommunens bygglovenhet innan ni byter material.'),
+  ('Kan en sportstuga från 1930-talet få samma tak som en villa?',
+   'Det beror på konstruktionen. Takstolar och råspont på en enkel stuga är inte självklart dimensionerade för tyngre material, så vi kontrollerar dem innan vi föreslår något.'),
+  ('Måste det skivtäckta plåttaket bytas mot nytt i samma utförande?',
+   'På en värdefull villa är det oftast det som stämmer med kulturmiljöprogrammet. Programmet nämner just rött tegel och ståndfalsad plåt i skivtäckning som delar av husens karaktär.'),
+  ('Hur kommer ni fram med material på en smal grusväg i Österåker?',
+   'Vi ser på vägen och tomten vid besöket och väljer storlek på container och leveranser därefter. Ibland kan materialet behöva bäras sista biten.'),
+  ('Ska vinden isoleras samtidigt som taket läggs om?',
+   'Om huset ska användas året runt är det ofta rätt tillfälle. Då kan ventilationen vid takfot och nock planeras för den nya isoleringen.'),
+ ],
+ 'sources': [
+  _SCB,
+  ('Österåkers kommun – Kulturmiljöprogram för Svinninge (2008)',
+   'https://www.osteraker.se/download/18.367d658917909e8fc2bc760/1632320809578/kulturmiljoprogram_Svinninge.pdf'),
+  ('Österåkers kommun – Kulturhistoriska byggnader och kulturmiljöer (bygglovsguiden)',
+   'https://www.osteraker.se/byggabomiljo/bygganyttandraellerriva/bygglovsguiden/kulturhistoriskabyggnaderkulturmiljoer.4.367d658917909e8fc2bb42.html'),
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Stor sekelskiftesvilla i trä med veranda och rött plåttak vid vattnet i Österåker',
+   'large Swedish wooden summer villa from around 1900 with symmetrical facade, central gable, two-storey glazed veranda facing the water, horizontal light yellow wooden panel, wide roof overhangs and a red standing-seam metal roof, natural stone foundation, terraced garden with fruit trees sloping down to a calm Baltic strait, private wooden jetty, Svinninge Österåker, empty scene'),
+  ('Röd stuga med vita knutar och tegeltak bland tallar',
+   'small red painted Swedish wooden cottage from the 1910s with white corner boards and a mansard roof (gambrel roof with a steep lower slope and a flatter upper slope) covered in old red clay tiles, a brick chimney rising through the ridge in the middle of the roof, black metal flashing along the roof break, pine trees and bare granite, overcast daylight, no people'),
+ ]},
+
+# ---------------------------------------------------------------------------------------- EKERÖ
+'Ekerö': {
+ 'title': 'Takrenovering på Ekerö – Stenhamra, Kungshatt och Adelsö',
+ 'description': 'Takrenovering på Ekerö: 60–70-talsvillor i Stenhamra, sommarnöjen på bilfria Kungshatt, fritidshus i skogen på Adelsö och lovplikten i värdefulla områden.',
+ 'lead': 'En takrenovering på Ekerö kan betyda helt olika saker beroende på ö. I Stenhamra är det ofta ett villatak från 1960- eller 70-talet som läggs om, på Kungshatt en sekelskiftesvilla som bara kan nås med båt, och på Adelsö ett fritidshus inne i skogen. Vi börjar med husets läge och ålder och lägger upp arbetet efter det.',
+ 'card': 'Stenhamra, Kungshatt och Adelsö.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Öar med olika bebyggelse',
+   'paras': [
+     'Enligt SCB fanns det 9 131 bostäder i småhus i Ekerö kommun 2024. Kommunens kulturmiljöprogram från 2015 visar hur olika de ligger. Tätorterna längs tätortsbandet har villor och radhus från andra halvan av 1900-talet, Kungshatt har nästan bara sommarhus och på Adelsö ligger fritidshusområdena dolda i skogsterrängen.',
+     'Det gör att det inte finns något typiskt Ekerötak. Ett 70-talstak med betongpannor, ett plåttak på en panelvilla med veranda och ett papptak på en stuga i skogen har var sin svaghet, och var sitt sätt att renoveras. Vad som ingår i jobbet och hur det går till beskriver vi under ' + _L.format('takrenovering.html', 'takrenovering') + '.',
+   ],
+   'aside': {'title': 'Skyddade miljöer i programmet', 'items': ['Delar av Stenhamra (riksintresse)', 'Skå kyrka och barnbyn (riksintresse)', 'Birka och Hovgården (världsarv)']}},
+  {'id': 'stenhamra', 'h2': 'Stenhamra: från stenhuggarby till villaort',
+   'paras': [
+     'Stenhamra på Färingsö etablerades 1884, när stenbrottet grundades. Brottet lades ned 1937. Stenhuggarbyn med arbetarlängor, butik, ingenjörsbostad och skola finns kvar som en sammanhängande miljö. Under det tidiga 1900-talet började arbetarna bygga egna hem utanför byn. Programmet konstaterar att de villorna finns kvar men har förändrats och byggts om under årens lopp.',
+     'I dag domineras Stenhamra av villor från andra halvan av 1900-talet, framför allt enfamiljshus från 1960- och 70-talen. Villaområdet längs Ramundvägen beskrivs som ett av de bästa exemplen på modernistisk arkitektur på Mälaröarna, och kommunen rekommenderar att det får fler skyddsbestämmelser i detaljplan. Gestaltning, skala och färgsättning i 1900-talets villabebyggelse bör enligt programmet respekteras.',
+     'För ett tak från den tiden betyder det oftast att underlagspapp, läkt och plåtdetaljer har nått sin livslängd samtidigt. Ligger huset i ett enhetligt område är det klokt att behålla takets form och kulör, så att gatan fortsätter att hänga ihop.',
+   ],
+   'aside': None},
+  {'id': 'kungshatt', 'h2': 'Kungshatt: tegelbruksö utan bro',
+   'paras': [
+     'Kungshatt saknar fast landförbindelse, är bilfri och har få bofasta. Här låg ett av Mälaröarnas största tegelbruk fram till 1940-talet, med storhetstid under andra halvan av 1800-talet då Stockholm behövde tegel. Kvar från bruket finns arbetarbostäderna, kamrersvillan och tegelmästarvillan.',
+     'På ön finns ett femtiotal sommarvillor från tiden kring sekelskiftet 1900, med rikt dekorerad panelarkitektur och öppna eller inglasade verandor på tomter med klippväggar. Programmet anser att prövningar där sommarbostäder blir åretruntbostäder bör göras restriktivt och att ny bebyggelse ska anpassas i storlek, material och färg.',
+     'Ett takjobb på Kungshatt kräver att allt material, all utrustning och allt rivningsavfall fraktas över vattnet. Därför planerar vi mängder, leveranser och bortforsling i detalj innan arbetet startar, och vi försöker återanvända så mycket av det gamla taket som går.',
+   ],
+   'aside': {'title': 'Att planera för en ö utan bro', 'items': ['Båttransport av material', 'Bortforsling av rivningsavfall', 'Ställning på klippig tomt', 'Väder och vind på sjön']}},
+  {'id': 'lov', 'h2': 'När krävs bygglov på Ekerö?',
+   'paras': [
+     'Ekerö kommun skriver att fasadändring i regel inte kräver bygglov, men att det finns undantag. Ett av dem är om fastigheten ligger i ett område som har bedömts som särskilt värdefullt – då går det inte att använda de ändrade reglerna. Vilka områden det gäller visas i Ekerökartan, och kommunen erbjuder att bedöma frågan om man skickar in ett foto av huset och en beskrivning av ändringen.',
+     'Byte av takmaterial räknas som en ändring av byggnadens yttre utseende. Utanför de värdefulla områdena är det normalt lovfritt för ett en- eller tvåbostadshus sedan den 1 december 2025, enligt ' + _X.format(_BOV, 'Boverket') + '. Kring Skå kyrka gäller områdesbestämmelser med utökad lovplikt. Mer om reglerna finns under ' + _L.format('bygglov-takbyte.html', 'bygglov vid takbyte') + '.',
+   ],
+   'aside': None},
+  {'id': 'adelso', 'h2': 'Fritidshus i skogen på Adelsö',
+   'paras': [
+     'Adelsös sjönära och isolerade läge har gjort ön populär för fritidsboende. Enligt programmet byggdes förhållandevis stora områden med fritidshus under andra halvan av 1900-talet, på öns södra sida och intill färjeläget, och de ligger dolda i skogsterrängen.',
+     'Träd tätt inpå huset ger skugga, barr i rännorna och långsam upptorkning efter regn. På ett lågt lutande tak med papp blir barr liggande och håller kvar fukt, och på pannor får mossan fäste. Vi rensar ränndalar och rännor i samma arbete och ser över ' + _L.format('mossa-pa-taket.html', 'mossa på taket') + '. Se även ' + _L.format('taklaggare-ekero.html', 'takläggare på Ekerö') + ' och ' + _L.format('platslagare-ekero.html', 'plåtslagare på Ekerö') + '.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Ö, område och lov', 'Vi kontrollerar i Ekerökartan om fastigheten ligger i ett särskilt värdefullt område.'),
+  ('Besiktning av tak och vind', 'Underlag, läkt, plåt och ventilation bedöms inifrån och utifrån.'),
+  ('Logistik för ön', 'Färja, båt eller smal väg avgör hur material, ställning och container kommer fram.'),
+  ('Rivning och nytt underlag', 'Gammal papp och skadad läkt tas bort, och ny papp och läkt läggs.'),
+  ('Taktäckning och detaljer', 'Pannor eller plåt läggs, och plåt vid skorsten, ränndalar och takfot görs om.'),
+  ('Städning och genomgång', 'Rivningsavfall forslas bort och vi går igenom taket med dig.'),
+ ],
+ 'rot': [
+  'Du får tillbaka 30 procent av arbetskostnaden som rotavdrag, men högst 50 000 kr per person och år och högst 75 000 kr ihop med rutavdrag. Kostnader för material och resor ger inget avdrag. Vi gör avdraget direkt på fakturan, enligt ' + _X.format(_SKV, 'Skatteverket') + '.',
+  'Sommarvillan på Kungshatt och fritidshuset på Adelsö ger rätt till avdrag på samma sätt som en villa i Stenhamra, så länge du äger huset och använder det. Läs mer om ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'På Ekerö påverkas kostnaden mycket av transporterna: färja, båt eller lång väg till tomten. Därtill kommer takets storlek och lutning, hur mycket av underlaget som behöver bytas och hur många detaljer i plåt som ska göras om. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Hur vet jag om mitt hus på Ekerö ligger i ett särskilt värdefullt område?',
+   'Det framgår av Ekerökartan. Är du osäker kan du enligt kommunen skicka ett foto av huset och en beskrivning av ändringen, så avgör kommunen om bygglov behövs.'),
+  ('Går det att renovera taket på en sommarvilla på Kungshatt?',
+   'Ja, men allt material och allt avfall måste fraktas med båt eftersom ön saknar fast förbindelse. Vi planerar transporterna innan vi börjar.'),
+  ('Vår villa på Ramundvägen i Stenhamra – får vi byta takmaterial?',
+   'Kontrollera först detaljplanen. Kommunen vill ge området fler skyddsbestämmelser, och kulturmiljöprogrammet säger att gestaltning, skala och färgsättning bör respekteras.'),
+  ('Varför blir det så mycket barr i rännorna på Adelsö?',
+   'Fritidshusområdena ligger i skogsterräng med träd nära husen. Barr och löv samlas i rännor och ränndalar, och vi rensar dem som en del av takrenoveringen.'),
+  ('Kan det gamla teglet läggas tillbaka på en äldre villa?',
+   'Hela pannor kan oftast återanvändas och kompletteras med likvärdiga. Vi sorterar dem vid rivningen och lägger tillbaka dem på nytt underlag.'),
+ ],
+ 'sources': [
+  _SCB,
+  ('Ekerö kommun – Kulturmiljöprogram (2015)',
+   'https://www.ekero.se/download/18.553838ea17305720c321ec82/1597925412772/Eker%C3%B6%20kulturmilj%C3%B6program.pdf'),
+  ('Ekerö kommun – Vad vill du bygga?', 'https://www.ekero.se/bygga-bo-miljo/bygga-nytt-andra-eller-riva/vad-vill-du-bygga'),
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Villa från 1960-talet med lågt tak av betongpannor bland tallar i Stenhamra',
+   'single-storey Swedish modernist villa from the 1960s with a low-pitched gable roof covered in dark grey concrete roof tiles, horizontal dark wooden facade and large windows, tall pine trees and granite outcrops, quiet residential road, Stenhamra Ekerö, autumn daylight, empty scene'),
+  ('Sekelskiftesvilla i trä med glasveranda vid Mälarens strand',
+   'two-storey Swedish wooden summer villa from around 1900 painted light grey with white trim, a glazed veranda and a dark standing-seam metal roof, on a low granite shore with pine trees by a calm lake, small wooden jetty, lake Mälaren, realistic modest scale, full frame image without borders, empty scene'),
+ ]},
+
+# ---------------------------------------------------------------------------------------- BOTKYRKA
+'Botkyrka': {
+ 'title': 'Takrenovering i Botkyrka – Tullinges lertegel och 60-talshus',
+ 'description': 'Takrenovering i Botkyrka: enkupigt lertegel på Tullinges sekelskiftesvillor, kataloghus i Hamra egnahem, villor i Uttran och radhus från 1960-talet i Tuna.',
+ 'lead': 'I Botkyrka finns villatak från alla 1900-talets decennier. I Tullinge och Uttran står nationalromantiska villor med branta tak av enkupigt lertegel, egnahem från 1920-talet och funkisvillor med flacka sadeltak, och i Tumba radhus från 1960-talet. Takrenoveringen anpassas efter epoken, och kulturmiljöprogrammet ger vägledning om hur.',
+ 'card': 'Tullinge, Uttran och Tumba.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Villasamhällen längs järnvägen',
+   'paras': [
+     'Enligt SCB fanns det 12 555 bostäder i småhus i Botkyrka 2024. Kommunens kulturmiljöprogram, antaget av kommunfullmäktige 2014, förklarar varför många av dem ligger där de ligger. Västra stambanan byggdes ut på 1860-talet, och kring sekelskiftet växte renodlade villaområden fram längs järnvägen. Tullinge station öppnade 1903 och Uttran fick sin station 1908.',
+     'Den tidiga exploateringen i Tullinge sköttes av Tullinge AB, och målgruppen var främst de mer välbärgade. På 1920-talet planlades Hamra egnahem söder om järnvägen för tjänstemän och arbetare på Separator, samtidigt som Tullinge Parkhem och Norra Tullinge Lanthem byggdes ut norr om spåret.',
+   ],
+   'aside': {'title': 'Riksintressen i Botkyrka', 'items': ['Bornsjön', 'Tumba pappersbruk', 'Grödinge', 'Brandalsund', 'Mörkö']}},
+  {'id': 'epoker', 'h2': 'Fyra takepoker i Tullinge',
+   'paras': [
+     'Programmet beskriver villorna från 1900–1910-talen som nationalromantiska, med branta takfall, enkupigt lertegel, liggande fasadpanel och småspröjsade fönster. De står ofta på höjder i landskapet, på stora tomter vid Tullingesjöns västra sida och på bergskrönet söder om järnvägen.',
+     'På 1920-talet kom kataloghusen, monteringsfärdiga hus som köptes direkt från en leverantör. Boros villa Björkhamra blev populär i egnahemsområdet. Under 1930- och 40-talen dominerade funkisvillan med slätputsade fasader och flacka sadeltak, och på 1950-talet kom Folkvillan och Tjänstemannavillan.',
+     'Uttran, som började bebyggas när stationen öppnade 1908, beskrivs i programmet som en brokig blandning av villor från 1910-talet ända fram till 2010-talet. På 1950-talet blev friare planformer och blandade fasadmaterial vanliga, och på 1960–70-talen byggdes gruppbyggda områden med likadana villor på små tomter. Där ligger ofta flera tak av samma ålder bredvid varandra.',
+     'Varje epok har sitt tak. Det branta lertegeltaket tål mycket men har läkt och papp som ofta är slut, medan det flacka funkistaket är känsligare för vatten som blir stående. Därför bedömer vi först vilken tid huset hör till innan vi föreslår material och metod.',
+   ],
+   'aside': {'title': 'Typiskt per epok', 'items': ['1900–1910: brant tak, enkupigt lertegel', '1920-tal: kataloghus i 20-talsklassicism', '1930–40: flacka sadeltak', '1950-tal: Folkvillan, fasadtegel']}},
+  {'id': 'riktlinjer', 'h2': 'Kulturmiljöprogrammets riktlinjer för taken',
+   'paras': [
+     'För Tullinge villaområde och för Uttran skriver kommunen att villor med bevarad ursprunglig karaktär ska värnas. Ändringar ska göras med respekt för huvudbyggnadens karaktärsdrag, och fasader, tak, fönster, entréer och balkonger ska ges en tidstypisk utformning. Tillbyggnader ska underordnas huvudbyggnaden.',
+     'Programmet konstaterar också att Tullinge är en brokig miljö som har förändrats mycket de senaste decennierna, men att grundstrukturen i gator och tomter finns kvar. Ett brant tak med rött enkupigt tegel på en sekelskiftesvilla är alltså något kommunen vill se kvar. Är teglet hållbart lägger vi tillbaka det på nytt underlag och kompletterar med pannor av samma typ.',
+     'Lovplikten är en annan fråga. Botkyrka kommun skriver att reglerna från 1 december 2025 både ger lättnader och skärpta krav, och att fler åtgärder kräver lov i särskilt värdefulla områden. För ett vanligt en- eller tvåbostadshus är byte av takmaterial normalt lovfritt, enligt ' + _X.format(_BOV, 'Boverket') + '. Mer under ' + _L.format('bygglov-takbyte.html', 'bygglov vid takbyte') + '.',
+   ],
+   'aside': None},
+  {'id': 'tuna', 'h2': 'Segersjö och Tuna: efterkrigstidens småhus',
+   'paras': [
+     'Efter kriget var bostadsbristen stor, och Segersjö blev det största bostadsområdet som byggdes i kommunen under 1950-talet. I Tuna, som planerades under sent 1950-tal och byggdes ut i början av 1960-talet, lyfter programmet fram radhusområdet söder om Lindhovsvägen för sin höga arkitektoniska kvalitet, med geometriska former som förstärks av de tidstypiska takformerna.',
+     'I sådana grupper är det helheten som är värdet. Programmet säger att radhusens tidstypiska karaktär ska värnas och det enkla formspråket respekteras. Lägger en granne om sitt tak bör det se ut som de andra, och ännu bättre är det om flera hus i längan gör det samtidigt. Läs mer om ' + _L.format('tegel-betong-plattak.html', 'tegel, betong och plåt') + ' och om ' + _L.format('taklaggare-botkyrka.html', 'takläggare i Botkyrka') + '.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Epok och karaktär', 'Vi bestämmer vilken tid huset hör till och vad kulturmiljöprogrammet säger om området.'),
+  ('Vinden och underlaget', 'Papp, läkt och råspont undersöks, och skadad råspont märks ut för byte.'),
+  ('Teglet tas ner och sorteras', 'Hela pannor sparas för att läggas tillbaka, trasiga ersätts med samma typ.'),
+  ('Nytt underlag', 'Ny underlagspapp och läkt läggs, anpassade efter takets lutning.'),
+  ('Tidstypiska detaljer', 'Plåt vid skorsten, nock och takfot utformas så att de passar husets epok.'),
+  ('Rännor och genomgång', 'Rännor och stuprör ses över och vi går igenom resultatet med dig.'),
+ ],
+ 'rot': [
+  'Rotavdraget är 30 procent av arbetskostnaden. Varje ägare kan få högst 50 000 kr per år, och tillsammans med rutavdrag är gränsen 75 000 kr. Material och resekostnader ger inget avdrag. Vi drar av det direkt på fakturan, enligt ' + _X.format(_SKV, 'Skatteverket') + '.',
+  'Äger ni huset tillsammans har var och en sitt eget utrymme för avdrag, och det kan fördelas efter hur ni betalar. Mer om detta under ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'I Botkyrka påverkas kostnaden av hur stor del av det gamla teglet som går att lägga tillbaka, om råsponten behöver bytas, hur brant och stort taket är och hur mycket plåt som ska göras om. På radhus spelar det också roll om flera hus görs samtidigt. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Vi har en nationalromantisk villa i Tullinge – måste vi behålla det enkupiga teglet?',
+   'Det finns inget generellt krav, men kulturmiljöprogrammet säger att tak ska ges en tidstypisk utformning på villor med bevarad karaktär. Enkupigt lertegel är det som hör till husen från 1900–1910-talen.'),
+  ('Hur renoverar man taket på ett kataloghus från 1920-talet?',
+   'Som på andra hus från tiden: pannorna tas ner, underlaget byts och hela pannor läggs tillbaka. Vi tittar extra på takstolarna, eftersom kataloghusen byggdes för att vara prisvärda.'),
+  ('Vårt funkishus i Tullinge har ett flackt sadeltak som läcker – vad gör ni?',
+   'Ett flackt tak är känsligt för vatten som blir stående och för skarvar som släpper. Vi kontrollerar lutning, underlag och genomföringar och föreslår material som passar den låga lutningen.'),
+  ('Ska hela radhuslängan i Tuna renovera taken samtidigt?',
+   'Det är inte nödvändigt men ofta klokt. Kulturmiljöprogrammet vill att radhusens enhetliga karaktär värnas, och det blir lättare om taken görs lika.'),
+  ('Behövs bygglov för takrenovering i Botkyrka?',
+   'Att lägga om ett tak med samma material kräver normalt inget lov. Byte av material är också normalt lovfritt, utom i särskilt värdefulla områden eller där detaljplanen har skyddsbestämmelser.'),
+ ],
+ 'sources': [
+  _SCB,
+  ('Botkyrka kommun – Kulturmiljöprogram (antaget 2014)',
+   'https://www.botkyrka.se/download/18.1fbbaae6170bff9469deb7f/1602575505534/Kulturmilj%C3%B6program.pdf'),
+  ('Botkyrka kommun – Förändringar i plan- och bygglagen från 1 december 2025',
+   'https://www.botkyrka.se/boende-och-narmiljo/bygglov-och-tillstand/nya-byggregler/forandringar-i-plan--och-bygglagen'),
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Nationalromantisk trävilla med brant tak av rött lertegel på en höjd i Tullinge',
+   'Swedish national romantic wooden villa from around 1910 on a rocky hill, steep gable roof covered in red single-lap clay tiles, horizontal dark brown wooden panel, small-paned white windows, large natural plot with pine trees and birch, glimpse of a lake below, Tullinge Botkyrka, early autumn, empty scene'),
+  ('Funkisvilla med slätputsad fasad och flackt sadeltak i ett villaområde',
+   'white smooth-plastered Swedish functionalist villa from the 1930s with a low-pitched gable roof covered in dark metal sheets, simple rectangular volume, windows without glazing bars, straight residential street with hedge and lawn, Tullinge, soft daylight, no people, no cars'),
+ ]},
+
+# ---------------------------------------------------------------------------------------- SIGTUNA
+'Sigtuna': {
+ 'title': 'Takrenovering i Sigtuna – lertegel, plåt och bevarandeplan',
+ 'description': 'Takrenovering i Sigtuna: bevarandeplanens regler för lertegel, plåt och skorstenar i Sigtuna stad, anmälan vid omläggning och flygbullret kring Arlanda.',
+ 'lead': 'I Sigtuna stad är taklandskapet rött lertegel med inslag av plåt, och kommunens bevarandeplan säger ganska exakt hur taken ska skötas. Utanför stadskärnan gäller i regel de vanliga reglerna. Vi går igenom vad det betyder för en takrenovering, från omläggning till skorstenar, plåtdetaljer och solceller.',
+ 'card': 'Sigtuna stad, Märsta och Arlanda.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Två slags tak i samma kommun',
+   'paras': [
+     'Sigtuna kommun hade 7 387 bostäder i småhus 2024, enligt SCB. Många av dem ligger i villa- och radhusområdena kring Märsta, där en takrenovering följer samma regler som i de flesta andra kommuner. Men kommunen rymmer också Sigtuna stad, vars centrala delar är riksintresse för kulturmiljövården sedan 1986.',
+     'För stadskärnan finns en bevarande- och förnyelseplan, reviderad 2019. Den beskriver hur staden i mitten av 1800-talet mest bestod av låga trähus där de flesta tak var täckta med tegel, och hur det traditionella taklandskapet i dag domineras av rött lertegel med inslag av plåttak i olika kulörer. Planen är kommunens vägledning för underhåll och förnyelse i staden.',
+   ],
+   'aside': {'title': 'Takmaterial i bevarandeplanen', 'items': ['Lertegel', 'Ståndfalsad plåt', 'Papp']}},
+  {'id': 'tegel', 'h2': 'Enkupigt ska förbli enkupigt',
+   'paras': [
+     'Bevarandeplanen säger att ett tegeltak i regel ska ersättas med likadana pannor, om det inte finns belägg för att en annan panna eller ett annat material har funnits på byggnaden tidigare. Ett enkupigt lertegel ska därför inte bytas mot det modernare tvåkupiga. Gamla takpannor beskrivs som en tillgång: de ska i första hand kompletteras, eller sparas i ett uthus vid takbyte.',
+     'Det stämmer med hur vi arbetar på ett gammalt tegeltak. Pannorna tas ner försiktigt och sorteras, underlaget byts, och hela pannor läggs tillbaka. Det som saknas kompletteras med pannor av samma typ, och överblivna hela pannor kan sparas till framtida lagningar.',
+     'Även för ombyggnad i övrigt gäller att byggnadsdetaljer som takpannor ska tas tillvara och återanvändas så långt det går. Läs mer om ' + _L.format('takmaterial-livslangd.html', 'takmaterialens livslängd') + '.',
+   ],
+   'aside': None},
+  {'id': 'detaljer', 'h2': 'Skorstenar, plåt och takkupor',
+   'paras': [
+     'Planen föredrar murade eller putsade skorstenar framför plåtklädda, och vill att husen behåller sina skorstenar även när de inte längre används. Regnskydd bör utformas på plats av plåtslagare, eftersom färdiga lösningar kan bli klumpiga. Den enkla bebyggelsen hade från början inga plåtdetaljer, plåttäckning blev vanligare i slutet av 1800-talet och plåtklädda vindskivor är en modern företeelse.',
+     'Vid byte av plåtdetaljer ska det äldre utseendet vara förebild, och rena takfall ger byggnaderna ett autentiskt utseende. Takkupor och takfönster för att få ljus till en inredd vind är bygglovspliktiga i staden och ska hållas små och placeras där de syns minst. Läs mer om ' + _L.format('skorstensrenovering.html', 'skorstenar och skorstensplåt') + '.',
+     'Solceller är också bygglovspliktiga inom riksintresset. Panelerna ska följa takets lutning och placeras där de syns minst från gatan och från Mälaren, och längs en del av Stora gatan får inga synliga paneler finnas på takfall mot gatan. Se ' + _L.format('solceller-tak.html', 'solceller på taket') + '.',
+   ],
+   'aside': {'title': 'Enligt bevarandeplanen', 'items': ['Murade skorstenar framför plåtklädda', 'Regnskydd formas på plats', 'Plåtdetaljer efter äldre förebild', 'Små takkupor där de syns minst']}},
+  {'id': 'lov', 'h2': 'Anmälan även för omläggning',
+   'paras': [
+     'På Sigtuna kommuns sida om tak står att du kan behöva bygglov för att byta takmaterial eller ändra takets färg om byggnaden, tomten eller området är särskilt kulturhistoriskt värdefullt, eller om detaljplanen eller områdesbestämmelserna har skyddsbestämmelser. För vissa skyddade byggnader kan det dessutom behövas en anmälan även för underhåll av taket, till exempel en omläggning.',
+     'Det betyder att en vanlig takomläggning i Sigtuna stad kan kräva kontakt med kommunen redan innan ställningen kommer upp. Kommunen anger tio veckors handläggningstid från att ansökan är komplett, så det behöver räknas in i tidplanen. För en villa i Märsta utan skyddsbestämmelser är materialbyte normalt lovfritt, enligt ' + _X.format(_BOV, 'Boverket') + '.',
+   ],
+   'aside': None},
+  {'id': 'marsta', 'h2': 'Arlanda och flygbullret',
+   'paras': [
+     'Kommunen skriver att flygtrafiken orsakar buller som påverkar stora delar av kommunen och styr var nya bostäder kan byggas. Vid nybyggnad eller tillbyggnad inom influensområdet tar kommunen kontakt med Swedavia innan beslut fattas. En takrenovering är inte en tillbyggnad, men ska taket höjas eller vinden byggas på är det bra att veta att frågan prövas.',
+     'Byggs vinden om i samband med att taket läggs om är det också ett tillfälle att se över isoleringen, som kommunen nämner bland de bullerbegränsande åtgärderna. Läs mer om ' + _L.format('vindsisolering.html', 'vindsisolering') + ', om ' + _L.format('taklaggare-sigtuna.html', 'takläggare i Sigtuna') + ' och om ' + _L.format('malare-sigtuna.html', 'målare i Sigtuna') + ' om vindskivor och takfot ska målas.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Skydd och lovfråga', 'Vi kontrollerar om huset omfattas av bevarandeplanen eller skyddsbestämmelser och om anmälan krävs.'),
+  ('Besiktning', 'Pannor, underlag, skorsten och plåtdetaljer bedöms, och vi noterar vilken panntyp som ligger.'),
+  ('Teglet sparas', 'Pannorna tas ner och sorteras, och hela pannor ställs undan för att läggas tillbaka.'),
+  ('Nytt underlag', 'Papp och läkt byts och skadad råspont ersätts.'),
+  ('Plåt efter förebild', 'Plåtdetaljer och regnskydd formas på plats efter det äldre utseendet.'),
+  ('Genomgång', 'Vi går igenom taket med dig och lämnar överblivna hela pannor för framtida lagningar.'),
+ ],
+ 'rot': [
+  'För arbetskostnaden får du rotavdrag med 30 procent, upp till 50 000 kr per person och år och högst 75 000 kr tillsammans med rutavdrag. Material, resor och utrustning ger inget avdrag. Vi drar av beloppet direkt på fakturan, enligt ' + _X.format(_SKV, 'Skatteverket') + '.',
+  'Avdraget gäller bara den del av fakturan som är arbetskostnad, därför redovisar vi arbete och material var för sig i kostnadsförslaget. Mer om vad som räknas finns under ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'I Sigtuna stad påverkas kostnaden av hur många pannor som kan läggas tillbaka, hur svåra plåtdetaljerna och skorstenarna är och om kommunens prövning påverkar tidplanen. I Märsta handlar det mer om takets storlek, underlagets skick och plåten runt genomföringar. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Får jag byta enkupigt tegel mot tvåkupigt på mitt hus i Sigtuna stad?',
+   'Enligt bevarandeplanen nej, om det inte finns belägg för att en annan panna har legat på huset tidigare. Gamla pannor ska i första hand kompletteras.'),
+  ('Behöver jag göra en anmälan för att lägga om taket?',
+   'För vissa skyddade byggnader i Sigtuna kan det krävas en anmälan även för underhåll som en omläggning. Kontakta kommunen innan arbetet planeras.'),
+  ('Kan skorstenen få en plåtkåpa från bygghandeln?',
+   'I Sigtuna stad rekommenderar bevarandeplanen att regnskydd utformas på plats av plåtslagare, eftersom färdiga lösningar kan bli klumpiga och dominerande.'),
+  ('Påverkar flygbullret från Arlanda en takrenovering i Märsta?',
+   'Själva renoveringen nej. Men vid tillbyggnad inom influensområdet, till exempel om taket höjs, hör kommunen med Swedavia innan beslut.'),
+  ('Får vi sätta solceller på taket i Sigtuna stad?',
+   'Inom riksintresset krävs bygglov. Panelerna ska följa takets lutning och placeras där de syns minst, och på en del av Stora gatan får de inte synas mot gatan.'),
+ ],
+ 'sources': [
+  _SCB,
+  ('Sigtuna kommun – Bevarande- och förnyelseplan för Sigtuna stad (2019)',
+   'https://www.sigtuna.se/download/18.6ed4dd301706254f993282/1582201854957/Bevarande-%20och%20f%C3%B6rnyelseplan%20f%C3%B6r%20Sigtuna%20stad,%20antagen%202019.pdf'),
+  ('Sigtuna kommun – Tak (bygglov)', 'https://www.sigtuna.se/bygga-bo-och-miljo/bygglov/vad-ska-du-bygga/andra-befintlig-byggnad/tak.html'),
+  ('Sigtuna kommun – Flygbuller', 'https://www.sigtuna.se/bygga-bo-och-miljo/bygglov/var-far-du-bygga/flygbuller.html'),
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Låga trähus med tak av rött lertegel och murade skorstenar i Sigtuna stad',
+   'row of small old Swedish wooden houses painted falu red and ochre along a narrow street, roofs covered in old red single-lap clay tiles, plastered brick chimneys with simple profiled tops, no metal barge boards, lake Mälaren glimpsed between the houses, Sigtuna old town, summer morning, empty street, no people, no signs'),
+  ('Radhuslänga med mörka takpannor och träfasader i ett villaområde',
+   'row of Swedish 1970s terraced houses with dark brown concrete roof tiles, brown wooden facades, small front gardens with hedges, footpath in front, overcast sky, Märsta Sigtuna, no people, no cars'),
+ ]},
+
+# ---------------------------------------------------------------------------------------- HÄSSELBY
+'Hässelby': {
+ 'title': 'Takrenovering i Hässelby – villastad och grupphus',
+ 'description': 'Takrenovering i Hässelby: villor i Hässelby villastad, gruppbyggda småhus i Hässelby strand och Hässelby gård och Stadsmuseets klassning före materialbyte.',
+ 'lead': 'I Hässelby villastad finns drygt 5 000 småhus, byggda under i stort sett hela 1900-talet. Vid tunnelbanan i Hässelby strand och Hässelby gård ligger i stället radhus och kedjehus som ritades i grupp. En takrenovering i Hässelby börjar därför med att reda ut vilken sorts område huset står i.',
+ 'card': 'Villastaden, Hässelby strand och gård.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Från handelsträdgårdar till villastad',
+   'paras': [
+     'Enligt Stockholms stads områdesfakta fanns det 5 009 bostäder i småhus i stadsdelen Hässelby villastad 2025, av totalt 7 029. Stadens minnesbok om Stor-Stockholms uppkomst berättar att tomtförsäljningen från Hässelby gård tog fart vid sekelskiftet 1900. Hässelby villastads köping bröts ut från Spånga 1926, och de först bosatta var renhållningsarbetare vid Lövsta.',
+     'Många köpte mark för handelsträdgårdar. En artikel från Stadsmuseet beskriver hur Hässelby på 1950-talet hade omkring hundra handelsträdgårdar, flest av alla platser i Sverige. Solbacken i kvarteret Ripbäret låg kvar från 1905 till 2008 och var den sista i Västerort.',
+     'Villastaden växte alltså fram sida vid sida med odlingarna, och bebyggelsen kom i omgångar. Stadens vägledning för småhusområden beskriver hur många villor i Hässelby villastad på 1960- och 70-talen ersattes av täta grupper av enhetliga småhus.',
+   ],
+   'aside': {'title': 'Tre slags områden', 'items': ['Villastad med hus från många epoker', 'Gruppbyggda småhus från 1960–70-tal', 'Tunnelbanestadens radhus och kedjehus']}},
+  {'id': 'villastad', 'h2': 'Villastaden: ett tak i taget',
+   'paras': [
+     'I stadens typologi räknas Hässelby villastad som villastad, där bebyggelsen var privat organiserad och därför blev brokigare än i stadens egna egnahemsområden. Trä var det vanligaste fasadmaterialet, och glasverandor, takkupor och snickarglädje gav variation. Tomtdelningar har sedan lagt till hus från senare tider.',
+     'För taken betyder det att grannhusen sällan har samma ålder eller material. Vi bedömer varje tak för sig: vad som ligger där i dag, vad som ligger under och hur tidigare kupor eller tillbyggnader har anslutits. Stadens råd för villastäderna är att ta tillvara eller återskapa karaktärsskapande material, kulörer och detaljer vid ombyggnad och renovering.',
+     'Läs mer om ' + _L.format('takbyte-eller-takrenovering.html', 'när det räcker med renovering och när taket behöver bytas') + '.',
+   ],
+   'aside': None},
+  {'id': 'grupphus', 'h2': 'Hässelby strand och Hässelby gård: tak som hör ihop',
+   'paras': [
+     'Hässelby strand och Hässelby gård räknas i stadens vägledning till tunnelbanestäderna. Hässelby gård planerades samtidigt med Vällingby, som invigdes 1954 som den första tunnelbanestaden. Längst ut från centrum byggdes rad- och kedjehus i grupper, och i stadens tabell över småhusområden är både Hässelby strand och Hässelby gård markerade som kulturhistoriskt värdefulla miljöer.',
+     'Stadens vägledning nämner att man i många av områdena prövade nya material. Ett populärt var asbestcement, eternit, som i många fall har bytts ut. Ligger det gamla skivor kvar på ett tak eller på en takfot ska de rivas på rätt sätt, och vi bedömer materialet vid besiktningen.',
+     'Vägledningen beskriver hur tunnelbanestäderna fick högre hus närmast centrum och tunnelbanan och en nedtrappning mot grupper av rad- och kedjehus längst ut, med gångvägar och naturstråk mellan husen. Fasader i rött tegel var vanliga, men det förekom även puts och skivor i fibercement. Taken på en sådan länga byggdes samtidigt och åldras i samma takt.',
+     'I ett grupphusområde är det helheten som bär värdet. Ska ett radhus få nytt takmaterial eller ny kulör, tänk på att det förändrar hela längan. Bäst blir det om grannarna kommer överens om samma lösning.',
+   ],
+   'aside': None},
+  {'id': 'lov', 'h2': 'Stadsmuseets karta före materialbyte',
+   'paras': [
+     'Sedan 1 december 2025 krävs normalt inget bygglov för att byta takmaterial eller kulör på ett en- eller tvåbostadshus, enligt ' + _X.format(_BOV, 'Boverket') + '. Lov kan ändå krävas om detaljplanen har skyddsbestämmelser, om huset är särskilt värdefullt eller om området har utökad lovplikt.',
+     'Stockholms stad hänvisar till Stadsmuseets klassificeringskarta som en första kontroll. Är huset eller området markerat med blått eller grönt gäller utökad lovplikt, och då krävs bygglov även för sådant som annars är lovfritt. Gult eller grått, utan annat skydd, betyder att inget lov behövs. Mer om reglerna finns under ' + _L.format('bygglov-takbyte.html', 'bygglov vid takbyte') + '.',
+   ],
+   'aside': None},
+  {'id': 'renovering', 'h2': 'Vad vi gör på taket',
+   'paras': [
+     'Vi börjar på vinden och ser om underlagspappen har släppt, om läkten är rötskadad och om fukt har trängt in vid skorsten eller kupor. Skadad råspont byts innan nytt underlag läggs. Hela pannor läggs tillbaka på ny läkt, och plåten vid skorsten, ränndalar och takfot görs om i samma arbete.',
+     'På grupphusen samordnar vi gärna med grannarna, så att takfot, nock och plåtdetaljer blir lika. Se även ' + _L.format('taklaggare-hasselby.html', 'takläggare i Hässelby') + ' och ' + _L.format('malare-hasselby.html', 'målare i Hässelby') + ' om vindskivor och takfot ska målas.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Område och klassning', 'Vi tittar i Stadsmuseets karta och detaljplanen och tar reda på om huset ingår i en grupp.'),
+  ('Vinden', 'Underlag, läkt och anslutningar kontrolleras inifrån.'),
+  ('Material som kräver försiktighet', 'Gamla fibercementskivor identifieras och rivningen planeras därefter.'),
+  ('Omläggning', 'Pannorna tas ner, papp och läkt byts och hela pannor läggs tillbaka.'),
+  ('Detaljer i plåt', 'Skorsten, ränndalar och takfot får nya beslag.'),
+  ('Genomgång', 'Vi går igenom taket med dig och dokumenterar det som gjorts.'),
+ ],
+ 'rot': [
+  'Rotavdraget är 30 procent av arbetskostnaden. Det får vara högst 50 000 kr per person och år, och tillsammans med rutavdrag högst 75 000 kr. Material och resor ingår inte, och vi drar av beloppet direkt på fakturan, enligt ' + _X.format(_SKV, 'Skatteverket') + '.',
+  'Gör flera grannar i en radhuslänga sina tak samtidigt får var och en avdrag för sitt eget hus, så länge de äger huset när arbetet görs. Läs mer om ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'Kostnaden i Hässelby påverkas av takets storlek och skick, hur mycket råspont som behöver bytas, om gamla fibercementskivor ska rivas och om flera hus i en länga görs samtidigt. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Är radhusen i Hässelby strand kulturhistoriskt skyddade?',
+   'Staden markerar Hässelby strand och Hässelby gård som kulturhistoriskt värdefulla miljöer. Vad det betyder för ditt hus står i detaljplanen och Stadsmuseets klassificeringskarta.'),
+  ('Vi har eternit på takfoten – kan ni ta bort det?',
+   'Äldre asbestcement ska hanteras enligt reglerna för asbest och inte bearbetas på plats. Vi bedömer materialet vid besiktningen och planerar rivningen därefter.'),
+  ('Vårt hus i villastaden byggdes om på 70-talet – hur vet ni vad som ligger under?',
+   'Vi tittar på vinden och lyfter några pannor. Då ser vi underlaget och om det finns äldre lager kvar under det nuvarande taket.'),
+  ('Måste hela radhuslängan välja samma takmaterial?',
+   'Inte enligt lag, men i ett grupphusområde är helheten värdet. Staden råder att förändringar i sammanhållna grupper görs utifrån ett helhetsperspektiv.'),
+  ('Får vi lägga om taket under vintern?',
+   'Det går ofta, men regn, snö och kyla påverkar arbetet. Vi planerar tidpunkten tillsammans med dig och skyddar taket under pågående jobb.'),
+ ],
+ 'sources': [
+  ('Stockholms stad – Områdesfakta Hässelby villastad (2025)',
+   'https://start.stockholm.se/globalassets/start/om-stockholms-stad/utredningar-statistik-och-fakta/statistik/omradesfakta/vasterort/hasselby-vallingby/hasselby-villastad.pdf'),
+  _MINNES,
+  ('Stockholmskällan – Stadsmuseet: Solbacken – en trädgårdssaga',
+   'https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSMB_0027211_01.pdf'),
+  _VARSAM, _KLASS,
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Villagata i Hässelby villastad med trävillor och tegeltak bakom häckar',
+   'quiet narrow villa street in a Stockholm suburb with detached Swedish wooden houses from the 1920s to the 1950s painted in light colours, steep gable roofs with red clay tiles and one with dark concrete tiles, a glazed veranda, clipped hedges and fruit trees in front gardens, Hässelby villastad, late summer, completely empty street and sidewalk, nobody visible, no cars'),
+  ('Kedjehus från 1950-talet med låga tak i Hässelby strand',
+   'row of modest single-storey Swedish 1950s linked houses (kedjehus) with very low-pitched roofs and one continuous roof line, light yellow brick and white painted wooden panels, simple rectangular windows, lawns and birch trees along a gravel footpath, Scandinavian modernist suburb, Hässelby strand Stockholm, soft daylight, no people'),
+ ]},
+
+# ---------------------------------------------------------------------------------------- SPÅNGA
+'Spånga': {
+ 'title': 'Takrenovering i Spånga – Solhem, Bromsten och Flysta',
+ 'description': 'Takrenovering i Spånga: villastäderna Solhem, Bromsten, Flysta och Sundby, Solhem som värdefull miljö och tak på hus som byggts om i omgångar.',
+ 'lead': 'I Spånga ligger villastäderna Solhem, Bromsten, Flysta och Sundby, som blev egna municipalsamhällen mellan 1905 och 1916. I dag står hus från många epoker sida vid sida. En takrenovering i Spånga börjar därför med att se vad som ligger på just ditt hus – och om tomten ligger i Solhem, som staden räknar som kulturhistoriskt värdefull miljö.',
+ 'card': 'Solhem, Bromsten, Flysta och Sundby.',
+ 'sections': [
+  {'id': 'hus', 'h2': 'Fyra municipalsamhällen kring stationen',
+   'paras': [
+     'Stockholms stads minnesbok om Stor-Stockholms uppkomst räknar upp Spångas municipalsamhällen: Bromsten 1905, Solhem 1909 och Flysta 1916. Järnvägen mellan Spånga, Hässelby och Lövsta öppnade 1889, och när Spånga införlivades med Stockholm 1949 ägde staten 60 procent av socknens areal och staden 26 procent.',
+     'Enligt stadens områdesfakta för 2025 fanns det 2 038 bostäder i småhus i Solhem, 1 066 i Bromsten, 663 i Flysta och 559 i Sundby. De allra flesta av småhusen är äganderätter.',
+   ],
+   'aside': {'title': 'Småhus 2025', 'items': ['Solhem: 2 038', 'Bromsten: 1 066', 'Flysta: 663', 'Sundby: 559']}},
+  {'id': 'villastad', 'h2': 'Stora tomter som har delats',
+   'paras': [
+     'Stadens vägledning för småhusområden räknar Bromsten, Solhem, Flysta och Sundby som villastäder. De första stadsplanerna gav slingrande gator efter terrängen och fritt liggande hus på stora tomter. I Solhem fick bara en tiondel av tomten bebyggas. När delar av villastäderna fick nya planer på 1930-talet blev tomterna mindre, 700–1 000 kvadratmeter.',
+     'Enligt vägledningen har tomterna i villastäderna sedan dess successivt delats och nya hus byggts på tomter kring 600 kvadratmeter, med radhus, parhus och mindre flerfamiljshus inom och kring den gamla strukturen. Resultatet är en blandning där en villa från 1910-talet kan stå bredvid ett hus från 1980-talet.',
+     'Vägledningen beskriver också gaturummet: husen ligger som regel indragna från gatan med en grön förgård, och gatorna kantas av klippta häckar eller staket. Det är vackert men kan göra det trångt när en ställning ska resas och en container ställas upp. Vi föreslår en placering som skonar häckar och träd och som grannarna kan leva med under de veckor arbetet pågår.',
+     'För taket betyder det att grannarnas tak sällan säger något om ditt. Vi ser på varje hus för sig: material, lutning, ålder på underlaget och hur senare kupor och tillbyggnader har anslutits.',
+   ],
+   'aside': None},
+  {'id': 'solhem', 'h2': 'Solhem: värdefull miljö, varsam renovering',
+   'paras': [
+     'I stadens översikt över småhusområden är Solhem den enda av de fyra villastäderna som är markerad som kulturhistoriskt värdefull miljö. Det betyder inte att varje hus är klassat, men att ändringar i området behöver visa hänsyn till de värdena.',
+     'Stadens råd för villastäderna är att ta tillvara eller återskapa karaktärsskapande material, kulörer, byggnadsdelar och detaljer vid ombyggnad och renovering, och att utgå från husens volym, proportioner och takform. För ett äldre hus i Solhem innebär det oftast att taket läggs om med samma material och att kupor, takfot och skorsten behåller sin form.',
+     'Är du osäker på vad som gäller för ditt hus, börja med ' + _X.format('https://stadsmuseet.stockholm/kunskap-och-samlingar/kulturmiljo/klassificering/', 'Stadsmuseets klassificeringskarta') + '. Är huset markerat med blått eller grönt gäller utökad lovplikt.',
+   ],
+   'aside': {'title': 'Före ett materialbyte i Solhem', 'items': ['Stadsmuseets karta', 'Detaljplanens bestämmelser', 'Husets ursprungliga takform', 'Kupor och skorsten']}},
+  {'id': 'lov', 'h2': 'Bygglov och lovfrihet i Spånga',
+   'paras': [
+     'Sedan den 1 december 2025 är det normalt lovfritt att byta takmaterial eller kulör på ett en- eller tvåbostadshus, enligt ' + _X.format(_BOV, 'Boverket') + '. Undantagen är hus som är särskilt värdefulla, områden med skyddsbestämmelser i detaljplan och områden med utökad lovplikt.',
+     'Höjs taket eller ändras takvinkeln kan det räknas som tillbyggnad, och då gäller andra regler. Eftersom delar av villastäderna fick nya planer på 1930-talet och tomter har styckats av senare kan bestämmelserna skilja sig mellan grannfastigheter. Stäm därför av detaljplanen för just din tomt och kontakta stadsbyggnadskontoret innan takets form ändras. Mer om reglerna finns under ' + _L.format('bygglov-takbyte.html', 'bygglov vid takbyte') + '.',
+   ],
+   'aside': None},
+  {'id': 'renovering', 'h2': 'Så lägger vi om ett tak i Spånga',
+   'paras': [
+     'Vi börjar på vinden, där det syns om underlagspappen har släppt, om läkten är rötskadad och hur ventilationen fungerar. Har vinden fått tilläggsisolering senare kontrollerar vi särskilt att luften kan röra sig från takfot till nock. Därefter tas taktäckningen ner, underlaget byts och hela pannor läggs tillbaka.',
+     'Plåten vid skorsten, ränndalar och takfot görs om i samma arbete, och rännor och stuprör ses över. Läs mer om ' + _L.format('hangrannor-stupror.html', 'hängrännor och stuprör') + ', ' + _L.format('taklaggare-spanga.html', 'takläggare i Spånga') + ' och ' + _L.format('koksrenovering-spanga.html', 'köksrenovering i Spånga') + ' om fler delar av huset ska göras.',
+   ],
+   'aside': None},
+ ],
+ 'steps': [
+  ('Villastad och klassning', 'Vi tittar på var i Spånga huset ligger och vad Stadsmuseets karta och detaljplanen säger.'),
+  ('Vinden', 'Papp, läkt, råspont och ventilation kontrolleras inifrån.'),
+  ('Tidigare ombyggnader', 'Kupor, tillbyggnader och anslutningar noteras var för sig.'),
+  ('Nytt underlag', 'Taktäckningen tas ner, och papp, läkt och skadad råspont byts.'),
+  ('Taktäckning och plåt', 'Hela pannor läggs tillbaka och plåtdetaljerna görs om.'),
+  ('Genomgång', 'Rännor rensas eller byts och vi går igenom taket med dig.'),
+ ],
+ 'rot': [
+  'Du får rotavdrag med 30 procent av arbetskostnaden, högst 50 000 kr per person och år och högst 75 000 kr tillsammans med rutavdrag. Material och resor ger inget avdrag. Avdraget görs direkt på fakturan, enligt ' + _X.format(_SKV, 'Skatteverket') + '.',
+  'Du ska äga huset när arbetet utförs, och är ni flera ägare har var och en sitt eget tak för avdraget. Mer finns under ' + _L.format('rot-avdrag-takarbete.html', 'rotavdrag för takarbete') + '.',
+ ],
+ 'price': [
+  'Kostnaden i Spånga påverkas av takets storlek och lutning, hur mycket råspont som behöver bytas, hur många kupor och tillbyggnader taket har och hur mycket plåt som ska göras om. Läs mer om ' + _L.format('vad-kostar-takrenovering.html', 'vad en takrenovering kostar') + ' eller räkna på ditt tak i ' + _L.format('kalkylator-takbyte.html', 'kalkylatorn för takbyte') + '.',
+ ],
+ 'faq': [
+  ('Är alla hus i Solhem kulturhistoriskt klassade?',
+   'Nej. Staden räknar Solhem som en kulturhistoriskt värdefull miljö, men klassningen av enskilda hus framgår av Stadsmuseets karta och detaljplanen.'),
+  ('Vårt hus i Bromsten står på en avstyckad tomt – spelar det någon roll för taket?',
+   'Inte för själva renoveringen. Men på en liten tomt kan det vara trångt för ställning och container, så vi planerar etableringen vid besöket.'),
+  ('Kan vi byta från tegel till plåt på en villa i Flysta?',
+   'Normalt ja, om huset inte är särskilt värdefullt och detaljplanen saknar skyddsbestämmelser. Tänk på att plåt ger ett annat uttryck och att takstolarna ska klara det nya materialet.'),
+  ('Vi har tilläggsisolerat vinden – behöver taket ändras?',
+   'Det viktiga är att luften kan röra sig från takfot till nock. Vi kontrollerar ventilationen när taket läggs om och åtgärdar den vid behov.'),
+  ('Hur lång tid tar en takomläggning på en villa i Spånga?',
+   'Det beror på takets storlek, väder och vad vi hittar under taktäckningen. Du får en tidplan i kostnadsförslaget efter besöket.'),
+ ],
+ 'sources': [
+  _MINNES, _VARSAM,
+  ('Stockholms stad – Områdesfakta Solhem (2025)',
+   'https://start.stockholm.se/globalassets/start/om-stockholms-stad/utredningar-statistik-och-fakta/statistik/omradesfakta/vasterort/jarva/solhem.pdf'),
+  ('Stockholms stad – Områdesfakta Bromsten (2025)',
+   'https://start.stockholm.se/globalassets/start/om-stockholms-stad/utredningar-statistik-och-fakta/statistik/omradesfakta/vasterort/jarva/bromsten.pdf'),
+  _KLASS,
+  ('Stadsmuseet – Kulturhistorisk klassificering', 'https://stadsmuseet.stockholm/kunskap-och-samlingar/kulturmiljo/klassificering/'),
+  ('Boverket – Fasadändring, PBL kunskapsbanken', _BOV),
+  ('Skatteverket – Så fungerar rotavdraget', _SKV),
+ ],
+ 'img': [
+  ('Äldre trävilla med glasveranda och tegeltak på en stor trädgårdstomt i Solhem',
+   'Swedish wooden villa from about 1910 with light painted horizontal panel, a glazed veranda with decorative carpentry, a small dormer and a steep red clay tile roof, large garden with old apple trees and a clipped hedge along a curving street, Solhem Spånga Stockholm, late summer, empty scene, no people, no cars'),
+  ('Takfot med tegelpannor, plåtbeslag och hängränna på en äldre villa',
+   'close-up of the eaves of an older Swedish villa: red clay roof tiles, black metal eaves flashing, a half-round metal gutter with a downpipe bracket, white painted fascia board and ventilation gap under the roof overhang, soft daylight, no people'),
+ ]},
+})
