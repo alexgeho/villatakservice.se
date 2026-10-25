@@ -928,15 +928,13 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'paras': ['Lidingös villabebyggelse tog fart 1906, när AB Lidingö Villastad '
                                      'bildades av ingenjören Hjalmar Arwin. I slutet av 1910 var redan 293 '
                                      'villor byggda, och Per Olof Hallmans stadsplan antogs 1913. Samma år '
-                                     'som Arwin startade köpte Allan Abenius Brevik, och i Breviks villastad '
-                                     'fanns 75 villor 1910. Villastadens kärna består i dag av hus från '
+                                     'som Arwin startade köpte Allan Abenius Brevik, och 1910 fanns 75 villor i Brevik med omnejd. Villastadens kärna består i dag av hus från '
                                      'ungefär 1905–1930, och under 1940- och 50-talen styckades många stora '
                                      'tomter och fick nya villor.',
                                      'Efterkrigstiden gav andra hustyper. Mölna radhusby ritades av Nils '
                                      'Tesch redan 1954 men byggdes 1960–62, med fyrtio radhuslägenheter i '
                                      'sju längor. I Käppala byggdes villor under 1940- och 50-talen, '
-                                     'utbyggnaden fortsatte på 1960-talet ofta på gamla egnahems- eller '
-                                     'sportstugetomter, och 1979 tillkom närmare hundra radhus och kedjehus '
+                                     'utbyggnaden fortsatte på 1960-talet, ibland på gamla egnahems- eller sportstugetomter, och 1979 tillkom närmare hundra radhus och kedjehus '
                                      'kring Klarbärsvägen.',
                                      'Gåshaga är däremot nytt: stadsdelen gick från industri, varv och '
                                      'fritidshus till ett bostadsområde med omkring 350 lägenheter mellan '
@@ -1129,9 +1127,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       'fram till början av 1980-talet byggdes grupphusområden, bland annat '
                                       'Sörskogen söder om Huddinge centrum, Utsälje vid Snättringe och de '
                                       'terränganpassade småhusen i Östra Skogås.',
-                                      'En tredje grupp är de gamla sommarstugeområdena vid sjöarna. Vid '
-                                      'Mellansjö, Trehörningen och Gömmaren byggdes sportstugor från '
-                                      '1910–40-talet, och många av dem har sedan permanentats och byggts '
+                                      'En tredje grupp är de gamla sommarstugeområdena vid sjöarna. Vid Mellansjö och Trehörningen byggdes sportstugor från 1910–30-talet, och vid Gömmarens södra stränder växte ett sportstugeområde fram. Många av stugorna har sedan permanentats och byggts '
                                       'till i flera omgångar.'],
                             'aside': {'title': 'Husgrupper i Huddinge',
                                       'items': ['Egnahem 1910–40-tal: Stuvsta, Snättringe, Segeltorp, '
@@ -1193,8 +1189,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       'Hur noga det kan vara visar ett <a class="text-link" '
                                       'href="https://domstol.se/globalassets/filer/domstol/markochmiljooverdomstolen/avgoranden/2022/p-11816-21-dom-2022-05-30.pdf" '
                                       'rel="noopener">radhusärende från Östra Skogås</a>: 2022 fann Mark- '
-                                      'och miljööverdomstolen att det krävdes lov för att måla brunlaserade '
-                                      'fönster och dörrar vita, eftersom enhetligheten i området är ett '
+                                      'och miljööverdomstolen att det krävdes lov för att måla brunlaserade fönster och entrédörr vita, eftersom enhetligheten i området är ett '
                                       'utpekat karaktärsdrag. Målet prövades enligt äldre regler, men ligger '
                                       'ditt hus i ett utpekat område bör byte av pannor eller kulör stämmas '
                                       'av med kommunens <a class="text-link" '
@@ -1323,8 +1318,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       '21 längor, och intill dem egnahemsvillor i Skogstorp.',
                                       'I Jakobsberg började Widmark & Platzer bygga Ekedalsområdet 1958, med '
                                       'radhuslängor i den lägre delen och villor högre upp som stod klara i '
-                                      'mitten av 1960-talet. Från samma firma kommer kedjehusen vid '
-                                      'Dressyrvägen och villorna vid Stålringen i Kallhäll, medan '
+                                      'mitten av 1960-talet. Från samma firma kommer kedjehusen vid Dressyrvägen i Jakobsberg och villorna vid Stålringen i Kallhäll, medan '
                                       'grändvillorna vid Hovvägen uppfördes kring 1960 av Svenska '
                                       'Industribyggen.',
                                       'Viksjö byggdes ut under 1970-talet och domineras av radhus. Längst '
@@ -1469,8 +1463,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                        'utökats, så stäm av med kommunen innan du byter. Att lägga om med samma tegel ändrar '
                        'inte utseendet.'),
                       ('Grannen i längan vill inte renovera samtidigt – går det ändå?',
-                       'Ja. Vi gör en tät avslutning vid gränsen mellan husen så att din del håller även om '
-                       'grannens tak är äldre. Det blir enklare och ofta snyggare om ni byter samtidigt, men '
+                       'Ja. Vi gör en tät avslutning vid gränsen mellan husen, även om grannens tak är äldre. Det blir enklare och ofta snyggare om ni byter samtidigt, men '
                        'det är inget krav.'),
                       ('Kan vi gå tillbaka från svart betongtegel till rött lertegel?',
                        'Ofta går det. På en villa krävs normalt inget lov för materialbyte om huset inte är '
@@ -1544,13 +1537,9 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              {'id': 'taken',
                               'h2': 'Vilka tak vi möter – och vad som tar slut först',
                               'paras': ['På sekelskiftesvillorna är taken branta och har ofta frontespiser, '
-                                        'kupor och flera skorstenar. Där möter vi oftast tegel eller falsad '
-                                        'plåt, och det är sällan själva täckningen som först gör att taket '
-                                        'läcker. Det är plåten runt kupor och skorstenar, ränndalarna och '
+                                        'kupor och flera skorstenar. Där är det sällan själva täckningen som först gör att taket läcker. Det är plåten runt kupor och skorstenar, ränndalarna och '
                                         'ett underlag som lagts om för länge sedan, om alls.',
-                                        'Radhusen från 1960–80-talet har enklare sadeltak, ofta med '
-                                        'betongpannor, och där brukar underlagspappen och läkten vara från '
-                                        'byggåret. Eftersom längorna har samma ålder får flera grannar ofta '
+                                        'På radhusen från 1960–80-talet brukar underlagspappen och läkten vara från byggåret. Eftersom längorna har samma ålder får flera grannar ofta '
                                         'samma behov inom några år, vilket gör det lättare att planera '
                                         'omläggningen tillsammans.'],
                               'aside': {'title': 'Vanliga svaga punkter',
@@ -1916,7 +1905,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                   'paras': ['Kommunens <a class="text-link" '
                                             'href="https://www.upplandsvasby.se/download/18.11ea930419a75a29e90820/1763480197488/Kunskapsunderlag%20f%C3%B6r%20kulturmilj%C3%B6%20i%20Upplands%20V%C3%A4sby%201.pdf" '
                                             'rel="noopener">kunskapsunderlag för kulturmiljö</a> från 2025 '
-                                            'ersätter kulturmiljöprogrammet från 1988 och beskriver småhusen '
+                                            'bygger vidare på kulturmiljöprogrammet från 1988 och beskriver småhusen '
                                             'i tydliga lager. Det äldsta är Väsby villastad, där en '
                                             'stadsplan togs fram 1910 över mark som hörde till Vilunda '
                                             'herrgård och där faluröda villor från tiden kring 1900–1910 '
@@ -1985,9 +1974,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                             'områdesbestämmelser gäller. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                             'Ägget, Oxundavägen, Skälby, Bollstanäs – Gamla vägen och Väsby '
                                             'villastad bedöms i underlaget som särskilt värdefulla '
-                                            'bebyggelseområden enligt PBL 8 kap 13 §. För Ägget och '
-                                            'Oxundavägen pekar vägledningen ut taklandskapet, med kupor och '
-                                            'skorstenar, som en del av det som ska bibehållas. Kommunen '
+                                            'bebyggelseområden enligt PBL 8 kap 13 §. För Ägget ska taklandskapet bibehållas enligt vägledningen, och vid Vinkelvägen pekas rytmen av takkupor och skorstenar ut som värdefull. Kommunen '
                                             'skriver också på sidan om <a class="text-link" '
                                             'href="https://www.upplandsvasby.se/bygga-bo-och-miljo/bygga-nytt-andra-eller-riva/kulturhistoriska-byggnader-kulturmiljoer.html" '
                                             'rel="noopener">kulturhistoriska byggnader</a> att särskilt '
@@ -2061,7 +2048,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'Ägget bedöms som särskilt värdefullt, och underlaget noterar att husen från '
                              'början hade rött tvåkupigt lertegel. Att återgå till det ursprungliga '
                              'materialet ligger i linje med vägledningen, men stäm av med kommunen innan du '
-                             'beställer, eftersom området är skyddat.'),
+                             'beställer, eftersom området bedöms som särskilt värdefullt.'),
                             ('Kräver solceller på taket bygglov i Upplands Väsby?',
                              'Ja, inom detaljplanerat område. Hela kommunen ligger inom Försvarsmaktens '
                              'påverkansområde för väderradar, och kommunen kräver därför bygglov för '
