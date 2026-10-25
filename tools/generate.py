@@ -1734,7 +1734,7 @@ for _f, _d in TJ.items():
       area_served=([_d["ort"]] if _d["kind"] == "district" else None),
       geo_placename=(f"{_d['ort']}, Stockholm" if _d["kind"] == "district" else "Bromma, Stockholm"),
       crumbs=_crumbs, cta=_d["cta"],
-      body=hero(_d["h1"], _d["lead"], _crumbs, _anchors, img=(_f[:-5] + "-1", _d["img"][0][0])) + _html,
+      body=hero(_d["h1"], _d["lead"], _crumbs, _anchors, trust=_svc.get("trust"), img=(_f[:-5] + "-1", _d["img"][0][0])) + _html,
       faq=_d["faq"], after_faq=_trp_sources(_d["sources"], muted=True))
 
 # ====================== DALARNA (Borlänge + regionen) =====================
@@ -2951,7 +2951,8 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
   body=hero("Attefallshus i Stockholm",
     "Attefallshus är i dag ett vardagsnamn. Sedan 1 december 2025 heter huset komplementbostadshus i plan- och bygglagen, och inom detaljplan får det vara upp till 30 m² utan bygglov och utan anmälan. Vi bygger nyckelfärdigt i hela Stockholm.",
     BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
-    [("#vad","Om attefallshus"),("#regler","Regler"),("#anmalan","Anmälan"),("#faq","Vanliga frågor"),("#kallor","Källor")])
+    [("#vad","Om attefallshus"),("#regler","Regler"),("#anmalan","Anmälan"),("#faq","Vanliga frågor"),("#kallor","Källor")],
+    trust=TJ_SERVICES["attefallshus"]["trust"])
     + sec("Attefallshus – namnet som blev kvar", [
         "Ordet attefallshus finns inte längre i lagen. Den 1 december 2025 fick plan- och bygglagen ett nytt 9 kapitel, och de lovfria åtgärderna ”attefallshus” och ”friggebod” togs bort. I stället finns två begrepp: <strong>komplementbostadshus</strong> – en fristående byggnad som kompletterar ett en- eller tvåbostadshus och är inredd med en självständig bostad – och <strong>komplementbyggnad</strong>, som inte är inredd med en självständig bostad.",
         f"De flesta säger fortfarande attefallshus, och det är det ordet man söker på. Därför heter sidan så. Menar du ett förråd, en verkstad eller ett gästrum utan egen bostad är det en komplementbyggnad – se {a('friggebod.html','friggebod')}. Alla mått och paragrafer finns samlade i {a('attefallshus-regler.html','nya regler för attefallshus')}.",
@@ -2973,11 +2974,12 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
           <p>Ett attefallshus är nybyggnad och ger därför normalt <strong>inte</strong> ROT-avdrag. Ska huset hyras ut eller inredas för boende tillkommer krav – vi går igenom det vid platsbesöket. Se även {a('tillbyggnad.html','tillbyggnad')} om du hellre vill bygga ihop med huset.</p>
         </div></div>
       </section>"""
+    + (tj_list_html("Attefallshus per område", TJ_DISTRICTS["attefallshus"], muted=True, sid="omraden") if TJ_DISTRICTS.get("attefallshus") else "")
     + links_block("Relaterat", [
         ("attefallshus-regler.html","Attefallshus – nya regler","Mått, avstånd och anmälan."),
         ("friggebod.html","Friggebod","Nu komplementbyggnad."),
         ("nybyggnad-villa.html","Nybyggnad / nyckelfärdigt","Bygga större hus."),
-        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")]),
+        ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")], muted=not TJ_DISTRICTS.get("attefallshus")),
   faq=[
     ("Behöver jag bygglov eller anmälan för attefallshus?","Sedan 1 december 2025 krävs varken bygglov eller anmälan för själva huset om det håller sig inom måtten. Anmälan krävs för vatten, avlopp, ventilation och eldstad eller rökkanal."),
     ("Hur stort får ett attefallshus vara?","Inom detaljplan upp till 30 m² byggnadsarea och 4,0 m taknockshöjd, utanför detaljplan upp till 50 m² och 4,5 m. Alla lovfria komplementbyggnader på tomten får tillsammans vara högst 45 m² respektive 65 m²."),

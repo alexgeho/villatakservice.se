@@ -69,7 +69,9 @@ BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "byggforetag": ["byggforetag-stockholm", "byggforetag-taby", "byggforetag-lidingo"],
           "tillbyggnad": ["tillbyggnad", "bygglov-tillbyggnad"],
           "fasadmalning": ["fasadmalning", "malare"], "tapetsering": ["tapetsering", "malare"],
-          "golvslipning": ["golvslipning", "vad-kostar-golvslipning", "golvlaggning"]}
+          "golvslipning": ["golvslipning", "vad-kostar-golvslipning", "golvlaggning"],
+          "fonsterrenovering": ["fonsterrenovering", "fonsterbyte", "vad-kostar-fonsterbyte"],
+          "attefallshus": ["attefallshus", "attefallshus-regler"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}
 # Sidor som skrivs parallellt (andra moduler) – länkar dit räknas inte som trasiga.
@@ -150,6 +152,16 @@ for svc, fs in bysvc.items():
         if j > maxin[0]: maxin = (j, x, y)
         if j > 0.25: errors.append(f"likhet {j:.1%} {x} – {y} (> 25 %)")
         elif VERB: print(f"  {j:.1%} {x} – {y}")
+# v16: ortsida mot hubben när hubben är en vanlig sida i generate.py (t.ex. attefallshus.html + regelartikeln)
+HUB_PLAIN = {"attefallshus": ["attefallshus.html", "attefallshus-regler.html"]}
+for f in shs:
+    for other in HUB_PLAIN.get(TJ[f]["service"], []):
+        fp = os.path.join(ROOT, other)
+        if os.path.exists(fp):
+            j = jac(shs[f], sh(words_of(open(fp, encoding="utf-8").read()), TJ[f].get("ort")))
+            if j > maxin[0]: maxin = (j, f, other)
+            if j > 0.25: errors.append(f"likhet {j:.1%} {f} – {other} (> 25 %)")
+            elif VERB: print(f"  {j:.1%} {f} – {other}")
 # Mot ortens takläggar-/takrenoveringssida
 for f in shs:
     o = TJ[f].get("ort")
