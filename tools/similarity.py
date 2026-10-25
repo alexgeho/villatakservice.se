@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Likhet mellan ortsidor (mot mallkloner).
-Kor:  python3 tools/similarity.py [--max 0.25]
+Kor:  python3 tools/similarity.py [--max 0.25] [--takreno]
 Mattet: Jaccard pa 5-ords-shingles av sidans <main>-text (utan header/footer),
 ortnamnet ersatt med "ORT" sa att bara ortbytet inte gor sidor olika.
 Visar max-/snittlikhet och de mest lika paren. Exit 1 om max > --max.
@@ -33,6 +33,21 @@ for ort in AREAS:
     p = os.path.join(ROOT, f"taklaggare-{slug(ort)}.html")
     if os.path.exists(p):
         pages[ort] = shingles(text_of(p), ort)
+
+if "--takreno" in sys.argv:
+    # Takrenovering-ortsidor: parvis (<= 25 %) och mot ortens takläggarsida (<= 30 %).
+    from generate import TRP_ORTER, TRP_FILES
+    tr = {o: shingles(text_of(os.path.join(ROOT, TRP_FILES[o])), o) for o in TRP_ORTER}
+    pp = sorted(((len(tr[x] & tr[y]) / len(tr[x] | tr[y]), x, y)
+                 for x, y in itertools.combinations(tr, 2)), reverse=True)
+    vs = sorted(((len(tr[o] & pages[o]) / len(tr[o] | pages[o]), o) for o in tr), reverse=True)
+    print(f"Takrenovering: {len(tr)} sidor. Parvis max {pp[0][0]:.1%}, snitt {sum(p[0] for p in pp)/len(pp):.1%}.")
+    for s_, x, y in pp[:5]:
+        print(f"  {s_:.1%}  {x} – {y}")
+    print(f"Mot takläggarsidan: max {vs[0][0]:.1%}.")
+    for s_, o in vs:
+        print(f"  {s_:.1%}  {o}")
+    sys.exit(1 if pp[0][0] > 0.25 or vs[0][0] > 0.30 else 0)
 
 pairs = []
 for x, y in itertools.combinations(pages, 2):

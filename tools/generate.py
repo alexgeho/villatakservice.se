@@ -35,6 +35,10 @@ AREAS = ["Sundbyberg","Solna","Bromma","Spånga","Sollentuna",
 from omraden_stockholm import (AREAS_NEW, STOCKHOLM_STAD, NEIGHBORS_NEW,
     NEIGHBORS_ADD, LOC_NEW, LOC_EXTRA_NEW, ORT_IMG_NEW)
 AREAS = AREAS + AREAS_NEW
+# Norrtälje, Södertälje, Sigtuna (2026-10-25, ägaren bekräftar uppdrag där) – tools/omraden_extra.py.
+from omraden_extra import (AREAS_X, NEIGHBORS_X, NEIGHBORS_ADD_X, LOC_X, LOC_EXTRA_X,
+    ORT_SEO_X, ORT_SRC_X)
+AREAS = AREAS + AREAS_X
 
 # Dalarna: Geal Entreprenad AB samordnar/förmedlar takprojekt och utför via lokal
 # samarbetspartner på plats i Dalarna. Ingen egen adress i regionen anges.
@@ -67,12 +71,79 @@ NEIGHBORS = {
   "Smedjebacken": ["Ludvika","Borlänge","Säter"],
 }
 NEIGHBORS.update(NEIGHBORS_NEW)
-for _o, _add in NEIGHBORS_ADD.items():
+NEIGHBORS.update(NEIGHBORS_X)
+for _o, _add in list(NEIGHBORS_ADD.items()) + list(NEIGHBORS_ADD_X.items()):
     NEIGHBORS[_o] = NEIGHBORS[_o] + [x for x in _add if x not in NEIGHBORS[_o]]
 
 def slug(name):
     return (name.lower().replace("ä","a").replace("å","a").replace("ö","o")
             .replace(" ","-"))
+
+# Takrenovering per ort (2026-10-25): Keyword Planner "takrenovering <ort>" 10–100/mån.
+# Egen lång sida per ort (takrenovering-<slug>.html); innehåll + källor i tools/takreno_orter.py.
+from takreno_orter import TRP
+TRP_ORTER = ["Bromma","Solna","Nacka","Täby","Danderyd","Lidingö","Huddinge","Järfälla",
+             "Sollentuna","Vallentuna","Upplands Väsby","Värmdö","Tyresö","Haninge",
+             "Enskede","Älvsjö","Norrtälje","Södertälje"]
+TRP_FILES = {o: f"takrenovering-{slug(o)}.html" for o in TRP_ORTER}
+TRP_NEIGHBORS = {
+  "Bromma": ["Solna","Älvsjö","Järfälla"], "Solna": ["Bromma","Danderyd","Sollentuna"],
+  "Nacka": ["Värmdö","Tyresö","Lidingö"], "Täby": ["Danderyd","Vallentuna","Sollentuna"],
+  "Danderyd": ["Täby","Lidingö","Solna"], "Lidingö": ["Danderyd","Nacka","Täby"],
+  "Huddinge": ["Älvsjö","Haninge","Södertälje"], "Järfälla": ["Sollentuna","Upplands Väsby","Bromma"],
+  "Sollentuna": ["Järfälla","Täby","Upplands Väsby"], "Vallentuna": ["Täby","Upplands Väsby","Norrtälje"],
+  "Upplands Väsby": ["Sollentuna","Vallentuna","Järfälla"], "Värmdö": ["Nacka","Tyresö","Haninge"],
+  "Tyresö": ["Haninge","Nacka","Huddinge"], "Haninge": ["Tyresö","Huddinge","Värmdö"],
+  "Enskede": ["Älvsjö","Huddinge","Nacka"], "Älvsjö": ["Enskede","Huddinge","Bromma"],
+  "Norrtälje": ["Vallentuna","Täby","Upplands Väsby"], "Södertälje": ["Huddinge","Älvsjö","Haninge"],
+}
+# Bilder (tools/gen_images_flux.py): <sida>-1 = hero, <sida>-2 = i innehållet.
+# Alt-texten beskriver motivet – aldrig som eget utfört projekt.
+TRP_IMG_ALT = {
+ "Bromma": ("Putsad villa med brant tegeltak och skorsten i en trädgårdsstad i Bromma", "Taknock med lertegel och skorsten med plåtbeslag på en äldre villa"),
+ "Solna": ("Mindre putsad villa med valmat tegeltak i Råsunda", "Radhustak med betongpannor, skorstenar och takfönster"),
+ "Nacka": ("Sekelskiftesvilla i trä med rött plåttak på en klippa vid vattnet i Nacka", "Villa med mossa på betongpannorna i skogen i Boo"),
+ "Täby": ("Villa med bruna betongpannor och träfasad i Täby", "Radhuslänga med mörka betongpannor och takfönster"),
+ "Danderyd": ("Stor villa med brant tegeltak, takkupor och hög skorsten i Djursholm", "Ränndal och takkupa på ett falsat plåttak"),
+ "Lidingö": ("Sekelskiftesvilla i trä med glasveranda och tegeltak på Lidingö", "Villa med svarta takpannor bland tallar på Lidingö"),
+ "Huddinge": ("Gul trävilla med tegeltak och snickarglädje i Huddinge", "Kedjehus med mörka takpannor vid skogskanten i Huddinge"),
+ "Järfälla": ("Radhus från 1970-talet med bruna betongpannor i Järfälla", "Takfot med betongpannor, hängränna och stuprör"),
+ "Sollentuna": ("Tegelvilla med grå betongpannor bland höga tallar i Sollentuna", "Barr och mossa i hängrännan på ett tak med betongpannor"),
+ "Vallentuna": ("Villa med röda takpannor i Vallentuna", "Faluröd lada med plåttak i odlingslandskapet kring Vallentuna"),
+ "Upplands Väsby": ("Villagata med likartade hus och mörka tak i Upplands Väsby", "Takfot med takpannor, hängränna och stuprör"),
+ "Värmdö": ("Permanentat fritidshus med plåttak i skogen på Värmdö", "Hus på en klippa vid havet i Värmdös skärgård"),
+ "Tyresö": ("Rött fritidshus med tillbyggd flygel och två takhöjder vid en vik i Tyresö", "Villa med mossa på taket under höga granar i Tyresö"),
+ "Haninge": ("Sekelskiftesvilla med snickarglädje och rött plåttak vid en vik i skärgården kring Dalarö", "Villa med mörka takpannor och träfasad bland björkar i Haninge"),
+ "Enskede": ("Trähus med brant tegeltak och staket i Gamla Enskede", "Äldre lertegel med några kompletterade pannor och mossa i fogarna"),
+ "Älvsjö": ("Trävilla med tegeltak och glasveranda i Älvsjö", "Plåttäckt takkupa i ett tegeltak på en äldre trävilla"),
+ "Norrtälje": ("Rött trähus med svart tak på klipporna vid vattnet i Roslagen", "Fritidshus med låglutande tak bland tallar i Roslagen"),
+ "Södertälje": ("Putsad villa med tegeltak i en sluttning ovanför en sjö i Södertälje", "Villa med grå takpannor vid skogskanten i Södertälje"),
+}
+ORT_HERO_ALT = {
+ "Norrtälje": ("Faluröd gård med tegeltak i odlingslandskapet kring Norrtälje", "Röda trähus längs en stenig strand i Roslagen"),
+ "Södertälje": ("Rött trähus med svart plåttak på landet i Järna", "Tegelvilla med mörka betongpannor i Södertälje"),
+ "Sigtuna": ("Låga trähus med tegeltak längs en smal gata i Sigtuna", "Villor med bruna takpannor i Märsta"),
+}
+
+def trp_list_html(title, muted=False, sid=""):
+    # Lista "Takrenovering per område" – två kolumner (area-columns), staplas på mobil.
+    names = sorted(TRP_ORTER, key=lambda n: n.replace("Ä","A~").replace("Ö","O~"))
+    half = (len(names) + 1) // 2
+    cols = "\n".join("              <ul class=\"area-list\">\n" + "\n".join(
+        f'                <li><a href="{TRP_FILES[n]}">Takrenovering i {n}</a></li>' for n in part)
+        + "\n              </ul>" for part in (names[:half], names[half:]))
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">{title}</h2>
+            <div class="area-columns">
+{cols}
+            </div>
+          </div>
+        </div>
+      </section>"""
 
 # ---- shared markup --------------------------------------------------------
 def a(href, text):
@@ -295,7 +366,7 @@ def render(p):
 
     <main id="content">
 {p['body']}
-{faq_html}
+{faq_html}{p.get('after_faq', '')}
 {cta_html}
     </main>
 
@@ -315,7 +386,20 @@ def page(**kw):
     PAGES.append(kw)
 
 # ---- section helpers ------------------------------------------------------
-def hero(h1, lead, crumbs, anchors=None, trust=None):
+def _img_attrs(name, sizes):
+    # src + srcset (1200/640) + verkliga mått från filen.
+    from PIL import Image
+    fp = os.path.join(ROOT, "assets", "images", name + ".webp")
+    w, h = Image.open(fp).size
+    ss = ""
+    if os.path.exists(os.path.join(ROOT, "assets", "images", name + "-640.webp")):
+        ss = f' srcset="assets/images/{name}-640.webp 640w, assets/images/{name}.webp {w}w" sizes="{sizes}"'
+    return f'src="assets/images/{name}.webp"{ss} width="{w}" height="{h}"'
+
+def hero(h1, lead, crumbs, anchors=None, trust=None, img=None):
+    # img=(namn, alt): fotorealistisk illustration bredvid rubriken (hero-grid--page som om-oss).
+    if img:
+        return _hero_img(h1, lead, crumbs, anchors, trust, img)
     # trust: egna bockpunkter (t.ex. B2B-sidor där ROT/besök inte gäller).
     trust = trust or ["Gratis besök och kostnadsförslag", "ROT-avdrag direkt på fakturan"]
     trust_li = "\n".join(f"              <li>{t}</li>" for t in trust)
@@ -334,6 +418,32 @@ def hero(h1, lead, crumbs, anchors=None, trust=None):
             </ul>
             <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
           </div>{an}
+        </div>
+      </section>"""
+
+def _hero_img(h1, lead, crumbs, anchors, trust, img):
+    trust = trust or ["Gratis besök och kostnadsförslag", "ROT-avdrag direkt på fakturan"]
+    trust_li = "\n".join(f"                <li>{t}</li>" for t in trust)
+    an = ""
+    if anchors:
+        links = "\n".join(f'              <a href="{h}">{t}</a>' for h,t in anchors)
+        an = f'\n            <div class="anchor-nav" aria-label="Snabblänkar">\n{links}\n            </div>'
+    return f"""      <section class="page-hero">
+        <div class="container hero-grid hero-grid--page">
+          <div class="hero-copy">
+            {breadcrumb_html(crumbs)}
+            <h1 class="hero-title">{h1}</h1>
+            <p class="section-lead">{lead}</p>
+            <div class="trust-strip">
+              <ul>
+{trust_li}
+              </ul>
+              <a class="btn btn-primary" href="tel:{PHONE_T}">Ring {PHONE_D}</a>
+            </div>{an}
+          </div>
+          <figure class="hero-side-visual">
+            <img {_img_attrs(img[0], "(max-width: 900px) 100vw, 430px")} alt="{img[1]}" fetchpriority="high" decoding="async" />
+          </figure>
         </div>
       </section>"""
 
@@ -392,10 +502,15 @@ def sec_process(title, steps, muted=False, sid="", grid="process-grid"):
 def fig(name, alt, muted=False):
     # AI-genererad illustration (Recraft) – märkt "Illustration", aldrig som eget projektfoto.
     cls = "section section-muted seo-section" if muted else "section seo-section"
+    # Bilder med 640-variant (flux-bilderna 2026-10-25) får srcset och verkliga mått.
+    if os.path.exists(os.path.join(ROOT, "assets", "images", name + "-640.webp")):
+        img = f'<img {_img_attrs(name, "(max-width: 900px) 100vw, 860px")} alt="{alt}" loading="lazy" decoding="async" />'
+    else:
+        img = f'<img src="assets/images/{name}.webp" alt="{alt}" width="1600" height="1067" loading="lazy" decoding="async" />'
     return f"""      <section class="{cls} figure-section">
         <div class="container">
           <figure class="content-figure">
-            <img src="assets/images/{name}.webp" alt="{alt}" width="1600" height="1067" loading="lazy" decoding="async" />
+            {img}
             <figcaption>Illustration</figcaption>
           </figure>
         </div>
@@ -559,13 +674,7 @@ page(file="takrenovering.html",
         f"Vi publicerar inga fasta priser. Vi kommer ut gratis, tittar på taket och lämnar ett skriftligt kostnadsförslag där varje moment står med. Faktorerna som påverkar priset går vi igenom i {a('vad-kostar-takrenovering.html','vad kostar en takrenovering')}.",
         "Arbetet kan också delas upp i etapper – till exempel den mest utsatta takfallet först och resten året efter."], sid="pris")
     + rot_box("Takrenovering och takomläggning på villa ger ROT-avdrag på arbetskostnaden. Vi gör avdraget direkt på fakturan.")
-    + links_block("Takrenovering i ditt område", [
-        ("taklaggare-sollentuna.html","Sollentuna","Betongtak från 60–70-talet i Edsberg och Tureberg."),
-        ("taklaggare-danderyd.html","Danderyd","Större villor med tegel och plåt."),
-        ("taklaggare-spanga.html","Spånga","Villaområden i Bromsten, Solhem och Sundby."),
-        ("taklaggare-sundbyberg.html","Sundbyberg","Duvbo, Lilla Alby och Ör."),
-        ("taklaggare-taby.html","Täby","Radhus och villor från 70-talet."),
-        ("taklaggare-nacka.html","Nacka","Kustnära tak med hård väderexponering.")], sid="orter")
+    + trp_list_html("Takrenovering i ditt område", muted=True, sid="orter")
     + links_block("Relaterat", [
         ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så väljer du rätt åtgärd för ditt tak."),
         ("vad-kostar-takrenovering.html","Vad kostar en takrenovering?","Vad som påverkar kostnaden."),
@@ -1013,7 +1122,8 @@ page(file="omraden.html",
     [("Hem","/"),("Områden","omraden.html")])
     + _area_section("Stadsdelar i Stockholm", _stad, True)
     + _area_section("Kommuner runt Stockholm", _kommuner, False)
-    + f"""      <section class="section section-muted seo-section">
+    + trp_list_html("Takrenovering per område", muted=True, sid="takrenovering")
+    + f"""      <section class="section seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
             <h2 class="section-title">Vi arbetar även i Dalarna</h2>
@@ -1317,6 +1427,8 @@ ORT_IMG = {
 }
 LOC.update(LOC_NEW)
 LOC_EXTRA.update(LOC_EXTRA_NEW)
+LOC.update(LOC_X)
+LOC_EXTRA.update(LOC_EXTRA_X)
 ORT_IMG.update({k: v for k, v in ORT_IMG_NEW.items()
                 if os.path.exists(os.path.join(ROOT, "assets", "images", v[0] + ".webp"))})
 # GSC near-miss (28 d t.o.m. 2026-10-11): egna title/description + en tjänstesektion
@@ -1368,31 +1480,53 @@ ORT_SEO = {
  },
 }
 
-# Keyword Planner 2025-10..2026-09: "takrenovering <ort>" 10–100/mån. En egen sektion
-# "Takrenovering i <ort>" per ort, byggd enbart på fakta som redan finns på ortsidan.
-# Unik formulering per ort (ingen mall där bara namnet byts). Har orten redan en
-# sektion med exakt samma rubrik (Solna) eller en snarlik (Danderyd: "Takbyte och takrenovering")
-# läggs texten in i den i stället.
+# Keyword Planner 2025-10..2026-09: "takrenovering <ort>" 10–100/mån. Sedan 2026-10-25 har
+# varje ort en egen lång sida (TRP_FILES); här står bara 1–2 meningar + länk, så att texten
+# inte dupliceras. Solna: sektionen "Takrenovering i Solna" (ORT_SEO) får bara denna text.
+# Danderyd: texten läggs in i "Takbyte och takrenovering i Danderyd".
 _TR, _TK = "takrenovering.html", "vad-kostar-takrenovering.html"
+def _trl(o, t): return a(TRP_FILES[o], t)
 TAKRENO_MERGE = {"Danderyd"}
 TAKRENO = {
- "Bromma": [f"I Ängby, Äppelviken och Smedslätten kan hela lertegelpannor från 1920–40-talet ofta läggas tillbaka på nytt underlag, så att huset behåller sitt uttryck. På funkisvillornas låga tak i Ålsten och Nockeby gäller en {a(_TR,'takrenovering')} i stället tätskikt, plåt och avvattning. Läs om {a(_TK,'vad som styr priset')}."],
- "Solna": [f"I Råsunda och Huvudsta är teglet på 1920–40-talsvillorna ofta så friskt att en omläggning räcker, medan Bergshamras låglutande tak främst behöver täta skarvar och genomföringar. Se {a(_TK,'vad en takrenovering kostar')}."],
- "Nacka": [f"Längs kusten i Saltsjöbaden handlar en {a(_TR,'takrenovering')} ofta om att byta korroderad plåt kring skorstenar och genomföringar. På villorna från 1960-talet och framåt i Boo och Älta avgör betongpannornas skick om de kan ligga kvar på nytt underlag. Läs om {a(_TK,'kostnaden för takrenovering')}."],
- "Täby": [f"Många radhusområden i Täby har samfälligheter med regler för tak och kulör, och där kan hela längan renoveras i samma omgång. I Hägernäs och Näsby Park nära Stora Värtan anpassar vi infästningen av pannor, nock och plåt efter läget. Mer om {a(_TR,'takrenovering')} och {a(_TK,'vad den kostar')}."],
- "Danderyd": [f"Vid en renovering av komplexa tak ser vi särskilt över ränndalar och kupor, där läckage oftast uppstår. Läs om {a(_TK,'vad som påverkar kostnaden')}."],
- "Lidingö": [f"Sekelskiftesvillorna i Käppala och Bodal har ofta tegel eller falsad plåt, och vid en {a(_TR,'takrenovering')} byter vi rostangripna skruvar och beslag mot korrosionsbeständiga. På 1960–70-talshusen i Brevik och Gåshaga ser vi först över underlaget under betongpannorna eller plåten. Läs {a(_TK,'vad som avgör kostnaden')}."],
- "Huddinge": [f"Har ett 60–70-talshus i Skogås eller Trångsund aldrig lagts om är underlagspappen oftast slut och behöver bytas. På Stuvstas och Snättringes äldre trävillor behåller vi teglet eller den falsade plåten där det går. Läs mer om {a(_TR,'takrenovering')} och {a(_TK,'vad den kostar')}."],
- "Järfälla": [f"I radhusområdena i Jakobsberg och Barkarby gäller en {a(_TR,'takrenovering')} ofta radhus, där plåten mellan husen görs om tillsammans med underlaget. I Viksjö och Kallhäll ser vi gärna även över ventilationen vid takfoten, eftersom fukt på vinden kan uppstå trots ett tätt tak. Läs {a(_TK,'hur priset räknas fram')}."],
- "Sollentuna": [f"Har grannarna i Edsberg eller Tureberg hus från samma år kan renoveringen samordnas, med gemensam etablering och ställning. Under tall och gran ingår ofta mossbehandling och rensning av hängrännor. Läs om {a(_TR,'takrenovering')} och {a(_TK,'ROT-avdraget')}."],
- "Vallentuna": [f"I Ormsta och Bällsta är det ofta originalunderlaget från 1970–80-talet under betongpannorna som behöver bytas. På gårdarna kring Kårsta och Brottby kan en {a(_TR,'takrenovering')} i stället gälla äldre tegel- eller plåttak, både på bostadshus och ekonomibyggnader. Se {a(_TK,'vad som styr priset')}."],
- "Upplands Väsby": [f"Taken i Bollstanäs, Vilunda och Runby är ofta jämngamla, så nytt underlag, takfotsplåtar och hängrännor görs gärna i samma omgång. Har flera radhus samma behov kan arbetet samordnas för hela området. Läs mer om {a(_TR,'takomläggning')} och {a(_TK,'vad en omläggning kostar')}."],
- "Värmdö": [f"På villor och permanentade fritidshus i Hemmesta och på Ingarö kan rengöring, rostskydd och målning av plåttaket räcka om underlaget är sunt. Ligger huset på berg eller udde ser vi extra noga över nockar, vindskivor och fästelement. Läs om {a(_TR,'takrenovering')} och {a(_TK,'vad de olika nivåerna kostar')}."],
- "Tyresö": [f"Permanentade fritidshus i Brevik och Öringe har ofta tak som byggts på i etapper och saknar ibland ordentligt underlag och ventilation – där börjar {a(_TR,'takrenoveringen')}. I Krusboda och Bollmora gäller det oftare 60–70-talstak med mossa och barr från skogen runt omkring. Se {a(_TK,'prisguiden för takrenovering')}."],
- "Haninge": [f"I Vendelsö och Brandbergen har många betongpannetak från 1970-talet nått en ålder där underlaget behöver förnyas. På Dalarös sekelskiftesvillor görs en {a(_TR,'takrenovering')} så att plåt- och tegeldetaljerna behålls, med material som tål salt och vind. Läs om {a(_TK,'vad som påverkar priset')}."],
- "Enskede": [f"I Gamla Enskede går det ofta att återanvända lertegel och komplettera med likvärdiga pannor, så att taket smälter in i trädgårdsstaden. Ska bara ena halvan av ett parhus renoveras gör vi en tät anslutning mot grannens del. Mer om {a(_TR,'takrenovering')} och {a(_TK,'kostnaden för en omläggning')}."],
- "Älvsjö": [f"Många villor i Långbro och Herrängen har kvar originalteglet, som kan läggas tillbaka på ny läkt och nytt underlag. Verandornas och burspråkens mindre takytor i plåt eller papp tas med i samma {a(_TR,'takrenovering')}. Se {a(_TK,'vad den kan kosta')}."],
+ "Bromma": [f"Trädgårdsstädernas tegeltak och funkisvillornas låga tak kräver olika slags renovering. Hur vi går tillväga, vilka regler som gäller och hur ROT räknas läser du på sidan om {_trl('Bromma','takrenovering i Bromma')}."],
+ "Solna": [f"Villaområdena i Solna är få men kulturhistoriskt känsliga, från Råsunda till Stocksundstorp – vad en renovering omfattar där och vilka regler som gäller går vi igenom under {_trl('Solna','takrenovering i Solna')}."],
+ "Nacka": [f"Saltluft, berg och skog ställer olika krav på taken i Nacka. Läs mer om material, arbetsgång och bygglovsfrågor under {_trl('Nacka','takrenovering i Nacka')}."],
+ "Täby": [f"Från villorna i Näsbypark och Viggbyholm till typhusen i Gribbylund – så planerar du en renovering av taket i Täby, steg för steg, på sidan om {_trl('Täby','takrenovering i Täby')}."],
+ "Danderyd": [f"Hur en renovering av Djursholms och Stocksunds tak går till, med kulturmiljö och regler, beskriver vi under {_trl('Danderyd','takrenovering i Danderyd')}."],
+ "Lidingö": [f"Villastäder som Brevik och radhusbyar som Mölna behöver olika åtgärder. Vad som gäller för ditt hus läser du om under {_trl('Lidingö','takrenovering i Lidingö')}."],
+ "Huddinge": [f"Från Stuvstas villastad till radhusen i Östra Skogås: arbetsgång, material och ROT finns samlat på sidan om {_trl('Huddinge','takrenovering i Huddinge')}."],
+ "Järfälla": [f"Radhusområden och villor i Järfälla har ofta jämngamla tak. Läs hur en omläggning planeras på sidan om {_trl('Järfälla','takrenovering i Järfälla')}."],
+ "Sollentuna": [f"Från villastäderna i Tureberg och Norrviken till radhusen från 1960–80-talet – så går en renovering till i Sollentuna, läs mer under {_trl('Sollentuna','takrenovering i Sollentuna')}."],
+ "Vallentuna": [f"Villaområden i tätorten och gårdar på landsbygden har helt olika tak. Mer om det under {_trl('Vallentuna','takrenovering i Vallentuna')}."],
+ "Upplands Väsby": [f"När flera hus i samma område har lika gamla tak kan arbetet samordnas. Hur det går till beskriver vi under {_trl('Upplands Väsby','takrenovering i Upplands Väsby')}."],
+ "Värmdö": [f"Skärgårdsläge, vind och permanentade fritidshus ger egna frågor vid en renovering. Läs mer under {_trl('Värmdö','takrenovering i Värmdö')}."],
+ "Tyresö": [f"Tak som byggts på i etapper och 60–70-talstak under skog – arbetsgången för Tyresö finns på sidan om {_trl('Tyresö','takrenovering i Tyresö')}."],
+ "Haninge": [f"Från Dalarös sekelskiftesvillor till 60–80-talshusen i Brandbergen: vad en renovering omfattar läser du under {_trl('Haninge','takrenovering i Haninge')}."],
+ "Enskede": [f"Hur lertegel återanvänds i trädgårdsstaden och vad som gäller vid parhus beskriver vi under {_trl('Enskede','takrenovering i Enskede')}."],
+ "Älvsjö": [f"Originaltegel i Långbro och Herrängen och små takytor på verandor och burspråk – läs mer under {_trl('Älvsjö','takrenovering i Älvsjö')}."],
 }
+
+def _trp_sources(srcs, muted):
+    li = "\n".join(f'              <li><a class="text-link" href="{u}" rel="noopener">{t}</a></li>'
+                   for t, u in srcs)
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    return f"""
+      <section class="{cls}" id="kallor">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">Källor</h2>
+            <ul class="bullet-list">
+{li}
+            </ul>
+          </div>
+        </div>
+      </section>"""
+
+# Hero-bild (fotorealistisk illustration, Replicate flux) för orter som har en.
+ORT_SEO.update(ORT_SEO_X)
+ORT_HERO = {o: (f"taklaggare-{slug(o)}-1", alt) for o, (alt, _alt2) in ORT_HERO_ALT.items()}
+for _o, (_alt1, _alt2) in ORT_HERO_ALT.items():
+    ORT_IMG[_o] = (f"taklaggare-{slug(_o)}-2", _alt2)
 
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]
@@ -1405,7 +1539,8 @@ for _ort, _d in LOC.items():
     _nsec = len(_x["secs"])
     if _seo.get("svc"):
         _merge = _seo["svc"][0] == _trt or _ort in TAKRENO_MERGE
-        _svc_ps = _seo["svc"][1] + (_tr if _merge else [])
+        # Samma rubrik som den nya ortsidan (Solna): bara kort text + länk.
+        _svc_ps = (_tr if _seo["svc"][0] == _trt else _seo["svc"][1] + (_tr if _merge else []))
         extra_html += sec(_seo["svc"][0], _svc_ps, muted=(_nsec % 2 == 0), sid="takbyte-takrenovering")
         _nsec += 1
         if _merge: _tr = []
@@ -1426,14 +1561,14 @@ for _ort, _d in LOC.items():
       cta=(f"Behöver du takläggare i {_ort}?", f"Vi är lokala takläggare i {_ort} – begär en kostnadsfri offert på ditt takprojekt."),
       body=hero(f"Takläggare i {_ort}", intro,
         [("Hem","/"),("Områden","omraden.html"),(_ort,f)],
-        [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")])
+        [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")], img=ORT_HERO.get(_ort))
         + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar även i grannområden – se alla {a('omraden.html','områden vi arbetar i')}."], sid="lokalt")
         + (fig(*ORT_IMG[_ort]) if _ort in ORT_IMG else "")
         + extra_html
         + links_block(f"Våra tjänster i {_ort}", [
             ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
-            ("takrenovering.html", f"Takrenovering i {_ort}", "Riktade åtgärder som förlänger takets liv."),
+            (TRP_FILES.get(_ort, "takrenovering.html"), f"Takrenovering i {_ort}", "Riktade åtgärder som förlänger takets liv."),
             ("takbesiktning.html", f"Takbesiktning i {_ort}", "Bedömning av skick inför beslut."),
             ("takmalning.html", f"Takmålning i {_ort}", "Nytt ytskydd på plåttak."),
             ("taktvatt.html", f"Taktvätt i {_ort}", "Skonsam tvätt och mossbehandling."),
@@ -1444,7 +1579,54 @@ for _ort, _d in LOC.items():
             f"Takläggare i {_ort}", items, muted=not _flip)
         + links_block("Närliggande områden", [
             (_area_files[o], f"Takläggare i {o}", f"Vi arbetar även i {o}.") for o in others]),
-      faq=cityfaq)
+      faq=cityfaq,
+      after_faq=_trp_sources(ORT_SRC_X[_ort], muted=True) if _ort in ORT_SRC_X else "")
+
+# ====================== TAKRENOVERING PER ORT =============================
+# 16 långa ortsidor "Takrenovering i <ort>" (Keyword Planner 10–100/mån per ort).
+# Innehåll, lokala fakta och källor (sidor som faktiskt öppnats) i tools/takreno_orter.py.
+# Priser: bara länk till vad-kostar-takrenovering.html. FAQPage-schema bara för ortens frågor.
+TRP_CRUMB = SVC_CRUMB + [("Takrenovering", "takrenovering.html")]
+
+for _ort in TRP_ORTER:
+    _d = TRP[_ort]
+    _f = TRP_FILES[_ort]
+    _crumbs = TRP_CRUMB + [(_ort, _f)]
+    # Sektionerna byggs som funktioner av muted; färgen sätts bakifrån så att sista
+    # blocket före FAQ (vit) blir grått och vit/grå-växlingen håller hela vägen.
+    _parts = []
+    for _i, _s in enumerate(_d["sections"]):
+        if _s.get("aside"):
+            _parts.append(lambda m, s=_s: sec_split(s["h2"], s["paras"], s["aside"]["title"],
+                                                    s["aside"]["items"], muted=m, sid=s["id"]))
+        else:
+            _parts.append(lambda m, s=_s: sec(s["h2"], s["paras"], muted=m, sid=s["id"]))
+        if _i == 0:
+            _parts.append(lambda m, o=_ort: fig(f"takrenovering-{slug(o)}-2", TRP_IMG_ALT[o][1], muted=m))
+    _parts.append(lambda m, o=_ort, d=_d: sec_process(f"Så går takrenoveringen till i {o}", d["steps"], muted=m, sid="process"))
+    _parts.append(lambda m, o=_ort, d=_d: sec(f"ROT-avdrag för takrenovering i {o}", d["rot"], muted=m, sid="rot"))
+    _parts.append(lambda m, o=_ort, d=_d: sec(f"Vad kostar en takrenovering i {o}?", d["price"], muted=m, sid="pris"))
+    _parts.append(lambda m, o=_ort: links_block(f"Mer om tak i {o}", [
+        (_area_files[o], f"Takläggare i {o}", "Takbyte, besiktning och plåtarbeten."),
+        ("takrenovering.html", "Takrenovering och takomläggning", "Så fungerar en omläggning."),
+        ("vad-kostar-takrenovering.html", "Vad kostar en takrenovering?", "Det här styr priset."),
+        ("kalkylator-takbyte.html", "Takbyte-kalkylator", "Räkna på takytan och ROT.")], muted=m, sid="lankar"))
+    _parts.append(lambda m, o=_ort: links_block("Takrenovering i närliggande orter", [
+        (TRP_FILES[n], f"Takrenovering i {n}", TRP[n]["card"]) for n in TRP_NEIGHBORS[o]], muted=m))
+    _n = len(_parts)
+    _html = "\n".join(fn((_n - 1 - i) % 2 == 0) for i, fn in enumerate(_parts))
+    page(file=_f, title=_d["title"], description=_d["description"],
+      h1=f"Takrenovering i {_ort}",
+      service=True, service_type="Takrenovering", area_served=[_ort],
+      geo_placename=f"{_ort}, Stockholm",
+      crumbs=_crumbs,
+      cta=(f"Ska taket renoveras i {_ort}?", "Vi kommer ut gratis, går igenom taket och lämnar ett skriftligt kostnadsförslag."),
+      body=hero(f"Takrenovering i {_ort}", _d["lead"], _crumbs,
+        [("#hus", "Husen"), ("#process", "Så går det till"), ("#rot", "ROT"), ("#faq", "Vanliga frågor"), ("#kallor", "Källor")],
+        img=(f"takrenovering-{slug(_ort)}-1", TRP_IMG_ALT[_ort][0]))
+        + _html,
+      faq=_d["faq"],
+      after_faq=_trp_sources(_d["sources"], muted=True))
 
 # ====================== DALARNA (Borlänge + regionen) =====================
 # Geal Entreprenad AB förmedlar/samordnar och utför via lokal samarbetspartner på plats i
