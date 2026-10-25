@@ -12,8 +12,11 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            # v3 (2026-10-25): 18 ortsidor golvläggare/snickare/fasadrenovering
            "tj_v3_golv", "tj_v3_snickare", "tj_v3_fasad",
            # v4 (2026-10-25): plåtslagarhubb + 18 ortsidor plåtslagare/fönsterbyte/köksrenovering
-           "tj_v4_plat", "tj_v4_fonster", "tj_v4_kok"]
-V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok"}
+           "tj_v4_plat", "tj_v4_fonster", "tj_v4_kok",
+           # v5 (2026-10-25): 18 ortsidor badrumsrenovering/målare/takbyte
+           "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte"]
+# Moduler vars ortsidor korslänkas med ortens övriga tjänstesidor (åt båda hållen).
+V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte"}
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
@@ -25,13 +28,16 @@ TJ_SERVICES = {
   "fasadrenovering":   {"crumb": "Fasadrenovering", "service_type": "Fasadrenovering", "card": "Puts, panel och tilläggsisolering."},
   "platslagare":       {"crumb": "Plåtslagare", "service_type": "Plåtslageri – plåttak, takavvattning och beslag", "card": "Plåttak, hängrännor och beslag."},
   "fonsterbyte":       {"crumb": "Fönsterbyte", "service_type": "Fönsterbyte", "card": "Nya fönster och fönsterdörrar."},
+  "takbyte":           {"crumb": "Takbyte", "service_type": "Takbyte", "card": "Byte av tegel-, betong- och plåttak."},
   "byggforetag":       {"crumb": "Byggfirma", "service_type": "Byggföretag – total entreprenad", "card": "Total entreprenad för villan."},
 }
 # Hubb per tjänst. byggforetag-<ort> hör till befintliga byggfirma.html (samma intent).
 TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html",
           "koksrenovering": "koksrenovering.html", "golvlaggning": "golvlaggning.html",
           "snickare": "snickare.html", "fasadrenovering": "fasadrenovering.html",
-          "fonsterbyte": "fonsterbyte.html", "platslagare": "platslagare.html", "byggforetag": "byggfirma.html"}
+          "fonsterbyte": "fonsterbyte.html", "platslagare": "platslagare.html", "byggforetag": "byggfirma.html",
+          # v5: takbyte.html är en vanlig tjänstesida i generate.py (inte i TJ) men listar ortsidorna.
+          "takbyte": "takbyte.html"}
 
 TJ = {}
 V4_FILES = set()

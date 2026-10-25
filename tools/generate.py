@@ -559,6 +559,30 @@ def links_block(title, cards, muted=True, sid=""):
 # ====================== MONEY: SERVICE PAGES ==============================
 SVC_CRUMB = [("Hem","/"),("Tjänster","tjanster.html")]
 
+# Tjänster v1–v5: register över tjänstehubbar/ortsidor (tools/tjanster_v1.py).
+from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS
+
+def tj_list_html(title, files, muted=False, sid=""):
+    # Kompakt lista med länkar i två kolumner (samma mönster som trp_list_html).
+    items = sorted(files, key=lambda f: TJ[f]["h1"].replace("Ä","A~").replace("Ö","O~").replace("Å","A}"))
+    half = (len(items) + 1) // 2
+    cols = "\n".join("              <ul class=\"area-list\">\n" + "\n".join(
+        f'                <li><a href="{f}">{TJ[f]["h1"]}</a></li>' for f in part)
+        + "\n              </ul>" for part in (items[:half], items[half:]) if part)
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">{title}</h2>
+            <div class="area-columns">
+{cols}
+            </div>
+          </div>
+        </div>
+      </section>"""
+
+
 page(file="takbyte.html",
   title="Takbyte på villa i Stockholm – fast pris & ROT | Geal Entreprenad AB",
   description="Takbyte på villa i Sundbyberg och Stockholm. Vi byter tegel-, betong- och plåttak med tydlig offert, ROT-avdrag och slutkontroll. Begär kostnadsfri offert.",
@@ -617,6 +641,7 @@ page(file="takbyte.html",
         ("Besiktning & offert","Vi bedömer taket och lämnar tydlig offert med material och tidplan."),
         ("Utförande","Vi river, förbereder underlag och lägger nytt tak enligt plan."),
         ("Slutkontroll","Vi går igenom resultatet med dig och dokumenterar arbetet.")], muted=True)
+    + (tj_list_html("Takbyte per område", TJ_DISTRICTS["takbyte"], muted=True, sid="omraden") if TJ_DISTRICTS.get("takbyte") else "")
     + links_block("Relaterat", [
         ("kalkylator-takbyte.html","Takbyte-kalkylator","Uppskatta priset direkt – area, material och ROT."),
         ("villatak.html","Tak på villa – komplett guide","Allt om tak på villa: material, kostnad och underhåll."),
@@ -1577,7 +1602,7 @@ for _ort, _d in LOC.items():
         + (fig(*ORT_IMG[_ort]) if _ort in ORT_IMG else "")
         + extra_html
         + links_block(f"Våra tjänster i {_ort}", [
-            ("takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
+            (f"takbyte-{slug(_ort)}.html" if f"takbyte-{slug(_ort)}.html" in TJ else "takbyte.html", f"Takbyte i {_ort}", "Byte av tegel-, betong- och plåttak."),
             (TRP_FILES.get(_ort, "takrenovering.html"), f"Takrenovering i {_ort}", "Riktade åtgärder som förlänger takets liv."),
             ("takbesiktning.html", f"Takbesiktning i {_ort}", "Bedömning av skick inför beslut."),
             ("takmalning.html", f"Takmålning i {_ort}", "Nytt ytskydd på plåttak."),
@@ -1643,28 +1668,8 @@ for _ort in TRP_ORTER:
 # målare, golv, snickare, fasad, fönster) + ortsidor "<tjänst> i <ort>" (Keyword Planner
 # 100–1 000/mån). Innehåll + källor i tools/tj_*.py (PAGES_TJ), registreras i tools/tjanster_v1.py.
 # Inga priser, garantier utöver lag, omdömen, case eller cert som sajten inte redan anger.
-from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS
 TJ_CRUMB = SVC_CRUMB
-
-def tj_list_html(title, files, muted=False, sid=""):
-    # Kompakt lista med länkar i två kolumner (samma mönster som trp_list_html).
-    items = sorted(files, key=lambda f: TJ[f]["h1"].replace("Ä","A~").replace("Ö","O~").replace("Å","A}"))
-    half = (len(items) + 1) // 2
-    cols = "\n".join("              <ul class=\"area-list\">\n" + "\n".join(
-        f'                <li><a href="{f}">{TJ[f]["h1"]}</a></li>' for f in part)
-        + "\n              </ul>" for part in (items[:half], items[half:]) if part)
-    cls = "section section-muted seo-section" if muted else "section seo-section"
-    idattr = f' id="{sid}"' if sid else ""
-    return f"""      <section class="{cls}"{idattr}>
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">{title}</h2>
-            <div class="area-columns">
-{cols}
-            </div>
-          </div>
-        </div>
-      </section>"""
+# (TJ-importen och tj_list_html ligger före tjänstesidorna – takbyte.html listar ortsidorna, v5)
 
 def _tj_parts(d):
     parts = []
