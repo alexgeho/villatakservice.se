@@ -203,6 +203,7 @@ FOOTER = f"""    <footer class="footer">
             <li><a href="golvlaggning.html">Golvläggning</a></li>
             <li><a href="fasadrenovering.html">Fasadrenovering</a></li>
             <li><a href="fonsterbyte.html">Fönsterbyte</a></li>
+            <li><a href="platslagare.html">Plåtslagare</a></li>
             <li><a href="bygg.html">Bygg &amp; Renovering</a></li>
           </ul>
         </div>

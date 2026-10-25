@@ -65,7 +65,7 @@ def byggtorg(slug):
 
 BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "koksrenovering": ["koksrenovering", "koksrenovering-nacka"], "golvlaggning": ["golvlaggning", "vad-kostar-golvslipning"],
-          "fasadrenovering": ["fasadrenovering"], "fonsterbyte": ["fonsterbyte"], "snickare": [],
+          "fasadrenovering": ["fasadrenovering"], "fonsterbyte": ["fonsterbyte"], "snickare": [], "platslagare": ["platslagare", "platslagare-stockholm"],
           "byggforetag": ["byggforetag-stockholm"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}

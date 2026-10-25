@@ -10,7 +10,10 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            # v2 (2026-10-25): 18 ortsidor badrum/kök/målare
            "tj_v2_badrum", "tj_v2_kok", "tj_v2_malare",
            # v3 (2026-10-25): 18 ortsidor golvläggare/snickare/fasadrenovering
-           "tj_v3_golv", "tj_v3_snickare", "tj_v3_fasad"]
+           "tj_v3_golv", "tj_v3_snickare", "tj_v3_fasad",
+           # v4 (2026-10-25): plåtslagarhubb + 18 ortsidor plåtslagare/fönsterbyte/köksrenovering
+           "tj_v4_plat", "tj_v4_fonster", "tj_v4_kok"]
+V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok"}
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
@@ -20,6 +23,7 @@ TJ_SERVICES = {
   "golvlaggning":      {"crumb": "Golvläggning", "service_type": "Golvläggning och golvslipning", "card": "Nya golv och slipning."},
   "snickare":          {"crumb": "Snickare", "service_type": "Snickeriarbeten", "card": "Snickeri inne och ute."},
   "fasadrenovering":   {"crumb": "Fasadrenovering", "service_type": "Fasadrenovering", "card": "Puts, panel och tilläggsisolering."},
+  "platslagare":       {"crumb": "Plåtslagare", "service_type": "Plåtslageri – plåttak, takavvattning och beslag", "card": "Plåttak, hängrännor och beslag."},
   "fonsterbyte":       {"crumb": "Fönsterbyte", "service_type": "Fönsterbyte", "card": "Nya fönster och fönsterdörrar."},
   "byggforetag":       {"crumb": "Byggfirma", "service_type": "Byggföretag – total entreprenad", "card": "Total entreprenad för villan."},
 }
@@ -27,12 +31,16 @@ TJ_SERVICES = {
 TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html",
           "koksrenovering": "koksrenovering.html", "golvlaggning": "golvlaggning.html",
           "snickare": "snickare.html", "fasadrenovering": "fasadrenovering.html",
-          "fonsterbyte": "fonsterbyte.html", "byggforetag": "byggfirma.html"}
+          "fonsterbyte": "fonsterbyte.html", "platslagare": "platslagare.html", "byggforetag": "byggfirma.html"}
 
 TJ = {}
+V4_FILES = set()
 for _m in MODULES:
     try:
-        TJ.update(importlib.import_module(_m).PAGES_TJ)
+        _pt = importlib.import_module(_m).PAGES_TJ
+        TJ.update(_pt)
+        if _m in V4_MODULES:
+            V4_FILES |= set(_pt)
     except ModuleNotFoundError as e:
         if e.name != _m:
             print(f"VARNING: {_m}: {e}", file=sys.stderr)
@@ -46,3 +54,18 @@ for _f, _d in TJ.items():
     _d["file"] = _f
     if _d["kind"] == "district":
         TJ_DISTRICTS.setdefault(_d["service"], []).append(_f)
+
+# v4: korslänkar på samma ort. Ny ortsida -> ortens övriga tjänstesidor, och befintliga
+# ortsidor -> den nya sidan (kort i blocket "Fler tjänster på/i <ort>").
+def _add_card(d, f):
+    rel = d.setdefault("related", [])
+    if f != d["file"] and all(r[0] != f for r in rel):
+        rel.append((f, TJ[f]["h1"], TJ[f]["card"]))
+for _f in sorted(V4_FILES):
+    _d = TJ[_f]
+    if _d["kind"] != "district":
+        continue
+    for _g, _e in TJ.items():
+        if _g != _f and _e["kind"] == "district" and _e.get("ort") == _d["ort"] and _e["service"] != _d["service"]:
+            _add_card(_d, _g)
+            _add_card(_e, _f)
