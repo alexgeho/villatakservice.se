@@ -814,7 +814,7 @@ page(file="plattak.html",
         ("taklaggare-danderyd.html","Danderyd","Stora villor med falsad plåt."),
         ("taklaggare-lidingo.html","Lidingö","Havsnära tak och korrosionsskydd."),
         ("taklaggare-nacka.html","Nacka","Kustnära tak i Saltsjöbaden."),
-        ("taklaggare-solna.html","Solna","Låglutande tak i Bergshamra."),
+        ("taklaggare-solna.html","Solna","Villatak i Råsunda och Råsta."),
         ("taklaggare-sundbyberg.html","Sundbyberg","Plåtdetaljer på radhus och villor.")], muted=False, sid="orter")
     + links_block("Relaterat", [
         ("falsat-plattak.html","Falsat plåttak & bandtäckning","Klassiskt plåttak för låga lutningar."),
@@ -875,7 +875,7 @@ page(file="papptak.html",
     + rot_box("Arbetskostnaden för att byta papptak på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")
     + links_block("Papptak i ditt område", [
         ("taklaggare-bromma.html","Bromma","Funkisvillor med låga tak."),
-        ("taklaggare-solna.html","Solna","Låglutande tak i Bergshamra."),
+        ("taklaggare-solna.html","Solna","Villatak i Råsunda och Råsta."),
         ("taklaggare-jarfalla.html","Järfälla","Radhus med låglutande tak."),
         ("taklaggare-taby.html","Täby","Villor och radhus från 60–70-talet."),
         ("taklaggare-sundbyberg.html","Sundbyberg","Plåt- och papptak i Rissne.")], muted=False, sid="orter")
@@ -1152,16 +1152,16 @@ LOC = {
      ("Arbetar ni med både villor och flerbostadshus i Sundbyberg?","Ja. Vi byter och renoverar villatak i Duvbo och Storskogen och utför plåt- och tätskiktsarbeten på flerbostadshus närmare centrum och Rissne."),
    ]},
  "Solna": {
-   "intro": "Solna gränsar till Sundbyberg och är ett av våra vanligaste arbetsområden. Vi hjälper villaägare i bland annat Bergshamra, Huvudsta och Råsunda med takbyte, takrenovering och plåtarbeten.",
+   "intro": "Solna gränsar till Sundbyberg och är ett av våra vanligaste arbetsområden. Vi hjälper villaägare i bland annat Råsunda, Råsta och Stocksundstorp med takbyte, takrenovering och plåtarbeten.",
    "paras": [
-     "Solna gränsar direkt till både Sundbyberg och Bromma, och villabebyggelsen är koncentrerad till områden som Bergshamra, Huvudsta, Råsunda och Skytteholm. Många villor är byggda mellan 1920- och 1960-talet, och en stor andel av taken närmar sig nu slutet av sin tekniska livslängd.",
-     "I Råsunda och Huvudsta ser vi ofta klassiska tegeltak där pannorna är hela men underlagspapp och läkt är uttjänta – då räcker det ibland med en takomläggning istället för fullt byte. I Bergshamra, med inslag av 1960-talshus och lägre lutningar, är plåt- och papptak vanligare.",
+     "Solna gränsar direkt till både Sundbyberg och Bromma, och villabebyggelsen är koncentrerad till områden som Råsunda villastad, Råsta egnahem, Stocksundstorp och Bergshamra by. Många villor är byggda mellan 1920- och 1960-talet, och en stor andel av taken närmar sig nu slutet av sin tekniska livslängd.",
+     "I Råsunda villastad ser vi ofta klassiska tegeltak där pannorna är hela men underlagspapp och läkt är uttjänta – då räcker det ibland med en takomläggning istället för fullt byte. I Stocksundstorp, där villorna är från olika tider och flera har lägre lutning, är plåt- och papptak vanligare.",
      "Solnas blandning av epoker gör att vi nästan alltid börjar med en besiktning för att avgöra rätt åtgärdsnivå. Vår närhet till Solna innebär att vi kan hålla tät kontakt genom hela projektet och snabbt komma ut på uppföljning.",
    ],
-   "items": ["Granne med vår bas – snabb service i hela Solna.","Erfarenhet av 1920–60-talsvillor.","Villatak i Bergshamra, Huvudsta, Råsunda."],
+   "items": ["Granne med vår bas – snabb service i hela Solna.","Erfarenhet av 1920–60-talsvillor.","Villatak i Råsunda, Råsta, Stocksundstorp."],
    "faq": [
-     ("Vilka delar av Solna arbetar ni i?","Vi tar takuppdrag i hela Solna, bland annat Bergshamra, Huvudsta, Råsunda, Skytteholm och Järva – både villor och mindre fastigheter."),
-     ("Räcker det med takomläggning på mitt Solna-hus?","På många äldre tegeltak i Råsunda och Huvudsta är pannorna hela medan underlaget är slitet – då kan en omläggning räcka. En besiktning ger säkert svar."),
+     ("Vilka delar av Solna arbetar ni i?","Vi tar takuppdrag i hela Solna, bland annat Råsunda, Råsta, Stocksundstorp, Bergshamra by och Järvastaden – både villor och mindre fastigheter."),
+     ("Räcker det med takomläggning på mitt Solna-hus?","På många äldre tegeltak i Råsunda villastad är pannorna hela medan underlaget är slitet – då kan en omläggning räcka. En besiktning ger säkert svar."),
      ("Hur nära ligger ni Solna?","Vi utgår från Bromma, som gränsar till Solna, vilket ger korta restider och snabb service."),
    ]},
  "Bromma": {
@@ -1244,16 +1244,16 @@ LOC = {
      ("Vilka områden i Danderyd arbetar ni i?","Hela Danderyd, bland annat Djursholm, Stocksund, Enebyberg och Danderyds villastad."),
    ]},
  "Lidingö": {
-   "intro": "Lidingö är en ö öster om Stockholm med stor villabebyggelse. Vi hjälper villaägare på Lidingö i bland annat Bodal, Larsberg, Sticklinge och Käppala med takbyte och plåtarbeten.",
+   "intro": "Lidingö är en ö öster om Stockholm med stor villabebyggelse. Vi hjälper villaägare på Lidingö i bland annat Lidingö villastad, Brevik, Sticklinge och Käppala med takbyte och plåtarbeten.",
    "paras": [
-     "Lidingö är en ö öster om Stockholm med stor och varierad villabebyggelse i områden som Bodal, Larsberg, Sticklinge, Käppala och Brevik. Det havsnära läget präglar både husen och deras tak.",
+     "Lidingö är en ö öster om Stockholm med stor och varierad villabebyggelse i områden som Lidingö villastad, Mölna, Sticklinge, Käppala och Brevik. Det havsnära läget präglar både husen och deras tak.",
      "Den salta, fuktiga havsluften ställer extra krav på plåt, beslag och infästningar – korrosion är betydligt vanligare här än inåt land. Vi väljer material, ytbehandling och rostskydd som klarar Lidingös kustklimat och ser noga över plåtdetaljer och avvattning.",
      "Många villor på Lidingö har utsatta lägen med både vind och sol, vilket sliter på ytskikt. Vid takbyte och plåtarbeten här prioriterar vi korrosionsbeständiga lösningar och täta anslutningar för lång livslängd.",
    ],
-   "items": ["Villatak i Bodal, Larsberg, Sticklinge, Käppala.","Materialval och rostskydd för salt havsluft.","Plåttak och korrosionsbeständiga lösningar."],
+   "items": ["Villatak i Lidingö villastad, Brevik, Käppala.","Materialval och rostskydd för salt havsluft.","Plåttak och korrosionsbeständiga lösningar."],
    "faq": [
      ("Varför är plåt extra utsatt på Lidingö?","Den salta havsluften påskyndar korrosion. Vi väljer korrosionsbeständig plåt och rätt ytbehandling så att taket håller trots kustklimatet."),
-     ("Vilka delar av Lidingö arbetar ni i?","Hela Lidingö, bland annat Bodal, Larsberg, Sticklinge, Käppala och Brevik."),
+     ("Vilka delar av Lidingö arbetar ni i?","Hela Lidingö, bland annat Lidingö villastad, Mölna, Sticklinge, Käppala och Brevik."),
      ("Kan ni rostskydda och måla befintligt plåttak på Lidingö?","Ja, om konstruktionen är sund kan tvätt, rostskydd och målning förlänga takets liv – ett kostnadseffektivt alternativ till byte."),
    ]},
  "Nacka": {
@@ -1290,29 +1290,29 @@ LOC_EXTRA = {
  "Solna": {
    "secs": [
      ("Vanliga tak och problem i Solna", [
-       "I Råsunda och Huvudsta finns många villor och mindre flerfamiljshus från 1920–40-talet med tegeltak. Pannorna har ofta lång livslängd kvar, men läkten och underlagspappen är uttjänta – ett typiskt fall för takomläggning snarare än nytt tak.",
-       "Bergshamra har mer bebyggelse från 1950–60-talet med lägre taklutningar, där plåt och papp är vanligare. Låglutande tak är känsligare för läckage i skarvar och genomföringar, och här lönar det sig att regelbundet kontrollera plåtdetaljer och avvattning. Närheten till Brunnsviken och Ulriksdals grönområden ger också mer löv och påväxt på taken."]),
+       "I Råsunda villastad finns många villor och mindre flerfamiljshus från 1920–40-talet med tegeltak. Pannorna har ofta lång livslängd kvar, men läkten och underlagspappen är uttjänta – ett typiskt fall för takomläggning snarare än nytt tak.",
+       "I Bergshamra by och Stocksundstorp finns villor från olika tider, flera med lägre taklutning där plåt och papp är vanligare. Låglutande tak är känsligare för läckage i skarvar och genomföringar, och här lönar det sig att regelbundet kontrollera plåtdetaljer och avvattning. Närheten till Brunnsviken och Ulriksdals grönområden ger också mer löv och påväxt på taken."]),
      ("Planera takprojektet i Solna", [
        "Solna har en blandning av äldre villor och tät stadsbebyggelse. På tomter nära gata planerar vi ställning och avspärrning så att arbetet går säkert, och vid behov hjälper vi till med tillstånd för att ställa container på allmän mark.",
-       "Att byta material, till exempel från tegel till plåt, kräver normalt inget bygglov för villor sedan 1 december 2025. Ska takets form eller höjd ändras, eller har huset skyddsbestämmelser, krävs lov – stäm av med Solna stad innan arbetet planeras."]),
+       "I Solna krävs bygglov för att byta takmaterial inom detaljplan, och de flesta områden har detaljplan, enligt <a class=\"text-link\" href=\"https://www.solna.se/bygga-bo--miljo/bygga/bygglov/bygglovsfria-atgarder\" rel=\"noopener\">Solna stad</a>. Samma pannor på nytt underlag ändrar inte utseendet – stäm av med Solna stad innan arbetet planeras."]),
    ],
    "faq": [
-     ("Är takomläggning vanligt i Råsunda?","Ja. Många tegeltak i Råsunda och Huvudsta har hela pannor men slitet underlag, och då är omläggning ofta det mest lönsamma."),
-     ("Hur ofta ska ett låglutande tak i Bergshamra kontrolleras?","Minst en gång per år, helst efter vintern. Skarvar, genomföringar och avvattning är de vanligaste läckagepunkterna."),
-     ("Behöver jag bygglov för att byta från tegel till plåt i Solna?","För en villa eller ett radhus normalt inte sedan 1 december 2025. I kulturhistoriskt värdefulla miljöer kan lov ändå krävas – stäm av med Solna stad."),
+     ("Är takomläggning vanligt i Råsunda?","Ja. Många tegeltak i Råsunda villastad har hela pannor men slitet underlag, och då är omläggning ofta det mest lönsamma."),
+     ("Hur ofta ska ett låglutande tak i Stocksundstorp kontrolleras?","Minst en gång per år, helst efter vintern. Skarvar, genomföringar och avvattning är de vanligaste läckagepunkterna."),
+     ("Behöver jag bygglov för att byta från tegel till plåt i Solna?","Ja, i regel. Solna stad kräver bygglov för byte av takmaterial inom detaljplan, och det gäller de flesta områden i Solna."),
    ]},
  "Bromma": {
    "secs": [
      ("Vanliga tak och problem i Bromma", [
-       "Bromma har några av Stockholms mest välbevarade villaområden. I trädgårdsstäderna Ängby, Äppelviken, Ålsten och Smedslätten är många hus från 1920–40-talet, ofta med branta tak i lertegel eller med falsad plåt. Funkisvillorna från 1930-talet i bland annat Ålsten och Nockeby har låga, ibland nästan platta tak med papp eller plåt, som kräver noggrant tätskikt och bra avvattning.",
+       "Bromma har några av Stockholms mest välbevarade villaområden. I trädgårdsstäderna Ängby, Äppelviken, Ålsten och Smedslätten är många hus från 1920–40-talet, ofta med branta tak i lertegel eller med falsad plåt. Funkisvillorna från 1930-talet i Södra Ängby har låga, ibland nästan platta tak med papp eller plåt, som kräver noggrant tätskikt och bra avvattning.",
        "De stora, gamla trädgårdarna är Brommas charm men också en utmaning för taken: löv och barr sätter igen hängrännor, och skuggiga takfall får mossa som håller kvar fukt. Vi ser ofta att läckage börjar vid ränndalar och skorstenar där löv har samlats."]),
      ("Planera takprojektet i Bromma", [
-       "Sedan 1 december 2025 är byte av takmaterial och kulör på villor i regel lovfritt. Flera områden i Bromma har dock detaljplaner med skyddsbestämmelser, och där krävs fortfarande bygglov – liksom när takformen ändras. Stäm av med stadsbyggnadskontoret i Stockholm – vi hjälper dig med underlag och materialval som passar området.",
+       "Sedan 1 december 2025 är byte av takmaterial och kulör på villor i regel lovfritt. I riksintressena Ängby, Olovslund och Ålstensgatan, för blå- eller grönmärkta hus och vid skyddsbestämmelser krävs dock fortfarande bygglov, enligt <a class=\"text-link\" href=\"https://bygglov.stockholm/nar-behovs-bygglov/andra-byggnads-yttre-utseende/stadsmuseets-kulturhistoriska-klassificering/\" rel=\"noopener\">Stockholms stad</a>. Höjs taket kan det räknas som tillbyggnad. Stäm av med stadsbyggnadskontoret i Stockholm – vi hjälper dig med underlag och materialval som passar området.",
        "Eftersom vi utgår från Abrahamsberg i Bromma kan vi göra besiktning med kort varsel och följa projektet på plats varje dag. Det gör det enkelt att stämma av detaljer under arbetets gång."]),
    ],
    "faq": [
      ("Lägger ni plåttak på funkisvillor i Bromma?","Ja, falsad plåt och papptak på låglutande funkistak hör till våra vanliga uppdrag. Rätt tätskikt och avvattning är avgörande på låga taklutningar."),
-     ("Behöver jag bygglov för takbyte i Äppelviken?","Normalt inte. Omfattas huset av skyddsbestämmelser i detaljplanen krävs lov även för material- och kulörbyte – stäm av med Stockholms stad."),
+     ("Behöver jag bygglov för takbyte i Äppelviken?","Normalt inte. Är huset blå- eller grönmärkt hos Stadsmuseet eller har skyddsbestämmelser i detaljplanen krävs lov – stäm av med Stockholms stad."),
      ("Rensar ni hängrännor samtidigt som ni byter tak?","Ja, och vi rekommenderar ofta lövskydd eller större rännor i Brommas trädrika områden."),
    ]},
  "Spånga": {
@@ -1332,14 +1332,14 @@ LOC_EXTRA = {
  "Sollentuna": {
    "secs": [
      ("Vanliga tak och problem i Sollentuna", [
-       "Sollentuna har stora villaområden från 1960–70-talet i bland annat Edsberg, Helenelund, Tureberg och Häggvik. Många av dessa hus har betongpannor och underlagspapp som nu är 50 år gamla – den vanligaste orsaken till att vi kommer till Sollentuna är just takbyte eller takomläggning på hus från den här epoken.",
+       "Sollentuna har stora villaområden från 1960–70-talet i bland annat Edsberg, Helenelund och Häggvik, medan Tureberg är en villastad från 1910. Många av dessa hus har betongpannor och underlagspapp som nu är 50 år gamla – den vanligaste orsaken till att vi kommer till Sollentuna är just takbyte eller takomläggning på hus från den här epoken.",
        "Rotebro och Vaxmora har fler äldre villor och sekelskifteshus med branta tegeltak. Sollentuna är också trädrikt, och skuggiga tak under tall och gran får ofta kraftig mossa som lyfter pannorna och sätter igen hängrännorna."]),
      ("Planera takprojektet i Sollentuna", [
        "Har flera hus i samma område samma ålder är det vanligt att grannar byter tak inom några år. Planerar ni samtidigt kan etablering och ställning samordnas.",
        "Att byta från betong till plåt eller byta kulör kräver normalt inget bygglov för villor sedan 1 december 2025. Har ditt område skyddsbestämmelser i detaljplanen gäller lovplikt – kontrollera med Sollentuna kommun."]),
    ],
    "faq": [
-     ("Hur gamla är taken i Edsberg och Tureberg?","Många är från 1960–70-talet med originalunderlag. Efter 50 år är det oftast dags för omläggning eller byte."),
+     ("Hur gamla är taken i Edsberg och Häggvik?","Många är från 1960–70-talet med originalunderlag. Efter 50 år är det oftast dags för omläggning eller byte."),
      ("Kan flera grannar byta tak samtidigt?","Ja, och det kan spara på etablering och planering. Hör av er så tittar vi på husen samtidigt."),
      ("Tvättar ni tak i Sollentuna?","Ja, taktvätt och mossbehandling är vanligt i Sollentunas trädrika områden."),
    ]},
@@ -1349,8 +1349,8 @@ LOC_EXTRA = {
        "Järfälla har stora villa- och radhusområden från 1960–80-talet i Jakobsberg, Viksjö, Barkarby och Kallhäll. Radhusen har ofta låglutande tak med papp eller betongpannor, och de gemensamma plåtdetaljerna mellan husen är en vanlig läckagepunkt.",
        "I Viksjö och Kallhäll ligger många hus nära skog, vilket ger mer påväxt och fuktiga tak. Vi ser ofta att takfoten har för dålig ventilation, vilket ger fukt och mögel på vinden även när själva taket är tätt."]),
      ("Planera takprojektet i Järfälla", [
-       "I radhusområden är det ofta en samfällighet eller förening som beslutar om tak. Byter flera hus samtidigt blir resultatet enhetligt och anslutningarna mellan husen kan göras om ordentligt.",
-       "Material- och kulörbyte på radhus och villor kräver normalt inget bygglov. Samfälligheten kan ändå ha regler om enhetligt utseende, och skyddade hus kräver lov – stäm av med Järfälla kommun vid osäkerhet."]),
+       "Byter flera hus samtidigt blir resultatet enhetligt och anslutningarna mellan husen kan göras om ordentligt.",
+       "Material- och kulörbyte på radhus och villor kräver normalt inget bygglov. Skyddade hus kräver lov – stäm av med Järfälla kommun vid osäkerhet."]),
    ],
    "faq": [
      ("Byter ni tak på radhus i Järfälla?","Ja, både enskilda radhus och hela längor. Anslutningarna mellan husen är viktiga att göra rätt."),
@@ -1360,14 +1360,14 @@ LOC_EXTRA = {
  "Täby": {
    "secs": [
      ("Vanliga tak och problem i Täby", [
-       "Täby växte snabbt under 1960–70-talet, och många villor och radhus i Gribbylund, Näsby Park, Ensta och Hägernäs är från den tiden. Betongpannor och papptak dominerar, och underlagspappen är nu ofta i slutet av sin livslängd.",
+       "Täby växte snabbt under 1960–70-talet, och många villor och radhus i Näsby Park, Ensta och Hägernäs är från den tiden, medan Gribbylund mest byggdes ut på 1970- och 80-talet. Betongpannor och papptak dominerar, och underlagspappen är nu ofta i slutet av sin livslängd.",
        "Näsby Park har även äldre villor från 1920-talet med tegeltak. Nära Stora Värtan i Hägernäs och Näsby Park är taken mer utsatta för vind, vilket ställer krav på infästning av pannor, nock och plåtdetaljer."]),
      ("Planera takprojektet i Täby", [
        "Många radhusområden i Täby förvaltas av samfälligheter med egna regler för tak och kulör. Kontrollera vad som gäller innan du väljer material – vi hjälper dig med underlag till föreningen.",
        "Även byte till plåt eller ny kulör kräver normalt inget bygglov för villor och radhus sedan 1 december 2025. Undantag är hus med skyddsbestämmelser – stäm av med Täby kommun om du är osäker."]),
    ],
    "faq": [
-     ("Är betongtaken i Gribbylund dags att byta?","Många är från 1960–70-talet med originalunderlag. En besiktning visar om omläggning räcker eller om pannorna också behöver bytas."),
+     ("Är betongtaken i Gribbylund dags att byta?","Många är från 1970–80-talet med originalunderlag. En besiktning visar om omläggning räcker eller om pannorna också behöver bytas."),
      ("Hjälper ni samfälligheter i Täby?","Ja, vi lämnar offert och underlag för hela radhuslängor eller områden."),
      ("Klarar taket vinden nära Stora Värtan?","Med rätt infästning av pannor, nock och plåt ja. Vi anpassar infästningen efter läget."),
    ]},
@@ -1388,7 +1388,7 @@ LOC_EXTRA = {
  "Lidingö": {
    "secs": [
      ("Vanliga tak och problem på Lidingö", [
-       "Lidingö har allt från sekelskiftesvillor i Käppala och Bodal till 1960–70-talshus i Brevik och Gåshaga. Äldre hus har ofta tegel eller falsad plåt, medan nyare villor har betongpannor eller plåt.",
+       "Lidingö har allt från villor från 1905–1930 i Lidingö villastad och Brevik till nybyggda hus i Gåshaga från 2000-talet. Äldre hus har ofta tegel eller falsad plåt, medan nyare villor har betongpannor eller plåt.",
        "Läget vid vattnet påverkar taken. Salt luft från Saltsjön och Lilla Värtan påskyndar korrosion på plåt, skruvar och beslag, och vinden från vattnet ställer krav på infästning. Vi väljer korrosionsbeständig plåt och fästelement för havsnära hus."]),
      ("Planera takprojektet på Lidingö", [
        "Många tomter på Lidingö är kuperade och ligger i slänt, vilket påverkar hur ställning och lift kan placeras. Vi gör alltid ett platsbesök innan vi planerar etableringen.",
@@ -1397,12 +1397,12 @@ LOC_EXTRA = {
    "faq": [
      ("Rostar plåttak snabbare på Lidingö?","Havsnära hus utsätts för mer salt och fukt. Med rätt plåt, ytbeläggning och underhåll håller ett plåttak ändå länge."),
      ("Kan ni arbeta på kuperade tomter?","Ja, vi planerar ställning eller lift efter tomten vid ett platsbesök."),
-     ("Arbetar ni på hela Lidingö?","Ja, bland annat i Käppala, Bodal, Brevik, Gåshaga och Larsberg."),
+     ("Arbetar ni på hela Lidingö?","Ja, bland annat i Käppala, Lidingö villastad, Brevik, Gåshaga och Mölna."),
    ]},
  "Nacka": {
    "secs": [
      ("Vanliga tak och problem i Nacka", [
-       "Saltsjöbaden har många stora villor från tidigt 1900-tal med komplexa tak i tegel och plåt, medan Boo och Älta domineras av villor från 1960-talet och framåt med betongpannor. Fisksätra och Nacka strand har mer flerbostadshus.",
+       "Saltsjöbaden har många stora villor från tidigt 1900-tal med komplexa tak i tegel och plåt, medan Boo har sommarvillor från 1860-talet och framåt och Älta egnahem från tidigt 1900-tal och radhus från slutet av 1960-talet. Fisksätra och Nacka strand har mer flerbostadshus.",
        "Det kustnära läget med salt luft och hård vind sliter på plåtdetaljer, skruvar och infästningar. I skogsnära delar av Boo och Älta får taken mycket barr och påväxt. Vi ser ofta läckage vid skorstenar och genomföringar där plåten har korroderat."]),
      ("Planera takprojektet i Nacka", [
        "Många tomter i Nacka ligger i kuperad terräng och på berg, vilket påverkar ställning och materialhantering. Vi gör alltid platsbesök innan vi lämnar kostnadsförslag.",
@@ -1456,7 +1456,7 @@ ORT_SEO = {
      f"Är betongpannorna porösa eller frostskadade räcker inte en omläggning – då gör vi ett {a('takbyte.html','takbyte')}. Osäker på vilket som gäller ditt hus? Läs {a('takbyte-eller-takrenovering.html','takbyte eller takrenovering')} eller boka en {a('takbesiktning.html','takbesiktning')}."])},
  "Solna": {
    "title": "Takläggare i Solna – takrenovering & takbyte på villa",
-   "desc": "Takläggare i Solna: takrenovering, takomläggning och takbyte i Råsunda, Huvudsta och Bergshamra. Gratis besök, fast pris och ROT-avdrag.",
+   "desc": "Takläggare i Solna: takrenovering, takomläggning och takbyte i Råsunda, Råsta och Stocksundstorp. Gratis besök, fast pris och ROT-avdrag.",
    "svc": ("Takrenovering i Solna", [
      f"Vid en {a('takrenovering.html','takrenovering')} byter vi underlagspapp och läkt och lägger tillbaka samma pannor. Samtidigt ser vi över plåtdetaljer, vindskivor och genomföringar, så att hela taket håller lika länge.",
      f"Är pannorna slut gör vi ett {a('takbyte.html','takbyte')} med nya pannor, nytt underlag och nya plåtdetaljer. Vi börjar alltid med ett gratis besök och ger fast pris på den åtgärd taket faktiskt behöver."])},

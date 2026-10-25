@@ -8,8 +8,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'flacka plåttak i Södra Ängby och lovfrågor i riksintresseområdena.',
             'lead': 'En takrenovering i Bromma betyder oftast att ett brant tegeltak från 1910–30-talet '
                     'läggs om på ny läkt och ny underlagspapp, eller att ett flackt plåttak från funkistiden '
-                    'får nytt tätskikt och nya skarvar. Ligger huset i Norra eller Södra Ängby, Olovslund '
-                    'eller vid Ålstensgatan styr riksintresset dessutom vilka material som går att välja.',
+                    'får nytt tätskikt och nya skarvar. Ligger huset i Norra eller Södra Ängby, Olovslund eller vid Ålstensgatan krävs dessutom bygglov för att byta takmaterial.',
             'card': 'Trädgårdsstäder, tegel och funkistak.',
             'sections': [{'id': 'hus',
                           'h2': 'Brommas villor byggdes i fyra vågor',
@@ -56,7 +55,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'ränndalar.',
                                     'På ett tegeltak i skugga får mossan fäste och håller kvar fukten mot '
                                     'pannorna. På ett flackt plåttak blir barr och löv liggande och dämmer '
-                                    'upp vatten vid skarvarna. Därför rensar vi alltid rännor och ränndalar '
+                                    'upp vatten vid skarvarna. Därför rensar vi rännor och ränndalar '
                                     'som en del av jobbet och föreslår <a class="text-link" '
                                     'href="mossa-pa-taket.html">behandling mot mossa</a> eller <a '
                                     'class="text-link" href="hangrannor-stupror.html">större hängrännor</a> '
@@ -71,8 +70,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'rel="noopener">Boverket</a>. Lov kan ändå krävas om huset eller området '
                                     'har skyddsbestämmelser i detaljplan eller områdesbestämmelser, om '
                                     'byggnaden är särskilt värdefull enligt PBL 8 kap. 13 § eller om planen '
-                                    'har utökad lovplikt. Att ändra takets form eller höjd kräver '
-                                    'fortfarande lov.',
+                                    'har utökad lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                     'Stockholms stad skriver att du behöver <a class="text-link" '
                                     'href="https://bygglov.stockholm/nar-behovs-bygglov/andra-byggnads-yttre-utseende/stadsmuseets-kulturhistoriska-klassificering/" '
                                     'rel="noopener">söka bygglov även för annars lovfria åtgärder</a> om '
@@ -219,8 +217,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                    'bygglov för att byta taktäckningsmaterial eller kulör på ett en- eller '
                                    'tvåbostadshus. Undantag gäller där detaljplan eller områdesbestämmelser '
                                    'har skyddsbestämmelser, för särskilt värdefulla byggnader enligt PBL 8 '
-                                   'kap. 13 § och där planen har utökad lovplikt. Ny takform eller höjd '
-                                   'kräver alltid lov.',
+                                   'kap. 13 § och där planen har utökad lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                    'Solna stad skriver på sin sida om <a class="text-link" '
                                    'href="https://www.solna.se/bygga-bo--miljo/bygga/bygglov/bygglovsfria-atgarder" '
                                    'rel="noopener">bygglovsfria åtgärder</a> att undantagen i många fall '
@@ -231,7 +228,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                    'varsamhets- eller skyddsbestämmelser kring Sjövägen och i Bergshamra by.',
                                    'På samma sida svarar kommunen nej på frågan om man får byta takmaterial '
                                    'utan bygglov inom detaljplan. Vi utgår därför från att lov behövs om '
-                                   'materialet eller kulören ska ändras, och stämmer alltid av med kommunen '
+                                   'materialet eller kulören ska ändras, och stämmer av med kommunen '
                                    'innan vi beställer material. Att lägga tillbaka samma pannor på nytt '
                                    'underlag ändrar inte husets utseende. Mer finns på <a class="text-link" '
                                    'href="bygglov-takbyte.html">bygglov vid takbyte</a>.'],
@@ -424,8 +421,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                    'byggnader som är särskilt värdefulla enligt 8 kap. 13 § PBL och planer '
                                    'med utökad lovplikt, enligt <a class="text-link" '
                                    'href="https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/" '
-                                   'rel="noopener">Boverket</a>. Ändrad takform eller höjd kräver '
-                                   'fortfarande lov.',
+                                   'rel="noopener">Boverket</a>. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                    'Nacka kommun skriver på sin sida om <a class="text-link" '
                                    'href="https://www.nacka.se/boende-miljo/bygga-nytt-andra-eller-riva/lovfria-atgarder/fasadandringar/" '
                                    'rel="noopener">fasadändringar</a> att lovplikten är utökad i områden som '
@@ -573,7 +569,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                   'Efterkrigstiden gav Täby grupphusen. Norskogen i Näsbypark (1957–59) har '
                                   'flacka tak, och i Täby kyrkby byggdes radhusområdena Midgård (1972–73) '
                                   'och Miklagård (1975–76). Det är tre helt olika tak att renovera, och '
-                                  'därför börjar vi alltid med att ta reda på vilken epok huset tillhör.'],
+                                  'därför börjar vi med att ta reda på vilken epok huset tillhör.'],
                         'aside': {'title': 'Exempel ur Täbys kulturmiljöunderlag',
                                   'items': ['Roslags-Näsby: ca 80 villor 1907–1920',
                                             'Näsbypark: över 200 tomter bebyggda 1933',
@@ -617,10 +613,9 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                   'taktäckningsmaterial eller kulör på ett en- eller tvåbostadshus. Täby '
                                   'kommun skriver på sin sida om <a class="text-link" '
                                   'href="https://taby.se/bygga-bo-och-miljo/bygga-riva-och-forandra/behover-jag-bygglov/fasadandring" '
-                                  'rel="noopener">fasadändring</a> att undantaget gäller om byggnaden inte '
-                                  'är särskilt värdefull, och att lov ändå kan krävas om detaljplanen har '
-                                  'utökad lovplikt. Den som vill ändra takets form eller höjd behöver '
-                                  'fortfarande lov. Boverket beskriver samma regler, inklusive '
+                                  'rel="noopener">fasadändring</a> att det inte behövs bygglov om byggnaden inte '
+                                  'är särskilt värdefull, inte ligger i ett särskilt värdefullt område och '
+                                  'inte har utökad lovplikt i detaljplanen. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras. Boverket beskriver samma regler, inklusive '
                                   'skyddsbestämmelser i detaljplan och områdesbestämmelser.',
                                   'Kommunen har också antagit <a class="text-link" '
                                   'href="https://taby.se/huvudsajter/kulturmiljoer" '
@@ -704,8 +699,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                     'eller räkna på ditt tak i <a class="text-link" '
                     'href="kalkylator-takbyte.html">kalkylatorn</a>.'],
           'faq': [('Får jag byta tegel mot betongpannor på en äldre villa i Roslags-Näsby?',
-                   'Bygglov krävs normalt inte för ett nytt taktäckningsmaterial på en villa, om huset inte '
-                   'är särskilt värdefullt eller detaljplanen har utökad lovplikt. Täbys '
+                   'Bygglov krävs normalt inte för ett nytt taktäckningsmaterial på en villa, om huset inte är särskilt värdefullt, inte ligger i ett särskilt värdefullt område och inte har utökad lovplikt. Täbys '
                    'kulturmiljöriktlinjer rekommenderar ändå att takmaterialet behålls. Vi kan visa båda '
                    'alternativen och vad de innebär för husets uttryck.'),
                   ('Kan ni renovera ett flackt pulpettak med takband i Täby kyrkby?',
@@ -719,7 +713,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                    'Vi mäter upp takfoten innan vi river och bygger upp samma svängda form med ny läkt och '
                    'fotplåt. Teglet läggs tillbaka i samma mönster.'),
                   ('Gäller något särskilt nära Näsby slott?',
-                   'Slottet är byggnadsminne och där krävs Länsstyrelsens tillstånd för ändringar. För den '
+                   'Slottet är byggnadsminne, och ändringar som strider mot skyddsbestämmelserna kräver Länsstyrelsens tillstånd. För den '
                    'nyare bebyggelsen vid slottet finns ett färgprogram som ska följas vid underhåll, och '
                    'det stämmer vi av innan arbetet börjar.')],
           'sources': [('Täby kommun – Kulturmiljöer i Täby', 'https://taby.se/huvudsajter/kulturmiljoer'),
@@ -806,8 +800,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       'taktäckningsmaterial eller kulör på ett en- eller tvåbostadshus. '
                                       'Undantag är hus med skyddsbestämmelser i detaljplan eller '
                                       'områdesbestämmelser, särskilt värdefulla byggnader enligt 8 kap. 13 § '
-                                      'PBL och planer med utökad lovplikt, enligt Boverket. Ändras takets '
-                                      'form eller höjd krävs lov.',
+                                      'PBL och planer med utökad lovplikt, enligt Boverket. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                       'Danderyd är tydligt på den punkten. På sidan om <a class="text-link" '
                                       'href="https://www.danderyd.se/bygga-bo-och-miljo/bygga-andra-riva/nya-regler-for-bygglov-fran-1-december-2025/" '
                                       'rel="noopener">nya regler för bygglov</a> skriver kommunen att det '
@@ -890,7 +883,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                         'första uppskattning i <a class="text-link" '
                         'href="kalkylator-takbyte.html">kalkylatorn</a>.'],
               'faq': [('Behöver jag bygglov för att lägga om taket med samma tegel i Djursholm?',
-                       'Läggs samma tegel tillbaka och utseendet inte ändras är det en underhållsåtgärd. Ska '
+                       'Läggs samma tegel tillbaka och utseendet inte ändras räknas det normalt som underhåll. Ska '
                        'material, kulör eller detaljer ändras inom riksintresset gäller enligt kommunen '
                        'alltid lovplikt. Stäm av med kommunens bygglovsrådgivning, så tar vi fram underlag.'),
                       ('Kan ni få tag i tvåkupigt tegel som passar ett tak från 1910-talet?',
@@ -994,8 +987,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                      'taktäckningsmaterial eller kulör på ett en- eller tvåbostadshus, så '
                                      'länge huset inte är särskilt värdefullt, saknar skyddsbestämmelser i '
                                      'detaljplan eller områdesbestämmelser och planen inte har utökad '
-                                     'lovplikt. Det framgår av Boverkets vägledning. Ändrad takform eller '
-                                     'höjd kräver fortfarande lov.',
+                                     'lovplikt. Det framgår av Boverkets vägledning. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                      'Lidingö stad skriver på sidan om <a class="text-link" '
                                      'href="https://lidingo.se/bygga-bo/bygglov/andrade-lagar-och-regler-for-byggande/" '
                                      'rel="noopener">ändrade regler för byggande</a> att utökad lovplikt '
@@ -1187,8 +1179,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       'rel="noopener">Boverket</a>. Lov kan ändå krävas om detaljplanen har '
                                       'skyddsbestämmelser eller utökad lovplikt, om det finns '
                                       'områdesbestämmelser eller om huset eller området är särskilt '
-                                      'värdefullt enligt PBL 8 kap 13 §. Att ändra takets form eller höjd '
-                                      'kräver fortfarande lov.',
+                                      'värdefullt enligt PBL 8 kap 13 §. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                       'Huddinge pekar i <a class="text-link" '
                                       'href="https://webb.huddinge.se/globalassets/huddinge.se/_gemensamma/styrdokument-overgripande/program/kulturmiljoprogram/kulturmiljoprogram-del-1.pdf" '
                                       'rel="noopener">kulturmiljöprogrammets översikt</a> ut närmare 30 '
@@ -1574,7 +1565,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'villastaden som något som ska värnas, med uppvuxna träd som ska '
                                         'ersättas om de tas bort. För taken betyder det mycket skugga, löv '
                                         'och barr i rännorna och takfall som håller kvar fukt.',
-                                        'Vi tar därför alltid med avvattningen i bedömningen och ser över '
+                                        'Vi tar därför med avvattningen i bedömningen och ser över '
                                         'takfall som ligger i skugga större delen av dagen. Ett mossigt men '
                                         'i övrigt friskt tak kan klara sig med <a class="text-link" '
                                         'href="taktvatt.html">taktvätt</a> en tid till, medan ett tak där '
@@ -1588,8 +1579,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'href="https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/" '
                                         'rel="noopener">Boverket</a>. Undantag gäller vid skyddsbestämmelser '
                                         'eller utökad lovplikt i detaljplanen, områdesbestämmelser och '
-                                        'särskilt värdefulla byggnader och områden. Ändrad takform eller '
-                                        'höjd kräver fortfarande lov.',
+                                        'särskilt värdefulla byggnader och områden. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                         'Sollentuna skriver på sidan om <a class="text-link" '
                                         'href="https://www.sollentuna.se/bygga-bo--miljo/bygga-nytt-andra-eller-riva/byta-takmaterial/" '
                                         'rel="noopener">att byta takmaterial</a> att lov krävs om '
@@ -1735,10 +1725,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                               'paras': ['Vallentuna tätort växte fram kring stationen när järnvägen '
                                         'Stockholm–Rimbo öppnade 1885, men det mesta av villabebyggelsen är '
                                         'betydligt yngre. År 1960 bodde 3 516 personer i tätorten, 1970 var '
-                                        'de 8 823 och 1980 18 435. Tätortens bebyggda yta mer än '
-                                        'fördubblades mellan 1960 och 1990, och det var då villaområden som '
-                                        'Ormsta och bostadsområdena kring Bällsta, Kragstalund och Uthamra '
-                                        'längs Roslagsbanan växte fram.',
+                                        'de 8 823 och 1980 18 435. Tätortens areal mer än fördubblades mellan 1960 och 1990, och i dag ingår bland annat Ormsta, Bällsta, Kragstalund och Uthamra i tätorten.',
                                         'Lindholmen, längre norrut på Roslagsbanan, beskrivs i kommunens '
                                         'fördjupade översiktsplan som ett småskaligt stationssamhälle vars '
                                         'bebyggelse huvudsakligen vuxit fram sedan 1970-talet, med villor '
@@ -1783,8 +1770,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'som står fritt i odlingslandskapet tar mer vind än villorna i '
                                         'tätorten, så där är infästning av pannor, nockar och vindskivor '
                                         'viktig.',
-                                        'I tätorten är det i stället Vallentunasjön och grönstråket från '
-                                        'sjön mot Karby som präglar läget. Hus nära sjön och skogsdungarna '
+                                        'I tätorten är det i stället Vallentunasjön som präglar läget. Hus nära sjön och skogsdungarna '
                                         'får mer fukt och skugga, vilket ger mossa på norrsidan och barr i '
                                         'rännorna. Se <a class="text-link" href="mossa-pa-taket.html">mossa '
                                         'på taket</a> och <a class="text-link" '
@@ -1801,7 +1787,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'kulturhistoriskt särskilt värdefullt område eller om byggnaden är '
                                         'kulturhistoriskt särskilt värdefull. Boverket beskriver samma '
                                         'undantag, bland annat skyddsbestämmelser i detaljplan och utökad '
-                                        'lovplikt. Ändrad takform eller höjd kräver lov.',
+                                        'lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                         'Kommunen har fyra kvarvarande riksintressen för kulturmiljövården: '
                                         'Skålhamravägen, Markim-Orkesta, Frösunda sockencentrum och '
                                         'Vada-Össeby-Garn längs Långhundraleden. Riksintresset i Kårsta har '
@@ -1893,8 +1879,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                         ('Vår gård ligger inom riksintresset Vada-Össeby-Garn – behöver jag bygglov för nytt '
                          'tak?',
                          'Ligger fastigheten i ett kulturhistoriskt särskilt värdefullt område krävs enligt '
-                         'kommunen alltid bygglov för fasadändringar. Byter du till samma material och '
-                         'utseende är det ett underhåll, men stäm av med kommunen innan.'),
+                         'kommunen alltid bygglov för fasadändringar. Stäm av med kommunen innan arbetet börjar, även om du behåller samma material.'),
                         ('Varför är taken i Ormsta och Bällsta ofta i behov av omläggning nu?',
                          'Tätorten växte som snabbast under 1960–80-talen. Har underlaget aldrig bytts är '
                          'det i dag runt 50 år gammalt, och då brukar papp och läkt vara slut även om '
@@ -1997,8 +1982,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                             'rel="noopener">fasadändring</a> att lov ändå kan krävas om '
                                             'byggnaden eller området är särskilt värdefullt och ändringen '
                                             'påverkar karaktären, och att utökad lovplikt i detaljplan eller '
-                                            'områdesbestämmelser gäller. Ändrad takform eller höjd kräver '
-                                            'fortfarande lov.',
+                                            'områdesbestämmelser gäller. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                             'Ägget, Oxundavägen, Skälby, Bollstanäs – Gamla vägen och Väsby '
                                             'villastad bedöms i underlaget som särskilt värdefulla '
                                             'bebyggelseområden enligt PBL 8 kap 13 §. För Ägget och '
@@ -2132,13 +2116,11 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     '15, som enligt en <a class="text-link" '
                                     'href="https://varmdo.se/download/18.1216d4281864b86ff9be749/1676623794648/Dagvattenutredning,%20Ramboll,%202021.pdf" '
                                     'rel="noopener">utredning för detaljplanen</a> består av blandad villa- '
-                                    'och fritidshusbebyggelse. När ett sådant område planläggs får '
-                                    'fastigheterna ofta större byggrätter. Många ägare bygger då till eller '
+                                    'och fritidshusbebyggelse. När ett sådant område planläggs ses byggrätterna över. Många ägare bygger då till eller '
                                     'på, och taket blir en naturlig del av ombyggnaden.',
                                     'Gustavsberg har en annan historia. Bruksorten växte fram kring '
                                     'porslinsfabriken, och de tidigaste bruksgatorna från sent 1800-tal '
-                                    'ligger närmast Farstaviken, med bostäder från 1900-talet längre upp på '
-                                    'höjderna.'],
+                                    'ligger närmast Farstaviken, och längre ut ligger bostäder från 1900-talet.'],
                           'aside': {'title': 'Husen på Värmdö',
                                     'items': ['Fritidshus som permanentats, bland annat på Ingarö',
                                               'Prioriterade förändringsområden enligt Värmdö 2035',
@@ -2202,8 +2184,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'eller utökad lovplikt, eller om huset är särskilt värdefullt enligt 8 '
                                     'kap. 13 § PBL, enligt <a class="text-link" '
                                     'href="https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/" '
-                                    'rel="noopener">Boverket</a>. Att höja taket eller ändra takformen '
-                                    'kräver lov.',
+                                    'rel="noopener">Boverket</a>. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                     'Värmdö kommun skriver på sidan om <a class="text-link" '
                                     'href="https://www.varmdo.se/byggabomiljo/bygganyttandraellerriva/bygglov/bygglovvidfasadandring.4.1a14d9c818e5a4c406a626d.html" '
                                     'rel="noopener">bygglov vid fasadändring</a> att det alltid krävs '
@@ -2244,7 +2225,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                        'Ligger huset i Gustavsberg eller i ett område som håller på att planläggas tar vi '
                        'reda på vilka bestämmelser som gäller.'),
                       ('Frakt och åtkomst',
-                       'Smala vägar och öar utan fast förbindelse kräver att material och container planeras '
+                       'Smala vägar och trånga tomter kräver att material och container planeras '
                        'i förväg.'),
                       ('Ny konstruktion där det behövs',
                        'Skadad råspont byts, ny underlagspapp läggs och luftspalten öppnas så att vinden '
@@ -2261,8 +2242,8 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                     'Äger två personer huset kan båda använda sitt eget utrymme.'],
             'price': ['Priset för en takrenovering på Värmdö styrs framför allt av hur mycket av underlaget '
                       'som måste bytas, takets storlek och lutning, antalet anslutningar mellan gamla och '
-                      'nya takdelar, och hur lätt det är att få fram material till tomten. Ett hus på en ö '
-                      'utan bilväg kräver mer planering än ett hus vid en asfalterad gata. Läs mer i <a '
+                      'nya takdelar, och hur lätt det är att få fram material till tomten. Ett hus vid en smal '
+                      'grusväg kräver mer planering än ett hus vid en asfalterad gata. Läs mer i <a '
                       'class="text-link" href="vad-kostar-takrenovering.html">vad kostar en '
                       'takrenovering</a> och prova <a class="text-link" '
                       'href="kalkylator-takbyte.html">kalkylatorn för takbyte</a>.'],
@@ -2343,8 +2324,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                           'h2': 'Tegel på stugorna, varierande tak efter ombyggnaderna',
                           'paras': ['Kulturmiljöunderlaget för Solberga och Raksta beskriver ett välbevarat '
                                     'fritidshus från 1950-talet med röd stockpanel och tvåkupigt tegeltak, '
-                                    'och de äldre arbetarbostäderna från godstiden har sadeltak med enkupigt '
-                                    'tegel. Men samma underlag konstaterar också att permanentningen pågår '
+                                    'och flera av de äldre byggnaderna från godstiden har sadeltak med enkupigt tegel. Men samma underlag konstaterar också att permanentningen pågår '
                                     'och att en del hus är helt ombyggda eller nybyggda.',
                                     'Det betyder att ett tak i östra Tyresö ofta är en blandning: en '
                                     'ursprunglig stugdel med tegel, en tillbyggnad med betongpannor eller '
@@ -2380,8 +2360,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'bygglov för att byta taktäckning eller kulör på ett en- eller '
                                     'tvåbostadshus. Undantag gäller vid skyddsbestämmelser i detaljplan '
                                     'eller områdesbestämmelser, utökad lovplikt och särskilt värdefulla '
-                                    'byggnader enligt 8 kap. 13 § PBL. Att höja nocken eller ändra takformen '
-                                    'kräver lov.',
+                                    'byggnader enligt 8 kap. 13 § PBL. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                     'Tyresö kommun skriver på sidan om <a class="text-link" '
                                     'href="https://www.tyreso.se/boende--miljo/bygga/bygga-riva-eller-andra/forandringar-i-plan--och-bygglagen-fran-1-december-2025.html" '
                                     'rel="noopener">ändringarna i PBL</a> att det alltid krävs bygglov om '
@@ -2402,7 +2381,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'byggrätt och en högsta nockhöjd på 9,5 meter för huvudbyggnad i två '
                                     'plan. Många som utnyttjar sådana byggrätter bygger på en våning eller '
                                     'höjer taket.',
-                                    'Ett påbyggt tak är ett nytt tak och kräver bygglov. Står du inför valet '
+                                    'En påbyggnad kräver normalt bygglov. Står du inför valet '
                                     'mellan att renovera det gamla taket och att bygga på, är det bättre att '
                                     'bestämma sig först – annars riskerar du att betala för en omläggning '
                                     'som sedan rivs.'],
@@ -2471,8 +2450,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                      'inte alltid med ränndal eller tillräckligt med plåt. Vid en renovering bygger vi om '
                      'övergången.'),
                     ('Räknas kulturmiljöprogrammet som ett skydd för vårt hus?',
-                     'Enligt kommunens underlag är kulturmiljöprogrammet inget formellt skydd, men det '
-                     'används vid bygglov och detaljplaner. Ett utpekande kan därför göra att lov krävs för '
+                     'Enligt kulturmiljöunderlaget från Stockholms läns museum är kulturmiljöprogrammet inget formellt skydd, men det används som underlag vid bygglov och detaljplaner. Ett utpekande kan därför göra att lov krävs för '
                      'ett materialbyte.')],
             'sources': [('Tyresö kommun – Förändringar i plan- och bygglagen från 1 december 2025',
                          'https://www.tyreso.se/boende--miljo/bygga/bygga-riva-eller-andra/forandringar-i-plan--och-bygglagen-fran-1-december-2025.html'),
@@ -2491,8 +2469,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
              'description': 'Takrenovering i Haninge för egnahemsvillor i Tungelsta, radhus i Brandbergen '
                             'och Jordbro och sommarvillor på Dalarö. Vi utgår från husets epok och läge.',
              'lead': 'Vad en takrenovering i Haninge innebär beror mycket på när huset byggdes. En '
-                     'egnahemsvilla från 1920-talet har ofta tegel på ett brant sadeltak, ett radhus från '
-                     '1970-talet ofta ett flackt valmat tak eller pulpettak, och en sommarvilla på Dalarö '
+                     'egnahemsvilla från 1920-talet har ofta tegel på ett brant sadeltak, ett radhus från 1970-talet allt från sadeltak till flackt valmat tak eller pulpettak, och en sommarvilla på Dalarö '
                      'plåt eller tegel som är en del av ortens riksintresse.',
              'card': 'Dalarö, Vendelsö och Brandbergen.',
              'sections': [{'id': 'hus',
@@ -2527,8 +2504,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'paras': ['Enligt karaktärsmiljöerna är tegeltäckta sadeltak eller brutna tak '
                                      'typiska för egnahemsvillorna, tillsammans med träpanel och enkelt '
                                      'spröjsade fönster. Folkhemmets hus har sadeltak eller valmade tak. Hos '
-                                     'rekordårens småhus varierar takformerna från branta sadeltak till '
-                                     'flacka valmade tak och pulpettak, och flacka tak är vanliga.',
+                                     'rekordårens småhus varierar takformerna från branta sadeltak till flackare valmade tak och pulpettak.',
                                      'På egnahemsvillorna ligger ofta pannor som kan återanvändas, medan '
                                      'läkt och underlagspapp är slut. På 60–80-talshusen är det de flacka '
                                      'lutningarna som är känsliga: där rinner vattnet långsamt, och '
@@ -2575,7 +2551,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                      'rel="noopener">Boverket</a>. Lov kan fortfarande krävas om '
                                      'detaljplanen eller områdesbestämmelser har skyddsbestämmelser eller '
                                      'utökad lovplikt, eller om byggnaden är särskilt värdefull enligt 8 '
-                                     'kap. 13 § PBL. Ändrad takform eller höjd kräver alltid lov.',
+                                     'kap. 13 § PBL. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                      'Haninge kommun skriver på sidan om <a class="text-link" '
                                      'href="https://www.haninge.se/bygga-trafik-och-miljo/bygga-nytt-andra-riva/vad-vill-du-bygga/fasadandring/" '
                                      'rel="noopener">fasadändring</a> att skärpta krav gäller i områden som '
@@ -2589,7 +2565,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                      'På Dalarö har flera fastigheter egna detaljplaner med varierande '
                                      'bestämmelser, medan inventeringen av Kolbotten konstaterade att '
                                      'gällande planer där saknade kulturhistoriskt skydd. Därför '
-                                     'kontrollerar vi alltid den plan som gäller för just din fastighet.'],
+                                     'kontrollerar vi den plan som gäller för just din fastighet.'],
                            'aside': {'title': 'Kontrollera',
                                      'items': ['Gällande detaljplan eller områdesbestämmelser',
                                                'Om huset finns i kulturmiljöprogrammet',
@@ -2736,8 +2712,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'paras': ['Radhusen vid Margaretavägen, uppförda 1908–09, hör till de första i '
                                      'Sverige. Det var en ovan bostadsform – husen gick först inte att sälja '
                                      'och fick hyras ut. Dubbelhusen blev däremot populära direkt eftersom '
-                                     'de var billigare att bygga än en fristående villa. AB Stockholms '
-                                     'Trädgårdsstäder uppförde ett femtiotal sådana längs Krokvägen, '
+                                     'de var billigare att bygga än en fristående villa. AB Stockholms Trädgårdsstäder uppförde 26 dubbelhus med 52 bostäder längs Krokvägen, '
                                      'Ängsvägen, Skogsvägen och Lilla Gränd.',
                                      'På ett dubbelhus eller radhus är taket en sammanhängande yta som delas '
                                      'av flera ägare. Lägger bara ena halvan om sitt tak krävs en noggrann '
@@ -2760,8 +2735,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                      'href="https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/" '
                                      'rel="noopener">Boverket</a>. Undantaget gäller inte om huset eller '
                                      'området har skyddsbestämmelser, är särskilt värdefullt enligt PBL 8 '
-                                     'kap. 13 § eller omfattas av utökad lovplikt, och ändrad takform eller '
-                                     'höjd kräver alltid lov. <a class="text-link" '
+                                     'kap. 13 § eller omfattas av utökad lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras. <a class="text-link" '
                                      'href="https://bygglov.stockholm/nar-behovs-bygglov/andra-byggnads-yttre-utseende/stadsmuseets-kulturhistoriska-klassificering/" '
                                      'rel="noopener">Stockholms stad anger</a> att lov behövs för annars '
                                      'lovfria åtgärder inom riksintresse – alltså i Gamla Enskede.',
@@ -2934,7 +2908,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                     'rel="noopener">Boverket</a>. Lov kan ändå krävas om det finns '
                                     'skyddsbestämmelser i detaljplan eller områdesbestämmelser, om huset är '
                                     'särskilt värdefullt enligt PBL 8 kap. 13 § eller om planen har utökad '
-                                    'lovplikt. Ny takform eller höjd kräver lov som tidigare.',
+                                    'lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                     'Stadens vägledning för småhusområden räknar Herrängen, Långsjö, Långbro '
                                     'och Örby som villastäder där området som helhet inte bedöms som en '
                                     'sådan kulturhistoriskt värdefull miljö som avses i PBL 8 kap. 13 §. '
@@ -3014,7 +2988,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                      'material.'),
                     ('Hur ordnar ni ställning och container på en villatomt i Örby eller Långbro?',
                      'Vi tittar på tomten vid besiktningen och bestämmer var ställning och container kan stå '
-                     'utan att stänga av gatan. Grannarna får besked innan vi börjar.'),
+                     'utan att stänga av gatan. Vi informerar gärna grannarna innan vi börjar.'),
                     ('Går det att få tegel som matchar 1910-talsvillorna?',
                      'Ofta går det att återanvända de flesta pannorna och komplettera med begagnat eller '
                      'nytt tegel i liknande kulör och profil. Vi bedömer det vid besiktningen.')],
@@ -3037,8 +3011,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
  'Norrtälje': {'title': 'Takrenovering i Norrtälje – fritidshus och villor',
                'description': 'Takrenovering i Norrtälje: omläggning, plåt och vind på fritidshus som '
                               'permanentas, efterkrigsvillor i Rimbo och Hallstavik och hus i kustläge.',
-               'lead': 'En takrenovering i Norrtälje gäller lika ofta ett fritidshus i skärgården som en '
-                       'villa i Rimbo eller Norrtälje stad. Oftast lägger vi om taket med ny underlagspapp '
+               'lead': 'En takrenovering i Norrtälje kan gälla ett fritidshus i skärgården lika väl som en villa i Rimbo eller Norrtälje stad. Oftast lägger vi om taket med ny underlagspapp '
                        'och läkt, byter plåtdetaljer och hängrännor och ser över vinden – särskilt när ett '
                        'sommarhus ska bli bostad året runt.',
                'card': 'Roslagen, skärgård och fritidshus.',
@@ -3051,8 +3024,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                        'sig.',
                                        'Staden grundades 1622 av Gustav II Adolf och brändes 1719 under '
                                        'stora nordiska kriget, så nästan all bostadsbebyggelse är yngre än '
-                                       'så. I bostadsområden som Färsna, Grind och Vigelsjö blandas villor '
-                                       'och radhus från flera decennier.',
+                                       'så. Till stadens bostadsområden hör bland annat Färsna, Grind och Vigelsjö.',
                                        'Rimbo växte fram som järnvägsknut efter att banorna öppnade på '
                                        '1880-talet och gick från drygt 1 000 invånare 1950 till över 5 000 '
                                        'år 2020. Hallstavik är ett brukssamhälle kring Hallsta pappersbruk '
@@ -3066,7 +3038,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'aside': {'title': 'Hus vi ofta möter här',
                                        'items': ['Fritidshus som permanentats i flera etapper',
                                                  'Efterkrigsvillor i Rimbo och Hallstavik',
-                                                 'Villor och radhus i Färsna, Grind och Vigelsjö',
+                                                 'Bostadsområden som Färsna, Grind och Vigelsjö',
                                                  'Äldre hus i kustbyar som Grisslehamn']}},
                             {'id': 'permanentning',
                              'h2': 'När sommarhuset ska klara vintern',
@@ -3117,10 +3089,8 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                        'href="mossa-pa-taket.html">behandling mot mossa</a> och rensning av '
                                        '<a class="text-link" href="hangrannor-stupror.html">hängrännor och '
                                        'stuprör</a> till skötseln efteråt.',
-                                       'Många skärgårdsfastigheter saknar bilväg ända fram. Då behöver '
-                                       'material, container och rivningsavfall planeras särskilt, ibland med '
-                                       'båttransport, och arbetet läggs helst i en period med stabilt '
-                                       'väder.'],
+                                       'Många skärgårdsfastigheter saknar bilväg ända fram, och då behöver '
+                                       'transporten av material och rivningsavfall planeras särskilt.'],
                              'aside': None},
                             {'id': 'bygglov',
                              'h2': 'Lovregler och värdefulla miljöer i kommunen',
@@ -3131,18 +3101,14 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                        'taktäckningsmaterial eller kulör. Lov kan ändå krävas om huset eller '
                                        'området har skyddsbestämmelser i detaljplan eller '
                                        'områdesbestämmelser, om byggnaden är särskilt värdefull eller om '
-                                       'planen har utökad lovplikt. Att ändra takets form eller höjd kräver '
-                                       'fortfarande lov.',
+                                       'planen har utökad lovplikt. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                        'Norrtälje kommun hänvisar på sin sida om <a class="text-link" '
                                        'href="https://www.norrtalje.se/info/bygga-bo-miljo/bygga-andra-riva/lovbefriade-atgarder/" '
                                        'rel="noopener">lovbefriade åtgärder</a> till kommunkartan, där du '
-                                       'kan se om fastigheten ligger i ett särskilt värdefullt område eller '
-                                       'i ett område med riksintresse för totalförsvaret. Kommunen bedömer '
+                                       'kan se om fastigheten ligger i ett särskilt värdefullt område. Kommunen bedömer '
                                        'inte enskilda åtgärder via e-post eller telefon; den som vill ha ett '
                                        'bindande besked kan söka frivilligt bygglov.',
-                                       'Det gamla brukssamhället i Hallstavik beskrivs i dag som '
-                                       'kulturskyddat, och där är det klokt att höra av sig till kommunen '
-                                       'innan materialet ändras. Mer om reglerna finns på <a '
+                                       'Visit Roslagen beskriver det gamla brukssamhället i Hallstavik som kulturskyddat, så kontrollera fastigheten i kommunkartan och hör av dig till kommunen innan materialet ändras. Mer om reglerna finns på <a '
                                        'class="text-link" href="bygglov-takbyte.html">bygglov vid '
                                        'takbyte</a>.'],
                              'aside': None},
@@ -3172,8 +3138,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                           'Innan material väljs tittar vi i kommunkartan efter särskilt värdefulla områden '
                           'och skyddsbestämmelser.'),
                          ('Planera vägen fram',
-                          'Container, ställning och leveranser planeras i förväg – på öar och vid smala '
-                          'grusvägar som en egen del av jobbet.'),
+                          'Container, ställning och leveranser planeras i förväg, särskilt vid smala grusvägar.'),
                          ('Etappvis omläggning',
                           'Taket öppnas i delar så att huset kan täckas vid regn. Underlag, läkt, plåt och '
                           'avvattning görs klart innan nästa del öppnas.'),
@@ -3190,16 +3155,11 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                        'takarbete</a>.'],
                'price': ['Vad en takrenovering i Norrtälje kostar beror mest på hur mycket av underlaget som '
                          'måste bytas, takets storlek och lutning, antalet plåtdetaljer och hur lätt '
-                         'fastigheten nås. Ett fritidshus på en ö kräver mer planering av transporter än en '
-                         'villa i Rimbo med egen uppfart. Läs om <a class="text-link" '
+                         'fastigheten nås. Ett fritidshus vid en smal grusväg kräver mer planering av transporter än en villa i Rimbo med egen uppfart. Läs om <a class="text-link" '
                          'href="vad-kostar-takrenovering.html">vad som påverkar priset</a> och gör en första '
                          'uppskattning i <a class="text-link" '
                          'href="kalkylator-takbyte.html">takkalkylatorn</a>.'],
-               'faq': [('Kan ni renovera taket på ett fritidshus utan bilväg?',
-                        'Ja, men det kräver mer planering. Vi går igenom hur material, rivningsavfall och '
-                        'ställning ska fraktas, och i skärgården kan det betyda båttransport. Det påverkar '
-                        'tidsplanen, så vi tar upp det redan vid besöket.'),
-                       ('Måste vinden isoleras när vi permanentar sommarhuset?',
+               'faq': [('Måste vinden isoleras när vi permanentar sommarhuset?',
                         'Det beror på hur vinden ser ut i dag. Isolerar man bjälklaget måste luften '
                         'fortfarande kunna röra sig mellan takfot och nock, annars kan fukt samlas under '
                         'yttertaket. Vi bedömer tak och vind tillsammans.'),
@@ -3249,7 +3209,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'Under 1960- och 70-talen byggdes i stället storskaliga '
                                         'bostadsområden i stadsdelar som Västergård, Bårsta, Ronna, '
                                         'Saltskog, Geneta, Pershagen och Hovsjö. På flera håll ligger därför '
-                                        'sekelskiftsvillor och efterkrigens hus nära varandra.',
+                                        'sekelskiftsvillor och efterkrigstidens hus nära varandra.',
                                         'Utanför staden finns stationsorterna Järna och Hölö och landsbygden '
                                         'i Enhörna med sina sommarstugeområden vid Mälaren. Kommunens '
                                         'fritidshusområden tillkom främst under 1960–70-talen, och i dag är '
@@ -3294,8 +3254,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                               'aside': None},
                              {'id': 'vatten',
                               'h2': 'Mellan Mälaren och Saltsjön',
-                              'paras': ['Södertälje ligger på landtungan mellan Mälaren och Saltsjön, med '
-                                        'Hallsfjärden i öster. Hus i sluttningarna mot vattnet, som i '
+                              'paras': ['Södertälje ligger mellan Mälaren och Saltsjön, och flera stadsdelar ligger nära vattnet. Hus i sluttningarna mot vattnet, som i '
                                         'Bergvik ner mot Mälaren, får mer vind och fukt mot takfoten än hus '
                                         'inne i kvarteren.',
                                         'I Enhörna ligger sommarstugeområdet Sandviken intill Mälaren, och i '
@@ -3318,7 +3277,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'kulör på en- och tvåbostadshus därefter normalt är lovfritt. Det '
                                         'gäller inte om detaljplan eller områdesbestämmelser har '
                                         'skyddsbestämmelser, om huset är särskilt värdefullt eller om utökad '
-                                        'lovplikt finns. Ny takform eller ny höjd kräver alltid lov.',
+                                        'lovplikt finns. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                                         'Södertälje kommun skriver på sidan om <a class="text-link" '
                                         'href="https://www.sodertalje.se/bo-och-bygga/bygga-nytt-och-riva/fasad-tak-fonster-och-dorrar/" '
                                         'rel="noopener">fasad, tak, fönster och dörrar</a> att bygglov krävs '

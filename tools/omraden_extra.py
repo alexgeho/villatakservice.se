@@ -21,7 +21,7 @@ NEIGHBORS_ADD_X = {
   "Upplands Väsby": ["Sigtuna"],
 }
 
-LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo och Hallstavik i väster till Väddö och '
+LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo i väster och Hallstavik i norr till Väddö och '
                         'skärgården mot Ålands hav. Vi är takläggare i Norrtälje för villor, fritidshus och '
                         'äldre hus i bland annat Norrtälje stad, Rimbo, Hallstavik och Grisslehamn.',
                'paras': ['I Norrtälje stad, som grundades 1622, ligger bostadsområden som Färsna, Grind och '
@@ -47,10 +47,6 @@ LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo oc
                         'Ja, hela Norrtälje kommun ingår, även Väddö och Grisslehamn. Vi samlar besök och '
                         'leveranser så att jobbet kan göras i ett sammanhang. Vi tar också uppdrag i Rimbo, '
                         'Hallstavik och Norrtälje stad.'),
-                       ('Lägger ni tak på hus som bara nås med båt?',
-                        'Ja, efter planering. Material, ställning och avfall behöver fraktas, så vi går '
-                        'igenom logistiken innan vi lämnar offert. Det påverkar tidsplanen mer än själva '
-                        'takläggningen, så vi är tydliga med upplägget från början.'),
                        ('Vilket tak passar en stuga med låg taklutning?',
                         'Papp eller falsad plåt brukar fungera bäst när lutningen är låg. Vi mäter och '
                         'föreslår material utifrån det. Betongpannor och tegel kräver brantare tak, så de '
@@ -68,7 +64,7 @@ LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo oc
                           'Sekelskiftshusen har ofta branta sadeltak och murade tegelskorstenar, medan '
                           'efterkrigsvillorna har flackare tak. I sommarstugeområden som Sandviken i Enhörna '
                           'har 1930-talets fritidshus flacka tak. Det gör att två villor på samma gata kan '
-                          'behöva helt olika lösningar. Vi utgår alltid från det enskilda huset.',
+                          'behöva helt olika lösningar. Vi utgår från det enskilda huset.',
                           'Mälaren, Hallsfjärden och Järnafjärden ger blåsiga lägen på många tomter. På '
                           'bergknallar med tall samlas barr och mossa på taken. I Bergvik sluttar tomterna '
                           'kraftigt ner mot Mälarens vatten, och där tar takfoten mer väder än i de inre '
@@ -95,18 +91,16 @@ LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo oc
                       'radhus i bland annat Märsta, Arenberga, Norrbacka, Steninge, Ekilla, Rosersberg och '
                       'Sigtuna stad.',
              'paras': ['Märsta hade omkring 3 000 invånare 1960 och över 10 000 bara fem år senare. Under '
-                       '1960-talet byggdes radhus och villor i Arenberga, på 1970-talet villor och radhus i '
+                       '1960-talet byggdes kedjehus och villor i Arenberga, på 1970-talet villor och radhus i '
                        'Norrbacka, och även Steninge och Ekilla domineras av radhus och villor. Även '
                        'centrala Märsta, som från början mest bestod av villor på stora tomter, har '
                        'förtätats med tiden.',
                        'Husen från de åren har ofta pannor på sitt ursprungliga underlag, och i '
-                       'radhuslängorna är taken som regel lika gamla. I Sigtuna stad domineras taklandskapet '
-                       'enligt kommunens bevarandeplan av rött lertegel med inslag av plåttak. Det betyder '
+                       'radhuslängorna är taken som regel lika gamla. Det betyder '
                        'att en hel länga ofta når slutet av takets livslängd samtidigt, och att det kan vara '
                        'klokt att planera tillsammans med grannarna.',
                        'Rosersberg ligger mellan Märsta och Upplands Väsby, vid Mälaren och Fysingen, och '
-                       'villastaden där växer fortfarande. I Sigtuna stad ligger husen i sluttningen ner mot '
-                       'Mälaren. Hus nära vattnet och på höjderna får mer vind än de som ligger skyddat i '
+                       'villastaden där växer fortfarande. I Sigtuna stad ligger husen i sluttningen ner mot Mälaren, och taklandskapet domineras enligt kommunens bevarandeplan av rött lertegel med inslag av plåttak. Hus nära vattnet och på höjderna får mer vind än de som ligger skyddat i '
                        'kvarteren.'],
              'items': ['Radhus och villor från 1960–70-talen i Märsta',
                        'Tegeltak i Sigtuna stads kulturmiljö',
@@ -121,9 +115,7 @@ LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo oc
                       'Ja. Vill flera grannar göra samtidigt planerar vi längan som en etapp, så att '
                       'anslutningarna mellan husen blir lika. Ett enskilt radhus går också bra, men då '
                       'behöver anslutningarna mot grannhusen göras extra noga.'),
-                     ('Påverkar flygbullret från Arlanda vilket tak jag får lägga?',
-                      'Kommunens bullerprövning gäller främst nybyggnad och tillbyggnad inom Arlandas '
-                      'influensområde. För ett vanligt takbyte brukar den inte bli aktuell.')]}}
+]}}
 
 LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                          ['På fritidshus från mitten av 1900-talet ser vi ofta tunt underlag, papp som '
@@ -144,7 +136,7 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                           'rel="noopener">lovbefriade åtgärder</a> ser du hur du kontrollerar om fastigheten '
                           'ligger i ett särskilt värdefullt område, där lov kan krävas.',
                           'Kommunen ger inga bindande besked per telefon eller e-post – för det söker du '
-                          'frivilligt bygglov. Ska takets form eller höjd ändras krävs alltid lov.',
+                          'frivilligt bygglov. Höjs taket kan det räknas som tillbyggnad, så stäm av med kommunen innan takets form eller höjd ändras.',
                           'Tänk också på årstiden. Ett tak på en ö eller långt ut på Väddö läggs helst under '
                           'en period med stabilt väder, och leveranser kan behöva bokas i god tid. Vi går '
                           'igenom tidplanen redan vid besöket, så att ni vet när huset kan stå med öppet '
@@ -161,19 +153,17 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                           'bär, ventilerade takfötter och nya genomföringar för ventilation och skorsten. '
                           'Det är arbeten som blir enklare och billigare att göra när taket ändå är öppet.']),
                         ('Hallstavik och kusten vid Grisslehamn',
-                         ['Hallstavik har vuxit fram som brukssamhälle kring Hallsta pappersbruk, och det '
-                          'gamla brukssamhället beskrivs som kulturskyddat. Där bör material och utseende '
+                         ['Hallstavik har vuxit fram som brukssamhälle kring Hallsta pappersbruk, och Visit Roslagen beskriver det gamla brukssamhället som kulturskyddat. Där bör material och utseende '
                           'stämmas av med kommunen innan takarbetet planeras.',
                           'Grisslehamn på Väddö har varit post- och fiskeläge mot Åland i århundraden, och '
                           'posthuset från 1756 står kvar. Längs kusten väljer vi plåt och infästningar med '
                           'tanke på vind och salt, och vid ett <a class="text-link" '
                           'href="takbyte.html">takbyte</a> ingår vindskivor och nockar i bedömningen.',
                           'Hallstavik har vuxit från drygt 2 000 invånare 1950 till omkring 4 600 i dag, och '
-                          'villorna från tillväxtåren har nu tak som ofta är originalet. Där är en '
+                          'villorna från tillväxtåren har nu tak som ofta behöver ses över. Där är en '
                           'omläggning med nytt underlag det vanligaste uppdraget.'])],
-               'faq': [('Tar ni hand om rivningen av ett gammalt papptak på en ö?',
-                        'Ja. Rivningsmassorna planeras in från början, så att de kan fraktas bort i samma '
-                        'vända som materialet kommer. Gammal papp sorteras som byggavfall och lämnas på '
+               'faq': [('Tar ni hand om rivningen av ett gammalt papptak?',
+                        'Ja. Rivningsmassorna planeras in från början. Gammal papp sorteras som byggavfall och lämnas på '
                         'godkänd mottagning.'),
                        ('Kan ni kolla kommunkartan åt oss innan takbytet?',
                         'Ja, vi tittar efter särskilt värdefulla områden och skyddsbestämmelser och säger '
@@ -278,7 +268,7 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                         'href="https://www.sigtuna.se/bygga-bo-och-miljo/bygglov/var-far-du-bygga/bygga-i-kulturmiljo.html" '
                         'rel="noopener">bygga i kulturmiljö</a>, och om hur vi arbetar med <a '
                         'class="text-link" href="takrenovering.html">takrenovering</a> av äldre tak.',
-                        'Solceller är bygglovspliktiga inom riksintresset, och i centrala staden och på '
+                        'Enligt bevarandeplanen är solceller bygglovspliktiga inom riksintresset, och i centrala staden och på '
                         'Malmen ska panelerna stämma med takets färg. Längs en del av Stora gatan får det '
                         'inte finnas synliga solceller på takfall mot gatan, så det är bra att ta med i '
                         'planeringen om taket ska bytas.']),
@@ -288,13 +278,9 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                         'href="https://www.sigtuna.se/bygga-bo-och-miljo/bygglov/var-far-du-bygga/flygbuller.html" '
                         'rel="noopener">flygbuller</a> begär kommunen ett yttrande från Swedavia när någon '
                         'vill bygga nytt eller bygga till inom influensområdet.',
-                        'För ett vanligt <a class="text-link" href="takbyte.html">takbyte</a> spelar det '
-                        'sällan någon roll. Planerar du samtidigt en tillbyggnad eller en takkupa är det '
-                        'däremot bra att räkna med den prövningen i tidplanen.',
+                        'Kommunens sida nämner nybyggnad och tillbyggnad, inte takbyte. Planerar du samtidigt en tillbyggnad är det bra att räkna med Swedavias yttrande i tidplanen.',
                         'Kommunen skriver att byggnation inom bullerstört område i vissa fall kan accepteras '
-                        'om huset får bullerbegränsande åtgärder, till exempel avskärmning eller isolering. '
-                        'Ingår takarbetet i en större ombyggnad är det något att ta upp med kommunen '
-                        'tidigt.'])],
+                        'om huset får bullerbegränsande åtgärder, till exempel avskärmning eller isolering.'])],
              'faq': [('Får jag byta lertegel mot betongpannor i Sigtuna stad?',
                       'Inom bevarandeplanens område ska tegeltak i regel ersättas med likadana pannor. '
                       'Kontakta kommunen innan du väljer annat material.'),

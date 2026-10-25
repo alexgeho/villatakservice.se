@@ -208,11 +208,11 @@ LOC_NEW = {
  "Haninge": {
    "intro": "Haninge söder om Stockholm sträcker sig från Handen och Vendelsö ut till Dalarö och skärgården. Vi är takläggare i Haninge för villor, radhus och sommarhus i bland annat Vendelsö, Brandbergen, Tungelsta, Västerhaninge och Dalarö.",
    "paras": [
-     "Vendelsö och Brandbergen har mycket bebyggelse från 1970-talet och framåt, där villor och radhus med betongpannor nu når åldern för takbyte. Västerhaninge och Tungelsta har både äldre villor och nyare områden – Tungelsta har sina rötter i handelsträdgårdarna.",
+     "Vendelsö har egnahem och villor från 1910–60-talet, medan Brandbergen har mycket bebyggelse från 1970-talet med betongpannor som nu når åldern för takbyte. Västerhaninge och Tungelsta har både äldre villor och nyare områden – Tungelsta har sina rötter i handelsträdgårdarna.",
      "Dalarö är en gammal skärgårdsort med sekelskiftesvillor, sommarvillor och kulturhistoriska miljöer. Här är taken ofta av plåt eller tegel med detaljer som behöver bevaras, och läget vid havet ger salt luft och hård vind.",
      "Fritidshus på öar som Ornö och Utö kräver båt- eller färjetransport av material, vilket vi i så fall planerar särskilt.",
    ],
-   "items": ["Villor och radhus i Vendelsö och Brandbergen.", "Sekelskiftesvillor på Dalarö.", "Salt och vind vid kusten."],
+   "items": ["Villor i Vendelsö, radhus i Brandbergen.", "Sekelskiftesvillor på Dalarö.", "Salt och vind vid kusten."],
    "why": "Vi utgår från Bromma och tar uppdrag i hela Storstockholm, även Haninge. Vi planerar resor och etablering så att arbetet går effektivt trots avståndet.",
    "faq": [
      ("Vilka delar av Haninge arbetar ni i?", "Bland annat Handen, Vendelsö, Brandbergen, Jordbro, Västerhaninge, Tungelsta och Dalarö."),
@@ -236,7 +236,7 @@ LOC_NEW = {
  "Upplands Väsby": {
    "intro": "Upplands Väsby norr om Stockholm har stora villa- och radhusområden från 1960–80-talet. Vi är takläggare i Upplands Väsby för villor och radhus i bland annat Bollstanäs, Vilunda, Runby, Fresta och Smedby.",
    "paras": [
-     "Väsby växte kraftigt från 1960-talet, när stora delar av dagens villa- och radhusområden byggdes. Bollstanäs, Vilunda och Runby har villor och radhus från den här tiden, ofta med betongpannor eller plåt på relativt enkla sadeltak.",
+     "Väsby växte kraftigt från 1960-talet, när stora delar av dagens villa- och radhusområden byggdes. Vilunda och Runby har villor och radhus från den här tiden, ofta med betongpannor eller plåt på relativt enkla sadeltak.",
      "Det betyder att många tak i kommunen är ungefär jämngamla och har hamnat i samma läge: originalunderlaget har tjänat ut, pannorna har förlorat sin yta och takfotsplåtar och hängrännor behöver bytas.",
      "I Fresta och Smedby finns äldre gårdsbebyggelse och villor, och längs Edssjön och Fysingen ligger hus i mer öppna, vindutsatta lägen.",
    ],
@@ -251,13 +251,13 @@ LOC_NEW = {
    "intro": "Vallentuna norr om Stockholm blandar villaområden kring centrum med landsbygd och gårdar i Roslagen. Vi är takläggare i Vallentuna för villor, gårdar och fritidshus i bland annat Vallentuna centrum, Bällsta, Ormsta, Lindholmen, Kårsta och Brottby.",
    "paras": [
      "Tätorten Vallentuna byggdes ut kraftigt under 1970- och 80-talet, med villor och radhus i bland annat Ormsta och Bällsta. Taken från den perioden har ofta betongpannor och originalunderlag som nu behöver ses över.",
-     "Utanför tätorten, i Lindholmen, Kårsta och Brottby, finns gårdar, äldre bostadshus och ekonomibyggnader med tegeltak, plåttak och gamla skivtäckningar. Hus i öppet jordbrukslandskap är mer utsatta för vind än de i villaområdena.",
+     "Utanför tätorten, i Kårsta och Brottby, finns gårdar, äldre bostadshus och ekonomibyggnader med tegeltak, plåttak och gamla skivtäckningar. Hus i öppet jordbrukslandskap är mer utsatta för vind än de i villaområdena.",
      "Vallentunasjön och de många skogsdungarna ger fukt och påväxt på en del tak. Vi anpassar åtgärderna efter husets ålder, material och läge.",
    ],
    "items": ["Villor och radhus från 1970–80-talet.", "Gårdar och äldre hus på landsbygden.", "Tegel, plåt och betongpannor."],
    "why": "Vi utgår från Bromma och tar uppdrag i hela Vallentuna kommun, även på landsbygden. Vi samlar platsbesök och planerar etableringen i förväg.",
    "faq": [
-     ("Tar ni uppdrag på landsbygden i Vallentuna?", "Ja, både i tätorten och på gårdar i till exempel Lindholmen, Kårsta och Brottby."),
+     ("Tar ni uppdrag på landsbygden i Vallentuna?", "Ja, både i tätorten och på gårdar i till exempel Kårsta och Brottby."),
      ("Lägger ni plåttak på ekonomibyggnader?", "Ja, plåttak på lador, garage och förråd hör till de uppdrag vi tar."),
      ("Vilket material passar ett gammalt gårdshus?", "Lertegel eller falsad plåt brukar passa äldre gårdshus. Vi väljer utifrån husets stil och takstolarnas bärighet."),
    ]},
@@ -424,11 +424,11 @@ LOC_EXTRA_NEW = {
        "På äldre villor i Stuvsta och Snättringe ser vi ofta tak där plåt och tegel blandats efter tidigare reparationer, rostiga ränndalar och läckage vid skorstenar. Egnahemmen i Segeltorp har ofta byggts på med kupor eller vindsinredning, vilket ger fler anslutningar att hålla täta.",
        "Radhus och villor från 1960–70-talet i Trångsund och Skogås har nått åldern då både pannor och underlag behöver bytas. Skogsnära lägen ger mossa och barr i hängrännor, och på skuggiga takfall håller pannorna kvar fukt längre."]),
      ("Planera takprojektet i Huddinge", [
-       "Huddinge är egen kommun, så bygglov och anmälan hanteras av Huddinge kommun – inte Stockholms stad. Material- och kulörbyte på villatak kräver normalt inget lov. I äldre villaområden kan detaljplanen ha skyddsbestämmelser, och då krävs lov – stäm av med kommunen.",
+       "Huddinge är egen kommun, så bygglov och anmälan hanteras av Huddinge kommun – inte Stockholms stad. Material- och kulörbyte på villatak kräver normalt inget lov. Är huset eller området kulturhistoriskt värdefullt, eller kräver detaljplanen lov, behövs lov – stäm av med <a class=\"text-link\" href=\"https://www.huddinge.se/bostad-och-miljo/bygglov/nar-behover-du-bygglov/fasadandring\" rel=\"noopener\">Huddinge kommun</a>.",
        "Många tomter i Huddinge sluttar eller ligger på berg. Vi bedömer vid platsbesöket hur ställning och materialhantering ska lösas."]),
    ],
    "faq": [
-     ("Var söker jag bygglov för takbyte i Huddinge?", "Hos Huddinge kommun. För takbyte på villa behövs normalt inget lov, även om materialet ändras."),
+     ("Var söker jag bygglov för takbyte i Huddinge?", "Hos Huddinge kommun. För takbyte på villa behövs normalt inget lov, utom om huset eller området är kulturhistoriskt värdefullt."),
      ("Ska man byta hängrännor samtidigt?", "Ofta ja. Gamla rännor och stuprör har sällan lika lång livslängd kvar som det nya taket."),
      ("Har ni erfarenhet av kupor och vindsinredningar?", "Ja, anslutningar kring kupor och takfönster är en vanlig del av våra uppdrag."),
    ]},
@@ -449,7 +449,7 @@ LOC_EXTRA_NEW = {
  "Haninge": {
    "secs": [
      ("Vanliga tak och problem i Haninge", [
-       "I 70- och 80-talsområdena i Vendelsö och Brandbergen är det betongpannor och underlagspapp som åldrats. Typiskt är vittrade pannor, spröd papp vid takfoten och läckage kring ventilationshuvar. På radhus är plåten på brandväggarna ofta det första som ger efter.",
+       "I 70- och 80-talsområdena i Brandbergen och Jordbro är det betongpannor och underlagspapp som åldrats. Typiskt är vittrade pannor, spröd papp vid takfoten och läckage kring ventilationshuvar. På radhus är plåten på brandväggarna ofta det första som ger efter.",
        "På Dalarö och längs kusten sliter salt och vind på plåt, spik och beslag. Där väljer vi korrosionsbeständig plåt och fästelement och lägger extra vikt vid infästningen av nock, vindskivor och takfotsplåt."]),
      ("Planera takprojektet i Haninge", [
        "Bygglov hanteras av Haninge kommun. Byte av takmaterial eller kulör på villa kräver normalt inget lov. Dalarö har kulturhistoriskt värdefulla miljöer där skyddsbestämmelser kan göra att lov ändå krävs – stäm av med kommunen innan du ändrar något.",
@@ -486,7 +486,7 @@ LOC_EXTRA_NEW = {
    "faq": [
      ("Var söker jag bygglov i Upplands Väsby?", "Hos Upplands Väsby kommun. Ett vanligt takbyte på villa eller radhus kräver normalt inget lov."),
      ("Byter ni hängrännor och stuprör samtidigt?", "Ja, det rekommenderar vi ofta när avvattningen är lika gammal som taket."),
-     ("Hur gamla är taken i Bollstanäs?", "Många hus är från 1960–70-talet. Har taket inte bytts sedan dess är underlaget ofta slut."),
+     ("Hur gamla är taken i Bollstanäs?", "Vid Gamla vägen finns villor från sekelskiftet 1900, i övrigt mest nyare villor och radhus. En besiktning visar underlagets skick."),
    ]},
  "Vallentuna": {
    "secs": [
@@ -545,7 +545,7 @@ ORT_IMG_NEW = {
  "Skärholmen": ("ort-skarholmen-radhus", "Radhus från 1960-talet i kuperad terräng, typiska för Sätra och Skärholmen"),
  "Huddinge": ("ort-huddinge-villa", "Äldre trävilla med svart falsat plåttak, typisk för Stuvsta"),
  "Tyresö": ("ort-tyreso-villa", "Permanentat fritidshus med betongpannor på berg vid en vik i Tyresö"),
- "Haninge": ("ort-haninge-villa", "Villa från 1970-talet med bruna betongpannor, typisk för Vendelsö"),
+ "Haninge": ("ort-haninge-villa", "Villa från 1970-talet med bruna betongpannor i Haninge"),
  "Värmdö": ("ort-varmdo-villa", "Skärgårdshus med svart plåttak på klippor vid havet på Värmdö"),
  "Upplands Väsby": ("ort-upplands-vasby-villa", "Villa från 1970-talet med grå betongpannor i Upplands Väsby"),
  "Vallentuna": ("ort-vallentuna-villa", "Faluröd gårdsbyggnad med tegeltak i Vallentunas jordbrukslandskap"),
