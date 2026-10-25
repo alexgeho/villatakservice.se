@@ -8,7 +8,9 @@ import importlib, sys
 MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", "tj_malare_b",
            "tj_badrum_bygg", "tj_snickare",
            # v2 (2026-10-25): 18 ortsidor badrum/kök/målare
-           "tj_v2_badrum", "tj_v2_kok", "tj_v2_malare"]
+           "tj_v2_badrum", "tj_v2_kok", "tj_v2_malare",
+           # v3 (2026-10-25): 18 ortsidor golvläggare/snickare/fasadrenovering
+           "tj_v3_golv", "tj_v3_snickare", "tj_v3_fasad"]
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
