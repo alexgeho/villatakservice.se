@@ -196,6 +196,13 @@ FOOTER = f"""    <footer class="footer">
             <li><a href="takrenovering.html">Takrenovering</a></li>
             <li><a href="takbesiktning.html">Takbesiktning</a></li>
             <li><a href="plattak.html">Plåttak</a></li>
+            <li><a href="badrumsrenovering.html">Badrumsrenovering</a></li>
+            <li><a href="koksrenovering.html">Köksrenovering</a></li>
+            <li><a href="malare.html">Målare</a></li>
+            <li><a href="snickare.html">Snickare</a></li>
+            <li><a href="golvlaggning.html">Golvläggning</a></li>
+            <li><a href="fasadrenovering.html">Fasadrenovering</a></li>
+            <li><a href="fonsterbyte.html">Fönsterbyte</a></li>
             <li><a href="bygg.html">Bygg &amp; Renovering</a></li>
           </ul>
         </div>
@@ -390,6 +397,8 @@ def _img_attrs(name, sizes):
     # src + srcset (1200/640) + verkliga mått från filen.
     from PIL import Image
     fp = os.path.join(ROOT, "assets", "images", name + ".webp")
+    if not os.path.exists(fp):  # bild ännu inte genererad (tj_check renderar i minnet)
+        return f'src="assets/images/{name}.webp" width="1200" height="800"'
     w, h = Image.open(fp).size
     ss = ""
     if os.path.exists(os.path.join(ROOT, "assets", "images", name + "-640.webp")):
@@ -1628,6 +1637,85 @@ for _ort in TRP_ORTER:
       faq=_d["faq"],
       after_faq=_trp_sources(_d["sources"], muted=True))
 
+# ====================== TJÄNSTER V1 (2026-10-25) ==========================
+# Ägarbeslut 25.10: sajten täcker alla Geals byggtjänster. Tjänstehubbar (badrum, kök,
+# målare, golv, snickare, fasad, fönster) + ortsidor "<tjänst> i <ort>" (Keyword Planner
+# 100–1 000/mån). Innehåll + källor i tools/tj_*.py (PAGES_TJ), registreras i tools/tjanster_v1.py.
+# Inga priser, garantier utöver lag, omdömen, case eller cert som sajten inte redan anger.
+from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS
+TJ_CRUMB = SVC_CRUMB
+
+def tj_list_html(title, files, muted=False, sid=""):
+    # Kompakt lista med länkar i två kolumner (samma mönster som trp_list_html).
+    items = sorted(files, key=lambda f: TJ[f]["h1"].replace("Ä","A~").replace("Ö","O~").replace("Å","A}"))
+    half = (len(items) + 1) // 2
+    cols = "\n".join("              <ul class=\"area-list\">\n" + "\n".join(
+        f'                <li><a href="{f}">{TJ[f]["h1"]}</a></li>' for f in part)
+        + "\n              </ul>" for part in (items[:half], items[half:]) if part)
+    cls = "section section-muted seo-section" if muted else "section seo-section"
+    idattr = f' id="{sid}"' if sid else ""
+    return f"""      <section class="{cls}"{idattr}>
+        <div class="container">
+          <div class="section-copy section-copy--wide">
+            <h2 class="section-title">{title}</h2>
+            <div class="area-columns">
+{cols}
+            </div>
+          </div>
+        </div>
+      </section>"""
+
+def _tj_parts(d):
+    parts = []
+    for i, s in enumerate(d["sections"]):
+        if s.get("aside"):
+            parts.append(lambda m, s=s: sec_split(s["h2"], s["paras"], s["aside"]["title"],
+                                                  s["aside"]["items"], muted=m, sid=s["id"]))
+        else:
+            parts.append(lambda m, s=s: sec(s["h2"], s["paras"], muted=m, sid=s["id"]))
+        if i == 0:
+            parts.append(lambda m, d=d: fig(d["file"][:-5] + "-2", d["img"][1][0], muted=m))
+    parts.append(lambda m, d=d: sec_process(d["steps_h2"], d["steps"], muted=m, sid="process"))
+    parts.append(lambda m, d=d: sec(d["rot_h2"], d["rot"], muted=m, sid="rot"))
+    parts.append(lambda m, d=d: sec(d["price_h2"], d["price"], muted=m, sid="pris"))
+    return parts
+
+for _f, _d in TJ.items():
+    _svc = TJ_SERVICES[_d["service"]]
+    _hubf = TJ_HUB.get(_d["service"])
+    if _d["kind"] == "hub":
+        _crumbs = TJ_CRUMB + [(_svc["crumb"], _f)]
+    else:
+        _crumbs = TJ_CRUMB + ([(_svc["crumb"], _hubf)] if _hubf else []) + [(_d["ort"], _f)]
+    _parts = _tj_parts(_d)
+    _others = [x for x in TJ_DISTRICTS.get(_d["service"], []) if x != _f]
+    if _d["kind"] == "hub":
+        if _others:
+            _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} per område", o, muted=m, sid="omraden"))
+        _parts.append(lambda m, d=_d: links_block("Relaterade tjänster", d["related"], muted=m, sid="lankar"))
+    else:
+        _ort = _d["ort"]
+        _cards = [(_hubf, TJ[_hubf]["h1"] if _hubf in TJ else _svc["crumb"], (TJ[_hubf]["card"] if _hubf in TJ else _svc["card"]))] if _hubf else []
+        if _ort in _area_files:
+            _cards.append((_area_files[_ort], f"Takläggare i {_ort}", "Takbyte, takbesiktning och plåtarbeten."))
+        if _ort in TRP_FILES:
+            _cards.append((TRP_FILES[_ort], f"Takrenovering i {_ort}", TRP[_ort]["card"]))
+        _cards += _d.get("related", [])
+        _parts.append(lambda m, c=_cards, o=_ort: links_block(f"Fler tjänster {'på' if o in ('Lidingö', 'Södermalm', 'Värmdö') else 'i'} {o}", c, muted=m, sid="lankar"))
+        if _others:
+            _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} i fler områden", o, muted=m))
+    _n = len(_parts)
+    _html = "\n".join(fn((_n - 1 - i) % 2 == 0) for i, fn in enumerate(_parts))
+    _anchors = [(f"#{_d['sections'][0]['id']}", _d["sections"][0].get("anchor", "Översikt")),
+                ("#process", "Så går det till"), ("#rot", "ROT"), ("#faq", "Vanliga frågor"), ("#kallor", "Källor")]
+    page(file=_f, title=_d["title"], description=_d["description"], h1=_d["h1"],
+      service=True, service_type=_svc["service_type"],
+      area_served=([_d["ort"]] if _d["kind"] == "district" else None),
+      geo_placename=(f"{_d['ort']}, Stockholm" if _d["kind"] == "district" else "Bromma, Stockholm"),
+      crumbs=_crumbs, cta=_d["cta"],
+      body=hero(_d["h1"], _d["lead"], _crumbs, _anchors, img=(_f[:-5] + "-1", _d["img"][0][0])) + _html,
+      faq=_d["faq"], after_faq=_trp_sources(_d["sources"], muted=True))
+
 # ====================== DALARNA (Borlänge + regionen) =====================
 # Geal Entreprenad AB förmedlar/samordnar och utför via lokal samarbetspartner på plats i
 # Dalarna. Egen adress i regionen anges INTE (NAP-ärlighet). Gemensamma
@@ -2671,7 +2759,8 @@ page(file="bygg.html", localbiz=True,
         ("fritidshus.html","Bygga fritidshus","Nyckelfärdigt fritidshus."),
         ("villatak.html","Tak på villa","Vår ursprungliga specialitet."),
         ("vad-kostar-bygga-hus.html","Vad kostar det att bygga hus?","Prisbild och vad som påverkar kostnaden."),
-        ("hyra-taklaggare.html","Hyra takläggare","Bemanning bygg: takläggare, plåtslagare och byggarbetare.")], muted=False),
+        ("hyra-taklaggare.html","Hyra takläggare","Bemanning bygg: takläggare, plåtslagare och byggarbetare.")]
+        + [(f, TJ[f]["h1"], TJ[f]["card"]) for f, d in TJ.items() if d["kind"] == "hub"], muted=False),
   faq=[
     ("Vad betyder total entreprenad?","Att en entreprenör ansvarar för hela projektet – projektering, hantverk och samordning – så att du bara har en kontakt och ett avtal."),
     ("Gör ni både tak och övrig bygg?","Ja. Vi startade med tak och gör i dag även renovering, tillbyggnad, attefallshus och nybyggnad, ofta i samma projekt."),
@@ -2706,7 +2795,8 @@ page(file="byggfirma.html", service=True, service_type="Total entreprenad / bygg
     + links_block("Relaterat", [
         ("villarenovering.html","Villarenovering","Total- och delrenovering."),
         ("tillbyggnad.html","Tillbyggnad","Utöka boytan."),
-        ("nybyggnad-villa.html","Nybyggnad","Bygg nytt från grunden.")]),
+        ("nybyggnad-villa.html","Nybyggnad","Bygg nytt från grunden.")]
+        + [(f, TJ[f]["h1"], TJ[f]["card"]) for f in TJ_DISTRICTS.get("byggforetag", [])]),
   faq=[
     ("Vad kostar en byggfirma / total entreprenad?","Det beror helt på projektets omfattning. Vi erbjuder gratis platsbesök och kostnadsförslag och lämnar ett fast pris efter genomgång."),
     ("Tar ni bygglovet?","Vi hjälper till med bygglovsunderlag och ritningar; själva ansökan görs till kommunen och vi guidar dig genom den."),
@@ -3182,7 +3272,7 @@ for _p in PAGES:
 # Metadata för de handunderhållna sidorna (för sökindex).
 STATIC_META = {
   "index.html": ("Takläggare i Bromma & Stockholm – takbyte och takrenovering", "Takläggare och takfirma i Bromma. Takbyte, takrenovering, plåttak och totalentreprenad på villa i hela Stockholm. Gratis besök och kostnadsförslag."),
-  "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning och taktvätt."),
+  "tjanster.html": ("Våra tjänster", "Takbyte, takrenovering, takbesiktning, plåttak, takmålning, taktvätt samt badrum, kök, målning, snickeri, golv, fasad och fönster."),
   "om-oss.html": ("Om oss", "Geal Entreprenad AB – takläggare och byggpartner i Stockholm med F-skatt, ansvarsförsäkring och ID06."),
   "kontakt.html": ("Kontakt", "Begär kostnadsfri offert eller ställ en fråga till oss."),
   "artiklar.html": ("Artiklar & guider", "Guider om takbyte, takrenovering, ROT-avdrag, material och underhåll."),

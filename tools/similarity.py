@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Likhet mellan ortsidor (mot mallkloner).
-Kor:  python3 tools/similarity.py [--max 0.25] [--takreno]
+Kor:  python3 tools/similarity.py [--max 0.25] [--takreno] [--tjanster]
 Mattet: Jaccard pa 5-ords-shingles av sidans <main>-text (utan header/footer),
 ortnamnet ersatt med "ORT" sa att bara ortbytet inte gor sidor olika.
 Visar max-/snittlikhet och de mest lika paren. Exit 1 om max > --max.
@@ -12,6 +12,12 @@ import glob, html, itertools, os, re, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 LIMIT = float(sys.argv[sys.argv.index("--max") + 1]) if "--max" in sys.argv else 0.25
+
+if "--tjanster" in sys.argv:
+    # Tjänstehubbar + ortsidor (2026-10-25): parvis inom tjänst, mot ortens taksidor och mot byggtorg.se.
+    import subprocess
+    sys.exit(subprocess.call([sys.executable, os.path.join(ROOT, "tools", "tj_check.py")]
+                             + [x for x in sys.argv[1:] if x != "--tjanster"]))
 
 from generate import AREAS, slug  # noqa: E402  (Stockholmsorter)
 

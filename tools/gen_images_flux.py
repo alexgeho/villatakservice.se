@@ -61,6 +61,13 @@ JOBS = {
  "taklaggare-sigtuna-2": ("3:2", "1970s Swedish suburban villas with brown concrete tile roofs and wooden facades, Märsta"),
 }
 
+# Tjänster v1 (2026-10-25): prompter ligger i PAGES_TJ["img"] (tools/tj_*.py).
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+from tjanster_v1 import TJ  # noqa: E402
+for _f, _d in TJ.items():
+    JOBS[_f[:-5] + "-1"] = ("4:3", _d["img"][0][1])
+    JOBS[_f[:-5] + "-2"] = ("3:2", _d["img"][1][1])
+
 def run(name):
     aspect, prompt = JOBS[name]
     out = os.path.join(IMG, name + ".webp")
