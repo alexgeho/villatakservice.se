@@ -1368,14 +1368,46 @@ ORT_SEO = {
  },
 }
 
+# Keyword Planner 2025-10..2026-09: "takrenovering <ort>" 10–100/mån. En egen sektion
+# "Takrenovering i <ort>" per ort, byggd enbart på fakta som redan finns på ortsidan.
+# Unik formulering per ort (ingen mall där bara namnet byts). Har orten redan en
+# sektion med exakt samma rubrik (Solna) läggs texten in i den i stället.
+_TR, _TK = "takrenovering.html", "vad-kostar-takrenovering.html"
+TAKRENO = {
+ "Bromma": [f"I Ängby, Äppelviken och Smedslätten kan lertegel från 1920–40-talet ofta läggas tillbaka på nytt underlag, så att huset behåller sitt uttryck. På funkisvillornas låga tak gäller en {a(_TR,'takrenovering')} i stället tätskikt, plåt och avvattning. Läs om {a(_TK,'vad som styr priset')}."],
+ "Solna": [f"I Råsunda och Huvudsta är teglet på 1920–40-talsvillorna ofta så friskt att en omläggning räcker, medan Bergshamras låglutande tak främst behöver täta skarvar och genomföringar. Se {a(_TK,'vad en takrenovering kostar')}."],
+ "Nacka": [f"Längs kusten i Saltsjöbaden handlar en {a(_TR,'takrenovering')} ofta om att byta korroderad plåt kring skorstenar och genomföringar. På 60-talsvillorna i Boo och Älta avgör betongpannornas skick om de kan ligga kvar på nytt underlag. Läs om {a(_TK,'kostnaden för takrenovering')}."],
+ "Täby": [f"Många radhusområden i Täby har samfälligheter med regler för tak och kulör, och där kan hela längan renoveras i samma omgång. Nära Stora Värtan anpassar vi samtidigt infästningen av pannor, nock och plåt efter läget. Mer om {a(_TR,'takrenovering')} och {a(_TK,'vad den kostar')}."],
+ "Danderyd": [f"På de stora villorna i Djursholm och Stocksund börjar en {a(_TR,'takrenovering')} ofta i ränndalar och vid kupor, där läckage brukar uppstå. Har huset kopparplåt eller zink arbetar vi med samma traditionella material. Läs om {a(_TK,'vad som påverkar kostnaden')}."],
+ "Lidingö": [f"Sekelskiftesvillorna i Käppala och Bodal har ofta tegel eller falsad plåt, och vid en {a(_TR,'takrenovering')} byter vi rostangripna skruvar och beslag mot korrosionsbeständiga. På 1960–70-talshusen i Brevik och Gåshaga ser vi först över underlaget under betongpannorna eller plåten. Läs {a(_TK,'vad som avgör kostnaden')}."],
+ "Huddinge": [f"Har ett 60–70-talshus i Skogås eller Trångsund aldrig lagts om är underlagspappen oftast slut och behöver bytas. På Stuvstas och Snättringes äldre trävillor behåller vi teglet eller den falsade plåten där det går. Läs mer om {a(_TR,'takrenovering')} och {a(_TK,'priset')}."],
+ "Järfälla": [f"I Jakobsberg och Viksjö gäller en {a(_TR,'takrenovering')} ofta radhus, där plåten mellan husen görs om tillsammans med underlaget. I Viksjö och Kallhäll kontrollerar vi även ventilationen vid takfoten, eftersom fukt på vinden kan uppstå trots ett tätt tak. Läs {a(_TK,'hur priset räknas fram')}."],
+ "Sollentuna": [f"Har grannarna i Edsberg eller Tureberg hus från samma år kan renoveringen samordnas, med gemensam etablering och ställning. Under tall och gran ingår ofta mossbehandling och rensning av hängrännor. Läs om {a(_TR,'takrenovering')} och {a(_TK,'ROT-avdraget')}."],
+ "Vallentuna": [f"I Ormsta och Bällsta är det ofta originalunderlaget från 1970–80-talet under betongpannorna som behöver bytas. På gårdarna kring Kårsta och Brottby kan en {a(_TR,'takrenovering')} i stället gälla äldre tegel- eller plåttak, både på bostadshus och ekonomibyggnader. Se {a(_TK,'vad som styr priset')}."],
+ "Upplands Väsby": [f"Taken i Bollstanäs, Vilunda och Runby är ofta jämngamla, så nytt underlag, takfotsplåtar och hängrännor görs gärna i samma omgång. Har flera radhus samma behov kan arbetet samordnas för hela området. Läs mer om {a(_TR,'takomläggning')} och {a(_TK,'vad en omläggning kostar')}."],
+ "Värmdö": [f"Är underlaget sunt kan rengöring, rostskydd och målning av ett plåttak räcka. Ligger huset på berg eller udde, som på Ingarö eller i Hemmesta, ser vi extra noga över nockar, vindskivor och fästelement. Läs om {a(_TR,'takrenovering')} och {a(_TK,'vad de olika nivåerna kostar')}."],
+ "Tyresö": [f"Permanentade fritidshus i Brevik och Öringe har ofta tak som byggts på i etapper och saknar ibland ordentligt underlag och ventilation – där börjar {a(_TR,'takrenoveringen')}. I Krusboda och Bollmora gäller det oftare 60–70-talstak med mossa och barr från skogen runt omkring. Se {a(_TK,'prisguiden för takrenovering')}."],
+ "Haninge": [f"I Vendelsö och Brandbergen har många betongpannetak från 1970-talet nått en ålder där underlaget behöver förnyas. På Dalarös sekelskiftesvillor görs en {a(_TR,'takrenovering')} så att plåt- och tegeldetaljerna behålls, med material som tål salt och vind. Läs om {a(_TK,'vad som påverkar priset')}."],
+ "Enskede": [f"I Gamla Enskede går det ofta att återanvända lertegel och komplettera med likvärdiga pannor, så att taket smälter in i trädgårdsstaden. Ska bara ena halvan av ett parhus renoveras gör vi en tät anslutning mot grannens del. Mer om {a(_TR,'takrenovering')} och {a(_TK,'kostnaden för en omläggning')}."],
+ "Älvsjö": [f"Många villor i Långbro och Herrängen har kvar originalteglet, som kan läggas tillbaka på ny läkt och nytt underlag. Verandornas och kupornas mindre takytor i plåt eller papp tas med i samma {a(_TR,'takrenovering')}. Se {a(_TK,'vad den kan kosta')}."],
+}
+
 for _ort, _d in LOC.items():
     intro = _d["intro"]; paras = _d["paras"]; items = _d["items"]
     _x = LOC_EXTRA.get(_ort, {"secs": [], "faq": []})
     _seo = ORT_SEO.get(_ort, {})
     cityfaq = _d["faq"] + _x["faq"] + _seo.get("faq", [])
     extra_html = "".join(sec(t, ps, muted=(i % 2 == 0)) for i,(t,ps) in enumerate(_x["secs"]))
+    _tr = TAKRENO.get(_ort, [])
+    _trt = f"Takrenovering i {_ort}"
+    _nsec = len(_x["secs"])
     if _seo.get("svc"):
-        extra_html += sec(_seo["svc"][0], _seo["svc"][1], muted=(len(_x["secs"]) % 2 == 0), sid="takbyte-takrenovering")
+        _svc_ps = _seo["svc"][1] + (_tr if _seo["svc"][0] == _trt else [])
+        extra_html += sec(_seo["svc"][0], _svc_ps, muted=(_nsec % 2 == 0), sid="takbyte-takrenovering")
+        _nsec += 1
+        if _seo["svc"][0] == _trt: _tr = []
+    if _tr:
+        extra_html += sec(_trt, _tr, muted=(_nsec % 2 == 0), sid="takrenovering")
     f = _area_files[_ort]
     others = NEIGHBORS[_ort]
     page(file=f,
