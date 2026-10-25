@@ -2912,26 +2912,39 @@ page(file="tillbyggnad.html", service=True, service_type="Tillbyggnad",
     ("Hur mycket får jag bygga till?","Det styrs av detaljplan och tomt. Vi går igenom vad som är möjligt vid ett platsbesök."),
     ("Får jag ROT för tillbyggnad?","Normalt nej – ROT gäller renovering av befintlig bostad, inte tillbyggnad av ny yta.")])
 
+# Källor för attefall-/friggebodssidorna (kontrollerade 2026-10-25 mot riksdagen.se och boverket.se).
+PBL_URL = "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-bygglag-2010900_sfs-2010-900/"
+PBF_URL = "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-byggforordning-2011338_sfs-2011-338/"
+BOV_LISTA = "https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/"
+KOMPL_SRC = [("Riksdagen – Plan- och bygglag (2010:900), 1 kap. 4 § och 9 kap. 4–5, 10–12, 16, 34–37 §§", PBL_URL),
+             ("Riksdagen – Plan- och byggförordning (2011:338), 6 kap. 1 §", PBF_URL),
+             ("Boverket – Lista med PBL-ändringar som trädde i kraft 1 december 2025", BOV_LISTA)]
+
 page(file="attefallshus.html", service=True, service_type="Attefallshus",
-  title="Attefallshus i Stockholm – nya regler, upp till 30 m² | Geal Entreprenad AB",
-  description="Attefallshus heter nu komplementbostadshus: upp till 30 m² utan bygglov och utan anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt i Stockholm.",
+  title="Attefallshus i Stockholm – regler från 1 december 2025 | Geal Entreprenad AB",
+  description="Attefallshus heter i lagen komplementbostadshus sedan 1 december 2025: 30 m² och 4,0 m inom detaljplan, 45 m² per tomt, ingen anmälan för huset.",
   h1="Attefallshus i Stockholm",
   crumbs=BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
   cta=("Funderar du på ett attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med reglerna. Begär en kostnadsfri offert."),
   body=hero("Attefallshus i Stockholm",
-    "Sedan 1 december 2025 heter attefallshuset komplementbostadshus. Inom detaljplan får det vara upp till 30 m² och byggas utan bygglov och utan anmälan. Vi bygger nyckelfärdigt i hela Stockholm.",
+    "Attefallshus är i dag ett vardagsnamn. Sedan 1 december 2025 heter huset komplementbostadshus i plan- och bygglagen, och inom detaljplan får det vara upp till 30 m² utan bygglov och utan anmälan. Vi bygger nyckelfärdigt i hela Stockholm.",
     BYGG_CRUMB+[("Attefallshus","attefallshus.html")],
-    [("#vad","Om attefallshus"),("#regler","Regler"),("#faq","Vanliga frågor")])
-    + sec("Vad är ett attefallshus?", [
-        f"Attefallsreglerna har ersatts av regler om komplementbyggnad och komplementbostadshus i plan- och bygglagen. Ett komplementbostadshus är ett litet hus för boende som kompletterar en villa eller ett tvåbostadshus. Själva huset kräver inte längre anmälan eller startbesked – men installation av vatten, avlopp, ventilation, eldstad eller rökkanal kräver fortfarande anmälan. Se {a('attefallshus-regler.html','nya regler för attefallshus')}.",
-        "Populära användningar är gäststuga, hemmakontor, gym, förråd eller ett litet hus för uthyrning. Vi bygger nyckelfärdigt – från grund till inflyttningsklart."], sid="vad")
+    [("#vad","Om attefallshus"),("#regler","Regler"),("#anmalan","Anmälan"),("#faq","Vanliga frågor"),("#kallor","Källor")])
+    + sec("Attefallshus – namnet som blev kvar", [
+        "Ordet attefallshus finns inte längre i lagen. Den 1 december 2025 fick plan- och bygglagen ett nytt 9 kapitel, och de lovfria åtgärderna ”attefallshus” och ”friggebod” togs bort. I stället finns två begrepp: <strong>komplementbostadshus</strong> – en fristående byggnad som kompletterar ett en- eller tvåbostadshus och är inredd med en självständig bostad – och <strong>komplementbyggnad</strong>, som inte är inredd med en självständig bostad.",
+        f"De flesta säger fortfarande attefallshus, och det är det ordet man söker på. Därför heter sidan så. Menar du ett förråd, en verkstad eller ett gästrum utan egen bostad är det en komplementbyggnad – se {a('friggebod.html','friggebod')}. Alla mått och paragrafer finns samlade i {a('attefallshus-regler.html','nya regler för attefallshus')}.",
+        "Populära användningar är gäststuga, hemmakontor, ett litet hus för en vuxen son eller dotter eller ett hus för uthyrning. Vi bygger nyckelfärdigt – från grund till inflyttningsklart."], sid="vad")
     + sec_split("Regler i korthet", [
-        "Reglerna gäller från 1 december 2025. Huset ska vara mindre än villan det kompletterar och stå på tomten. Lovfritt är inte regelfritt – tekniska krav och varsamhetskrav gäller, och i särskilt värdefulla miljöer krävs bygglov.",
-        f"Vill du placera huset närmare tomtgräns än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen. Källa: {SRCA}."],
+        "Inom detaljplan får ett komplementbostadshus byggas utan bygglov om byggnadsarean är högst 30,0 m², taknockshöjden högst 4,0 meter och huset står inom tomten. Utanför detaljplan är gränserna 50,0 m² och 4,5 meter. Byggnadsarean ska också vara mindre än byggnadsarean för huset det kompletterar (PBL 9 kap. 4–5 §§).",
+        "Alla lovfria komplementbyggnader och komplementbostadshus på tomten delar på en gemensam pott: högst 45,0 m² inom och 65,0 m² utanför detaljplan. I potten räknas även friggebodar och attefallshus som byggts utan lov enligt de äldre reglerna.",
+        "Närmare gränsen än 4,5 meter krävs bygglov, om inte de berörda grannarna skriftligen har medgett placeringen (9 kap. 34–35 §§). Lovfritt är inte regelfritt: tekniska krav och varsamhetskrav gäller, och för särskilt värdefulla byggnader och områden krävs bygglov (9 kap. 37 §)."],
         "Vanliga krav", [
         "Max 30 m² inom detaljplan, 50 m² utanför.","Taknockshöjd max 4,0 m (4,5 m utanför detaljplan).",
-        "Högst 45 m² lovfritt per tomt (65 m² utanför detaljplan).","Minst 4,5 m till tomtgräns (annars skriftligt grannmedgivande).",
-        "Ingen anmälan för huset – men för VA, ventilation och eldstad.","Bygglov i särskilt värdefulla miljöer."], sid="regler")
+        "Högst 45 m² lovfritt per tomt (65 m² utanför) – gamla friggebodar räknas in.","Minst 4,5 m till gräns, annars skriftligt grannmedgivande.",
+        "Mindre byggnadsarea än villan, och bara vid en- eller tvåbostadshus.","Bygglov för särskilt värdefulla byggnader och miljöer."], sid="regler")
+    + sec("Anmälan och startbesked – för installationerna", [
+        "Själva huset kräver ingen anmälan. Men enligt plan- och byggförordningen 6 kap. 1 § krävs anmälan för installation eller väsentlig ändring av anläggning för vattenförsörjning eller avlopp, ventilation, eldstad eller rökkanal. Ett hus att bo i får nästan alltid vatten och avlopp, och då ska kommunen ge startbesked innan de installationerna görs.",
+        "Har du redan en lovfri komplementbyggnad kan den göras om till komplementbostadshus utan bygglov, om den håller måtten ovan (PBL 9 kap. 16 §). Ligger den närmare gränsen än 4,5 meter krävs lov även för den ändringen, om inte grannarna skriftligen har medgett den."], sid="anmalan")
     + f"""      <section class="section seo-section">
         <div class="container"><div class="tips-box">
           <h3>Bra att veta</h3>
@@ -2945,8 +2958,11 @@ page(file="attefallshus.html", service=True, service_type="Attefallshus",
         ("tillbyggnad.html","Tillbyggnad","Bygg ihop med villan.")]),
   faq=[
     ("Behöver jag bygglov eller anmälan för attefallshus?","Sedan 1 december 2025 krävs varken bygglov eller anmälan för själva huset om det håller sig inom måtten. Anmälan krävs för vatten, avlopp, ventilation och eldstad eller rökkanal."),
-    ("Hur stort får ett attefallshus vara?","Inom detaljplan upp till 30 m² och 4,0 m taknockshöjd, utanför detaljplan upp till 50 m² och 4,5 m. Alla lovfria komplementbyggnader på tomten får tillsammans vara högst 45 m² respektive 65 m²."),
-    ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett komplementbostadshus är till för boende. Det får byggas vid en- och tvåbostadshus och ska uppfylla kraven på bostäder, till exempel VA och isolering, som vi tar höjd för.")])
+    ("Hur stort får ett attefallshus vara?","Inom detaljplan upp till 30 m² byggnadsarea och 4,0 m taknockshöjd, utanför detaljplan upp till 50 m² och 4,5 m. Alla lovfria komplementbyggnader på tomten får tillsammans vara högst 45 m² respektive 65 m²."),
+    ("Kan man bo eller hyra ut i ett attefallshus?","Ja, ett komplementbostadshus är inrett med en självständig bostad. Det får byggas vid en- och tvåbostadshus och ska uppfylla kraven på bostäder, till exempel VA och isolering, som vi tar höjd för."),
+    ("Räknas vår gamla friggebod in när vi bygger ett attefallshus?","Ja. Friggebodar och attefallshus som byggts utan lov enligt de äldre reglerna ingår i tomtens gemensamma pott på 45 m² inom detaljplan (65 m² utanför)."),
+    ("Varför heter det fortfarande attefallshus?","Det är ett vardagsnamn. I lagen heter huset komplementbostadshus sedan 1 december 2025, men det gamla ordet används fortfarande när man pratar och söker.")],
+  after_faq=_trp_sources(KOMPL_SRC, muted=True))
 
 page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
   title="Bygga villa i Stockholm – nyckelfärdigt hus | Geal Entreprenad AB",
@@ -2990,23 +3006,25 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
 
 page(file="friggebod.html", service=True, service_type="Friggebod",
   title="Friggebod i Stockholm – nya regler, upp till 30 m² | Geal Entreprenad AB",
-  description="Friggebod heter nu komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov eller anmälan sedan 1 december 2025. Vi bygger nyckelfärdigt.",
+  description="Friggebod heter i lagen komplementbyggnad sedan 1 dec 2025: upp till 30 m² och 4,0 m inom detaljplan, utan bygglov eller anmälan. Vi bygger nyckelfärdigt.",
   h1="Friggebod i Stockholm",
   crumbs=BYGG_CRUMB+[("Friggebod","friggebod.html")],
   cta=("Vill du bygga en friggebod?","Vi bygger nyckelfärdigt. Begär en kostnadsfri offert."),
   body=hero("Friggebod i Stockholm",
-    "Sedan 1 december 2025 ersätts friggeboden av komplementbyggnad – och den får vara större: upp till 30 m² inom detaljplan, utan bygglov och utan anmälan. Vi bygger förråd, växthus och verkstad nyckelfärdigt.",
+    "Friggebod är i dag ett vardagsnamn. Sedan 1 december 2025 heter det komplementbyggnad i lagen – och den får vara större: upp till 30 m² inom detaljplan, utan bygglov och utan anmälan. Vi bygger förråd, växthus och verkstad nyckelfärdigt.",
     BYGG_CRUMB+[("Friggebod","friggebod.html")],
-    [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor")])
+    [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor"),("#kallor","Källor")])
     + sec_split("Regler för friggebod", [
-        "Friggebodsreglerna (15 m², 3,0 m) gäller inte längre. I stället får du bygga en komplementbyggnad – förråd, garage, växthus eller verkstad – utan bygglov och utan anmälan, om den håller sig inom måtten nedan.",
-        f"Närmare tomtgräns än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen. Källa: {SRCA}. Gäller från 1 december 2025."],
+        "Friggebodsreglerna med 15 m² och 3,0 meter gäller inte längre, och ordet friggebod finns inte kvar i plan- och bygglagen. Det som byggs i dag är en <strong>komplementbyggnad</strong> – en fristående byggnad som kompletterar en byggnad och inte är inredd med en självständig bostad, till exempel förråd, garage, växthus eller verkstad.",
+        "Inom detaljplan krävs varken bygglov eller anmälan om byggnadsarean är högst 30,0 m², taknockshöjden högst 4,0 meter, byggnadsarean är mindre än för huset den kompletterar och byggnaden står inom tomten. Utanför detaljplan gäller 50,0 m² och 4,5 meter (PBL 9 kap. 4–5 §§).",
+        f"Närmare gränsen än 4,5 meter krävs bygglov, om inte grannarna skriftligen har medgett placeringen. Gäller från 1 december 2025. Källa: {SRCA}."],
         "Vad som gäller", [
         "Max 30 m² inom detaljplan, 50 m² utanför.","Taknockshöjd max 4,0 m (4,5 m utanför detaljplan).",
-        "Mindre än huvudbyggnaden, placerad på tomten.","Minst 4,5 m till tomtgräns (annars skriftligt grannmedgivande).",
-        "Inget bygglov och ingen anmälan.","Boende kräver komplementbostadshus."], sid="regler")
+        "Mindre än huvudbyggnaden, placerad på tomten.","Minst 4,5 m till gräns (annars skriftligt grannmedgivande).",
+        "Högst 45 m² lovfritt per tomt inom detaljplan.","Ingen självständig bostad – då är det ett komplementbostadshus."], sid="regler")
     + sec("Friggebod eller attefallshus?", [
-        f"Sedan 1 december 2025 gäller samma mått för båda. Skillnaden är användningen: en komplementbyggnad är till för förråd, garage eller verkstad, medan ett komplementbostadshus – tidigare {a('attefallshus.html','attefallshus')} – får inredas för boende. Alla lovfria komplementbyggnader på tomten delar på 45 m² inom detaljplan.",
+        f"Måtten är desamma för båda. Skillnaden är innehållet: en komplementbyggnad är inte inredd med en självständig bostad, medan ett komplementbostadshus – i vardagligt tal {a('attefallshus.html','attefallshus')} – är det och bara får byggas vid en- eller tvåbostadshus. Alla lovfria komplementbyggnader och komplementbostadshus på tomten delar på 45 m² inom detaljplan, och friggebodar som redan står där räknas in.",
+        "Vill du senare göra om förrådet till en bostad krävs inget bygglov så länge byggnaden håller måtten och står minst 4,5 meter från gränsen. Däremot krävs anmälan och startbesked när vatten, avlopp, ventilation eller eldstad installeras (plan- och byggförordningen 6 kap. 1 §).",
         f"Vill du i stället bygga ihop med huset, se {a('tillbyggnad.html','tillbyggnad')}."], sid="skillnad")
     + links_block("Relaterat", [
         ("attefallshus.html","Attefallshus","Komplementbostadshus för boende."),
@@ -3014,8 +3032,9 @@ page(file="friggebod.html", service=True, service_type="Friggebod",
         ("bygg.html","Bygg & Renovering","Alla våra byggtjänster.")]),
   faq=[
     ("Behöver jag bygglov för en friggebod?","Nej. Sedan 1 december 2025 gäller reglerna för komplementbyggnad: upp till 30 m² inom detaljplan utan bygglov och utan anmälan, om måtten och avstånden hålls."),
-    ("Hur stor får en friggebod vara?","Inom detaljplan max 30 m² och 4,0 m taknockshöjd, utanför detaljplan max 50 m² och 4,5 m."),
-    ("Får man bo i en friggebod?","En komplementbyggnad är inte till för boende. Vill du kunna bo i huset ska det byggas som komplementbostadshus (tidigare attefallshus).")])
+    ("Hur stor får en friggebod vara?","Inom detaljplan max 30 m² byggnadsarea och 4,0 m taknockshöjd, utanför detaljplan max 50 m² och 4,5 m."),
+    ("Får man bo i en friggebod?","En komplementbyggnad är inte inredd med en självständig bostad. Ska huset ha en egen bostad är det ett komplementbostadshus (tidigare attefallshus), och då krävs anmälan för vatten och avlopp.")],
+  after_faq=_trp_sources(KOMPL_SRC, muted=True))
 
 page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
   title="Bygga fritidshus i Stockholm – nyckelfärdigt | Geal Entreprenad AB",
@@ -3105,31 +3124,40 @@ article("falsat-plattak.html",
 # ---- Bygg-artiklar (near-miss) ----
 article("attefallshus-regler.html",
   "Attefallshus – nya regler 2026: mått och avstånd | Geal Entreprenad AB",
-  "Från 1 december 2025 ersätts attefallshus av komplementbostadshus: 30 m² inom detaljplan, 50 m² utanför, ingen anmälan. Så gäller reglerna i Stockholm.",
+  "Sedan 1 december 2025 heter attefallshus komplementbostadshus: 30 m² och 4,0 m inom detaljplan, 50 m² och 4,5 m utanför, 45/65 m² per tomt.",
   "Attefallshus – nya regler 2026",
-  "Den 1 december 2025 ersattes attefallsreglerna av regler om komplementbostadshus. Här är måtten, avstånden och vad som fortfarande kräver anmälan.",
-  [("p","Plan- och bygglagen fick ett nytt 9 kapitel den 1 december 2025. Attefallshus och friggebod försvann som begrepp och ersattes av komplementbostadshus och komplementbyggnad. För dig som villaägare innebär det större yta utanför detaljplan, en gemensam pott per tomt och ingen anmälan för själva huset."),
+  "Den 1 december 2025 ersattes attefallsreglerna av regler om komplementbostadshus och komplementbyggnad. Här är måtten, avstånden och vad som fortfarande kräver anmälan – med paragraferna.",
+  [("p","Plan- och bygglagen fick ett nytt 9 kapitel den 1 december 2025. De lovfria åtgärderna ”attefallshus” och ”friggebod” togs bort och ersattes av komplementbostadshus och komplementbyggnad. Orden attefallshus, friggebod och attefallstillbyggnad lever kvar som vardagliga namn, men de finns inte längre i lagen. För dig som villaägare innebär ändringen större yta utanför detaljplan, en gemensam pott per tomt och ingen anmälan för själva huset."),
+   ("h2","De nya begreppen"),
+   ("ul",["<strong>Komplementbostadshus</strong> (vardagligt: attefallshus) – en fristående byggnad som kompletterar ett en- eller tvåbostadshus och är inredd med en självständig bostad.",
+          "<strong>Komplementbyggnad</strong> (vardagligt: friggebod) – en fristående byggnad som kompletterar en byggnad och inte är inredd med en självständig bostad, till exempel förråd, garage eller växthus.",
+          "Definitionerna står i PBL 1 kap. 4 §."]),
    ("h2","Mått och krav i korthet"),
-   ("ul",["<strong>Inom detaljplan:</strong> max 30 m² byggnadsarea och 4,0 m taknockshöjd.","<strong>Utanför detaljplan:</strong> max 50 m² och 4,5 m taknockshöjd.",
-          "Alla lovfria komplementbyggnader och komplementbostadshus på tomten får tillsammans vara högst <strong>45 m²</strong> (65 m² utanför detaljplan).",
-          "Huset ska vara mindre än villan det kompletterar och stå på tomten.","Komplementbostadshus får bara byggas vid en- och tvåbostadshus.",
-          "Närmare än <strong>4,5 m från tomtgräns</strong> krävs bygglov, om inte grannen skriftligen medgett placeringen."]),
+   ("ul",["<strong>Inom detaljplan:</strong> max 30,0 m² byggnadsarea och 4,0 m taknockshöjd (PBL 9 kap. 4 §).","<strong>Utanför detaljplan:</strong> max 50,0 m² och 4,5 m taknockshöjd (9 kap. 5 §).",
+          "Alla lovfria komplementbyggnader och komplementbostadshus på tomten får tillsammans vara högst <strong>45,0 m²</strong> (65,0 m² utanför detaljplan). Friggebodar och attefallshus som byggts utan lov enligt äldre regler räknas in.",
+          "Byggnadsarean ska vara mindre än byggnadsarean för huset den kompletterar, och byggnaden ska stå inom tomten.","Ett komplementbostadshus får bara byggas vid en- och tvåbostadshus; en komplementbyggnad vid alla sorters byggnader.",
+          "Närmare än <strong>4,5 m från gränsen</strong> krävs bygglov, om inte de berörda grannarna skriftligen medgett åtgärden (9 kap. 34–35 §§). Medgivandet måste numera alltid vara skriftligt."]),
    ("h2","Behövs anmälan och startbesked?"),
    ("p","Inte för själva huset. Men installation eller väsentlig ändring av vatten och avlopp, ventilation, eldstad eller rökkanal kräver fortfarande anmälan och startbesked (<a class=\"text-link\" href=\"https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/plan-och-byggforordning-2011338_sfs-2011-338/\" rel=\"noopener\">PBF 6 kap. 1 §</a>) innan de görs – och ett hus att bo i behöver i praktiken nästan alltid sådana installationer."),
+   ("p","Att göra om en lovfri komplementbyggnad till komplementbostadshus kräver inget bygglov, om den håller måtten (9 kap. 16 §). Står den närmare gränsen än 4,5 meter krävs lov för ändringen, om inte grannarna skriftligen har medgett den."),
    ("h2","Tillbyggnad utan bygglov"),
-   ("p",f"Attefallstillbyggnaden på 15 m² finns inte längre. I stället får du bygga till en byggnad med sammanlagt högst 30 m² utan bygglov, så länge tillbyggnaden inte går över husets taknock. Läs mer om {a('tillbyggnad.html','tillbyggnad av villa')}."),
+   ("p",f"Attefallstillbyggnaden på 15 m² finns inte längre. I stället får du bygga till ett hus utan bygglov med högst 30,0 m² bruttoarea eller öppenarea, så länge tillbyggnaden inte går över husets taknock. Gränsen är sammanlagd: tidigare lovfria tillbyggnader på samma byggnad räknas in (9 kap. 10 §), och 4,5-metersregeln mot gränsen gäller även här. Läs mer om {a('tillbyggnad.html','tillbyggnad av villa')}."),
    ("h2","Attefallshus eller friggebod?"),
-   ("p",f"Måtten är nu desamma. En {a('friggebod.html','friggebod')} – komplementbyggnad – är till för förråd, garage eller verkstad. Ett attefallshus – komplementbostadshus – får inredas för boende. Se vår tjänst {a('attefallshus.html','attefallshus')}."),
-   ("p",'Lovfritt är inte regelfritt: tekniska krav, varsamhetskrav och förbudet mot förvanskning gäller fortfarande, och i särskilt värdefulla miljöer krävs bygglov. Källa: <a class="text-link" href="https://www.boverket.se/sv/samhallsplanering/uppdrag/avslutade-uppdrag/nytt-regelverk-for-bygglov/lista-pbl--andringar/" rel="noopener">Boverket – PBL-ändringar från 1 december 2025</a>. Gäller från 1 december 2025.'),
+   ("p",f"Måtten är nu desamma. En {a('friggebod.html','friggebod')} – komplementbyggnad – är inte inredd med en självständig bostad. Ett attefallshus – komplementbostadshus – är inrett som bostad. Se vår tjänst {a('attefallshus.html','attefallshus')}."),
+   ("h2","När krävs bygglov ändå?"),
+   ("p","Lovfritt är inte regelfritt: tekniska krav, varsamhetskrav och förbudet mot förvanskning gäller fortfarande. Bygglov krävs för byggnader och områden som är särskilt värdefulla eller skyddade i detaljplan (9 kap. 37 §), närmare än 30 meter från ett järnvägsspårs mitt (9 kap. 34 §) och för komplementbostadshus vid flygplatser och övnings- eller skjutfält som är riksintresse för totalförsvaret (9 kap. 36 §)."),
    ("tips","Ligger tomten inom strandskydd eller kulturmiljö kan reglerna vara strängare – hör med kommunen först."),
+   ("h2","Källor"),
+   ("ul",[f'<a class="text-link" href="{u}" rel="noopener">{t}</a>' for t, u in KOMPL_SRC]),
    ("cta",("Vill du bygga attefallshus?","Vi bygger nyckelfärdigt och hjälper dig med reglerna. Gratis platsbesök och kostnadsförslag."))],
   [("attefallshus.html","Attefallshus","Vi bygger nyckelfärdigt."),
    ("friggebod.html","Friggebod","Nu komplementbyggnad."),
    ("tillbyggnad.html","Tillbyggnad","Bygg ihop med huset.")],
   faq=[("Krävs bygglov eller anmälan för attefallshus 2026?","Nej, inte för själva huset om måtten hålls. Anmälan krävs för vatten och avlopp, ventilation, eldstad och rökkanal."),
-       ("Hur nära tomtgränsen får attefallshuset stå?","Närmare än 4,5 meter krävs bygglov, om inte grannen skriftligen medgett placeringen."),
-       ("Hur stort får ett attefallshus vara utanför detaljplan?","Upp till 50 m² och 4,5 meter taknockshöjd.")],
-  badge="Regler", read="4 min")
+       ("Hur nära tomtgränsen får attefallshuset stå?","Närmare än 4,5 meter krävs bygglov, om inte grannarna skriftligen medgett placeringen."),
+       ("Hur stort får ett attefallshus vara utanför detaljplan?","Upp till 50 m² byggnadsarea och 4,5 meter taknockshöjd, och högst 65 m² lovfria komplementbyggnader på tomten sammanlagt."),
+       ("Finns attefallstillbyggnaden kvar?","Nej. Sedan 1 december 2025 gäller en gemensam gräns på 30 m² för lovfria tillbyggnader på ett hus, och tidigare lovfria tillbyggnader räknas in.")],
+  badge="Regler", read="5 min")
 
 article("vad-kostar-bygga-hus.html",
   "Vad kostar det att bygga hus? Prisguide 2026 | Geal Entreprenad AB",

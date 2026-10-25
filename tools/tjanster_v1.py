@@ -6,7 +6,9 @@ stoppas av en halvfärdig fil). Schema per sida – se tools/tj_check.py."""
 import importlib, sys
 
 MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", "tj_malare_b",
-           "tj_badrum_bygg", "tj_snickare"]
+           "tj_badrum_bygg", "tj_snickare",
+           # v2 (2026-10-25): 18 ortsidor badrum/kök/målare
+           "tj_v2_badrum", "tj_v2_kok", "tj_v2_malare"]
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {

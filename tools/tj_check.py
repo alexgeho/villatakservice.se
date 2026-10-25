@@ -157,6 +157,17 @@ for f in shs:
             j = jac(shs[f], sh(words_of(open(fp, encoding="utf-8").read()), o))
             if j > maxloc[0]: maxloc = (j, f"{f} – {other}")
             if j > 0.25: errors.append(f"likhet {j:.1%} {f} – {other} (> 25 %)")
+# Mot andra tjänsters ortsidor på samma ort (v2: t.ex. badrum/kök/målare på Lidingö)
+for f in shs:
+    o = TJ[f].get("ort")
+    if not o: continue
+    for g, dg in TJ.items():
+        if g == f or dg.get("ort") != o or dg["service"] == TJ[f]["service"] or g not in pages: continue
+        if g in shs and g < f: continue  # paret räknas en gång
+        j = jac(shs[f], shs[g] if g in shs else sh(words_of(G.render(pages[g])), o))
+        if j > maxloc[0]: maxloc = (j, f"{f} – {g}")
+        if j > 0.25: errors.append(f"likhet {j:.1%} {f} – {g} (> 25 %, samma ort)")
+        elif VERB: print(f"  {j:.1%} {f} – {g} (samma ort)")
 # Mot byggtorg.se
 if "--no-byggtorg" not in ARGS:
     for f in shs:
@@ -174,7 +185,7 @@ if "--no-byggtorg" not in ARGS:
 
 for f in sorted(wc): print(f"{wc[f]:5d} ord  {f}  | {G.short_title(TJ[f]['title'])}")
 print(f"Parvis max inom tjänst: {maxin[0]:.1%} {maxin[1]} – {maxin[2]}")
-print(f"Mot ortens tak-sidor: max {maxloc[0]:.1%} {maxloc[1]}")
+print(f"Mot samma orts sidor (tak + andra tjänster): max {maxloc[0]:.1%} {maxloc[1]}")
 print(f"Mot byggtorg (andel av våra shingles): max {maxbt[0]:.1%} {maxbt[1]} – {maxbt[2]}")
 for w_ in warns: print("  WARN:", w_)
 for e in errors: print("  FEL:", e)
