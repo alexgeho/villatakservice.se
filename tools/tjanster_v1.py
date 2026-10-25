@@ -14,9 +14,12 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            # v4 (2026-10-25): plåtslagarhubb + 18 ortsidor plåtslagare/fönsterbyte/köksrenovering
            "tj_v4_plat", "tj_v4_fonster", "tj_v4_kok",
            # v5 (2026-10-25): 18 ortsidor badrumsrenovering/målare/takbyte
-           "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte"]
+           "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte",
+           # v6 (2026-10-25): 18 ortsidor golvläggare/snickare/fasadrenovering
+           "tj_v6_golv", "tj_v6_snickare", "tj_v6_fasad"]
 # Moduler vars ortsidor korslänkas med ortens övriga tjänstesidor (åt båda hållen).
-V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte"}
+V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte",
+              "tj_v6_golv", "tj_v6_snickare", "tj_v6_fasad"}
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
