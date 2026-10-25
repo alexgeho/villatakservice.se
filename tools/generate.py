@@ -3002,7 +3002,7 @@ page(file="nybyggnad-villa.html", service=True, service_type="Nybyggnad villa",
   body=hero("Bygga villa i Stockholm – nyckelfärdigt",
     "Drömmer du om ett nytt hus? Vi bygger villor från grunden i Stockholm som total entreprenör – från ritning och bygglov till nyckelfärdigt och inflyttningsklart.",
     BYGG_CRUMB+[("Nybyggnad","nybyggnad-villa.html")],
-    [("#nyckelfardigt","Nyckelfärdigt"),("#process","Process"),("#faq","Vanliga frågor")])
+    [("#nyckelfardigt","Nyckelfärdigt"),("#process","Process"),("#faq","Vanliga frågor")], trust=["Gratis besök och kostnadsförslag", "Nyckelfärdigt från grund till inflyttning"])
     + sec("Nyckelfärdigt hus – vad innebär det?", [
         "Nyckelfärdigt betyder att vi ansvarar för hela kedjan och lämnar över ett färdigt hus som du kan flytta in i. Du slipper samordna arkitekt, hantverkare och leverantörer själv.",
         f"Vi hanterar även taket in i minsta detalj tack vare vår takkompetens – se {a('villatak.html','tak på villa')} – vilket ger en tät och hållbar konstruktion från dag ett."], sid="nyckelfardigt")
@@ -3037,7 +3037,7 @@ page(file="friggebod.html", service=True, service_type="Friggebod",
   body=hero("Friggebod i Stockholm",
     "Friggebod är i dag ett vardagsnamn. Sedan 1 december 2025 heter det komplementbyggnad i lagen – och den får vara större: upp till 30 m² inom detaljplan, utan bygglov och utan anmälan. Vi bygger förråd, växthus och verkstad nyckelfärdigt.",
     BYGG_CRUMB+[("Friggebod","friggebod.html")],
-    [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor"),("#kallor","Källor")])
+    [("#regler","Regler"),("#skillnad","Friggebod vs attefall"),("#faq","Vanliga frågor"),("#kallor","Källor")], trust=["Gratis besök och kostnadsförslag", "Nyckelfärdigt från grund till inflyttning"])
     + sec_split("Regler för friggebod", [
         "Friggebodsreglerna med 15 m² och 3,0 meter gäller inte längre, och ordet friggebod finns inte kvar i plan- och bygglagen. Det som byggs i dag är en <strong>komplementbyggnad</strong> – en fristående byggnad som kompletterar en byggnad och inte är inredd med en självständig bostad, till exempel förråd, garage, växthus eller verkstad.",
         "Inom detaljplan krävs varken bygglov eller anmälan om byggnadsarean är högst 30,0 m², taknockshöjden högst 4,0 meter, byggnadsarean är mindre än för huset den kompletterar och byggnaden står inom tomten. Utanför detaljplan gäller 50,0 m² och 4,5 meter (PBL 9 kap. 4–5 §§).",
@@ -3069,7 +3069,7 @@ page(file="fritidshus.html", service=True, service_type="Bygga fritidshus",
   body=hero("Bygga fritidshus i Stockholm",
     "Vi bygger fritidshus i Stockholm med omnejd – nyckelfärdigt eller platsbyggt. Från ritning och bygglov till ett inflyttningsklart hus, med en byggpartner genom hela projektet.",
     BYGG_CRUMB+[("Fritidshus","fritidshus.html")],
-    [("#nyckelfardigt","Nyckelfärdigt"),("#faq","Vanliga frågor")])
+    [("#nyckelfardigt","Nyckelfärdigt"),("#faq","Vanliga frågor")], trust=["Gratis besök och kostnadsförslag", "Nyckelfärdigt från grund till inflyttning"])
     + sec("Nyckelfärdigt eller platsbyggt fritidshus", [
         "Ett nyckelfärdigt fritidshus levereras helt färdigt att flytta in i – vi ansvarar för hela kedjan. Platsbyggt ger mer frihet i utformningen. Vi hjälper dig välja utifrån tomt, budget och önskemål.",
         f"Ett mindre projekt kan lösas som {a('attefallshus.html','attefallshus')} (upp till 30 m²) eller {a('friggebod.html','friggebod')} – sedan 1 december 2025 upp till 30 m² inom detaljplan utan bygglov."], sid="nyckelfardigt")
