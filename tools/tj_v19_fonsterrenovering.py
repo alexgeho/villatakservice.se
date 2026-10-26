@@ -190,7 +190,7 @@ _SOLNA_FAS = ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--mi
 _SOLNA_LGH = ("Solna stad – För lägenhetsinnehavare (guide till lov och anmälan)",
               "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-lagenhetsinnehavare")
 _SOLNA_VILLA = ("Solna stad – För villaägare (guide till lov och anmälan)",
-                "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-villaagare")
+                "https://www.solna.se/bygga-bo--miljo/bygga/guide/villaagare")
 
 PAGES_TJ = {
 

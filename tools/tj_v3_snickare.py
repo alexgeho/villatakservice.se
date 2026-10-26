@@ -23,7 +23,7 @@ SSM_KLASS = "https://stadsmuseet.stockholm/kunskap-och-samlingar/kulturmiljo/kla
 
 # Solna
 S_LAG = "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-lagenhetsinnehavare"
-S_VILLA = "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-villaagare"
+S_VILLA = "https://www.solna.se/bygga-bo--miljo/bygga/guide/villaagare"
 S_FRI = "https://www.solna.se/bygga-bo--miljo/bygga/bygglov/bygglovsfria-atgarder"
 S_KM = "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna"
 

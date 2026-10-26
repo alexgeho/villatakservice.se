@@ -57,7 +57,7 @@ SNA_ANM = "https://www.solna.se/bygga-bo--miljo/bygga/anmalan"
 SNA_VA = "https://www.solna.se/bygga-bo--miljo/bygga/anmalan/andra-vatten-och-avlopp"
 SNA_KULT = "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna"
 SNA_FRIA = "https://www.solna.se/bygga-bo--miljo/bygga/bygglov/bygglovsfria-atgarder"
-SNA_VILLA = "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-villaagare"
+SNA_VILLA = "https://www.solna.se/bygga-bo--miljo/bygga/guide/villaagare"
 # Danderyd
 DAN_ARK = "https://www.danderyd.se/bygga-bo-och-miljo/bygga-andra-riva/ritningsarkiv/"
 DAN_INV = "https://www.danderyd.se/bygga-bo-och-miljo/bygga-andra-riva/checklistor/checklistor-invandig-andring/"
