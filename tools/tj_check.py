@@ -71,7 +71,8 @@ BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "fasadmalning": ["fasadmalning", "malare"], "tapetsering": ["tapetsering", "malare"],
           "golvslipning": ["golvslipning", "vad-kostar-golvslipning", "golvlaggning"],
           "fonsterrenovering": ["fonsterrenovering", "fonsterbyte", "vad-kostar-fonsterbyte"],
-          "attefallshus": ["attefallshus", "attefallshus-regler"]}
+          "attefallshus": ["attefallshus", "attefallshus-regler"],
+          "totalrenovering": ["totalrenovering"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}
 # Sidor som skrivs parallellt (andra moduler) – länkar dit räknas inte som trasiga.
@@ -153,7 +154,8 @@ for svc, fs in bysvc.items():
         if j > 0.25: errors.append(f"likhet {j:.1%} {x} – {y} (> 25 %)")
         elif VERB: print(f"  {j:.1%} {x} – {y}")
 # v16: ortsida mot hubben när hubben är en vanlig sida i generate.py (t.ex. attefallshus.html + regelartikeln)
-HUB_PLAIN = {"attefallshus": ["attefallshus.html", "attefallshus-regler.html"]}
+HUB_PLAIN = {"attefallshus": ["attefallshus.html", "attefallshus-regler.html"],
+             "totalrenovering": ["villarenovering.html", "byggfirma.html"]}
 for f in shs:
     for other in HUB_PLAIN.get(TJ[f]["service"], []):
         fp = os.path.join(ROOT, other)

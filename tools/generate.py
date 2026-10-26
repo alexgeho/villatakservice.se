@@ -2888,10 +2888,11 @@ page(file="villarenovering.html", service=True, service_type="Villarenovering",
         "Fasad och fönster.","Ny planlösning.",
         "El och VVS (via behöriga).","Energiåtgärder och isolering."], sid="ingar")
     + rot_box("Villarenovering på befintlig bostad ger normalt rätt till ROT-avdrag på arbetskostnaden.")
+    + (tj_list_html("Totalrenovering per område", TJ_DISTRICTS["totalrenovering"], muted=True, sid="omraden") if TJ_DISTRICTS.get("totalrenovering") else "")
     + links_block("Relaterat", [
         ("byggfirma.html","Total entreprenad","En entreprenör för hela renoveringen."),
         ("tillbyggnad.html","Tillbyggnad","Kombinera renovering med mer yta."),
-        ("takrenovering.html","Takrenovering","Renovera taket samtidigt.")]),
+        ("takrenovering.html","Takrenovering","Renovera taket samtidigt.")], muted=not TJ_DISTRICTS.get("totalrenovering")),
   faq=[
     ("Kan jag bo kvar under renoveringen?","Ofta ja vid delrenovering. Vid totalrenovering planerar vi etapper eller tidplan så att det påverkar dig så lite som möjligt."),
     ("Får jag ROT-avdrag?","Ja, arbete på din befintliga bostad ger normalt ROT (30 % 2026, max 50 000 kr/person/år). Vi drar av det på fakturan."),
