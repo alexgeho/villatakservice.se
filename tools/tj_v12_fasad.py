@@ -227,7 +227,7 @@ PAGES_TJ = {
      "https://www.solna.se/download/18.d9b843718dfa99e174dfd7/1709812406982/Planbeskrivning_LAGAKRAFT.pdf"),
     ("Solna stad – Tilläggsplan för vindsinredning i Råsunda, plan- och genomförandebeskrivning (pdf)",
      "https://www.solna.se/download/18.6ce5045216a58f96d2f451b0/1560347652584/P09_3%20Till%C3%A4ggsplan,%20vindsinredning%20i%20R%C3%A5sunda_Plan-%20och%20genomf%C3%B6randebeskrivning.pdf"),
-    ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/vanliga-byggatgarder/fasadandring"),
+    ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/guide/vanliga-byggatgarder/fasadandring"),
     ("Solna stad – Kulturmiljöer i Solna", "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna"),
     _BV_FASAD, _BV_FMAT, _BV_ENST, _SKV_LISTA, _SKV_ROT,
   ],

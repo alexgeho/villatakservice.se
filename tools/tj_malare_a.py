@@ -195,7 +195,7 @@ PAGES_TJ = {
   ],
   "sources": [
     ("Solna stad – Bygglovsfria åtgärder", "https://www.solna.se/bygga-bo--miljo/bygga/bygglov/bygglovsfria-atgarder"),
-    ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/vanliga-byggatgarder/fasadandring"),
+    ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/guide/vanliga-byggatgarder/fasadandring"),
     ("Solna stad – Kulturmiljöer i Solna", "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna"),
     ("Stockholmskällan / Stadsmuseet – Näckrosen (Stockholms spår)",
      "https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSM_DOK_000066.pdf"),

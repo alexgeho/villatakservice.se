@@ -186,7 +186,7 @@ _SOL_VENT = ("Sollentuna kommun – Ventilation (din bostad)",
 _SOL_VINST = ("Sollentuna kommun – Installation eller ändring av ventilation",
               "https://www.sollentuna.se/bygga-bo--miljo/bygga-nytt-andra-eller-riva/installation-eller-andring-av-ventilation/")
 _SOLNA_KUL = ("Solna stad – Kulturmiljöer i Solna", "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna")
-_SOLNA_FAS = ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/vanliga-byggatgarder/fasadandring")
+_SOLNA_FAS = ("Solna stad – Fasadändring", "https://www.solna.se/bygga-bo--miljo/bygga/guide/vanliga-byggatgarder/fasadandring")
 _SOLNA_LGH = ("Solna stad – För lägenhetsinnehavare (guide till lov och anmälan)",
               "https://www.solna.se/bygga-bo--miljo/bygga/guide-till-lov-och-anmalan/for-lagenhetsinnehavare")
 _SOLNA_VILLA = ("Solna stad – För villaägare (guide till lov och anmälan)",
