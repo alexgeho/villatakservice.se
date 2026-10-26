@@ -550,7 +550,7 @@ PAGES_TJ = {
 # ------------------------------------------------------------------ UPPLANDS VÄSBY
 "golvslipning-upplands-vasby.html": {
   "kind": "district", "service": "golvslipning", "ort": "Upplands Väsby", "svc_label": "Golvslipning",
-  "title": "Golvslipning i Upplands Väsby – radhus på platta",
+  "title": "Golvslipning i Upplands Väsby – trägolv i radhus och villor",
   "description": "Golvslipning i Upplands Väsby: trägolv på reglar ovanpå betongplattan i radhus och kedjehus – glipan vid sockeln, fukten under golvet och listerna.",
   "h1": "Golvslipning i Upplands Väsby",
   "lead": "I ett radhus eller kedjehus kan trägolvet ligga på reglar ovanpå en betongplatta. Det påverkar inte så mycket hur golvet slipas, men desto mer det som händer runt omkring: glipan vid väggen, listerna och fukten under golvet. Geal Entreprenad AB slipar och ytbehandlar trägolv i radhus, kedjehus och villor i Upplands Väsby, och vi börjar med att se hur golvet är byggt.",
