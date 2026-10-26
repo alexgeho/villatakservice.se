@@ -487,7 +487,31 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/attefallshus-enskede.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/attefallshus-farsta.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/attefallshus-hagersten.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/attefallshus-haninge.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/attefallshus-hasselby.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -541,6 +565,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/attefallshus-spanga.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/attefallshus-taby.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -554,6 +584,12 @@
   </url>
   <url>
     <loc>https://villatakservice.se/attefallshus-vallentuna.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/attefallshus-vallingby.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -1927,6 +1963,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/koksrenovering-farsta.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/koksrenovering-hagersten.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -1957,6 +1999,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/koksrenovering-kungsholmen.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/koksrenovering-lidingo.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -1970,6 +2018,24 @@
   </url>
   <url>
     <loc>https://villatakservice.se/koksrenovering-norrtalje.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/koksrenovering-osteraker.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/koksrenovering-ostermalm.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/koksrenovering-skarholmen.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2030,6 +2096,12 @@
   </url>
   <url>
     <loc>https://villatakservice.se/koksrenovering-varmdo.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/koksrenovering-vasastan.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2875,6 +2947,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/tillbyggnad-botkyrka.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/tillbyggnad-bromma.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -2911,7 +2989,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/tillbyggnad-hasselby.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/tillbyggnad-huddinge.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/tillbyggnad-jarfalla.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -2941,7 +3031,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/tillbyggnad-sigtuna.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/tillbyggnad-sollentuna.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/tillbyggnad-solna.html</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/tillbyggnad-sundbyberg.html</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
