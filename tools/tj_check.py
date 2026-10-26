@@ -72,7 +72,9 @@ BT_HUB = {"malare": ["malare"], "badrumsrenovering": ["badrumsrenovering"],
           "golvslipning": ["golvslipning", "vad-kostar-golvslipning", "golvlaggning"],
           "fonsterrenovering": ["fonsterrenovering", "fonsterbyte", "vad-kostar-fonsterbyte"],
           "attefallshus": ["attefallshus", "attefallshus-regler"],
-          "totalrenovering": ["totalrenovering"]}
+          "totalrenovering": ["totalrenovering"],
+          # v21: byggtorg har inga takbyte-<ort>; närmaste sökord är takrenovering-<ort> (läggs till per ort nedan)
+          "takbyte": ["vad-kostar-takbyte"]}
 
 pages = {p["file"]: p for p in G.PAGES if p["file"] in TJ}
 # Sidor som skrivs parallellt (andra moduler) – länkar dit räknas inte som trasiga.
@@ -190,6 +192,8 @@ if "--no-byggtorg" not in ARGS:
     for f in shs:
         d = TJ[f]
         slugs = ([f[:-5]] if d["kind"] == "district" else []) + BT_HUB.get(d["service"], [])
+        if d["service"] == "takbyte" and d["kind"] == "district":
+            slugs.append("takrenovering-" + f[len("takbyte-"):-5])
         if d["kind"] == "hub" and d["service"] in BT_HUB: pass
         ours = sh(words_of(G.render(pages[f])))
         for s_ in slugs:
