@@ -3898,3 +3898,14 @@ TRP.update({
    'close-up of the eaves of an older Swedish villa: red clay roof tiles, black metal eaves flashing, a half-round metal gutter with a downpipe bracket, white painted fascia board and ventilation gap under the roof overhang, soft daylight, no people'),
  ]},
 })
+
+# v29 (2026-10-27): tio stadsdelar med tre bilder per sida, innehåll i tools/tj_v29_takreno_{a,b}.py.
+from tj_v29_takreno_a import TRP29A  # noqa: E402
+from tj_v29_takreno_b import TRP29B  # noqa: E402
+TRP.update(TRP29A)
+TRP.update(TRP29B)
+from tj_v29_takreno_extra import EXTRA_SECTIONS, EXTRA_FAQ  # noqa: E402
+for _o, _x in EXTRA_SECTIONS.items():
+    TRP[_o]["sections"] = TRP[_o]["sections"] + _x
+for _o, _x in EXTRA_FAQ.items():
+    TRP[_o]["faq"] = TRP[_o]["faq"] + _x

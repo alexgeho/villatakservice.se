@@ -87,6 +87,9 @@ TRP_ORTER = ["Bromma","Solna","Nacka","Täby","Danderyd","Lidingö","Huddinge","
              "Enskede","Älvsjö","Norrtälje","Södertälje"]
 # v8 (2026-10-25): orter med spår "<10" men många småhus; läggs till när innehållet finns i TRP.
 TRP_ORTER += [o for o in ["Österåker", "Ekerö", "Botkyrka", "Sigtuna", "Hässelby", "Spånga"] if o in TRP]
+# v29 (2026-10-27): resterande stadsdelar (spår "<10"); tre bilder per sida.
+TRP_ORTER += [o for o in ["Farsta", "Hägersten", "Kista", "Kungsholmen", "Skärholmen", "Sundbyberg",
+                          "Södermalm", "Vasastan", "Vällingby", "Östermalm"] if o in TRP]
 TRP_FILES = {o: f"takrenovering-{slug(o)}.html" for o in TRP_ORTER}
 TRP_NEIGHBORS = {
   "Bromma": ["Solna","Älvsjö","Järfälla"], "Solna": ["Bromma","Danderyd","Sollentuna"],
@@ -102,6 +105,12 @@ TRP_NEIGHBORS = {
   "Österåker": ["Vallentuna","Täby","Norrtälje"], "Ekerö": ["Bromma","Hässelby","Spånga"],
   "Botkyrka": ["Huddinge","Södertälje","Älvsjö"], "Sigtuna": ["Upplands Väsby","Vallentuna","Sollentuna"],
   "Hässelby": ["Spånga","Bromma","Järfälla"], "Spånga": ["Hässelby","Bromma","Sollentuna"],
+  # v29
+  "Farsta": ["Enskede","Huddinge","Tyresö"], "Hägersten": ["Älvsjö","Skärholmen","Bromma"],
+  "Kista": ["Spånga","Sollentuna","Järfälla"], "Kungsholmen": ["Vasastan","Bromma","Solna"],
+  "Skärholmen": ["Hägersten","Botkyrka","Huddinge"], "Sundbyberg": ["Solna","Bromma","Spånga"],
+  "Södermalm": ["Enskede","Hägersten","Nacka"], "Vasastan": ["Östermalm","Kungsholmen","Solna"],
+  "Vällingby": ["Hässelby","Spånga","Bromma"], "Östermalm": ["Vasastan","Lidingö","Danderyd"],
 }
 TRP_NEIGHBORS = {o: [n for n in v if n in TRP] for o, v in TRP_NEIGHBORS.items()}
 # Bilder (tools/gen_images_flux.py): <sida>-1 = hero, <sida>-2 = i innehållet.
@@ -1649,11 +1658,14 @@ for _ort in TRP_ORTER:
             _parts.append(lambda m, s=_s: sec(s["h2"], s["paras"], muted=m, sid=s["id"]))
         if _i == 0:
             _parts.append(lambda m, o=_ort: fig(f"takrenovering-{slug(o)}-2", TRP_IMG_ALT[o][1], muted=m))
+        # v29: valfri tredje bild (img[2]) efter sista textsektionen.
+        if _i == len(_d["sections"]) - 1 and _i > 0 and len(_d.get("img", [])) > 2:
+            _parts.append(lambda m, o=_ort, d=_d: fig(f"takrenovering-{slug(o)}-3", d["img"][2][0], muted=m))
     _parts.append(lambda m, o=_ort, d=_d: sec_process(f"Så går takrenoveringen till i {o}", d["steps"], muted=m, sid="process"))
     _parts.append(lambda m, o=_ort, d=_d: sec(f"ROT-avdrag för takrenovering i {o}", d["rot"], muted=m, sid="rot"))
     _parts.append(lambda m, o=_ort, d=_d: sec(f"Vad kostar en takrenovering i {o}?", d["price"], muted=m, sid="pris"))
-    _parts.append(lambda m, o=_ort: links_block(f"Mer om tak i {o}", [
-        (_area_files[o], f"Takläggare i {o}", "Takbyte, besiktning och plåtarbeten."),
+    _parts.append(lambda m, o=_ort: links_block(f"Mer om tak i {o}", (
+        [(_area_files[o], f"Takläggare i {o}", "Takbyte, besiktning och plåtarbeten.")] if o in _area_files else []) + [
         ("takrenovering.html", "Takrenovering och takomläggning", "Så fungerar en omläggning."),
         ("vad-kostar-takrenovering.html", "Vad kostar en takrenovering?", "Det här styr priset."),
         ("kalkylator-takbyte.html", "Takbyte-kalkylator", "Räkna på takytan och ROT.")], muted=m, sid="lankar"))
@@ -1669,7 +1681,7 @@ for _ort in TRP_ORTER:
       cta=(f"Ska taket renoveras i {_ort}?", "Vi kommer ut gratis, går igenom taket och lämnar ett skriftligt kostnadsförslag."),
       body=hero(f"Takrenovering i {_ort}", _d["lead"], _crumbs,
         [("#hus", "Husen"), ("#process", "Så går det till"), ("#rot", "ROT"), ("#faq", "Vanliga frågor"), ("#kallor", "Källor")],
-        img=(f"takrenovering-{slug(_ort)}-1", TRP_IMG_ALT[_ort][0]))
+        trust=_d.get("trust"), img=(f"takrenovering-{slug(_ort)}-1", TRP_IMG_ALT[_ort][0]))
         + _html,
       faq=_d["faq"],
       after_faq=_trp_sources(_d["sources"], muted=True))

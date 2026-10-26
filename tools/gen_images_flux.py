@@ -77,6 +77,8 @@ for _o, _t in TRP.items():
     if "img" in _t:
         JOBS[f"takrenovering-{_slug(_o)}-1"] = ("4:3", _t["img"][0][1])
         JOBS[f"takrenovering-{_slug(_o)}-2"] = ("3:2", _t["img"][1][1])
+        if len(_t["img"]) > 2:  # v29: tredje bild
+            JOBS[f"takrenovering-{_slug(_o)}-3"] = ("3:2", _t["img"][2][1])
 
 def run(name):
     aspect, prompt = JOBS[name]

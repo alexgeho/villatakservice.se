@@ -46,7 +46,7 @@ if "--takreno" in sys.argv:
     tr = {o: shingles(text_of(os.path.join(ROOT, TRP_FILES[o])), o) for o in TRP_ORTER}
     pp = sorted(((len(tr[x] & tr[y]) / len(tr[x] | tr[y]), x, y)
                  for x, y in itertools.combinations(tr, 2)), reverse=True)
-    vs = sorted(((len(tr[o] & pages[o]) / len(tr[o] | pages[o]), o) for o in tr), reverse=True)
+    vs = sorted(((len(tr[o] & pages[o]) / len(tr[o] | pages[o]), o) for o in tr if o in pages), reverse=True)  # v29: innerstaden saknar takläggarsida
     print(f"Takrenovering: {len(tr)} sidor. Parvis max {pp[0][0]:.1%}, snitt {sum(p[0] for p in pp)/len(pp):.1%}.")
     for s_, x, y in pp[:5]:
         print(f"  {s_:.1%}  {x} – {y}")
