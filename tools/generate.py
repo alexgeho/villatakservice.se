@@ -39,6 +39,11 @@ AREAS = AREAS + AREAS_NEW
 from omraden_extra import (AREAS_X, NEIGHBORS_X, NEIGHBORS_ADD_X, LOC_X, LOC_EXTRA_X,
     ORT_SEO_X, ORT_SRC_X)
 AREAS = AREAS + AREAS_X
+# Innerstaden (v30, 2026-10-27): Kungsholmen, Södermalm, Vasastan, Östermalm – tools/omraden_v30.py.
+from omraden_v30 import (AREAS_V30, NEIGHBORS_V30, NEIGHBORS_ADD_V30, LOC_V30, LOC_EXTRA_V30,
+    ORT_SEO_V30, ORT_SRC_V30, ORT_HERO_ALT_V30, ORT_IMG3_V30, ORT_TRUST_V30)
+AREAS = AREAS + AREAS_V30
+STOCKHOLM_STAD = STOCKHOLM_STAD + AREAS_V30
 
 # Dalarna: Geal Entreprenad AB samordnar/förmedlar takprojekt och utför via lokal
 # samarbetspartner på plats i Dalarna. Ingen egen adress i regionen anges.
@@ -72,7 +77,8 @@ NEIGHBORS = {
 }
 NEIGHBORS.update(NEIGHBORS_NEW)
 NEIGHBORS.update(NEIGHBORS_X)
-for _o, _add in list(NEIGHBORS_ADD.items()) + list(NEIGHBORS_ADD_X.items()):
+NEIGHBORS.update(NEIGHBORS_V30)
+for _o, _add in list(NEIGHBORS_ADD.items()) + list(NEIGHBORS_ADD_X.items()) + list(NEIGHBORS_ADD_V30.items()):
     NEIGHBORS[_o] = NEIGHBORS[_o] + [x for x in _add if x not in NEIGHBORS[_o]]
 
 def slug(name):
@@ -1484,6 +1490,8 @@ LOC.update(LOC_NEW)
 LOC_EXTRA.update(LOC_EXTRA_NEW)
 LOC.update(LOC_X)
 LOC_EXTRA.update(LOC_EXTRA_X)
+LOC.update(LOC_V30)
+LOC_EXTRA.update(LOC_EXTRA_V30)
 ORT_IMG.update({k: v for k, v in ORT_IMG_NEW.items()
                 if os.path.exists(os.path.join(ROOT, "assets", "images", v[0] + ".webp"))})
 # GSC near-miss (28 d t.o.m. 2026-10-11): egna title/description + en tjänstesektion
@@ -1579,6 +1587,9 @@ def _trp_sources(srcs, muted):
 
 # Hero-bild (fotorealistisk illustration, Replicate flux) för orter som har en.
 ORT_SEO.update(ORT_SEO_X)
+ORT_SEO.update(ORT_SEO_V30)
+ORT_HERO_ALT.update(ORT_HERO_ALT_V30)
+ORT_SRC_X.update(ORT_SRC_V30)
 ORT_HERO = {o: (f"taklaggare-{slug(o)}-1", alt) for o, (alt, _alt2) in ORT_HERO_ALT.items()}
 for _o, (_alt1, _alt2) in ORT_HERO_ALT.items():
     ORT_IMG[_o] = (f"taklaggare-{slug(_o)}-2", _alt2)
@@ -1589,6 +1600,12 @@ for _ort, _d in LOC.items():
     _seo = ORT_SEO.get(_ort, {})
     cityfaq = _d["faq"] + _x["faq"] + _seo.get("faq", [])
     extra_html = "".join(sec(t, ps, muted=(i % 2 == 0)) for i,(t,ps) in enumerate(_x["secs"]))
+    if _ort in ORT_IMG3_V30 and len(_x["secs"]) >= 3:
+        # v30: tredje bild mellan andra och tredje extrasektionen; bilden räknas som en sektion i grå/vit-växlingen.
+        _xs = _x["secs"]
+        extra_html = ("".join(sec(t, ps, muted=(i % 2 == 0)) for i, (t, ps) in enumerate(_xs[:2]))
+                      + fig(f"taklaggare-{slug(_ort)}-3", ORT_IMG3_V30[_ort], muted=True)
+                      + "".join(sec(t, ps, muted=(j % 2 == 1)) for j, (t, ps) in enumerate(_xs[2:])))
     _tr = TAKRENO.get(_ort, [])
     _trt = f"Takrenovering i {_ort}"
     _nsec = len(_x["secs"])
@@ -1616,7 +1633,8 @@ for _ort, _d in LOC.items():
       cta=(f"Behöver du takläggare i {_ort}?", f"Vi är lokala takläggare i {_ort} – begär en kostnadsfri offert på ditt takprojekt."),
       body=hero(f"Takläggare i {_ort}", intro,
         [("Hem","/"),("Områden","omraden.html"),(_ort,f)],
-        [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")], img=ORT_HERO.get(_ort))
+        [("#tjanster","Tjänster"),("#lokalt","Lokalt"),("#faq","Vanliga frågor")], img=ORT_HERO.get(_ort),
+        trust=ORT_TRUST_V30.get(_ort))
         + sec(f"Takläggare i {_ort} – lokalt och nära", paras + [
             f"Oavsett om du behöver ett komplett takbyte eller en riktad renovering ger vi en tydlig bedömning och offert. Vi arbetar även i grannområden – se alla {a('omraden.html','områden vi arbetar i')}."], sid="lokalt")
         + (fig(*ORT_IMG[_ort]) if _ort in ORT_IMG else "")

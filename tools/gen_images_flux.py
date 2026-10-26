@@ -80,6 +80,10 @@ for _o, _t in TRP.items():
         if len(_t["img"]) > 2:  # v29: tredje bild
             JOBS[f"takrenovering-{_slug(_o)}-3"] = ("3:2", _t["img"][2][1])
 
+# v30: innerstadens takläggarsidor (tools/omraden_v30.py).
+from omraden_v30 import ORT_IMG_PROMPTS_V30  # noqa: E402
+JOBS.update(ORT_IMG_PROMPTS_V30)
+
 def run(name):
     aspect, prompt = JOBS[name]
     out = os.path.join(IMG, name + ".webp")
