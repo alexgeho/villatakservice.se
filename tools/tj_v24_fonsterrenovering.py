@@ -315,8 +315,8 @@ PAGES_TJ = {
   "img": [
     ("Äldre trävilla med småspröjsade fönster på en stor trädgårdstomt",
      "early 1900s Swedish wooden villa with small-paned white windows, light grey panel facade, glazed veranda, large garden with old fruit trees, north-western Stockholm, summer" + _IMG_END),
-    ("Tätningslist som monteras i falsen på en innerbåge",
-     "close view of a black rubber weatherstrip being fitted into the rebate of an old painted wooden inner window sash, staple gun and tape measure on the sill, daylight" + _IMG_END),
+    ("Tätningslist och verktyg vid falsen på en innerbåge",
+     "close view of a black rubber weatherstrip lying partly pressed into the rebate of an old painted wooden inner window sash, staple gun on the sill, no hands, no people, daylight" + _IMG_END),
     ("Inre träbåge med extra glas på ett gammalt fönster",
      "interior view of an old Swedish wooden window fitted with an additional inner wooden sash with clear glass, matching profiles, painted white, plants on the sill, daylight" + _IMG_END),
   ],
@@ -410,8 +410,8 @@ PAGES_TJ = {
      "two neighbouring Swedish villas from different eras side by side, an early 1900s wooden villa with small-paned windows and a 1930s functionalist white rendered house with large single-pane windows, gardens with oak trees, south-western Stockholm, summer" + _IMG_END),
     ("Fönsterbåge med spröjs som tagits isär för reparation",
      "old wooden window sash partly disassembled on a workbench, separate glazing bars and stiles with mortise and tenon joints visible, clamps and chisel beside, workshop light" + _IMG_END),
-    ("Funkisfönster med en hel ruta som nykittas",
-     "close view of a 1930s single-pane wooden window sash being re-puttied with linseed putty, putty knife on the frame, white paint, daylight" + _IMG_END),
+    ("Vit funkisbåge och kittknivar på en arbetsbänk",
+     "still life, empty room: a 1930s single-pane white painted wooden window sash lying flat on a workbench, fresh linseed putty bead along the glass edge, a putty knife lying on the bench next to it, soft daylight, realistic photo, no people, no hands, no text" + _IMG_END),
   ],
 },
 
