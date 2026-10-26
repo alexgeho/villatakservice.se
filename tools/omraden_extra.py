@@ -24,10 +24,9 @@ NEIGHBORS_ADD_X = {
 LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo i väster och Hallstavik i norr till Väddö och '
                         'skärgården mot Ålands hav. Vi är takläggare i Norrtälje för villor, fritidshus och '
                         'äldre hus i bland annat Norrtälje stad, Rimbo, Hallstavik och Grisslehamn.',
-               'paras': ['I Norrtälje stad, som grundades 1622, ligger bostadsområden som Färsna, Grind och '
-                         'Vigelsjö med villor och radhus. Rimbo växte runt sin gamla järnvägsknut och '
-                         'Hallstavik runt pappersbruket vid Edeboviken – båda fick många nya villor under '
-                         'efterkrigstiden. Utanför tätorterna finns gårdar, kustbyar och tusentals '
+               'paras': ['Runt Norrtälje stad finns flera områden med villor och radhus. Rimbo och '
+                         'Hallstavik växte efter kriget – enligt SCB gick Rimbo från knappt 1 700 invånare '
+                         '1960 till omkring 3 400 år 1975, och båda orterna fick många nya villor. Utanför tätorterna finns gårdar, kustbyar och tusentals '
                          'fritidshus, många på tomter där vägen slutar en bit från huset.',
                          'På villorna i tätorterna är pannor av betong eller tegel det vanliga, medan '
                          'fritidshusen oftare har papp eller plåt. Skadorna sitter för det mesta i '
@@ -90,17 +89,14 @@ LOC_X = {'Norrtälje': {'intro': 'Norrtälje kommun sträcker sig från Rimbo i 
                       'Märsta, som växte i takt med Arlanda. Vi är takläggare i Sigtuna för villor och '
                       'radhus i bland annat Märsta, Arenberga, Norrbacka, Steninge, Ekilla, Rosersberg och '
                       'Sigtuna stad.',
-             'paras': ['Märsta hade omkring 3 000 invånare 1960 och över 10 000 bara fem år senare. Under '
-                       '1960-talet byggdes kedjehus och villor i Arenberga, på 1970-talet villor och radhus i '
-                       'Norrbacka, och även Steninge och Ekilla domineras av radhus och villor. Även '
-                       'centrala Märsta, som från början mest bestod av villor på stora tomter, har '
-                       'förtätats med tiden.',
+             'paras': ['Enligt SCB hade Märsta knappt 2 900 invånare 1960, över 10 000 fem år senare '
+                       'och nästan 17 000 år 1970. Under de åren växte nya områden med kedjehus, radhus '
+                       'och villor fram runt stationsorten.',
                        'Husen från de åren har ofta pannor på sitt ursprungliga underlag, och i '
                        'radhuslängorna är taken som regel lika gamla. Det betyder '
                        'att en hel länga ofta når slutet av takets livslängd samtidigt, och att det kan vara '
                        'klokt att planera tillsammans med grannarna.',
-                       'Rosersberg ligger mellan Märsta och Upplands Väsby, vid Mälaren och Fysingen, och '
-                       'villastaden där växer fortfarande. I Sigtuna stad ligger husen i sluttningen ner mot Mälaren, och taklandskapet domineras enligt kommunens bevarandeplan av rött lertegel med inslag av plåttak. Hus nära vattnet och på höjderna får mer vind än de som ligger skyddat i '
+                       'Rosersberg ligger mellan Märsta och Upplands Väsby, nära Mälaren och Fysingen. I Sigtuna stad ligger husen i sluttningen ner mot Mälaren, och taklandskapet domineras enligt kommunens bevarandeplan av rött lertegel med inslag av plåttak. Hus nära vattnet och på höjderna får mer vind än de som ligger skyddat i '
                        'kvarteren.'],
              'items': ['Radhus och villor från 1960–70-talen i Märsta',
                        'Tegeltak i Sigtuna stads kulturmiljö',
@@ -153,13 +149,12 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                           'bär, ventilerade takfötter och nya genomföringar för ventilation och skorsten. '
                           'Det är arbeten som blir enklare och billigare att göra när taket ändå är öppet.']),
                         ('Hallstavik och kusten vid Grisslehamn',
-                         ['Hallstavik har vuxit fram som brukssamhälle kring Hallsta pappersbruk, och Visit Roslagen beskriver det gamla brukssamhället som kulturskyddat. Där bör material och utseende '
+                         ['Hallstavik har vuxit fram som brukssamhälle kring pappersbruket, och Visit Roslagen beskriver det gamla brukssamhället som kulturskyddat. Där bör material och utseende '
                           'stämmas av med kommunen innan takarbetet planeras.',
-                          'Grisslehamn på Väddö har varit post- och fiskeläge mot Åland i århundraden, och '
-                          'posthuset från 1756 står kvar. Längs kusten väljer vi plåt och infästningar med '
+                          'Grisslehamn på Väddö ligger längst ut mot Ålands hav. Längs kusten väljer vi plåt och infästningar med '
                           'tanke på vind och salt, och vid ett <a class="text-link" '
                           'href="takbyte.html">takbyte</a> ingår vindskivor och nockar i bedömningen.',
-                          'Hallstavik har vuxit från drygt 2 000 invånare 1950 till omkring 4 600 i dag, och '
+                          'Enligt SCB hade Hallstavik omkring 3 800 invånare 1960 och drygt 5 100 år 1975, och '
                           'villorna från tillväxtåren har nu tak som ofta behöver ses över. Där är en '
                           'omläggning med nytt underlag det vanligaste uppdraget.'])],
                'faq': [('Tar ni hand om rivningen av ett gammalt papptak?',
@@ -258,7 +253,7 @@ LOC_EXTRA_X = {'Norrtälje': {'secs': [('Vanliga tak och problem i Norrtälje',
                         'så värdefulla att särskild hänsyn behövs. Är du osäker om ditt hus kan du skicka in '
                         'bilder till kommunen och få en bedömning innan du väljer material.']),
                       ('Sigtuna stad – tegeltaken i riksintresset',
-                       ['Sigtuna grundades omkring år 980 och är riksintresse för kulturmiljövården. '
+                       ['Sigtuna grundlades under vikingatiden och kallas i kommunens bevarandeplan Sveriges äldsta stad. Staden är riksintresse för kulturmiljövården. '
                         'Kommunens bevarande- och förnyelseplan från 2019 anger att tegeltak i regel ska '
                         'ersättas med likadana pannor, att ett enkupigt lertegel inte ska bytas mot '
                         'tvåkupigt och att gamla pannor är en tillgång som i första hand ska kompletteras.',
@@ -308,10 +303,7 @@ ORT_SRC_X = {'Norrtälje': [('Norrtälje kommun – Lovbefriade åtgärder',
                 'https://www.scb.se/hitta-statistik/artiklar/2026/fritidshus-vart-finns-de/'),
                ('Norrtälje kommun – Fakta och statistik om landsbygden',
                 'https://www.norrtalje.se/info/bygga-bo-miljo/norrtalje-vaxer/landsbygd-skargard/fakta-och-statistik/'),
-               ('Wikipedia – Norrtälje', 'https://sv.wikipedia.org/wiki/Norrt%C3%A4lje'),
-               ('Wikipedia – Rimbo', 'https://sv.wikipedia.org/wiki/Rimbo'),
-               ('Wikipedia – Hallstavik', 'https://sv.wikipedia.org/wiki/Hallstavik'),
-               ('Wikipedia – Grisslehamn', 'https://sv.wikipedia.org/wiki/Grisslehamn'),
+               ('SCB – Folkmängd och landareal i tätorter, per tätort', 'https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0810__MI0810A/LandarealTatortN/'),
                ('Visit Roslagen – Kulturföreningen Rödvillan, Hallstavik',
                 'https://roslagen.se/en/culture-and-history/museum/cultural-association-rodvillan-2/')],
  'Södertälje': [('Södertälje kommun – Fasad, tak, fönster och dörrar',
@@ -334,8 +326,6 @@ ORT_SRC_X = {'Norrtälje': [('Norrtälje kommun – Lovbefriade åtgärder',
               'https://www.sigtuna.se/bygga-bo-och-miljo/bygglov/var-far-du-bygga/flygbuller.html'),
              ('Sigtuna kommun – Bevarande- och förnyelseplan för Sigtuna stad (2019)',
               'https://www.sigtuna.se/download/18.6ed4dd301706254f993282/1582201854957/Bevarande-%20och%20f%C3%B6rnyelseplan%20f%C3%B6r%20Sigtuna%20stad,%20antagen%202019.pdf'),
-             ('Wikipedia – Märsta', 'https://sv.wikipedia.org/wiki/M%C3%A4rsta'),
-             ('Wikipedia – Sigtuna', 'https://sv.wikipedia.org/wiki/Sigtuna'),
-             ('Wikipedia – Rosersberg', 'https://sv.wikipedia.org/wiki/Rosersberg'),
+             ('SCB – Folkmängd och landareal i tätorter, per tätort', 'https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0810__MI0810A/LandarealTatortN/'),
              ('Boverket – Fasadändring, anmälningsplikt och lov',
               'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/')]}

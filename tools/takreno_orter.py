@@ -50,8 +50,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                           'h2': 'Tallar, ädellövträd och närheten till Mälaren',
                           'paras': ['Trädgårdsstäderna i Bromma planterades med tall och ädellövträd, '
                                     'kompletterat med fruktträd och bärbuskar. Södra Ängby byggdes på en '
-                                    'skogbevuxen höjd nära Mälaren, där en stor del av tallskogen fick stå '
-                                    'kvar. Resultatet är skuggiga takfall och mycket barr i rännor och '
+                                    'skogbevuxen höjd nära Mälaren. Resultatet är skuggiga takfall och mycket barr i rännor och '
                                     'ränndalar.',
                                     'På ett tegeltak i skugga får mossan fäste och håller kvar fukten mot '
                                     'pannorna. På ett flackt plåttak blir barr och löv liggande och dämmer '
@@ -169,7 +168,6 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                          'https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSM_DOK_000106.pdf'),
                         ('Stockholmskällan / Stadsmuseet – Alvik (ytterstadsprojektet)',
                          'https://stockholmskallan.stockholm.se/postfiles/SMF/ytterstadsprojektet/Alvik.pdf'),
-                        ('Wikipedia – Södra Ängby', 'https://sv.wikipedia.org/wiki/S%C3%B6dra_%C3%84ngby'),
                         ('Stadsmuseet – Kulturhistorisk klassificering',
                          'https://stadsmuseet.stockholm/kunskap-och-samlingar/kulturmiljo/klassificering/'),
                         ('Stockholms stad – Stadsmuseets kulturhistoriska klassificering (bygglov)',
@@ -193,12 +191,9 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                    'villor runt omkring. Jugendhusen längs Råsundavägen byggdes 1910–12, '
                                    'medan villaområdena tillkom på 1920-talet – många av dem byggda av '
                                    'spårvägare som arbetade vid den stora spårvägsverkstaden.',
-                                   'Stocksundstorp, Bergshamras östra udde vid Stocksundet, har några av '
-                                   'Solnas äldsta villor. Omkring 1892 byggdes tre större villor vid '
-                                   'Stocksundsbron, varav Villa Borganäs och Villa Alnäs står kvar med rikt '
-                                   'lövsågeri. En styckningsplan från 1920 gav 38 tomter, men tomterna '
-                                   'bebyggdes successivt och många villor tillkom först under 1940- till '
-                                   '1970-talen, i tidstypisk arkitektur.',
+                                   'Stocksundstorp ligger vid Stocksundet. I Solnas översiktsplan räknas Alnäs '
+                                   'och Stocksundstorp som en sammanhängande kulturhistoriskt värdefull miljö, '
+                                   'och här står villor från olika tider sida vid sida.',
                                    'Övriga småhusmiljöer som kommunen lyfter fram är Råsta egnahem, '
                                    'Bergshamra by och radhusbebyggelsen vid Solna kyrkby. I norra Solna har '
                                    'nya stadsradhus byggts i Järvastaden och Nya Ulriksdal.'],
@@ -239,7 +234,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                         {'id': 'vatten',
                          'h2': 'Stocksundet, Brunnsviken och nationalstadsparken',
                          'paras': ['Stocksundstorp ligger vid Stocksundet, som förbinder Lilla Värtan med '
-                                   'Edsviken, och hela området ingår i Kungliga nationalstadsparken. Husen '
+                                   'Edsviken, och Solnas översiktsplan behandlar området i planen för Nationalstadsparken. Husen '
                                    'här står nära vattnet och bland stora träd, vilket ger både vind över '
                                    'taken och mycket löv och barr i rännorna.',
                                    'Där ett tak ligger i skugga under stora träd får mossa fäste och håller '
@@ -251,7 +246,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                         {'id': 'epoker',
                          'h2': 'Hus från olika epoker kräver olika bedömningar',
                          'paras': ['Ett tak på en sommarvilla från 1890-talet har andra detaljer än ett på '
-                                   'en 1920-talsvilla i Råsunda eller en 1960-talsvilla i Stocksundstorp. '
+                                   'en 1920-talsvilla i Råsunda eller en senare villa i Stocksundstorp. '
                                    'Vindskivor med lövsågeri, takkupor, skorstenar och takfotens utformning '
                                    'är en del av husets karaktär, och i Solnas värdefulla miljöer är det '
                                    'just sådant som inte får förvanskas.',
@@ -310,7 +305,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                     'Det kräver bygglov. Solna stad anger att bygglovsbefriade åtgärder inte kan användas i '
                     'Råsunda villastad, och kommunen anser att byte av takmaterial inom detaljplan är '
                     'lovpliktigt. Vi hjälper dig med underlaget om du vill söka.'),
-                   ('Hur tar ni hand om lövsågeriet på en gammal villa i Stocksundstorp?',
+                   ('Hur tar ni hand om lövsågade vindskivor på en äldre villa?',
                     'Vi demonterar och sparar de dekorativa vindskivorna och detaljerna där det går och '
                     'sätter tillbaka dem efter omläggningen. Är delar rötskadade kan de kopieras i trä.'),
                    ('Var ser jag om mitt hus i Solna är kulturklassat?',
@@ -331,7 +326,6 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                         'https://www.solna.se/download/18.d878336172a235b6c417193/1592394620116/Solna%20stads%20%C3%96versiktsplan%202030.pdf'),
                        ('Stockholmskällan / Stadsmuseet – Näckrosen (Stockholms spår)',
                         'https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSM_DOK_000066.pdf'),
-                       ('Wikipedia – Stocksundstorp', 'https://sv.wikipedia.org/wiki/Stocksundstorp'),
                        ('Boverket – Fasadändring, PBL kunskapsbanken',
                         'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                        ('Skatteverket – Så fungerar rotavdraget',
@@ -726,8 +720,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                       ('Boverket – Fasadändring',
                        'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                       ('Skatteverket – Så fungerar rotavdraget',
-                       'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),
-                      ('Wikipedia – Näsbypark', 'https://en.wikipedia.org/wiki/N%C3%A4sbypark')]},
+                       'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html')]},
  'Danderyd': {'title': 'Takrenovering i Danderyd – tegel och plåt i villastäderna',
               'description': 'Takrenovering i Danderyd: tvåkupigt lertegel och falsad plåt i Djursholm och '
                              'Stocksund, egnahem i Enebyberg. Lovplikt i riksintresset, varsam omläggning.',
@@ -738,12 +731,12 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
               'card': 'Djursholm, Stocksund och Enebyberg.',
               'sections': [{'id': 'hus',
                             'h2': 'Djursholm, Stocksund och Enebyberg – villastäder från sekelskiftet',
-                            'paras': ['Djursholm grundades 1889 och beskrivs i kommunens översiktsplan som '
-                                      'landets första villastad anlagd som förort. Bebyggelsen speglar '
+                            'paras': ['Djursholm beskrivs i kommunens översiktsplan som landets första '
+                                      'villastad anlagd som förort, grundad på privat initiativ. Bebyggelsen speglar '
                                       'framför allt perioden 1890–1930, med stora villor på naturtomter där '
                                       'stilen går från de första enkla trävillorna via nationalromantik och '
-                                      'jugend till funktionalism. Stocksund växte fram parallellt: Stockby '
-                                      'AB bildades 1888 och sålde sin första tomt 1890, och villorna i '
+                                      'jugend till funktionalism. Stocksund är enligt samma plan också en '
+                                      'villastad från sekelskiftet och 1900-talets första decennier, och villorna i '
                                       'Mörbyområdet ritades till stor del av stadsarkitekten D Melin i '
                                       'nationalromantik och senjugend.',
                                       'Sedan 1987 är Djursholms villastad och Stocksunds villastad '
@@ -912,8 +905,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                           ('Skatteverket – Så fungerar rotavdraget',
                            'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),
-                          ('Wikipedia – Djursholm', 'https://sv.wikipedia.org/wiki/Djursholm'),
-                          ('Wikipedia – Stocksund', 'https://sv.wikipedia.org/wiki/Stocksund')]},
+]},
  'Lidingö': {'title': 'Takrenovering i Lidingö – villastäder och radhusbyar',
              'description': 'Takrenovering på Lidingö: lertegel i villastäderna, enkupigt tegel och koppar i '
                             'Mölna radhusby. Så påverkar utökad lovplikt ditt tak.',
@@ -924,11 +916,11 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                      'webbkarta.',
              'card': 'Brevik, Mölna och Käppala.',
              'sections': [{'id': 'hus',
-                           'h2': 'Från Arwins villastad till 1979 års radhus i Käppala',
-                           'paras': ['Lidingös villabebyggelse tog fart 1906, när AB Lidingö Villastad '
-                                     'bildades av ingenjören Hjalmar Arwin. I slutet av 1910 var redan 293 '
-                                     'villor byggda, och Per Olof Hallmans stadsplan antogs 1913. Samma år '
-                                     'som Arwin startade köpte Allan Abenius Brevik, och 1910 fanns 75 villor i Brevik med omnejd. Villastadens kärna består i dag av hus från '
+                           'h2': 'Från villastaden till 1979 års radhus i Käppala',
+                           'paras': ['Lidingös villabebyggelse tog fart under 1900-talets första år. Enligt '
+                                     'stadens kulturmiljöprogram var redan 293 villor byggda i Lidingö '
+                                     'villastad i slutet av 1910, och även Brevik växte fram som villastad '
+                                     'under samma period. Villastadens kärna består i dag av hus från '
                                      'ungefär 1905–1930, och under 1940- och 50-talen styckades många stora '
                                      'tomter och fick nya villor.',
                                      'Efterkrigstiden gav andra hustyper. Mölna radhusby ritades av Nils '
@@ -1103,8 +1095,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                          ('Boverket – Fasadändring',
                           'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                          ('Skatteverket – Så fungerar rotavdraget',
-                          'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),
-                         ('Wikipedia – Lidingö', 'https://sv.wikipedia.org/wiki/Liding%C3%B6')]},
+                          'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),]},
  'Huddinge': {'title': 'Takrenovering i Huddinge – egnahem, grupphus och stugor',
               'description': 'Takrenovering i Huddinge: tegeltak på egnahem i Stuvsta och Segeltorp, nytt '
                              'underlag på grupphus i Skogås och Sörskogen. Kulturmiljö, plåt och ROT.',
@@ -1301,7 +1292,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html')]},
  'Järfälla': {'title': 'Takrenovering i Järfälla – lertegel, radhuslängor, Viksjö',
               'description': 'Takrenovering i Järfälla: omläggning av lertegeltak på 50–60-talets kedjehus, '
-                             'papptak i Ekedal, radhuslängor i Kallhäll och 70-talshus i Viksjö.',
+                             'papptak i Ekedal, radhuslängor i Kallhäll och småhus i Viksjö.',
               'lead': 'I Järfälla gäller en takrenovering ofta radhus och kedjehus som byggfirmor uppförde i '
                       'hela grupper från 1940-talet till 1970-talet, många med rött lertegel eller flacka '
                       'papptak. Arbetet består i regel av nytt underlag, ny läkt och ny plåt, och eftersom '
@@ -1321,7 +1312,8 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                       'mitten av 1960-talet. Från samma firma kommer kedjehusen vid Dressyrvägen i Jakobsberg och villorna vid Stålringen i Kallhäll, medan '
                                       'grändvillorna vid Hovvägen uppfördes kring 1960 av Svenska '
                                       'Industribyggen.',
-                                      'Viksjö byggdes ut under 1970-talet och domineras av radhus. Längst '
+                                      'Enligt kommunarkivets historik startade utbyggnaden av Viksjö 1966, och '
+                                      'småhusområdet vid Skördevägen–Slåttervägen var det första som byggdes. Längst '
                                       'bort från rekordårens grupper ligger Lund vid Mälaren, som <a '
                                       'class="text-link" '
                                       'href="https://www.jarfalla.se/download/18.68e7a727168e12dd179a407e/1550245842779/kulturmiljoplan-staket.pdf" '
@@ -1489,7 +1481,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                            'https://www.jarfalla.se/byggaboochmiljo/byggaochbo/bygglov/vadvilldubyggaellerandra/fasadandring.4.1966aa14175c8663c9323310.html'),
                           ('Järfälla kommun – Tak',
                            'https://www.jarfalla.se/byggaboochmiljo/byggaochbo/bygglov/vadvilldubyggaellerandra/tak.4.69a1b161151015104f4bd603.html'),
-                          ('Wikipedia – Viksjö', 'https://en.wikipedia.org/wiki/Viksj%C3%B6'),
+                          ('Järfälla kommun – Järfällas historia (kommunarkivet)', 'https://www.jarfalla.se/kommunochpolitik/kommunarkivet/jarfallashistoria.4.49c72f5418de88c69e928ab.html'),
                           ('Boverket – Bygglov för fasadändring',
                            'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                           ('Skatteverket – Så fungerar rotavdraget',
@@ -1512,28 +1504,20 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                         'villor i början av 1900-talet, när stationer anlades i Tureberg och '
                                         'Norrviken, och kommunen vill bevara den prägel av villastad som '
                                         'växte fram under seklets första hälft.',
-                                        'I <a class="text-link" '
-                                        'href="https://sv.wikipedia.org/wiki/Norrviken" '
-                                        'rel="noopener">Norrviken</a> köpte AB Norrvikens villastad Kista '
-                                        'gårds marker 1906 och styckade dem till egnahemstomter. Under '
-                                        '1930–40-talet tillkom egnahemsvillor i de södra delarna, och från '
-                                        '1960-talet till början av 1980-talet byggdes större radhusområden i '
-                                        'sydväst och norr. I <a class="text-link" '
-                                        'href="https://sv.wikipedia.org/wiki/Tureberg" '
-                                        'rel="noopener">Tureberg</a> styckade Clas Östberg 1910 upp mark '
-                                        'mellan stationen och Edsviken i 61 villatomter.',
-                                        'I <a class="text-link" '
-                                        'href="https://sv.wikipedia.org/wiki/Edsberg,_Sollentuna_kommun" '
-                                        'rel="noopener">Edsberg</a> sträcker sig det äldre villaområdet '
-                                        'Landsnora österut längs Edsviken, medan Kvarnskogen är ett nyare '
-                                        'område med främst radhus och Edsängen en blandning av radhus och '
-                                        'villor mot Täby.'],
-                              'aside': {'title': 'Husgrupper i Sollentuna',
-                                        'items': ['Sekelskiftesvillor: Norrvikens villastad, Tureberg',
-                                                  'Äldre villor längs Edsviken: Landsnora',
-                                                  'Egnahemsvillor från 1930–40-talet: södra Norrviken',
-                                                  'Radhus 1960–80-tal: sydvästra och norra Norrviken',
-                                                  'Nyare radhus: Kvarnskogen och Edsängen i Edsberg']}},
+                                        'Översiktsplanen nämner också att många villaområden planerades på '
+                                        'tjugo- och trettiotalet. Radhus och sammanhållna grupper av '
+                                        'enfamiljshus kan förändras, men varje förändring ska bidra positivt '
+                                        'till helhetsupplevelsen av gruppen. För ett radhustak betyder det att '
+                                        'material och kulör gärna väljs i samråd med grannarna i längan.',
+                                        'Kommunen beskriver gröna stråk för de boende i Landsnora och '
+                                        'Kvarnskogen, och enligt översiktsplanen ska den gröna lummigheten i '
+                                        'villaområdena värnas. Uppvuxna träd nära huset betyder löv och barr '
+                                        'i rännorna, något vi tar med i planeringen av taket.'],
+                              'aside': {'title': 'Ur Sollentunas översiktsplan',
+                                        'items': ['Norrvikens villastad: karaktären ska behållas',
+                                                  'Många villaområden planerades på 1920–30-talen',
+                                                  'Radhusgrupper: förändring ska stämma med helheten',
+                                                  'Gröna stråk vid Landsnora och Kvarnskogen']}},
                              {'id': 'taken',
                               'h2': 'Vilka tak vi möter – och vad som tar slut först',
                               'paras': ['På sekelskiftesvillorna är taken branta och har ofta frontespiser, '
@@ -1692,10 +1676,6 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'https://www.sollentuna.se/bygga-bo--miljo/bygga-nytt-andra-eller-riva/kulturmiljoer/'),
                             ('Sollentuna kommun – Fasadändring, en- eller tvåbostadshus',
                              'https://www.sollentuna.se/bygga-bo--miljo/bygga-nytt-andra-eller-riva/fasadandring-for-en--eller-tvabostadshus/'),
-                            ('Wikipedia – Norrviken', 'https://sv.wikipedia.org/wiki/Norrviken'),
-                            ('Wikipedia – Tureberg', 'https://sv.wikipedia.org/wiki/Tureberg'),
-                            ('Wikipedia – Edsberg, Sollentuna kommun',
-                             'https://sv.wikipedia.org/wiki/Edsberg,_Sollentuna_kommun'),
                             ('Boverket – Bygglov för fasadändring',
                              'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                             ('Skatteverket – Så fungerar rotavdraget',
@@ -1713,8 +1693,8 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                               'h2': 'En tätort som femdubblades på tjugo år',
                               'paras': ['Vallentuna tätort växte fram kring stationen när järnvägen '
                                         'Stockholm–Rimbo öppnade 1885, men det mesta av villabebyggelsen är '
-                                        'betydligt yngre. År 1960 bodde 3 516 personer i tätorten, 1970 var '
-                                        'de 8 823 och 1980 18 435. Tätortens areal mer än fördubblades mellan 1960 och 1990, och i dag ingår bland annat Ormsta, Bällsta, Kragstalund och Uthamra i tätorten.',
+                                        'betydligt yngre. Enligt SCB bodde 3 516 personer i tätorten 1960, '
+                                        '8 823 år 1970 och 18 435 år 1980.',
                                         'Lindholmen, längre norrut på Roslagsbanan, beskrivs i kommunens '
                                         'fördjupade översiktsplan som ett småskaligt stationssamhälle vars '
                                         'bebyggelse huvudsakligen vuxit fram sedan 1970-talet, med villor '
@@ -1889,7 +1869,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                             ('Skatteverket – Så fungerar rotavdraget',
                              'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),
-                            ('Wikipedia – Vallentuna (tätort)', 'https://sv.wikipedia.org/wiki/Vallentuna')]},
+                            ('SCB – Folkmängd och landareal i tätorter, per tätort', 'https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0810__MI0810A/LandarealTatortN/')]},
  'Upplands Väsby': {'title': 'Takrenovering i Upplands Väsby – Ägget, Skälby, Bollstanäs',
                     'description': 'Takrenovering i Upplands Väsby: lertegel och betongpannor på kedjehus i '
                                    'Ägget, papptak i Skälby och äldre villor i Bollstanäs. Kulturmiljö, '
@@ -3009,14 +2989,10 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                                        'brukarna vistas här större delen av året. Många tak byggdes alltså '
                                        'för sommarbruk men ska i dag klara vintrar med uppvärmt hus under '
                                        'sig.',
-                                       'Staden grundades 1622 av Gustav II Adolf och brändes 1719 under '
-                                       'stora nordiska kriget, så nästan all bostadsbebyggelse är yngre än '
-                                       'så. Till stadens bostadsområden hör bland annat Färsna, Grind och Vigelsjö.',
-                                       'Rimbo växte fram som järnvägsknut efter att banorna öppnade på '
-                                       '1880-talet och gick från drygt 1 000 invånare 1950 till över 5 000 '
-                                       'år 2020. Hallstavik är ett brukssamhälle kring Hallsta pappersbruk '
-                                       'vid Edeboviken, där befolkningen ökade snabbt fram till mitten av '
-                                       '1970-talet. I båda orterna finns därför många villor från '
+                                       'Enligt SCB hade Rimbo knappt 1 700 invånare 1960 och över 5 000 år '
+                                       '2020. Hallstavik är ett gammalt brukssamhälle kring pappersbruket, '
+                                       'och där ökade befolkningen från omkring 3 800 år 1960 till drygt '
+                                       '5 100 år 1975. I båda orterna finns därför många villor från '
                                        'efterkrigstiden.',
                                        'Oavsett hustyp gör vi en samlad bedömning innan något river upp '
                                        'taket. Mer om hur vi arbetar i kommunen finns på sidan om <a '
@@ -3025,7 +3001,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                              'aside': {'title': 'Hus vi ofta möter här',
                                        'items': ['Fritidshus som permanentats i flera etapper',
                                                  'Efterkrigsvillor i Rimbo och Hallstavik',
-                                                 'Bostadsområden som Färsna, Grind och Vigelsjö',
+                                                 'Villor och radhus kring Norrtälje stad',
                                                  'Äldre hus i kustbyar som Grisslehamn']}},
                             {'id': 'permanentning',
                              'h2': 'När sommarhuset ska klara vintern',
@@ -3172,10 +3148,7 @@ TRP = {'Bromma': {'title': 'Takrenovering i Bromma – tegel, funkisplåt och sm
                             'https://www.boverket.se/sv/PBL-kunskapsbanken/lov--byggande/anmalningsplikt/byggnader/fasadandring/'),
                            ('Skatteverket – Så fungerar rotavdraget',
                             'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html'),
-                           ('Wikipedia – Norrtälje', 'https://sv.wikipedia.org/wiki/Norrt%C3%A4lje'),
-                           ('Wikipedia – Rimbo', 'https://sv.wikipedia.org/wiki/Rimbo'),
-                           ('Wikipedia – Hallstavik', 'https://sv.wikipedia.org/wiki/Hallstavik'),
-                           ('Wikipedia – Grisslehamn', 'https://sv.wikipedia.org/wiki/Grisslehamn'),
+                           ('SCB – Folkmängd och landareal i tätorter, per tätort', 'https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0810__MI0810A/LandarealTatortN/'),
                            ('Visit Roslagen – Kulturföreningen Rödvillan, Hallstavik',
                             'https://roslagen.se/en/culture-and-history/museum/cultural-association-rodvillan-2/')]},
  'Södertälje': {'title': 'Takrenovering i Södertälje – egnahem, Järna och Mälaren',
