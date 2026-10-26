@@ -50,7 +50,10 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            "tj_v20_attefallshus", "tj_v20_fasadmalning", "tj_v20_fasadrenovering",
            # v21 (2026-10-26): 18 ortsidor takbyte (hubb takbyte.html), totalrenovering (hubb villarenovering.html) och
            # fönsterrenovering (hubb fonsterbyte.html)
-           "tj_v21_takbyte", "tj_v21_totalrenovering", "tj_v21_fonsterrenovering"]
+           "tj_v21_takbyte", "tj_v21_totalrenovering", "tj_v21_fonsterrenovering",
+           # v22 (2026-10-26): 18 ortsidor attefallshus (hubb attefallshus.html), tillbyggnad (hubb tillbyggnad.html)
+           # och takbyte (hubb takbyte.html)
+           "tj_v22_attefallshus", "tj_v22_tillbyggnad", "tj_v22_takbyte"]
 # Moduler vars ortsidor korslänkas med ortens övriga tjänstesidor (åt båda hållen).
 V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte",
               "tj_v6_golv", "tj_v6_snickare", "tj_v6_fasad",
@@ -68,7 +71,8 @@ V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5
               "tj_v18_tapetsering", "tj_v18_golvslipning", "tj_v18_totalrenovering",
               "tj_v19_fonsterrenovering", "tj_v19_tapetsering", "tj_v19_golvslipning",
               "tj_v20_attefallshus", "tj_v20_fasadmalning", "tj_v20_fasadrenovering",
-              "tj_v21_takbyte", "tj_v21_totalrenovering", "tj_v21_fonsterrenovering"}
+              "tj_v21_takbyte", "tj_v21_totalrenovering", "tj_v21_fonsterrenovering",
+              "tj_v22_attefallshus", "tj_v22_tillbyggnad", "tj_v22_takbyte"}
 
 # Tjänster: brödsmula, Service-schema, kortsnitt.
 TJ_SERVICES = {
