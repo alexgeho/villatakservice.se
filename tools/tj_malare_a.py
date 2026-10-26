@@ -32,7 +32,7 @@ PAGES_TJ = {
      "paras": [
        "Den vanligaste ytan en målare möter i Bromma är stående träpanel med smal lockläkt. Så kläddes de flesta hus i 1920-talets trädgårdsstäder – Ålsten, Smedslätten, Nockeby, Höglandet och Ulvsunda – och samma panel användes på småstugorna i Olovslund och Norra Ängby. Stadens vägledning för småhusområden beskriver färgskalan i trädgårdsstäderna som dämpade, ljusa nyanser av grönt, gult och grått. I småstugeområdena var kulörerna från början reglerade till ett fåtal ljusa toner, och den som ville ha traditionell rödfärg fick ansöka särskilt.",
        "I Äppelviken är det nationalromantiska draget tydligare, med branta takfall och småspröjsade fönster. Fasaderna gjordes ofta av liggande panel eller spån som antingen tjärades eller ströks med röd slamfärg.",
-       "Södra Ängby, byggd 1933–39, är något helt annat: kubiska funkisvillor med svagt lutande tak och fasader i brutet vitt eller ljusgrått, antingen slätputsade eller klädda med liggande panel. På en putsad fasad handlar målningen om putsens sammansättning, sprickor och vidhäftning, inte om panel och lockläkt. Ska putsen lagas mer omfattande hör det snarare hemma under " + _L.format("fasadrenovering.html", "fasadrenovering") + ".",
+       "Södra Ängby, byggd 1934–39, är något helt annat: kubiska funkisvillor med svagt lutande tak och fasader i brutet vitt eller ljusgrått, antingen slätputsade eller klädda med liggande panel. På en putsad fasad handlar målningen om putsens sammansättning, sprickor och vidhäftning, inte om panel och lockläkt. Ska putsen lagas mer omfattande hör det snarare hemma under " + _L.format("fasadrenovering.html", "fasadrenovering") + ".",
      ],
      "aside": {"title": "Ta reda på först", "items": [
        "Panel, spån eller puts?", "Vilken färgtyp sitter på i dag?", "Riksintresse eller blå/grön på kartan?",
@@ -60,7 +60,7 @@ PAGES_TJ = {
      "aside": None},
     {"id": "lage", "h2": "Tallar och Mälarnära skugga",
      "paras": [
-       "Vegetationen i trädgårdsstäderna dominerades från början av tall och ädellövträd, och i Södra Ängby, som gränsar mot Mälaren, har den ursprungliga hällmarkstallskogen till stor del bevarats. Fasader som ligger i skugga större delen av dagen torkar långsamt och får lättare påväxt, så tvätt och torktid behöver planeras in innan första strykningen.",
+       "Vegetationen i trädgårdsstäderna dominerades från början av tall och ädellövträd, och Södra Ängby byggdes enligt stadens riksintressebeskrivning på en skogbevuxen höjd nära Mälaren. Fasader som ligger i skugga större delen av dagen torkar långsamt och får lättare påväxt, så tvätt och torktid behöver planeras in innan första strykningen.",
        "Väljer du linoljefärg anger Riksantikvarieämbetet maj till augusti som bästa period, med en fukthalt i träet på högst omkring 15 procent. Direkt solsken bör undvikas eftersom ytan kan torka för snabbt och bilda blåsor – bättre är att följa solen och stryka de sidor som redan har haft sol.",
      ],
      "aside": None},
@@ -106,7 +106,6 @@ PAGES_TJ = {
      "https://vaxer.stockholm/siteassets/stockholm-vaxer/tema/oversiktsplan-for-stockholm/riksintresse-ta.pdf"),
     ("Stockholmskällan / Stadsmuseet – Ängbyplan (Stockholms spår)",
      "https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSM_DOK_000106.pdf"),
-    ("Wikipedia – Södra Ängby", "https://sv.wikipedia.org/wiki/S%C3%B6dra_%C3%84ngby"),
     _RAA, _BOV, _SKV, _SKV2,
   ],
   "cta": ("Ska villan i Bromma målas?", "Boka ett gratis platsbesök så går vi igenom fasad, färgtyp och lovfrågor på plats."),
@@ -131,8 +130,8 @@ PAGES_TJ = {
      "h2": "Var småhusen finns i en stad av flerbostadshus",
      "paras": [
        "Solna domineras av flerbostadshus, och de egna husen ligger samlade i ett fåtal miljöer. Råsunda planerades kring 1907 med flerfamiljshus i mitten och villor runt om. Villaområdena byggdes ut på 1920-talet, och många av husen byggdes av spårvägare som arbetade vid den stora spårvägsverkstaden. Här möter målaren trävillor med panel, fönster med spröjs och snickerier som har strukits om många gånger.",
-       "I Stocksundstorp, på Bergshamras östra udde, finns villor kvar från 1800-talet. Tre större sommarvillor uppfördes vid Stocksundsbron omkring 1892, och Villa Borganäs och Villa Alnäs finns kvar med sitt rika lövsågeri. Udden styckades 1920 i 38 tomter som bebyggdes efter hand, så många villor där är från 1940- till 1970-talen och har sin tids enklare fasader.",
-       "Därtill finns Råsta egnahem, Bergshamra by och radhusen vid Solna kyrkby. Färgfrågorna skiljer sig mycket mellan en sommarvilla från 1890-talet och ett egnahem från 1920-talet.",
+       "Vid Stocksundet ligger Alnäs och Stocksundstorp, som Solnas översiktsplan räknar som en sammanhängande kulturhistoriskt värdefull miljö. Där står äldre och nyare villor sida vid sida, och fasaderna kräver olika bedömningar beroende på husets ålder.",
+       "Därtill finns Råsta egnahem, Bergshamra by och radhusen vid Solna kyrkby. Färgfrågorna skiljer sig mycket mellan en äldre trävilla med snickeridetaljer och ett egnahem från 1920-talet.",
      ],
      "aside": {"title": "Utpekade småhusmiljöer", "items": [
        "Råsunda villastad", "Villorna i norra Råsunda", "Råsta egnahem", "Alnäs och Stocksundstorp",
@@ -161,7 +160,7 @@ PAGES_TJ = {
        "Väggar, tak och element", "Tapetsering", "Innerdörrar och köksluckor", "Fönstrens insida"]}},
     {"id": "lage", "h2": "Brunnsviken, Stocksundet och nationalstadsparken",
      "paras": [
-       "Stocksundstorp vid Stocksundet ligger inom Kungliga nationalstadsparken, och husen står nära vattnet bland stora träd. Fasader i ett sådant läge får både blåst och skugga, torkar långsamt efter regn och får lätt påväxt. Tvätt, ordentlig torktid och en färgtyp som passar underlaget betyder mer här än på en solig villatomt.",
+       "I Stocksundstorp vid Stocksundet står husen nära vattnet bland stora träd. Fasader i ett sådant läge får både blåst och skugga, torkar långsamt efter regn och får lätt påväxt. Tvätt, ordentlig torktid och en färgtyp som passar underlaget betyder mer här än på en solig villatomt.",
      ],
      "aside": None},
   ],
@@ -190,7 +189,7 @@ PAGES_TJ = {
      "Bara för arbetet på insidan. Enligt Skatteverket ger arbete mellan in- och utsidan inget avdrag, och målning av fönstrens utsida ger inte heller något."),
     ("Behöver jag fråga styrelsen innan jag målar om i lägenheten?",
      "Normalt inte för vanlig målning, eftersom du ansvarar för lägenhetens skick. Läs stadgarna, och har lägenheten särskilda kulturhistoriska värden krävs tillstånd för ändringar som påverkar dem."),
-    ("Kan lövsågeriet på en sommarvilla i Stocksundstorp sparas när huset målas om?",
+    ("Kan lövsågade detaljer på en äldre villa sparas när huset målas om?",
      "Oftast går det. Löst sittande färg tas bort, skadade bitar lagas eller kopieras och detaljerna målas för hand. Det ligger också i linje med att de värdefulla miljöerna ska behålla sin karaktär."),
   ],
   "sources": [
@@ -199,7 +198,7 @@ PAGES_TJ = {
     ("Solna stad – Kulturmiljöer i Solna", "https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna"),
     ("Stockholmskällan / Stadsmuseet – Näckrosen (Stockholms spår)",
      "https://stockholmskallan.stockholm.se/contentfiles/SSM/Texter/Text_0001/SSM_DOK_000066.pdf"),
-    ("Wikipedia – Stocksundstorp", "https://sv.wikipedia.org/wiki/Stocksundstorp"),
+    ("Solna stad – Översiktsplan 2030", "https://www.solna.se/download/18.d878336172a235b6c417193/1592394620116/Solna%20stads%20%C3%96versiktsplan%202030.pdf"),
     ("Riksdagen – Bostadsrättslag (1991:614)",
      "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/"),
     _RAA, _BOV, _SKV, _SKV2, _SKV3,
@@ -225,14 +224,14 @@ PAGES_TJ = {
     {"id": "hustyper", "anchor": "Hustyperna",
      "h2": "Fyra slags hus som målas på olika sätt",
      "paras": [
-       "<strong>Villor från seklets början.</strong> Med järnvägen från 1866 och stationerna i Tureberg och Norrviken kom de första villastäderna. AB Norrvikens villastad köpte Kista gårds mark 1906 och styckade den i egnahemstomter, och 1910 delades marken mellan Turebergs station och Edsviken upp i 61 villatomter. På villor från den tiden tar knutbrädor, foder och spröjsade fönster ofta lika mycket tid som själva panelen.",
-       "<strong>Egnahem från 1930- och 40-talet.</strong> Under 1930- och 40-talet tillkom egnahemsvillor i södra Norrviken. På dem är det ofta panel som har strukits om i flera omgångar med olika färger, och skrapprov visar vilken färgtyp som ligger överst.",
-       "<strong>Radhus från 1960-talet till början av 80-talet.</strong> Större radhusområden byggdes i sydvästra och norra Norrviken. Längorna har samma ålder och oftast samma panel, fönster och kulör. Det gör att flera grannar får samma behov ungefär samtidigt.",
-       "<strong>Nyare radhus och villor.</strong> I Edsberg är Kvarnskogen i huvudsak ett radhusområde, och Edsängen blandar radhus och villor mot Täby. På yngre fasader är det ofta skivmaterial, fabriksgrundad panel och moderna täckfärger som gäller.",
+       "<strong>Villor från seklets början.</strong> Enligt kommunens översiktsplan kom de första villastäderna med järnvägen från 1866 och stationerna i Tureberg och Norrviken. På villor från den tiden tar knutbrädor, foder och spröjsade fönster ofta lika mycket tid som själva panelen.",
+       "<strong>Villaområden från mellankrigstiden.</strong> Översiktsplanen nämner att många villaområden planerades på 1920- och 30-talen. På de husen är det ofta panel som har strukits om i flera omgångar med olika färger, och skrapprov visar vilken färgtyp som ligger överst.",
+       "<strong>Radhuslängor.</strong> I radhusområdena har husen i en länga oftast samma ålder, panel, fönster och kulör. Det gör att flera grannar får samma behov ungefär samtidigt.",
+       "<strong>Nyare radhus och villor.</strong> På yngre fasader är det ofta skivmaterial, fabriksgrundad panel och moderna täckfärger som gäller.",
      ],
-     "aside": {"title": "Var husen finns", "items": [
-       "Norrvikens villastad och Tureberg", "Landsnora längs Edsviken", "Södra Norrviken: egnahem",
-       "Norrviken: radhus 1960–80", "Kvarnskogen och Edsängen"]}},
+     "aside": {"title": "Ur översiktsplanen", "items": [
+       "Norrvikens villastad: karaktären ska behållas", "Villaområden planerade på 1920–30-talen",
+       "Radhusgrupper: förändring ska stämma med helheten", "Den gröna lummigheten ska värnas"]}},
     {"id": "radhus", "h2": "Radhuslängan är en enda fasad",
      "paras": [
        "Kommunens översiktsplan säger att radhus och sammanhållna husgrupper får förändras, men att varje förändring ska bidra positivt till helheten. På en länga där alla hus har samma kulör syns ett avvikande hus på långt håll. Det är därför klokt att prata med grannarna, och med samfälligheten om det finns en, innan någon beställer en ny färgsättning.",
@@ -297,9 +296,6 @@ PAGES_TJ = {
      "https://www.sollentuna.se/globalassets/bygga-bo-och-miljo/oversiktsplan/oversiktsplan-for-sollentuna-med-sikte-pa-2040.pdf"),
     ("Sollentuna kommun – Kulturhistoriska byggnader och områden",
      "https://www.sollentuna.se/bygga-bo--miljo/bygga-nytt-andra-eller-riva/kulturmiljoer/"),
-    ("Wikipedia – Norrviken", "https://sv.wikipedia.org/wiki/Norrviken"),
-    ("Wikipedia – Tureberg", "https://sv.wikipedia.org/wiki/Tureberg"),
-    ("Wikipedia – Edsberg, Sollentuna kommun", "https://sv.wikipedia.org/wiki/Edsberg,_Sollentuna_kommun"),
     _BOV, _SKV, _SKV2,
   ],
   "cta": ("Villa eller radhus i Sollentuna som ska målas?", "Boka ett gratis platsbesök – gärna tillsammans med grannarna i längan."),
@@ -323,7 +319,7 @@ PAGES_TJ = {
     {"id": "husen", "anchor": "Husen i Vallentuna",
      "h2": "Tätort, stationssamhällen och landsbygd",
      "paras": [
-       "Tätorten fick sin station när järnvägen mellan Stockholm och Rimbo öppnade 1885, men de flesta villorna är betydligt yngre. År 1960 bodde 3 516 personer i tätorten, 1970 var de 8 823 och 1980 hela 18 435. Befolkningen femdubblades alltså på tjugo år, och många villor och radhus i tätorten är från just den perioden. Det betyder ofta liknande panel, liknande fönster och ungefär samma underhållsbehov.",
+       "Tätorten fick sin station när järnvägen mellan Stockholm och Rimbo öppnade 1885, men de flesta villorna är betydligt yngre. Enligt SCB bodde 3 516 personer i tätorten 1960, 8 823 år 1970 och hela 18 435 år 1980. Befolkningen femdubblades alltså på tjugo år, och många villor och radhus i tätorten är från just den perioden. Det betyder ofta liknande panel, liknande fönster och ungefär samma underhållsbehov.",
        "Lindholmen längre norrut på Roslagsbanan har vuxit fram huvudsakligen sedan 1970-talet, med villor och gruppbyggda småhus. I Karby och Brottby vid E18 ligger den äldre bebyggelsen i små grupper på höjderna.",
        "Utanför tätorterna finns gårdar med bostadshus och ekonomibyggnader, och fritidshusområden som enligt översiktsplanen i de flesta fall har omvandlats till permanentboende sedan 1990-talet. Garns-Ekskogen har omkring 500 bebyggda fastigheter, medan Lövsättra stugby ska behålla sin fritidsprägel.",
      ],
@@ -396,7 +392,7 @@ PAGES_TJ = {
      "https://vallentuna.se/download/18.63572f8619eeecafce08379/1782478384567/2.11.4%20F%C3%B6rdjupad%20%C3%B6versiktsplan%20Norra%20Vallentuna%20och%20Lindholmen.pdf"),
     ("Vallentuna kommun – Fördjupad översiktsplan Karby och Brottby (pdf)",
      "https://vallentuna.se/download/18.63572f8619eeecafce08376/1782478381270/2.11.8%20F%C3%B6rdjupad%20%C3%B6versiktsplan%20Karby%20Brottby.pdf"),
-    ("Wikipedia – Vallentuna (tätort)", "https://sv.wikipedia.org/wiki/Vallentuna"),
+    ("SCB – Folkmängd och landareal i tätorter, per tätort", "https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/START__MI__MI0810__MI0810A/LandarealTatortN/"),
     _RAA, _BOV, _SKV, _SKV2,
   ],
   "cta": ("Gård, fritidshus eller villa i Vallentuna?", "Boka ett gratis platsbesök så går vi igenom alla byggnader som ska målas."),

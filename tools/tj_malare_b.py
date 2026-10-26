@@ -177,8 +177,6 @@ U_SCB = "https://www.scb.se/hitta-statistik/artiklar/2026/fritidshus-vart-finns-
 U_NTF = "https://www.norrtalje.se/sjalvservice/bygga-bo-miljo/fasadandring/"
 U_NTB = "https://www.norrtalje.se/info/trafik-gator-parker/bevarandeprogram-for-norrtalje-stad/"
 U_NTL = "https://www.norrtalje.se/info/bygga-bo-miljo/bygga-andra-riva/lovbefriade-atgarder/"
-U_WNT = "https://sv.wikipedia.org/wiki/Norrt%C3%A4lje"
-U_WGR = "https://sv.wikipedia.org/wiki/Grisslehamn"
 
 NORRTALJE = {
   "kind": "district", "service": "malare", "ort": "Norrtälje", "svc_label": "Målare",
@@ -197,12 +195,11 @@ NORRTALJE = {
        "Norrtälje är enligt " + X(U_SCB, "SCB") + " Sveriges mest fritidshustäta kommun, med 27 352 "
        "fritidshus 2025. Många av dem används i dag långt utanför sommaren. Ett hus som byggdes för "
        "juni–augusti och nu värms upp året runt ställer andra krav både på fasaden och på rummen innanför.",
-       "Själva staden grundades 1622 och brändes 1719. Återuppbyggnaden gick långsamt och bestod mest av små "
-       "stugor. Från 1844 växte ett kurortsliv fram kring Societetsparken, och järnvägen 1884 gav staden fart "
-       "som industriort. Stadskärnan har ett " + X(U_NTB, "bevarandeprogram") + " från 1981 som kommunen "
-       "har uppdaterat, och den ligger inom ett riksintresse för kulturmiljövården.",
-       "Utanför staden finns villaområden i Rimbo och Hallstavik och äldre kustbebyggelse som Grisslehamn "
-       "på Väddö, där ångbåtstrafiken förde dit sommargäster och Hotell Havsbaden byggdes 1903.",
+       "Stadskärnan har ett " + X(U_NTB, "bevarandeprogram") + " som kommunfullmäktige fastställde 1981 och "
+       "som kommunen sedan har uppdaterat, och den del som ligger inom riksintresset för kulturmiljövården ska "
+       "bevaras och vårdas. Där är äldre trähus och gårdar en stor del av stadsbilden.",
+       "Utanför staden finns villaområden i Rimbo och Hallstavik och äldre kustbebyggelse, bland annat i "
+       "Grisslehamn på Väddö.",
      ],
      "aside": {"title": "Vanliga uppdrag här", "items": [
        "Fritidshus som blivit åretruntboende",
@@ -317,8 +314,6 @@ NORRTALJE = {
     ("Norrtälje kommun – Lovbefriade åtgärder (kartor, frivilligt lov)", U_NTL),
     ("Norrtälje kommun – Bevarandeprogram för Norrtälje stad", U_NTB),
     S_BOV, S_RAA, S_ROT,
-    ("Wikipedia – Norrtälje", U_WNT),
-    ("Wikipedia – Grisslehamn", U_WGR),
   ],
   "cta": ("Målare till huset i Norrtälje", "Boka ett gratis platsbesök – vi planerar även för hus som bara nås med båt."),
   "img": [
