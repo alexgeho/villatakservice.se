@@ -11,7 +11,7 @@ Schema per sida i PAGES_TJ (tools/tj_*.py):
   sections: [{id, h2, paras:[html], aside:{title, items} | None, anchor?: "Snabblänktext"}],
   steps_h2, steps:[(rubrik, text)], rot_h2, rot:[html], price_h2, price:[html],
   faq:[(fråga, svar)], sources:[(namn, url)], cta:(rubrik, text),
-  img:[(alt_hero, prompt_4_3), (alt_innehåll, prompt_3_2)],
+  img:[(alt_hero, prompt_4_3), (alt_innehåll, prompt_3_2)[, (alt_3, prompt_3_2)]]  (v20: valfri tredje bild efter sista sektionen),
   related: [(href, rubrik, text)]  (hub: 3–4 kort "Relaterade tjänster"; district: valfria extra kort)
 
 Mätt (samma som similarity.py): Jaccard på 5-ords-shingles av <main>, ortnamnet -> "ORT".
@@ -135,7 +135,7 @@ for f, d in sel.items():
         if k in seen_q: errors.append(f"{f}: FAQ dubblett med {seen_q[k]}: {q}")
         seen_q[k] = f
     if len(d["sources"]) < 3: warns.append(f"{f}: få källor ({len(d['sources'])})")
-    for n in (f[:-5] + "-1", f[:-5] + "-2"):
+    for n in [f[:-5] + f"-{k + 1}" for k in range(len(d["img"]))]:
         if not os.path.exists(os.path.join(ROOT, "assets", "images", n + ".webp")):
             warns.append(f"{f}: bild saknas {n}.webp") if VERB else None
 

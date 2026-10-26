@@ -67,6 +67,8 @@ from tjanster_v1 import TJ  # noqa: E402
 for _f, _d in TJ.items():
     JOBS[_f[:-5] + "-1"] = ("4:3", _d["img"][0][1])
     JOBS[_f[:-5] + "-2"] = ("3:2", _d["img"][1][1])
+    if len(_d["img"]) > 2:  # v20: tredje bilden (3:2) i andra halvan av texten
+        JOBS[_f[:-5] + "-3"] = ("3:2", _d["img"][2][1])
 
 # v8: nya takrenovering-<ort> har prompter i TRP[ort]["img"] (tools/takreno_orter.py).
 from takreno_orter import TRP  # noqa: E402

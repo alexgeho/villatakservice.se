@@ -1692,6 +1692,9 @@ def _tj_parts(d):
             parts.append(lambda m, s=s: sec(s["h2"], s["paras"], muted=m, sid=s["id"]))
         if i == 0:
             parts.append(lambda m, d=d: fig(d["file"][:-5] + "-2", d["img"][1][0], muted=m))
+        # v20: valfri tredje bild (img[2]) efter sista textsektionen – sidor med två bilder oförändrade.
+        if i == len(d["sections"]) - 1 and i > 0 and len(d["img"]) > 2:
+            parts.append(lambda m, d=d: fig(d["file"][:-5] + "-3", d["img"][2][0], muted=m))
     parts.append(lambda m, d=d: sec_process(d["steps_h2"], d["steps"], muted=m, sid="process"))
     parts.append(lambda m, d=d: sec(d["rot_h2"], d["rot"], muted=m, sid="rot"))
     parts.append(lambda m, d=d: sec(d["price_h2"], d["price"], muted=m, sid="pris"))
