@@ -1737,7 +1737,7 @@ for _f, _d in TJ.items():
       area_served=([_d["ort"]] if _d["kind"] == "district" else None),
       geo_placename=(f"{_d['ort']}, Stockholm" if _d["kind"] == "district" else "Bromma, Stockholm"),
       crumbs=_crumbs, cta=_d["cta"],
-      body=hero(_d["h1"], _d["lead"], _crumbs, _anchors, trust=_svc.get("trust"), img=(_f[:-5] + "-1", _d["img"][0][0])) + _html,
+      body=hero(_d["h1"], _d["lead"], _crumbs, _anchors, trust=_d.get("trust") or _svc.get("trust"), img=(_f[:-5] + "-1", _d["img"][0][0])) + _html,
       faq=_d["faq"], after_faq=_trp_sources(_d["sources"], muted=True))
 
 # ====================== DALARNA (Borlänge + regionen) =====================
