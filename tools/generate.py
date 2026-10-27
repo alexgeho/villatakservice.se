@@ -135,7 +135,7 @@ TRP_IMG_ALT = {
  "Upplands Väsby": ("Villagata med likartade hus och mörka tak i Upplands Väsby", "Takfot med takpannor, hängränna och stuprör"),
  "Värmdö": ("Permanentat fritidshus med plåttak i skogen på Värmdö", "Hus på en klippa vid havet i Värmdös skärgård"),
  "Tyresö": ("Rött fritidshus med tillbyggd flygel och två takhöjder vid en vik i Tyresö", "Villa med mossa på taket under höga granar i Tyresö"),
- "Haninge": ("Sekelskiftesvilla med snickarglädje och rött plåttak vid en vik i skärgården kring Dalarö", "Röda takpannor på ett längre hus, ställning med skyddsräcke"),
+ "Haninge": ("Sekelskiftesvilla med snickarglädje och rött plåttak vid en vik i skärgården kring Dalarö", "Villa med mörka takpannor och träfasad bland björkar i Haninge"),
  "Enskede": ("Trähus med brant tegeltak och staket i Gamla Enskede", "Svart betongpannetak runt en takkupa"),
  "Älvsjö": ("Trävilla med tegeltak och glasveranda i Älvsjö", "Svart betongpannetak vid skorstenen efter renovering"),
  "Norrtälje": ("Rött trähus med svart tak på klipporna vid vattnet i Roslagen", "Timrat hus med rött tak"),

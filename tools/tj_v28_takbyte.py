@@ -578,7 +578,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med tegeltak och takkupa i en lummig trädgård",
      "1920s Swedish detached villa with red clay tile roof, one dormer and a brick chimney, light grey wooden facade with white trim, garden with apple trees and a hedge, quiet villa street, Stockholm, summer, clean image without any watermark or logo" + _IMG_END),
-    ("Tak på ett flerbostadshus under omläggning, ställning och skyddsräcke",
+    ("Takkupa med plåtdetaljer på ett tegeltak",
      "close view of a dormer on a red clay tile roof of an old Swedish villa, with painted wooden window, metal flashing around the dormer cheeks and valley, daylight" + _IMG_END),
     ("Villagata med olika tak bakom staket och häckar",
      "quiet villa street on Stora Essingen style island with individually designed old villas with different roofs, clay tiles and metal, behind picket fences and hedges, trees, daylight, empty street" + _IMG_END),

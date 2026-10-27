@@ -238,7 +238,7 @@ TRP29B["Södermalm"] = {
          "view over a Stockholm inner-city roofscape on a hill: steep standing-seam metal roofs in dark red, black "
          "and green, many chimneys and small dormers, a church tower in the far distance, soft evening light"
          + NO_PEOPLE),
-        ("Kranbil och ställning vid ett flerbostadshus under takarbete",
+        ("Storgårdskvarter från 1920-talet runt en planterad gård",
          "Swedish 1920s neoclassical apartment block built around a large planted courtyard with lawn and trees, "
          "rendered facades in warm ochre, steep tiled and metal roofs with dormers, quiet afternoon" + NO_PEOPLE),
         ("Små timmerhus med tegeltak på en sluttning",
@@ -347,7 +347,7 @@ TRP29B["Vasastan"] = {
          "Swedish 1920s apartment buildings following a hilly curved street, warm red and ochre rendered facades, "
          "steep roofs with decorative gables facing the street, planted front areas, Stockholm, early autumn light"
          + NO_PEOPLE + ", no cars"),
-        ("Flerbostadshus i tegel med ställning längs fasaden under takarbete",
+        ("Gavel med nya plåtbeslag mot ett plåttak",
          "close view of a decorative stepped gable on a 1920s Stockholm apartment building with neat new metal "
          "flashings along the gable top and a dark metal roof behind, clear blue sky" + NO_PEOPLE),
         ("Plåttak med takfönster och skorstenar i stenstaden",
