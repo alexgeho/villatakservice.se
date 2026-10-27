@@ -169,7 +169,7 @@ PAGES_TJ = {
   "img": [
     ("Vit funkisvilla med platt tak, hörnfönster och låg häck mot gatan i Danderyd",
      "1930s Swedish functionalist villa with smooth white render, flat roof, horizontal corner windows with slim frames and a small balcony, set back behind a low clipped hedge and an open front lawn, mature pine and birch trees, quiet residential street, Danderyd Stockholm, autumn daylight, empty scene"),
-    ("Lägre tillbyggnad med platt tak och glaspartier på trädgårdssidan av en vit villa",
+    ("Nybyggd tillbyggnad i ljus träpanel med glaspartier och takterrass med räcke",
      "rear garden side of a white rendered two-storey 1930s Swedish functionalist villa with a flat roof and small corner windows, and attached to it a clearly lower new single-storey extension with a flat roof and large glass doors, the extension much lower than the two-storey main house, lawn and fruit trees in front, soft daylight, no people, no text"),
   ],
   "related": [],
@@ -448,7 +448,7 @@ PAGES_TJ = {
   "img": [
     ("Rödmålat fritidshus bland tallar och berg vid vattnet på Värmdö",
      "small 1950s Swedish red painted wooden summer cottage with white trim and a newer lower wing added to one gable, on a rocky plot with pine trees and granite outcrops, a glimpse of the Baltic sea between the trees, Stockholm archipelago, Värmdö, late summer daylight, empty scene"),
-    ("Röd sommarstuga med en lägre tillbyggd del på gaveln",
+    ("Mörkt trähus med stora glaspartier och altan bland tallar vid vattnet",
      "view from the garden of an old falu red wooden summer cottage with a pitched roof and, attached to its gable, a new lower single-storey extension clad in light unpainted vertical timber boards with its own lower pitched roof, the joint between red old wall and light new wall clearly visible, a small square window, stone plinth foundation on granite with moss and lingonberry shrubs, soft daylight, no people, no text"),
   ],
   "related": [],

@@ -489,7 +489,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med ställning runt huset under takbytet",
      "Swedish detached villa with scaffolding around the walls and a large skip container standing on the driveway inside the plot during re-roofing, garden fence and trees, quiet suburban street, daylight, no people, no vehicles moving" + _IMG_END),
-    ("Pall med nya takpannor på en uppfart",
+    ("Röda takpannor som läggs på läkt, skyddsnät längs takfoten",
      "pallet of new dark roof tiles wrapped in plastic standing on a gravel driveway next to a house with scaffolding, daylight" + _IMG_END),
     ("Halvt avtäckt tak med ny underlagstäckning",
      "roof of a Swedish 1920s villa during re-roofing seen from the garden: the near half covered with new black underlay membrane and neat horizontal wooden battens, the far half still with old red clay tiles, scaffolding with guard rail at the eaves, clear sky, daylight, no workers" + _IMG_END),

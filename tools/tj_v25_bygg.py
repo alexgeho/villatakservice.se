@@ -540,7 +540,7 @@ PAGES_TJ = {
   "img": [
     ("Stenhus med lokaler i gatuplanet i innerstaden",
      "completely empty street at early morning, no pedestrians, no people at all, no cars: early 1900s Stockholm stone apartment building with plain blank shop windows at street level without any signs or lettering, ornate facade above, pavement, Vasastan style, daylight" + _IMG_END),
-    ("Tom lokal med stora fönster mot gatan före ombyggnad",
+    ("Lokal under ombyggnad med stålpelare, nya träbjälklag och virke på golvet",
      "empty former shop premises in an old Stockholm building before conversion: large street windows, bare concrete floor, exposed pipes along the ceiling, white walls, daylight" + _IMG_END),
     ("Färdig lägenhet i en ombyggd lokal med högt i tak",
      "bright newly converted apartment in a former street-level shop: high ceiling, large windows with sheer curtains, light wooden floor, small modern kitchen along one wall, daylight" + _IMG_END),
@@ -636,7 +636,7 @@ PAGES_TJ = {
   "img": [
     ("Ståndsmässigt stenhus med burspråk på Östermalm",
      "empty quiet street, no pedestrians, no cars: grand late 1800s Stockholm stone apartment building with bay windows, wrought iron balconies and ornate light facade, tall trees, Östermalm, daylight" + _IMG_END),
-    ("Ny öppning i en vägg mellan två rum med stålbalk",
+    ("Stålbalkar och nya träbjälkar i ett bjälklag under ombyggnad, virke staplat på golvet",
      "still life inside an old apartment during renovation: newly made wide opening in a thick interior wall with a steel beam above and temporary timber props, protective floor covering on parquet, daylight" + _IMG_END),
     ("Sammanslagen våning med öppen dubbeldörr och stuckatur",
      "large bright apartment in an old Stockholm building after two flats were joined: enfilade of rooms with tall double doors open, ornate white plaster ceiling cornices, herringbone parquet, tiled stove in the corner, daylight" + _IMG_END),

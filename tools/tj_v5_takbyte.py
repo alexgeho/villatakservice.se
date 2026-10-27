@@ -577,7 +577,7 @@ PAGES_TJ = {
   "img": [
     ("Kedjehus i Täby med fasadtegel, träpanel och branta tak av svarta betongpannor",
      "row of 1970s Swedish linked houses with ground floor in red-brown facing brick and upper gables in brown wooden panel, steep roofs covered with black concrete roof tiles, small dormers clad in black painted sheet metal, black barge boards, small front gardens, Täby north of Stockholm, autumn daylight"),
-    ("Brunt glaserat tegeltak på en gul tegelvilla från 1950-talet",
+    ("Nya svarta takpannor bredvid en del av taket med röda pannor",
      "close-up of a roof covered with brown glazed clay roof tiles with a soft sheen, edge of a yellow brick villa facade from the 1950s below, Swedish suburb, no people, soft daylight"),
   ],
   "related": [],

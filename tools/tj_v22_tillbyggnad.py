@@ -306,7 +306,7 @@ PAGES_TJ = {
   "img": [
     ("Rödmålad villa med en nybyggd inglasad tillbyggnad mot en sjöutsikt mellan träd",
      "falu red Swedish wooden villa with white trims on a sloping lakeside plot, a new glazed garden room extension with a low pitched roof attached on the side facing the water, birches and pines, calm Lake Mälaren glimpsed between trees, summer evening light" + _SFX),
-    ("Altan med skärmtak av trä och glas på baksidan av en villa",
+    ("Hus i två plan med inglasade balkonger och altaner bland tallar",
      "wooden deck at the back of a Swedish villa covered by a timber framed canopy with clear glass roof panels, outdoor furniture removed, lawn and trees beyond, daylight" + _SFX),
     ("Grund och stomme till en tillbyggnad vid en villa nära en strand",
      "timber frame and floor joists of a new extension under construction next to a Swedish lakeside villa, gravel and stone around, water and reeds visible in the background, overcast daylight" + _SFX),
