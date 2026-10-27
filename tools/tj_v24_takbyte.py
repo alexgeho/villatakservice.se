@@ -147,7 +147,7 @@ PAGES_TJ = {
   "img": [
     ("Länga av radhus i tegel med sadeltak av mörka betongpannor",
      "row of 1960s Swedish terraced houses with low-pitched gable roofs of dark concrete roof tiles, red brick and light rendered facades, small front gardens with low hedges, pedestrian path, suburban Stockholm, summer" + _IMG_END),
-    ("Två radhustak i samma länga där det ena är nylagt",
+    ("Ny underlagsduk utrullad över ett takfall",
      "two adjoining roofs of 1960s Swedish brick terraced houses in the same row, low pitch, seen slightly from above, one freshly re-roofed with new dark roof tiles and new metal flashing, the neighbouring roof older with moss, scaffolding along the eaves, daylight" + _IMG_END),
     ("Takfot med ny hängränna och nytt stuprör på ett radhus i tegel",
      "close view of the eaves of a 1960s Swedish terraced house with new galvanised gutter, new eaves flashing and fresh roof tiles, brick wall below, daylight" + _IMG_END),
@@ -236,7 +236,7 @@ PAGES_TJ = {
   "img": [
     ("Äldre villa med brant tegeltak bland ekar på en höjd",
      "early 1900s Swedish wooden villa with steep red clay tile roof, small dormer and chimney, light painted panel facade with white trim, large oak trees on a hilly plot near lake Mälaren, Stockholm, summer" + _IMG_END),
-    ("Tegeltak med plåt kring skorstenen och i ränndalen",
+    ("Tak under omläggning med underlagsduk, läkt och ställning runt huset",
      "freshly laid red clay tile roof on an old Swedish villa with new standing seam flashing around a brick chimney and new ridge tiles, close view, daylight" + _IMG_END),
     ("Tak där teglet delvis tagits av så att råsponten syns, med pannor på ställningen",
      "old roof with clay tiles removed showing wooden roof boarding, new underlay membrane and new battens, stack of red tiles on the scaffolding, daylight" + _IMG_END),
@@ -325,7 +325,7 @@ PAGES_TJ = {
   "img": [
     ("Grupp av enplanshus i trä med grå tak bland granar",
      "group of 1960s Swedish detached single storey houses with low-pitched roofs covered in old grey corrugated fibre cement sheets, wooden facades, lawns and pine trees, western Stockholm suburb, overcast daylight" + _IMG_END),
-    ("Avspärrat tak med plastade skivor på en byggnadsställning",
+    ("Takfot med ny läkt, hängränna och staplade betongpannor",
      "residential roof work site cordoned off with red and white barrier tape, old grey roof sheets wrapped in thick plastic on a pallet next to scaffolding, wooden house in background, daylight" + _IMG_END),
     ("Trähus med nylagt tak av mörka takpannor",
      "1960s Swedish single storey house with brand new dark grey concrete roof tiles and new black gutters, wooden facade, garden, daylight" + _IMG_END),
@@ -601,7 +601,7 @@ PAGES_TJ = {
   "img": [
     ("Faluröd trävilla med brant tegeltak och vita snickerier",
      "1910s Swedish wooden villa painted falu red with white trim, steep red clay tile gable roof with a small dormer, garden with fruit trees and hedge, southern Stockholm, summer" + _IMG_END),
-    ("Ny takkupa under byggnad på ett tak där teglet är avtaget",
+    ("Takläkt och nya röda takpannor på ett brant tak under omläggning",
      "roof of an old Swedish villa during re-roofing with clay tiles removed, a new timber dormer frame being built into the roof slope, new underlay membrane, scaffolding, daylight" + _IMG_END),
     ("Vind med ny isolering och synliga takstolar",
      "attic of an old house during renovation with exposed rafters, new mineral wool insulation between them and a ventilation gap toward the roof, construction light" + _IMG_END),

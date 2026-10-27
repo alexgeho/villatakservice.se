@@ -429,7 +429,7 @@ PAGES_TJ = {
   "img": [
     ("Ljust vitpigmenterat brädgolv i ett tomt vardagsrum i en villa med fönster mot trädgården",
      "empty bright living room in a 1930s Swedish suburban villa, wide pine floorboards freshly treated with white-pigmented hard wax oil giving a pale Scandinavian look, white walls, a window facing a green garden, no furniture, no people, no text"),
-    ("Tre provytor i olika toner från ljust till varmt brunt på ett nyslipat ekgolv",
+    ("Vardagsrum med ljust trägolv och stora fönster",
      "three small sample patches on a freshly sanded oak floor, each treated with a different floor oil tone from pale white to warm brown, a small brush and a tin lid lying nearby, no people, no text"),
   ],
 },

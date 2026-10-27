@@ -122,12 +122,12 @@ TRP_NEIGHBORS = {o: [n for n in v if n in TRP] for o, v in TRP_NEIGHBORS.items()
 # Bilder (tools/gen_images_flux.py): <sida>-1 = hero, <sida>-2 = i innehållet.
 # Alt-texten beskriver motivet – aldrig som eget utfört projekt.
 TRP_IMG_ALT = {
- "Bromma": ("Putsad villa med brant tegeltak och skorsten i en trädgårdsstad i Bromma", "Taknock med lertegel och skorsten med plåtbeslag på en äldre villa"),
+ "Bromma": ("Putsad villa med brant tegeltak och skorsten i en trädgårdsstad i Bromma", "Takfall med svarta betongpannor och vinkelränna"),
  "Solna": ("Mindre putsad villa med valmat tegeltak i Råsunda", "Radhustak med betongpannor, skorstenar och takfönster"),
- "Nacka": ("Sekelskiftesvilla i trä med rött plåttak på en klippa vid vattnet i Nacka", "Villa med mossa på betongpannorna i skogen i Boo"),
+ "Nacka": ("Sekelskiftesvilla i trä med rött plåttak på en klippa vid vattnet i Nacka", "Villa i trädgård med ställning vid taket"),
  "Täby": ("Villa med bruna betongpannor och träfasad i Täby", "Radhuslänga med mörka betongpannor och takfönster"),
- "Danderyd": ("Stor villa med brant tegeltak, takkupor och hög skorsten i Djursholm", "Ränndal och takkupa på ett falsat plåttak"),
- "Lidingö": ("Sekelskiftesvilla i trä med glasveranda och tegeltak på Lidingö", "Villa med svarta takpannor bland tallar på Lidingö"),
+ "Danderyd": ("Stor villa med brant tegeltak, takkupor och hög skorsten i Djursholm", "Svarta betongpannor med nockpannor längs taket"),
+ "Lidingö": ("Sekelskiftesvilla i trä med glasveranda och tegeltak på Lidingö", "Villa med ställning runt taket under renovering"),
  "Huddinge": ("Gul trävilla med tegeltak och snickarglädje i Huddinge", "Kedjehus med mörka takpannor vid skogskanten i Huddinge"),
  "Järfälla": ("Radhus från 1970-talet med bruna betongpannor i Järfälla", "Takfot med betongpannor, hängränna och stuprör"),
  "Sollentuna": ("Tegelvilla med grå betongpannor bland höga tallar i Sollentuna", "Barr och mossa i hängrännan på ett tak med betongpannor"),
@@ -135,10 +135,10 @@ TRP_IMG_ALT = {
  "Upplands Väsby": ("Villagata med likartade hus och mörka tak i Upplands Väsby", "Takfot med takpannor, hängränna och stuprör"),
  "Värmdö": ("Permanentat fritidshus med plåttak i skogen på Värmdö", "Hus på en klippa vid havet i Värmdös skärgård"),
  "Tyresö": ("Rött fritidshus med tillbyggd flygel och två takhöjder vid en vik i Tyresö", "Villa med mossa på taket under höga granar i Tyresö"),
- "Haninge": ("Sekelskiftesvilla med snickarglädje och rött plåttak vid en vik i skärgården kring Dalarö", "Villa med mörka takpannor och träfasad bland björkar i Haninge"),
- "Enskede": ("Trähus med brant tegeltak och staket i Gamla Enskede", "Äldre lertegel med några kompletterade pannor och mossa i fogarna"),
- "Älvsjö": ("Trävilla med tegeltak och glasveranda i Älvsjö", "Plåttäckt takkupa i ett tegeltak på en äldre trävilla"),
- "Norrtälje": ("Rött trähus med svart tak på klipporna vid vattnet i Roslagen", "Fritidshus med låglutande tak bland tallar i Roslagen"),
+ "Haninge": ("Sekelskiftesvilla med snickarglädje och rött plåttak vid en vik i skärgården kring Dalarö", "Röda takpannor på ett längre hus, ställning med skyddsräcke"),
+ "Enskede": ("Trähus med brant tegeltak och staket i Gamla Enskede", "Svart betongpannetak runt en takkupa"),
+ "Älvsjö": ("Trävilla med tegeltak och glasveranda i Älvsjö", "Svart betongpannetak vid skorstenen efter renovering"),
+ "Norrtälje": ("Rött trähus med svart tak på klipporna vid vattnet i Roslagen", "Timrat hus med rött tak"),
  "Södertälje": ("Putsad villa med tegeltak i en sluttning ovanför en sjö i Södertälje", "Villa med grå takpannor vid skogskanten i Södertälje"),
 }
 # v8: nya orters alt-texter ligger i TRP[ort]["img"] (samma schema som PAGES_TJ).

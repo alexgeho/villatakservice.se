@@ -214,7 +214,7 @@ PAGES_TJ = {
            "1920s Swedish wooden villa with white small-paned glazed veranda and panelled entrance door, "
            "pale green vertical board facade, red tile roof, mature pine and apple trees, garden city suburb "
            "Bromma Stockholm, summer daylight, no people, no text"),
-          ("Nya spröjsade bågar och foder på en äldre glasveranda i trä",
+          ("Altan med räcke och trappa vid ett trähus",
            "close-up of newly made white painted wooden window sashes with small glazing bars and moulded "
            "casings on an old glazed wooden veranda, carpentry repair, soft daylight, no people, no hands, "
            "no text")],

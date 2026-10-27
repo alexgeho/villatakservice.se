@@ -131,7 +131,7 @@ PAGES_TJ = {
   "img": [
     ("Nyslipat furugolv i ett rum i en äldre villa",
      "freshly sanded and oiled wide pine plank floor in an empty room of a 1920s Swedish wooden villa, white painted panelled walls, tall window with light falling across the boards, summer daylight" + _SFX),
-    ("Gammalt trägolv med spikhål efter en borttagen matta",
+    ("Ljust vardagsrum med trägolv",
      "close view of an old dark varnished pine floor with many small nail holes and scattered old nails in rows, after linoleum and hardboard were removed, a claw hammer lying on the boards, daylight" + _SFX),
     ("Golvslipmaskin på ett delvis slipat golv",
      "drum floor sanding machine standing on a partly sanded wooden floor in an empty room, the sanded half pale and the unsanded half darker, dust extraction hose attached, daylight" + _SFX),

@@ -346,7 +346,7 @@ PAGES_TJ = {
   "img": [
     ("Villa i Haninge med nytt tak av svarta betongpannor och nya hängrännor en klar höstdag",
      "Swedish 1970s one-storey villa with a newly laid black concrete tile gable roof, new black gutters and downpipes, light wooden facade, birch trees and a lawn, clear autumn day" + _IMG_END),
-    ("Uppbyggnad av ett tak under byte med råspont, underlagspapp och nya läkt på takstolar",
+    ("Svarta betongpannor läggs på läkt, halva takfallet klart",
      "roof replacement in progress on a Swedish house: visible wooden roof trusses, new tongue and groove roof boarding partly covered with black underlay felt and fresh pale battens, stacks of new roof tiles on the scaffolding, no workers, overcast daylight" + _IMG_END),
     ("Förstärkta takstolar på en kallvind med nya reglar bredvid de gamla",
      "interior of a cold attic in a Swedish villa with old wooden roof trusses reinforced by new pale timber members bolted alongside them, mineral wool insulation on the floor, daylight from a small gable window" + _IMG_END),
@@ -429,7 +429,7 @@ PAGES_TJ = {
   "img": [
     ("Egnahem med brutet tak av rött lertegel och ljus träpanel i en lummig villastad",
      "small Swedish one-and-a-half-storey wooden house from the 1920s with a mansard gambrel roof: each roof side has a steep lower slope and a gentle upper slope with a clear break line, covered in red clay tiles, light grey vertical board facade, white window frames, mature fruit trees and lilac bushes in the garden, narrow road without pavement, summer daylight" + _IMG_END),
-    ("Brytlinje på ett brutet tak där nytt underlag och ny läkt möter plåten",
+    ("Läktat tak i hela längden inför pannläggning",
      "close-up of the break line on a gambrel roof under replacement: lower steep slope with new black underlay felt and pale battens, a new metal flashing strip along the break line, upper slope already covered with new red clay tiles, overcast daylight" + _IMG_END),
     ("Nytt underlag, läkt och lertegel framlagt på byggnadsställningen innan taket läggs om",
      "scaffolding platform along the eaves of a Swedish wooden house with a roll of black roof underlay, a bundle of pale wooden battens and stacked new red clay roof tiles, the roof deck behind half covered with new underlay, overcast daylight" + _IMG_END),

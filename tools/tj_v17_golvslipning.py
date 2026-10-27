@@ -195,7 +195,7 @@ PAGES_TJ = {
   "img": [
     ("Ljust lutat och såpat furugolv med breda brädor i ett tomt rum i en villa från 1920-talet",
      "empty room in a 1920s Swedish garden-city villa, wide pine floorboards freshly treated with white lye and soap giving a pale matte Scandinavian surface, white painted panelled walls, small-paned window with soft daylight, no furniture, no people, no text"),
-    ("Hink av plast, lutborste med träskaft och skurblock på ett nyslipat furugolv",
+    ("Ljust trägolv genom vardagsrum och hall",
      "close-up of a plastic bucket, a wide lye brush with a wooden handle and a scrubbing block resting on a freshly sanded bare pine floor, part of the floor already lye-treated paler than the rest, masking paper along a white skirting board, no people, no text"),
   ],
 },

@@ -170,7 +170,7 @@ PAGES_TJ = {
      "renovated kitchen in a 1920s Swedish wooden garden-city villa, white shaker cabinets, oak worktop, "
      "small paned windows with white frames facing an apple garden, wide pine floorboards, a chimney breast with "
      "the cooker hood connected to it, calm daylight, Bromma Stockholm"),
-    ("Kök under renovering med ny fläktkanal vid den murade skorstenen i en villa i Bromma",
+    ("Kök med matplats och ugn i högskåp",
      "kitchen under renovation in an old Swedish wooden house, cabinets removed, a wall partly opened with a new "
      "laminated timber beam above the opening, a new galvanized ventilation duct leading to a brick chimney, "
      "protective paper on the floor, tools neatly stacked, daylight"),
@@ -880,7 +880,7 @@ PAGES_TJ = {
      "renovated spacious kitchen in a large early 1900s Swedish national romantic villa, painted pale grey "
      "panelled cabinets, marble worktop, tall paned windows facing a garden with large oak trees, original "
      "wooden ceiling beams, wide plank floor, daylight, Djursholm"),
-    ("Sorteringsskåp under diskbänken i ett nyrenoverat kök",
+    ("Kök med vita luckor och mönstrat klinkergolv",
      "pull-out waste sorting drawer with several bins under the sink in a newly renovated Scandinavian kitchen, "
      "one small bin with a brown paper bag for food waste, wooden cabinet front open, clean and bright, close-up"),
   ],

@@ -146,7 +146,7 @@ PAGES_TJ = {
   "img": [
     ("Byggställning med väderskydd mot en gata i stenstaden",
      "scaffolding with white weather protection sheeting covering the facade and roof of a late 1800s plastered apartment building on a narrow street in Stockholm, pavement kept free under the scaffold, overcast day" + _SFX),
-    ("Nytt falsat plåttak på ett äldre flerbostadshus",
+    ("Nylagt rött pannat tak på ett flerbostadshus, ställning längs kanten",
      "close view of a newly laid dark grey standing seam metal roof with a small metal-clad dormer on an old Stockholm apartment building, plain unmarked metal sheets, plastered chimneys behind, clear sky" + _SFX),
     ("Container för rivningsmaterial vid trottoarkanten",
      "an empty steel construction skip container placed at the kerb in front of an old apartment building in Stockholm, traffic cones around it, plain unmarked surfaces, daylight" + _SFX),
@@ -231,7 +231,7 @@ PAGES_TJ = {
   "img": [
     ("Plåttak och takkupor på stenhus i ett kvarter",
      "rooftops of late 19th century plastered apartment buildings in a Stockholm city block with dark standing seam metal roofs, dormers and chimneys, seen from a higher roof, clear afternoon" + _SFX),
-    ("Pärm och ritningar på ett bord i ett föreningsrum",
+    ("Långt rött pannat tak på ett flerbostadshus med skorstenar",
      "a closed binder, roof drawings and a calculator on a meeting table in a small association room in an old building, window light" + _SFX),
     ("Ny plåt på ett takfall med snörasskydd",
      "new dark grey standing seam steel roof slope with a snow guard rail along the eaves on an old apartment building, blue sky" + _SFX),
@@ -312,7 +312,7 @@ PAGES_TJ = {
   "img": [
     ("Plåttak med takbrygga och skorstenar på ett stenhus",
      "dark standing seam metal roof of a late 1800s light plastered Stockholm apartment building with ornate stucco facade, a metal roof walkway leading to plastered chimneys, blue sky, Scandinavian city" + _SFX),
-    ("Snörasskydd längs takfoten ovanför en entré",
+    ("Röda takpannor läggs på läkt på ett flerbostadshus",
      "close view of a steel snow guard rail mounted along the eaves of a metal roof above the arched entrance of an old plastered apartment building, winter light" + _SFX),
     ("Takstege mot en skorsten på ett plåttak",
      "a fixed steel roof ladder and safety hooks on a sloping metal roof leading up to a chimney on an old city building, clear sky" + _SFX),

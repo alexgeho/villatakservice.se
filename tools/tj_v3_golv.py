@@ -112,7 +112,7 @@ PAGES_TJ = {
   "img": [
     ("Nyslipat brett furugolv i ett ljust rum i en villa från 1920-talet i Bromma",
      "freshly sanded and oiled wide pine floorboards in an empty bright bedroom of a late 1920s Swedish classicist villa in Bromma Stockholm, white painted wooden skirting boards, tall window with white frame, view of garden with pine trees, soft daylight, no people, no text"),
-    ("Hörn där heltäckningsmatta är uppvikt och ett äldre trägolv syns under",
+    ("Ljust golv i en stor lokal med takstolar",
      "corner of an empty room in an old Swedish villa where a worn beige wall-to-wall carpet is folded back revealing original wooden floorboards with old paint traces underneath, removed skirting board leaning against the wall, natural light, no people, no hands, no text"),
   ],
   "related": [

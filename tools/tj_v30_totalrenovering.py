@@ -758,7 +758,7 @@ PAGES_TJ = {
     ("Sekelskiftesvilla i trä med veranda på en stor trädgårdstomt",
      "Swedish wooden villa from around 1905 with a glazed veranda, white trim and a steep red tile roof on a large "
      "garden plot with old fruit trees and a clipped hedge, quiet villa street, early summer" + _SFX),
-    ("Ny elcentral och nya ledningar i en villa under renovering",
+    ("Ljus hall med vita väggar och trägolv",
      "new grey residential electrical distribution board mounted on a wall in an old wooden villa under "
      "renovation, new cables running in conduits along exposed studs, daylight" + _SFX),
     ("Kök i en äldre villa under ombyggnad med skorstensstock i hörnet",

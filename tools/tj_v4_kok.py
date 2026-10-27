@@ -619,7 +619,7 @@ PAGES_TJ = {
      "renovated kitchen in a 1930s Swedish wooden owner-built house, white framed cabinet doors, light "
      "wooden worktop, old wooden floorboards, small paned window with view of a garden, simple pendant "
      "lamp, daylight, no people, no text"),
-    ("Köksfläkt ovanför spishällen i ett nyrenoverat kök",
+    ("Köksö med barstolar och öppna hyllor",
      "Swedish kitchen renovation detail, new round galvanised exhaust duct above the planned cooker position, "
      "new electrical boxes in a freshly plastered wall, no cabinets yet, daylight, no people, no text"),
   ],

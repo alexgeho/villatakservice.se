@@ -135,7 +135,7 @@ PAGES_TJ = {
   "img": [
     ("Nationalromantisk villa med brant tegeltak bakom en häck",
      "early 1900s Swedish national romantic garden city villa with steep red clay tile gable roof, small dormer, dark wooden panel and white window frames, clipped hedge in front, curving residential street with mature trees, Stockholm, summer" + _IMG_END),
-    ("Takfot och vindskiva på ett tegeltak i närbild",
+    ("Ny underlagsduk och bärläkt på taket innan pannorna läggs",
      "close view of the eaves and bargeboard of an old Swedish villa with red clay roof tiles, painted wooden bargeboard and simple metal gutter, showing the thin roof edge profile, daylight" + _IMG_END),
     ("Vind med ny lösull på bjälklaget under taket",
      "interior of an empty attic of an old wooden house with mineral wool insulation fitted between the rafters under the roof boards, light from a small gable window, tidy and dry, no tools in use" + _IMG_END),
@@ -224,7 +224,7 @@ PAGES_TJ = {
   "img": [
     ("Radhuslänga från 1970-talet i trä och tegel",
      "row of 1970s Swedish terraced houses with low-pitched mono-pitch roofs, brown wooden panels and yellow brick, small front yards, pedestrian path with young trees, suburban Stockholm, summer" + _IMG_END),
-    ("Platt tak med nytt tätskikt och takbrunn sett ovanifrån",
+    ("Läkt och underlagsduk på ett villatak med skorsten",
      "view from above of a flat roof on a 1970s Swedish terraced house with new dark bitumen roofing membrane, a roof drain and a ventilation pipe flashing, neat metal edge trim, daylight" + _IMG_END),
     ("Takfot med ny hängränna och stuprör på ett radhus",
      "close view of the low edge of a mono-pitch roof on a 1970s house with new metal edge flashing and gutter, wooden facade panel below, daylight" + _IMG_END),
@@ -401,7 +401,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med sadeltak av tegel på en villagata i Solna",
      "1920s Swedish detached villa with red clay tile gable roof facing the street, light rendered facade, white windows, garden with fruit trees and low fence, quiet residential street, Stockholm area, summer" + _IMG_END),
-    ("Takstolar och råspont på en vind under ett takbyte",
+    ("Nylagt orange tak med flera skorstenar på ett flerbostadshus",
      "interior view of an old attic during re-roofing, wooden rafters and roof boards visible, daylight coming through a gap where old roofing has been removed, timber stacked neatly, no people" + _IMG_END),
     ("Villa med nytt tak av falsad plåt",
      "view of a Swedish villa from a garden corner showing both slopes of the gable roof, one facing the street and one facing the garden, new metal standing seam roof, daylight" + _IMG_END),
@@ -578,7 +578,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med tegeltak och takkupa i en lummig trädgård",
      "1920s Swedish detached villa with red clay tile roof, one dormer and a brick chimney, light grey wooden facade with white trim, garden with apple trees and a hedge, quiet villa street, Stockholm, summer, clean image without any watermark or logo" + _IMG_END),
-    ("Takkupa med plåtdetaljer på ett tegeltak",
+    ("Tak på ett flerbostadshus under omläggning, ställning och skyddsräcke",
      "close view of a dormer on a red clay tile roof of an old Swedish villa, with painted wooden window, metal flashing around the dormer cheeks and valley, daylight" + _IMG_END),
     ("Villagata med olika tak bakom staket och häckar",
      "quiet villa street on Stora Essingen style island with individually designed old villas with different roofs, clay tiles and metal, behind picket fences and hedges, trees, daylight, empty street" + _IMG_END),

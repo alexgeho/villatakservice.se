@@ -148,7 +148,7 @@ PAGES_TJ = {
   "img": [
     ("Ny trätrall i två nivåer vid en äldre villa på en kuperad tomt i Tullinge",
      "newly built wooden deck terrace in two levels with short wooden steps on a sloping rocky garden plot, attached to an early 1900s Swedish wooden villa painted pale yellow with white trim, pine and birch trees, granite outcrop, Tullinge Botkyrka suburb, summer afternoon, no people"),
-    ("Fristående förråd i trä med stående panel under uppbyggnad i en villaträdgård",
+    ("Ny trätrall med breda trappsteg i trädgården",
      "small freestanding wooden garden shed under construction behind a Swedish villa, vertical board-and-batten cladding partly mounted on a light timber frame, concrete plinth foundation, stacked boards and sawhorses, mature apple tree, Botkyrka, overcast day, no people, no hands, no text"),
   ],
   "related": [],

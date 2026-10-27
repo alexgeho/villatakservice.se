@@ -151,7 +151,7 @@ PAGES_TJ = {
   "img": [
     ("Äldre trävilla med en lägre tillbyggnad med glaspartier mot en lummig trädgård",
      "early 1900s Swedish two-storey wooden villa with light yellow board cladding and a red clay tile roof, with a lower new single-storey extension with large glass doors and a pitched roof attached on the garden side, mature apple trees and lawn, Stockholm villa suburb, summer daylight" + _SFX),
-    ("Villa långt in på tomten med en tillbyggnad som följer husets takform",
+    ("Villa med en del i sten och stora glaspartier",
      "Swedish villa set far back on a large leafy plot with a front garden toward a narrow winding street, a new side extension with the same roof pitch and similar wooden cladding, clipped hedge along the street, daylight" + _SFX),
     ("Berghäll och låg stödmur av natursten i en villaträdgård",
      "garden of a Swedish villa with a smooth granite outcrop, a low natural stone retaining wall and lawn next to a freshly cast concrete foundation slab for a small extension, trees left standing, overcast daylight" + _SFX),

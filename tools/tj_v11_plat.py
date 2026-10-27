@@ -231,7 +231,7 @@ PAGES_TJ = {
   "img": [
     ("Gult radhus i Tullinge med grått plåttak, hängrännor och stuprör",
      "row of 1970s Swedish terraced houses in Tullinge Botkyrka with light yellow wooden panel facades, grey corrugated-profile metal roofs with matching grey half-round gutters and round downpipes ending on concrete splash blocks onto lawn, small front gardens with low hedges, pine forest behind, overcast autumn daylight, photorealistic, no people, no text"),
-    ("Liten röd gäststuga med svart plåttak och eget stuprör mot gräsmattan",
+    ("Plåtgenomföring för ventilationsrör på ett rött pannat tak",
      "small falu red Swedish guest cabin in a villa garden with a black standing-seam metal roof, a black half-round gutter along the eave and one black downpipe at the corner ending in a short outlet over a lawn, white window frames, birch tree, overcast daylight, photorealistic, no people, no hands, no text"),
   ],
   "related": [],

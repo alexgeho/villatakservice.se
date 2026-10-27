@@ -204,7 +204,7 @@ PAGES_TJ = {
     ("Nytt badrum i en permanentad trästuga i Huddinge",
      "small newly built bathroom inside a converted Swedish wooden summer cottage, white painted wood panel ceiling, "
      "light grey floor tiles, white wall tiles, compact walk-in shower with glass screen, small window with pine forest outside"),
-    ("Rivet badrumsgolv med ny golvbrunn inför uppbyggnaden",
+    ("Vitt badrum med toalett, badkar och handdukstork",
      "small Swedish house bathroom stripped for renovation, no fixtures, bare grey concrete floor sloping towards a new small round "
      "stainless steel floor drain in the middle, grey plastic drain pipe stubs coming out of the floor, white wet-room boards "
      "stacked against bare walls, a bucket and a spirit level, daylight from a small window"),
@@ -888,7 +888,7 @@ PAGES_TJ = {
     ("Renoverat badrum i en sekelskiftesvilla i Danderyd",
      "spacious renovated bathroom in a large Swedish 1910s national romantic villa, white panelled walls, grey marble-look "
      "floor tiles, freestanding bathtub, double washbasin with wooden cabinet, tall window with small panes, daylight"),
-    ("Stor villa från 1910-talet i Djursholm",
+    ("Kommod med handfat och spegelskåp i ett nytt badrum",
      "large Swedish 1910s national romantic villa with steep red clay tile roof, several dormers and a tall chimney, "
      "dark wooden facade, large oak trees and a rocky natural garden, Djursholm, summer"),
   ],

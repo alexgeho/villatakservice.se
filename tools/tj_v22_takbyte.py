@@ -148,7 +148,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med nylagt svart pannetak, murad skorsten och ställning längs ena gaveln",
      "Swedish one-and-a-half storey wooden villa painted light grey with a newly laid black concrete tile roof and a brick chimney with fresh black metal flashing, scaffolding along the eaves, birches and a glimpse of Lake Mälaren behind, late summer daylight" + _IMG_END),
-    ("Takfall med nylagda svarta pannor och solpaneler",
+    ("Solpaneler monterade på ett tak med svarta betongpannor",
      "pitched roof of a Swedish villa with new dark grey concrete roof tiles and aluminium mounting rails with roof hooks installed for solar panels, no panels yet, clear sky" + _IMG_END),
     ("Tak under byte med ställning längs takfoten och ny duk på en del av takfallet",
      "Swedish villa roof during replacement: old tiles removed, timber rafters and fresh tongue-and-groove roof boarding partly covered with underlayment membrane, scaffolding with guard rail at the eaves, overcast daylight" + _IMG_END),
@@ -227,7 +227,7 @@ PAGES_TJ = {
   "img": [
     ("Trävilla med brant sadeltak av rött tegel på en bergig tomt med tallar",
      "early 1900s Swedish wooden villa with a steep pitched roof of red clay tiles, a glazed veranda and decorative gable trim on a rocky hill among pine trees, a glimpse of the sea, summer daylight" + _IMG_END),
-    ("Två staplar röda lertegelpannor på pall intill ett hus under takbyte",
+    ("Ny råspont av trä på taket innan underlagsduken läggs",
      "stack of old weathered red clay roof tiles on a wooden pallet next to a stack of new red clay tiles of the same profile on a Swedish villa driveway, scaffolding in the background, overcast daylight" + _IMG_END),
     ("Radhuslänga med enhetliga tak och skorstenar sett från gatan",
      "row of 1940s Swedish terraced houses with uniform red tiled roofs, identical chimneys and white rendered facades along a quiet street with small front gardens, daylight" + _IMG_END),
@@ -385,7 +385,7 @@ PAGES_TJ = {
   "img": [
     ("Villa i tegel och trä med mörkt betongpannetak vid en villagata",
      "1970s Swedish single-storey villa with brown brick and wooden facade and a newly laid dark grey concrete tile roof, scaffolding with guard rail along the eaves, birch trees and a quiet residential street, Uppland suburb, clear daylight" + _IMG_END),
-    ("Solpaneler monterade på skenor på ett nylagt tak",
+    ("Svart pannat tak med solpaneler och takfönster",
      "close view of black solar panels mounted on aluminium rails over new dark concrete roof tiles on a Swedish villa, neat cable routing at the edge, blue sky" + _IMG_END),
     ("Förstärkta takstolar på en öppen vind under ett takbyte",
      "open attic during a roof replacement on a Swedish house, existing timber roof trusses reinforced with new timber members and metal nail plates, daylight coming through gaps in the roof boarding" + _IMG_END),
@@ -465,7 +465,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med nylagt rött tegeltak och en ny takkupa under ställning",
      "Swedish one-and-a-half storey villa with white rendered facade and a newly laid red clay tile roof with a new dormer being finished, scaffolding along the side, garden with lilac bushes, Stockholm southern suburb, summer daylight" + _IMG_END),
-    ("Takintegrerade solpaneler i samma plan som omgivande takpannor",
+    ("Nya röda takpannor läggs på läkt längs takfoten, ställning vid sidan",
      "roof-integrated black solar panels laid flush with surrounding dark roof tiles on a pitched Swedish villa roof, neat metal flashing around the panel field, clear sky" + _IMG_END),
     ("Nyuppbyggd stomme till en takkupa på ett tak med ny underlagsduk",
      "close-up architectural detail photo of a newly framed timber dormer opening in a pitched roof, rafters and fresh roof boarding with grey underlay membrane, still life, deserted, calm Sunday, daylight" + _IMG_END),

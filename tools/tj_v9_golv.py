@@ -497,7 +497,7 @@ PAGES_TJ = {
   "img": [
     ("Slipat trägolv i en äldre villa med spröjsade fönster i Tullinge",
      "empty room in a Swedish 1920s wooden catalogue house with a freshly sanded honey-coloured pine floor, white panelled door, small-paned white windows with a view of pine trees on a rocky hill, white skirting boards, soft daylight, no furniture, no people, no text"),
-    ("Källarrum med betonggolv som förbereds för ett nytt golv",
+    ("Rum med ljust golv och fönster i rad",
      "basement room of an older Swedish villa being prepared for a new floor, bare grey concrete floor, whitewashed walls, small high window letting in daylight, a moisture meter and a roll of floor underlay standing by the wall, clean and tidy, no people, no hands, no text"),
   ],
   "related": [],

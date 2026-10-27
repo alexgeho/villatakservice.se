@@ -170,7 +170,7 @@ PAGES_TJ = {
     ("Renoverat badrum under snedtak i en äldre trävilla i Bromma",
      "renovated bathroom under a sloping attic ceiling in a 1920s Swedish wooden villa, white tiles, light grey floor tiles, "
      "small roof window, walk-in shower with glass screen, Bromma garden city"),
-    ("Öppet badrumsgolv med träbjälkar i en villa i Bromma",
+    ("Ljust badrum med vägghängd toalett och spotlights i taket",
      "bathroom under renovation in an old Swedish wooden house, floor opened to wooden joists, new plastic drain pipes, "
      "stacked wet-room boards, natural light"),
   ],

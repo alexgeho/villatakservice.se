@@ -513,7 +513,7 @@ PAGES_TJ = {
      "compact newly renovated bathroom in a Swedish archipelago summer house converted for year-round living, white "
      "wall-hung toilet, small white washbasin, light grey floor tiles, white painted tongue-and-groove wood panel on "
      "the upper walls, small window with pine trees and calm water outside, clean and empty"),
-    ("Fritidshus med brygga på en ö i Haninges skärgård",
+    ("Badrum med badkar, handdukstork och mörk kakelvägg",
      "small falu red wooden Swedish cottage with white trim on a rocky island in the Stockholm archipelago, a simple "
      "wooden jetty, pine trees on granite, calm water, summer afternoon"),
   ],
@@ -947,7 +947,7 @@ PAGES_TJ = {
      "renovated bathroom in a Swedish 1970s terraced house, large light grey wall tiles, dark anthracite floor tiles, "
      "wall-hung toilet, white washbasin on a wooden vanity, shower corner with glass wall, white round exhaust air valve "
      "in the ceiling, soft daylight, clean and empty"),
-    ("Badrum under ombyggnad med betongväggar, golvbrunn och våtrumsskivor",
+    ("Renoverat badrum med kommod, badkar och vägghängd toalett",
      "small Swedish terraced house bathroom completely stripped for renovation, no fixtures and no bathtub, bare grey "
      "concrete walls and floor, a round white exhaust air valve fitted in the bare ceiling, a hole in the floor where the "
      "old floor drain was removed, grey drain pipe stub, stacked white wet-room boards leaning against the wall, small "

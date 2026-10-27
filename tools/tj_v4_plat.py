@@ -322,7 +322,7 @@ PAGES_TJ = {
      "1920s Swedish one-and-a-half storey wooden villa with steep red clay tile roof and a small centred dormer "
      "clad in dark grey standing-seam metal, black metal flashings around the dormer, hedge and fruit trees, "
      "garden city suburb Bromma Stockholm, summer daylight, no people, no text"),
-    ("Låg takfot med smal plåtavslutning på en vit funkisvilla",
+    ("Rörgenomföring med plåtkrage på takpannor",
      "close-up of the low-pitched roof edge of a white rendered 1930s Swedish functionalist villa, thin dark "
      "metal fascia flashing and slim half-round gutter, pine branches, soft daylight, no people, no text"),
   ],

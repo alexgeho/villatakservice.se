@@ -161,7 +161,7 @@ PAGES_TJ = {
   "img": [
     ("Villa på en kuperad tomt med tillbyggnader från olika tider",
      "Swedish wooden villa on a hilly wooded plot, original small 1930s summer cottage part with red facade joined to a later larger extension with light grey panel, granite rocks and pine trees, winding gravel road, Tullinge, summer" + _IMG_END),
-    ("Uppbrutet golv som visar övergången mellan två husdelar",
+    ("Ljust vardagsrum med vita väggar efter renovering",
      "still life inside a house under renovation: floorboards lifted where an old cottage part meets a later extension, showing two different floor joist structures side by side, work lamp, daylight" + _IMG_END),
     ("Nyrenoverat vardagsrum med öppen planlösning",
      "bright newly renovated open-plan living room in a Swedish villa with light oak floor, white walls, large windows towards a wooded garden, modern kitchen in the background, daylight" + _IMG_END),

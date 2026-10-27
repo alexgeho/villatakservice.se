@@ -484,7 +484,7 @@ PAGES_TJ = {
   "img": [
     ("Litet trähus med ljusgul panel och sadeltak bakom en äldre villa i en lummig trädgård",
      "small newly built Swedish timber guest house with pale yellow horizontal board cladding, white trims and a pitched red clay tile roof at the back of a large leafy garden behind an early 1900s wooden villa, old fruit trees and a clipped hedge, Stockholm villa suburb, summer daylight" + _SFX),
-    ("Snören och käppar som markerar ett litet hus mellan fruktträd på en gräsmatta",
+    ("Villa och fristående garage på en gräsmatta",
      "wooden stakes and white string marking the rectangular footprint of a small house on a lawn between old apple trees in a Swedish villa garden, a wheelbarrow nearby, soft overcast light" + _SFX),
     ("Rensbrunn och nya rör i en grävd ränna mellan en villa och ett litet hus",
      "open trench across a garden lawn with a new grey plastic inspection chamber, a blue water pipe and an orange sewer pipe running from an older villa towards a small new timber house, Stockholm suburb garden, daylight" + _SFX),

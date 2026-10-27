@@ -121,7 +121,7 @@ PAGES_TJ = {
   "img": [
     ("Stor ljus villa i Danderyd med mörkt falsat plåttak, hängrännor och stuprör",
      "large early 1900s Swedish villa with light yellow rendered facade and a dark grey standing-seam metal roof, matching dark grey half-round gutters and round downpipes ending in a gravel bed, big oak trees and lawn, Djursholm Danderyd, overcast autumn daylight, no people, no text"),
-    ("Hängränna och stuprör i plåt vid hörnet av en gul trävilla med regntunna",
+    ("Nock och plåtdetaljer längs ett långt rött tak",
      "corner of a light yellow painted wooden Swedish villa with white corner boards, a dark grey metal half-round gutter at the eaves turning into a round dark grey metal downpipe that runs down the corner and ends just above a green rain barrel standing on flat stones, lawn and autumn leaves, overcast day, no plastic pipes, no people, no hands, no text"),
   ],
   "related": [],
@@ -208,7 +208,7 @@ PAGES_TJ = {
   "img": [
     ("Rödmålad villa i Ekerö med svart falsat plåttak och solpaneler",
      "red painted Swedish wooden villa with white corners and a black standing-seam metal roof with a row of black solar panels mounted on clamps along the seams, black gutters and downpipes, birch trees and a glimpse of lake Mälaren, Ekerö, summer daylight, no people, no text"),
-    ("Carport med lågt plåttak, hängränna och stuprör vid en grusad uppfart",
+    ("Takfotsplåt och hängränna längs ett rött pannat tak",
      "empty small open Swedish wooden carport on four posts with no walls at the front, a low-pitched grey corrugated metal roof without any chimney or flue, a slim grey metal gutter along the eave and one round downpipe at the back corner, gravel driveway, pine and birch trees, rural Ekerö, overcast day, completely empty carport, no vehicles, no chimney, no people, no text"),
   ],
   "related": [],

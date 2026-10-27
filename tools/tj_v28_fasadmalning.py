@@ -139,7 +139,7 @@ PAGES_TJ = {
   "img": [
     ("Nationalromantisk villa med mörkgrön panel och vita fönsterfoder",
      "1910s Swedish national romantic villa with horizontal wooden facade panel painted in a muted green-grey, steep red clay tile roof, small-paned windows with white painted frames, garden with birch trees, railway village suburb south of Stockholm, summer" + _IMG_END),
-    ("Funkisvilla med slätputsad fasad i ljus kulör",
+    ("Vit villa med rött tak och plattsatt gång",
      "1930s Swedish functionalist villa with smooth light rendered facade in pale cream, simple cubic volume, windows without glazing bars, low hipped roof, lawn and pine trees, summer" + _IMG_END),
     ("Nyskrapad panel med bättrade partier före slutstrykning",
      "close view of a wooden facade panel on an old house prepared for repainting, loose paint scraped off, some areas primed, nail heads set, paint scraper lying on a scaffold plank, daylight" + _IMG_END),
@@ -300,7 +300,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med vit putsad bottenvåning och panelklädd gavel",
      "1910s Swedish villa with white smooth rendered ground floor and dark brown painted wooden panel in the gable above, small-paned windows with shutters, steep red clay tile gable roof, garden with lilac and fruit trees, Stockholm suburb, summer" + _IMG_END),
-    ("Övergången mellan puts och träpanel på en gavel",
+    ("Ljust trähus med ny altan och räcke",
      "close view of the junction between a white lime rendered wall and a dark brown painted wooden gable panel above, with a horizontal wooden drip board between them, daylight" + _IMG_END),
     ("Nykalkad putsyta med levande yta",
      "close view of a freshly lime-washed rendered wall in white with a lively slightly mottled surface, window shutter edge visible, soft daylight" + _IMG_END),

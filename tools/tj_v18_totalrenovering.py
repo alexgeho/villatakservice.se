@@ -227,7 +227,7 @@ PAGES_TJ = {
   "img": [
     ("Nyrenoverat ljust vardagsrum i en äldre villa med öppen planlösning mot köket",
      "renovated living room in a 1920s Swedish garden-city villa opened up towards a new white kitchen, wide oiled pine floorboards, white painted mouldings and original panelled doors kept, multi-pane windows with garden view, soft daylight, empty, no people, no text, no letters"),
-    ("Villa under totalrenovering med öppna väggreglar och nydragna rör och elkablar",
+    ("Öppen planlösning med kamin och matplats",
      "interior of a Swedish 1930s villa during total renovation, wall studs exposed, new plastic water pipes and electrical cables neatly routed through the studs, subfloor visible, a step ladder and tool boxes on protective board, daylight from windows, no people, no text, no letters"),
   ],
   "related": [],
@@ -305,7 +305,7 @@ PAGES_TJ = {
   "img": [
     ("Stor äldre villa med nyrenoverad hall, bevarade spegeldörrar och trätrappa",
      "renovated entrance hall of a large early 1900s Swedish national romantic villa, restored original panelled doors and a dark oak staircase kept, new light walls, herringbone oak floor, tall multi-pane window, soft daylight, empty, no people, no text, no letters"),
-    ("Nedmonterade gamla innerdörrar och fönsterbågar staplade för återbruk",
+    ("Rum med svart kamin och grå träpanel",
      "several old wooden panelled interior doors and multi-pane window sashes carefully stacked on timber battens under a tarpaulin roof next to a Swedish villa under renovation, sorted piles of wood and metal behind, overcast daylight, no people, no text, no letters, no labels"),
   ],
   "related": [],

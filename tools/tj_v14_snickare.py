@@ -260,7 +260,7 @@ PAGES_TJ = {
   "img": [
     ("Vitt spjälstaket med grind framför en gul trävilla med glasveranda i Älvsjö",
      "white painted wooden picket fence with a matching garden gate between square posts along a quiet curving street, behind it a deep green front garden with lilac bushes and a light yellow early 1900s Swedish wooden villa with a glazed veranda and red clay tile roof set back from the street, Älvsjö Stockholm, early summer daylight, no people, no text"),
-    ("Nybyggd trägrind på stolpar i en villaträdgård",
+    ("Ny trappa med räcke",
      "close view of a newly built unpainted pine wooden garden gate with vertical slats hung on two sturdy square wooden posts with black metal hinges and latch, gravel path leading to a villa garden, trimmed hedge on both sides, soft daylight, no people, no hands, no text"),
   ],
   "related": [],

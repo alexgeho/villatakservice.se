@@ -213,7 +213,7 @@ PAGES_TJ = {
      "floor tiles laid continuously into a walk-in shower area without any shower tray, one small square stainless floor "
      "drain inside the shower area, single fixed clear glass shower screen, white wall tiles, white washbasin cabinet, "
      "small window with a view of birch and pine trees, clean and empty"),
-    ("Varmvattenberedare och avstängningsventiler i ett tvättutrymme",
+    ("Duschhörna med glasvägg och handfat på kommod",
      "white cylindrical domestic hot water heater standing on a tiled floor in a clean small Swedish utility room, "
      "a few neat vertical copper pipes along the wall with one red and one blue shut-off valve handle, small round floor "
      "drain, plain white walls, simple and tidy, nothing else in the room, no people"),
@@ -767,7 +767,7 @@ PAGES_TJ = {
      "shower without a tray, one small square stainless floor drain inside the shower, single fixed glass screen, white "
      "wall tiles, one small basement window high on the wall with daylight, one wall-hung toilet, white towel radiator, "
      "clean and empty, no people"),
-    ("Golvbrunn med rostfritt galler i ett nylagt klinkergolv",
+    ("Duschhörna med glasdörrar och rutigt golv",
      "close-up of a square stainless steel floor drain grate set in newly laid grey ceramic floor tiles with neat grout "
      "lines sloping towards it, a few water droplets, in a Swedish bathroom, no people, no text"),
   ],
@@ -899,7 +899,7 @@ PAGES_TJ = {
      "renovated small bathroom on the upper floor of a Swedish 1910s wooden house, sloping attic ceiling, small white "
      "wooden window with deep sill tiled and sloping inwards, white wall tiles, hexagon grey floor tiles, freestanding "
      "white bathtub away from the window, warm daylight, clean and empty, no people"),
-    ("Nya golvskivor och golvbrunn före tätskikt i ett badrum i ett trähus",
+    ("Dusch med två duschset och klinker på golv och väggar",
      "top-down view of a bathroom floor under renovation in an old Swedish wooden house: new light brown chipboard "
      "subfloor panels with neat rows of screws and visible panel joints, a new round grey plastic floor drain fitting "
      "installed in the middle of the floor, bare wooden walls at the edges, construction dust, daylight, no people, no tools"),

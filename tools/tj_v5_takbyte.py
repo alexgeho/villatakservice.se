@@ -114,7 +114,7 @@ PAGES_TJ = {
   "img": [
     ("Rad av småstugor i Bromma med branta sadeltak i rött lertegel och ljus träpanel",
      "row of small 1930s Swedish one-and-a-half storey wooden cottages with steep gable roofs of red single-roll clay tiles, light grey and pale green vertical board-and-batten facades, low hedges and front gardens, garden suburb Norra Ängby Bromma Stockholm, late summer daylight"),
-    ("Takbyte på ett mindre trähus – nytt underlag på ena takfallet, gamla tegelpannor kvar på det andra",
+    ("Röda takpannor staplade på läkt ovanpå ny underlagsduk",
      "roof replacement in progress on a small Swedish wooden house: one roof slope stripped with new black underlayment felt and fresh pale wooden battens, the other slope still covered with old red clay tiles, a neat stack of old tiles on the scaffolding, nobody on the roof, overcast daylight"),
   ],
   "related": [],
@@ -207,7 +207,7 @@ PAGES_TJ = {
   "img": [
     ("Äldre villa i Danderyd med brant tak i falsad plåt och två kupor nära vattnet",
      "large late 1800s Swedish wooden villa with light ochre painted horizontal panel and white trim, steep roof covered entirely in dark grey standing-seam sheet metal with clearly visible vertical seams, two dormers, tall old oaks, glimpse of a calm bay, Djursholm Danderyd, early autumn daylight"),
-    ("Hela tegelpannor staplade på en ställning bredvid ett takfall med ny läkt",
+    ("Svarta betongpannor upplagda vid nocken under omläggning",
      "old red clay roof tiles stacked upright in neat rows on a scaffolding platform at the eaves of a Swedish villa, next to them a roof slope with black underlayment and new horizontal wooden battens ready for tiling, no people, soft overcast daylight"),
   ],
   "related": [],
@@ -301,7 +301,7 @@ PAGES_TJ = {
   "img": [
     ("Rött trähus med tegeltäckt sadeltak på en gård i Huddinges odlingslandskap",
      "traditional falu red Swedish wooden farmhouse with white corners and a bright red clay tile gable roof with clearly visible rows of curved red tiles, small red outbuilding with corrugated metal roof, open meadow and mixed forest on a hill behind, rural Huddinge south of Stockholm, summer daylight"),
-    ("Takstolar och råspont på en vind inför byte till tyngre takmaterial",
+    ("Långt takfall med ny läkt på underlagsduk och ställning längs takfoten",
      "interior of a cold attic in a 1960s Swedish house: wooden roof trusses and old roof boarding visible in daylight from a small gable window, a folding ruler resting on one truss, dust and old insulation on the floor, no people"),
   ],
   "related": [],

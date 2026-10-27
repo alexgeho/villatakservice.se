@@ -730,7 +730,7 @@ PAGES_TJ = {
      "1960s Swedish suburb: a tall slender sixteen-storey brick and concrete point-block apartment tower and lower "
      "three-storey slab blocks with balconies among pine trees and lawns, pedestrian path, Farsta Stockholm, clear "
      "autumn day, empty scene, no people"),
-    ("Äldre badrum med beige kakel, mosaikgolv, badkar och en gammal golvbrunn före rivning",
+    ("Bastu med glasdörr och mosaik på väggen",
      "old dated bathroom in a 1960s Swedish apartment before renovation: beige patterned plastic vinyl wall covering, "
      "small brown mosaic floor tiles, an old round metal floor drain, a white enamel bathtub, plain white washbasin, "
      "worn but clean, daylight from the door, empty room, no people"),

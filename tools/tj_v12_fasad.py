@@ -415,7 +415,7 @@ PAGES_TJ = {
   "img": [
     ("Villa med vitputsad bottenvåning och brun liggande träpanel i gaveln i Älvsjö",
      "1910s Swedish villa with smooth white rendered ground floor and dark brown painted horizontal wooden panel in the upper gable, small-paned windows with shutters, steep red clay tile roof, next door a modern light grey two-storey house, garden with apple trees and a hedge, Älvsjö Stockholm, autumn daylight, no people"),
-    ("Skarv mellan vitputsad vägg och brunmålad träpanel med ett nytt plåtbleck",
+    ("Vit fasad och rött pannat tak på en villa",
      "close-up of the junction between a smooth white rendered lower wall and dark brown painted horizontal wooden panel above on an old Swedish villa, a new metal drip flashing along the joint, daylight, no people, no hands"),
   ],
   "related": [],

@@ -126,7 +126,7 @@ PAGES_TJ = {
   "img": [
     ("Kataloghus från 1920-talet med en lägre tillbyggnad på baksidan mot trädgården",
      "1920s Swedish catalogue house with symmetrical facade, light yellow wooden panel and a hipped red tile roof, with a lower new single-storey extension with large windows on the garden side, lawn and birch trees, summer daylight" + _SFX),
-    ("Nationalromantisk trävilla på en höjd i ett villaområde",
+    ("Villa med glasad del och altan",
      "early 1900s Swedish national romantic wooden villa with steep roof, dark brown panel and white window frames set on a wooded hill above a winding road, pine trees, late summer light" + _SFX),
     ("Ny takkupa på ett sadeltak med rött tegel",
      "newly built dormer with white trim on a red clay tile gable roof of an older Swedish house, scaffolding partly visible, blue sky, no workers" + _SFX),

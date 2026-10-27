@@ -453,7 +453,7 @@ PAGES_TJ = {
   "img": [
     ("Ljus trävilla i Älvsjö med svart falsat plåttak, solcellspaneler och glasveranda",
      "1920s Swedish wooden villa with light yellow vertical board facade and white trim, black standing-seam metal roof with a neat row of black solar panels on the south slope, a small dormer, a glazed veranda with its own low metal roof, large garden with apple trees and lilacs, villa street in Älvsjö Stockholm, sunny late summer day, empty scene"),
-    ("Solcellspanel på aluminiumskenor ovanför ett svart profilerat plåttak",
+    ("Skorsten med ny plåtinklädnad på ett pannat tak",
      "close-up of a black standing-seam metal roof with flat sheets and tall narrow vertical seams, small aluminium seam clamps gripping the seams and carrying a horizontal aluminium mounting rail, the lower edge of a black solar panel resting on the rail, no screws through the sheets, clear daylight, realistic construction detail, no people, no hands"),
   ],
   "related": [],

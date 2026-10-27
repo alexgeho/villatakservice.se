@@ -427,7 +427,7 @@ PAGES_TJ = {
   "img": [
     ("Hall i en äldre villa med nytt ekgolv och ljusa väggar",
      "empty entrance hall of an older Swedish wooden villa from the 1910s, newly laid narrow light oak floorboards, white painted panelled door, light warm grey walls, a white radiator under a small window, staircase with white balusters in the background, soft daylight, no furniture, no people, no text"),
-    ("Ljust ekgolv med en tunn randig matta i solljus",
+    ("Stor lokal med nylagt ljust golv",
      "low angle close-up of a newly laid light oak plank floor in an older Swedish villa, a thin flat-woven striped wool rug lying flat on part of the floor, warm sunlight from a window falling across boards and rug, white skirting board and lower part of a white panelled wall, no furniture, no people, no hands, no text"),
   ],
   "related": [],

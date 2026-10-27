@@ -156,7 +156,7 @@ TRP29A["Farsta"] = {
          "a mansard roof covered with red single-roll clay tiles, a small brick chimney, a clipped hedge and fruit "
          "trees, part of a row of similar cottages along a gently curving suburban street, Tallkrogen Stockholm, "
          "late summer" + NO_PEOPLE),
-        ("Gamla takpannor av lertegel staplade på en pall bredvid ny läkt",
+        ("Nylagt svart pannat tak sett från nocken, grönska runt huset",
          "stack of old red clay roof tiles neatly sorted on a wooden pallet in a garden, next to bundles of new "
          "pale wooden roof battens and a roll of black roofing underlay, an older wooden cottage wall in soft focus "
          "behind, daylight" + NO_PEOPLE),
@@ -274,7 +274,7 @@ TRP29A["Hägersten"] = {
          "modest two-storey Swedish wooden villa from about 1890 with light yellow horizontal panel, white "
          "fretwork on the gable and a small glazed veranda, steep red clay tile roof with one dormer, set among "
          "pine trees on a slope above a lake, Stockholm suburb, summer" + NO_PEOPLE),
-        ("Vit funkisvilla med låglutande plåttak bland tallar",
+        ("Svarta betongpannor längs takfoten med hängränna",
          "white rendered Swedish functionalist villa from the 1930s with a low-pitched standing-seam metal roof and "
          "a thin roof edge, horizontal windows, pine trees and rocks around, clear daylight" + NO_PEOPLE),
         ("Takkupa med nya plåtbeslag på ett tegeltak",

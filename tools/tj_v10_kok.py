@@ -142,7 +142,7 @@ PAGES_TJ = {
   "img": [
     ("Ljust lantligt kök med vit vedspis och träbänkskiva i en villa på Ekerö",
      "bright renovated country kitchen in a Swedish wooden villa on Ekerö in Lake Mälaren, white enamelled cast-iron wood-burning kitchen stove on a stone hearth beside light grey-green painted cabinets, oak worktop, small-paned window looking out on pine trees and a glimpse of the lake, wide pine floorboards, soft daylight, no people"),
-    ("Utdragslåda för sopsortering under diskbänken i ett nytt kök",
+    ("Kök med svarta underskåp, öppna hyllor och vitt kakel",
      "close-up of an open pull-out drawer under a kitchen sink in a newly renovated Scandinavian kitchen, several separate bins for food waste with a brown paper bag, plastic, paper and metal packaging, white plumbing trap and shut-off valve visible behind, clean and bright, no people, no hands, no text"),
   ],
   "related": [],
@@ -315,7 +315,7 @@ PAGES_TJ = {
   "img": [
     ("Renoverat lägenhetskök i ett hus från 1950-talet i Hägersten",
      "renovated small galley kitchen in a 1950s Swedish apartment block, pale sage green flat-front cabinets, light terrazzo-look worktop, white tiled splashback, original wooden window with deep stone sill looking out on pine trees and other low lamella apartment buildings, linoleum floor, soft daylight, no people"),
-    ("Äldre lägenhetskök med plastskydd inför rivning och provtagning",
+    ("Ljust kök med matbord och köksfläkt",
      "empty unoccupied old 1950s Swedish apartment kitchen being prepared for renovation, nobody in the room, upper cabinets removed, old vinyl floor mat with a small square piece cut out for sampling, small sealed plastic sample bags on a work bench, plastic sheeting taped over the doorway, daylight from a window, no people, no hands, no text"),
   ],
   "related": [],

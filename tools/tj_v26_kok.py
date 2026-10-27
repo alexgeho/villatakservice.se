@@ -525,7 +525,7 @@ PAGES_TJ = {
   "img": [
     ("Nyrenoverat kök i ett radhus med vita luckor och matplats vid fönstret",
      "newly renovated kitchen in a 1960s Swedish terraced house, white cabinets, wood worktop, dining table by a large window facing a small garden, vinyl plank floor, daylight" + _SFX),
-    ("Höga punkthus och lägre bostadshus i en förort från 1960",
+    ("Kök med vita luckor och inbyggda vitvaror",
      "Swedish 1960 suburb with tall point-block apartment towers in the background and lower residential buildings in front, trees and lawns, summer daylight" + _SFX),
     ("Öppning där en vägg mellan kök och vardagsrum har tagits bort",
      "interior of a terraced house during renovation where the wall between kitchen and living room has been removed, new wooden beam over the opening, protective covering on the floor, no workers, daylight" + _SFX),

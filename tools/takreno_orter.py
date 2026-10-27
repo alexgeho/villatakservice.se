@@ -3534,7 +3534,7 @@ TRP.update({
  'img': [
   ('Villa från 1960-talet med lågt tak av betongpannor bland tallar i Stenhamra',
    'single-storey Swedish modernist villa from the 1960s with a low-pitched gable roof covered in dark grey concrete roof tiles, horizontal dark wooden facade and large windows, tall pine trees and granite outcrops, quiet residential road, Stenhamra Ekerö, autumn daylight, empty scene'),
-  ('Sekelskiftesvilla i trä med glasveranda vid Mälarens strand',
+  ('Villa med nylagt svart tak och takkupa',
    'two-storey Swedish wooden summer villa from around 1900 painted light grey with white trim, a glazed veranda and a dark standing-seam metal roof, on a low granite shore with pine trees by a calm lake, small wooden jetty, lake Mälaren, realistic modest scale, full frame image without borders, empty scene'),
  ]},
 
@@ -3612,7 +3612,7 @@ TRP.update({
  'img': [
   ('Nationalromantisk trävilla med brant tak av rött lertegel på en höjd i Tullinge',
    'Swedish national romantic wooden villa from around 1910 on a rocky hill, steep gable roof covered in red single-lap clay tiles, horizontal dark brown wooden panel, small-paned white windows, large natural plot with pine trees and birch, glimpse of a lake below, Tullinge Botkyrka, early autumn, empty scene'),
-  ('Funkisvilla med slätputsad fasad och flackt sadeltak i ett villaområde',
+  ('Nylagda svarta betongpannor på en villa med röd fasad',
    'white smooth-plastered Swedish functionalist villa from the 1930s with a low-pitched gable roof covered in dark metal sheets, simple rectangular volume, windows without glazing bars, straight residential street with hedge and lawn, Tullinge, soft daylight, no people, no cars'),
  ]},
 
@@ -3781,7 +3781,7 @@ TRP.update({
  'img': [
   ('Villagata i Hässelby villastad med trävillor och tegeltak bakom häckar',
    'quiet narrow villa street in a Stockholm suburb with detached Swedish wooden houses from the 1920s to the 1950s painted in light colours, steep gable roofs with red clay tiles and one with dark concrete tiles, a glazed veranda, clipped hedges and fruit trees in front gardens, Hässelby villastad, late summer, completely empty street and sidewalk, nobody visible, no cars'),
-  ('Kedjehus från 1950-talet med låga tak i Hässelby strand',
+  ('Nylagt rött pannat tak sett uppifrån',
    'row of modest single-storey Swedish 1950s linked houses (kedjehus) with very low-pitched roofs and one continuous roof line, light yellow brick and white painted wooden panels, simple rectangular windows, lawns and birch trees along a gravel footpath, Scandinavian modernist suburb, Hässelby strand Stockholm, soft daylight, no people'),
  ]},
 

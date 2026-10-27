@@ -151,7 +151,7 @@ PAGES_TJ = {
   "img": [
     ("Bostadshus från mitten av 1900-talet i ljus puts bland tallar",
      "mid 20th century Swedish three-storey apartment buildings in light yellow plaster with simple windows and small balconies, pine trees and lawns on a gentle slope, southern Stockholm suburb, autumn daylight" + _IMG_END),
-    ("Nyrenoverat badrum med klinkergolv som lutar mot en ny golvbrunn",
+    ("Badrum med badkar och stor kakelvägg",
      "newly renovated small Swedish apartment bathroom with light grey floor tiles sloping toward a new square stainless floor drain, white wall tiles, glass shower screen, wall-hung toilet, soft daylight" + _IMG_END),
     ("Badrumsgolv under arbete med spacklat underlag och ny golvbrunn",
      "small empty bathroom under renovation, smooth grey levelled screed floor with a new square stainless floor drain near the corner, walls with grey primer, no tiles yet, clean and tidy, soft construction light" + _IMG_END),
@@ -586,7 +586,7 @@ PAGES_TJ = {
   "img": [
     ("Äldre trävilla i två plan med tegeltak i en stor trädgård",
      "1910s Swedish two-storey wooden villa painted light green with white trim, red clay tile roof, glazed porch, large garden with apple trees and lilacs, quiet villa street, southern Stockholm, summer" + _IMG_END),
-    ("Badrum på övervåning med snedtak, takfönster och klinkergolv",
+    ("Badrum med badkar, grått kakel och handdukstork",
      "renovated upstairs bathroom in an old Swedish wooden villa with sloping ceiling, roof window, light stone-look floor tiles, freestanding bathtub and walk-in shower, soft daylight" + _IMG_END),
     ("Uppbrutet golv med träbjälkar och nya golvskivor i ett badrum",
      "bathroom floor in an old wooden house during renovation: exposed timber floor joists, new particle board sheets partly screwed down, levelling tools on the floor, empty room without figurines or ornaments, construction light" + _IMG_END),

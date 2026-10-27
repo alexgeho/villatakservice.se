@@ -202,7 +202,7 @@ PAGES_TJ = {
      "renovated small kitchen in a 1910s Swedish wooden garden-city house, white painted shaker cabinet doors, "
      "oak wooden worktop, small-paned old window with white frame looking out on an apple tree, wide pine "
      "floorboards, simple pendant lamp, soft daylight, no people, no text"),
-    ("Liten gulmålad trästuga med rött tegeltak och trädgård på Enskedefältet",
+    ("Smalt kök med ljusgröna luckor",
      "small 1930s Swedish self-built cottage with light ochre painted wooden panel, white window frames, "
      "red single-curved clay tile roof, small garden with lilac and a picket fence, quiet street, early summer, "
      "full-bleed photo filling the whole frame, no borders, no people, no text"),
@@ -346,7 +346,7 @@ PAGES_TJ = {
      "renovated kitchen in a 1910s Swedish villa, sage green painted cabinet doors with brass knobs, white "
      "stone-look worktop, white tiled wall, tall old window with small panes and deep window sill, view to a "
      "garden with birch trees, light wooden floor, soft daylight, no people, no text"),
-    ("Villa med vit puts nere och mörk panel i gaveln och brant tegeltak i Älvsjö",
+    ("Vitt kök med luckor i rak linje och diskho",
      "1910s Swedish suburban villa with white smooth plastered ground floor, dark brown wooden panelling in "
      "the gable, small-paned windows with shutters, steep red clay tile gable roof with a chimney, lilacs and "
      "an old garden, quiet street, no people, no text"),
@@ -640,7 +640,7 @@ PAGES_TJ = {
      "bright renovated kitchen in a Swedish 1970s villa, light birch cabinet fronts, wall oven and microwave "
      "built into tall cabinets at waist height, deep drawers under a white worktop, under-cabinet LED lighting, "
      "induction hob, window towards a lawn and pine trees, no people, no text"),
-    ("Radhuslänga med mörk träfasad och tegelskorstenar i ett bostadsområde i Botkyrka",
+    ("Vitt kök med köksfläkt och fönster över bänken",
      "row of 1970s Swedish two-storey terraced houses with dark brown wooden facades and grey concrete tile "
      "roofs with small metal vent hoods on the roof, small front gardens with hedges, pine forest behind, "
      "overcast day, no people, no text"),
