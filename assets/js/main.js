@@ -225,8 +225,9 @@
    en icke-bindande uppskattning, aldrig en offert.
    ===================================================================== */
 (function () {
-  var form = document.getElementById("kalkyl-form");
-  if (!form) return;
+  // Flera instanser: #kalkyl-form (kalkylatorsidan) och [data-kalkyl] (startsidans hero).
+  var forms = document.querySelectorAll("#kalkyl-form, form[data-kalkyl]");
+  if (!forms.length) return;
 
   var RATES = {           // kr per m², totalt inkl. material, före ROT
     betong: [1400, 2000],
@@ -239,47 +240,54 @@
   var ROT_PCT = 0.30;        // ROT 2026: 30 % av arbetskostnaden
   var ROT_CAP = 50000;       // kr/person/år (1 ägare)
 
-  var result = document.getElementById("kalkyl-result");
-  var elLow = document.getElementById("kalkyl-low");
-  var elHigh = document.getElementById("kalkyl-high");
-  var elRotLow = document.getElementById("kalkyl-rot-low");
-  var elRotHigh = document.getElementById("kalkyl-rot-high");
-  var elCta = document.getElementById("kalkyl-cta");
-
   function grp(n) {
     return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
   }
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var area = parseFloat(form.elements["area"].value);
-    var mat = form.elements["material"].value;
-    var comp = form.elements["lutning"].value;
-    if (!area || area <= 0 || !RATES[mat] || !COMPLEX[comp]) {
-      form.reportValidity && form.reportValidity();
-      return;
+  Array.prototype.forEach.call(forms, function (form) {
+    var scope = form.closest("[data-kalkyl-scope]");
+    function el(name) {
+      if (scope) return scope.querySelector('[data-kalkyl-el="' + name + '"]');
+      return document.getElementById("kalkyl-" + name);
     }
-    var m = COMPLEX[comp];
-    var low = RATES[mat][0] * area * m;
-    var high = RATES[mat][1] * area * m;
-    var rotLow = Math.min(low * LABOUR_SHARE * ROT_PCT, ROT_CAP);
-    var rotHigh = Math.min(high * LABOUR_SHARE * ROT_PCT, ROT_CAP);
+    var result = el("result");
+    var elLow = el("low");
+    var elHigh = el("high");
+    var elRotLow = el("rot-low");
+    var elRotHigh = el("rot-high");
+    var elCta = el("cta");
 
-    elLow.textContent = grp(low);
-    elHigh.textContent = grp(high);
-    elRotLow.textContent = grp(low - rotLow);
-    elRotHigh.textContent = grp(high - rotHigh);
-    result.hidden = false;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var area = parseFloat(form.elements["area"].value);
+      var mat = form.elements["material"].value;
+      var comp = form.elements["lutning"].value;
+      if (!area || area <= 0 || !RATES[mat] || !COMPLEX[comp]) {
+        form.reportValidity && form.reportValidity();
+        return;
+      }
+      var m = COMPLEX[comp];
+      var low = RATES[mat][0] * area * m;
+      var high = RATES[mat][1] * area * m;
+      var rotLow = Math.min(low * LABOUR_SHARE * ROT_PCT, ROT_CAP);
+      var rotHigh = Math.min(high * LABOUR_SHARE * ROT_PCT, ROT_CAP);
 
-    var msg = "Hej! Jag har använt takbyte-kalkylatorn och vill ha en kostnadsfri offert.\n\n" +
-      "Takarea: ca " + area + " m²\n" +
-      "Material: " + (MAT_LABEL[mat] || mat) + "\n" +
-      "Taklutning/komplexitet: " + form.elements["lutning"].options[form.elements["lutning"].selectedIndex].text + "\n" +
-      "Uppskattat spann (kalkylator): " + grp(low) + "–" + grp(high) + " kr, efter ROT ca " +
-      grp(low - rotLow) + "–" + grp(high - rotHigh) + " kr.";
-    if (elCta) {
-      elCta.href = "kontakt.html?tjanst=Takbyte&meddelande=" + encodeURIComponent(msg) + "#form";
-    }
+      elLow.textContent = grp(low);
+      elHigh.textContent = grp(high);
+      elRotLow.textContent = grp(low - rotLow);
+      elRotHigh.textContent = grp(high - rotHigh);
+      result.hidden = false;
+
+      var msg = "Hej! Jag har använt takbyte-kalkylatorn och vill ha en kostnadsfri offert.\n\n" +
+        "Takarea: ca " + area + " m²\n" +
+        "Material: " + (MAT_LABEL[mat] || mat) + "\n" +
+        "Taklutning/komplexitet: " + form.elements["lutning"].options[form.elements["lutning"].selectedIndex].text + "\n" +
+        "Uppskattat spann (kalkylator): " + grp(low) + "–" + grp(high) + " kr, efter ROT ca " +
+        grp(low - rotLow) + "–" + grp(high - rotHigh) + " kr.";
+      if (elCta) {
+        elCta.href = "kontakt.html?tjanst=Takbyte&meddelande=" + encodeURIComponent(msg) + "#form";
+      }
+    });
   });
 })();
 
