@@ -5,6 +5,12 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 2026-10-31 — Kalkylator i hero + kataloger (Tings strategi)
+- ✅ Takbyte-kalkylatorn i startsidans hero (ersätter fotot), samma priser/JS som kalkylator-takbyte; "Få exakt offert" → kontakt med förifylld kalkyl. LIVE.
+- ✅ Katalogtexter + NAP-status: docs/kataloger.md (hitta/eniro/allabolag finns utan tel/webb; reco saknas). Öppettider 08–17 överallt (GBP ändrad, granskas).
+- ✅ takbytepris.nu = satellit; länkar bara takbytepris → villatak.
+- ☐ Ägaren (BankID): hitta, eniro, allabolag, reco.se. ☐ Länkplan 2–3/mån (pelare 4). Detaljer: ~/sites-hub/worklog.md HANDOFF 2026-10-31.
+
 ## 🟡 2026-10-21 — SEO-runda (branch seo-2026-10-21, ej pushad)
 - GSC 28 d: 3 klick / 6 811 visn / pos 50,2. Index ~65/85; ej indexerade: 13 okända (stadsdelar + 3 Dalarna + tegel-betong-plattak), 7 Discovered.
 - ✅ Kort "Takbyte pris" → takbytepris.nu på vad-kostar-takbyte + kalkylator (sökordet ägs av takbytepris).
