@@ -22,7 +22,7 @@
     <meta property="og:url" content="https://villatakservice.se/" />
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/style.css?v=8fce1aaa" />
+    <link rel="stylesheet" href="assets/css/style.css?v=b98cd62a" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -34,7 +34,7 @@
       });
       window.__vtsConsentDefault = true;
     </script>
-    <script src="assets/js/main.js?v=b53d979e" defer></script>
+    <script src="assets/js/main.js?v=8c4d111e" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -323,9 +323,48 @@
                 <li>Offert inom 24h</li>
               </ul>
             </div>
-            <figure class="hero-side-visual">
-              <img src="assets/images/1.webp" alt="Taklaggning i Stockholm" width="1200" height="850" />
-            </figure>
+            <div class="form-box hero-calc" data-kalkyl-scope>
+              <h2>Vad kostar ditt takbyte?</h2>
+              <form class="calc-form" data-kalkyl novalidate>
+                <div class="field">
+                  <label for="hk-area">Takarea (m²)</label>
+                  <input id="hk-area" name="area" type="number" inputmode="numeric" min="10" max="1000" step="1" placeholder="t.ex. 130" required />
+                </div>
+                <div class="hero-calc__row">
+                  <div class="field">
+                    <label for="hk-material">Material</label>
+                    <select id="hk-material" name="material" required>
+                      <option value="betong">Betongpannor</option>
+                      <option value="tegel">Tegelpannor</option>
+                      <option value="plat">Plåt</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="hk-lutning">Lutning</label>
+                    <select id="hk-lutning" name="lutning" required>
+                      <option value="lag">Låg</option>
+                      <option value="normal" selected>Normal</option>
+                      <option value="brant">Brant / komplex</option>
+                    </select>
+                  </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Beräkna pris</button>
+              </form>
+              <div class="hero-calc__result" data-kalkyl-el="result" hidden aria-live="polite">
+                <div class="hero-calc__figures">
+                  <div>
+                    <p class="calc-result__label">Före ROT</p>
+                    <p class="calc-result__figure"><span data-kalkyl-el="low">–</span>–<span data-kalkyl-el="high">–</span> kr</p>
+                  </div>
+                  <div>
+                    <p class="calc-result__label">Efter ROT</p>
+                    <p class="calc-result__figure"><span data-kalkyl-el="rot-low">–</span>–<span data-kalkyl-el="rot-high">–</span> kr</p>
+                  </div>
+                </div>
+                <a class="btn btn-primary" data-kalkyl-el="cta" href="kontakt.html?tjanst=Takbyte#form">Få exakt offert</a>
+                <p class="calc-disclaimer">Icke-bindande uppskattning.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

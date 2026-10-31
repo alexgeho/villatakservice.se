@@ -234,6 +234,7 @@ ol {
 
 .hero-grid--home {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
+  align-items: start;
 }
 
 .hero-grid--page {
@@ -1304,5 +1305,61 @@ textarea:focus-visible,
   .side-panel .area-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 16px;
+  }
+}
+
+/* ---- Startsidans hero: takbyte-kalkylator i stället för bild ---- */
+.hero-calc {
+  padding: 20px;
+}
+.hero-calc h2 {
+  font-size: 1.25rem;
+  margin: 0 0 16px;
+}
+.hero-calc .field {
+  margin-bottom: 16px;
+}
+.hero-calc__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.hero-calc .btn {
+  width: 100%;
+}
+.hero-calc__result {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+.hero-calc__result[hidden] {
+  display: none;
+}
+.hero-calc__figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.hero-calc .calc-result__figure {
+  font-size: 1.35rem;
+  margin: 4px 0 0;
+}
+.hero-calc .calc-result__figure span {
+  white-space: nowrap;
+}
+.hero-calc .calc-disclaimer {
+  margin: 16px 0 0;
+}
+@media (max-width: 480px) {
+  .hero-calc {
+    padding: 20px;
+  }
+  .hero-calc__row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hero-calc__figures {
+    grid-template-columns: 1fr;
   }
 }
