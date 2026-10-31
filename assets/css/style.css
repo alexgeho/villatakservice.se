@@ -234,6 +234,7 @@ ol {
 
 .hero-grid--home {
   grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
+  align-items: start;
 }
 
 .hero-grid--page {
@@ -1309,7 +1310,7 @@ textarea:focus-visible,
 
 /* ---- Startsidans hero: takbyte-kalkylator i stället för bild ---- */
 .hero-calc {
-  padding: 24px;
+  padding: 20px;
 }
 .hero-calc h2 {
   font-size: 1.25rem;

@@ -277,6 +277,11 @@
       elRotLow.textContent = grp(low - rotLow);
       elRotHigh.textContent = grp(high - rotHigh);
       result.hidden = false;
+      // Efter resultat: "Få exakt offert" är enda primära knappen i kortet
+      if (scope) {
+        var calcBtn = form.querySelector('button[type="submit"]');
+        if (calcBtn) { calcBtn.classList.remove("btn-primary"); calcBtn.classList.add("btn-secondary"); }
+      }
 
       var msg = "Hej! Jag har använt takbyte-kalkylatorn och vill ha en kostnadsfri offert.\n\n" +
         "Takarea: ca " + area + " m²\n" +
