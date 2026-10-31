@@ -9,7 +9,7 @@ Samma NAP överallt, tecken för tecken. Källa: villatakservice.se/kontakt.html
 - E-post: info@villatakservice.se
 - Webb: https://villatakservice.se
 - Org.nr: 559303-7566
-- Öppettider: mån–fre 08:00–17:00 (GBP visar 07–17 — владелец решает, потом везде одинаково)
+- Öppettider: mån–fre 08:00–17:00 (везде; GBP изменён 31.10)
 - Kategori: Takläggare (huvud) · Byggföretag · Plåtslagare
 
 ## Status 2026-10-31 (проверено)
