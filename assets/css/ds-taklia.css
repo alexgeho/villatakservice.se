@@ -194,3 +194,10 @@
 .ds-taklia .block-head-wrap{margin-bottom:clamp(40px,5vw,72px)}
 .ds-taklia .block-head-wrap .block-head{margin-bottom:0}
 .ds-taklia .section .container > h2.section-title,.ds-taklia .section-copy--wide > h2.section-title{margin-bottom:clamp(40px,5vw,72px) !important}
+
+/* Logga 5A (ägaren 07.11) */
+.ds-taklia .logo{display:inline-flex;align-items:center;gap:12px;color:#1F2F46}
+.ds-taklia .logo-mark{width:58px;height:40px;display:block;border-radius:0}
+.ds-taklia .logo-word{display:flex;flex-direction:column;font-size:22px;font-weight:800;letter-spacing:.04em;line-height:1;color:#1F2F46}
+.ds-taklia .logo-word small{font-size:11px;letter-spacing:.62em;margin-top:5px;color:var(--accent)}
+@media (max-width:600px){.ds-taklia .logo-mark{width:44px;height:30px}.ds-taklia .logo-word{font-size:18px}.ds-taklia .logo-word small{font-size:9px}}
