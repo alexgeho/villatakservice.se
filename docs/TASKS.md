@@ -7,4 +7,4 @@
 - [x] часы 08–17 везде (решение владельца 31.10): GBP изменён (на модерации), сайт уже 08–17
 
 ## 2026-11-07 — SEO-уровень
-- [ ] SEO-уровень 07.11: golvslipning Lidingö/Danderyd/Huddinge (поз. 10–21) — title/description под запрос + ответ вверху (услуга, бесплатный визит, ROT 30 %)
+- [x] SEO-уровень 07.11: golvslipning Lidingö/Danderyd/Huddinge (поз. 10–21) — title/description под запрос + ответ вверху (услуга, бесплатный визит, ROT 30 %)
