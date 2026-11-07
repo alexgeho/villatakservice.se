@@ -8,7 +8,7 @@ Gemensam header/footer/head/schema har; sidinnehall i PAGES + kluster-listor.
 De 6 ursprungssidorna (index/tjanster/om-oss/kontakt/artiklar/artikel)
 redigeras direkt i sina filer och genereras INTE har (delad nav/footer maste matcha).
 """
-import os, re, json, datetime
+import os, re, json, datetime, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -3465,3 +3465,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # Landing v1 (07.11.2026): offertformulär i hero + galleri + förtroendeblock på alla tjänstesidor.
+    import subprocess as _sp
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v1.py")], check=True)

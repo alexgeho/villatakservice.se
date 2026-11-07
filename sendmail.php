@@ -3,7 +3,9 @@
 // Ingen tredjepartstjänst. Kräver att PHP mail() är aktiverat på hostingen.
 
 // Formulärsidor vi får skicka tillbaka till (vitlista – aldrig fri redirect).
-$retur = (($_POST['retur'] ?? '') === 'offert-dalarna.html') ? 'offert-dalarna.html' : 'kontakt.html';
+$retur = (string)($_POST['retur'] ?? '');
+// Tjänstesidor skickar sitt eget filnamn; fel visas då på samma sida (#offert).
+if (!preg_match('/^[a-z0-9-]+\.html$/', $retur) || !is_file(__DIR__ . '/' . $retur)) { $retur = 'kontakt.html'; }
 
 // Bara POST tillåtet
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -35,7 +37,7 @@ if (is_readable($rlFile)) {
         function ($t) use ($now) { return $t > $now - 3600; });
 }
 if (count($hits) >= 5) {
-    header('Location: ' . $retur . '?fel=2#form');
+    header('Location: ' . $retur . '?fel=2' . ($retur === 'kontakt.html' || $retur === 'offert-dalarna.html' ? '#form' : '#offert'));
     exit;
 }
 $hits[] = $now;
@@ -63,7 +65,7 @@ if ($meddelande === '') { $errors[] = 'meddelande'; }
 if (!$gdpr) { $errors[] = 'gdpr'; }
 
 if (!empty($errors)) {
-    header('Location: ' . $retur . '?fel=1#form');
+    header('Location: ' . $retur . '?fel=1' . ($retur === 'kontakt.html' || $retur === 'offert-dalarna.html' ? '#form' : '#offert'));
     exit;
 }
 
@@ -113,6 +115,6 @@ $sent = @mail($to, $subjectEncoded, $body, $headers, '-f' . $from);
 if ($sent) {
     header('Location: tack.html');
 } else {
-    header('Location: ' . $retur . '?fel=2#form');
+    header('Location: ' . $retur . '?fel=2' . ($retur === 'kontakt.html' || $retur === 'offert-dalarna.html' ? '#form' : '#offert'));
 }
 exit;

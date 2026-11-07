@@ -416,3 +416,9 @@
     form.appendChild(ts);
   });
 })();
+
+// Felmeddelande för offertformulär på tjänstesidor (sendmail.php → ?fel=1#form/#offert).
+(function () {
+  if (!/[?&]fel=/.test(location.search)) return;
+  document.querySelectorAll("[data-form-fel]").forEach(function (el) { el.hidden = false; });
+})();

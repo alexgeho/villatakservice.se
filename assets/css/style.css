@@ -1363,3 +1363,34 @@ textarea:focus-visible,
     grid-template-columns: 1fr;
   }
 }
+
+/* Landing v1 (07.11.2026): offertformulär i hero, galleri, förtroendekort */
+.hero-form {
+  align-self: start;
+  padding: 24px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+.hero-form h2 { font-size: 1.25rem; margin-bottom: 4px; }
+.hero-form .form-note { color: var(--color-muted); font-size: 0.95rem; margin: 0 0 16px; }
+.hero-form .field { margin-bottom: 12px; }
+.hero-form .field textarea { min-height: 96px; }
+.btn-block { width: 100%; justify-content: center; }
+.form-legal { color: var(--color-muted); font-size: 0.82rem; margin: 10px 0 0; }
+.gallery-section { padding-top: 32px; padding-bottom: 32px; }
+.page-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.page-gallery--one { grid-template-columns: minmax(0, 860px); justify-content: center; }
+.page-gallery figure { margin: 0; }
+.page-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); display: block; }
+.gallery-note { color: var(--color-muted); font-size: 0.8rem; margin: 8px 0 0; }
+.trust-cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.trust-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius); padding: 20px; }
+.trust-card h3 { font-size: 1.02rem; margin-bottom: 6px; }
+.trust-card p { color: var(--color-muted); font-size: 0.95rem; margin: 0; }
+@media (max-width: 960px) {
+  .trust-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .page-gallery { grid-template-columns: 1fr; }
+  .page-gallery figure + figure { display: none; }
+  .trust-cards { grid-template-columns: 1fr; }
+}
