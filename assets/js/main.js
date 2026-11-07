@@ -422,3 +422,13 @@
   if (!/[?&]fel=/.test(location.search)) return;
   document.querySelectorAll("[data-form-fel]").forEach(function (el) { el.hidden = false; });
 })();
+
+// Filfält (Bifoga bild): visa valt filnamn i etiketten.
+(function () {
+  document.querySelectorAll('.field-file input[type="file"]').forEach(function (inp) {
+    inp.addEventListener("change", function () {
+      var lbl = inp.parentNode.querySelector("[data-file-name]");
+      if (lbl && inp.files && inp.files[0]) { lbl.textContent = inp.files[0].name; }
+    });
+  });
+})();
