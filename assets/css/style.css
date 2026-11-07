@@ -1434,3 +1434,8 @@ textarea:focus-visible,
 @media (max-width: 480px) {
   .field-row { grid-template-columns: 1fr; }
 }
+
+/* DS «Vägg av text» (07.11.2026): block foto+text, intro + faktalista (grå som brödtext) */
+.media-block .fact-list { margin: 12px 0 0; padding-left: 20px; color: var(--color-muted); }
+.media-block .fact-list li { margin-bottom: 6px; }
+.media-block .section-copy > p + p { margin-top: 12px; }
