@@ -5,6 +5,20 @@
 > Status: **5/5 uppgifter klara + follow-ups klara.** 75 sidor, 171 JSON-LD-block, 0 lint-fel.
 
 ---
+## ▶️ RESUME 2026-11-07 — landningssidor + pilot i taklias designsystem (börja här)
+
+**Live på alla 682 tjänst×ort-/taksidor (v2):** foto i hela hero + offertformulär (E-post krävs, Telefon valfritt, källsida i mejlet), «Därför väljer kunder oss» direkt under hero, galleri. 240 Replicate-bilder för 80 sidor utan foto. `sendmail.php`: fel tillbaka till samma sida (#offert), bilaga «bild» ≤10 MB. Skript: `tools/landing_v1.py`, `tools/landing_v2.py` (körs i slutet av `generate.py`).
+
+**PILOT (bara takbyte.html, väntar på ägarens «ok»):** taklias designsystem — `assets/css/ds-taklia.css` + `<body class="ds-taklia">`; logga 5A `assets/images/logo-villatak-5a.svg` (Recraft); hero som taklia; 8 block foto+text (`tools/pilot_takbyte.py`); formulär v3 (`tools/landing_v3.py`, 2×2 + Ort + Bifoga + «Begär offert»); steg-illustrationer `steg-takbyte-1..4`. Regler: ~/sites-hub/design-system.md §29.
+
+**NÄSTA STEG:**
+1. Vänta på «ok» för takbyte.html. Rulla INTE ut innan.
+2. Efter «ok»: ds-taklia.css + body-klass + logga/favicon i NAV (generate.py + statiska sidor), `landing_v3.py` på alla sidor, textväggar → block foto+text (generator + Replicate-bilder), startsidan.
+3. Kvar från kritiken: dropdown-menyer (Tjänster/Om oss), header i 2 rader 782–1099, mobilmeny.
+4. Kritiker-agent på 4–5 sidtyper + `ds-check.mjs` (SEC=90 SEC_VW=6.25 SEC_LAST_FULL=1 RADIUS=0).
+**[OWNER]:** riktiga omdömen, partners/certifikat, foto på riktig kontaktperson.
+
+---
 ## ▶️ RESUME — börja här nästa gång (uppdaterad 2026-09-16)
 
 **Läge:** All kod är klar, committad och pushad till `main` (autodeploy), `validate.py` grön.
