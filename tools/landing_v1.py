@@ -179,3 +179,31 @@ def main_all():
 
 if __name__ == "__main__" and not sys.argv[1:]:
     main_all()
+
+
+# ---- Galleri för sidor som fick bilder senare (gen_images_landing.py) ------
+def add_gallery(path):
+    s = open(path, encoding="utf-8").read()
+    if 'id="offert"' not in s or "gallery-section" in s:
+        return False
+    base = os.path.basename(path)[:-5]
+    names = [f"{base}-{i}" for i in (1, 2, 3) if os.path.exists(os.path.join(ROOT, "assets", "images", f"{base}-{i}.webp"))]
+    if len(names) < 3:
+        return False
+    h1 = re.sub(r"<[^>]+>", "", H.unescape(H1.search(s).group(1))).strip()
+    detalj = "Nytt underlag och läkt vid takarbete" if base.startswith("taklaggare-") else f"{h1} – detalj"
+    alts = [h1, detalj, "Färdigt tak med nock, plåtdetaljer och hängrännor"]
+    from PIL import Image
+    imgs = []
+    for n, alt in zip(names, alts):
+        w, hgt = Image.open(os.path.join(ROOT, "assets", "images", n + ".webp")).size
+        imgs.append(f'<img src="assets/images/{n}.webp" srcset="assets/images/{n}-640.webp 640w, assets/images/{n}.webp {w}w" width="{w}" height="{hgt}" alt="{H.escape(alt, quote=True)}" />')
+    end = s.index("</section>", s.index('<section class="page-hero">')) + len("</section>")
+    s = s[:end] + gallery_html(imgs) + s[end:]
+    open(path, "w", encoding="utf-8").write(s)
+    return True
+
+
+if __name__ == "__main__" and not sys.argv[1:]:
+    files = sorted(f for f in os.listdir(ROOT) if f.endswith(".html"))
+    print("galleri:", sum(add_gallery(os.path.join(ROOT, f)) for f in files))
