@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/style.css?v=7b72f641" />
+    <link rel="stylesheet" href="assets/css/style.css?v=5e289f0c" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -177,20 +177,25 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert">
+          <div class="form-box hero-form" id="offert" data-v3>
             <h2>Få offert på fönsterrenovering</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fönsterrenovering" />
-              <input type="hidden" name="ort" value="Täby" />
               <input type="hidden" name="retur" value="fonsterrenovering-taby.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Täby" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -206,15 +211,6 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
-        </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--two">
-            <figure><img src="assets/images/fonsterrenovering-taby-2.webp" srcset="assets/images/fonsterrenovering-taby-2-640.webp 640w, assets/images/fonsterrenovering-taby-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Småspröjsad fönsterbåge med nytt linoljekitt och guldockra foder i en faluröd panelvägg" loading="lazy" decoding="async" /></figure>
-            <figure><img src="assets/images/fonsterrenovering-taby-3.webp" srcset="assets/images/fonsterrenovering-taby-3-640.webp 640w, assets/images/fonsterrenovering-taby-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Fönsterbågar med spröjs på en arbetsbänk under renovering" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section section-muted seo-section" id="gardarna-taby">
         <div class="container section-layout section-layout--text">
@@ -253,8 +249,9 @@
         </div>
       </section>
       <section class="section seo-section" id="sprojs-taby">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/fonsterrenovering-taby-2.webp" srcset="assets/images/fonsterrenovering-taby-2-640.webp 640w, assets/images/fonsterrenovering-taby-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Småspröjsad fönsterbåge med nytt linoljekitt och guldockra foder i en faluröd panelvägg" loading="lazy" decoding="async" /></figure>
+          <div class="section-copy">
             <h2 class="section-title">Småspröjsade bågar lagas spröjs för spröjs</h2>
             <p>Flera av gårdarnas fönster är indelade i små rutor. På Visinge finns flera olika fönstertyper, och i bottenvåningen sitter tvåluftsfönster som är småspröjsade i övre delen. Såstaholms huvudbyggnad, som började uppföras 1903, har ljust putsad fasad och småspröjsade fönster, och de två boningshusen vid Marielund har tvåluftsfönster med spröjs och dekorativa foder. Även Såsta gårds vagnslider har vita småspröjsade fönster i en rödfärgad lockläktpanel.</p>
             <p>Riksantikvarieämbetets skrift om fönster beskriver att spröjsar skadas på samma sätt som bågens nederstycke. Angreppen är ofta små men kan vara allvarliga, eftersom spröjsarna är så klena, och röta uppstår både i kittfalsen och i fogarna mot bågen. Ska en hel spröjs ersättas måste glas och beslag tas bort så att bågen kan slås isär, och den nya spröjsen tillverkas med den gamla som förebild och tappas på samma sätt. Vid mindre skador kan de skadade delarna bytas utan att bågen tas isär. Därefter kittas varje ruta med linoljekitt.</p>
@@ -262,8 +259,9 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="lov-taby">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
+        <div class="container split-media split-media--flip">
+          <figure class="split-figure"><img src="assets/images/fonsterrenovering-taby-3.webp" srcset="assets/images/fonsterrenovering-taby-3-640.webp 640w, assets/images/fonsterrenovering-taby-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Fönsterbågar med spröjs på en arbetsbänk under renovering" loading="lazy" decoding="async" /></figure>
+          <div class="section-copy">
             <h2 class="section-title">Lov, detaljplan och uthusens fönster</h2>
             <p>Täby kommun skriver att en fasadändring kan vara att byta kulör, och att en- och tvåbostadshus inte behöver bygglov för fasadändringar om byggnaden inte är särskilt värdefull, ligger i ett särskilt värdefullt område eller har utökad lovplikt i detaljplanen. I Broby är den äldre bostadsbebyggelsen skyddad i detaljplan. Att skrapa, kitta och måla bågarna i samma kulör som i dag är underhåll, men ska fönstren få en ny kulör på en av gårdarna bör du fråga kommunen först.</p>
             <p>Underlaget säger också att äldre ekonomibyggnader bör bevaras och att ombyggnad bör ske hänsynsfullt om de får ny användning. Deras fönster renoveras på samma sätt som bostadshusets, men rotavdraget skiljer sig: för ett småhus på en lantbruksenhet ger Skatteverket avdrag för arbete i bostadsbyggnaden och på tomten runt den, inte på ekonomibyggnader. Om målning av fasad och snickerier kan du läsa under <a class="text-link" href="malare-taby.html">målare i Täby</a> och om nya fönster under <a class="text-link" href="fonsterbyte.html">fönsterbyte</a>.</p>
@@ -530,13 +528,34 @@
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Har gården gamla fönster som behöver ses över?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom fönstren på alla byggnader och lämnar ett skriftligt kostnadsförslag.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-grid">
+          <div class="section-copy">
+            <h2 class="section-title">Begär offert</h2>
+            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <h2>Få offert</h2>
+            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Fönsterrenovering" />
+              <input type="hidden" name="retur" value="fonsterrenovering-taby.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Täby" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

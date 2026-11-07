@@ -1416,3 +1416,21 @@ textarea:focus-visible,
   .page-hero--bg { padding: 40px 0; }
   .page-hero--bg::after { background: rgba(15, 23, 42, 0.74); }
 }
+
+/* Landing v3 (07.11.2026): formulär som taklia, bild bredvid text, Begär offert */
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+.field-file input { min-height: 0; padding: 8px; font-size: 0.9rem; }
+.split-media { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.split-media .split-figure { margin: 0; }
+.split-media .split-figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: var(--radius); display: block; }
+.split-media--flip .split-figure { order: 2; }
+.offer-section { background: var(--color-section); }
+.offer-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 520px); gap: 48px; align-items: start; }
+.offer-form { box-shadow: none; }
+@media (max-width: 900px) {
+  .split-media, .offer-grid { grid-template-columns: 1fr; gap: 24px; }
+  .split-media--flip .split-figure { order: 0; }
+}
+@media (max-width: 480px) {
+  .field-row { grid-template-columns: 1fr; }
+}

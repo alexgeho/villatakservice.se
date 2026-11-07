@@ -16,7 +16,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/style.css?v=7b72f641" />
+    <link rel="stylesheet" href="assets/css/style.css?v=5e289f0c" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -177,20 +177,25 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert">
+          <div class="form-box hero-form" id="offert" data-v3>
             <h2>Få offert på fasadmålning</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fasadmålning" />
-              <input type="hidden" name="ort" value="Värmdö" />
               <input type="hidden" name="retur" value="fasadmalning-varmdo.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Värmdö" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -206,15 +211,6 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
-        </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--two">
-            <figure><img src="assets/images/fasadmalning-varmdo-2.webp" srcset="assets/images/fasadmalning-varmdo-2-640.webp 640w, assets/images/fasadmalning-varmdo-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Fönster med vitmålade foder och kittade bågar i en röd slamfärgad panelvägg" loading="lazy" decoding="async" /></figure>
-            <figure><img src="assets/images/fasadmalning-varmdo-3.webp" srcset="assets/images/fasadmalning-varmdo-3-640.webp 640w, assets/images/fasadmalning-varmdo-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Rödfärgat båthus på stenfundament vid en brygga i en skärgårdsvik" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section section-muted seo-section" id="byarna-varmdo">
         <div class="container section-layout section-layout--text">
@@ -235,8 +231,9 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="tva-fargtyper-varmdo">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/fasadmalning-varmdo-2.webp" srcset="assets/images/fasadmalning-varmdo-2-640.webp 640w, assets/images/fasadmalning-varmdo-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Fönster med vitmålade foder och kittade bågar i en röd slamfärgad panelvägg" loading="lazy" decoding="async" /></figure>
+          <div class="section-copy">
             <h2 class="section-title">Röd panel och vita snickerier – två arbeten i ett</h2>
             <p>Röd panel och vita foder kan vara målade med två olika färgtyper, och därför tar vi vid platsbesöket reda på vad varje del bär. Riksantikvarieämbetets handbok beskriver röd slamfärg som en matt, vattenspädbar och fuktgenomsläpplig färg som fäster bra på ohyvlat virke men sämre på hyvlat. Den skyddar till viss del träet mot nedbrytning, och järnvitriolen i färgen anses ha viss konserverande effekt. En slamfärgad yta ska bara målas om med slamfärg.</p>
             <p>Snickerierna kräver mer handarbete. Fönster rengörs bäst med sodatvätt för hand, löst kitt skrapas bort och blottade kittfalsar grundas innan de kittas. Även verktygen skiljer sig: till slamfärg rekommenderar handboken en mindre plafondpensel som rengörs med tvål och vatten, medan linoljefärg på fasadytor stryks tunt med en rund eller oval pensel på ungefär sju centimeter och en mindre pensel för svåråtkomliga ställen. Vi stryker panel och snickerier i separata moment, så att ingen färg hamnar där den inte hör hemma.</p>
@@ -262,8 +259,9 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="haro-lov-varmdo">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
+        <div class="container split-media split-media--flip">
+          <figure class="split-figure"><img src="assets/images/fasadmalning-varmdo-3.webp" srcset="assets/images/fasadmalning-varmdo-3-640.webp 640w, assets/images/fasadmalning-varmdo-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Rödfärgat båthus på stenfundament vid en brygga i en skärgårdsvik" loading="lazy" decoding="async" /></figure>
+          <div class="section-copy">
             <h2 class="section-title">Harö och lovet i riksintressena</h2>
             <p>Harö fick enligt kulturmiljöprogrammet ångbåtsförbindelse först på 1920-talet, och den äldre skärgårdskulturen levde kvar där längre än i andra delar av skärgården. Fortfarande finns här i större omfattning än på andra håll i kommunen en äldre folklig byggnadskultur, bland annat två parstugor i sluttningen mot Byviken. Harö är riksintresse för kulturmiljövården, och programmet föreslår att områdesbestämmelser med bland annat utökad lovplikt och varsamhets- och skyddsbestämmelser bör komma till stånd för delar av området.</p>
             <p>Värmdö kommun skriver att det inte krävs bygglov för fasadändring på en- och tvåbostadshus eller komplementbyggnader, men att bygglov krävs för ommålning om fastigheten ligger inom ett kulturhistoriskt särskilt värdefullt område eller om byggnaden själv är särskilt värdefull. Sedan den 1 december 2025 gäller lovplikt även inom riksintressena för kulturmiljövården, och kommunens kulturmiljökarta visar vilka fastigheter som berörs. Om väderutsatta fasader och Gustavsberg kan du läsa under <a class="text-link" href="malare-varmdo.html">målare på Värmdö</a>, om sommarvillor och q-märkta hus under <a class="text-link" href="fasadrenovering-varmdo.html">fasadrenovering på Värmdö</a> och om målning i stort under <a class="text-link" href="malare.html">målare</a>.</p>
@@ -530,13 +528,34 @@
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Ska huset i skärgården målas om?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom panel, snickerier och bodar innan du får ett skriftligt kostnadsförslag.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-grid">
+          <div class="section-copy">
+            <h2 class="section-title">Begär offert</h2>
+            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <h2>Få offert</h2>
+            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Fasadmålning" />
+              <input type="hidden" name="retur" value="fasadmalning-varmdo.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Värmdö" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

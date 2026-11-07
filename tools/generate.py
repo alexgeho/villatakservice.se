@@ -3469,3 +3469,4 @@ if __name__ == "__main__":
     import subprocess as _sp
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v1.py")], check=True)
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v2.py")], check=True)
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v3.py")], check=True)

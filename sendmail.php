@@ -106,11 +106,35 @@ if ($epost !== '') {
     $headers .= "Reply-To: $epost\r\n";
 }
 $headers .= "MIME-Version: 1.0\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+// Valfri bild (Bifoga bild): jpg/png/webp/heic/pdf, max 10 MB, skickas som bilaga.
+$bilaga = null;
+if (!empty($_FILES['bild']['tmp_name']) && is_uploaded_file($_FILES['bild']['tmp_name'])
+    && ($_FILES['bild']['error'] ?? 1) === UPLOAD_ERR_OK && $_FILES['bild']['size'] <= 10 * 1024 * 1024) {
+    $ext = strtolower(pathinfo((string)$_FILES['bild']['name'], PATHINFO_EXTENSION));
+    $typer = array('jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'png' => 'image/png', 'webp' => 'image/webp',
+                   'heic' => 'image/heic', 'pdf' => 'application/pdf');
+    if (isset($typer[$ext])) {
+        $bilaga = array('namn' => 'bild-' . date('Ymd-His') . '.' . $ext, 'typ' => $typer[$ext],
+                        'data' => file_get_contents($_FILES['bild']['tmp_name']));
+    }
+}
+
+if ($bilaga) {
+    $grans = 'vts-' . md5(uniqid('', true));
+    $headers .= "Content-Type: multipart/mixed; boundary=\"$grans\"\r\n";
+    $mailBody  = "--$grans\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\n\r\n" . $body . "\r\n";
+    $mailBody .= "--$grans\r\nContent-Type: {$bilaga['typ']}; name=\"{$bilaga['namn']}\"\r\n"
+               . "Content-Transfer-Encoding: base64\r\nContent-Disposition: attachment; filename=\"{$bilaga['namn']}\"\r\n\r\n"
+               . chunk_split(base64_encode($bilaga['data'])) . "--$grans--\r\n";
+} else {
+    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $mailBody = $body;
+}
 
 $subjectEncoded = '=?UTF-8?B?' . base64_encode($subject) . '?=';
 
-$sent = @mail($to, $subjectEncoded, $body, $headers, '-f' . $from);
+$sent = @mail($to, $subjectEncoded, $mailBody, $headers, '-f' . $from);
 
 if ($sent) {
     header('Location: tack.html');
