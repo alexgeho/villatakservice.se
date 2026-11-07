@@ -1,0 +1,107 @@
+/* Designsystem från taklia.alexgeho.dev (ägaren 07.11: «дизайн-систему возьми с примера»).
+   Pilot: laddas bara på takbyte.html (body.ds-taklia). Accent = --accent (byts när loggan är vald). */
+@font-face{font-family:Fraunces;src:url(../fonts/fraunces-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0000-00FF}
+@font-face{font-family:Fraunces;src:url(../fonts/fraunces-latin-ext-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0100-024F}
+@font-face{font-family:Inter;src:url(../fonts/inter-latin-ext-wght-normal.woff2) format("woff2");font-weight:100 900;font-display:swap;unicode-range:U+0100-024F}
+
+.ds-taklia{
+  --ink:#15181B; --muted:#4A5056; --line:#D5D9D2; --surface:#F4F5F2;
+  --accent:#A8431F; --accent-hover:#8A3618; --accent-dark:#E08A66;
+  --radius:0px; --sec:clamp(56px,6.25vw,90px);
+  --color-primary:var(--ink); --color-text:var(--ink); --color-muted:var(--muted);
+  --color-border:var(--line); --color-section:var(--surface);
+  font-family:Inter,-apple-system,"Segoe UI",sans-serif; font-size:17px; line-height:1.6; color:var(--ink);
+}
+.ds-taklia h1,.ds-taklia h2,.ds-taklia h3{font-family:Fraunces,Georgia,serif;font-weight:420;color:var(--ink);hyphens:auto}
+.ds-taklia h2 em,.ds-taklia h1 em{font-style:normal;color:var(--accent)}
+.ds-taklia .hero-title{font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-0.03em}
+.ds-taklia .section-title{font-size:clamp(34px,4.4vw,56px);line-height:1.05;letter-spacing:-0.02em;text-box:trim-both cap alphabetic;margin:0 0 24px}
+.ds-taklia h3{font-size:26px;font-weight:450;line-height:1.2}
+.ds-taklia main p,.ds-taklia main li{color:var(--muted)}
+.ds-taklia .text-link{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:3px}
+
+/* En radie-token = 0 (DS §24): knappar, kort, fält, foton */
+.ds-taklia .btn,.ds-taklia .form-box,.ds-taklia .field input,.ds-taklia .field textarea,.ds-taklia .field select,
+.ds-taklia img,.ds-taklia .trust-card,.ds-taklia .step-item,.ds-taklia .faq-item,.ds-taklia .service-snippet,
+.ds-taklia .side-panel,.ds-taklia .anchor-nav a,.ds-taklia .split-figure img{border-radius:0}
+
+/* Knappar */
+.ds-taklia .btn{font-size:16px;font-weight:500;padding:15px 28px;min-height:52px;border-radius:0}
+.ds-taklia .btn-primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.ds-taklia .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+
+/* Header som taklia: logga vänster | meny mitt | telefon + Kontakt */
+.ds-taklia .site-header{background:#fff;border-bottom:1px solid var(--line)}
+.ds-taklia .header-inner{min-height:100px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px}
+.ds-taklia .logo{font-family:Inter,sans-serif;font-weight:800;letter-spacing:.02em;text-transform:uppercase;font-size:18px;color:var(--ink);line-height:1.05}
+.ds-taklia .logo small{display:block;font-size:12px;letter-spacing:.32em;color:var(--accent);font-weight:700}
+.ds-taklia .site-nav a{font-size:15px;font-weight:500;color:var(--ink)}
+.ds-taklia .header-right{display:flex;justify-content:flex-end;align-items:center;gap:20px}
+.ds-taklia .header-phone{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--ink);white-space:nowrap}
+.ds-taklia .header-phone svg{width:18px;height:18px;fill:var(--accent)}
+.ds-taklia .header-cta{min-height:48px;padding:12px 24px}
+
+/* Sektioner: luft 90/64/56, ljus yta växlar */
+.ds-taklia .section{padding:var(--sec) 0}
+.ds-taklia .section-muted{background:var(--surface)}
+
+/* Hero: lugn, text direkt på fotot, bara formuläret är ett kort */
+.ds-taklia .page-hero--bg{padding:72px 0 80px}
+.ds-taklia .page-hero--bg .breadcrumb,.ds-taklia .page-hero--bg .breadcrumb a{color:rgba(255,255,255,.8);font-size:14px}
+.ds-taklia .page-hero--bg .hero-title{color:#fff}
+.ds-taklia .page-hero--bg .section-lead{color:rgba(255,255,255,.9);font-size:18px;margin-top:20px}
+.ds-taklia .page-hero--bg .trust-strip li{color:#fff}
+.ds-taklia .page-hero--bg .trust-strip li::before{color:#fff}
+.ds-taklia .hero-grid--page{grid-template-columns:minmax(0,1fr) 417px;align-items:center}
+
+/* Formulärkort 1:1 taklia (417, pad 36, radie 0, ingen skugga) + §28 fälthöjd 48 / beskrivning 98 */
+.ds-taklia .hero-form{width:100%;max-width:417px;padding:36px;background:#fff;border:0;box-shadow:none}
+.ds-taklia .hero-form h2{font-family:Inter,sans-serif;font-size:25px;font-weight:600;line-height:1.2;margin:0 0 8px;white-space:nowrap}
+.ds-taklia .hero-form .form-note{font-size:14px;line-height:1.5;margin:0 0 18px}
+.ds-taklia .hero-form .field-row{gap:0 10px}
+.ds-taklia .hero-form .field{margin-bottom:10px}
+.ds-taklia .hero-form .field label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.ds-taklia .hero-form .field input,.ds-taklia .hero-form .field textarea{min-height:48px;height:48px;border:1px solid var(--ink);font-size:14px;padding:10px 12px}
+.ds-taklia .hero-form .field textarea{height:98px;min-height:98px}
+.ds-taklia .hero-form .field-file input{height:auto;min-height:0;border-style:dashed;font-size:13px}
+.ds-taklia .hero-form .form-legal{order:1;text-align:center;font-size:12px;margin:12px 0}
+.ds-taklia .hero-form form{display:flex;flex-direction:column}
+.ds-taklia .hero-form .btn-block{order:2;width:auto;align-self:center;min-height:44px;padding:10px 32px;text-transform:uppercase;font-size:15px;font-weight:600;letter-spacing:.02em}
+.ds-taklia .hero-form .field-file{margin-bottom:0}
+.ds-taklia .offer-form{border:1px solid var(--line)}
+
+/* Därför väljer kunder oss: utan kortbakgrund, bock i accent, centrerad rubrik */
+.ds-taklia #varfor-oss .section-title{text-align:center;margin-bottom:clamp(40px,5vw,72px)}
+.ds-taklia .trust-card{background:none;border:0;padding:0 0 0 34px;position:relative}
+.ds-taklia .trust-card::before{content:"";position:absolute;left:0;top:4px;width:22px;height:22px;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+.ds-taklia .trust-card h3{font-family:Inter,sans-serif;font-size:18px;font-weight:600;margin:0 0 6px}
+
+/* Sicksack foto+text */
+.ds-taklia .split-media{gap:clamp(32px,5vw,72px)}
+.ds-taklia .fact-list{list-style:none;padding:0;margin:16px 0 0}
+.ds-taklia .fact-list li{position:relative;padding-left:30px;margin-bottom:10px;color:var(--muted)}
+.ds-taklia .fact-list li::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;background:var(--accent);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/contain no-repeat}
+
+/* Steg, FAQ, kort */
+.ds-taklia .step-item,.ds-taklia .service-snippet,.ds-taklia .faq-item,.ds-taklia .side-panel{border:1px solid var(--line);background:#fff}
+.ds-taklia .step-number{color:var(--accent);border-color:var(--accent);border-radius:0}
+.ds-taklia .faq-question{font-family:Inter,sans-serif;font-weight:600}
+.ds-taklia .offer-section{background:var(--surface)}
+.ds-taklia .site-footer{background:var(--ink)}
+
+@media (max-width:1099px){
+  .ds-taklia .header-inner{grid-template-columns:auto 1fr auto}
+  .ds-taklia .header-phone span{display:none}
+}
+@media (max-width:960px){
+  .ds-taklia .hero-grid--page{grid-template-columns:1fr}
+  .ds-taklia .hero-form{max-width:none;padding:24px 16px}
+  .ds-taklia .hero-form h2{white-space:normal}
+}
+@media (max-width:480px){ .ds-taklia .hero-form .btn-block{width:100%} }
+
+.ds-taklia .hero-form .field input::placeholder,.ds-taklia .hero-form .field textarea::placeholder{color:#6B7075}
