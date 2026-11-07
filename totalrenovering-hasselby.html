@@ -201,25 +201,20 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert" data-v3>
+          <div class="form-box hero-form" id="offert">
             <h2>Få offert på totalrenovering</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form action="sendmail.php" method="post">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Totalrenovering" />
+              <input type="hidden" name="ort" value="Hässelby" />
               <input type="hidden" name="retur" value="totalrenovering-hasselby.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Hässelby" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -235,6 +230,15 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
+        </div>
+      </section>
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="page-gallery page-gallery--two">
+            <figure><img src="assets/images/totalrenovering-hasselby-2.webp" srcset="assets/images/totalrenovering-hasselby-2-640.webp 640w, assets/images/totalrenovering-hasselby-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Grå panelfasad med ett enkelt vitt fönster på ett radhus" loading="lazy" decoding="async" /></figure>
+            <figure><img src="assets/images/totalrenovering-hasselby-3.webp" srcset="assets/images/totalrenovering-hasselby-3-640.webp 640w, assets/images/totalrenovering-hasselby-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Rum under totalrenovering med blottad stomme och nya installationer" loading="lazy" decoding="async" /></figure>
+          </div>
+          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section seo-section" id="grupphusen-hasselby">
         <div class="container section-layout section-layout--text">
@@ -272,9 +276,8 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="ventilationen-hasselby">
-        <div class="container split-media">
-          <figure class="split-figure"><img src="assets/images/totalrenovering-hasselby-2.webp" srcset="assets/images/totalrenovering-hasselby-2-640.webp 640w, assets/images/totalrenovering-hasselby-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Grå panelfasad med ett enkelt vitt fönster på ett radhus" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Frånluften från 1960- och 70-talen</h2>
             <p>Stockholms stad beskriver frånluftsventilation som vanlig i hus byggda mellan 1961 och 1975. Centrala fläktar drar ut luften via don i kök, badrum och toalett, och tilluften kommer in via uteluftsdon i ytterväggarna och via otätheter. Systemet ger vissa möjligheter att rena tilluften och under vissa förutsättningar värmeåtervinning.</p>
             <p>När ett hus från den tiden tätas med nya fönster och ny isolering behöver ventilationen ses över samtidigt. Installation eller väsentlig ändring av ventilationen, till exempel ett nytt aggregat, ny fläkt eller värmeväxlare som påverkar flöden, kräver anmälan och startbesked, och monteras något utvändigt kan det kräva bygglov.</p>
@@ -282,9 +285,8 @@
         </div>
       </section>
       <section class="section seo-section" id="ordningen-hasselby">
-        <div class="container split-media split-media--flip">
-          <figure class="split-figure"><img src="assets/images/totalrenovering-hasselby-3.webp" srcset="assets/images/totalrenovering-hasselby-3-640.webp 640w, assets/images/totalrenovering-hasselby-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Rum under totalrenovering med blottad stomme och nya installationer" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Ordningen i en totalrenovering</h2>
             <p>Vi börjar med provtagning och, om det behövs, sanering. Därefter kommer stommen, sedan el och VVS, isolering och ventilation, och sist ytskikten. Ingrepp i bärande konstruktion kräver anmälan, och staden påpekar att ritningar kan vara ofullständiga.</p>
             <p>Rotavdrag ges för att sanera asbest i samband med byggarbete, men inte för att mäta asbest. Om badrummet kan du läsa under <a class="text-link" href="badrumsrenovering-hasselby.html">badrumsrenovering i Hässelby</a>, om fasaden under <a class="text-link" href="fasadrenovering-hasselby.html">fasadrenovering i Hässelby</a> och om tjänsten i stort under <a class="text-link" href="villarenovering.html">villarenovering</a>.</p>
@@ -587,34 +589,13 @@
         </div>
       </section>
 
-      <section class="section offer-section" id="begar-offert">
-        <div class="container offer-grid">
-          <div class="section-copy">
-            <h2 class="section-title">Begär offert</h2>
-            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
-          </div>
-          <div class="form-box hero-form offer-form" data-v3>
-            <h2>Få offert</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
-            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
-              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <input type="hidden" name="tjanst" value="Totalrenovering" />
-              <input type="hidden" name="retur" value="totalrenovering-hasselby.html" />
-              <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Hässelby" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
-              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
-              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
-            </form>
+      <section class="section cta-strip">
+        <div class="container">
+          <h2>Ska huset i Hässelby totalrenoveras?</h2>
+          <p>Boka ett gratis platsbesök, så går vi igenom huset och vad som behöver provtas innan du får ett skriftligt kostnadsförslag.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="btn btn-light" href="#offert">Få offert</a>
+            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
           </div>
         </div>
       </section>

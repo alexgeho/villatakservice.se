@@ -169,25 +169,20 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert" data-v3>
+          <div class="form-box hero-form" id="offert">
             <h2>Få offert på fasadrenovering</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form action="sendmail.php" method="post">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fasadrenovering" />
+              <input type="hidden" name="ort" value="Botkyrka" />
               <input type="hidden" name="retur" value="fasadrenovering-botkyrka.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Botkyrka" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -203,6 +198,15 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
+        </div>
+      </section>
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="page-gallery page-gallery--two">
+            <figure><img src="assets/images/fasadrenovering-botkyrka-2.webp" srcset="assets/images/fasadrenovering-botkyrka-2-640.webp 640w, assets/images/fasadrenovering-botkyrka-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Ny träpanel monteras bredvid tegel" loading="lazy" decoding="async" /></figure>
+            <figure><img src="assets/images/fasadrenovering-botkyrka-3.webp" srcset="assets/images/fasadrenovering-botkyrka-3-640.webp 640w, assets/images/fasadrenovering-botkyrka-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Lamellhus med tegelgavel och putsad långsida" loading="lazy" decoding="async" /></figure>
+          </div>
+          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section seo-section" id="tuna">
         <div class="container section-layout section-layout--text">
@@ -223,9 +227,8 @@
         </div>
       </section>
       <section class="section seo-section" id="lamellhus-tuna">
-        <div class="container split-media">
-          <figure class="split-figure"><img src="assets/images/fasadrenovering-botkyrka-2.webp" srcset="assets/images/fasadrenovering-botkyrka-2-640.webp 640w, assets/images/fasadrenovering-botkyrka-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Ny träpanel monteras bredvid tegel" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Tegelgavlar, puts och kopparplåt</h2>
             <p>I samma område står lamellhus i tre våningar kring fyra innergårdar, och programmet nämner kombinationen av tegelgavlar och putsade långsidor som ett medvetet drag. Punkthusen i kvarteret Kaplanen började byggas 1958 och avslutas med ett band av kopparplåt, och de har ljusputsade fasader.</p>
             <p>I Fittja byggdes enligt programmet omkring 2 500 bostäder i början av 1970-talet, med hög- och låghus, radhus och villor. Prefabricerade betongelement med frilagd ballast och tydliga balkongenheter präglar fasaderna, och de målade balkongfronterna ger färg mot ett annars lågmält uttryck. Riktlinjen är att den repetitiva estetiken i material, volymer och detaljer värnas.</p>
@@ -251,9 +254,8 @@
         </div>
       </section>
       <section class="section seo-section" id="isolering-botkyrka">
-        <div class="container split-media split-media--flip">
-          <figure class="split-figure"><img src="assets/images/fasadrenovering-botkyrka-3.webp" srcset="assets/images/fasadrenovering-botkyrka-3-640.webp 640w, assets/images/fasadrenovering-botkyrka-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Lamellhus med tegelgavel och putsad långsida" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Tilläggsisolering och gammal eternit</h2>
             <p>Boverket skriver att utvändig tilläggsisolering ofta är bäst ur energi- och fuktsynpunkt, men att den ur kulturmiljösynpunkt ofta är problematisk. Fönster och dörrar kan hamna längre in i fasaden, takfoten skjuter inte ut lika mycket och fasaden kan hänga ut över sockeln, så att huset får ett överjäst uttryck.</p>
             <p>Arbetsmiljöverket skriver att man ska räkna med att det finns asbest i hus byggda fram till 1982, bland annat i asbestcementskivor, eternit, på tak och väggar. Innan gamla skivor rivs ska materialen undersökas, och för att riva asbesthaltigt material krävs tillstånd. Vi tar in en provtagning innan rivningen planeras.</p>
@@ -521,34 +523,13 @@
         </div>
       </section>
 
-      <section class="section offer-section" id="begar-offert">
-        <div class="container offer-grid">
-          <div class="section-copy">
-            <h2 class="section-title">Begär offert</h2>
-            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
-          </div>
-          <div class="form-box hero-form offer-form" data-v3>
-            <h2>Få offert</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
-            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
-              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <input type="hidden" name="tjanst" value="Fasadrenovering" />
-              <input type="hidden" name="retur" value="fasadrenovering-botkyrka.html" />
-              <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Botkyrka" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
-              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
-              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
-            </form>
+      <section class="section cta-strip">
+        <div class="container">
+          <h2>Behöver fasaden renoveras i Botkyrka?</h2>
+          <p>Boka ett gratis platsbesök, så tittar vi på material och lov innan du får ett skriftligt kostnadsförslag.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="btn btn-light" href="#offert">Få offert</a>
+            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
           </div>
         </div>
       </section>

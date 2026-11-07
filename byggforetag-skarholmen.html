@@ -177,25 +177,20 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert" data-v3>
+          <div class="form-box hero-form" id="offert">
             <h2>Få offert från byggföretag</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form action="sendmail.php" method="post">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Byggföretag" />
+              <input type="hidden" name="ort" value="Skärholmen" />
               <input type="hidden" name="retur" value="byggforetag-skarholmen.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Skärholmen" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -211,6 +206,15 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
+        </div>
+      </section>
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="page-gallery page-gallery--two">
+            <figure><img src="assets/images/byggforetag-skarholmen-2.webp" srcset="assets/images/byggforetag-skarholmen-2-640.webp 640w, assets/images/byggforetag-skarholmen-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Rivning inne i ett radhus med skyddsplast" loading="lazy" decoding="async" /></figure>
+            <figure><img src="assets/images/byggforetag-skarholmen-3.webp" srcset="assets/images/byggforetag-skarholmen-3-640.webp 640w, assets/images/byggforetag-skarholmen-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Container framför en radhuslänga" loading="lazy" decoding="async" /></figure>
+          </div>
+          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section seo-section" id="agare-skh">
         <div class="container section-layout section-layout--text">
@@ -249,9 +253,8 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="inventering-skh">
-        <div class="container split-media">
-          <figure class="split-figure"><img src="assets/images/byggforetag-skarholmen-2.webp" srcset="assets/images/byggforetag-skarholmen-2-640.webp 640w, assets/images/byggforetag-skarholmen-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Rivning inne i ett radhus med skyddsplast" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Inventera före rivning</h2>
             <p>Arbetsmiljöverket skriver att en miljöinventering av hälsofarliga ämnen ska göras innan arbetet påbörjas, redan i planeringen. Man ska utgå från att byggnader uppförda fram till 1982 kan innehålla asbest, och det är byggherre, projektör och arbetsgivare som ska se till att en undersökning och eventuell provtagning görs.</p>
             <p>Husen i Skärholmen byggdes från 1960-talet och framåt, så inventeringen hör till de första stegen. Hittas asbest planeras saneringen av ett företag med tillstånd innan resten av ombyggnaden börjar.</p>
@@ -259,9 +262,8 @@
         </div>
       </section>
       <section class="section seo-section" id="gatan-skh">
-        <div class="container split-media split-media--flip">
-          <figure class="split-figure"><img src="assets/images/byggforetag-skarholmen-3.webp" srcset="assets/images/byggforetag-skarholmen-3-640.webp 640w, assets/images/byggforetag-skarholmen-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Container framför en radhuslänga" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Container, bod och husgruppen</h2>
             <p>Behöver en container, en bod eller ett upplag stå på gata eller annan offentlig plats krävs enligt Stockholms stad polistillstånd, och för container, byggbod och upplag dessutom bygglov. Ett glest byggstängsel kräver inget bygglov.</p>
             <p>En tillbyggnad på ett radhus får enligt staden vara högst 30 kvadratmeter utan lov, inte högre än husets nock och 4,5 meter från gränsen om inte grannen medger annat. Vägledningen beskriver en mycket stor enhetlighet inom husgrupperna, och Bredäng är markerat som kulturhistoriskt värdefull miljö. Mer om hur vi arbetar finns under <a class="text-link" href="byggfirma.html">byggfirma</a>.</p>
@@ -541,34 +543,13 @@
         </div>
       </section>
 
-      <section class="section offer-section" id="begar-offert">
-        <div class="container offer-grid">
-          <div class="section-copy">
-            <h2 class="section-title">Begär offert</h2>
-            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
-          </div>
-          <div class="form-box hero-form offer-form" data-v3>
-            <h2>Få offert</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
-            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
-              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <input type="hidden" name="tjanst" value="Byggföretag" />
-              <input type="hidden" name="retur" value="byggforetag-skarholmen.html" />
-              <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Skärholmen" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
-              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
-              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
-            </form>
+      <section class="section cta-strip">
+        <div class="container">
+          <h2>Ska radhuset byggas om i Skärholmen?</h2>
+          <p>Boka ett gratis platsbesök, så går vi igenom ansvar, inventering och lov innan du får ett skriftligt kostnadsförslag.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="btn btn-light" href="#offert">Få offert</a>
+            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
           </div>
         </div>
       </section>

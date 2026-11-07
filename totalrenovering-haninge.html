@@ -185,25 +185,20 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert" data-v3>
+          <div class="form-box hero-form" id="offert">
             <h2>Få offert på totalrenovering</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form action="sendmail.php" method="post">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Totalrenovering" />
+              <input type="hidden" name="ort" value="Haninge" />
               <input type="hidden" name="retur" value="totalrenovering-haninge.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Haninge" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -219,6 +214,15 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
+        </div>
+      </section>
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="page-gallery page-gallery--two">
+            <figure><img src="assets/images/totalrenovering-haninge-2.webp" srcset="assets/images/totalrenovering-haninge-2-640.webp 640w, assets/images/totalrenovering-haninge-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Vägg mellan kök och vardagsrum som öppnats under renovering" loading="lazy" decoding="async" /></figure>
+            <figure><img src="assets/images/totalrenovering-haninge-3.webp" srcset="assets/images/totalrenovering-haninge-3-640.webp 640w, assets/images/totalrenovering-haninge-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Ljust renoverat kök med träluckor och spröjsade fönster" loading="lazy" decoding="async" /></figure>
+          </div>
+          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section seo-section" id="folkhemmet-haninge">
         <div class="container section-layout section-layout--text">
@@ -257,9 +261,8 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="fonster-haninge">
-        <div class="container split-media">
-          <figure class="split-figure"><img src="assets/images/totalrenovering-haninge-2.webp" srcset="assets/images/totalrenovering-haninge-2-640.webp 640w, assets/images/totalrenovering-haninge-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Vägg mellan kök och vardagsrum som öppnats under renovering" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Fönster och dörrar</h2>
             <p>Karaktärsmiljöerna beskriver dörrar och fönster som en bärande del av byggnadens karaktär. Ursprunglig utformning och färgsättning ska värnas och vara utgångspunkt vid förändring.</p>
             <p>I en totalrenovering är fönstren ofta en av de största posterna. Vi går igenom om de går att renovera, eller om nya fönster kan göras med samma indelning och proportioner. Läs mer under <a class="text-link" href="fonsterrenovering-haninge.html">fönsterrenovering i Haninge</a> och <a class="text-link" href="fonsterbyte-haninge.html">fönsterbyte i Haninge</a>.</p>
@@ -267,9 +270,8 @@
         </div>
       </section>
       <section class="section seo-section" id="barande-haninge">
-        <div class="container split-media split-media--flip">
-          <figure class="split-figure"><img src="assets/images/totalrenovering-haninge-3.webp" srcset="assets/images/totalrenovering-haninge-3-640.webp 640w, assets/images/totalrenovering-haninge-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Ljust renoverat kök med träluckor och spröjsade fönster" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Bärande väggar och öppen planlösning</h2>
             <p>Många vill öppna upp mellan kök och vardagsrum. Haninge kommun skriver att ändringar som påverkar byggnadens bärande konstruktion eller stomme kräver en anmälan, och att du behöver startbesked innan arbetet börjar. Är du osäker på om en vägg är bärande ska du kontakta en konstruktör.</p>
             <p>Ritningar som visar husets bärande delar kan ibland finnas i kommunens bygglovsarkiv. Kommunen skriver att konstruktionsritningar ska lämnas in, och att de ska tas fram av konstruktörer och vara fackmannamässigt redovisade. En kontrollplan hör också till anmälan.</p>
@@ -549,34 +551,13 @@
         </div>
       </section>
 
-      <section class="section offer-section" id="begar-offert">
-        <div class="container offer-grid">
-          <div class="section-copy">
-            <h2 class="section-title">Begär offert</h2>
-            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
-          </div>
-          <div class="form-box hero-form offer-form" data-v3>
-            <h2>Få offert</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
-            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
-              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <input type="hidden" name="tjanst" value="Totalrenovering" />
-              <input type="hidden" name="retur" value="totalrenovering-haninge.html" />
-              <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Haninge" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
-              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
-              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
-            </form>
+      <section class="section cta-strip">
+        <div class="container">
+          <h2>Ska folkhemsvillan i Haninge totalrenoveras?</h2>
+          <p>Boka ett gratis platsbesök, så går vi igenom huset och kommunens råd innan du får ett skriftligt kostnadsförslag.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="btn btn-light" href="#offert">Få offert</a>
+            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
           </div>
         </div>
       </section>

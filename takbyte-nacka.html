@@ -177,25 +177,20 @@
               <a href="#kallor">Källor</a>
             </div>
           </div>
-          <div class="form-box hero-form" id="offert" data-v3>
+          <div class="form-box hero-form" id="offert">
             <h2>Få offert på takbyte</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
+            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+            <form action="sendmail.php" method="post">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Takbyte" />
+              <input type="hidden" name="ort" value="Nacka" />
               <input type="hidden" name="retur" value="takbyte-nacka.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort">Ort</label><input id="ort" name="ort" type="text" value="Nacka" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild">Bifoga bild (valfritt)</label><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
+              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
@@ -211,6 +206,15 @@
             <div class="trust-card"><h3>ROT-avdrag på fakturan</h3><p>Vi drar av ROT direkt och sköter ansökan.</p></div>
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
+        </div>
+      </section>
+      <section class="section gallery-section">
+        <div class="container">
+          <div class="page-gallery page-gallery--two">
+            <figure><img src="assets/images/takbyte-nacka-2.webp" srcset="assets/images/takbyte-nacka-2-640.webp 640w, assets/images/takbyte-nacka-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Murad skorsten med ny svart plåtinfästning mot nya tegelpannor på ett villatak" loading="lazy" decoding="async" /></figure>
+            <figure><img src="assets/images/takbyte-nacka-3.webp" srcset="assets/images/takbyte-nacka-3-640.webp 640w, assets/images/takbyte-nacka-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Takfall med ny ventilationshuv, takfönster och antennfäste på ett nylagt betongpannetak" loading="lazy" decoding="async" /></figure>
+          </div>
+          <p class="gallery-note">Illustrationer</p>
         </div>
       </section>      <section class="section section-muted seo-section" id="genomforingar-nacka">
         <div class="container section-layout section-layout--text">
@@ -231,9 +235,8 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="skorsten-nacka">
-        <div class="container split-media">
-          <figure class="split-figure"><img src="assets/images/takbyte-nacka-2.webp" srcset="assets/images/takbyte-nacka-2-640.webp 640w, assets/images/takbyte-nacka-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Murad skorsten med ny svart plåtinfästning mot nya tegelpannor på ett villatak" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Skorstenen och eldstaden när taket ändå är öppet</h2>
             <p>Ett takbyte är ett naturligt tillfälle att bestämma vad som ska hända med skorstenen. Plåten runt den görs om när pannorna byts, och krönet kan lagas medan ställningen står. Planerar du samtidigt en ny eldstad gäller andra regler. Nacka kommun skriver att en anmälan ska göras för att installera en ny eldstad eller väsentligt ändra en befintlig, till exempel genom att sätta in en tyngre eldstad eller byta bränsleslag. En skorsten som byggs utanpå fasaden kan dessutom kräva bygglov för fasadändring om huset ligger i en kulturmiljö.</p>
             <p>När en ny eldstad är installerad ska den besiktigas av en sotare, och kommunen ger slutbesked innan den får användas. Vi samordnar takarbetet så att skorstenen är klar och tätt inplåtad innan eldstaden tas i bruk. Skatteverket räknar att mura och reparera skorstenar på ett småhus som rotarbete, men inte att kontrollera eldstäder och skorstenar. Mer om lagning och omputsning finns under <a class="text-link" href="skorstensrenovering.html">skorstensrenovering</a>.</p>
@@ -258,9 +261,8 @@
         </div>
       </section>
       <section class="section section-muted seo-section" id="grannar-nacka">
-        <div class="container split-media split-media--flip">
-          <figure class="split-figure"><img src="assets/images/takbyte-nacka-3.webp" srcset="assets/images/takbyte-nacka-3-640.webp 640w, assets/images/takbyte-nacka-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Takfall med ny ventilationshuv, takfönster och antennfäste på ett nylagt betongpannetak" loading="lazy" decoding="async" /></figure>
-          <div class="section-copy">
+        <div class="container">
+          <div class="section-copy section-copy--wide">
             <h2 class="section-title">Prata med grannarna innan ställningen kommer</h2>
             <p>Inför lagändringen den 1 december 2025 skrev kommunen att fler åtgärder får göras utan bygglov, men att ansvaret för att veta vad som gäller hamnar hos fastighetsägaren. Om något byggs felaktigt är risken stor att det blir ett tillsynsärende, och kundrådgivarna på Stadsbyggnadsservice berättar att många tillsynsanmälningar kommer från grannar som inte känt till vad som skulle göras. Deras råd är att vara påläst, ha god framförhållning och prata med grannarna tidigt.</p>
             <p>Ett takbyte märks på tomterna runt omkring. Ställningen kan behöva stå nära tomtgränsen, och gammalt tegel och papp ska fraktas bort. Vi går igenom placeringen vid platsbesöket så att du kan berätta för grannarna vad som händer och hur länge. I kommunens webbkarta finns både gällande detaljplaner och äldre stads- och byggnadsplaner, och den är ett bra första steg. Vad vi gör i övrigt i kommunen finns under <a class="text-link" href="taklaggare-nacka.html">takläggare i Nacka</a>, och hur ett byte går till i stort under <a class="text-link" href="takbyte.html">takbyte</a>.</p>
@@ -526,34 +528,13 @@
         </div>
       </section>
 
-      <section class="section offer-section" id="begar-offert">
-        <div class="container offer-grid">
-          <div class="section-copy">
-            <h2 class="section-title">Begär offert</h2>
-            <p>Gratis besök och fast offert. Ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a> eller skicka en förfrågan.</p>
-          </div>
-          <div class="form-box hero-form offer-form" data-v3>
-            <h2>Få offert</h2>
-            <p class="form-note">Beskriv jobbet så återkommer vi och bokar ett kostnadsfritt besök.</p>
-            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post" enctype="multipart/form-data">
-              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
-              <input type="hidden" name="tjanst" value="Takbyte" />
-              <input type="hidden" name="retur" value="takbyte-nacka.html" />
-              <input type="hidden" name="gdpr" value="1" />
-              <div class="field-row">
-                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" name="namn" type="text" autocomplete="name" required /></div>
-                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" name="epost" type="email" autocomplete="email" required /></div>
-              </div>
-              <div class="field-row">
-                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" name="telefon" type="tel" autocomplete="tel" /></div>
-                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" name="ort" type="text" value="Nacka" autocomplete="address-level2" /></div>
-              </div>
-              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" name="meddelande" rows="3" required></textarea></div>
-              <div class="field field-file"><label for="bild-2">Bifoga bild (valfritt)</label><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /></div>
-              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
-              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
-            </form>
+      <section class="section cta-strip">
+        <div class="container">
+          <h2>Ska taket i Nacka bytas?</h2>
+          <p>Boka ett gratis platsbesök, så går vi igenom taket och alla genomföringar innan du får ett skriftligt kostnadsförslag.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a class="btn btn-light" href="#offert">Få offert</a>
+            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
           </div>
         </div>
       </section>
