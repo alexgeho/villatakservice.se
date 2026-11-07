@@ -3468,3 +3468,4 @@ if __name__ == "__main__":
     # Landing v1 (07.11.2026): offertformulär i hero + galleri + förtroendeblock på alla tjänstesidor.
     import subprocess as _sp
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v1.py")], check=True)
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v2.py")], check=True)
