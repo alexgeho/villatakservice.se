@@ -15,6 +15,10 @@ RULES = [("rivning", ("riv", "nedtag")), ("tapet", ("tapet", "uppsättning")), (
          ("kontroll", ("besiktning", "kontroll", "genomgång", "avslut", "prov")),
          ("besok", ("besök", "inventering")), ("offert", ("förslag", "offert", "pris", "avtal", "kalkyl")),
          ("bygg", ("bygg", "utförande", "renovering", "stomme", "grund"))]
+# Accent på tjänstens föremål (ägaren 09.11): variant <ikon>-<grupp> om filen finns
+GRUPP = [("mal", ("målare", "fasadmålning", "fasadrenovering")),
+         ("fonster", ("fönster",)),
+         ("inne", ("tapet", "köksrenovering", "badrum", "golv", "snickare"))]
 FORDEL = {"Gratis besök": "besok", "Tydlig offert": "offert", "ROT-avdrag på fakturan": "rot", "Lokalt företag": "lokal"}
 
 
@@ -38,7 +42,18 @@ def pick(title, i, n):
     return "besok" if i == 0 else "offert" if i == 1 else "kontroll" if i == n - 1 else "bygg"
 
 
+G = ""
+
+
+def grupp(s):
+    m = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+    h = re.sub(r"<[^>]+>", "", m.group(1)).lower() if m else ""
+    return next((g for g, keys in GRUPP if any(h.startswith(k) for k in keys)), "")
+
+
 def img(name, cls):
+    if G and ok(name + "-" + G):
+        name = name + "-" + G
     e = ext(name)
     import hashlib
     v = hashlib.md5(open(os.path.join(IC, name + e), "rb").read()).hexdigest()[:8]
@@ -71,6 +86,8 @@ def transform(path):
     s = open(path, encoding="utf-8").read()
     if "ds-taklia" not in s:
         return False
+    global G
+    G = grupp(s)
     # byt ut tidigare ikoner (ny stil vinner)
     s0 = s
     s = re.sub(r'\s*<img class="step-icon"[^>]*data-ikon />', "", s)
