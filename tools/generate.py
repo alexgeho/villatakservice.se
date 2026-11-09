@@ -3475,3 +3475,4 @@ if __name__ == "__main__":
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v2.py")], check=True)
     # DS taklia-utrullning (ägarens «ok» på pilot takbyte 09.11.2026): header, hero, formulär, blandade block.
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "rollout_ds.py")], check=True)
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "ikoner_ds.py")], check=True)

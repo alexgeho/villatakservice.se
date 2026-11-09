@@ -30,3 +30,4 @@
 - [x] 09.11 Ägaren «Da» → utrullning av pilot takbyte till 683 landningssidor (tools/rollout_ds.py, körs i generate.py; takbyte.html skyddad i HAND_MADE)
 - [ ] Startsidan + statiska sidor (index, tjanster, om-oss, kontakt, artiklar) i DS taklia — inte gjort än
 - [ ] Artiklar (article-shell) — oförändrade prosa-sidor, besluta om de ska få DS
+- [x] 09.11 Ägaren: ikoner i Recraft för steg och «Därför väljer kunder oss» (tools/ikoner_ds.py klart, väntar på ikonfiler)
