@@ -19,11 +19,14 @@
 - [x] hero: фоновая картинка во весь экран + форма поверх (владелец 07.11)
 - [x] преимущества сразу под hero, потом галерея
 - [ ] партнёры/сертификаты — только реальные у Geal (у taklia это фирма Daniel — брать нельзя), ждём список от владельца
-- [ ] эталон taklia (владелец 07.11) — ПИЛОТ только taklaggare-sollentuna, ждёт «ок», потом tools/landing_v3.py на все: форма 2 колонки + Ort + «Bifoga bild», фото рядом с текстом, «Begär offert» с формой внизу
+- [x] (09.11 ersatt av rollout_ds) эталон taklia (владелец 07.11) — ПИЛОТ только taklaggare-sollentuna, ждёт «ок», потом tools/landing_v3.py на все: форма 2 колонки + Ort + «Bifoga bild», фото рядом с текстом, «Begär offert» с формой внизу
 - [ ] фото реального консультанта в форму (как «Johan» на taklia) — нужно фото владельца/сотрудника
 - [x] (владелец 07.11) «текстовых полотен не должно быть» — пилот takbyte.html: 8 блоков фото+текст зигзагом, интро + 3–4 факта, фоны чередуются; 5 новых картинок
-- [ ] после «ок» по пилоту takbyte: то же на всех страницах (включая главную, блок «Takbyte» со скриншота) + landing_v3
+- [x] (09.11 rollout_ds.py, 683 sidor) после «ок» по пилоту takbyte: то же на всех страницах (включая главную, блок «Takbyte» со скриншота) + landing_v3
 - [x] (владелец 07.11) дизайн-система taklia на пилоте takbyte: Fraunces/Inter, акцентное слово в H2, радиус 0, шапка (лого | меню | телефон + Kontakt), форма 417/36, блоки 90, фоны чередуются — assets/css/ds-taklia.css
 - [x] логотип Recraft: 12 вариантов на рабочем столе (villatak-logo) — владелец выбрал 5A, стоит в шапке пилота (assets/images/logo-villatak-5a.svg); favicon — при раскатке
 - [x] критик: пилот takbyte vs taklia + DS → 25 пунктов исправлены (кроме выпадающих меню и 2-рядной шапки 1024 — проверить после «ок»)
 - [x] 09.11 Ägaren (pilot takbyte): inte foto+bockar i varje block — blanda: foto+bockar / foto+2 stycken / bara text 2 stycken (epoker, tid = text; material = foto+stycken)
+- [x] 09.11 Ägaren «Da» → utrullning av pilot takbyte till 683 landningssidor (tools/rollout_ds.py, körs i generate.py; takbyte.html skyddad i HAND_MADE)
+- [ ] Startsidan + statiska sidor (index, tjanster, om-oss, kontakt, artiklar) i DS taklia — inte gjort än
+- [ ] Artiklar (article-shell) — oförändrade prosa-sidor, besluta om de ska få DS

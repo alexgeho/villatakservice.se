@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -330,26 +331,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -357,48 +358,39 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/papptak-1.webp" srcset="assets/images/papptak-1-640.webp 640w, assets/images/papptak-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / Papptak</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › Papptak</p>
             <h1 class="hero-title">Papptak i Stockholm</h1>
-            <p class="section-lead">Vi byter och lägger nytt papptak på villor, radhus och funkishus med låg taklutning. Ett papptak brukar hålla 20–30 år, och när det är slut lägger vi ny underlagspapp och ytpapp och gör alla detaljer täta. Du får fast pris efter ett gratis besök.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#nar">När byta</a>
-              <a href="#ingar">Så går det till</a>
-              <a href="#plat">Papp eller plåt</a>
-              <a href="#pris">Kostnad & ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-            </div>
+            <p class="section-lead">Vi byter och lägger nytt papptak på villor, radhus och funkishus med låg taklutning.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på papptak</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på papptak</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Papptak" />
-              <input type="hidden" name="ort" value="" />
               <input type="hidden" name="retur" value="papptak.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -406,25 +398,17 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--two">
-            <figure><img src="assets/images/papptak-2.webp" srcset="assets/images/papptak-2-640.webp 640w, assets/images/papptak-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Papptak i Stockholm – detalj" loading="lazy" decoding="async" /></figure>
-            <figure><img src="assets/images/papptak-3.webp" srcset="assets/images/papptak-3-640.webp 640w, assets/images/papptak-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Färdigt tak med nock, plåtdetaljer och hängrännor" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section section-muted seo-section" id="nar">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="nar">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">När behöver papptaket <em>bytas</em>?</h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/papptak-2.webp" srcset="assets/images/papptak-2-640.webp 640w, assets/images/papptak-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Papptak i Stockholm – detalj" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">När behöver papptaket bytas?</h2>
+            <p>Ett papptak brukar hålla 20–30 år, och när det är slut lägger vi ny underlagspapp och ytpapp och gör alla detaljer täta. Du får fast pris efter ett gratis besök.</p>
             <p>Papptak brukar hålla 20–30 år, kortare på låglutande tak där vatten blir stående. Papp är vanligt på funkisvillor, radhus och hus med nästan platta tak, där pannor inte fungerar.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Ett gammalt papptak kan ofta lagas punktvis så länge pappen är hel i övrigt. Är den spröd över hela ytan, eller har fukt nått råsponten, är det dags att lägga om. Osäker? En <a class="text-link" href="takbesiktning.html">takbesiktning</a> ger besked.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Tecken på att pappen är slut</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Blåsor och sprickor i ytan.</li>
               <li>Lösa eller öppna skarvar.</li>
               <li>Stående vatten efter regn.</li>
@@ -432,12 +416,13 @@
               <li>Fuktfläckar i tak eller på vinden.</li>
               <li>Mossa och påväxt som håller fukt.</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
-      </section>      <section class="section section-muted seo-section" id="ingar">
+      </section>      <section class="section seo-section" id="ingar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så går ett byte av papptak till</h2>
+            <h2 class="section-title">Så går ett byte av papptak <em>till</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -472,29 +457,26 @@
             </article>
           </div>
         </div>
-      </section>      <section class="section seo-section">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Det mesta läckaget sitter i detaljerna</h2>
+      </section>      <section class="section section-muted seo-section media-block">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Det mesta läckaget sitter i <em>detaljerna</em></h2></div></div>
+        <div class="container split-media split-media--flip">
+          <figure class="split-figure"><img src="assets/images/papptak-3.webp" srcset="assets/images/papptak-3-640.webp 640w, assets/images/papptak-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Färdigt tak med nock, plåtdetaljer och hängrännor" loading="lazy" decoding="async" /></figure>
+          <div class="section-copy">
             <p>På ett låglutande tak rinner vattnet långsamt, så skarvar, takfot och anslutningar måste vara helt täta. De vanligaste läckagepunkterna är runt skorsten, ventilation och andra genomföringar, vid takfoten och där taket möter en vägg.</p>
             <p>Därför byter vi plåtdetaljer som fotplåt och vindskivor när de är slitna, och ser över <a class="text-link" href="hangrannor-stupror.html">hängrännor och stuprör</a> i samma omgång.</p>
           </div>
         </div>
-      </section>      <section class="section section-muted seo-section" id="plat">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Papp eller plåt på låg lutning?</h2>
+      </section>      <section class="section seo-section media-block" id="plat">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Papp eller plåt på låg <em>lutning</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Både papp och plåt fungerar på låga taklutningar. Papp har kortare livslängd, 20–30 år, medan ett <a class="text-link" href="plattak.html">plåttak</a> brukar hålla 40–50 år. Falsad plåt är det klassiska alternativet på funkishus, se <a class="text-link" href="falsat-plattak.html">falsat plåttak och bandtäckning</a>.</p>
             <p>Vill du byta från papp till plåt bedömer vi underlaget och lutningen vid besöket. Sedan 1 december 2025 kräver byte av takmaterial på villa och radhus normalt inget bygglov, utom i skyddade miljöer – läs mer i <a class="text-link" href="bygglov-takbyte.html">bygglov för takbyte</a>. Jämför fler material i <a class="text-link" href="takmaterial-livslangd.html">livslängd per takmaterial</a>.</p>
-          </div>
         </div>
-      </section>      <section class="section seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad kostar ett papptak?</h2>
+      </section>      <section class="section section-muted seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad kostar ett <em>papptak</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Priset beror på takets yta, lutning och form, om råsponten behöver bytas, antal genomföringar och plåtdetaljer samt ställning och åtkomst. Rivning och bortforsling av den gamla pappen ingår i ett komplett byte.</p>
             <p>Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag med fast pris. Vill du ha en första uppskattning per kvadratmeter kan du <a class="text-link" href="https://takbytepris.nu/">räkna på papptak på takbytepris.nu</a>. Mer om vad som styr priset finns i <a class="text-link" href="vad-kostar-takbyte.html">vad kostar ett takbyte</a>.</p>
-          </div>
         </div>
       </section>      <section class="section seo-section">
         <div class="container">
@@ -503,10 +485,10 @@
             <p>Arbetskostnaden för att byta papptak på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan. För 2026 är ROT-avdraget 30 % av arbetskostnaden, med ett tak på 50 000 kr per person och år. Läs mer i vår guide om <a class="text-link" href="rot-avdrag-takarbete.html">ROT-avdrag för takarbete</a>.</p>
           </div>
         </div>
-      </section>      <section class="section seo-section" id="orter">
+      </section>      <section class="section section-muted seo-section" id="orter">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Papptak i ditt område</h2>
+            <h2 class="section-title">Papptak i ditt <em>område</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -536,10 +518,10 @@
             </article>
           </div>
         </div>
-      </section>      <section class="section section-muted seo-section">
+      </section>      <section class="section seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Relaterat</h2>
+            <h2 class="section-title"><em>Relaterat</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -566,9 +548,9 @@
         </div>
       </section>
 
-      <section class="section seo-section" id="faq">
+      <section class="section section-muted seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Hur länge håller ett papptak?
@@ -622,13 +604,33 @@
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Dags att byta papptaket?</h2>
-          <p>Vi kommer ut gratis, bedömer taket och lämnar ett skriftligt kostnadsförslag med fast pris.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Papptak" />
+              <input type="hidden" name="retur" value="papptak.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

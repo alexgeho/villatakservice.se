@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/golvslipning-haninge-1.webp" srcset="assets/images/golvslipning-haninge-1-640.webp 640w, assets/images/golvslipning-haninge-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="golvlaggning.html">Golvläggning</a> / Haninge</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="golvlaggning.html">Golvläggning</a> › Haninge</p>
             <h1 class="hero-title">Golvslipning i Haninge</h1>
-            <p class="section-lead">Ett trägolv som har legat i många år kan ha märken som en slipning inte tar bort: en spjälkad kant, ett öppet kvisthål, en bräda som står högre än grannen. Sådant lagas innan maskinen startar. Geal Entreprenad AB slipar och ytbehandlar trägolv i Haninge och går igenom golvet bräda för bräda innan vi föreslår vad som ska göras.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#folkhemmet-haninge">Villorna</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">Ett trägolv som har legat i många år kan ha märken som en slipning inte tar bort: en spjälkad kant, ett öppet kvisthål, en bräda som står högre än grannen.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på golvslipning</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på golvslipning</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Golvslipning" />
-              <input type="hidden" name="ort" value="Haninge" />
               <input type="hidden" name="retur" value="golvslipning-haninge.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Haninge" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Flytt av möbler</li>
+              <li>Slipning i flera steg</li>
+              <li>Lagning av skador</li>
+              <li>Lack, olja eller lut</li>
+              <li>Lister vid behov</li>
+              <li>Städning efter jobbet</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,76 +210,68 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--one">
-            <figure><img src="assets/images/golvslipning-haninge-2.webp" srcset="assets/images/golvslipning-haninge-2-640.webp 640w, assets/images/golvslipning-haninge-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Ny furubräda insatt bland gamla brädor i ett golv före slipning, med spackel i ett kvisthål" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="folkhemmet-haninge">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="folkhemmet-haninge">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Villorna från folkhemmet och <em>rekordåren</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/golvslipning-haninge-2.webp" srcset="assets/images/golvslipning-haninge-2-640.webp 640w, assets/images/golvslipning-haninge-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Ny furubräda insatt bland gamla brädor i ett golv före slipning, med spackel i ett kvisthål" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Villorna från folkhemmet och rekordåren</h2>
+            <p>Sådant lagas innan maskinen startar. Geal Entreprenad AB slipar och ytbehandlar trägolv i Haninge och går igenom golvet bräda för bräda innan vi föreslår vad som ska göras.</p>
             <p>Haninges karaktärsmiljöer beskriver folkhemsbygget 1940–1960-tal som områden med små enhetliga villor, kedjehus eller radhus samlade i grupphusbebyggelse. 1940-talets småhusområden består av enkelt utformade en- eller tvåplansvillor i trä, puts eller fasadtegel, och 1950-talets villa- och kedjehusområden har oftast kombinerade fasadmaterial. Som exempel nämns Handen, Jordbro, Vendelsö, Vendelsömalm och Västerhaninge.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Rekordårens småhus från 1960–1980-tal är enligt samma dokument oftast uppförda som grupphus med enhetlighet inom området, och en- och en halvplansvillor är vanliga. Exempel finns i Jordbro, Brandbergen, Västerhaninge och Handen. Hur golvet i just ditt hus ser ut avgör vi på plats.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Småhus i Haninge</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Folkhemsbygget 1940–1960-tal</li>
               <li>Rekordåren 1960–1980-tal</li>
               <li>Handen, Jordbro, Vendelsö</li>
               <li>Vendelsömalm, Västerhaninge</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="skador-haninge">
-        <div class="container section-layout section-layout--text">
-          <div class="section-copy">
-            <h2 class="section-title">Skador som slipningen inte tar bort</h2>
+      <section class="section seo-section media-block" id="skador-haninge">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Skador som slipningen inte tar <em>bort</em></h2></div></div>
+        <div class="container text-block">
             <p>Golvbranschens bedömningsgrunder för massiva trägolv listar lämpliga åtgärder för olika fel. Urspjälkning och kantskador, till exempel efter ett hammarslag, åtgärdas med byte av stav eller bräda, och mindre fel spacklas eller repareras. Öppna kvisthål och kvistsprickor spacklas, och ytan bättras med lack eller olja.</p>
             <p>Tryckmärken, repor och skador i ytan kan vid mycket små fel punktförbättras, men i svårare fall byts brädan. Därför går vi igenom märkena innan vi slipar, och en bräda med en svår skada byts före slipningen.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Är en del av slitskiktet lös, till exempel i ett lamellgolv, ska den enligt riktlinjerna för slipning, SLIP 22, limmas fast före slipningen.</p>
             <p>Även listerna hör till jobbet. Bedömningsgrunderna anger att hammarslag och andra skador på lister spacklas och ytbehandlas eller att listen byts. En springa mellan golv och sockel bedöms efter tillverkarens krav på expansionsutrymme och kan åtgärdas med en ny sockel eller en kvartstav. Vi går därför igenom listerna samtidigt som brädorna.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Lagas före slipning</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Spjälkade kanter</li>
               <li>Öppna kvisthål</li>
               <li>Djupa tryckmärken</li>
               <li>Lösa partier av slitskiktet</li>
             </ul>
-          </aside>
+            </details>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="nivaer-haninge">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Nivåskillnader, springor och kupade brädor</h2>
+      <section class="section section-muted seo-section media-block" id="nivaer-haninge">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Nivåskillnader, springor och kupade <em>brädor</em></h2></div></div>
+        <div class="container text-block">
             <p>Ett fogsprång är när två brädor ligger på olika höjd. Bedömningsgrunderna anger att enstaka fogsprång åtgärdas med byte av bräda, eller på ett oljat golv med punktslipning och omoljning, och att ett bestående fogsprång får vara högst ±0,3 millimeter.</p>
             <p>Springor, buktiga brädor och missljud hanteras annorlunda. För dem säger bedömningsgrunderna att orsaken först ska utredas och att åtgärden beror på resultatet. En bräda som har kupat sig, alltså buktat uppåt, eller skålat sig neråt får vara högst en procent av brädans bredd. Golvbranschens handbok Trägolv på golvvärme beskriver att trägolv får springor och skålning när inomhusluften är torr på vintern och kan kupa sig när luften är fuktig på sommaren. En buktighet som kommer av klimatet kan alltså komma tillbaka efter en slipning.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Därför mäter vi fuktkvoten i träet och luftfuktigheten i rummet innan vi föreslår slipning. Riktlinjerna säger att golvet inte ska ytbehandlas när fuktkvoten ligger utanför 6–10 procent eller luftfuktigheten utanför 30–60 procent.</p>
-          </div>
+            </details>
         </div>
       </section>
-      <section class="section seo-section" id="fukt-haninge">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">När golvet har varit blött</h2>
+      <section class="section seo-section media-block" id="fukt-haninge">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">När golvet har varit <em>blött</em></h2></div></div>
+        <div class="container text-block">
             <p>Fuktskador och svikt står också bland de fel där orsaken ska utredas först. SLIP 22 säger att den som misstänker att slitskiktet kan lossna vid eller efter slipning, till exempel när golvet är vattenskadat, bör avråda från en omslipning. Samma sak gäller när slipningen antas bli orimligt dyr.</p>
             <p>Sviktar golvet kan slipningen dessutom ge en vågig yta, ondulering. Går svikten inte att åtgärda före slipningen ska du enligt riktlinjerna få veta risken innan arbetet börjar. I ett hus med källare eller souterräng tittar vi gärna på bjälklaget underifrån när det går.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Är golvet så skadat att det är bättre att lägga nytt beskrivs det under <a class="text-link" href="golvlaggare-haninge.html">golvläggare i Haninge</a>. Fler golvtyper finns på sidan om <a class="text-link" href="golvlaggning.html">golvläggning</a>.</p>
-          </div>
+            </details>
         </div>
       </section>
       <section class="section section-muted seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så går golvslipningen till i Haninge</h2>
+            <h2 class="section-title">Så går golvslipningen till i <em>Haninge</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -312,27 +307,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">ROT-avdrag för lagning och slipning</h2>
+      <section class="section seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">ROT-avdrag för lagning och <em>slipning</em></h2></div></div>
+        <div class="container text-block">
             <p>Skatteverket räknar att slipa och byta golv som rotarbete i småhus. Avdraget gäller arbetad tid på plats.</p>
             <p>Avdraget är 30 procent av arbetskostnaden, högst 50 000 kr per person och år och högst 75 000 kr tillsammans med rutavdrag. Brädor, spackel, lack och resor ger inget avdrag. Geal drar avdraget direkt på fakturan.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset i Haninge?</h2>
+      <section class="section section-muted seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset i <em>Haninge</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Golvytan, hur många brädor som behöver bytas eller lagas, om fuktorsaker behöver utredas och vilken ytbehandling du väljer. Efter ett gratis platsbesök får du ett skriftligt kostnadsförslag.</p>
-          </div>
         </div>
       </section>
       <section class="section seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster i Haninge</h2>
+            <h2 class="section-title">Fler tjänster i <em>Haninge</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -436,43 +427,43 @@
       <section class="section section-muted seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Golvslipning i fler områden</h2>
+            <h2 class="section-title">Golvslipning i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="golvslipning-alvsjo.html">Golvslipning i Älvsjö</a></li>
-                <li><a href="golvslipning-botkyrka.html">Golvslipning i Botkyrka</a></li>
-                <li><a href="golvslipning-bromma.html">Golvslipning i Bromma</a></li>
-                <li><a href="golvslipning-danderyd.html">Golvslipning i Danderyd</a></li>
-                <li><a href="golvslipning-enskede.html">Golvslipning i Enskede</a></li>
-                <li><a href="golvslipning-farsta.html">Golvslipning i Farsta</a></li>
-                <li><a href="golvslipning-huddinge.html">Golvslipning i Huddinge</a></li>
-                <li><a href="golvslipning-hagersten.html">Golvslipning i Hägersten</a></li>
-                <li><a href="golvslipning-hasselby.html">Golvslipning i Hässelby</a></li>
-                <li><a href="golvslipning-jarfalla.html">Golvslipning i Järfälla</a></li>
-                <li><a href="golvslipning-kista.html">Golvslipning i Kista</a></li>
-                <li><a href="golvslipning-lidingo.html">Golvslipning på Lidingö</a></li>
-                <li><a href="golvslipning-nacka.html">Golvslipning i Nacka</a></li>
-                <li><a href="golvslipning-norrtalje.html">Golvslipning i Norrtälje</a></li>
-                <li><a href="golvslipning-osteraker.html">Golvslipning i Österåker</a></li>
-                <li><a href="golvslipning-sigtuna.html">Golvslipning i Sigtuna</a></li>
+                <li><a href="golvslipning-alvsjo.html">Älvsjö</a></li>
+                <li><a href="golvslipning-botkyrka.html">Botkyrka</a></li>
+                <li><a href="golvslipning-bromma.html">Bromma</a></li>
+                <li><a href="golvslipning-danderyd.html">Danderyd</a></li>
+                <li><a href="golvslipning-enskede.html">Enskede</a></li>
+                <li><a href="golvslipning-farsta.html">Farsta</a></li>
+                <li><a href="golvslipning-huddinge.html">Huddinge</a></li>
+                <li><a href="golvslipning-hagersten.html">Hägersten</a></li>
+                <li><a href="golvslipning-hasselby.html">Hässelby</a></li>
+                <li><a href="golvslipning-jarfalla.html">Järfälla</a></li>
+                <li><a href="golvslipning-kista.html">Kista</a></li>
+                <li><a href="golvslipning-lidingo.html">Lidingö</a></li>
+                <li><a href="golvslipning-nacka.html">Nacka</a></li>
+                <li><a href="golvslipning-norrtalje.html">Norrtälje</a></li>
+                <li><a href="golvslipning-osteraker.html">Österåker</a></li>
+                <li><a href="golvslipning-sigtuna.html">Sigtuna</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="golvslipning-skarholmen.html">Golvslipning i Skärholmen</a></li>
-                <li><a href="golvslipning-sollentuna.html">Golvslipning i Sollentuna</a></li>
-                <li><a href="golvslipning-solna.html">Golvslipning i Solna</a></li>
-                <li><a href="golvslipning-spanga.html">Golvslipning i Spånga</a></li>
-                <li><a href="golvslipning-sundbyberg.html">Golvslipning i Sundbyberg</a></li>
-                <li><a href="golvslipning-tyreso.html">Golvslipning i Tyresö</a></li>
-                <li><a href="golvslipning-taby.html">Golvslipning i Täby</a></li>
-                <li><a href="golvslipning-upplands-vasby.html">Golvslipning i Upplands Väsby</a></li>
-                <li><a href="golvslipning-vallentuna.html">Golvslipning i Vallentuna</a></li>
-                <li><a href="golvslipning-vasastan.html">Golvslipning i Vasastan</a></li>
-                <li><a href="golvslipning-vallingby.html">Golvslipning i Vällingby</a></li>
-                <li><a href="golvslipning-ekero.html">Golvslipning på Ekerö</a></li>
-                <li><a href="golvslipning-kungsholmen.html">Golvslipning på Kungsholmen</a></li>
-                <li><a href="golvslipning-ostermalm.html">Golvslipning på Östermalm</a></li>
-                <li><a href="golvslipning-sodermalm.html">Golvslipning på Södermalm</a></li>
-                <li><a href="golvslipning-varmdo.html">Golvslipning på Värmdö</a></li>
+                <li><a href="golvslipning-skarholmen.html">Skärholmen</a></li>
+                <li><a href="golvslipning-sollentuna.html">Sollentuna</a></li>
+                <li><a href="golvslipning-solna.html">Solna</a></li>
+                <li><a href="golvslipning-spanga.html">Spånga</a></li>
+                <li><a href="golvslipning-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="golvslipning-tyreso.html">Tyresö</a></li>
+                <li><a href="golvslipning-taby.html">Täby</a></li>
+                <li><a href="golvslipning-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="golvslipning-vallentuna.html">Vallentuna</a></li>
+                <li><a href="golvslipning-vasastan.html">Vasastan</a></li>
+                <li><a href="golvslipning-vallingby.html">Vällingby</a></li>
+                <li><a href="golvslipning-ekero.html">Ekerö</a></li>
+                <li><a href="golvslipning-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="golvslipning-ostermalm.html">Östermalm</a></li>
+                <li><a href="golvslipning-sodermalm.html">Södermalm</a></li>
+                <li><a href="golvslipning-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
@@ -481,7 +472,7 @@
 
       <section class="section seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Försvinner ett djupt hammarmärke i golvet när det slipas i Haninge?
@@ -516,10 +507,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section section-muted seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://www.haninge.se/contentassets/44e92cc3b6374ed186a0e26c7b1c1509/haninges-karaktarsmiljoer.pdf" rel="noopener">Haninge kommun – Haninges karaktärsmiljöer (pdf)</a></li>
               <li><a class="text-link" href="https://www.golvbranschen.se/siteassets/dokument/bedomningsgrunder/bedomning-massiva-tragolv-1603.pdf.pdf" rel="noopener">Golvbranschen – Bedömningsgrunder för skönhetsfel, inlagda massiva trägolv (pdf)</a></li>
@@ -528,17 +518,36 @@
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/gerarbetetratttillrotavdrag.106.5c1163881590be297b5899d.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html" rel="noopener">Skatteverket – Så fungerar rotavdraget</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Har trägolvet i Haninge skador som behöver lagas?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom brädorna och fukten innan du får ett skriftligt kostnadsförslag.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Golvslipning" />
+              <input type="hidden" name="retur" value="golvslipning-haninge.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Haninge" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

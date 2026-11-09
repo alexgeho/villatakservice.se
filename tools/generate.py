@@ -3406,9 +3406,13 @@ def fix_prep(html):
     # Gäller även title/alt/meta; URL:er innehåller inga "i <Ort>" med mellanslag.
     return _PA.sub(lambda m: ("På" if m.group(1) == "I" else "på") + " " + m.group(2), html)
 
+HAND_MADE = {"takbyte.html"}  # 09.11: pilot i DS taklia, ägarens «ok»
+
 def main():
     written = []
     for p in PAGES:
+        if p["file"] in HAND_MADE:  # pilot/förlaga, redigeras för hand
+            continue
         html = fix_prep(render(p))
         with open(os.path.join(ROOT, p["file"]), "w", encoding="utf-8") as f:
             f.write(html)
@@ -3469,4 +3473,5 @@ if __name__ == "__main__":
     import subprocess as _sp
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v1.py")], check=True)
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "landing_v2.py")], check=True)
-    # landing_v3 (taklia-förlaga): pilot på taklaggare-sollentuna.html, rullas ut först efter ägarens «ok».
+    # DS taklia-utrullning (ägarens «ok» på pilot takbyte 09.11.2026): header, hero, formulär, blandade block.
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "rollout_ds.py")], check=True)

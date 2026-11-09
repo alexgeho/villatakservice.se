@@ -184,7 +184,7 @@ if __name__ == "__main__" and not sys.argv[1:]:
 # ---- Galleri för sidor som fick bilder senare (gen_images_landing.py) ------
 def add_gallery(path):
     s = open(path, encoding="utf-8").read()
-    if 'id="offert"' not in s or "gallery-section" in s:
+    if 'id="offert"' not in s or "gallery-section" in s or "data-ds" in s or "data-v3" in s:
         return False
     base = os.path.basename(path)[:-5]
     names = [f"{base}-{i}" for i in (1, 2, 3) if os.path.exists(os.path.join(ROOT, "assets", "images", f"{base}-{i}.webp"))]

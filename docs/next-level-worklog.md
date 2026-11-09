@@ -5,6 +5,10 @@
 > Status: **5/5 uppgifter klara + follow-ups klara.** 75 sidor, 171 JSON-LD-block, 0 lint-fel.
 
 ---
+## ▶️ RESUME 2026-11-09 — pilot utrullad
+Ägaren «Da» på pilot takbyte (blandade block). `tools/rollout_ds.py` (körs sist i generate.py) gör alla 683 landningssidor: ds-taklia + header logga 5A, hero (lead 1 mening, «Det här ingår» per tjänst ur INGAR, pris bara takbyte), formulär v3, H2 ovanför, sidans 1–2 bilder → foto+text, övriga block bara text, >2 stycken → «Läs mer», listor → bockar (ej Källor), «Begär offert» med formulär, fonder växlar, orter bara namn. takbyte.html = handgjord (HAND_MADE i generate.py).
+NÄSTA: startsidan + statiska sidor + artiklar i DS; dropdown-menyer; header 782–1099; fler foton per sida (Replicate) om ägaren vill.
+
 ## ▶️ RESUME 2026-11-07 — landningssidor + pilot i taklias designsystem (börja här)
 
 **Live på alla 682 tjänst×ort-/taksidor (v2):** foto i hela hero + offertformulär (E-post krävs, Telefon valfritt, källsida i mejlet), «Därför väljer kunder oss» direkt under hero, galleri. 240 Replicate-bilder för 80 sidor utan foto. `sendmail.php`: fel tillbaka till samma sida (#offert), bilaga «bild» ≤10 MB. Skript: `tools/landing_v1.py`, `tools/landing_v2.py` (körs i slutet av `generate.py`).

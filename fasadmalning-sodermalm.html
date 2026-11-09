@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/fasadmalning-sodermalm-1.webp" srcset="assets/images/fasadmalning-sodermalm-1-640.webp 640w, assets/images/fasadmalning-sodermalm-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="malare.html">Målare</a> / Södermalm</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="malare.html">Målare</a> › Södermalm</p>
             <h1 class="hero-title">Fasadmålning på Södermalm</h1>
-            <p class="section-lead">På Södermalm är det i regel en bostadsrättsförening eller en fastighetsägare som beställer fasadmålningen, och en ny kulör på gatufasaden kräver bygglov. Geal Entreprenad AB målar fasader på flerbostadshus på Södermalm och tar fram underlaget som föreningen och bygglovet behöver.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>Handlingar till bygglovet</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#foreningarna-sodermalm">Föreningarna</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">På Södermalm är det i regel en bostadsrättsförening eller en fastighetsägare som beställer fasadmålningen, och en ny kulör på gatufasaden kräver bygglov.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på fasadmålning</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på fasadmålning</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fasadmålning" />
-              <input type="hidden" name="ort" value="Södermalm" />
               <input type="hidden" name="retur" value="fasadmalning-sodermalm.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Södermalm" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Ställning och skydd</li>
+              <li>Tvätt av fasaden</li>
+              <li>Skrapning och lagning</li>
+              <li>Grundning</li>
+              <li>Två strykningar</li>
+              <li>Slutkontroll med dig</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,88 +210,72 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--two">
-            <figure><img src="assets/images/fasadmalning-sodermalm-2.webp" srcset="assets/images/fasadmalning-sodermalm-2-640.webp 640w, assets/images/fasadmalning-sodermalm-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Byggnadsställning med väderskydd framför en putsfasad" loading="lazy" decoding="async" /></figure>
-            <figure><img src="assets/images/fasadmalning-sodermalm-3.webp" srcset="assets/images/fasadmalning-sodermalm-3-640.webp 640w, assets/images/fasadmalning-sodermalm-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Kalkfärgad puts med flammig yta i närbild" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="foreningarna-sodermalm">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="foreningarna-sodermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Ett stadsdelsområde av <em>föreningar</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/fasadmalning-sodermalm-2.webp" srcset="assets/images/fasadmalning-sodermalm-2-640.webp 640w, assets/images/fasadmalning-sodermalm-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Byggnadsställning med väderskydd framför en putsfasad" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Ett stadsdelsområde av föreningar</h2>
+            <p>Geal Entreprenad AB målar fasader på flerbostadshus på Södermalm och tar fram underlaget som föreningen och bygglovet behöver.</p>
             <p>Enligt stadens områdesfakta för 2025 finns 43 542 bostadsrätter i flerbostadshus i Södermalms stadsdelsområde, medan småhusen med äganderätt bara är 13. Den som beställer en fasadmålning är därför i regel en bostadsrättsförening, en hyresvärd eller allmännyttan.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>I en bostadsrättsförening är fasaden en gemensam del av huset. Enligt bostadsrättslagen ska en förenings ekonomiska plan numera innehålla en teknisk underhållsplan som visar fastighetens underhållsbehov de kommande 50 åren, och en fasadmålning är en av de poster som brukar planeras långt i förväg.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Södermalm 2025</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Bostadsrätter i flerbostadshus: 43 542</li>
               <li>Småhus med äganderätt: 13</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="lovet-sodermalm">
-        <div class="container section-layout section-layout--text">
+      <section class="section seo-section media-block" id="lovet-sodermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Ny kulör mot gatan kräver <em>lov</em></h2></div></div>
+        <div class="container split-media split-media--flip">
+          <figure class="split-figure"><img src="assets/images/fasadmalning-sodermalm-3.webp" srcset="assets/images/fasadmalning-sodermalm-3-640.webp 640w, assets/images/fasadmalning-sodermalm-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Kalkfärgad puts med flammig yta i närbild" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Ny kulör mot gatan kräver lov</h2>
             <p>För byggnader som inte är en- eller tvåbostadshus krävs bygglov inom detaljplan för fasadändring på en fasad eller ett tak som vetter mot allmän plats, alltså mot gata, torg eller park. Boverket förklarar att det räcker att en del av fasaden vetter mot allmän plats för att lov ska krävas för hela den fasaden, och att det bara är den fasaden som prövas.</p>
             <p>En ny kulör är en fasadändring, medan ommålning i samma kulör normalt räknas som underhåll. Gårdsfasaden kan alltså ofta målas om i ny kulör utan lov, om huset inte är klassat och detaljplanen inte säger något annat. Ett byte av färgtyp är enligt Boverket inget kulörbyte, men kan bedömas påverka byggnadens yttre karaktärsdrag.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Lov för fasadmålning</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Ny kulör mot gatan: bygglov</li>
               <li>Samma kulör: underhåll</li>
               <li>Gårdsfasad: lov om huset är blått eller grönt</li>
             </ul>
-          </aside>
+          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kartan-sodermalm">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Stadsmuseets klassning</h2>
+      <section class="section section-muted seo-section media-block" id="kartan-sodermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Stadsmuseets <em>klassning</em></h2></div></div>
+        <div class="container text-block">
             <p>Stockholms stad hänvisar till Stadsmuseets klassificeringskarta. Är byggnaden markerad med blått eller grönt, eller ligger den inom ett riksintresse eller ett särskilt kulturhistoriskt värdefullt område, behöver du bygglov även för åtgärder som annars är lovfria – då gäller det också gårdsfasaden.</p>
             <p>Staden påpekar att en antikvarisk förundersökning kan behövas inför arbeten på särskilt värdefulla byggnader, och att det kan krävas en certifierad sakkunnig inom kulturvärden. Vi tar reda på klassningen innan kulören föreslås. Om fasadmaterial och puts på Södermalm kan du läsa under <a class="text-link" href="fasadrenovering-sodermalm.html">fasadrenovering på Södermalm</a>.</p>
-          </div>
         </div>
       </section>
-      <section class="section seo-section" id="kalkfargen-sodermalm">
-        <div class="container section-layout section-layout--text">
-          <div class="section-copy">
-            <h2 class="section-title">Kalkfärg på puts</h2>
+      <section class="section seo-section media-block" id="kalkfargen-sodermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Kalkfärg på <em>puts</em></h2></div></div>
+        <div class="container text-block">
             <p>Riksantikvarieämbetet beskriver kalkfärg som den färg som i århundraden använts på puts, med en levande, något flammig yta. Vid mitten av 1900-talet gick man alltmer över till kalkcementbruk och andra färger. Kalkfärg släpper igenom fukt, har god vidhäftning på kalkputs men dålig på cementrika underlag, och används i dag främst vid ommålning av fasader som redan är kalkavfärgade och på ny kalkputs på kulturhistoriskt värdefulla hus.</p>
             <p>Utomhus målas kalkfärg från senvåren till eftersommaren och i god tid före frost, ett skikt per dag och i 3–7 strykningar. En fasadyta får inte avbrytas mitt i, bara vid hörn eller andra naturliga gränser, och fönsterglas ska skyddas eftersom kalken etsar glas. Därför planeras ställning, väderskydd och arbetslag för hela fasaden på en gång. Kulört kalkfärg bör enligt Riksantikvarieämbetet blandas vid ett och samma tillfälle för hela ytan, eftersom kulören annars lätt avviker.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Kalkfärg enligt RAÄ</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Senvår till eftersommar</li>
               <li>Ett skikt per dag</li>
               <li>3–7 strykningar utomhus</li>
               <li>Skydda fönsterglaset</li>
             </ul>
-          </aside>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="underlaget-sodermalm">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Rätt färg på rätt puts</h2>
+      <section class="section section-muted seo-section media-block" id="underlaget-sodermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Rätt färg på rätt <em>puts</em></h2></div></div>
+        <div class="container text-block">
             <p>Innan färgtypen väljs tar vi reda på vad fasaden är målad med i dag och vilket bruk den är putsad med. En lagning med cementhaltig puts i en kalkputsfasad ska enligt Riksantikvarieämbetet tas bort och putsas om med kalkputs innan fasaden kalkas.</p>
             <p>Föreningen får ett skriftligt underlag med fasadernas skick, färgtyp, förslag på kulör och vilka fasader som kräver lov. Om måleri på Södermalm i övrigt kan du läsa under <a class="text-link" href="malare-sodermalm.html">målare på Södermalm</a>.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="process">
+      <section class="section seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så går en fasadmålning på Södermalm till</h2>
+            <h2 class="section-title">Så går en fasadmålning på Södermalm <em>till</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -324,27 +311,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Rotavdrag gäller inte fasaden</h2>
+      <section class="section section-muted seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Rotavdrag gäller inte <em>fasaden</em></h2></div></div>
+        <div class="container text-block">
             <p>Skatteverket ger rotavdrag i en bostadsrätt bara för arbete inne i bostaden som bostadsrättshavaren ansvarar för enligt stadgarna. Arbete på gemensamma ytor, till exempel tak, fasader, trapphus och entréer, ger inget rotavdrag.</p>
             <p>En fasadmålning på ett föreningshus betalas därför av föreningen utan avdrag, och kostnadsförslaget ställs till föreningen.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset för fasadmålningen på Södermalm?</h2>
+      <section class="section seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset för fasadmålningen på <em>Södermalm</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Fasadernas yta och höjd, putsens skick, färgtyp, ställning och väderskydd mot gatan och om bygglov behövs. Efter ett gratis platsbesök får föreningen ett skriftligt kostnadsförslag.</p>
-          </div>
         </div>
       </section>
-      <section class="section seo-section" id="lankar">
+      <section class="section section-muted seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster på Södermalm</h2>
+            <h2 class="section-title">Fler tjänster på <em>Södermalm</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -435,55 +418,55 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section">
+      <section class="section seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fasadmålning i fler områden</h2>
+            <h2 class="section-title">Fasadmålning i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="fasadmalning-alvsjo.html">Fasadmålning i Älvsjö</a></li>
-                <li><a href="fasadmalning-botkyrka.html">Fasadmålning i Botkyrka</a></li>
-                <li><a href="fasadmalning-bromma.html">Fasadmålning i Bromma</a></li>
-                <li><a href="fasadmalning-danderyd.html">Fasadmålning i Danderyd</a></li>
-                <li><a href="fasadmalning-enskede.html">Fasadmålning i Enskede</a></li>
-                <li><a href="fasadmalning-farsta.html">Fasadmålning i Farsta</a></li>
-                <li><a href="fasadmalning-haninge.html">Fasadmålning i Haninge</a></li>
-                <li><a href="fasadmalning-huddinge.html">Fasadmålning i Huddinge</a></li>
-                <li><a href="fasadmalning-hagersten.html">Fasadmålning i Hägersten</a></li>
-                <li><a href="fasadmalning-hasselby.html">Fasadmålning i Hässelby</a></li>
-                <li><a href="fasadmalning-jarfalla.html">Fasadmålning i Järfälla</a></li>
-                <li><a href="fasadmalning-kista.html">Fasadmålning i Kista</a></li>
-                <li><a href="fasadmalning-nacka.html">Fasadmålning i Nacka</a></li>
-                <li><a href="fasadmalning-norrtalje.html">Fasadmålning i Norrtälje</a></li>
-                <li><a href="fasadmalning-osteraker.html">Fasadmålning i Österåker</a></li>
-                <li><a href="fasadmalning-sigtuna.html">Fasadmålning i Sigtuna</a></li>
+                <li><a href="fasadmalning-alvsjo.html">Älvsjö</a></li>
+                <li><a href="fasadmalning-botkyrka.html">Botkyrka</a></li>
+                <li><a href="fasadmalning-bromma.html">Bromma</a></li>
+                <li><a href="fasadmalning-danderyd.html">Danderyd</a></li>
+                <li><a href="fasadmalning-enskede.html">Enskede</a></li>
+                <li><a href="fasadmalning-farsta.html">Farsta</a></li>
+                <li><a href="fasadmalning-haninge.html">Haninge</a></li>
+                <li><a href="fasadmalning-huddinge.html">Huddinge</a></li>
+                <li><a href="fasadmalning-hagersten.html">Hägersten</a></li>
+                <li><a href="fasadmalning-hasselby.html">Hässelby</a></li>
+                <li><a href="fasadmalning-jarfalla.html">Järfälla</a></li>
+                <li><a href="fasadmalning-kista.html">Kista</a></li>
+                <li><a href="fasadmalning-nacka.html">Nacka</a></li>
+                <li><a href="fasadmalning-norrtalje.html">Norrtälje</a></li>
+                <li><a href="fasadmalning-osteraker.html">Österåker</a></li>
+                <li><a href="fasadmalning-sigtuna.html">Sigtuna</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="fasadmalning-skarholmen.html">Fasadmålning i Skärholmen</a></li>
-                <li><a href="fasadmalning-sollentuna.html">Fasadmålning i Sollentuna</a></li>
-                <li><a href="fasadmalning-solna.html">Fasadmålning i Solna</a></li>
-                <li><a href="fasadmalning-spanga.html">Fasadmålning i Spånga</a></li>
-                <li><a href="fasadmalning-sundbyberg.html">Fasadmålning i Sundbyberg</a></li>
-                <li><a href="fasadmalning-tyreso.html">Fasadmålning i Tyresö</a></li>
-                <li><a href="fasadmalning-taby.html">Fasadmålning i Täby</a></li>
-                <li><a href="fasadmalning-upplands-vasby.html">Fasadmålning i Upplands Väsby</a></li>
-                <li><a href="fasadmalning-vallentuna.html">Fasadmålning i Vallentuna</a></li>
-                <li><a href="fasadmalning-vasastan.html">Fasadmålning i Vasastan</a></li>
-                <li><a href="fasadmalning-vallingby.html">Fasadmålning i Vällingby</a></li>
-                <li><a href="fasadmalning-ekero.html">Fasadmålning på Ekerö</a></li>
-                <li><a href="fasadmalning-kungsholmen.html">Fasadmålning på Kungsholmen</a></li>
-                <li><a href="fasadmalning-lidingo.html">Fasadmålning på Lidingö</a></li>
-                <li><a href="fasadmalning-ostermalm.html">Fasadmålning på Östermalm</a></li>
-                <li><a href="fasadmalning-varmdo.html">Fasadmålning på Värmdö</a></li>
+                <li><a href="fasadmalning-skarholmen.html">Skärholmen</a></li>
+                <li><a href="fasadmalning-sollentuna.html">Sollentuna</a></li>
+                <li><a href="fasadmalning-solna.html">Solna</a></li>
+                <li><a href="fasadmalning-spanga.html">Spånga</a></li>
+                <li><a href="fasadmalning-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="fasadmalning-tyreso.html">Tyresö</a></li>
+                <li><a href="fasadmalning-taby.html">Täby</a></li>
+                <li><a href="fasadmalning-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="fasadmalning-vallentuna.html">Vallentuna</a></li>
+                <li><a href="fasadmalning-vasastan.html">Vasastan</a></li>
+                <li><a href="fasadmalning-vallingby.html">Vällingby</a></li>
+                <li><a href="fasadmalning-ekero.html">Ekerö</a></li>
+                <li><a href="fasadmalning-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="fasadmalning-lidingo.html">Lidingö</a></li>
+                <li><a href="fasadmalning-ostermalm.html">Östermalm</a></li>
+                <li><a href="fasadmalning-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section seo-section" id="faq">
+      <section class="section section-muted seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Behöver vår förening på Södermalm bygglov för att måla gårdsfasaden i ny kulör?
@@ -518,10 +501,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://start.stockholm/globalassets/start/om-stockholms-stad/utredningar-statistik-och-fakta/statistik/omradesfakta/inre-staden/sodermalm/sodermalm-stadsdelsomrade.pdf" rel="noopener">Stockholms stad – Områdesfakta 2025: Södermalms stadsdelsområde (pdf)</a></li>
               <li><a class="text-link" href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/bostadsrattslag-1991614_sfs-1991-614/" rel="noopener">Riksdagen – Bostadsrättslag (1991:614)</a></li>
@@ -532,17 +514,36 @@
               <li><a class="text-link" href="https://www.raa.se/publicerat/9789172095830.pdf" rel="noopener">Riksantikvarieämbetet – Byggnadsmåleri med traditionella färger (pdf)</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/gerarbetetratttillrotavdrag.106.5c1163881590be297b5899d.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Ska föreningens fasad på Södermalm målas om?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom fasaderna och lovfrågan innan föreningen får ett skriftligt kostnadsförslag.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section section-muted offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Fasadmålning" />
+              <input type="hidden" name="retur" value="fasadmalning-sodermalm.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Södermalm" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

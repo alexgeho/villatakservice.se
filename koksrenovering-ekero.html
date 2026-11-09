@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/koksrenovering-ekero-1.webp" srcset="assets/images/koksrenovering-ekero-1-640.webp 640w, assets/images/koksrenovering-ekero-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="koksrenovering.html">Köksrenovering</a> / Ekerö</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="koksrenovering.html">Köksrenovering</a> › Ekerö</p>
             <h1 class="hero-title">Köksrenovering på Ekerö</h1>
-            <p class="section-lead">På Mälaröarna kan köket stå i ett hus med egen eldstad eller egen brunn, och med de nya sorteringsreglerna ska fler fraktioner sorteras ut hemma. Geal Entreprenad AB bygger om kök i villor och fritidshus på Ekerö, med gratis platsbesök, skriftligt kostnadsförslag och ROT-avdraget direkt på fakturan.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#vedspis">Vedspis och kakelugn</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">På Mälaröarna kan köket stå i ett hus med egen eldstad eller egen brunn, och med de nya sorteringsreglerna ska fler fraktioner sorteras ut hemma.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på köksrenovering</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på köksrenovering</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Köksrenovering" />
-              <input type="hidden" name="ort" value="Ekerö" />
               <input type="hidden" name="retur" value="koksrenovering-ekero.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Ekerö" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Rivning och bortforsling</li>
+              <li>El och VVS med behörighet</li>
+              <li>Skåp, bänkskivor och vitvaror</li>
+              <li>Kakel och stänkskydd</li>
+              <li>Golv och målning</li>
+              <li>Slutkontroll med dig</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,75 +210,65 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--one">
-            <figure><img src="assets/images/koksrenovering-ekero-2.webp" srcset="assets/images/koksrenovering-ekero-2-640.webp 640w, assets/images/koksrenovering-ekero-2.webp 968w" sizes="(max-width: 700px) 100vw, 33vw" width="968" height="645" alt="Kök med svarta underskåp, öppna hyllor och vitt kakel" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="vedspis">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="vedspis">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vedspis eller kakelugn i köket kräver <em>anmälan</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/koksrenovering-ekero-2.webp" srcset="assets/images/koksrenovering-ekero-2-640.webp 640w, assets/images/koksrenovering-ekero-2.webp 968w" sizes="(max-width: 900px) 100vw, 560px" width="968" height="645" alt="Kök med svarta underskåp, öppna hyllor och vitt kakel" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Vedspis eller kakelugn i köket kräver anmälan</h2>
+            <p>Geal Entreprenad AB bygger om kök i villor och fritidshus på Ekerö, med gratis platsbesök, skriftligt kostnadsförslag och ROT-avdraget direkt på fakturan.</p>
             <p>Ekerö kommun skriver att den som vill installera eller göra en större ändring av en eldstad, braskamin, öppen spis eller kakelugn ska göra en anmälan till bygglovsenheten. Det gäller också när en spisinsats sätts in eller byts i en befintlig öppen spis, och när man byter bränsle i husets huvudsakliga värmekälla.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Till anmälan hör enligt kommunen en planritning där eldstadens placering är markerad, en fasadritning med skorstenen eller rökkanalen inritad, en kontrollplan och ett typgodkännande, en produktbeskrivning eller CE-märkning. Är anmälan komplett kommer beslutet inom fyra veckor, och med beslutet följer startbeskedet. När installationen är klar skickar man in sotarintyg, den ifyllda kontrollplanen och en ansökan om slutbesked. Eldstaden får inte användas innan slutbeskedet har kommit.</p>
             <p>För oss styr det ordningen i bygget. Skåp, bänkskiva och väggbeklädnad runt en vedspis planeras efter de avstånd som tillverkaren anger, och eldstadens plats bestäms innan köksinredningen mäts in. En skorsten på taket kräver inget bygglov enligt kommunen, men en rökkanal längs fasaden kan behöva bygglov för fasadändring. Mer om taket kring skorstenen finns under <a class="text-link" href="takrenovering-ekero.html">takrenovering på Ekerö</a>.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Anmälan av eldstad</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Planritning med eldstaden</li>
               <li>Fasadritning med skorsten</li>
               <li>Kontrollplan och produktblad</li>
               <li>Sotarintyg före slutbesked</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="flakt-sotning">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Köksfläkten och sotningen på Mälaröarna</h2>
+      <section class="section seo-section media-block" id="flakt-sotning">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Köksfläkten och sotningen på <em>Mälaröarna</em></h2></div></div>
+        <div class="container text-block">
             <p>Sotningen i kommunen är ett uppdrag för Södertörns brandförsvarsförbund, som har upphandlat en sotare som skickar brev när det är dags. Om köksfläkten skriver kommunen att kravet på att inspektera imkanaler inte längre finns, eftersom risken för brand eller brandspridning genom dem är mycket låg.</p>
             <p>Boverket påpekar dock i sin genomgång av lagändringarna från den 1 december 2025 att det krävs anmälan för vissa tekniska installationer, till exempel vatten, avlopp och ventilation. En spisfläkt som byts mot en likvärdig på samma plats är något annat än en ny kanal genom vindsbjälklaget, och det reder vi ut innan fläkten väljs.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="brunn">
-        <div class="container section-layout section-layout--text">
-          <div class="section-copy">
-            <h2 class="section-title">Ny blandare och vatten från egen brunn</h2>
+      <section class="section section-muted seo-section media-block" id="brunn">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Ny blandare och vatten från egen <em>brunn</em></h2></div></div>
+        <div class="container text-block">
             <p>Kommunen konstaterar att den som har eget avlopp för det mesta också har eget dricksvatten, och att brunnsägaren själv ansvarar för vattnets kvalitet och för att hålla brunnen i bra skick. Livsmedelsverket rekommenderar enligt kommunen att brunnsvattnet kontrolleras minst vart tredje år, och delar fler än två fastigheter på brunnen är det bra att testa minst en gång om året.</p>
             <p>Ett nytt kök är ett bra tillfälle att ta ett prov. Visar svaret att vattnet behöver behandlas påverkar det vad som ska rymmas under diskbänken, och det är enklare att planera skåpet för ett filter innan stommen monteras än efteråt.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Har fastigheten kommunalt vatten och avlopp är det Roslagsvatten som ansvarar för det, och en anmälan ska skickas dit i god tid om en byggnad ska anslutas. Med eget avlopp är frågan en annan: kommunen skriver att den som bygger om så att det blir mer avloppsvatten kan behöva söka tillstånd eller anmäla ändring av den enskilda avloppsanläggningen. Om vattnet i badrummet kan du läsa under <a class="text-link" href="badrumsrenovering-ekero.html">badrumsrenovering på Ekerö</a>.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Har du egen brunn?</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Prov minst vart tredje år</li>
               <li>Oftare om brunnen delas</li>
               <li>Provsvaret till kommunen</li>
               <li>Plats för filter under diskbänken</li>
             </ul>
-          </aside>
+            </details>
         </div>
       </section>
-      <section class="section seo-section" id="sortering">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Plats för fler sopfraktioner under diskbänken</h2>
+      <section class="section seo-section media-block" id="sortering">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Plats för fler sopfraktioner under <em>diskbänken</em></h2></div></div>
+        <div class="container text-block">
             <p>I dag lägger hushållen på Ekerö matavfallet i Gröna påsen, som slängs i den vanliga soptunnan och sorteras ut maskinellt. Kommunen skriver att den gröna plastpåsen ersätts av en brun papperspåse när de nya kärlen kommer. Då läggs matavfallet i den bruna påsen och påsen direkt i kärlets fack för matavfall, och den bruna påsen ska inte läggas i en plastpåse.</p>
             <p>Bakgrunden är nya regler om fastighetsnära insamling av förpackningar, som enligt kommunen ska gälla senast 2027 och kallas Närsorterat. Matavfall, restavfall och förpackningar av papper, plast, metall och glas ska sorteras ut nära bostaden. Roslagsvatten sköter kommunens sophantering sedan årsskiftet 2024/2025.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>För köket betyder det fler fraktioner att hitta plats för. Vi föreslår att sorteringen planeras som en egen utdragslåda under diskbänken, med ett luftigt fack för papperspåsen, och att skåpet bredvid tar förpackningarna om utrymmet räcker. Det är enklare att bestämma på ritningen än att bygga om när de nya kärlen har kommit. Ska väggarna målas i samma veva, se <a class="text-link" href="malare-ekero.html">målare på Ekerö</a>, och om planering i stort på sidan om <a class="text-link" href="koksrenovering.html">köksrenovering</a>.</p>
-          </div>
+            </details>
         </div>
       </section>
       <section class="section section-muted seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så går köksrenoveringen till på Ekerö</h2>
+            <h2 class="section-title">Så går köksrenoveringen till på <em>Ekerö</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -311,27 +304,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">ROT-avdrag för köket på Ekerö</h2>
+      <section class="section seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">ROT-avdrag för köket på <em>Ekerö</em></h2></div></div>
+        <div class="container text-block">
             <p>I ett småhus räknar Skatteverket det som rotarbete att montera fast köksinredning och installera vitvaror i samband med en omfattande renovering, att modernisera elen och byta uttag och att installera blandare och kranar. Även att installera och reparera braskaminer och att mura och reparera skorstenar och kakelugnar ger avdrag. Avdraget är 30 procent av arbetskostnaden, högst 50 000 kr per person och år och högst 75 000 kr tillsammans med rutavdrag.</p>
             <p>Du ska äga bostaden och helt eller delvis bo i den, och ett fritidshus som du själv använder räknas. Material och resor ger inget avdrag. Geal drar avdraget direkt på fakturan.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset på ett kök på Ekerö?</h2>
+      <section class="section section-muted seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset på ett kök på <em>Ekerö</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Mest avgör om köket byggs om på samma plats eller om vatten, avlopp och fläkt flyttas, och om en eldstad ska in. En vedspis lägger till anmälan, skorstensarbete och mer anpassning av skåpen runt den. Efter ett gratis platsbesök får du ett skriftligt kostnadsförslag.</p>
-          </div>
         </div>
       </section>
       <section class="section seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster på Ekerö</h2>
+            <h2 class="section-title">Fler tjänster på <em>Ekerö</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -435,43 +424,43 @@
       <section class="section section-muted seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Köksrenovering i fler områden</h2>
+            <h2 class="section-title">Köksrenovering i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="koksrenovering-alvsjo.html">Köksrenovering i Älvsjö</a></li>
-                <li><a href="koksrenovering-botkyrka.html">Köksrenovering i Botkyrka</a></li>
-                <li><a href="koksrenovering-bromma.html">Köksrenovering i Bromma</a></li>
-                <li><a href="koksrenovering-danderyd.html">Köksrenovering i Danderyd</a></li>
-                <li><a href="koksrenovering-enskede.html">Köksrenovering i Enskede</a></li>
-                <li><a href="koksrenovering-farsta.html">Köksrenovering i Farsta</a></li>
-                <li><a href="koksrenovering-haninge.html">Köksrenovering i Haninge</a></li>
-                <li><a href="koksrenovering-huddinge.html">Köksrenovering i Huddinge</a></li>
-                <li><a href="koksrenovering-hagersten.html">Köksrenovering i Hägersten</a></li>
-                <li><a href="koksrenovering-hasselby.html">Köksrenovering i Hässelby</a></li>
-                <li><a href="koksrenovering-jarfalla.html">Köksrenovering i Järfälla</a></li>
-                <li><a href="koksrenovering-kista.html">Köksrenovering i Kista</a></li>
-                <li><a href="koksrenovering-nacka.html">Köksrenovering i Nacka</a></li>
-                <li><a href="koksrenovering-norrtalje.html">Köksrenovering i Norrtälje</a></li>
-                <li><a href="koksrenovering-osteraker.html">Köksrenovering i Österåker</a></li>
-                <li><a href="koksrenovering-sigtuna.html">Köksrenovering i Sigtuna</a></li>
+                <li><a href="koksrenovering-alvsjo.html">Älvsjö</a></li>
+                <li><a href="koksrenovering-botkyrka.html">Botkyrka</a></li>
+                <li><a href="koksrenovering-bromma.html">Bromma</a></li>
+                <li><a href="koksrenovering-danderyd.html">Danderyd</a></li>
+                <li><a href="koksrenovering-enskede.html">Enskede</a></li>
+                <li><a href="koksrenovering-farsta.html">Farsta</a></li>
+                <li><a href="koksrenovering-haninge.html">Haninge</a></li>
+                <li><a href="koksrenovering-huddinge.html">Huddinge</a></li>
+                <li><a href="koksrenovering-hagersten.html">Hägersten</a></li>
+                <li><a href="koksrenovering-hasselby.html">Hässelby</a></li>
+                <li><a href="koksrenovering-jarfalla.html">Järfälla</a></li>
+                <li><a href="koksrenovering-kista.html">Kista</a></li>
+                <li><a href="koksrenovering-nacka.html">Nacka</a></li>
+                <li><a href="koksrenovering-norrtalje.html">Norrtälje</a></li>
+                <li><a href="koksrenovering-osteraker.html">Österåker</a></li>
+                <li><a href="koksrenovering-sigtuna.html">Sigtuna</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="koksrenovering-skarholmen.html">Köksrenovering i Skärholmen</a></li>
-                <li><a href="koksrenovering-sollentuna.html">Köksrenovering i Sollentuna</a></li>
-                <li><a href="koksrenovering-solna.html">Köksrenovering i Solna</a></li>
-                <li><a href="koksrenovering-spanga.html">Köksrenovering i Spånga</a></li>
-                <li><a href="koksrenovering-sundbyberg.html">Köksrenovering i Sundbyberg</a></li>
-                <li><a href="koksrenovering-tyreso.html">Köksrenovering i Tyresö</a></li>
-                <li><a href="koksrenovering-taby.html">Köksrenovering i Täby</a></li>
-                <li><a href="koksrenovering-upplands-vasby.html">Köksrenovering i Upplands Väsby</a></li>
-                <li><a href="koksrenovering-vallentuna.html">Köksrenovering i Vallentuna</a></li>
-                <li><a href="koksrenovering-vasastan.html">Köksrenovering i Vasastan</a></li>
-                <li><a href="koksrenovering-vallingby.html">Köksrenovering i Vällingby</a></li>
-                <li><a href="koksrenovering-kungsholmen.html">Köksrenovering på Kungsholmen</a></li>
-                <li><a href="koksrenovering-lidingo.html">Köksrenovering på Lidingö</a></li>
-                <li><a href="koksrenovering-ostermalm.html">Köksrenovering på Östermalm</a></li>
-                <li><a href="koksrenovering-sodermalm.html">Köksrenovering på Södermalm</a></li>
-                <li><a href="koksrenovering-varmdo.html">Köksrenovering på Värmdö</a></li>
+                <li><a href="koksrenovering-skarholmen.html">Skärholmen</a></li>
+                <li><a href="koksrenovering-sollentuna.html">Sollentuna</a></li>
+                <li><a href="koksrenovering-solna.html">Solna</a></li>
+                <li><a href="koksrenovering-spanga.html">Spånga</a></li>
+                <li><a href="koksrenovering-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="koksrenovering-tyreso.html">Tyresö</a></li>
+                <li><a href="koksrenovering-taby.html">Täby</a></li>
+                <li><a href="koksrenovering-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="koksrenovering-vallentuna.html">Vallentuna</a></li>
+                <li><a href="koksrenovering-vasastan.html">Vasastan</a></li>
+                <li><a href="koksrenovering-vallingby.html">Vällingby</a></li>
+                <li><a href="koksrenovering-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="koksrenovering-lidingo.html">Lidingö</a></li>
+                <li><a href="koksrenovering-ostermalm.html">Östermalm</a></li>
+                <li><a href="koksrenovering-sodermalm.html">Södermalm</a></li>
+                <li><a href="koksrenovering-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
@@ -480,7 +469,7 @@
 
       <section class="section seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Behöver vi göra en anmälan för en vedspis i köket på Ekerö?
@@ -515,10 +504,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section section-muted seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://www.ekero.se/bygga-bo-miljo/bygga-nytt-andra-eller-riva/vad-vill-du-bygga" rel="noopener">Ekerö kommun – Vad vill du bygga? (eldstad, kamin och rökkanal)</a></li>
               <li><a class="text-link" href="https://www.ekero.se/bygga-bo-miljo/sotning-brandskydd-och-fyrverkerier" rel="noopener">Ekerö kommun – Sotning, brandskydd och fyrverkerier</a></li>
@@ -529,17 +517,36 @@
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html" rel="noopener">Skatteverket – Så fungerar rotavdraget</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/gerarbetetratttillrotavdrag.106.5c1163881590be297b5899d.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Ska köket på Ekerö byggas om?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom eldstad, vatten och sortering på plats.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Köksrenovering" />
+              <input type="hidden" name="retur" value="koksrenovering-ekero.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Ekerö" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

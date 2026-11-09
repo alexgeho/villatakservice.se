@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/fasadrenovering-ostermalm-1.webp" srcset="assets/images/fasadrenovering-ostermalm-1-640.webp 640w, assets/images/fasadrenovering-ostermalm-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="fasadrenovering.html">Fasadrenovering</a> / Östermalm</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="fasadrenovering.html">Fasadrenovering</a> › Östermalm</p>
             <h1 class="hero-title">Fasadrenovering på Östermalm</h1>
-            <p class="section-lead">Ett stenhus på Östermalm har oftast två ansikten: en påkostad fasad mot gatan och en enklare mot gården. Reglerna för dem skiljer sig åt, och det gör arbetet också. Geal Entreprenad AB renoverar fasader på Östermalm åt bostadsrättsföreningar och fastighetsägare och planerar gatusidan och gårdssidan var för sig.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#gatufasad-ostermalm">Gatufasaden</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">Ett stenhus på Östermalm har oftast två ansikten: en påkostad fasad mot gatan och en enklare mot gården.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på fasadrenovering</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på fasadrenovering</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fasadrenovering" />
-              <input type="hidden" name="ort" value="Östermalm" />
               <input type="hidden" name="retur" value="fasadrenovering-ostermalm.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Östermalm" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Besiktning av fasaden</li>
+              <li>Ställning och skydd</li>
+              <li>Lagning av skador</li>
+              <li>Ny puts eller panel</li>
+              <li>Målning</li>
+              <li>Slutkontroll med dig</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,64 +210,54 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--two">
-            <figure><img src="assets/images/fasadrenovering-ostermalm-2.webp" srcset="assets/images/fasadrenovering-ostermalm-2-640.webp 640w, assets/images/fasadrenovering-ostermalm-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Enkel slätputsad gårdsfasad med raka fönsterrader och ställning mot innergården" loading="lazy" decoding="async" /></figure>
-            <figure><img src="assets/images/fasadrenovering-ostermalm-3.webp" srcset="assets/images/fasadrenovering-ostermalm-3-640.webp 640w, assets/images/fasadrenovering-ostermalm-3.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Putsad villa i klassicerande stil indragen bakom förgård med smidesstaket" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="gatufasad-ostermalm">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="gatufasad-ostermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Sockelvåning, huvudfasad och <em>takfot</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/fasadrenovering-ostermalm-2.webp" srcset="assets/images/fasadrenovering-ostermalm-2-640.webp 640w, assets/images/fasadrenovering-ostermalm-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Enkel slätputsad gårdsfasad med raka fönsterrader och ställning mot innergården" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Sockelvåning, huvudfasad och takfot</h2>
+            <p>Reglerna för dem skiljer sig åt, och det gör arbetet också. Geal Entreprenad AB renoverar fasader på Östermalm åt bostadsrättsföreningar och fastighetsägare och planerar gatusidan och gårdssidan var för sig.</p>
             <p>Översiktsplanens avsnitt om den klassiska stenstaden, bebyggelsen från 1870–1930 som bland annat breder ut sig över Östermalm, räknar upp vad som bär stadsdelens karaktär. Där finns gatufasadernas tydliga uppdelning i sockelvåning och huvudfasad, oftast med markerad takfot och ibland med en attikavåning, och där finns de enklare gårdsfasaderna. Hyreshusen är normalt fem våningar höga vid 18 meter breda gator och har tidstypiska, dekorerade fasader i puts eller natursten. Längs Strandvägen, Valhallavägen, Narvavägen och Karlavägen beskriver planen esplanader inramade av monumentala bostadspalats från 1800-talets sista decennier.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Planen påpekar också att många hus i stenstaden har en relativt låg klassificering, gul klass, därför att de har förändrats sedan de byggdes. Vid prövning ska ändå betydelsen för stadsmiljön vara avgörande och inte det enskilda husets klassificering. Att ett hus har gul klass betyder alltså inte att fasaden saknar betydelse när en ändring prövas.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Gatufasadens delar</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Sockelvåning</li>
               <li>Huvudfasad med dekor i puts eller natursten</li>
               <li>Markerad takfot</li>
               <li>Ibland en attikavåning</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="lov-ostermalm">
-        <div class="container section-layout section-layout--text">
+      <section class="section seo-section media-block" id="lov-ostermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Mot gatan krävs lov – mot gården beror det <em>på</em></h2></div></div>
+        <div class="container split-media split-media--flip">
+          <figure class="split-figure"><img src="assets/images/fasadrenovering-ostermalm-3.webp" srcset="assets/images/fasadrenovering-ostermalm-3-640.webp 640w, assets/images/fasadrenovering-ostermalm-3.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Putsad villa i klassicerande stil indragen bakom förgård med smidesstaket" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Mot gatan krävs lov – mot gården beror det på</h2>
             <p>För ett flerbostadshus skriver Stockholms stad att det krävs bygglov för en fasadändring på fasad eller tak som vetter mot allmän plats, alltså i regel gatan. En ändring som inte vetter mot allmän plats kräver inte lov, om vissa förutsättningar är uppfyllda – den ska till exempel stämma med detaljplanen eller vara en liten avvikelse som inte motverkar planens syfte, och utökad lovplikt får inte gälla. Som fasadändring räknar staden bland annat byte av kulör eller material på fasad eller tak och tilläggsisolering.</p>
             <p>Lovfri eller inte, så gäller samma grundkrav på båda sidor om huset. Plan- och bygglagen säger att en ändring av en byggnad ska utföras varsamt så att byggnadens karaktärsdrag och dess tekniska, historiska, kulturhistoriska, miljömässiga och konstnärliga värden tas till vara, och att en särskilt värdefull byggnad inte får förvanskas. Gårdsfasaden kan vara enklare, men den hör till samma hus. Söker föreningen lov ska ansökan enligt staden ha en fasadritning i skala 1:100 och en material- och kulörbeskrivning där kulörerna anges i NCS-systemet. Vid mycket enkla ändringar kan ett fotomontage ersätta fasadritningen. Arbetet får inte börja förrän startbesked har getts, och när föreningen har visat att kraven är uppfyllda kommer ett slutbesked.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Lov för flerbostadshus</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Fasad mot allmän plats: bygglov</li>
               <li>Mot gården: lovfritt under förutsättningar</li>
               <li>Kulör anges i NCS</li>
               <li>Fasadritning i skala 1:100</li>
             </ul>
-          </aside>
-        </div>
-      </section>
-      <section class="section section-muted seo-section" id="villastaden-ostermalm">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Villastaden och de få småhusen</h2>
-            <p>Norr om Humlegården ligger Villastaden, som enligt översiktsplanen byggdes efter 1876 efter engelskt stadsplanemönster. De tidiga husen blev stora fristående villor indragna från gatan med planterade förgårdar, och när planen fullföljdes växte skalan till högre fristående flerbostadshus. Bland karaktärsdragen nämner planen den måttfullt klassicerande putsarkitekturen och förträdgårdar inhägnade med staket eller murar mot gatan. Här kan fasaden mot gatan alltså stå en bit in på tomten, och ställningen kan planeras över förgården i stället för på trottoaren.</p>
-            <p>Annars är det lägenheterna som dominerar. Stadens områdesfakta för stadsdelen Hedvig Eleonora 2025 räknar 7 344 bostäder, varav 5 164 bostadsrätter, och bara 11 bostäder i småhus, av vilka två är äganderätter. Där är det alltså nästan undantagslöst en förening eller fastighetsägare som beställer fasadarbetet. Om målning inne i lägenheten, se <a class="text-link" href="malare-ostermalm.html">målare på Östermalm</a>, och om fasadarbete i stort <a class="text-link" href="fasadrenovering.html">fasadrenovering</a>.</p>
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="process">
+      <section class="section section-muted seo-section media-block" id="villastaden-ostermalm">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Villastaden och de få <em>småhusen</em></h2></div></div>
+        <div class="container text-block">
+            <p>Norr om Humlegården ligger Villastaden, som enligt översiktsplanen byggdes efter 1876 efter engelskt stadsplanemönster. De tidiga husen blev stora fristående villor indragna från gatan med planterade förgårdar, och när planen fullföljdes växte skalan till högre fristående flerbostadshus. Bland karaktärsdragen nämner planen den måttfullt klassicerande putsarkitekturen och förträdgårdar inhägnade med staket eller murar mot gatan. Här kan fasaden mot gatan alltså stå en bit in på tomten, och ställningen kan planeras över förgården i stället för på trottoaren.</p>
+            <p>Annars är det lägenheterna som dominerar. Stadens områdesfakta för stadsdelen Hedvig Eleonora 2025 räknar 7 344 bostäder, varav 5 164 bostadsrätter, och bara 11 bostäder i småhus, av vilka två är äganderätter. Där är det alltså nästan undantagslöst en förening eller fastighetsägare som beställer fasadarbetet. Om målning inne i lägenheten, se <a class="text-link" href="malare-ostermalm.html">målare på Östermalm</a>, och om fasadarbete i stort <a class="text-link" href="fasadrenovering.html">fasadrenovering</a>.</p>
+        </div>
+      </section>
+      <section class="section seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så renoverar vi en fasad på Östermalm</h2>
+            <h2 class="section-title">Så renoverar vi en fasad på <em>Östermalm</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -300,27 +293,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">ROT-avdrag vid fasadrenovering på Östermalm</h2>
+      <section class="section section-muted seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">ROT-avdrag vid fasadrenovering på <em>Östermalm</em></h2></div></div>
+        <div class="container text-block">
             <p>En fasadrenovering i ett flerbostadshus beställs av föreningen eller fastighetsägaren. Skatteverket räknar fasader till de gemensamma ytorna och ger därför inget rotavdrag till bostadsrättshavarna, och inte heller för tilläggsisolering eller för ställning på utsidan av bostaden.</p>
             <p>Äger du själv ett småhus räknas att byta, mura, reparera och måla fasader som rotarbete. Avdraget är högst 30 procent av arbetskostnaden, som mest 50 000 kr per person och år och 75 000 kr ihop med rutavdrag, och det gäller arbetad tid på plats, inte material eller resor. Vi drar det direkt på fakturan.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset på Östermalm?</h2>
+      <section class="section seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset på <em>Östermalm</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Fasadens höjd och yta, mängden dekor som ska lagas, om stenpartier behöver åtgärdas, hur mycket plåt som ska bytas och om gatusidan kräver lov styr kostnaden mest. Efter ett gratis platsbesök får styrelsen ett skriftligt kostnadsförslag där gatufasad och gårdsfasad står var för sig.</p>
-          </div>
         </div>
       </section>
-      <section class="section seo-section" id="lankar">
+      <section class="section section-muted seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster på Östermalm</h2>
+            <h2 class="section-title">Fler tjänster på <em>Östermalm</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -411,55 +400,55 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section">
+      <section class="section seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fasadrenovering i fler områden</h2>
+            <h2 class="section-title">Fasadrenovering i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="fasadrenovering-alvsjo.html">Fasadrenovering i Älvsjö</a></li>
-                <li><a href="fasadrenovering-botkyrka.html">Fasadrenovering i Botkyrka</a></li>
-                <li><a href="fasadrenovering-bromma.html">Fasadrenovering i Bromma</a></li>
-                <li><a href="fasadrenovering-danderyd.html">Fasadrenovering i Danderyd</a></li>
-                <li><a href="fasadrenovering-ekero.html">Fasadrenovering på Ekerö</a></li>
-                <li><a href="fasadrenovering-enskede.html">Fasadrenovering i Enskede</a></li>
-                <li><a href="fasadrenovering-farsta.html">Fasadrenovering i Farsta</a></li>
-                <li><a href="fasadrenovering-haninge.html">Fasadrenovering i Haninge</a></li>
-                <li><a href="fasadrenovering-huddinge.html">Fasadrenovering i Huddinge</a></li>
-                <li><a href="fasadrenovering-hagersten.html">Fasadrenovering i Hägersten</a></li>
-                <li><a href="fasadrenovering-hasselby.html">Fasadrenovering i Hässelby</a></li>
-                <li><a href="fasadrenovering-jarfalla.html">Fasadrenovering i Järfälla</a></li>
-                <li><a href="fasadrenovering-kista.html">Fasadrenovering i Kista</a></li>
-                <li><a href="fasadrenovering-nacka.html">Fasadrenovering i Nacka</a></li>
-                <li><a href="fasadrenovering-norrtalje.html">Fasadrenovering i Norrtälje</a></li>
-                <li><a href="fasadrenovering-osteraker.html">Fasadrenovering i Österåker</a></li>
+                <li><a href="fasadrenovering-alvsjo.html">Älvsjö</a></li>
+                <li><a href="fasadrenovering-botkyrka.html">Botkyrka</a></li>
+                <li><a href="fasadrenovering-bromma.html">Bromma</a></li>
+                <li><a href="fasadrenovering-danderyd.html">Danderyd</a></li>
+                <li><a href="fasadrenovering-ekero.html">Ekerö</a></li>
+                <li><a href="fasadrenovering-enskede.html">Enskede</a></li>
+                <li><a href="fasadrenovering-farsta.html">Farsta</a></li>
+                <li><a href="fasadrenovering-haninge.html">Haninge</a></li>
+                <li><a href="fasadrenovering-huddinge.html">Huddinge</a></li>
+                <li><a href="fasadrenovering-hagersten.html">Hägersten</a></li>
+                <li><a href="fasadrenovering-hasselby.html">Hässelby</a></li>
+                <li><a href="fasadrenovering-jarfalla.html">Järfälla</a></li>
+                <li><a href="fasadrenovering-kista.html">Kista</a></li>
+                <li><a href="fasadrenovering-nacka.html">Nacka</a></li>
+                <li><a href="fasadrenovering-norrtalje.html">Norrtälje</a></li>
+                <li><a href="fasadrenovering-osteraker.html">Österåker</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="fasadrenovering-sigtuna.html">Fasadrenovering i Sigtuna</a></li>
-                <li><a href="fasadrenovering-skarholmen.html">Fasadrenovering i Skärholmen</a></li>
-                <li><a href="fasadrenovering-sollentuna.html">Fasadrenovering i Sollentuna</a></li>
-                <li><a href="fasadrenovering-solna.html">Fasadrenovering i Solna</a></li>
-                <li><a href="fasadrenovering-spanga.html">Fasadrenovering i Spånga</a></li>
-                <li><a href="fasadrenovering-sundbyberg.html">Fasadrenovering i Sundbyberg</a></li>
-                <li><a href="fasadrenovering-tyreso.html">Fasadrenovering i Tyresö</a></li>
-                <li><a href="fasadrenovering-taby.html">Fasadrenovering i Täby</a></li>
-                <li><a href="fasadrenovering-upplands-vasby.html">Fasadrenovering i Upplands Väsby</a></li>
-                <li><a href="fasadrenovering-vallentuna.html">Fasadrenovering i Vallentuna</a></li>
-                <li><a href="fasadrenovering-vasastan.html">Fasadrenovering i Vasastan</a></li>
-                <li><a href="fasadrenovering-vallingby.html">Fasadrenovering i Vällingby</a></li>
-                <li><a href="fasadrenovering-kungsholmen.html">Fasadrenovering på Kungsholmen</a></li>
-                <li><a href="fasadrenovering-lidingo.html">Fasadrenovering på Lidingö</a></li>
-                <li><a href="fasadrenovering-sodermalm.html">Fasadrenovering på Södermalm</a></li>
-                <li><a href="fasadrenovering-varmdo.html">Fasadrenovering på Värmdö</a></li>
+                <li><a href="fasadrenovering-sigtuna.html">Sigtuna</a></li>
+                <li><a href="fasadrenovering-skarholmen.html">Skärholmen</a></li>
+                <li><a href="fasadrenovering-sollentuna.html">Sollentuna</a></li>
+                <li><a href="fasadrenovering-solna.html">Solna</a></li>
+                <li><a href="fasadrenovering-spanga.html">Spånga</a></li>
+                <li><a href="fasadrenovering-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="fasadrenovering-tyreso.html">Tyresö</a></li>
+                <li><a href="fasadrenovering-taby.html">Täby</a></li>
+                <li><a href="fasadrenovering-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="fasadrenovering-vallentuna.html">Vallentuna</a></li>
+                <li><a href="fasadrenovering-vasastan.html">Vasastan</a></li>
+                <li><a href="fasadrenovering-vallingby.html">Vällingby</a></li>
+                <li><a href="fasadrenovering-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="fasadrenovering-lidingo.html">Lidingö</a></li>
+                <li><a href="fasadrenovering-sodermalm.html">Södermalm</a></li>
+                <li><a href="fasadrenovering-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section seo-section" id="faq">
+      <section class="section section-muted seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Behöver föreningen bygglov för att ändra gårdsfasaden på ett flerbostadshus?
@@ -494,10 +483,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://vaxer.stockholm/siteassets/stockholm-vaxer/tema/oversiktsplan-for-stockholm/riksintresse-ta.pdf" rel="noopener">Stockholms stad – Översiktsplan: Riksintressen enligt miljöbalken (pdf)</a></li>
               <li><a class="text-link" href="https://bygglov.stockholm/nar-behovs-bygglov/andra-byggnads-yttre-utseende/fasadandring/" rel="noopener">Stockholms stad – Fasadändring (bygglov.stockholm)</a></li>
@@ -506,17 +494,36 @@
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/gerarbetetratttillrotavdrag.106.5c1163881590be297b5899d.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html" rel="noopener">Skatteverket – Så fungerar rotavdraget</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Ska föreningens gatufasad eller gårdsfasad renoveras?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom båda sidorna och lämnar ett skriftligt kostnadsförslag till styrelsen.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section section-muted offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Fasadrenovering" />
+              <input type="hidden" name="retur" value="fasadrenovering-ostermalm.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Östermalm" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

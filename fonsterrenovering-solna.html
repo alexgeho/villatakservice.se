@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/fonsterrenovering-solna-1.webp" srcset="assets/images/fonsterrenovering-solna-1-640.webp 640w, assets/images/fonsterrenovering-solna-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="fonsterbyte.html">Fönsterbyte</a> / Solna</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="fonsterbyte.html">Fönsterbyte</a> › Solna</p>
             <h1 class="hero-title">Fönsterrenovering i Solna</h1>
-            <p class="section-lead">Solna stad pekar ut fyra miljöer med 1950-talsbebyggelse bland stadens sammanhängande kulturhistoriskt värdefulla miljöer. Geal Entreprenad AB renoverar fönster i Solna, och i hus från de åren börjar vi med kittet och fogarna innan något skrapas bort.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#femtiotal-solna">1950-talet</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">Solna stad pekar ut fyra miljöer med 1950-talsbebyggelse bland stadens sammanhängande kulturhistoriskt värdefulla miljöer.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert på fönsterrenovering</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert på fönsterrenovering</h3>
+            <p class="form-note">Beskriv jobbet kort.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Fönsterrenovering" />
-              <input type="hidden" name="ort" value="Solna" />
               <input type="hidden" name="retur" value="fonsterrenovering-solna.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Solna" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Skrapning av gammal färg</li>
+              <li>Kittning</li>
+              <li>Byte av trasigt glas</li>
+              <li>Linoljefärg</li>
+              <li>Tätningslister</li>
+              <li>Justering av beslag</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,71 +210,57 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--one">
-            <figure><img src="assets/images/fonsterrenovering-solna-2.webp" srcset="assets/images/fonsterrenovering-solna-2-640.webp 640w, assets/images/fonsterrenovering-solna-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="821" alt="Kopplad fönsterbåge på arbetsbord med ett prov av gammalt kitt i en provpåse" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="femtiotal-solna">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="femtiotal-solna">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Fyra 1950-talsmiljöer i stadens <em>lista</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/fonsterrenovering-solna-2.webp" srcset="assets/images/fonsterrenovering-solna-2-640.webp 640w, assets/images/fonsterrenovering-solna-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="821" alt="Kopplad fönsterbåge på arbetsbord med ett prov av gammalt kitt i en provpåse" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Fyra 1950-talsmiljöer i stadens lista</h2>
+            <p>Geal Entreprenad AB renoverar fönster i Solna, och i hus från de åren börjar vi med kittet och fogarna innan något skrapas bort.</p>
             <p>På stadens sida om kulturmiljöer finns en lista över sammanhängande kulturhistoriskt värdefulla miljöer, där helheten bedöms som viktig. Det rör sig ofta om enhetliga miljöer som är goda representanter för sin tid, och det är helhetsintrycket som räknas. Fyra av miljöerna är 1950-talsbebyggelse: i Råsunda, vid Förvaltarvägen med kv Fjorden, kv Nordan och Stinsbostaden vid Solna station, i Skytteholm och i Huvudsta. På listan finns också äldre miljöer som Råsunda villastad, stenstaden i Råsunda, Gamla Hagalund och Råsta egnahem.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Staden skriver att det är mycket viktigt att ta hänsyn till husens ursprungliga karaktär när de anpassas till nya behov, så att deras historiska värde inte går förlorat. Därför renoverar vi fönstren med samma indelning och kulör som förut.</p>
-          </div>
-          <aside class="side-panel">
             <h3>1950-talsmiljöer i listan</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Råsunda</li>
               <li>Förvaltarvägen, kv Fjorden och kv Nordan</li>
               <li>Skytteholm</li>
               <li>Huvudsta</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="kitt-solna">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Kitt och fogar från asbestens årtionden</h2>
+      <section class="section seo-section media-block" id="kitt-solna">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Kitt och fogar från asbestens <em>årtionden</em></h2></div></div>
+        <div class="container text-block">
             <p>Boverket skriver att asbest förbjöds inom byggsektorn 1982 men att stora mängder finns kvar, och att det främst är byggnader uppförda mellan 1940 och 1970 som innehåller asbest. Är huset byggt 1940–1980 är det enligt Boverket sannolikt att det finns asbest någonstans i byggnaden. Fönsterkitt, fogmassor och tätmassor finns med på verkets lista över material där asbest kan förekomma, och i regel krävs att ett prov analyseras i mikroskop för att veta. Boverkets energiguide råder dig också att undersöka om gamla fogmassor innehåller till exempel PCB eller asbest, som är saneringspliktigt.</p>
             <p>Därför tar vi prov på kitt och fogar i hus från de här årtiondena innan något skrapas eller värms bort. Arbetsmiljöverket kräver tillstånd för att ett företag ska få riva eller sanera material som innehåller asbest, och förarbete på platsen, omhändertagande av avfallet och städning efteråt räknas också som sanering. Visar provet asbest anlitar vi ett företag med sådant tillstånd för just den delen.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="bagar-solna">
-        <div class="container section-layout section-layout--text">
-          <div class="section-copy">
-            <h2 class="section-title">Kopplade bågar och linoljefärg</h2>
+      <section class="section section-muted seo-section media-block" id="bagar-solna">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Kopplade bågar och <em>linoljefärg</em></h2></div></div>
+        <div class="container text-block">
             <p>Under första hälften av 1900-talet infördes enligt Länsstyrelsernas fönsterblad det kopplade fönstret med två utåtgående bågar. Riksantikvarieämbetet påpekar att linoljefärg ännu på 1950-talet var den färg som förespråkades för utvändig snickerimålning, och att grundning och två strykningar var det minsta som borde utföras enligt Hantverkets bok från 1953.</p>
             <p>Skriften beskriver också de krav som före 1950-talet ställdes på fönstervirke – avverkat under vinterhalvåret, lufttorkat och lagrat ett par år före användning – och att de omfattande skador som visat sig på 1960- och 1970-talens fönster delvis beror på olämpligt lösta konstruktionsdetaljer. Vid lagning är det enligt skriften viktigt att det nya virket liknar det gamla, och det är så vi väljer det.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Ytbehandling enligt 1950-talets råd</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Linoljefärg</li>
               <li>Grundning</li>
               <li>Minst två strykningar</li>
             </ul>
-          </aside>
         </div>
       </section>
-      <section class="section seo-section" id="lov-solna">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Ny kulör på ett flerbostadshus kan kräva lov</h2>
+      <section class="section seo-section media-block" id="lov-solna">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Ny kulör på ett flerbostadshus kan kräva <em>lov</em></h2></div></div>
+        <div class="container text-block">
             <p>Solna stad skriver att bygglov krävs för fasadändring på en byggnad som inte är ett en- eller tvåbostadshus inom detaljplan, när ändringen görs på en fasad eller ett tak som vetter mot allmän plats. Lov krävs också för ändringar på särskilt värdefulla byggnader och i särskilt värdefulla områden. Byte av fasadfärg är ett av stadens exempel på fasadändringar. Ska bågarna i ett flerbostadshus få en ny kulör mot gatan tar vi därför upp lovfrågan med staden innan arbetet börjar.</p>
             <p>Bor du i bostadsrätt skriver staden att du behöver fastighetsägarens medgivande för byggåtgärder. För villaägare gäller utökad lovplikt i stora delar av Solna, och de vanligaste skälen är särskilt värdefulla kulturmiljöer och riksintressen. Fasadens puts och snickerier tar vi upp under <a class="text-link" href="fasadrenovering-solna.html">fasadrenovering i Solna</a>, och nya fönster under <a class="text-link" href="fonsterbyte.html">fönsterbyte</a>.</p>
-          </div>
         </div>
       </section>
       <section class="section section-muted seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så renoverar vi fönster från 1950-talet i Solna</h2>
+            <h2 class="section-title">Så renoverar vi fönster från 1950-talet i <em>Solna</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -307,27 +296,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">ROT-avdrag för fönsterrenovering i Solna</h2>
+      <section class="section seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">ROT-avdrag för fönsterrenovering i <em>Solna</em></h2></div></div>
+        <div class="container text-block">
             <p>I en villa eller ett radhus som du äger räknar Skatteverket reparation och målning av fönster som rotarbete, och sanering av asbest ger avdrag när den görs i samband med byggarbete. Själva provet ger inget avdrag, eftersom Skatteverket inte godkänner att mäta asbest. I en bostadsrätt ger bara arbete på insidan avdrag, till exempel att måla insidan av fönstren eller byta glaset i innerbågen.</p>
             <p>Avdraget är högst 30 procent av arbetskostnaden, som mest 50 000 kr per person och år och 75 000 kr inklusive rutavdrag. Vi drar det direkt på fakturan.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset i Solna?</h2>
+      <section class="section section-muted seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset i <em>Solna</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Antalet fönster, om prov och sanering av kitt eller fogar behövs, hur mycket virke som ska bytas och om en ny kulör kräver lov påverkar mest. Efter ett gratis platsbesök får du ett skriftligt kostnadsförslag.</p>
-          </div>
         </div>
       </section>
       <section class="section seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster i Solna</h2>
+            <h2 class="section-title">Fler tjänster i <em>Solna</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -431,43 +416,43 @@
       <section class="section section-muted seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fönsterrenovering i fler områden</h2>
+            <h2 class="section-title">Fönsterrenovering i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="fonsterrenovering-alvsjo.html">Fönsterrenovering i Älvsjö</a></li>
-                <li><a href="fonsterrenovering-botkyrka.html">Fönsterrenovering i Botkyrka</a></li>
-                <li><a href="fonsterrenovering-bromma.html">Fönsterrenovering i Bromma</a></li>
-                <li><a href="fonsterrenovering-danderyd.html">Fönsterrenovering i Danderyd</a></li>
-                <li><a href="fonsterrenovering-enskede.html">Fönsterrenovering i Enskede</a></li>
-                <li><a href="fonsterrenovering-farsta.html">Fönsterrenovering i Farsta</a></li>
-                <li><a href="fonsterrenovering-haninge.html">Fönsterrenovering i Haninge</a></li>
-                <li><a href="fonsterrenovering-huddinge.html">Fönsterrenovering i Huddinge</a></li>
-                <li><a href="fonsterrenovering-hagersten.html">Fönsterrenovering i Hägersten</a></li>
-                <li><a href="fonsterrenovering-hasselby.html">Fönsterrenovering i Hässelby</a></li>
-                <li><a href="fonsterrenovering-jarfalla.html">Fönsterrenovering i Järfälla</a></li>
-                <li><a href="fonsterrenovering-kista.html">Fönsterrenovering i Kista</a></li>
-                <li><a href="fonsterrenovering-nacka.html">Fönsterrenovering i Nacka</a></li>
-                <li><a href="fonsterrenovering-norrtalje.html">Fönsterrenovering i Norrtälje</a></li>
-                <li><a href="fonsterrenovering-osteraker.html">Fönsterrenovering i Österåker</a></li>
-                <li><a href="fonsterrenovering-sigtuna.html">Fönsterrenovering i Sigtuna</a></li>
+                <li><a href="fonsterrenovering-alvsjo.html">Älvsjö</a></li>
+                <li><a href="fonsterrenovering-botkyrka.html">Botkyrka</a></li>
+                <li><a href="fonsterrenovering-bromma.html">Bromma</a></li>
+                <li><a href="fonsterrenovering-danderyd.html">Danderyd</a></li>
+                <li><a href="fonsterrenovering-enskede.html">Enskede</a></li>
+                <li><a href="fonsterrenovering-farsta.html">Farsta</a></li>
+                <li><a href="fonsterrenovering-haninge.html">Haninge</a></li>
+                <li><a href="fonsterrenovering-huddinge.html">Huddinge</a></li>
+                <li><a href="fonsterrenovering-hagersten.html">Hägersten</a></li>
+                <li><a href="fonsterrenovering-hasselby.html">Hässelby</a></li>
+                <li><a href="fonsterrenovering-jarfalla.html">Järfälla</a></li>
+                <li><a href="fonsterrenovering-kista.html">Kista</a></li>
+                <li><a href="fonsterrenovering-nacka.html">Nacka</a></li>
+                <li><a href="fonsterrenovering-norrtalje.html">Norrtälje</a></li>
+                <li><a href="fonsterrenovering-osteraker.html">Österåker</a></li>
+                <li><a href="fonsterrenovering-sigtuna.html">Sigtuna</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="fonsterrenovering-skarholmen.html">Fönsterrenovering i Skärholmen</a></li>
-                <li><a href="fonsterrenovering-sollentuna.html">Fönsterrenovering i Sollentuna</a></li>
-                <li><a href="fonsterrenovering-spanga.html">Fönsterrenovering i Spånga</a></li>
-                <li><a href="fonsterrenovering-sundbyberg.html">Fönsterrenovering i Sundbyberg</a></li>
-                <li><a href="fonsterrenovering-tyreso.html">Fönsterrenovering i Tyresö</a></li>
-                <li><a href="fonsterrenovering-taby.html">Fönsterrenovering i Täby</a></li>
-                <li><a href="fonsterrenovering-upplands-vasby.html">Fönsterrenovering i Upplands Väsby</a></li>
-                <li><a href="fonsterrenovering-vallentuna.html">Fönsterrenovering i Vallentuna</a></li>
-                <li><a href="fonsterrenovering-vasastan.html">Fönsterrenovering i Vasastan</a></li>
-                <li><a href="fonsterrenovering-vallingby.html">Fönsterrenovering i Vällingby</a></li>
-                <li><a href="fonsterrenovering-ekero.html">Fönsterrenovering på Ekerö</a></li>
-                <li><a href="fonsterrenovering-kungsholmen.html">Fönsterrenovering på Kungsholmen</a></li>
-                <li><a href="fonsterrenovering-lidingo.html">Fönsterrenovering på Lidingö</a></li>
-                <li><a href="fonsterrenovering-ostermalm.html">Fönsterrenovering på Östermalm</a></li>
-                <li><a href="fonsterrenovering-sodermalm.html">Fönsterrenovering på Södermalm</a></li>
-                <li><a href="fonsterrenovering-varmdo.html">Fönsterrenovering på Värmdö</a></li>
+                <li><a href="fonsterrenovering-skarholmen.html">Skärholmen</a></li>
+                <li><a href="fonsterrenovering-sollentuna.html">Sollentuna</a></li>
+                <li><a href="fonsterrenovering-spanga.html">Spånga</a></li>
+                <li><a href="fonsterrenovering-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="fonsterrenovering-tyreso.html">Tyresö</a></li>
+                <li><a href="fonsterrenovering-taby.html">Täby</a></li>
+                <li><a href="fonsterrenovering-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="fonsterrenovering-vallentuna.html">Vallentuna</a></li>
+                <li><a href="fonsterrenovering-vasastan.html">Vasastan</a></li>
+                <li><a href="fonsterrenovering-vallingby.html">Vällingby</a></li>
+                <li><a href="fonsterrenovering-ekero.html">Ekerö</a></li>
+                <li><a href="fonsterrenovering-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="fonsterrenovering-lidingo.html">Lidingö</a></li>
+                <li><a href="fonsterrenovering-ostermalm.html">Östermalm</a></li>
+                <li><a href="fonsterrenovering-sodermalm.html">Södermalm</a></li>
+                <li><a href="fonsterrenovering-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
@@ -476,7 +461,7 @@
 
       <section class="section seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Vilka 1950-talsmiljöer i Solna räknas som kulturhistoriskt värdefulla?
@@ -511,10 +496,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section section-muted seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://www.solna.se/bygga-bo--miljo/stadsmiljo/kulturmiljoer-i-solna" rel="noopener">Solna stad – Kulturmiljöer i Solna</a></li>
               <li><a class="text-link" href="https://www.solna.se/bygga-bo--miljo/bygga/guide/vanliga-byggatgarder/fasadandring" rel="noopener">Solna stad – Fasadändring</a></li>
@@ -528,17 +512,36 @@
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/gerarbetetratttillrotavdrag.106.5c1163881590be297b5899d.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html" rel="noopener">Skatteverket – Så fungerar rotavdraget</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Bor du i ett hus från 1950-talet?</h2>
-          <p>Boka ett gratis platsbesök, så går vi igenom fönster, kitt och fogar och lämnar ett skriftligt kostnadsförslag.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Beskriv jobbet kort.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Fönsterrenovering" />
+              <input type="hidden" name="retur" value="fonsterrenovering-solna.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Solna" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>

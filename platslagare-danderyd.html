@@ -17,6 +17,7 @@
     <meta name="theme-color" content="#1f2f46" />
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="assets/css/style.css?v=804814f0" />
+    <link rel="stylesheet" href="assets/css/ds-taklia.css?v=e8dccfbb" />
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -131,26 +132,26 @@
 }
     </script>
   </head>
-  <body>
+  <body class="ds-taklia" data-ds>
     <a class="skip-link" href="#content">Hoppa till innehåll</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="/">Geal Entreprenad AB</a>
+        <a class="logo" href="/" aria-label="Villatak Service – startsida"><img class="logo-mark" src="assets/images/logo-villatak-5a.svg" width="58" height="40" alt="" /><span class="logo-word">Villatak<small>Service</small></span></a>
         <nav class="site-nav" id="site-nav" aria-label="Huvudnavigation">
           <ul>
-            <li><a data-nav href="/">Hem</a></li>
+            
             <li><a data-nav href="tjanster.html">Tjänster</a></li>
             <li><a data-nav href="bygg.html">Bygg</a></li>
             <li><a data-nav href="omraden.html">Områden</a></li>
             <li><a data-nav href="artiklar.html">Artiklar</a></li>
             <li><a data-nav href="om-oss.html">Om oss</a></li>
-            <li><a data-nav href="kontakt.html">Kontakt</a></li>
-            <li><a data-nav href="sok.html">Sök</a></li>
+            
+            
           </ul>
         </nav>
-        <a class="btn btn-primary header-cta" href="#offert">Offert</a>
+        <div class="header-right"><a class="header-phone" href="tel:+46812410276"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>08 12 410 276</span></a><a class="btn btn-primary header-cta" href="#offert">Kontakt</a></div>
         <button class="menu-toggle" type="button" aria-controls="site-nav"
-          aria-expanded="false" aria-label="Oppna meny">Meny</button>
+          aria-expanded="false" aria-label="Öppna meny"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></button>
       </div>
     </header>
 
@@ -158,48 +159,50 @@
       <section class="page-hero page-hero--bg">
         <img class="hero-bg" src="assets/images/platslagare-danderyd-1.webp" srcset="assets/images/platslagare-danderyd-1-640.webp 640w, assets/images/platslagare-danderyd-1.webp 1200w" sizes="100vw" alt="" fetchpriority="high" decoding="async" />
         <div class="container hero-grid hero-grid--page">
-          <div class="hero-copy">
-            <p class="breadcrumb"><a href="/">Hem</a> / <a href="tjanster.html">Tjänster</a> / <a href="platslagare.html">Plåtslagare</a> / Danderyd</p>
+          <div class="hero-copy hero-top">
+            <p class="breadcrumb"><a href="/">Hem</a> › <a href="tjanster.html">Tjänster</a> › <a href="platslagare.html">Plåtslagare</a> › Danderyd</p>
             <h1 class="hero-title">Plåtslagare i Danderyd</h1>
-            <p class="section-lead">Det mesta regnet som faller på en villa i Danderyd passerar plåt på vägen ner: nockbeslag, ränndalar, hängrännor och stuprör. Var vattnet sedan tar vägen, och vilken metall det har runnit över, är frågor som kommunen har tydliga synpunkter på. Geal Entreprenad AB har egna plåtslagare som arbetar i Djursholm, Stocksund, Enebyberg och övriga Danderyd, med gratis platsbesök och skriftligt kostnadsförslag.</p>
-            <div class="trust-strip">
-              <ul>
-                <li>Gratis besök och kostnadsförslag</li>
-                <li>ROT-avdrag direkt på fakturan</li>
-              </ul>
-              <a class="btn btn-primary" href="tel:+46812410276">Ring 08 12 410 276</a>
-            </div>
-            <div class="anchor-nav" aria-label="Snabblänkar">
-              <a href="#takvatten-danderyd">Takvattnet i Danderyd</a>
-              <a href="#process">Så går det till</a>
-              <a href="#rot">ROT</a>
-              <a href="#faq">Vanliga frågor</a>
-              <a href="#kallor">Källor</a>
-            </div>
+            <p class="section-lead">Det mesta regnet som faller på en villa i Danderyd passerar plåt på vägen ner: nockbeslag, ränndalar, hängrännor och stuprör.</p>
           </div>
-          <div class="form-box hero-form" id="offert">
-            <h2>Få offert från plåtslagare</h2>
-            <p class="form-note">Beskriv jobbet och ange adress eller ort.</p>
+          <div class="form-box hero-form" id="offert" data-v3>
+            <h3>Få offert från plåtslagare</h3>
+            <p class="form-note">Skicka gärna en bild på taket.</p>
             <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
-            <form action="sendmail.php" method="post">
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
               <div class="hp-field" aria-hidden="true"><label for="website">Lämna detta fält tomt</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
               <input type="hidden" name="tjanst" value="Plåtslagare" />
-              <input type="hidden" name="ort" value="Danderyd" />
               <input type="hidden" name="retur" value="platslagare-danderyd.html" />
               <input type="hidden" name="gdpr" value="1" />
-              <div class="field"><label for="namn">Namn</label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
-              <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
-              <div class="field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
-              <div class="field"><label for="meddelande">Beskriv jobbet</label><textarea id="meddelande" name="meddelande" rows="3" required></textarea></div>
+              <div class="field-row">
+                <div class="field"><label for="namn">Namn</label><input id="namn" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost">E-post</label><input id="epost" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon">Telefon</label><input id="telefon" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort">Ort</label><input id="ort" placeholder="Ort" name="ort" type="text" value="Danderyd" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
               <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
               <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
             </form>
           </div>
+          <div class="hero-copy hero-rest">
+            <h3>Det här ingår</h3>
+            <ul class="hero-checks">
+              <li>Plåttak och falsning</li>
+              <li>Skorstensbeslag</li>
+              <li>Hängrännor och stuprör</li>
+              <li>Fönsterbleck</li>
+              <li>Snörasskydd och takstegar</li>
+              <li>Slutkontroll med dig</li>
+            </ul>
+          </div>
         </div>
       </section>
-      <section class="section section-muted" id="varfor-oss">
+      <section class="section" id="varfor-oss">
         <div class="container">
-          <h2 class="section-title">Därför väljer kunder oss</h2>
+          <h2 class="section-title">Därför väljer kunder <em>oss</em></h2>
           <div class="trust-cards">
             <div class="trust-card"><h3>Gratis besök</h3><p>Vi tittar på jobbet på plats innan du får offert.</p></div>
             <div class="trust-card"><h3>Tydlig offert</h3><p>Du ser vad som ingår och vad det kostar.</p></div>
@@ -207,76 +210,68 @@
             <div class="trust-card"><h3>Lokalt företag</h3><p>Geal Entreprenad AB, Bromma. Org.nr 559303-7566.</p></div>
           </div>
         </div>
-      </section>
-      <section class="section gallery-section">
-        <div class="container">
-          <div class="page-gallery page-gallery--one">
-            <figure><img src="assets/images/platslagare-danderyd-2.webp" srcset="assets/images/platslagare-danderyd-2-640.webp 640w, assets/images/platslagare-danderyd-2.webp 1200w" sizes="(max-width: 700px) 100vw, 33vw" width="1200" height="800" alt="Nock och plåtdetaljer längs ett långt rött tak" loading="lazy" decoding="async" /></figure>
-          </div>
-          <p class="gallery-note">Illustrationer</p>
-        </div>
-      </section>      <section class="section seo-section" id="takvatten-danderyd">
-        <div class="container section-layout section-layout--text">
+      </section>      <section class="section section-muted seo-section media-block" id="takvatten-danderyd">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Takvattnet får inte gå till <em>spillvattenledningen</em></h2></div></div>
+        <div class="container split-media">
+          <figure class="split-figure"><img src="assets/images/platslagare-danderyd-2.webp" srcset="assets/images/platslagare-danderyd-2-640.webp 640w, assets/images/platslagare-danderyd-2.webp 1200w" sizes="(max-width: 900px) 100vw, 560px" width="1200" height="800" alt="Nock och plåtdetaljer längs ett långt rött tak" loading="lazy" decoding="async" /></figure>
           <div class="section-copy">
-            <h2 class="section-title">Takvattnet får inte gå till spillvattenledningen</h2>
+            <p>Var vattnet sedan tar vägen, och vilken metall det har runnit över, är frågor som kommunen har tydliga synpunkter på. Geal Entreprenad AB har egna plåtslagare som arbetar i Djursholm, Stocksund, Enebyberg och övriga Danderyd, med gratis platsbesök och skriftligt kostnadsförslag.</p>
             <p>I kommunens VA-folder från hösten 2022, Så sköter du dina egna VA-ledningar, står det rakt ut: takvatten från stuprör får inte ledas till spillvatten- eller avloppsledningen. Kommunen föreslår i stället att du ordnar plats för dagvattnet på tomten, till exempel genom att bygga en stenkista eller låta vattnet rinna ner i regntunnor.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Samma checklista uppmanar villaägare att rensa brunnar och hängrännor för att undvika stora vattensamlingar runt huset. Det är där plåtslagarens arbete och tomtens dränering möts. En ränna som lutar fel, ett skarvat stuprör som läcker eller en utkastare som slutar precis vid sockeln gör att vattnet hamnar på fel ställe även om resten av systemet är rätt byggt.</p>
             <p>Vid ett besök följer vi därför vattnet hela vägen: från takfoten, genom rännan och stupröret, ner till marken. Är stupröret i dag anslutet till en ledning i marken frågar vi vart den går. Är du osäker kan kommunens tekniska kontor svara på frågor om anslutningen.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Kommunens VA-checklista om dagvatten</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Stuprör inte till spillvattnet</li>
               <li>Stenkista eller regntunna på tomten</li>
               <li>Rensa brunnar och hängrännor</li>
               <li>Plantera mer, hårdgör mindre</li>
             </ul>
-          </aside>
+            </details>
+          </div>
         </div>
       </section>
-      <section class="section seo-section" id="koppar-zink">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Koppar och zink i kommunens dagvattenplan</h2>
+      <section class="section seo-section media-block" id="koppar-zink">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Koppar och zink i kommunens <em>dagvattenplan</em></h2></div></div>
+        <div class="container text-block">
             <p>Kommunfullmäktige i Danderyd har antagit en dagvattenplan för 2021–2027. Den ska användas vid all om- och nybyggnation och så långt som möjligt tillämpas på befintliga anläggningar. En av planens tolv målsättningar är att material och ämnen som kan öka spridningen av miljöskadliga ämnen via dagvattnet ska undvikas, och som exempel nämns byggnadsmaterial som koppar och zink vid ny- och tillbyggnation.</p>
             <p>För en plåtslagare betyder det att materialvalet blir en fråga redan när en tillbyggnad, en carport eller ett nytt skärmtak planeras. Det finns andra plåtmaterial, till exempel lackerad stålplåt och aluminium, och vi går igenom alternativen innan något beställs. Planen säger också att dagvatten i första hand ska tas om hand lokalt, nära källan, vilket stämmer väl med kommunens råd om stenkista och regntunna.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>På ett befintligt hus med kopparbeslag är situationen en annan. Att byta ett skadat beslag mot ett likadant är underhåll. Vill du byta material helt kan det i stället påverka husets utseende, och då kommer kulturmiljöfrågan in.</p>
-          </div>
+            </details>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="lov-danderyd">
-        <div class="container section-layout section-layout--text">
-          <div class="section-copy">
-            <h2 class="section-title">Nytt takmaterial och plåt i kulturmiljöerna</h2>
+      <section class="section section-muted seo-section media-block" id="lov-danderyd">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Nytt takmaterial och plåt i <em>kulturmiljöerna</em></h2></div></div>
+        <div class="container text-block">
             <p>Boverket skriver att det inte krävs bygglov för att byta taktäckningsmaterial på ett småhus, och att det med byte menas ett tak som ser annorlunda ut eller är av annat material. Innan taket byts behöver du kontrollera att det klarar den nya belastningen. Ändringen ska ändå göras varsamt och anpassas till omgivningen.</p>
             <p>Danderyds kommun påpekar att lovplikten är kvar i de känsliga områdena. Inom kulturhistoriskt särskilt värdefulla områden och inom riksintressen för kulturmiljövården krävs bygglov för fasadändringar som nytt tak, och det gäller även om byggnaden i sig är särskilt värdefull. Om fastigheten berörs syns i kommunens kulturmiljökarta, och den som vill ha ett formellt besked kan söka frivilligt bygglov.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Ska plåttaket bytas helt finns mer under <a class="text-link" href="takbyte-danderyd.html">takbyte i Danderyd</a>. Gäller det bara beslag, rännor och bleck kan arbetet oftast planeras utan kontakt med kommunen, men vi tittar på kartan innan kulör eller profil ändras.</p>
-          </div>
-          <aside class="side-panel">
             <h3>Före beställning</h3>
-            <ul class="bullet-list">
+            <ul class="fact-list">
               <li>Kontrollera kulturmiljökartan</li>
               <li>Läs detaljplanen</li>
               <li>Undvik koppar och zink vid tillbyggnad</li>
               <li>Klarar taket ny belastning?</li>
             </ul>
-          </aside>
+            </details>
         </div>
       </section>
-      <section class="section seo-section" id="skarmtak-danderyd">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Skärmtak och tillbyggnader räknas samman</h2>
+      <section class="section seo-section media-block" id="skarmtak-danderyd">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Skärmtak och tillbyggnader räknas <em>samman</em></h2></div></div>
+        <div class="container text-block">
             <p>Enligt kommunens frågor och svar om de nya reglerna krävs bygglov om ett en- eller tvåbostadshus byggs till med mer än sammantaget 30 kvadratmeter, och då räknas tidigare utförda skärmtak och attefallstillbyggnader in. Kommunen påminner också om att den som ökar bruttoarean utan lov själv ska informera kommunens VA-enhet.</p>
             <p>Ett nytt skärmtak över entrén eller altanen behöver en avslutning mot husväggen och oftast en egen ränna, och många får ett litet plåttak. Boverket pekar på att påbyggnader som ökar vattenbelastningen jämfört med vad avvattningen var byggd för kan göra att systemet inte räcker till. När en tillbyggnad leder sitt vatten till en befintlig ränna kontrollerar vi därför att rännan och stupröret klarar mängden.</p>
+            <details class="read-more"><summary>Läs mer</summary>
             <p>Läs mer om rännor och stuprör i allmänhet under <a class="text-link" href="hangrannor-stupror.html">hängrännor och stuprör</a>.</p>
-          </div>
+            </details>
         </div>
       </section>
       <section class="section section-muted seo-section" id="process">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Så går ett plåtjobb i Danderyd till</h2>
+            <h2 class="section-title">Så går ett plåtjobb i Danderyd <em>till</em></h2>
           </div>
           <div class="process-grid">
             <article class="step-item">
@@ -312,27 +307,23 @@
           </div>
         </div>
       </section>
-      <section class="section seo-section" id="rot">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Rotavdrag för plåtarbete i Danderyd</h2>
+      <section class="section seo-section media-block" id="rot">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Rotavdrag för plåtarbete i <em>Danderyd</em></h2></div></div>
+        <div class="container text-block">
             <p>Skatteverket räknar det som rotarbete i ett småhus att reparera, rengöra eller byta ut plåttak, hängrännor och stuprör, och att montera och montera ner byggnadsställningar i samband med rotarbetet.</p>
             <p>Avdraget är högst 30 procent av arbetskostnaden och högst 50 000 kr per person och år, inom 75 000 kr för rot och rut tillsammans. Plåt och resor ger inget avdrag. Geal drar avdraget direkt på fakturan.</p>
-          </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="pris">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Vad påverkar priset i Danderyd?</h2>
+      <section class="section section-muted seo-section media-block" id="pris">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title">Vad påverkar priset i <em>Danderyd</em>?</h2></div></div>
+        <div class="container text-block">
             <p>Hur långa rännorna är, hur många stuprör och ränndalar huset har, valet av material och kulör, om tillbyggnadens avvattning ska kopplas till befintliga rännor och vilken ställning som behövs på en hög villa. Du får ett skriftligt kostnadsförslag efter ett gratis platsbesök.</p>
-          </div>
         </div>
       </section>
       <section class="section seo-section" id="lankar">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Fler tjänster i Danderyd</h2>
+            <h2 class="section-title">Fler tjänster i <em>Danderyd</em></h2>
           </div>
           <div class="service-grid">
             <article class="service-snippet">
@@ -436,43 +427,43 @@
       <section class="section section-muted seo-section">
         <div class="container">
           <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Plåtslagare i fler områden</h2>
+            <h2 class="section-title">Plåtslagare i fler <em>områden</em></h2>
             <div class="area-columns">
               <ul class="area-list">
-                <li><a href="platslagare-alvsjo.html">Plåtslagare i Älvsjö</a></li>
-                <li><a href="platslagare-botkyrka.html">Plåtslagare i Botkyrka</a></li>
-                <li><a href="platslagare-bromma.html">Plåtslagare i Bromma</a></li>
-                <li><a href="platslagare-ekero.html">Plåtslagare på Ekerö</a></li>
-                <li><a href="platslagare-enskede.html">Plåtslagare i Enskede</a></li>
-                <li><a href="platslagare-farsta.html">Plåtslagare i Farsta</a></li>
-                <li><a href="platslagare-haninge.html">Plåtslagare i Haninge</a></li>
-                <li><a href="platslagare-huddinge.html">Plåtslagare i Huddinge</a></li>
-                <li><a href="platslagare-hagersten.html">Plåtslagare i Hägersten</a></li>
-                <li><a href="platslagare-hasselby.html">Plåtslagare i Hässelby</a></li>
-                <li><a href="platslagare-jarfalla.html">Plåtslagare i Järfälla</a></li>
-                <li><a href="platslagare-kista.html">Plåtslagare i Kista</a></li>
-                <li><a href="platslagare-nacka.html">Plåtslagare i Nacka</a></li>
-                <li><a href="platslagare-norrtalje.html">Plåtslagare i Norrtälje</a></li>
-                <li><a href="platslagare-osteraker.html">Plåtslagare i Österåker</a></li>
-                <li><a href="platslagare-sigtuna.html">Plåtslagare i Sigtuna</a></li>
+                <li><a href="platslagare-alvsjo.html">Älvsjö</a></li>
+                <li><a href="platslagare-botkyrka.html">Botkyrka</a></li>
+                <li><a href="platslagare-bromma.html">Bromma</a></li>
+                <li><a href="platslagare-ekero.html">Ekerö</a></li>
+                <li><a href="platslagare-enskede.html">Enskede</a></li>
+                <li><a href="platslagare-farsta.html">Farsta</a></li>
+                <li><a href="platslagare-haninge.html">Haninge</a></li>
+                <li><a href="platslagare-huddinge.html">Huddinge</a></li>
+                <li><a href="platslagare-hagersten.html">Hägersten</a></li>
+                <li><a href="platslagare-hasselby.html">Hässelby</a></li>
+                <li><a href="platslagare-jarfalla.html">Järfälla</a></li>
+                <li><a href="platslagare-kista.html">Kista</a></li>
+                <li><a href="platslagare-nacka.html">Nacka</a></li>
+                <li><a href="platslagare-norrtalje.html">Norrtälje</a></li>
+                <li><a href="platslagare-osteraker.html">Österåker</a></li>
+                <li><a href="platslagare-sigtuna.html">Sigtuna</a></li>
               </ul>
               <ul class="area-list">
-                <li><a href="platslagare-skarholmen.html">Plåtslagare i Skärholmen</a></li>
-                <li><a href="platslagare-sollentuna.html">Plåtslagare i Sollentuna</a></li>
-                <li><a href="platslagare-solna.html">Plåtslagare i Solna</a></li>
-                <li><a href="platslagare-spanga.html">Plåtslagare i Spånga</a></li>
-                <li><a href="platslagare-sundbyberg.html">Plåtslagare i Sundbyberg</a></li>
-                <li><a href="platslagare-tyreso.html">Plåtslagare i Tyresö</a></li>
-                <li><a href="platslagare-taby.html">Plåtslagare i Täby</a></li>
-                <li><a href="platslagare-upplands-vasby.html">Plåtslagare i Upplands Väsby</a></li>
-                <li><a href="platslagare-vallentuna.html">Plåtslagare i Vallentuna</a></li>
-                <li><a href="platslagare-vasastan.html">Plåtslagare i Vasastan</a></li>
-                <li><a href="platslagare-vallingby.html">Plåtslagare i Vällingby</a></li>
-                <li><a href="platslagare-kungsholmen.html">Plåtslagare på Kungsholmen</a></li>
-                <li><a href="platslagare-lidingo.html">Plåtslagare på Lidingö</a></li>
-                <li><a href="platslagare-ostermalm.html">Plåtslagare på Östermalm</a></li>
-                <li><a href="platslagare-sodermalm.html">Plåtslagare på Södermalm</a></li>
-                <li><a href="platslagare-varmdo.html">Plåtslagare på Värmdö</a></li>
+                <li><a href="platslagare-skarholmen.html">Skärholmen</a></li>
+                <li><a href="platslagare-sollentuna.html">Sollentuna</a></li>
+                <li><a href="platslagare-solna.html">Solna</a></li>
+                <li><a href="platslagare-spanga.html">Spånga</a></li>
+                <li><a href="platslagare-sundbyberg.html">Sundbyberg</a></li>
+                <li><a href="platslagare-tyreso.html">Tyresö</a></li>
+                <li><a href="platslagare-taby.html">Täby</a></li>
+                <li><a href="platslagare-upplands-vasby.html">Upplands Väsby</a></li>
+                <li><a href="platslagare-vallentuna.html">Vallentuna</a></li>
+                <li><a href="platslagare-vasastan.html">Vasastan</a></li>
+                <li><a href="platslagare-vallingby.html">Vällingby</a></li>
+                <li><a href="platslagare-kungsholmen.html">Kungsholmen</a></li>
+                <li><a href="platslagare-lidingo.html">Lidingö</a></li>
+                <li><a href="platslagare-ostermalm.html">Östermalm</a></li>
+                <li><a href="platslagare-sodermalm.html">Södermalm</a></li>
+                <li><a href="platslagare-varmdo.html">Värmdö</a></li>
               </ul>
             </div>
           </div>
@@ -481,7 +472,7 @@
 
       <section class="section seo-section" id="faq">
         <div class="container">
-          <h2 class="section-title">Vanliga frågor</h2>
+          <h2 class="section-title">Vanliga <em>frågor</em></h2>
           <div class="faq-wrap" data-accordion>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Får stupröret på vår villa i Danderyd vara kopplat till avloppet?
@@ -516,10 +507,9 @@
           </div>
         </div>
       </section>
-      <section class="section section-muted seo-section" id="kallor">
-        <div class="container">
-          <div class="section-copy section-copy--wide">
-            <h2 class="section-title">Källor</h2>
+      <section class="section section-muted seo-section media-block" id="kallor">
+        <div class="container block-head-wrap"><div class="block-head"><h2 class="section-title"><em>Källor</em></h2></div></div>
+        <div class="container text-block">
             <ul class="bullet-list">
               <li><a class="text-link" href="https://www.danderyd.se/contentassets/751fb19789854742aeec443c9ffb4fb1/a5-danderyd_sep-2022_korr3.pdf" rel="noopener">Danderyds kommun – Så sköter du dina egna VA-ledningar (VA-folder hösten 2022, pdf)</a></li>
               <li><a class="text-link" href="https://www.danderyd.se/contentassets/00f7f9d961964d459147d4659ee94463/dagvattenplan-2021-2027.pdf" rel="noopener">Danderyds kommun – Dagvattenplan 2021–2027 (pdf)</a></li>
@@ -529,17 +519,36 @@
               <li><a class="text-link" href="https://www.skatteverket.se/foretag/skatterochavdrag/rotochrut/gerarbetetratttillrotavdrag.4.5c1163881590be297b5173bf.html" rel="noopener">Skatteverket – Ger arbetet rätt till rotavdrag?</a></li>
               <li><a class="text-link" href="https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrotavdraget.4.5947400c11f47f7f9dd80004014.html" rel="noopener">Skatteverket – Så fungerar rotavdraget</a></li>
             </ul>
-          </div>
         </div>
       </section>
 
-      <section class="section cta-strip">
-        <div class="container">
-          <h2>Behöver rännor och stuprör ses över i Danderyd?</h2>
-          <p>Boka ett gratis platsbesök så följer vi vattnet från taket till tomten tillsammans.</p>
-          <div class="hero-actions" style="justify-content: center">
-            <a class="btn btn-light" href="#offert">Få offert</a>
-            <a class="btn btn-outline-light" href="tel:+46812410276">Ring oss</a>
+      <section class="section offer-section" id="begar-offert">
+        <div class="container offer-center">
+          <div class="block-head">
+            <h2 class="section-title">Begär <em>offert</em></h2>
+            <p>Eller ring <a class="text-link" href="tel:+46812410276">08 12 410 276</a>, mån–fre 08–17.</p>
+          </div>
+          <div class="form-box hero-form offer-form" data-v3>
+            <p class="form-note">Skicka gärna en bild på taket.</p>
+            <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
+            <form action="sendmail.php" method="post" enctype="multipart/form-data">
+              <div class="hp-field" aria-hidden="true"><label for="website-2">Lämna detta fält tomt</label><input id="website-2" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+              <input type="hidden" name="tjanst" value="Plåtslagare" />
+              <input type="hidden" name="retur" value="platslagare-danderyd.html" />
+              <input type="hidden" name="gdpr" value="1" />
+              <div class="field-row">
+                <div class="field"><label for="namn-2">Namn</label><input id="namn-2" placeholder="Namn eller företag" name="namn" type="text" autocomplete="name" required /></div>
+                <div class="field"><label for="epost-2">E-post</label><input id="epost-2" placeholder="E-post *" name="epost" type="email" autocomplete="email" required /></div>
+              </div>
+              <div class="field-row">
+                <div class="field"><label for="telefon-2">Telefon</label><input id="telefon-2" placeholder="Telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="ort-2">Ort</label><input id="ort-2" placeholder="Ort" name="ort" type="text" value="Danderyd" autocomplete="address-level2" /></div>
+              </div>
+              <div class="field"><label for="meddelande-2">Beskriv jobbet – typ och ungefärlig yta</label><textarea id="meddelande-2" placeholder="Beskriv jobbet – typ och ungefärlig yta" name="meddelande" rows="3" required></textarea></div>
+              <div class="field field-file"><input id="bild-2" name="bild" type="file" accept="image/*,.heic,.pdf" /><label class="file-label" for="bild-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.5 6v11.5a4 4 0 0 1-8 0V5a2.5 2.5 0 0 1 5 0v10.5a1 1 0 0 1-2 0V6H10v9.5a2.5 2.5 0 0 0 5 0V5a4 4 0 0 0-8 0v12.5a5.5 5.5 0 0 0 11 0V6z"/></svg><span data-file-name>Bifoga bild (valfritt)</span></label></div>
+              <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+              <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+            </form>
           </div>
         </div>
       </section>
