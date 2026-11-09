@@ -36,3 +36,5 @@
 - [x] 09.11 Ägaren «сделай большие картинки»: illustrationer 240 (fördelar) / 200 (steg); fix CSS-selector efter ?v=
 - [x] 09.11 «посещает работяга а не фраер»: fordel-besok — рабочий в спецодежде (каска/комбинезон), не человек в рубашке; правило для всех иллюстраций с людьми
 - [x] 09.11 «малярка — акцент на крышу, почему? покрась стены»: акцент #A8431F на картинках = предмет услуги страницы. Варианты: -mal (Målare/Fasadmålning/Fasadrenovering: стены), -inne (Tapet/Kök/Badrum/Golv/Snickare: интерьер), -fonster (Fönster: рамы); tak/bygg — как есть
+- [ ] 10.11 «почему сюда классное фото не поставить, релевантное тексту?» — textblock (2+ stycken) får relevant foto per rubrik; pilot malare.html → «ok» → alla sidor
+- [ ] steg-lov-mal / steg-kontroll-mal: neutralt tak

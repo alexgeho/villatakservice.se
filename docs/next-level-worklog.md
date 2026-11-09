@@ -5,6 +5,17 @@
 > Status: **5/5 uppgifter klara + follow-ups klara.** 75 sidor, 171 JSON-LD-block, 0 lint-fel.
 
 ---
+## ▶️ RESUME 2026-11-10 — illustrationer klara, nästa: foto i textblock
+KLART 09.11:
+- Illustrationer i taklia-stil (Recraft) på steg + «Därför väljer kunder oss», ljusa (v2), stora (240/200 px, CSS `[src*=".webp"]` pga `?v=`).
+- «Gratis besök» = hantverkare i arbetskläder (inte skjorta).
+- Accent på tjänstens föremål: varianter `<ikon>-mal` (Målare/Fasadmålning/Fasadrenovering: röda väggar), `-inne` (Tapet/Kök/Badrum/Golv/Snickare: rum), `-fonster` (fönsterkarmar); tak/bygg orörda. Logik: GRUPP + grupp(H1) i `tools/ikoner_ds.py`. PNG-original: ~/Desktop/villatak-ikoner/taklia-ljus/, prompter recraft-v3-*.txt där.
+- Recraft: `cd ~/nordkod && claude -p "$(cat prompt)" --allowedTools "mcp__recraft__*,Write,Read"` — ETT i taget (parallella dör tyst).
+NÄSTA:
+1. **Ägaren 10.11: textblock utan bild ska få relevant foto** (skärmdump malare.html «Ny kulör på huset»). Pilot malare.html: block utan foto = Förarbetet, Invändig målning och tapetsering, Ny kulör på huset, ROT-avdrag, Vad styr kostnaden. Gör nytt skript `tools/sektion_foto.py` (körs efter rollout_ds i generate.py): mapping {sida: {H2: (bildnamn, prompt, alt)}}, generera via `gen_images_flux.run`-logik (flux-1.1-pro, 3:2, STYLE utan personer) → assets/images/<sida>-sek-<slug>.webp + -640; byt `container text-block` → `split-media` (figure som malare-2, flip växlar). Idempotent. Visa piloten → efter «ok» rulla ut: 1807 textblock, 1623 unika rubriker (≈ $0.04/bild flux-pro ≈ $65; Källor undantas) — fråga ägaren om kostnad/omfång före utrullning.
+2. Två mal-bilder har rödaktigt tak (steg-lov-mal, steg-kontroll-mal) — rita om med neutralt tak.
+3. Startsidan + statiska sidor + artiklar i DS (pilot först); dropdown-menyer; header 782–1099.
+
 ## ▶️ RESUME 2026-11-09 — pilot utrullad
 Ägaren «Da» på pilot takbyte (blandade block). `tools/rollout_ds.py` (körs sist i generate.py) gör alla 683 landningssidor: ds-taklia + header logga 5A, hero (lead 1 mening, «Det här ingår» per tjänst ur INGAR, pris bara takbyte), formulär v3, H2 ovanför, sidans 1–2 bilder → foto+text, övriga block bara text, >2 stycken → «Läs mer», listor → bockar (ej Källor), «Begär offert» med formulär, fonder växlar, orter bara namn. takbyte.html = handgjord (HAND_MADE i generate.py).
 NÄSTA: startsidan + statiska sidor + artiklar i DS; dropdown-menyer; header 782–1099; fler foton per sida (Replicate) om ägaren vill.
