@@ -201,3 +201,7 @@
 .ds-taklia .logo-word{display:flex;flex-direction:column;font-size:22px;font-weight:800;letter-spacing:.04em;line-height:1;color:#1F2F46}
 .ds-taklia .logo-word small{font-size:11px;letter-spacing:.62em;margin-top:5px;color:var(--accent)}
 @media (max-width:600px){.ds-taklia .logo-mark{width:44px;height:30px}.ds-taklia .logo-word{font-size:18px}.ds-taklia .logo-word small{font-size:9px}}
+/* 09.11 ägaren: textblock utan foto/bockar — 2 stycken, 760 centrerat */
+.ds-taklia .text-block{max-width:760px}
+.ds-taklia .text-block p{margin:0 0 18px;color:var(--muted)}
+.ds-taklia .text-block>:last-child{margin-bottom:0}
