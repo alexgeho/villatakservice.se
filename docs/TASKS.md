@@ -34,3 +34,4 @@
 - [x] 09.11 Ägaren «такие сделай иконки» (taklia): illustrationer i taklia-stil (Recraft-stil från taklias steg/why, accent #A8431F) på steg och fördelar, alla sidor
 - [x] 09.11 Ägaren: illustrationer «мрачно, дом серый» → allt positivt, ljust (ljusa hus, tegeltak, mycket vitt, lätt skuggning) — ny Recraft-omgång v2 — klar: Recraft-stil «Villatakservice bright ink v2» (716d3e40…), 23 PNG + webp i assets/icons
 - [x] 09.11 Ägaren «сделай большие картинки»: illustrationer 240 (fördelar) / 200 (steg); fix CSS-selector efter ?v=
+- [x] 09.11 «посещает работяга а не фраер»: fordel-besok — рабочий в спецодежде (каска/комбинезон), не человек в рубашке; правило для всех иллюстраций с людьми
