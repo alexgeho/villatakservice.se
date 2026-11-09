@@ -222,3 +222,8 @@
 .ds-taklia .trust-card.has-icon{padding-left:0}
 .ds-taklia .trust-card.has-icon::before{display:none}
 .ds-taklia .trust-icon{width:52px;height:52px;display:block;margin:0 0 14px;mix-blend-mode:multiply}
+/* 09.11 illustrationer i taklia-stil (webp) i stället för linjeikoner */
+.ds-taklia .step-icon[src$=".webp"]{width:180px;height:auto;margin:0 auto 16px}
+.ds-taklia .trust-icon[src$=".webp"]{width:200px;height:auto;margin:0 auto 16px}
+.ds-taklia .trust-card.has-icon:has(.trust-icon[src$=".webp"]){text-align:center}
+@media (max-width:600px){.ds-taklia .step-icon[src$=".webp"],.ds-taklia .trust-icon[src$=".webp"]{width:160px}}

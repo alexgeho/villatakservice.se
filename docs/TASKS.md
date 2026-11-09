@@ -31,3 +31,4 @@
 - [ ] Startsidan + statiska sidor (index, tjanster, om-oss, kontakt, artiklar) i DS taklia — inte gjort än
 - [ ] Artiklar (article-shell) — oförändrade prosa-sidor, besluta om de ska få DS
 - [x] 09.11 Ägaren: ikoner i Recraft för steg och «Därför väljer kunder oss» (tools/ikoner_ds.py klart, väntar på ikonfiler)
+- [x] 09.11 Ägaren «такие сделай иконки» (taklia): illustrationer i taklia-stil (Recraft-stil från taklias steg/why, accent #A8431F) på steg och fördelar, alla sidor

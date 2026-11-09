@@ -18,8 +18,16 @@ RULES = [("rivning", ("riv", "nedtag")), ("tapet", ("tapet", "uppsättning")), (
 FORDEL = {"Gratis besök": "besok", "Tydlig offert": "offert", "ROT-avdrag på fakturan": "rot", "Lokalt företag": "lokal"}
 
 
+def ext(name):
+    """Illustration i taklia-stil (webp) före gammal linjeikon (svg)."""
+    for e in (".webp", ".svg"):
+        if os.path.exists(os.path.join(IC, name + e)):
+            return e
+    return None
+
+
 def ok(name):
-    return os.path.exists(os.path.join(IC, name + ".svg"))
+    return ext(name) is not None
 
 
 def pick(title, i, n):
@@ -31,7 +39,9 @@ def pick(title, i, n):
 
 
 def img(name, cls):
-    return f'<img class="{cls}" src="assets/icons/{name}.svg" width="56" height="56" alt="" loading="lazy" decoding="async" data-ikon />'
+    e = ext(name)
+    sz = 480 if e == ".webp" else 56
+    return f'<img class="{cls}" src="assets/icons/{name}{e}" width="{sz}" height="{sz}" alt="" loading="lazy" decoding="async" data-ikon />'
 
 
 def steps(m):
@@ -57,11 +67,15 @@ def card(m):
 
 def transform(path):
     s = open(path, encoding="utf-8").read()
-    if "ds-taklia" not in s or "data-ikon" in s:
+    if "ds-taklia" not in s:
         return False
+    # byt ut tidigare ikoner (ny stil vinner)
+    s0 = s
+    s = re.sub(r'\s*<img class="step-icon"[^>]*data-ikon />', "", s)
+    s = re.sub(r'<div class="trust-card has-icon"><img class="trust-icon"[^>]*data-ikon />', '<div class="trust-card">', s)
     s2 = re.sub(r'<section\b(?:(?!</section>).)*</section>', lambda m: steps(m) if "step-item" in m.group(0) else m.group(0), s, flags=re.S)
     s2 = re.sub(r'<div class="trust-card"><h3>(.*?)</h3>', card, s2)
-    if s2 == s:
+    if s2 == s0:
         return False
     open(path, "w", encoding="utf-8").write(s2)
     return True
