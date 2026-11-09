@@ -40,8 +40,10 @@ def pick(title, i, n):
 
 def img(name, cls):
     e = ext(name)
+    import hashlib
+    v = hashlib.md5(open(os.path.join(IC, name + e), "rb").read()).hexdigest()[:8]
     sz = 480 if e == ".webp" else 56
-    return f'<img class="{cls}" src="assets/icons/{name}{e}" width="{sz}" height="{sz}" alt="" loading="lazy" decoding="async" data-ikon />'
+    return f'<img class="{cls}" src="assets/icons/{name}{e}?v={v}" width="{sz}" height="{sz}" alt="" loading="lazy" decoding="async" data-ikon />'
 
 
 def steps(m):
