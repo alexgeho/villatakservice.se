@@ -5,6 +5,18 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟡 2026-11-13 — SEO-runda (branch seo-2026-11-13, ej pushad)
+GSC 15.10–11.11: 9 klick / 25 072 visn / pos 44,9. Bara 3 346 visn ligger på pos 4–20 (0 klick där); 87 % ligger under pos 20.
+**Fynd:** SEO-ändringarna 07.11 (golvslipning Lidingö/Danderyd/Huddinge) skrevs över av DS-utrullningen 09.11 – live hade de gamla titlarna.
+- ✅ `tools/seo_overrides.py` (körs SIST i generate.py, idempotent, `--check`): title/description/hero-lead för 35 sidor med frågor på pos 4–20. Titel = tjänst + ort + konkret + «gratis offert»/ROT; lead = EN mening (DS). Bara fakta som redan står på sajten.
+- ✅ takbyte-sollentuna (266 visn pos 8–15): pris «från 1 400 kr/m² före ROT» i title/description/lead. taklaggare-sollentuna: title utan takbyte/takrenovering.
+- ✅ Fel systersida rankade: fönsterbyte sigtuna/österåker/botkyrka, fasadrenovering kungsholmen, slipa golv bromma → rätt sida fick frågan i titeln.
+- ✅ 33 takrenovering-<ort> länkar nu till takbyte-<ort> (saknades helt), en mening i kostnadsstycket.
+- ✅ sitemap lastmod 2026-11-13 för 66 ändrade sidor. validate.py grön.
+- ⚠️ generate.py är INTE körd i den här rundan. Nya SEO-texter läggs i OVERRIDES i seo_overrides.py, aldrig direkt i HTML.
+- 🔜 27.11 och 11.12: GSC – CTR och position för de 35 sidorna (lista i ~/sites-hub/audits/2026-11-13/villatakservice.md).
+
+---
 ## 🟢 2026-10-31 — Kalkylator i hero + kataloger (Tings strategi)
 - ✅ Takbyte-kalkylatorn i startsidans hero (ersätter fotot), samma priser/JS som kalkylator-takbyte; "Få exakt offert" → kontakt med förifylld kalkyl. LIVE.
 - ✅ Katalogtexter + NAP-status: docs/kataloger.md (hitta/eniro/allabolag finns utan tel/webb; reco saknas). Öppettider 08–17 överallt (GBP ändrad, granskas).
