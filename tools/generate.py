@@ -3242,8 +3242,9 @@ article("vad-kostar-bygga-hus.html",
   badge="Kostnad", read="5 min")
 
 # ====================== KALKYLATOR (lead-magnet) =======================
-_kalkyl_tool = """      <section class="section seo-section">
+_kalkyl_tool = """      <section class="section seo-section" id="offert">
         <div class="container">
+          <p class="form-alert" data-form-fel role="alert" hidden>Något blev fel. Kontrollera uppgifterna eller ring <a href="tel:+46812410276">08 12 410 276</a>.</p>
           <div class="calc-wrap">
             <form id="kalkyl-form" class="calc-form" novalidate>
               <div class="field">
@@ -3277,11 +3278,26 @@ _kalkyl_tool = """      <section class="section seo-section">
                 <p class="calc-result__label">Uppskattat efter ROT-avdrag</p>
                 <p class="calc-result__figure"><span id="kalkyl-rot-low">–</span>–<span id="kalkyl-rot-high">–</span> kr</p>
               </div>
-              <a id="kalkyl-cta" class="btn btn-primary" href="kontakt.html?tjanst=Takbyte#form">Få en exakt offert</a>
               <p class="calc-disclaimer">Detta är en grov, icke-bindande uppskattning baserad på branschtypiska
                 spann – inte en offert. Verkligt pris beror på takets skick, tillgänglighet, plåtdetaljer och
                 underlag. Vi lämnar alltid fast pris efter gratis platsbesök. ROT-avdraget är beräknat på
                 uppskattad arbetskostnad (30 % 2026, max 50 000 kr/person/år, 1 ägare).</p>
+              <form class="calc-lead" action="sendmail.php" method="post">
+                <h3>Få exakt offert</h3>
+                <div class="hp-field" aria-hidden="true"><label for="website-k">Lämna detta fält tomt</label><input id="website-k" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+                <input type="hidden" name="tjanst" value="Takbyte" />
+                <input type="hidden" name="retur" value="kalkylator-takbyte.html" />
+                <input type="hidden" name="gdpr" value="1" />
+                <input type="hidden" name="kalkyl" value="" id="kalkyl-summary" />
+                <div class="field"><label for="namn-k">Namn</label><input id="namn-k" name="namn" type="text" placeholder="Ange namn" autocomplete="name" required /></div>
+                <div class="field-row">
+                  <div class="field"><label for="epost-k">E-post</label><input id="epost-k" name="epost" type="email" placeholder="Ange e-postadress" autocomplete="email" required /></div>
+                  <div class="field"><label for="telefon-k">Telefon</label><input id="telefon-k" name="telefon" type="tel" placeholder="Ange telefonnummer" autocomplete="tel" /></div>
+                </div>
+                <div class="field"><label for="meddelande-k">Meddelande</label><textarea id="meddelande-k" name="meddelande" placeholder="Beskriv kort vad du vill ha hjälp med" required></textarea></div>
+                <button class="btn btn-primary btn-block" type="submit">Skicka förfrågan</button>
+                <p class="form-legal">Genom att skicka godkänner du vår <a class="text-link" href="integritetspolicy.html">integritetspolicy</a>.</p>
+              </form>
             </aside>
           </div>
         </div>

@@ -53,6 +53,7 @@ $telefon   = clean($_POST['telefon'] ?? '');
 $epost     = clean($_POST['epost'] ?? '');
 $tjanst    = clean($_POST['tjanst'] ?? '');
 $ort       = clean($_POST['ort'] ?? '');
+$kalkyl    = mb_substr(clean($_POST['kalkyl'] ?? ''), 0, 300); // kalkylatorns uträkning (dolt fält)
 $meddelande = trim($_POST['meddelande'] ?? '');
 $gdpr      = isset($_POST['gdpr']);
 
@@ -85,6 +86,9 @@ $body .= "Tjänst:     $tjanst\n";
 if ($ort !== '') {
     $body .= "Ort:        $ort\n";
 }
+if ($kalkyl !== '') {
+    $body .= "Kalkylator: $kalkyl\n";
+}
 $body .= "Formulär:   $retur\n\n";
 $body .= "Meddelande:\n$meddelande\n";
 
@@ -96,7 +100,7 @@ if (!is_dir($leadDir)) {
 }
 if (is_dir($leadDir) && is_writable($leadDir)) {
     $row = array('tid' => date('c'), 'namn' => $namn, 'telefon' => $telefon, 'epost' => $epost,
-        'tjanst' => $tjanst, 'ort' => $ort, 'formular' => $retur, 'meddelande' => $meddelande);
+        'tjanst' => $tjanst, 'ort' => $ort, 'kalkyl' => $kalkyl, 'formular' => $retur, 'meddelande' => $meddelande);
     @file_put_contents($leadDir . '/leads-' . date('Y-m') . '.jsonl',
         json_encode($row, JSON_UNESCAPED_UNICODE) . "\n", FILE_APPEND | LOCK_EX);
 }

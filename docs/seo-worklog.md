@@ -5,6 +5,17 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟡 2026-11-13 — Offertformulär på startsidan och under kalkylatorn (branch leads-2026-11-13, ej pushad)
+Underlag: ~/sites-hub/audits/2026-11-13/leads-villatakservice.md, åtgärd 1 (ägaren «ок»).
+- ✅ index.html: ny sektion `#offert` (offer-grid: «Begär offert» + formulärkort «Få offert») mellan «Varför välja oss» och «Så går det till». Fält som kontakt.html: Namn, E-post (obligatorisk), Telefon (frivillig), Tjänst, Meddelande; integritetsrad under knappen. Sex offert-länkar på startsidan (header, hero, tre textlänkar, CTA-bandet) går till `#offert` i stället för kontakt.html.
+- ✅ Formulär under kalkylatorns resultat (index-hero + kalkylator-takbyte.html, `.calc-lead`) i stället för knappen till kontakt.html. Uträkningen skickas i dolt fält `kalkyl` → raden «Kalkylator:» i mejlet och i leads-loggen (sendmail.php). Inget förifyllt i synliga fält.
+- ✅ kontakt.html: Telefon inte längre `required` (sendmail.php krävde redan bara telefon ELLER e-post).
+- ✅ kalkylator-takbyte.html ändras i `_kalkyl_tool` i tools/generate.py. generate.py kördes lokalt, men bara index/kontakt/kalkylator behölls (nya `?v=` för style.css/main.js); övriga 695 sidor återställda – de får ny `?v=` vid nästa hela generering.
+- ✅ sitemap lastmod 2026-11-13 för de tre sidorna. validate.py grön (699 sidor).
+- Mätt i headless Chromium 390/768/1440 (inget skickat till sendmail.php): startsidans kort efter uträkning 362×1168 / 728×901 / 500×901, kortpadding 20, fält 48, textarea 96, knapp 46; `#offert` sektionsluft 44/64/64 = grannsektionen, formulärkort 362×726 / 728×527 / 520×527; kalkylatorsidans resultatkort 362×947 / 728×753 / 511×795, padding 24. Ingen horisontell scroll på 390 och 1440.
+- ⚠️ Fanns redan före ändringen (inte åtgärdat): 768 px ger horisontell scroll 859/861 px av headerns «Offert»-knapp på alla tre sidorna; assets/images/tak-renovering.webp har fel width/height → sidan hoppar ca 270 px när bilden laddas (ankaret `#offert` hamnar då lägre vid första klicket på mobil); hel körning av generate.py skriver tillbaka gamla titeln på bygg.html (d54ee25c) och ändrar lastmod i sitemap.
+
+---
 ## 🟡 2026-11-13 — SEO-runda (branch seo-2026-11-13, ej pushad)
 GSC 15.10–11.11: 9 klick / 25 072 visn / pos 44,9. Bara 3 346 visn ligger på pos 4–20 (0 klick där); 87 % ligger under pos 20.
 **Fynd:** SEO-ändringarna 07.11 (golvslipning Lidingö/Danderyd/Huddinge) skrevs över av DS-utrullningen 09.11 – live hade de gamla titlarna.

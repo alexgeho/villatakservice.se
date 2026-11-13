@@ -255,7 +255,7 @@
     var elHigh = el("high");
     var elRotLow = el("rot-low");
     var elRotHigh = el("rot-high");
-    var elCta = el("cta");
+    var elSummary = el("summary");
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -277,20 +277,19 @@
       elRotLow.textContent = grp(low - rotLow);
       elRotHigh.textContent = grp(high - rotHigh);
       result.hidden = false;
-      // Efter resultat: "Få exakt offert" är enda primära knappen i kortet
+      // Efter resultat: formulärets "Skicka förfrågan" är enda primära knappen i kortet
       if (scope) {
         var calcBtn = form.querySelector('button[type="submit"]');
         if (calcBtn) { calcBtn.classList.remove("btn-primary"); calcBtn.classList.add("btn-secondary"); }
       }
 
-      var msg = "Hej! Jag har använt takbyte-kalkylatorn och vill ha en kostnadsfri offert.\n\n" +
-        "Takarea: ca " + area + " m²\n" +
-        "Material: " + (MAT_LABEL[mat] || mat) + "\n" +
-        "Taklutning/komplexitet: " + form.elements["lutning"].options[form.elements["lutning"].selectedIndex].text + "\n" +
-        "Uppskattat spann (kalkylator): " + grp(low) + "–" + grp(high) + " kr, efter ROT ca " +
-        grp(low - rotLow) + "–" + grp(high - rotHigh) + " kr.";
-      if (elCta) {
-        elCta.href = "kontakt.html?tjanst=Takbyte&meddelande=" + encodeURIComponent(msg) + "#form";
+      // Uträkningen följer med offertformuläret under resultatet som dolt fält
+      // (sendmail.php: "kalkyl") – inget förifyllt i de synliga fälten.
+      if (elSummary) {
+        elSummary.value = "Takarea ca " + area + " m², " + (MAT_LABEL[mat] || mat) + ", " +
+          form.elements["lutning"].options[form.elements["lutning"].selectedIndex].text +
+          ". Uppskattat spann: " + grp(low) + "–" + grp(high) + " kr, efter ROT ca " +
+          grp(low - rotLow) + "–" + grp(high - rotHigh) + " kr.";
       }
     });
   });
