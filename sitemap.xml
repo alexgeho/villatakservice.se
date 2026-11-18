@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/tjanster.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -56,7 +56,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/papptak.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -499,6 +499,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://villatakservice.se/fasadmalning.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://villatakservice.se/fasadrenovering.html</loc>
     <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -506,13 +512,25 @@
   </url>
   <url>
     <loc>https://villatakservice.se/fonsterbyte.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/fonsterrenovering.html</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvlaggning.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/golvslipning.html</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -524,7 +542,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/malare.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -537,6 +555,12 @@
   <url>
     <loc>https://villatakservice.se/snickare.html</loc>
     <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://villatakservice.se/tapetsering.html</loc>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -2108,199 +2132,199 @@
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-alvsjo.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-botkyrka.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-bromma.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-danderyd.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-ekero.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-enskede.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-farsta.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-hagersten.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-haninge.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-hasselby.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-huddinge.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-jarfalla.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-kista.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-kungsholmen.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-lidingo.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-nacka.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-norrtalje.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-osteraker.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-ostermalm.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-sigtuna.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-skarholmen.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-sodermalm.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-sollentuna.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-solna.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-spanga.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-sundbyberg.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-taby.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-tyreso.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-upplands-vasby.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-vallentuna.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-vallingby.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-varmdo.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://villatakservice.se/golvslipning-vasastan.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -3686,7 +3710,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/totalrenovering-bromma.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -3938,7 +3962,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/vad-kostar-takbyte.html</loc>
-    <lastmod>2026-11-09</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -4088,7 +4112,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/bygg.html</loc>
-    <lastmod>2026-11-07</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -4142,7 +4166,7 @@
   </url>
   <url>
     <loc>https://villatakservice.se/kalkylator-takbyte.html</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
