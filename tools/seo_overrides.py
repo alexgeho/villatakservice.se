@@ -128,7 +128,7 @@ OVERRIDES = {
     # fönsterrenovering botkyrka 15/11.8
     "fonsterrenovering-botkyrka.html": (
         "Fönsterrenovering Botkyrka – renovera träfönster, ROT",
-        "Fönsterrenovering i Botkyrka: vi skrapar, kittar, målar och tätar ursprungliga träfönster, till exempel i radhusen i Tuna. Gratis besök, ROT-avdrag på fakturan.",
+        "Fönsterrenovering i Botkyrka: vi skrapar, kittar, målar och tätar ursprungliga träfönster som i radhusen i Tuna. Gratis besök, ROT-avdrag på fakturan.",
         None,
     ),
     # fönsterrenovering täby 95/13.4
@@ -140,7 +140,7 @@ OVERRIDES = {
     # fönsterrenovering solna 60/17.0
     "fonsterrenovering-solna.html": (
         "Fönsterrenovering Solna – kitt, målning och tätning",
-        "Fönsterrenovering i Solna: vi kittar om, målar och tätar träfönster i hus från 1950-talet i Råsunda, Skytteholm och Huvudsta. Gratis besök och kostnadsförslag.",
+        "Fönsterrenovering i Solna: vi kittar, målar och tätar träfönster i hus från 1950-talet i Råsunda, Skytteholm och Huvudsta. Gratis besök och kostnadsförslag.",
         "Geal Entreprenad AB renoverar träfönster i Solna, bland annat i 1950-talshusen i Råsunda, Skytteholm och Huvudsta, med gratis besök och kostnadsförslag.",
     ),
     # fönsterrenovering stocksund 16/7.1
@@ -272,8 +272,11 @@ def h1_overrides():
     används för kort, ortslistor och formulärets dolda fält tjanst/ort (landing_v1.py)."""
     sys.path.insert(0, os.path.join(ROOT, "tools"))
     from tjanster_v1 import TJ
-    return {f: f"Golvslipning {d['ort']} – gratis besök och kostnadsförslag"
-            for f, d in TJ.items() if d["service"] == "golvslipning" and d["kind"] == "district"}
+    # 19.11: samma H1 på fönsterrenovering-, fasadmålning- och tapetsering-<ort> (tools/tj_mall_deltjanster.py).
+    names = {"golvslipning": "Golvslipning", "fonsterrenovering": "Fönsterrenovering",
+             "fasadmalning": "Fasadmålning", "tapetsering": "Tapetsering"}
+    return {f: f"{names[d['service']]} {d['ort']} – gratis besök och kostnadsförslag"
+            for f, d in TJ.items() if d["service"] in names and d["kind"] == "district"}
 
 
 def sibling_links():

@@ -125,13 +125,14 @@ TJ_SERVICES = {
   "takbyte":           {"crumb": "Takbyte", "service_type": "Takbyte", "card": "Byte av tegel-, betong- och plåttak."},
   "tillbyggnad":       {"crumb": "Tillbyggnad", "service_type": "Tillbyggnad", "card": "Mer boyta i samma hus."},
   "byggforetag":       {"crumb": "Byggfirma", "service_type": "Byggföretag – total entreprenad", "card": "Total entreprenad för villan."},
-  # v15: deltjänster utan egen hubb – brödsmulan pekar på huvudtjänstens hubb.
-  "fasadmalning":      {"crumb": "Målare", "service_type": "Fasadmålning", "card": "Utvändig målning av fasaden."},
-  "tapetsering":       {"crumb": "Målare", "service_type": "Tapetsering", "card": "Ny tapet på väggarna."},
+  # v15: deltjänster – 19.11: egna hubbar fasadmalning.html och tapetsering.html (utrullning av pilotmallen).
+  "fasadmalning":      {"crumb": "Fasadmålning", "service_type": "Fasadmålning", "card": "Utvändig målning av fasaden."},
+  "tapetsering":       {"crumb": "Tapetsering", "service_type": "Tapetsering", "card": "Ny tapet på väggarna."},
   # 18.11: golvslipning har egen hubb golvslipning.html (pilot, SEO-plan 18.11 avsnitt 4a).
   "golvslipning":      {"crumb": "Golvslipning", "service_type": "Golvslipning", "card": "Slipa och ytbehandla trägolv."},
   # v16: fönsterrenovering är deltjänst under fonsterbyte.html; attefallshus.html är en vanlig sida i generate.py.
-  "fonsterrenovering": {"crumb": "Fönsterbyte", "service_type": "Fönsterrenovering", "card": "Renovera de befintliga fönstren."},
+  # 19.11: egen hubb fonsterrenovering.html.
+  "fonsterrenovering": {"crumb": "Fönsterrenovering", "service_type": "Fönsterrenovering", "card": "Renovera de befintliga fönstren."},
   "attefallshus":      {"crumb": "Attefallshus", "service_type": "Attefallshus – komplementbostadshus", "card": "Komplementbostadshus på tomten.",
                         # nybyggnad ger inget rotavdrag – ersätter standardpunkten "ROT-avdrag direkt på fakturan".
                         "trust": ["Gratis besök och kostnadsförslag", "Nyckelfärdigt från grund till inflyttning"]},
@@ -149,17 +150,17 @@ TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html"
           # v8: tillbyggnad.html är en vanlig sida i generate.py men listar ortsidorna.
           "tillbyggnad": "tillbyggnad.html",
           # v15: deltjänster – listas på huvudtjänstens hubb ("Fasadmålning per område" m.fl.).
-          # 18.11: fasadmalning.html, tapetsering.html och fonsterrenovering.html finns (tj_v33_hubbar) och listar sina
-          # ortsidor, men ortsidornas brödsmula/kort pekar kvar på huvudtjänsten tills ägaren har sagt «ok» på piloten
-          # golvslipning – då byts raderna nedan till respektive ny hubb.
-          "fasadmalning": "malare.html", "tapetsering": "malare.html", "golvslipning": "golvslipning.html",
+          # 18.11: golvslipning.html (pilot). 19.11: fasadmalning.html, tapetsering.html och fonsterrenovering.html
+          # (tj_v33_hubbar) – ortsidornas brödsmula, kort och länk i texten pekar på respektive hubb.
+          "fasadmalning": "fasadmalning.html", "tapetsering": "tapetsering.html", "golvslipning": "golvslipning.html",
           # v16
-          "fonsterrenovering": "fonsterbyte.html", "attefallshus": "attefallshus.html",
+          "fonsterrenovering": "fonsterrenovering.html", "attefallshus": "attefallshus.html",
           # v18: villarenovering.html är en vanlig sida i generate.py men listar ortsidorna.
           "totalrenovering": "villarenovering.html"}
 
 # Hubbar som listar en deltjänsts ortsidor fast deltjänsten har egen hubb (golvlaggning.html behåller sin lista).
-TJ_HUB_EXTRA = [("golvslipning", "golvlaggning.html")]
+TJ_HUB_EXTRA = [("golvslipning", "golvlaggning.html"), ("fasadmalning", "malare.html"), ("tapetsering", "malare.html"),
+                ("fonsterrenovering", "fonsterbyte.html")]
 
 TJ = {}
 V4_FILES = set()
@@ -178,6 +179,9 @@ for _m in MODULES:
 # Pilot 18.11: golvslipning-<ort> efter en mall (tools/tj_pilot_golvslipning.py).
 import tj_pilot_golvslipning as _pilot
 _pilot.apply(TJ)
+# Utrullning 19.11: samma mall på fönsterrenovering-, fasadmålning- och tapetsering-<ort> (tools/tj_mall_deltjanster.py).
+import tj_mall_deltjanster as _mall
+MALL_REPORT = _mall.apply(TJ)
 import tj_v33_hubbar as _v33
 _v33.link_parents(TJ)
 
