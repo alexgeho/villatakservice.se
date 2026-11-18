@@ -227,3 +227,5 @@
 .ds-taklia .trust-icon[src*=".webp"]{width:240px;height:auto;margin:0 auto 16px}
 .ds-taklia .trust-card.has-icon:has(.trust-icon[src*=".webp"]){text-align:center}
 @media (max-width:600px){.ds-taklia .step-icon[src*=".webp"],.ds-taklia .trust-icon[src*=".webp"]{width:200px}}
+
+@media (max-width:480px){.ds-taklia .hero-form h2,.ds-taklia .hero-form h3{white-space:normal;text-wrap:balance}}

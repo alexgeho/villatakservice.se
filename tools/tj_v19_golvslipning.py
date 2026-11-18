@@ -471,7 +471,7 @@ PAGES_TJ = {
   "title": "Golvslipning i Täby – golvet där väggen stod",
   "description": "Golvslipning i Täby: när en vägg rivs i villan, radhuset eller grupphuset blir det en skarv i golvet – laga in brädor och stavar och slipa hela rummet.",
   "h1": "Golvslipning i Täby",
-  "lead": "När en vägg tas bort för att två rum ska bli ett blir det kvar en rand i golvet där väggen stod. Ibland är det en glipa, ibland ett parti med ett annat golv, och ibland har rummen haft olika ytbehandling. Geal Entreprenad AB slipar och lagar trägolv i villor, radhus och kedjehus i Täby, och vi ser till att det nya rummet får ett golv som hänger ihop.",
+  "lead": "När en vägg tas bort för att två rum ska bli ett blir det kvar en rand i golvet där väggen stod. Där en vägg har stått är det ibland en glipa, ibland ett parti med ett annat golv, och ibland har rummen haft olika ytbehandling. Geal Entreprenad AB slipar och lagar trägolv i villor, radhus och kedjehus i Täby, och vi ser till att det nya rummet får ett golv som hänger ihop.",
   "card": "Laga och slipa golvet efter en riven vägg.",
   "sections": [
     {"id": "husen-taby", "anchor": "Husen",

@@ -588,9 +588,13 @@ SVC_CRUMB = [("Hem","/"),("Tjänster","tjanster.html")]
 # Tjänster v1–v5: register över tjänstehubbar/ortsidor (tools/tjanster_v1.py).
 from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS, TJ_HUB_EXTRA
 
-def tj_list_html(title, files, muted=False, sid=""):
+_SV = str.maketrans({"å": "{", "ä": "|", "ö": "}"})  # svensk ordning: å, ä, ö efter z
+def tj_list_html(title, files, muted=False, sid="", by_ort=False):
     # Kompakt lista med länkar i två kolumner (samma mönster som trp_list_html).
-    items = sorted(files, key=lambda f: TJ[f]["h1"].replace("Ä","A~").replace("Ö","O~").replace("Å","A}"))
+    if by_ort:  # 18.11: nya hubbar – ren ortsordning (annars hamnar «på Ekerö» m.fl. efter alla «i …»)
+        items = sorted(files, key=lambda f: TJ[f]["ort"].lower().translate(_SV))
+    else:
+        items = sorted(files, key=lambda f: TJ[f]["h1"].replace("Ä","A~").replace("Ö","O~").replace("Å","A}"))
     half = (len(items) + 1) // 2
     cols = "\n".join("              <ul class=\"area-list\">\n" + "\n".join(
         f'                <li><a href="{f}">{TJ[f]["h1"]}</a></li>' for f in part)
@@ -1744,7 +1748,7 @@ for _f, _d in TJ.items():
     _others = [x for x in TJ_DISTRICTS.get(_d["service"], []) if x != _f]
     if _d["kind"] == "hub":
         if _others:
-            _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} per område", o, muted=m, sid="omraden"))
+            _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} per område", o, muted=m, sid="omraden", by_ort=bool(d.get("sort_ort"))))
         # v15: deltjänster med samma hubb (t.ex. fasadmålning och tapetsering under malare.html).
         for _s2 in sorted(s for s, h in list(TJ_HUB.items()) + TJ_HUB_EXTRA if h == _f and s != _d["service"] and TJ_DISTRICTS.get(s)):
             _fs2 = TJ_DISTRICTS[_s2]

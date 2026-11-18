@@ -110,11 +110,11 @@ PAGES_TJ = {
     {"id": "grannar-kungsholmen", "anchor": "Grannarna",
      "h2": "Ett arbete i ett hus fullt av grannar",
      "paras": [
-       "Stadsdelen Kungsholm hade enligt stadens områdesfakta 12 650 bostäder 2025. Av dem var 9 571 bostadsrätter, och 12 268 låg i flerbostadshus. Den som vill slipa ett golv här gör det alltså i regel i en lägenhet, med föreningen som fastighetsägare och grannar som hör maskinerna.",
+       "Stadsdelen Kungsholmen hade enligt stadens områdesfakta 12 650 bostäder 2025. Av dem var 9 571 bostadsrätter, och 12 268 låg i flerbostadshus. Den som vill slipa ett golv här gör det alltså i regel i en lägenhet, med föreningen som fastighetsägare och grannar som hör maskinerna.",
        "Bostadsrättslagen 7 kap. 9 § säger att den som använder lägenheten ska se till att de som bor runt omkring inte utsätts för störningar som kan vara skadliga för hälsan eller försämra deras bostadsmiljö så att de inte skäligen bör tålas. Samma paragraf säger att man ska rätta sig efter föreningens särskilda regler. Står det i ordningsreglerna när bullrande arbeten får pågå, lägger vi slipdagarna efter det.",
        "Ett golvjobb består av dagar med maskiner och dagar då lacken eller oljan torkar och rummet står tyst. Vi går igenom tidplanen med dig innan start, så att du kan berätta för grannarna vilka dagar det låter.",
      ],
-     "aside": {"title": "Kungsholm, bostäder 2025", "items": [
+     "aside": {"title": "Kungsholmen, bostäder 2025", "items": [
        "12 650 bostäder", "9 571 bostadsrätter", "12 268 i flerbostadshus", "9 i småhus"]}},
     {"id": "damm-kungsholmen", "h2": "Dammet ska in i maskinen, inte i trapphuset",
      "paras": [

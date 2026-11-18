@@ -111,7 +111,10 @@ for f, d in sel.items():
     w = words_of(html)
     wc[f] = len(w)
     lo, hi = (1200, 1800) if d["kind"] == "hub" else (1200, 1500)
-    if not lo <= len(w) <= hi + 150:
+    if d.get("pilot_words"):  # pilot 18.11 (tj_pilot_golvslipning.py): 700–900 ord redaktionell text
+        if not 700 <= d["pilot_words"] <= 900:
+            errors.append(f"{f}: {d['pilot_words']} ord redaktionell text (pilotmall 700–900)")
+    elif not lo <= len(w) <= hi + 150:
         (errors if len(w) < lo - 50 else warns).append(f"{f}: {len(w)} ord (mål {lo}–{hi})")
     t = G.short_title(d["title"])
     if len(t) > 60: warns.append(f"{f}: title {len(t)} tecken")

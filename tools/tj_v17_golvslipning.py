@@ -121,7 +121,7 @@ PAGES_TJ = {
   "title": "Golvslipning i Bromma – lut och såpa på furugolvet",
   "description": "Golvslipning i Bromma: slipa furugolvet i trädgårdsstadens villa och behandla det med lut och såpa – skyddstäckning, arbetsgång, torrt trä och provyta.",
   "h1": "Golvslipning i Bromma",
-  "lead": "Ett slipat furugolv som lutas och såpas får en ljus och matt yta. Det är en behandling med egna regler: luten är frätande, den ska läggas i en viss ordning och den passar inte med lack. Geal Entreprenad AB slipar och ytbehandlar trägolv i Bromma, och väljer du lut och såpa går vi igenom hela arbetsgången med dig innan första strykningen.",
+  "lead": "Ett slipat furugolv som lutas och såpas får en ljus och matt yta. Lut och såpa är en behandling med egna regler: luten är frätande, den ska läggas i en viss ordning och den passar inte med lack. Geal Entreprenad AB slipar och ytbehandlar trägolv i Bromma, och väljer du lut och såpa går vi igenom hela arbetsgången med dig innan första strykningen.",
   "card": "Slipa furugolvet och behandla med lut och såpa.",
   "sections": [
     {"id": "tradgardsstad-bromma", "anchor": "Trädgårdsstäderna",
@@ -206,7 +206,7 @@ PAGES_TJ = {
   "title": "Golvslipning i Danderyd – parkett och mönster i villan",
   "description": "Golvslipning i Danderyd: slipa fiskbens- och stavparkett i villan – slipriktning, kanter, byte av enstaka stavar, springor och val av lack eller olja.",
   "h1": "Golvslipning i Danderyd",
-  "lead": "En fiskbensparkett eller ett golv i rutmönster har stavar som ligger åt olika håll, och det ställer egna krav på hur maskinen förs över golvet. Golvbranschens riktlinjer beskriver därför en särskild slipordning för mönstergolv. Geal Entreprenad AB slipar och ytbehandlar trägolv i Danderyd och planerar slipriktningen efter mönstret och rummets ljus innan arbetet börjar.",
+  "lead": "En fiskbensparkett eller ett golv i rutmönster har stavar som ligger åt olika håll, och det ställer egna krav på hur maskinen förs över golvet. Golvbranschens riktlinjer beskriver en särskild slipordning för mönstergolv. Geal Entreprenad AB slipar och ytbehandlar trägolv i Danderyd och planerar slipriktningen efter mönstret och rummets ljus innan arbetet börjar.",
   "card": "Slipa parkett och mönstergolv i villan.",
   "sections": [
     {"id": "villastaderna-danderyd", "anchor": "Villastäderna",

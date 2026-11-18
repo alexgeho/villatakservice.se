@@ -565,7 +565,7 @@ PAGES_TJ = {
   "title": "Golvslipning i Solna – trägolvet under mattan",
   "description": "Golvslipning i Solna: ta fram och slipa trägolvet under linoleum och plastmatta i Råsunda – asbest i mattor och lim, limrester och springor.",
   "h1": "Golvslipning i Solna",
-  "lead": "Under en gammal linoleum- eller plastmatta kan det ligga ett trägolv som ingen har sett på länge. Det kan vara ett enkelt undergolv som inte var tänkt att synas, eller ett fint golv som täcktes för att det ansågs omodernt. Geal Entreprenad AB tar fram och slipar trägolv i lägenheter och villor i Solna, och vi börjar med att ta reda på vad mattan och limmet består av.",
+  "lead": "Under en gammal linoleum- eller plastmatta kan det ligga ett trägolv som ingen har sett på länge. Under mattan kan det ligga ett enkelt undergolv som inte var tänkt att synas, eller ett fint golv som täcktes för att det ansågs omodernt. Geal Entreprenad AB tar fram och slipar trägolv i lägenheter och villor i Solna, och vi börjar med att ta reda på vad mattan och limmet består av.",
   "card": "Ta fram och slipa trägolvet under mattan.",
   "sections": [
     {"id": "rasunda-solna", "anchor": "Råsunda",

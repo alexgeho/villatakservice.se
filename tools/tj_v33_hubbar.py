@@ -29,7 +29,7 @@ _ROT_SUM = ("Avdraget är 30 procent av arbetskostnaden, högst 50 000 kr per pe
 PAGES_TJ = {
 # ================================================================== GOLVSLIPNING
 "golvslipning.html": {
-  "kind": "hub", "service": "golvslipning", "svc_label": "Golvslipning",
+  "kind": "hub", "service": "golvslipning", "svc_label": "Golvslipning", "sort_ort": True,
   "crumb": "Golvslipning", "parent": ("Golvläggning", "golvlaggning.html"),
   "title": "Golvslipning Stockholm – slipa parkett och trägolv, ROT",
   "description": "Golvslipning i Stockholm: vi slipar parkett, brädgolv och trappor och ytbehandlar med lack, olja eller lut. Gratis platsbesök, ROT-avdrag på fakturan.",
@@ -96,7 +96,7 @@ PAGES_TJ = {
   "time_h2": "Hur lång tid tar en golvslipning?",
   "time": [
     "Ett golvjobb består av dagar med maskiner och dagar då lacken eller oljan torkar och rummet står tyst. Hur många dagar det blir beror på ytan, antalet rum, hur mycket som ska lagas och vilken ytbehandling du väljer. En pigmenterad produkt behöver längre torktid mellan lagren än en opigmenterad, och lut ska ligga ett dygn innan överskottet jämnas av.",
-    "Enligt Golvbranschens riktlinjer för lackering kan rummet normalt möbleras efter minst ett dygn, medan mattor och andra täta material bör vänta minst en vecka och starkt slitage minst två veckor. Tidplanen för just ditt golv står i kostnadsförslaget, dag för dag, så att du vet när rummen kan användas igen.",
+    "Enligt Golvbranschens riktlinjer för lackering kan rummet normalt möbleras efter minst ett dygn, medan mattor och andra täta material bör vänta minst en vecka och starkt slitage minst två veckor. Tidplanen för just ditt golv står i kostnadsförslaget.",
   ],
   "rot_h2": "Så fungerar ROT-avdraget vid golvslipning",
   "rot": [
@@ -105,7 +105,7 @@ PAGES_TJ = {
   ],
   "price_h2": "Vad beror priset på?",
   "price": [
-    "Vi publicerar inga fasta priser för golvslipning, eftersom två golv med samma yta kan kräva helt olika mycket arbete. Det som väger tyngst är golvytan och antalet rum, golvets skick och hur mycket som ska lagas före slipningen, vilken ytbehandling du väljer och hur många lager den kräver, samt om trappa, trösklar och lister ingår. Ett golv som ska fram under en gammal matta kräver mer förarbete än ett lackat parkettgolv.",
+    "Vi publicerar inga prislistor för golvslipning, eftersom två golv med samma yta kan kräva helt olika mycket arbete. Det som väger tyngst är golvytan och antalet rum, golvets skick och hur mycket som ska lagas före slipningen, vilken ytbehandling du väljer och hur många lager den kräver, samt om trappa, trösklar och lister ingår. Ett golv som ska fram under en gammal matta kräver mer förarbete än ett lackat parkettgolv.",
     "Efter platsbesöket får du ett skriftligt kostnadsförslag där arbete och material står var för sig och ROT-avdraget är uträknat. Besöket och kostnadsförslaget är gratis.",
   ],
   "faq": [
@@ -125,11 +125,11 @@ PAGES_TJ = {
   "sources": [_GBR_SLIP, _GBR_LACK, _GBR_OLJA, _GBR_UND, _GBR_LAMELL, _GBR_STAV, _SKV, _SKV2],
   "cta": ("Dags att slipa golvet?", "Boka ett gratis platsbesök, så kontrollerar vi golvet och lämnar ett skriftligt kostnadsförslag med ROT-avdraget uträknat."),
   "img": [
-    ("Nyslipad och lackad ekparkett i fiskbensmönster i ett ljust vardagsrum i Stockholm",
-     "freshly sanded and matte lacquered oak herringbone parquet floor in an empty bright living room of a Stockholm apartment from the early 1900s, tall windows, white walls and high white skirting boards, soft daylight reflecting in the floor"),
-    ("Slipmaskin med dammsugarslang på ett brädgolv av furu där ena halvan är nyslipad",
-     "a professional belt floor sanding machine with a dust extraction hose standing on a pine plank floor, one half of the floor freshly sanded pale bare wood and the other half old yellowed lacquer, doorway sealed with plastic sheeting, daylight from a window"),
-    ("Tre prover på ytbehandling bredvid en pensel på ett nyslipat ekgolv",
+    ("Nyslipat och lackat plankgolv av ek i ett ljust, tomt vardagsrum",
+     "empty living room in a Swedish apartment from the 1930s with a freshly sanded and matte lacquered light oak plank floor, long straight parallel boards running towards the window, plain white walls, a simple white painted panel door, tall window with white frame and deep window sill, white skirting boards, soft Nordic daylight"),
+    ("Slipmaskin med dammpåse på ett nyslipat brädgolv av furu",
+     "a heavy professional drum floor sanding machine seen from the side, a low wide metal body on two wheels with a long angled handle bar and a grey cloth dust collection bag hanging from the handle, standing on a pine plank floor in an empty room; behind the machine the floor is freshly sanded natural pale raw pine, in front of the machine the floor is still old glossy dark amber varnish with scratches; white walls, window light"),
+    ("Tre provbitar och en pensel på en ekyta",
      "close-up of a freshly sanded oak floor with three neat rectangular sample patches side by side, one clear matte lacquer, one natural oil and one white pigmented oil, a clean brush lying on a folded cloth beside them"),
   ],
   "related": [
@@ -142,7 +142,7 @@ PAGES_TJ = {
 
 # ================================================================== FASADMÅLNING
 "fasadmalning.html": {
-  "kind": "hub", "service": "fasadmalning", "svc_label": "Fasadmålning",
+  "kind": "hub", "service": "fasadmalning", "sort_ort": True, "svc_label": "Fasadmålning",
   "crumb": "Fasadmålning", "parent": ("Målare", "malare.html"),
   "title": "Fasadmålning Stockholm – måla om huset, ROT på fakturan",
   "description": "Fasadmålning i Stockholm: tvätt, skrapning, grundning och två strykningar på trä och puts, med ställning. Gratis platsbesök, ROT-avdrag på fakturan.",
@@ -176,7 +176,7 @@ PAGES_TJ = {
      "paras": [
        "En kulör ser annorlunda ut på en hel fasad än på en färgkarta. Vi målar därför provytor direkt på huset, gärna i både sol och skugga, och du väljer när du har sett dem i dagsljus. Foder och knutar provas tillsammans med fasadkulören.",
        "Enligt Boverket krävs inget bygglov för att byta kulör på ett en- eller tvåbostadshus, utom där utökad lovplikt gäller. Ligger huset i ett område som kommunen har pekat ut som särskilt värdefullt, eller är byggnaden själv särskilt värdefull, kan lov krävas även för ommålning. Boverket påpekar också att ett byte av färgtyp, till exempel från linoljefärg till plastfärg, kan påverka byggnadens yttre karaktärsdrag.",
-       "Reglerna tillämpas av kommunen, och detaljplanen kan ha egna bestämmelser. Är du osäker kontrollerar vi med kommunens bygglovsavdelning innan arbetet planeras.",
+       "Reglerna tillämpas av kommunen, och detaljplanen kan ha egna bestämmelser. Är du osäker ger kommunens bygglovsavdelning besked för din fastighet.",
      ],
      "aside": {"title": "Före kulörbytet", "items": [
        "Provytor på fasaden", "Kontroll av detaljplanen", "Fråga till kommunen vid värdefull miljö"]}},
@@ -216,7 +216,7 @@ PAGES_TJ = {
   "time_h2": "Hur lång tid tar en fasadmålning?",
   "time": [
     "Tiden beror på fasadens yta och höjd, hur mycket gammal färg som ska bort och på vädret. Själva strykningarna är den kortaste delen. Mellan tvätt och grundning ska fasaden torka, och mellan strykningarna ska färgen torka, och de pauserna styrs av temperatur och luftfuktighet snarare än av oss.",
-    "I kostnadsförslaget står en tidplan med start, ställningstid och ordningen mellan husets sidor. Regnar det flyttas arbetsdagarna, inte kvaliteten – vi målar inte på en blöt fasad för att hålla ett datum.",
+    "Tidplanen står i kostnadsförslaget. Regnar det flyttar vi arbetsdagarna i stället för att tumma på kvaliteten – vi målar inte på en blöt fasad för att hålla ett datum.",
   ],
   "rot_h2": "Så fungerar ROT-avdraget vid fasadmålning",
   "rot": [
@@ -225,7 +225,7 @@ PAGES_TJ = {
   ],
   "price_h2": "Vad beror priset på?",
   "price": [
-    "Vi publicerar inga fasta priser för fasadmålning, eftersom förarbetet skiljer mycket mellan två hus av samma storlek. Det som väger tyngst är fasadens yta och höjd, hur mycket gammal färg som måste skrapas bort, om brädor behöver bytas, vilken färgtyp underlaget kräver och hur många foder, knutar, vindskivor och fönster som ska målas. Behovet av ställning eller lift påverkar också.",
+    "Vi publicerar inga prislistor för fasadmålning, eftersom förarbetet skiljer mycket mellan två hus av samma storlek. Det som väger tyngst är fasadens yta och höjd, hur mycket gammal färg som måste skrapas bort, om brädor behöver bytas, vilken färgtyp underlaget kräver och hur många foder, knutar, vindskivor och fönster som ska målas. Behovet av ställning eller lift påverkar också.",
     "Efter platsbesöket får du ett skriftligt kostnadsförslag där arbete, material och ställning står var för sig och ROT-avdraget är uträknat. Besöket och kostnadsförslaget är gratis.",
   ],
   "faq": [
@@ -247,10 +247,10 @@ PAGES_TJ = {
   "sources": [_BOV_FASAD, _BOV_YTA, _LST_TRA, _RAA, _SKV, _SKV2],
   "cta": ("Dags att måla om huset?", "Boka ett gratis platsbesök, så tittar vi på fasaden och lämnar ett skriftligt kostnadsförslag med ROT-avdraget uträknat."),
   "img": [
-    ("Nymålad gul trävilla med vita knutar och foder i en trädgård i Stockholm",
-     "freshly painted pale yellow Swedish wooden villa from the 1920s with white corner boards and white window trim, red clay tile roof, green garden with apple trees, quiet residential street in Stockholm, clear summer daylight"),
-    ("Byggnadsställning med räcken vid en träfasad där gammal färg skrapas bort",
-     "aluminium scaffolding with guard rails and toe boards standing against the wooden panel facade of a Swedish villa, the old paint scraped and partly bare wood primed, windows covered with protective plastic, paint buckets on the scaffold deck, summer day"),
+    ("Nymålad gul trävilla med vita knutar och foder i en trädgård",
+     "freshly painted pale yellow Swedish two-storey wooden villa from the 1920s with vertical board panel, white corner boards and white window trim, red clay tile roof, an ordinary sized white front door with a small porch and two steps, green lawn, birch trees and lilac bushes, gravel path, clear summer daylight, eye-level view from the garden"),
+    ("Träpanel under ommålning: skrapat trä, vit grundfärg och färdigmålad röd yta",
+     "close-up of the vertical wooden panel wall of a Swedish house being repainted, the left third scraped down to bare weathered grey-brown wood, the middle third primed matte white, the right third freshly painted in deep falu red, a paint brush lying across an open paint can on a simple wooden trestle in front of the wall, green grass below, soft daylight"),
     ("Tre provytor i grått, gult och rött målade på en träpanel",
      "close-up of a vertical wooden panel facade with three painted colour sample patches side by side in light grey, warm yellow and falu red, a paint brush resting on an open paint can on a trestle in front, soft daylight"),
   ],
@@ -264,7 +264,7 @@ PAGES_TJ = {
 
 # ================================================================== TAPETSERING
 "tapetsering.html": {
-  "kind": "hub", "service": "tapetsering", "svc_label": "Tapetsering",
+  "kind": "hub", "service": "tapetsering", "sort_ort": True, "svc_label": "Tapetsering",
   "crumb": "Tapetsering", "parent": ("Målare", "malare.html"),
   "title": "Tapetsering Stockholm – tapetserare med gratis offert",
   "description": "Tapetsering i Stockholm: vi tar ned gammal tapet, lagar och förlimmar väggen och sätter upp ny tapet med mönsterpassning. Gratis besök, ROT på fakturan.",
@@ -276,22 +276,22 @@ PAGES_TJ = {
      "h2": "Det här ingår i en tapetsering",
      "paras": [
        "En tapet blir inte bättre än väggen under. Därför börjar arbetet med att golv, lister och möbler skyddas och att den gamla tapeten tas ned eller, när den sitter fast och är slät, behålls som underlag. Sedan lagas hål och sprickor, skarvar spacklas och slipas och väggen grundas eller förlimmas så att klistret får fäste.",
-       "Därefter mäts våderna ut från en lodlinje, mönstret passas i höjd och våderna sätts kant i kant. Vi skär rent mot tak, lister, foder och eluttag och går över skarvarna innan klistret har torkat. Överbliven tapet från samma tillverkningsomgång lämnar vi kvar hos dig, så att en skada kan lagas senare utan nyansskillnad.",
+       "Därefter mäts våderna ut från en lodlinje, mönstret passas i höjd och våderna sätts kant i kant. Vi skär rent mot tak, lister, foder och eluttag och går över skarvarna innan klistret har torkat.",
        "Ska väggar eller tak målas i samma rum gör vi det före tapeten – mer om det finns under " + _L.format("malare.html", "målare i Stockholm") + ".",
      ],
      "aside": {"title": "Ingår normalt", "items": [
        "Gratis platsbesök och skriftligt kostnadsförslag", "Skydd av golv, lister och möbler",
        "Nedtagning av gammal tapet", "Spackling, slipning och förlimning",
-       "Uppsättning med mönsterpassning", "Städning och överbliven tapet kvar hos dig"]}},
+       "Uppsättning med mönsterpassning", "Städning efter arbetet"]}},
     {"id": "tapettyper",
      "h2": "Papper, non-woven eller vinyl",
      "paras": [
        "Papperstapet är den klassiska tapeten. Den klistras på baksidan, får svälla en stund och sätts sedan upp, och den kräver en jämn vägg eftersom ojämnheter syns igenom. Non-woventapet har en baksida av fiber som inte sväller. Där läggs klistret direkt på väggen, vilket gör uppsättningen snabbare och skarvarna lättare att få täta. Vinyltapet har ett ytskikt av plast som tål avtorkning.",
-       "Valet handlar inte bara om mönster. Svenska Byggnadsvårdsföreningen beskriver non-woventapeter som plastbehandlade och täta. I ett hus som är uppvärmt året runt är det sällan ett problem, men i ett äldre hus eller ett hus som står kallt delar av året väljer vi hellre en papperstapet med stärkelseklister, som släpper igenom fukt.",
-       "Stora mönster ger mer spill, eftersom varje våd måste passas mot den förra. Det räknar vi med när antalet rullar bestäms, och vi beställer hellre en rulle för mycket än en för lite – en senare tillverkningsomgång kan skilja i nyans.",
+       "Valet handlar inte bara om mönster. Svenska Byggnadsvårdsföreningen varnar för täta, vattenavvisande skikt i gamla hus och nämner att mögel har förekommit bakom moderna tapeter som sätts upp med klister på väggen. I ett hus som är uppvärmt året runt är det sällan ett problem, men i ett äldre hus eller ett hus som står kallt delar av året väljer vi hellre en papperstapet med stärkelseklister, som släpper igenom fukt.",
+       "Stora mönster ger mer spill, eftersom varje våd måste passas mot den förra. Det räknar vi med när antalet rullar bestäms. Rullar från en senare tillverkningsomgång kan skilja i nyans, så antalet bör stämma från början.",
      ],
      "aside": {"title": "Tre tapettyper", "items": [
-       "Papper – klassisk, kräver slät vägg", "Non-woven – klister på väggen, tät", "Vinyl – avtorkningsbar yta"]}},
+       "Papper – klassisk, kräver slät vägg", "Non-woven – klister på väggen, formstabil", "Vinyl – avtorkningsbar yta"]}},
     {"id": "underlag",
      "h2": "Väggen under tapeten",
      "paras": [
@@ -314,7 +314,7 @@ PAGES_TJ = {
      "h2": "Mönsterpassning, hörn och detaljer",
      "paras": [
        "Det som skiljer en bra tapetsering från en dålig syns i detaljerna. Första våden sätts efter en lodlinje och inte efter ett hörn eller en dörrkarm, eftersom väggar i äldre hus sällan står i lod. Vi väljer var i rummet mönstret ska börja, oftast mitt på den vägg som syns först, så att mönstret hamnar symmetriskt där ögat landar och den oundvikliga skarven där mönstret inte går ihop hamnar i ett undanskymt hörn.",
-       "I hörn delas våden så att tapeten går runt hörnet med en smal remsa, i stället för att en hel våd viks om och spricker när huset rör sig. Runt eluttag och strömbrytare skärs tapeten in under locket, och mot tak, lister och foder skärs den med vass kniv mot en spackel. Ojämna tak och sneda lister döljs bäst med ett litet mönster eller en enfärgad tapet, och det säger vi vid platsbesöket.",
+       "I hörn delas våden så att tapeten går runt hörnet med en smal remsa, i stället för att en hel våd viks om och spricker när huset rör sig. Runt eluttag och strömbrytare skärs tapeten in under locket, och mot tak, lister och foder skärs den med vass kniv mot en bredspackel. Ojämna tak och sneda lister döljs bäst med ett litet mönster eller en enfärgad tapet, och det säger vi vid platsbesöket.",
        "Tapet på en enda vägg, en fondvägg, följer samma arbetsgång. Där blir mötet mot de målade väggarna viktigast, och vi målar därför de andra väggarna först.",
      ],
      "aside": {"title": "Det här avgör resultatet", "items": [
@@ -334,21 +334,21 @@ PAGES_TJ = {
     ("Skydd och nedtagning", "Golv och lister täcks, och gamla tapeter blöts upp och tas ned där de inte kan sitta kvar."),
     ("Underarbete", "Hål och sprickor lagas, väggen spacklas, slipas och förlimmas och får torka."),
     ("Uppsättning", "Våderna sätts från en lodlinje med mönstret passat och skärs rent mot tak och lister."),
-    ("Genomgång", "Vi går igenom rummen med dig och lämnar kvar överbliven tapet för framtida lagningar."),
+    ("Genomgång", "Vi går igenom rummen och skarvarna med dig när arbetet är klart."),
   ],
   "time_h2": "Hur lång tid tar en tapetsering?",
   "time": [
     "Tiden beror på antalet rum, hur många lager som ska ned och hur mycket väggen behöver lagas. Själva uppsättningen går fortast. Det som tar tid är underarbetet, eftersom spackel och förlimning ska torka innan tapeten kommer upp – en tapet som sätts på ett fuktigt underlag riskerar att släppa.",
-    "I kostnadsförslaget står vilka dagar vi arbetar i vilket rum, så att du kan planera var möblerna ska stå under tiden. Rummet går att använda när klistret har torkat.",
+    "Tidplanen står i kostnadsförslaget. Rummet går att använda när klistret har torkat.",
   ],
   "rot_h2": "Så fungerar ROT-avdraget vid tapetsering",
   "rot": [
     "Skatteverket räknar tapetsering som rotarbete i bostadsrätt, ägarlägenhet och småhus. I bostadsrätten ska arbetet göras inne i bostaden, innanför dess tak, väggar och golv.",
-    _ROT_SUM + " Material som tapet och klister ger inget avdrag, och inte heller resor. Eftersom underarbete och uppsättning är arbetad tid på plats hos dig är det mesta av kostnaden avdragsgill. Geal drar avdraget direkt på fakturan och ansöker om utbetalningen hos Skatteverket, så du betalar bara din del.",
+    _ROT_SUM + " Material som tapet och klister ger inget avdrag, och inte heller resor. Eftersom underarbete och uppsättning är arbetad tid på plats hos dig ger det mesta av kostnaden underlag för rotavdraget. Geal drar avdraget direkt på fakturan och ansöker om utbetalningen hos Skatteverket, så du betalar bara din del.",
   ],
   "price_h2": "Vad beror priset på?",
   "price": [
-    "Vi publicerar inga fasta priser för tapetsering, eftersom underarbetet avgör mer än väggytan. Det som väger tyngst är hur många lager som ska ned, hur mycket väggen behöver lagas och spacklas, takhöjden, antalet fönster, dörrar och hörn att skära runt och hur krävande mönstret är att passa. Tapeten väljer och köper du själv eller genom oss, och den redovisas som material.",
+    "Vi publicerar inga prislistor för tapetsering, eftersom underarbetet avgör mer än väggytan. Det som väger tyngst är hur många lager som ska ned, hur mycket väggen behöver lagas och spacklas, takhöjden, antalet fönster, dörrar och hörn att skära runt och hur krävande mönstret är att passa. Tapeten väljer och köper du själv eller genom oss, och den redovisas som material.",
     "Efter platsbesöket får du ett skriftligt kostnadsförslag där arbete och material står var för sig och ROT-avdraget är uträknat. Besöket och kostnadsförslaget är gratis.",
   ],
   "faq": [
@@ -359,9 +359,9 @@ PAGES_TJ = {
     ("Får jag rotavdrag för tapetsering i en bostadsrätt i Stockholm?",
      "Ja. Skatteverket räknar tapetsering som rotarbete i bostadsrätt när arbetet görs inne i bostaden. Tapet och klister är material och ger inget avdrag."),
     ("Vilken tapet passar i ett äldre hus?",
-     "I ett hus som står kallt delar av året, eller där väggarna behöver släppa igenom fukt, väljer vi hellre papperstapet med stärkelseklister än en tät non-woventapet."),
+     "I ett hus som står kallt delar av året, eller där väggarna behöver släppa igenom fukt, väljer vi hellre papperstapet med stärkelseklister än en tapet med tätt ytskikt."),
     ("Hur många rullar tapet behövs?",
-     "Det beror på väggytan, takhöjden och mönstrets rapport. Vi räknar ut antalet vid platsbesöket och lägger till en rulle i reserv från samma tillverkningsomgång."),
+     "Det beror på väggytan, takhöjden och mönstrets rapport. Vi räknar ut antalet vid platsbesöket. Köp alla rullar ur samma tillverkningsomgång, eftersom nyansen kan skilja mellan omgångar."),
     ("Varför släpper en ny tapet från väggen?",
      "Enligt Svenska Byggnadsvårdsföreningen beror det oftast på att underlaget inte var tillräckligt torrt eller inte förlimmat. Därför låter vi spackel och förlimning torka innan tapeten sätts upp."),
     ("Kan ni tapetsera en fondvägg i en lägenhet i Stockholm?",
@@ -372,10 +372,10 @@ PAGES_TJ = {
   "img": [
     ("Nytapetserat sovrum med blommig tapet i en lägenhet i Stockholm",
      "empty bedroom in an older Stockholm apartment with freshly hung floral botanical wallpaper in muted green on all walls, perfectly matched seams, white ceiling, white painted skirting boards and door frame, wooden floor covered with protective paper along the wall, soft daylight from a window"),
-    ("Tapetbord med en utrullad tapetvåd och verktyg i ett rum med skyddstäckt golv",
-     "a folding wallpaper pasting table in a room under renovation with a length of patterned wallpaper rolled out on it, a paste roller in a tray, a wallpaper smoothing brush, a plumb line and a sharp knife, bare filled and sanded wall behind, protective paper on the floor"),
-    ("Slät, spacklad vägg där den första tapetvåden har satts upp bredvid en trappstege",
-     "close-up of an interior wall where the left part is bare, filled and sanded plaster ready for wallpaper and the right part has the first two lengths of pale blue patterned wallpaper hung with a perfectly straight seam, a step ladder standing at the side"),
+    ("Tapetbord med en tapetrulle, klisterhink och pensel i ett rum med skyddstäckt golv",
+     "a plain wooden folding wallpaper pasting table in a room under renovation, a length of floral patterned wallpaper rolled out along the table, a white bucket of wallpaper paste with a wide pasting brush resting on it, a wallpaper smoothing brush and a pair of long scissors on the table, smooth light grey prepared wall behind, protective paper on the floor, daylight"),
+    ("Vägg där tapet med blommönster har satts upp bredvid en ännu otapetserad yta",
+     "straight frontal view of an interior wall, the left two thirds of the wall completely covered with blue and white floral patterned wallpaper hung in four vertical strips side by side, thin straight vertical seams faintly visible between the strips, the flower pattern continuous across the seams, the right third of the wall is bare unpainted light grey plaster, an aluminium step ladder stands in front of the bare part, white skirting board, floor covered with protective paper"),
   ],
   "related": [
     ("malare.html", "Målare i Stockholm", "Tak, väggar och snickerier."),
@@ -387,7 +387,7 @@ PAGES_TJ = {
 
 # ================================================================== FÖNSTERRENOVERING
 "fonsterrenovering.html": {
-  "kind": "hub", "service": "fonsterrenovering", "svc_label": "Fönsterrenovering",
+  "kind": "hub", "service": "fonsterrenovering", "sort_ort": True, "svc_label": "Fönsterrenovering",
   "crumb": "Fönsterrenovering", "parent": ("Fönsterbyte", "fonsterbyte.html"),
   "title": "Fönsterrenovering Stockholm – renovera träfönster, ROT",
   "description": "Fönsterrenovering i Stockholm: vi skrapar, lagar, kittar och målar träfönster med linoljefärg och tätar innerbågen. Gratis besök, ROT-avdrag på fakturan.",
@@ -430,7 +430,7 @@ PAGES_TJ = {
      "paras": [
        "Drag från ett gammalt fönster beror oftare på otäta bågar än på glaset. Det är innerbågen som ska tätas: läcker den varm rumsluft ut mellan bågarna kondenserar fukten på ytterbågens insida, rinner ned och samlas i kittfalsen, och där börjar rötan. En tätningslist på innerbågen och en översyn av drevningen runt karmen gör stor skillnad för komforten.",
        "Boverkets energiguide beskriver flera sätt att förbättra ett befintligt fönster utan att byta det, bland annat att täta det och att byta den inre rutan till energiglas. På kopplade fönster kan glaset i innerbågen bytas medan den gamla rutan sitter kvar ytterst, så att fasadens uttryck inte ändras.",
-       "I hus från mitten av 1900-talet kan fönsterkitt och fogmassor innehålla asbest eller PCB. Boverket skriver att provtagning är det enda säkra sättet att veta, och misstänker vi det tas ett prov innan kittet skrapas.",
+       "I hus från mitten av 1900-talet kan fönsterkitt och fogmassor innehålla asbest eller PCB. Boverket skriver att provtagning är det enda säkra sättet att veta. Vid misstanke bör kittet därför provtas innan det skrapas.",
      ],
      "aside": None},
     {"id": "fonstertyper",
@@ -462,16 +462,16 @@ PAGES_TJ = {
   "time_h2": "Hur lång tid tar en fönsterrenovering?",
   "time": [
     "Tiden beror på antalet bågar, hur många som måste tas isär och lagas och hur högt fönstren sitter. Det som styr kalendern är färgen: tre strykningar linoljefärg med torktid mellan varje lager gör att en båge är under arbete betydligt längre än den tid vi faktiskt står med penseln.",
-    "Utvändigt arbete på plats görs under den varma delen av året och läggs efter väder och väderstreck. På vintern kan bågarna i stället målas på verkstad. Fönsterhålen är täckta medan bågarna är borta, och i kostnadsförslaget står i vilken ordning husets sidor tas.",
+    "Utvändigt arbete på plats görs under den varma delen av året och läggs efter väder och väderstreck. På vintern kan bågarna i stället målas på verkstad. Fönsterhålen är täckta medan bågarna är borta, och tidplanen står i kostnadsförslaget.",
   ],
   "rot_h2": "Så fungerar ROT-avdraget vid fönsterrenovering",
   "rot": [
-    "På Skatteverkets lista över rotarbeten för småhus finns att reparera eller byta ut fönster, att måla fönster och att reparera fönsterbleck. Både snickeriet, kittningen och målningen kan alltså ge avdrag. I en bostadsrätt ger bara arbete på fönstrets insida avdrag, till exempel att byta glaset i den inre bågen eller måla insidan.",
+    "På Skatteverkets lista över rotarbeten för småhus finns att reparera eller byta ut fönster, att måla fönster och att reparera fönsterbleck. Snickeriet, kittningen och målningen kan alltså alla ge avdrag. I en bostadsrätt ger bara arbete på fönstrets insida avdrag, till exempel att byta glaset i den inre bågen eller måla insidan.",
     _ROT_SUM + " Material och resor ger inget avdrag, och bara arbetad tid på plats hos dig räknas – det som görs på verkstad redovisar vi för sig på fakturan, utan avdrag. Geal drar avdraget direkt på fakturan och ansöker om utbetalningen hos Skatteverket.",
   ],
   "price_h2": "Vad beror priset på?",
   "price": [
-    "Vi publicerar inga fasta priser för fönsterrenovering, eftersom två fönster av samma storlek kan vara i helt olika skick. Det som väger tyngst är antalet bågar och hur högt de sitter, hur många som måste tas isär, hur mycket virke som behöver ersättas, om gammal plastfärg ska bort, om bågarna målas på plats eller på verkstad och om innerbågarna ska få energiglas.",
+    "Vi publicerar inga prislistor för fönsterrenovering, eftersom två fönster av samma storlek kan vara i helt olika skick. Det som väger tyngst är antalet bågar och hur högt de sitter, hur många som måste tas isär, hur mycket virke som behöver ersättas, om gammal plastfärg ska bort, om bågarna målas på plats eller på verkstad och om innerbågarna ska få energiglas.",
     "Efter platsbesöket får du ett skriftligt kostnadsförslag där arbete och material står var för sig och ROT-avdraget är uträknat. Besöket och kostnadsförslaget är gratis.",
   ],
   "faq": [

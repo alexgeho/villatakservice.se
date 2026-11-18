@@ -11,7 +11,9 @@ Mall (700–900 ord redaktionell text: lead + sektioner + steg + tid + ROT + pri
   3. Steg (oförändrade) + «Hur lång tid tar golvslipning i <Ort>?».
   4. ROT (oförändrad).
   5. «Vad påverkar priset på golvslipning i <Ort>?» med länk i texten till hubben golvslipning.html.
-  6. FAQ: pris + tid (mall) och tre av sidans egna frågor, alla med orten i frågan.
+  6. FAQ: pris (mall, med orten) och upp till tre av sidans egna frågor. Orten står bara i frågor om pris, ROT och
+     boendeform. Tiden står i sektion 3 och upprepas inte i FAQ.
+  7. Källor: bara de som den synliga texten använder (EVIDENCE), LACK 22 på alla sidor (mallstycket om tid).
 Inga nya priser eller siffror; tidsuppgifterna är Golvbranschens (LACK 22), som redan citeras på sajten.
 Lokala fakta är bara de som redan fanns på sidan med källa."""
 import html as _H, re as _re
@@ -39,7 +41,7 @@ TITLES = {
  "sigtuna": "Golvslipning Sigtuna – gamla plankgolv, gratis platsbesök",
  "skarholmen": "Golvslipning Skärholmen – parkett i lägenhet, gratis offert",
  "sodermalm": "Golvslipning Södermalm – slipa före inflyttning, ROT",
- "sollentuna": "Golvslipning Sollentuna – massivt trä och lamell, ROT",
+ "sollentuna": "Golvslipning Sollentuna – slipa trägolv i villa och radhus",
  "spanga": "Golvslipning Spånga – breda brädgolv i villa, gratis offert",
  "sundbyberg": "Golvslipning Sundbyberg – målade och fernissade golv, ROT",
  "tyreso": "Golvslipning Tyresö – gamla brädgolv, gratis platsbesök",
@@ -49,81 +51,134 @@ TITLES = {
  "vasastan": "Golvslipning Vasastan – stavparkett och fiskben, ROT",
 }
 
-# Tre av sidans egna frågor: (index i sidans faq, ny fråga med orten | None = frågan nämner redan orten).
+# Tre av sidans egna frågor: (index i sidans faq, ny fråga | None = sidans egen formulering).
+# Regel (granskning 18.11): orten står bara i frågor om pris, ROT och boendeform – hantverksfrågor står utan ort.
+_N = None
 FAQ = {
- "alvsjo": [(0, None), (1, "Varför gör ni en provyta innan golvet i Älvsjö pigmenteras?"),
-            (2, "Hur länge torkar pigmenterad hårdvaxolja när golvet i Älvsjö har slipats?")],
- "botkyrka": [(0, "Varför är det så mycket spik i det gamla trägolvet i min villa i Tullinge i Botkyrka?"),
-              (1, "Går det att slipa lamellgolvet i min lägenhet i Fittja i Botkyrka?"),
-              (2, "Vilken luftfuktighet behövs för att lacka ett nyslipat golv i Botkyrka?")],
- "bromma": [(0, None), (1, "Varför ska ett lutat furugolv i Bromma inte lackas?"),
-            (2, "Hur många gånger behöver ett lutat golv i Bromma såpas?")],
- "danderyd": [(0, None), (1, "Går det att byta en enstaka skadad stav i parketten i en villa i Danderyd?"),
-              (2, "Syns en ny stav bland de gamla i ett parkettgolv i Danderyd?")],
- "ekero": [(0, None), (1, "Hur varmt får ett trägolv med golvvärme på Ekerö bli?"),
-           (2, "Varför får golvet på Ekerö springor på vintern när golvvärmen är på?")],
- "enskede": [(0, None), (1, "Varför knarrar det gamla golvet i Enskede bara i gångstråket?"),
-             (2, "Kan ett sviktande golv i Enskede slipas jämnt?")],
- "farsta": [(0, None), (1, "Räknas ett fel i det slipade golvet i Farsta om det bara syns i motljus?"),
-            (2, "Vad är ondulering på ett slipat golv i Farsta?")],
- "hagersten": [(0, "Hur ser man om parketten i en lägenhet från 1940-talet i Hägersten tål en slipning till?"),
-               (1, "Vilket träslag är den ljusa holländska parketten i Hägerstens hus från 1940-talet?"),
-               (2, "Kan grå ekparkett i Hägersten få tillbaka färgen utan att slipas?")],
- "haninge": [(0, None), (1, "Hur stor höjdskillnad får det vara mellan två brädor i ett golv i Haninge?"),
-             (2, "Kan kupade brädor i en villa i Haninge slipas plana?")],
- "hasselby": [(0, None), (1, "Varför är golvet under linoleummattan i Hässelby fullt av spik?"), (2, None)],
- "huddinge": [(0, None), (1, "Går det att lacka ett oljat golv i Huddinge?"),
-              (2, "Kan ett lutat och såpat golv i Huddinge lackas?")],
- "jarfalla": [(0, "Kan trappan slipas samtidigt som golven i radhuset i Järfälla?"),
-              (1, "Varför har furutrappan i huset i Järfälla blivit gul?"),
-              (2, "Vad ska ledstången i ett radhus i Järfälla behandlas med?")],
- "kista": [(0, None), (1, "Behöver styrelsen godkänna att parketten slipas i en bostadsrätt i Kista?"),
-           (2, "Vem betalar ett golv i Kista som skadats av vatten från lägenheten ovanför?")],
- "kungsholmen": [(0, None), (1, "Varför slipar ni med dammavskiljare och andningsskydd i lägenheten på Kungsholmen?"),
-                 (2, "Varför får dammsäcken inte stå kvar i lägenheten på Kungsholmen efter slipningen?")],
- "lidingo": [(0, "Vilken yta håller bäst på ett trägolv i köket i en villa på Lidingö?"),
-             (1, "Kan man få bort feta fläckar i ett ekgolv på Lidingö utan att slipa?"),
-             (2, "Räcker det att olja gångstråken i hallen i huset på Lidingö?")],
- "nacka": [(0, None), (1, "Varför ska oljiga trasor läggas i vatten när golvet i Nacka oljas?"),
-           (2, "När ska ett nyoljat golv i Nacka underhållas första gången?")],
- "norrtalje": [(0, "Varför reser sig fibrerna när ett nyslipat skurgolv i Norrtälje skuras?"),
-               (1, "Kan ett lackat furugolv i sommarstugan i Norrtälje bli ett skurgolv?"),
-               (4, "Ger golvslipning i fritidshuset i Norrtälje rotavdrag?")],
- "osteraker": [(0, None), (1, "Ska ett tjärfärgat golv i Österåker slipas med golvslip?"), (3, None)],
- "ostermalm": [(0, None), (2, "Kan ett vaxat golv på Östermalm lackas över?"),
-               (4, "Blir ett fabrikslackat golv på Östermalm bättre av att lackas om på plats?")],
- "sigtuna": [(0, None), (1, "Ska breda springor i ett gammalt plankgolv i Sigtuna fyllas innan det slipas?"), (2, None)],
- "skarholmen": [(0, "Är parketten i min lägenhet från 1960-talet i Sätra i Skärholmen massiv?"),
-                (2, "Måste en gammal golvmatta i Bredäng i Skärholmen testas för asbest innan den rivs?"),
-                (3, "Får jag rotavdrag för golvslipning i min bostadsrätt i Vårberg i Skärholmen?")],
- "sodermalm": [(0, "Kan jag få rotavdrag för golvslipning innan jag har flyttat in i bostadsrätten på Södermalm?"),
-               (1, "Kan slipningen i lägenheten på Södermalm göras före tillträdet?"),
-               (2, "Vad betyder det att parketten i ett hus på Södermalm ligger på sand?")],
- "sollentuna": [(0, None), (1, "Hur tunt slitskikt går att slipa på ett lamellgolv i Sollentuna?"),
-                (4, "Räcker det att fräscha upp lacken på parketten i Sollentuna i stället för att slipa?")],
- "solna": [(0, "Kan det finnas asbest i limmet under en gammal golvmatta i Solna?"),
-           (1, "Går det att slipa undergolvet som låg under linoleummattan i lägenheten i Solna?"),
-           (4, "Måste en gammal linoleummatta i Solna rivas?")],
- "spanga": [(0, None), (1, None), (2, "Är hyvling bättre än slipning för ett gammalt brädgolv i Spånga?")],
- "sundbyberg": [(0, "Går det att få bort vit golvfärg ur springorna i ett gammalt golv i Sundbyberg?"),
-                (1, "Hur tar man bort gammal fernissa från ett grangolv i Sundbyberg?"),
-                (4, "Är det bättre att hyvla än att slipa ett gammalt plankgolv i Sundbyberg?")],
- "taby": [(0, "Hur lagar man golvet där en innervägg har rivits i ett hus i Täby?"),
-          (1, "Behövs en anmälan för att riva en vägg i radhuset i Täby?"),
+ "alvsjo": [(0, _N), (1, _N), (2, _N)], "botkyrka": [(0, _N), (1, _N), (2, _N)], "bromma": [(0, _N), (1, _N), (2, _N)],
+ "danderyd": [(0, _N), (1, _N), (2, _N)], "ekero": [(0, _N), (1, _N), (2, _N)], "enskede": [(0, _N), (1, _N), (2, _N)],
+ "farsta": [(0, _N), (1, _N), (2, _N)],
+ "hagersten": [(0, "Hur ser man om parketten i en lägenhet från 1940-talet i Hägersten tål en slipning till?"), (1, _N), (2, _N)],
+ "haninge": [(0, _N), (1, _N), (2, _N)], "hasselby": [(0, _N), (1, _N), (2, _N)], "huddinge": [(0, _N), (1, _N), (2, _N)],
+ "jarfalla": [(0, "Kan trappan slipas samtidigt som golven i radhuset i Järfälla?"), (1, _N), (2, _N)],
+ "kista": [(0, _N), (1, "Behöver styrelsen godkänna att parketten slipas i en bostadsrätt i Kista?"), (2, _N)],
+ "kungsholmen": [(0, _N), (1, _N), (2, _N)], "lidingo": [(0, _N), (1, _N), (2, _N)],
+ # nacka: frågan om första underhållet (UNDERHÅLL 22) hörde till en struken sektion
+ "nacka": [(0, _N), (1, _N), (4, _N)],
+ "norrtalje": [(0, _N), (1, _N), (4, "Ger golvslipning i fritidshuset i Norrtälje rotavdrag?")],
+ "osteraker": [(0, _N), (1, _N), (3, _N)], "ostermalm": [(0, _N), (2, _N), (4, _N)], "sigtuna": [(0, _N), (1, _N), (2, _N)],
+ "skarholmen": [(0, _N), (2, _N), (3, _N)],
+ # sodermalm: frågan om parkett på sand (index 2) tas bara med om sektionen "Parkett som ligger på sand" är kvar
+ "sodermalm": [(0, "Kan jag få rotavdrag för golvslipning innan jag har flyttat in i bostadsrätten på Södermalm?"), (1, _N), (2, _N)],
+ "sollentuna": [(0, _N), (1, _N), (4, _N)], "solna": [(0, _N), (1, _N), (4, _N)], "spanga": [(0, _N), (1, _N), (2, _N)],
+ "sundbyberg": [(0, _N), (1, _N), (4, _N)],
+ "taby": [(0, _N), (1, "Behövs en anmälan för att riva en vägg i radhuset i Täby?"),
           (4, "Ger rivning av en vägg och slipning av golvet rotavdrag i Täby?")],
- "tyreso": [(0, "Förstör en golvslipmaskin patinan på ett gammalt brädgolv i Tyresö?"),
-            (1, "Ska ett silvergrått grangolv i en stuga i Tyresö slipas?"),
-            (3, "Varför måste spiken bort innan golvet i Tyresö slipas?")],
- "upplands-vasby": [(0, "Ska glipan mellan golv och sockel tätas efter slipningen i radhuset i Upplands Väsby?"),
-                    (2, "Vilken fuktkvot ska trägolvet i Upplands Väsby ha innan det ytbehandlas?"),
-                    (4, "Gäller rotavdraget för golvslipning i ett radhus i Upplands Väsby som är bostadsrätt?")],
- "vallentuna": [(0, "Är små runda maskhål i golvplanken i ett gammalt hus i Vallentuna farliga?"),
-                (1, "Hur ser man om ett insektsangrepp i golvet i Vallentuna pågår?"),
-                (4, "Ger reparation av ett insektsskadat golv i Vallentuna rotavdrag?")],
- "vallingby": [(0, None), (1, "Kan ett golv som sviktar i en lägenhet i Vällingby slipas utan att bli vågigt?"), (3, None)],
- "varmdo": [(0, None), (1, None), (2, None)],
- "vasastan": [(0, None), (1, None), (3, None)],
+ "tyreso": [(0, _N), (1, _N), (3, _N)],
+ "upplands-vasby": [(0, _N), (2, _N), (4, "Gäller rotavdraget för golvslipning i ett radhus i Upplands Väsby som är bostadsrätt?")],
+ "vallentuna": [(0, _N), (1, _N), (4, "Ger reparation av ett insektsskadat golv i Vallentuna rotavdrag?")],
+ "vallingby": [(0, _N), (1, _N), (3, _N)], "varmdo": [(0, _N), (1, _N), (2, _N)], "vasastan": [(0, _N), (1, _N), (3, _N)],
 }
+# Egen fråga som kräver att en viss sektion finns kvar: (ort, index) -> sektionens id.
+FAQ_NEEDS = {("sodermalm", 2): "sand-sodermalm"}
+# Sektionsordning när ingressens fortsättning (hamnar överst i första blocket) hör till sektion 2.
+ORDER = {"lidingo": [1, 0, 2, 3]}
+# Hänvisningar till sektioner som inte längre finns på en annan ortsida -> hubben.
+REWRITE = {
+ "bromma": (r' Hur det kontrolleras beskrivs på sidan om <a class="text-link" href="golvslipning-sollentuna.html">[^<]*</a>\.',
+            " Hur det går till beskriver vi på sidan om " + HUB + "."),
+ "huddinge": (r' Hur det går till beskrivs på sidan om <a class="text-link" href="golvslipning-nacka.html">[^<]*</a>\.',
+              " Hur det går till beskriver vi på sidan om " + HUB + "."),
+}
+
+from tj_v15_golvslipning import _GBR_LACK  # samma länk som på övriga sidor
+
+# Källa -> uttryck som måste finnas i sidans synliga text för att källan ska stå kvar under «Källor».
+# (Regel: varje listad källa används i texten, och varje källa som texten åberopar är listad.)
+EVIDENCE = [
+ (r"Skatteverket", r"."),
+ (r"LACK 22", r"."),  # mallstycket om tid åberopar riktlinjerna för lackering
+ (r"SLIP 22", r"SLIP 22|[Rr]iktlinjer(na)? för slipning|slitskikt under en millimeter|6–10 procent|30–60 procent|30 och 60 procent|gnistor|ondulering"),
+ (r"OLJA 22", r"OLJA 22|[Rr]iktlinjer(na)? för oljebehandling"),
+ (r"LUT 22", r"LUT 22|lutbehandl"),
+ (r"UNDERHÅLL 22", r"UNDERHÅLL 22|[Rr]iktlinjer(na)? för underhåll"),
+ (r"HÅRDVAXOLJA 22", r"HÅRDVAXOLJA 22"),
+ (r"Bedömningsgrunder", r"edömningsgrunder"),
+ (r"Trägolv på golvvärme", r"Trägolv på golvvärme|även under mattor|luftfuktare"),
+ (r"Golvbranschen – Massiva trägolv", r"[Mm]assiv[at]* trägolv|renoveras i hög utsträckning"),
+ (r"Knarr i trägolv", r"[Kk]narr"),
+ (r"Golvbranschen – Lamellparkett", r"SS-EN|flerskiktsparkett"),
+ (r"Stavar som släpper", r"limfogen"),
+ (r"Områdesfakta 2025: Kungsholm", r"Kungsholm"), (r"Områdesfakta 2025: Södermalms", r"Södermalm"),
+ (r"Områdesfakta 2025: (.+?) \(pdf\)", None),  # stadsdelens namn ska stå i texten
+ (r"Varsam utveckling", r"Varsam"), (r"Riksintressen enligt miljöbalken", r"riksintresse"),
+ (r"Boverket – Risker med hantering av asbest", r"Boverket[^.]*asbest|asbest[^.]*Boverket|Provtagning och analys är enligt Boverket"),
+ (r"Förvanskningsförbudet", r"örvanskningsförbud"), (r"Ingrepp i husets bärande delar", r"Boverket"),
+ (r"Arbetsmiljöverket", r"Arbetsmiljöverket"), (r"Bostadsrättslag", r"ostadsrättslag"), (r"Jordabalk", r"ordabalk"),
+ (r"^SCB", r"SCB"),
+ # Svenska Byggnadsvårdsföreningen – frågespalt och artiklar (fakta per artikel: se modulernas docstrings)
+ (r"– Trägolv( \(spik i golvet\))?$", r"masonit och linoleum"),
+ (r"Parkett från 1943", r"holländsk parkett|1943"), (r"Dimension stavparkett", r"1930-talets lamellgolv"),
+ (r"Återställa parkettgolv", r"från 1961"), (r"Gammalt parkettgolv", r"halv till en millimeter|0,5 till 1 millimeter"),
+ (r"Rädda gammal ekparkett", r"grånar|undanskymd del|rakblad"), (r"60-talsparkett", r"1967"),
+ (r"Ytbehandling parkettgolv", r"tidigare behandling först"),
+ (r"Lägga ny fiskbensparkett", r"asbesthaltiga utjämningsmassor|hus från 1913"),
+ (r"Snygga till trappräcke", r"1969"), (r"Behandling av ny furutrappa", r"gulnar naturligt|linolja fungerar utmärkt"),
+ (r"Ytbehandling av handledare", r"fernissa på en handledare"), (r"Val av träslag i ledstång", r"egnahemsvilla från 1940-talet"),
+ (r"Material i gammal trapprenovering", r"magnesit"), (r"Renovering av gammal trappa", r"järnskoning"),
+ (r"Behandla trägolv i kök", r"disk- och beredningsbänk|linoljefärg"), (r"Behandla massivt obehandlat ekgolv", r"linoljelack|kupa sig"),
+ (r"Nytt trägolv i hall", r"grus och skor"), (r"Olja eller slipa ojämnt slitet golv", r"pH-neutralt"),
+ (r"Fläckborttagning", r"T-sprit"), (r"Spärrmåla golv", r"schellack"),
+ (r"Kan man rädda skurgolven", r"luddigt|några skurningar|skurade golven med sand"),
+ (r"Såpa eller skura undergolv", r"mer intakta fibrer"), (r"Göra skurgolv av lackade golv", r"vackrare och mer lättskött"),
+ (r"– Lackat$", r"kaustiksoda"), (r"Såpskura nylagt furugolv", r"kallt vatten"),
+ (r"Golvbehandling av golv i torp", r"strimmig trägnagare|tidig vårmorgon|skadedjursförsäkring"),
+ (r"Täta golvspringor", r"smalast i slutet av sommaren"),
+ (r"Breda golvspringor", r"hoptorkade|torkar ihop|sällan vackert|sällan blir vackert"), (r"Tjärat trägolv", r"tjärpapp|excenterslip"),
+ (r"Materialhörnan – Parkettgolv", r"Nordiska museet"), (r"1980-talets robusta charm", r"antikvarie"),
+ (r"Slipa eller inte slipa golv", r"funktionalismens|omodernt med trägolv"), (r"Hallgolv i lägenhet från 1930", r"lägenhet från 1930"),
+ (r"Korkmattan", r"67 procent"), (r"Materialhörnan – Gamla trägolv", r"heltäckande plastmattor|masonitskivor"),
+ (r"Måla linoleumgolv", r"rekonditioneras"), (r"Golv och väggar – renovera", r"förhöjd fukthalt|syns tydligare"),
+ (r"Parkettgolv \(tejp", r"rödsprit"), (r"Slipa golv från sent 1800-tal", r"sedan 1970-talet|sätter igen slipbanden"),
+ (r"Slipa vitmålat plankgolv", r"runnit ned mellan|vit lasur|restlöst"), (r"Renovera fernissat golv", r"såpa under plast|ren såpa i ett dygn"),
+ (r"Ta bort fernissa", r"basiska såpan|outspädd flytande såpa"), (r"Måla om flagnat trägolv", r"Inför ommålning"),
+ (r"Spikhål i gammalt brädgolv", r"spikhål|randigheten"),
+ (r"Hur renovera buckliga originalgolv", r"buckliga originalgolv|kärnsidan|senvintern|sicklas bort|motståndskraftig yta"),
+ (r"Är mitt hus angripet", r"byggmästare|ofarliga"), (r"Reparera golvplankor med insektsangrepp", r"linoleummatta ovanpå|ouppvärmt med en linoleummatta"),
+ (r"Laga 1700/1800-talsgolv", r"djupa skador|spår av historien|hantverksmässigt utförda"), (r"Vitt pulver", r"mögelpåväxt|ytlig påväxt"),
+ (r"Mellanrum mellan golv och sockel", r"kvartsstav|glipan"), (r"Mögellukt", r"mögellukt|jämföra fuktkvoten|jämför med ställen"),
+ (r"– Vad göra\?", r"silvergrått"), (r"Hur ska jag gå vidare med detta golv", r"handslipmaskin|oscillerande"),
+ (r"Nåta skurgolv", r"1920-talshus"), (r"Finns det någon metod för att lossa golv", r"rundad på undersidan|hur golvet är lagt"),
+ (r"Renovera eller nytt", r"varit två rum|undergolv för en linoleummatta"), (r"Golv i sekelskifteshus", r"helst en sickling|1904"),
+ (r"Ny vägg sekelskifteslägenhet", r"minimera infästningarna"), (r"Lägga nytt golv på en tredjedel", r"mindre sågverk"),
+ (r"Bleka järnvitriol", r"gråna"), (r"– Stavparkett$", r"lekman"),
+ # kommunernas och museernas underlag hör till sektion 1 (ortens hus), som alltid är kvar
+ (r"kommun –|stad –|stadsmuseum –|läns museum –", r"."),
+]
+
+
+def visible_text(d):
+    t = [d["lead"], d["steps_h2"], d.get("time_h2", ""), d["rot_h2"], d["price_h2"]]
+    for s in d["sections"]:
+        t += [s["h2"]] + s["paras"] + ([s["aside"]["title"]] + s["aside"]["items"] if s.get("aside") else [])
+    t += [x for st in d["steps"] for x in st] + d.get("time", []) + d["rot"] + d["price"] + [x for f in d["faq"] for x in f]
+    return _H.unescape(_re.sub(r"<[^>]+>", " ", " ".join(t)))
+
+
+def used_sources(d, sources):
+    """Behåll bara källor som den synliga texten använder; okända källor behålls och rapporteras."""
+    txt, out, unknown = visible_text(d), [], []
+    for name, url in sources:
+        for pat, ev in EVIDENCE:
+            m = _re.search(pat, name)
+            if m:
+                ev = ev if ev is not None else _re.escape(m.group(1))
+                if _re.search(ev, txt):
+                    out.append((name, url))
+                break
+        else:
+            out.append((name, url)); unknown.append(name)
+    return out, unknown
 
 
 def _wc(x):
@@ -145,7 +200,17 @@ def apply(TJ):
         if d["service"] != "golvslipning" or d["kind"] != "district":
             continue
         key, ort = f[len("golvslipning-"):-5], d["ort"]
-        src_sections, src_faq = d["sections"], d["faq"]
+        src_sections, src_faq, src_sources = d["sections"], d["faq"], d["sources"]
+        d["_all_sections"], d["_all_faq"], d["_all_sources"] = src_sections, src_faq, src_sources  # för kontroll
+        if key in ORDER:
+            src_sections = [src_sections[i] for i in ORDER[key] if i < len(src_sections)]
+        if key in REWRITE:
+            pat, new = REWRITE[key]
+            hit = [0]
+            def _fix(p):
+                q, n = _re.subn(pat, lambda m: new, p); hit[0] += n; return q
+            src_sections = [dict(s_, paras=[_fix(p) for p in s_["paras"]]) for s_ in src_sections]
+            assert hit[0] == 1, (f, "hänvisningen hittades inte")
         if key in TITLES:
             assert len(TITLES[key]) <= 60 and TITLES[key].startswith(f"Golvslipning {ort} – "), key
             d["title"] = TITLES[key]
@@ -154,32 +219,37 @@ def apply(TJ):
             f"Ett golvjobb i {ort} består av dagar med maskiner och dagar då lacken eller oljan torkar. Hur många "
             "dagar det blir beror på ytan, antalet rum, hur mycket som ska lagas och vilken ytbehandling du väljer. "
             "Enligt Golvbranschens riktlinjer för lackering kan rummet normalt möbleras efter minst ett dygn, medan "
-            "mattor bör vänta minst en vecka. Tidplanen står dag för dag i kostnadsförslaget."]
+            "mattor bör vänta minst en vecka. Tidplanen står i kostnadsförslaget."]
         d["price_h2"] = f"Vad påverkar priset på golvslipning i {ort}?"
         d["price"] = list(d["price"]) + [
-            "Vi publicerar inga schablonpriser, eftersom två golv med samma yta kan kräva olika mycket arbete. I "
+            "Vi publicerar inga prislistor, eftersom två golv med samma yta kan kräva olika mycket arbete. I "
             "kostnadsförslaget står slipning, lagning och ytbehandling som egna poster, med ROT-avdraget uträknat. "
             f"Hur metoderna och ytbehandlingarna skiljer sig åt, och vad som ingår, beskriver vi på sidan om {HUB}."]
-        own = []
-        for i, q in FAQ[key]:
-            q = q or src_faq[i][0]
-            assert ort in q or ort + "s" in q, (f, q)
-            own.append((q, src_faq[i][1]))
         tmpl = [
             (f"Vad kostar golvslipning i {ort}?",
              "Det beror på golvytan, golvets skick, hur mycket som ska lagas och vilken ytbehandling du väljer. "
              f"Efter ett gratis platsbesök i {ort} får du ett skriftligt kostnadsförslag, och ROT-avdraget dras direkt på fakturan."),
-            (f"Hur lång tid tar en golvslipning i {ort}?",
-             "Det beror på ytan och ytbehandlingen. Arbetet består av slipdagar och dagar då lacken eller oljan torkar, "
-             "och tidplanen står i kostnadsförslaget."),
         ]
-        d["faq"] = tmpl + own
+
+        def own_faq(sections):
+            ids = {s_["id"] for s_ in sections}
+            return [(q or src_faq[i][0], src_faq[i][1]) for i, q in FAQ[key]
+                    if FAQ_NEEDS.get((key, i), None) in ids | {None}]
+
         # sektioner: ortens hus och golv + sidans sakfråga; en tredje bara om texten annars blir för kort
         d["sections"] = src_sections[:2]
+        d["faq"] = tmpl + own_faq(d["sections"])
         if editorial_words(d) < 700 and len(src_sections) > 2:
             d["sections"] = src_sections[:3]
+            d["faq"] = tmpl + own_faq(d["sections"])
+        own = d["faq"][1:]
         n = len(own)
         while editorial_words(d) > 900 and n > 1:
             n -= 1
             d["faq"] = tmpl + own[:n]
+        srcs = list(src_sources)
+        if not any("LACK 22" in n_ for n_, _ in srcs):
+            pos = next((i for i, (n_, _) in enumerate(srcs) if n_.startswith("Skatteverket")), len(srcs))
+            srcs.insert(pos, _GBR_LACK)
+        d["sources"], d["_unknown_sources"] = used_sources(d, srcs)
         d["pilot_words"] = editorial_words(d)
