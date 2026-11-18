@@ -146,7 +146,7 @@ OVERRIDES = {
     # fönsterrenovering stocksund 16/7.1
     "fonsterrenovering-danderyd.html": (
         "Fönsterrenovering Danderyd – Djursholm och Stocksund, ROT",
-        "Fönsterrenovering i Danderyd, Djursholm och Stocksund: vi kittar om med linoljekitt, målar och justerar beslag på villans fönster. Gratis besök, ROT-avdrag.",
+        "Fönsterrenovering i Danderyd, Djursholm och Stocksund: varsamt underhåll av villans fönster med linoljekitt och linoljefärg. Gratis besök, ROT-avdrag.",
         None,
     ),
     # målare östermalm 70/18.4

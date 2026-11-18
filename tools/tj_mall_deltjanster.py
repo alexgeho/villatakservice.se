@@ -72,7 +72,7 @@ SVC = {
      f"underarbete och vad som ingår beskriver vi på sidan om {hub}."),
    "faq": lambda p, o: (f"Vad kostar tapetsering {p} {o}?",
      "Det beror på hur många lager som ska ned, hur mycket väggen behöver lagas, takhöjden och mönstret. "
-     f"Efter ett gratis platsbesök {p} {o} får du ett skriftligt kostnadsförslag, och ROT-avdraget dras direkt på fakturan."),
+     f"Efter ett gratis platsbesök {p} {o} får du ett skriftligt kostnadsförslag, och har du rätt till rotavdrag dras det direkt på fakturan."),
    "rot_mat": "Material som tapet och klister ger inget avdrag, och inte heller resor.",
  },
 }
@@ -101,7 +101,7 @@ ALT = {
      lambda hub: (
        "Vi publicerar inga prislistor för fönsterrenovering, eftersom två fönster med samma mått kan behöva helt olika "
        "mycket arbete. Därför står arbete och material som separata poster i kostnadsförslaget. Arbetsgången och vad "
-       f"som ingår finns beskrivet på sidan om {hub}.")]},
+       f"som ingår finns beskrivna på sidan om {hub}.")]},
  "fasadmalning": {
    "time": [None,
      lambda p, o: [
@@ -205,6 +205,14 @@ ANGLE = {
 
 # Ny description där den gamla nämnde sektioner som har utgått (130–158 tecken, bara innehåll som står kvar).
 DESC = {
+ "fonsterrenovering-enskede": "Fönsterrenovering i Enskede: Gamla Enskedes fönster med småspröjs, lovet i riksintresset och linoljekitt och linoljefärg. Gratis platsbesök och ROT.",
+ "tapetsering-hasselby": "Tapetsering i Hässelby: ny tapet i grupphus och villor – gipsväggar med oförlimmade spacklingar och sjuttiotalets tapeter. Gratis platsbesök och ROT.",
+ "fasadmalning-osteraker": "Fasadmålning i Österåker: Svinninges sommarvillor, kulörerna i kommunens riktlinjer, rådet för nya hus och när även underhåll kräver lov. Gratis besök.",
+ "fasadmalning-sollentuna": "Fasadmålning i Sollentuna: villastäderna i kulturmiljöplanen, när en ny kulör kräver bygglov och vad ansökan ska innehålla. Gratis platsbesök och ROT.",
+ "fasadmalning-bromma": "Fasadmålning i Bromma: kulörval och provmålning i trädgårdsstäderna, ljusa och dämpade toner i Smedslätten och rotavdrag för villans fasad.",
+ "fasadmalning-lidingo": "Fasadmålning på Lidingö: hus i kulturmiljöprogrammet – samma eller ny kulör, byggnadsvårdsbidrag kontra rotavdrag och planering i god tid. Gratis besök.",
+ "fonsterrenovering-upplands-vasby": "Fönsterrenovering i Upplands Väsby: kedjehusen i Apoteksskogen, enluftsfönster med sidofönster och bågar i husgruppens grå eller gröna kulör.",
+ "tapetsering-farsta": "Tapetsering i Farsta: tunnelbanestadens lägenheter och radhus – asbest före rivning och rotavdrag i bostadsrätt och småhus. Gratis platsbesök.",
  "fasadmalning-danderyd": "Fasadmålning i Danderyd: ljus puts och mörka trävillor i Djursholm och Stocksund, kalkfärg i många tunna lager och kulör efter färgprov. Gratis platsbesök.",
  "fasadmalning-ekero": "Fasadmålning på Ekerö: sommarvillor och fritidshus på Mälaröarna – när på året fasaden kan målas och hur torrt träet ska vara. Gratis platsbesök.",
  "fasadmalning-farsta": "Fasadmålning i Farsta: radhus med tegel, puts, fasadskivor och trä – prov och analys av gamla fasadskivor innan de tvättas eller slipas. Gratis platsbesök.",
@@ -362,7 +370,9 @@ EVIDENCE = [
 ]
 
 _HOUSING = r"bostadsrätt|radhus|villa|villan|fritidshus|lägenhet|kedjehus|parhus|egnahem|sommarhus|småhus|flerbostadshus|föreningshus"
-_TOPIC_OK = r"kosta|pris|rot|avdrag|" + _HOUSING
+# Granskning 19.11: orten står bara i frågor om pris, ROT och upplåtelseform (bostadsrätt/hyresrätt) – inte i
+# hantverksfrågor, även om de nämner villa, radhus eller lägenhet.
+_TOPIC_OK = r"kosta|pris|\brot|avdrag|bostadsrätt|hyres"
 _PRICE_Q = r"[Vv]ad kostar|[Pp]ris|kostnad"
 _TIME_Q = r"[Hh]ur lång tid|[Hh]ur länge|[Hh]ur många dagar|[Hh]ur snabbt"
 
@@ -530,9 +540,16 @@ def _own_faq(f, d, ort):
     for i, (q, a) in enumerate(d["faq"]):
         if _re.search(_PRICE_Q, q) or _re.search(_TIME_Q, q):
             continue
-        if ort in q and not _re.search(_TOPIC_OK, q, _re.I):
-            q2 = _re.sub(rf"\s+(i|på) {_re.escape(ort)}(?=[?,])", "", q)
-            if ort in q2:
+        if q in FAQ_Q:
+            q, a = FAQ_Q[q] if isinstance(FAQ_Q[q], tuple) else (FAQ_Q[q], a)
+            if q is None:
+                continue
+        names = [ort] + ([ort.split()[-1]] if " " in ort else [])
+        if any(n_ in q for n_ in names) and not _re.search(_TOPIC_OK, q, _re.I):
+            q2 = q
+            for n_ in names:
+                q2 = _re.sub(rf"\s+(i|på) {_re.escape(n_)}(?=[?,])", "", q2)
+            if any(n_ in q2 for n_ in names):
                 continue
             q = q2
         out.append((q, a, i))
@@ -552,6 +569,7 @@ def apply(TJ):
         c, ort = SVC[svc], d["ort"]
         prep = "på" if _re.match(rf"{c['name']} på ", d["title"]) else "i"
         hub = _L.format(c["hub"], f"{c['low']} i Stockholm")
+        _text_fix(f, d, pre=True)
         sb = source_blocks(d)
         orig = {"sections": d["sections"], "faq": d["faq"], "sources": d["sources"], "rot": d["rot"], "title": d["title"]}
         d["_orig"] = orig
@@ -565,15 +583,24 @@ def apply(TJ):
             assert len(t) <= 60, (f, t)
             d["title"] = t
         if key in DESC:
-            assert 130 <= len(DESC[key]) <= 155, (f, len(DESC[key]))
+            assert 130 <= len(DESC[key]) <= 158, (f, len(DESC[key]))
             d["description"] = DESC[key]
         d["time_h2"] = f"Hur lång tid tar {c['low']} {prep} {ort}?"
         v = VARIANT.get(f[:-5], order[f] % 3)
         d["time"] = (ALT[svc]["time"][v] or c["time"])(prep, ort)
+        if key in KALK:  # granskning 19.11: kalkfärg binder lager för lager
+            d["time"] = [f"Hur lång tid en fasadmålning {prep} {ort} tar beror på fasadens yta och höjd, hur mycket som ska lagas "
+                         "och på vädret. Kalkfärg läggs i många tunna strykningar, och varje lager ska hinna binda innan nästa "
+                         "stryks – i stark sol eller slagregn kan ställningen behöva täckas in."]
         d["rot"], rot_std = _fix_rot(orig["rot"], svc)
-        d["price_h2"] = f"Vad påverkar priset på {c['low']} {prep} {ort}?"
+        if rot_std and "Skatteverket" not in " ".join(d["rot"]):
+            d["rot"] = [p_.replace("Avdraget är 30 procent", "Enligt Skatteverket är avdraget 30 procent") for p_ in d["rot"]]
+        d["price_h2"] = f"Vad påverkar priset {'för' if prep == 'på' else 'på'} {c['low']} {prep} {ort}?"
         d["price"] = list(d["price"]) + [(ALT[svc]["price"][v] or c["price"])(hub)]
         tmpl = [c["faq"](prep, ort)]
+        if key in BRF_FASAD:
+            tmpl = [(tmpl[0][0], "Det beror på fasadernas yta och höjd, putsens skick, färgtypen och ställningen. Efter ett gratis "
+                     "platsbesök får föreningen ett skriftligt kostnadsförslag där arbete, material och ställning står var för sig.")]
         own = _own_faq(f, d, ort)
         best = None
         secs = orig["sections"]
@@ -609,11 +636,155 @@ def apply(TJ):
                 srcs.append((name, url)); unknown.append(name)
             elif hit & kept_blocks:
                 srcs.append((name, url))
+        for pat in SRC_KEEP.get(key, []):
+            hit_ = [(n_, u_) for n_, u_ in orig["sources"] if pat in n_]
+            assert len(hit_) == 1, (f, pat)
+            if hit_[0] not in srcs:
+                srcs.append(hit_[0])
+        for pat in SRC_DROP.get(key, []):
+            n0 = len(srcs)
+            srcs = [(n_, u_) for n_, u_ in srcs if pat not in n_]
+            assert len(srcs) == n0 - 1, (f, pat)
+        srcs = [x for x in orig["sources"] if x in srcs]  # originalordning
         if not any(n_.startswith("Skatteverket") for n_, _ in srcs) and rot_std:
             unknown.append("(Skatteverket saknas)")
         d["sources"] = srcs
         d["_unknown_sources"] = unknown
         d["_source_blocks"] = sb
+        _text_fix(f, d, pre=False)
         d["pilot_words"] = editorial_words(d)
+        assert 700 <= d["pilot_words"] <= 900, (f, d["pilot_words"])
         report[f] = (k, len(secs), n, d["pilot_words"])
     return report
+
+
+# ------------------------------------------------------------------ granskning 19.11
+KALK = {"fasadmalning-alvsjo", "fasadmalning-danderyd", "fasadmalning-sodermalm", "fasadmalning-vallingby"}
+BRF_FASAD = {"fasadmalning-ostermalm", "fasadmalning-sodermalm", "fasadmalning-kungsholmen", "fasadmalning-vasastan"}
+
+# Källor som texten använder fast blockkopplingen inte hittade dem, och källor som står kvar utan att användas.
+SRC_KEEP = {
+ "fasadmalning-sigtuna": ["Bevarande- och förnyelseplan för Sigtuna stad"],
+ "tapetsering-vasastan": ["Översiktsplan: Riksintressen enligt miljöbalken"],
+ "fasadmalning-danderyd": ["Målning utomhus på trä"],
+ "fonsterrenovering-tyreso": ["Tyresö kommun – Måla om huset"],
+}
+SRC_DROP = {
+ "fasadmalning-bromma": ["Boverket – PBL kunskapsbanken: Bygglov för fasadändring", "Stockholms stad – Fasadändring"],
+ "fonsterrenovering-taby": ["Täby kommun – Fasadändring"],
+ "fasadmalning-farsta": ["Boverket – PBL kunskapsbanken"],
+ "fasadmalning-upplands-vasby": ["Upplands Väsby kommun – Fasadändring"],
+ "fasadmalning-vallentuna": ["Vallentuna kommun – Fasadändring"],
+}
+
+# Frågor (sidans egen formulering) -> ny fråga, (ny fråga, nytt svar) eller None = utgår.
+FAQ_Q = {
+ "Hur gammal kan tapeten under tapeten vara i ett hus på Södermalm?": "Hur gammal kan den understa tapeten vara i ett äldre hus?",
+ "Kan ett fönster från 1950-talet bli lika energisnålt som ett nytt?": ("Kan ett fönster från 1950-talet bli energisnålare utan att bytas?",
+   "Ja. Enligt Riksantikvarieämbetet blir ett gammalt fönster med rätt tätningslist och tillsatsruta betydligt tätare och "
+   "energisnålare. Hur nära ett nytt fönster det kommer beror på fönstret."),
+ "Kan gamla fönster bli lika täta som nya?": ("Hur mycket tätare kan gamla fönster bli?",
+   "Med rätt tätningslist och tillsatsruta blir ett gammalt fönster enligt Riksantikvarieämbetet betydligt tätare och "
+   "energisnålare. Hur nära ett nytt fönster det kommer beror på fönstret."),
+ "Behöver jag bygglov för att byta fönster på min villa i Duvbo?": None,
+ "Kräver en fönsterrenovering i Duvbo bygglov?": ("Kräver en fönsterrenovering bygglov i Duvbo?",
+   "Inte om fönstren behåller sitt utseende. Den utökade lovplikten gäller utbyte, flyttning och igensättning av fönster och dörrar."),
+ "Hur gammal kan tapeten under tapeten vara i ett hus?": "Hur gammal kan den understa tapeten vara i ett äldre hus?",
+ "Blir gamla fönster lika energisnåla som nya?": ("Hur mycket energisnålare blir gamla fönster med tillsatsruta?",
+   "Med rätt tätningslist och tillsatsruta blir ett gammalt fönster betydligt tätare och energisnålare, enligt "
+   "Riksantikvarieämbetet. Hur nära ett nytt fönster det kommer beror på fönstret."),
+ "Behöver jag bygglov för att måla om fönstren på min villa i Tyresö?": ("Behöver jag bygglov för att måla om fönstren på min villa?",
+   "Nej, enligt Tyresö kommun inte inom detaljplan för ett en- eller tvåbostadshus. Detaljplanen kan däremot ange vilka färger som gäller."),
+ "Vilka kulörer var vanliga på trävillor kring sekelskiftet?": ("Vilka kulörer var vanliga på trävillor kring sekelskiftet?",
+   "Länsstyrelsernas blad om målning utomhus på trä beskriver en dovare skala från 1800-talets andra hälft, med bruna, "
+   "gulgrå och gröna kulörer och fönster i rött, brunt eller grönt."),
+}
+
+# Texträttelser per sida: (gammal text, ny text). pre=True: i sidans eget innehåll före urvalet; annars i den färdiga
+# ROT- och pristexten. Varje rättelse måste träffa exakt en gång.
+TEXT_FIX = {
+ "fasadmalning-kungsholmen": [("Rotavdrag ges i en bostadsrätt bara för arbete", "Enligt Skatteverket ges rotavdrag i en bostadsrätt bara för arbete")],
+ "fasadmalning-vasastan": [("Rotavdrag ges i en bostadsrätt bara för arbete", "Enligt Skatteverket ges rotavdrag i en bostadsrätt bara för arbete")],
+ "tapetsering-bromma": [(" Avdraget dras direkt på Geals faktura.", "")],
+ "tapetsering-enskede": [(" Avdraget dras direkt på Geals faktura.", "")],
+ "tapetsering-spanga": [(" Avdraget dras direkt på Geals faktura.", "")],
+ "tapetsering-vasastan": [(" Avdraget dras direkt på Geals faktura.", "")],
+ "tapetsering-sundbyberg": [(" Material och resor räknas inte.", "")],
+ "fonsterrenovering-haninge": [("Det är bara arbetad tid på plats hos dig som räknas, inte material eller resor.",
+                                "Det är bara arbetad tid på plats hos dig som räknas.")],
+ "fasadmalning-upplands-vasby": [("så de gamla staketen mot gatan räknas utanför.", "så staket mot gatan ingår inte.")],
+ "fonsterrenovering-hasselby": [("kan bli lika energisnålt som ett nytt.",
+                                 "kan bli betydligt tätare och energisnålare. Hur nära ett nytt fönster det kommer beror på fönstret.")],
+ "fonsterrenovering-spanga": [("blir ett gammalt fönster enligt Riksantikvarieämbetet lika energisnålt som ett nytt.",
+                               "blir ett gammalt fönster enligt Riksantikvarieämbetet betydligt tätare och energisnålare; hur nära ett nytt det kommer beror på fönstret.")],
+}
+LEAD_FIX = {  # ingressens andra mening hamnar överst i första sektionen och ska kunna stå för sig själv
+ "fasadmalning-botkyrka": [("Botkyrka kommun räknar dessutom ett byte", "Botkyrka kommun räknar ett byte")],
+ "fasadmalning-danderyd": [("De två fasaderna målas med", "Putsade fasader och träfasader målas med")],
+ "fasadmalning-kista": [("När ett hus målas om påverkar det alltså mer", "När ett hus i en sådan grupp målas om påverkar det mer")],
+ "fasadmalning-lidingo": [("kan du dessutom söka bidrag", "kan du söka bidrag")],
+ "fasadmalning-osteraker": [("Kommunens riktlinjer för området beskriver", "Kommunens riktlinjer för Svinninge beskriver")],
+ "fasadmalning-ostermalm": [("Svaret finns ofta i färglagren", "Vilken kulör huset hade från början syns ofta i färglagren")],
+ "fasadmalning-varmdo": [("Bakom det enkla uttrycket kan", "Bakom röd panel och vita snickerier kan")],
+ "fasadmalning-vasastan": [("De målas ofta olika och lyder", "Gatufasaden och gårdsfasaden målas ofta olika och lyder")],
+ "fasadmalning-tyreso": [("Fasaden kan ha målats om flera gånger", "Fasaden på ett gammalt fritidshus kan ha målats om flera gånger")],
+ "fonsterrenovering-botkyrka": [("Det gör fönsterrenovering till det naturliga valet när fönstren börjar bli slitna.",
+                                 "Fönsterrenovering är det naturliga valet när fönstren i Tunas radhus börjar bli slitna.")],
+ "fonsterrenovering-farsta": [("De fönstren går ofta att renovera.", "Småstugornas fönster går ofta att renovera.")],
+ "fonsterrenovering-haninge": [("Ladugård, förråd och andra uthus har sina egna, och de är lika värda att ta hand om.",
+                                "Fönstren i ladugård, förråd och andra uthus är lika värda att ta hand om.")],
+ "fonsterrenovering-huddinge": [("renoverar sådana fönster i Huddinge", "renoverar egnahemmens gamla fönster i Huddinge")],
+ "fonsterrenovering-kista": [("Många av dem går fortfarande", "Många av fönstren går fortfarande")],
+ "fonsterrenovering-lidingo": [("Där är det ofta både enklast", "I ett hus som pekas ut i programmet är det ofta både enklast")],
+ "fonsterrenovering-osteraker": [("När de blir åretruntboende", "När sommarvillorna blir åretruntbostäder")],
+ "fonsterrenovering-skarholmen": [("Därför märks det när ett hus", "I en sådan husgrupp märks det när ett hus")],
+ "fonsterrenovering-sundbyberg": [("För många villaägare är renovering därför det naturliga valet.",
+                                   "För många villaägare i Duvbo är renovering det naturliga valet.")],
+ "fonsterrenovering-tyreso": [("När ett sådant hus byggs om", "När ett gammalt fritidshus byggs om")],
+ "tapetsering-botkyrka": [("I den ena kan det sitta träfiberskivor från en tidig renovering, i den andra en strukturtapet",
+                           "I villan kan det sitta träfiberskivor från en tidig renovering, i radhuset en strukturtapet")],
+ "tapetsering-danderyd": [("Det påverkar både vilken tapet", "Underlaget påverkar både vilken tapet")],
+ "tapetsering-jarfalla": [("Under dem kan det sitta skivor", "Under gamla tapetlager kan det sitta skivor")],
+ "tapetsering-kungsholmen": [("Den kan suga, vara lagad", "Väggen under tapeten kan suga, vara lagad")],
+ "tapetsering-norrtalje": [("Där ska tapeten klara", "I ett fritidshus ska tapeten klara")],
+ "tapetsering-sigtuna": [("Där kan även detaljplanen", "I trästaden kan även detaljplanen")],
+ "tapetsering-skarholmen": [("beror därför på hur du bor.", "beror på om du bor i hyresrätt, bostadsrätt eller eget hus.")],
+ "tapetsering-sodermalm": [("Lagren kan vara det enda", "Tapetlagren kan vara det enda")],
+ "tapetsering-sollentuna": [("Då blir frågan om ett nytt lager", "Inför en ny tapet blir frågan om ett nytt lager")],
+ "tapetsering-sundbyberg": [("I en lägenhet från den tiden möter", "I en lägenhet från 1940- och 50-talen möter")],
+ "tapetsering-taby": [("Runt den sitter golvsocklar", "Runt tapeten sitter golvsocklar")],
+ "tapetsering-vallingby": [("Därför kan två lägenheter i samma stadsdel kräva helt olika underarbete.",
+                            "Två lägenheter i Vällingby kan kräva helt olika underarbete, beroende på hur väggarna gjordes.")],
+}
+
+
+def _fields(d, pre):
+    """(lista, index) för alla textfält som en rättelse kan träffa."""
+    if pre:
+        out = [(d, "lead")]
+        for s_ in d["sections"]:
+            out += [(s_["paras"], i) for i in range(len(s_["paras"]))]
+        return out
+    return [(d["rot"], i) for i in range(len(d["rot"]))] + [(d["price"], i) for i in range(len(d["price"]))]
+
+
+def _text_fix(f, d, pre):
+    key = f[:-5]
+    fixes = list(TEXT_FIX.get(key, [])) + (list(LEAD_FIX.get(key, [])) if pre else [])
+    if pre:
+        d["sections"] = [dict(s_, paras=list(s_["paras"])) for s_ in d["sections"]]
+        d["_fix_done"] = set()
+    else:
+        d["rot"], d["price"] = list(d["rot"]), list(d["price"])  # listorna kan delas mellan sidor
+    for old, new in fixes:
+        for cont, i in _fields(d, pre):
+            if old in cont[i]:
+                assert cont[i].count(old) == 1 and (key, old) not in d["_fix_done"], (f, old)
+                cont[i] = cont[i].replace(old, new)
+                d["_fix_done"].add((key, old))
+    if pre:
+        miss = [o for o, _n in LEAD_FIX.get(key, []) if (key, o) not in d["_fix_done"]]
+        assert not miss, (f, miss)
+    if not pre:
+        miss = [o for o, _n in fixes if (key, o) not in d["_fix_done"]]
+        assert not miss, (f, miss)
