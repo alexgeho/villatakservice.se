@@ -93,7 +93,8 @@ def run(name):
     body = json.dumps({"input": {"prompt": prompt + STYLE, "aspect_ratio": aspect, "output_format": "png",
                                  "safety_tolerance": 2, "prompt_upsampling": False}}).encode()
     req = urllib.request.Request("https://api.replicate.com/v1/models/black-forest-labs/flux-1.1-pro/predictions",
-        data=body, headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json", "Prefer": "wait"})
+        data=body, headers={"Authorization": "Bearer " + tok, "Content-Type": "application/json", "Prefer": "wait",
+                            "User-Agent": "curl/8.7.1"})
     for _ in range(8):
         try:
             p = json.loads(urllib.request.urlopen(req, timeout=120).read()); break
@@ -105,11 +106,11 @@ def run(name):
     while p["status"] not in ("succeeded", "failed", "canceled"):
         time.sleep(2)
         p = json.loads(urllib.request.urlopen(urllib.request.Request(p["urls"]["get"],
-            headers={"Authorization": "Bearer " + tok})).read())
+            headers={"Authorization": "Bearer " + tok, "User-Agent": "curl/8.7.1"})).read())
     if p["status"] != "succeeded":
         return name + " FAIL"
     url = p["output"] if isinstance(p["output"], str) else p["output"][0]
-    raw = urllib.request.urlopen(url).read()
+    raw = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "curl/8.7.1"})).read()
     if os.environ.get("IMG_RAW"):  # originalet sparas utanför repot (för omkonvertering)
         open(os.path.join(os.environ["IMG_RAW"], name + ".png"), "wb").write(raw)
     convert(name, Image.open(io.BytesIO(raw)))

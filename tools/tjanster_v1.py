@@ -79,7 +79,9 @@ MODULES = ["tj_hub_malare", "tj_hub_badkok", "tj_hub_golvsnick", "tj_malare_a", 
            # tapetsering – 3 ortsidor var
            "tj_v31_fonsterbyte", "tj_v31_fonsterrenovering", "tj_v31_golvslipning", "tj_v31_kok",
            "tj_v31_plat", "tj_v31_tapetsering",
-           "tj_v32_smahus", "tj_v32_innerstad", "tj_v32_soder"]
+           "tj_v32_smahus", "tj_v32_innerstad", "tj_v32_soder",
+           # v33 (2026-11-18): hubbar för deltjänsterna golvslipning, fasadmålning, tapetsering och fönsterrenovering
+           "tj_v33_hubbar"]
 # Moduler vars ortsidor korslänkas med ortens övriga tjänstesidor (åt båda hållen).
 V4_MODULES = {"tj_v4_plat", "tj_v4_fonster", "tj_v4_kok", "tj_v5_badrum", "tj_v5_malare", "tj_v5_takbyte",
               "tj_v6_golv", "tj_v6_snickare", "tj_v6_fasad",
@@ -126,7 +128,8 @@ TJ_SERVICES = {
   # v15: deltjänster utan egen hubb – brödsmulan pekar på huvudtjänstens hubb.
   "fasadmalning":      {"crumb": "Målare", "service_type": "Fasadmålning", "card": "Utvändig målning av fasaden."},
   "tapetsering":       {"crumb": "Målare", "service_type": "Tapetsering", "card": "Ny tapet på väggarna."},
-  "golvslipning":      {"crumb": "Golvläggning", "service_type": "Golvslipning", "card": "Slipa och ytbehandla trägolv."},
+  # 18.11: golvslipning har egen hubb golvslipning.html (pilot, SEO-plan 18.11 avsnitt 4a).
+  "golvslipning":      {"crumb": "Golvslipning", "service_type": "Golvslipning", "card": "Slipa och ytbehandla trägolv."},
   # v16: fönsterrenovering är deltjänst under fonsterbyte.html; attefallshus.html är en vanlig sida i generate.py.
   "fonsterrenovering": {"crumb": "Fönsterbyte", "service_type": "Fönsterrenovering", "card": "Renovera de befintliga fönstren."},
   "attefallshus":      {"crumb": "Attefallshus", "service_type": "Attefallshus – komplementbostadshus", "card": "Komplementbostadshus på tomten.",
@@ -146,11 +149,17 @@ TJ_HUB = {"malare": "malare.html", "badrumsrenovering": "badrumsrenovering.html"
           # v8: tillbyggnad.html är en vanlig sida i generate.py men listar ortsidorna.
           "tillbyggnad": "tillbyggnad.html",
           # v15: deltjänster – listas på huvudtjänstens hubb ("Fasadmålning per område" m.fl.).
-          "fasadmalning": "malare.html", "tapetsering": "malare.html", "golvslipning": "golvlaggning.html",
+          # 18.11: fasadmalning.html, tapetsering.html och fonsterrenovering.html finns (tj_v33_hubbar) och listar sina
+          # ortsidor, men ortsidornas brödsmula/kort pekar kvar på huvudtjänsten tills ägaren har sagt «ok» på piloten
+          # golvslipning – då byts raderna nedan till respektive ny hubb.
+          "fasadmalning": "malare.html", "tapetsering": "malare.html", "golvslipning": "golvslipning.html",
           # v16
           "fonsterrenovering": "fonsterbyte.html", "attefallshus": "attefallshus.html",
           # v18: villarenovering.html är en vanlig sida i generate.py men listar ortsidorna.
           "totalrenovering": "villarenovering.html"}
+
+# Hubbar som listar en deltjänsts ortsidor fast deltjänsten har egen hubb (golvlaggning.html behåller sin lista).
+TJ_HUB_EXTRA = [("golvslipning", "golvlaggning.html")]
 
 TJ = {}
 V4_FILES = set()
@@ -165,6 +174,12 @@ for _m in MODULES:
             print(f"VARNING: {_m}: {e}", file=sys.stderr)
     except Exception as e:  # halvfärdig fil – hoppa över
         print(f"VARNING: {_m} hoppas över: {type(e).__name__}: {e}", file=sys.stderr)
+
+# Pilot 18.11: golvslipning-<ort> efter en mall (tools/tj_pilot_golvslipning.py).
+import tj_pilot_golvslipning as _pilot
+_pilot.apply(TJ)
+import tj_v33_hubbar as _v33
+_v33.link_parents(TJ)
 
 # Hubbar först, sedan ortsidor (ordning för sitemap).
 TJ = dict(sorted(TJ.items(), key=lambda kv: (kv[1]["kind"] != "hub", kv[0])))

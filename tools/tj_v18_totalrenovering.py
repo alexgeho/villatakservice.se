@@ -175,7 +175,7 @@ PAGES_TJ = {
     {"id": "ordning-bromma", "h2": "Från rivning till ytskikt – i en genomtänkt ordning",
      "paras": [
        "Vi lägger upp en totalrenovering så att varje arbete görs medan det är lätt att komma åt. Först rivs det som ska bort och huset inventeras. Därefter görs eventuella ändringar i stommen, som nya öppningar eller förstärkningar. Medan väggar och bjälklag är öppna drar elektriker och rörläggare nya ledningar, och ventilationen ses över. Först när installationerna är klara byggs badrum och kök, och sist kommer golv, väggytor, innertak och snickerier.",
-       "Ordningen spelar roll för kvaliteten. Ett nytt golv som läggs innan rören är dragna riskerar att behöva brytas upp igen, och målade väggar tar skada av att elen dras efteråt. Därför tidsätter vi varje moment och bestämmer tillsammans med dig var i huset du kan bo, om du vill bo kvar under en del av tiden.",
+       "Ordningen spelar roll för kvaliteten. Ett nytt golv som läggs innan rören är dragna riskerar att behöva brytas upp igen, och målade väggar tar skada av att elen dras efteråt. Därför tidsätter vi varje moment och bestämmer tillsammans med dig var i huset du kan bo, om du vill bo kvar under en del av tiden. Ska huset också byggas till, eller gäller det ett nybygge med lov och anmälan, beskriver vi upplägget under " + _L.format("byggforetag-bromma.html", "totalentreprenad i Bromma") + ".",
      ],
      "aside": {"title": "Ordningen i korthet", "items": [
        "Rivning och inventering", "Stomme och öppningar", "El, VVS och ventilation", "Badrum och kök", "Golv, väggar och snickerier"]}},

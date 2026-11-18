@@ -57,7 +57,7 @@ OVERRIDES = {
     # slipa golv solna 46/15.4
     "golvslipning-solna.html": (
         "Golvslipning Solna – slipa golv i lägenhet, gratis offert",
-        "Golvslipning i Solna: vi tar fram och slipar trägolvet under gamla mattor och ytbehandlar med lack eller olja. Gratis platsbesök, ROT-avdrag direkt på fakturan.",
+        "Golvslipning i Solna: vi tar fram och slipar trägolvet under gamla mattor och ytbehandlar med lack eller olja. Gratis platsbesök, ROT-avdrag på fakturan.",
         "Geal Entreprenad AB slipar trägolv i Solna, också golv som har legat under linoleum eller plastmatta, med gratis platsbesök och ROT-avdrag direkt på fakturan.",
     ),
     # slipa golv bromma 57/15.2 (hamnar i dag på golvlaggare-bromma)
@@ -75,7 +75,7 @@ OVERRIDES = {
     # golvslipning vallentuna 15/6.7
     "golvslipning-vallentuna.html": (
         "Golvslipning Vallentuna – slipa gamla trägolv, gratis offert",
-        "Golvslipning i Vallentuna: vi slipar gamla golvplank och parkett i villor, gårdar och fritidshus och lackar eller oljar. Gratis platsbesök och kostnadsförslag.",
+        "Golvslipning i Vallentuna: vi slipar gamla golvplank och parkett i villor, gårdar och fritidshus och lackar eller oljar. Gratis besök och kostnadsförslag.",
         None,
     ),
     # golvläggare solna 66/14.7, golvläggning solna 20/10.7, golvläggning i solna 15/10.3
@@ -266,6 +266,16 @@ def apply(html, title, desc, lead):
     return html
 
 
+def h1_overrides():
+    """Pilot 18.11 (SEO-plan 18.11 avsnitt 4): H1 «Golvslipning <Ort> – gratis besök och kostnadsförslag» på alla
+    golvslipning-<ort>.html. Sätts här och inte i generatorn, eftersom generatorns h1 («Golvslipning i <Ort>»)
+    används för kort, ortslistor och formulärets dolda fält tjanst/ort (landing_v1.py)."""
+    sys.path.insert(0, os.path.join(ROOT, "tools"))
+    from tjanster_v1 import TJ
+    return {f: f"Golvslipning {d['ort']} – gratis besök och kostnadsförslag"
+            for f, d in TJ.items() if d["service"] == "golvslipning" and d["kind"] == "district"}
+
+
 def sibling_links():
     """takrenovering-<ort> → takbyte-<ort>: en mening med länk i kostnadsstycket.
     GSC 13.11: takbyte-sidorna (pris från 1 400 kr/m²) rankar bäst i klustret
@@ -315,6 +325,15 @@ def main():
         out = apply(src, title, desc, lead)
         if out != src:
             changed.append(fn)
+            if not check:
+                with open(fp, "w", encoding="utf-8") as fh:
+                    fh.write(out)
+    for fn, h1 in h1_overrides().items():
+        fp = os.path.join(ROOT, fn)
+        src = open(fp, encoding="utf-8").read()
+        out = re.sub(r'(<h1 class="hero-title">)(.*?)(</h1>)', lambda g: g.group(1) + esc(h1) + g.group(3), src, count=1, flags=re.S)
+        if out != src:
+            changed.append(fn + " (h1)")
             if not check:
                 with open(fp, "w", encoding="utf-8") as fh:
                     fh.write(out)

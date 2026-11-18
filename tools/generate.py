@@ -586,7 +586,7 @@ def links_block(title, cards, muted=True, sid=""):
 SVC_CRUMB = [("Hem","/"),("Tjänster","tjanster.html")]
 
 # Tjänster v1–v5: register över tjänstehubbar/ortsidor (tools/tjanster_v1.py).
-from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS
+from tjanster_v1 import TJ, TJ_SERVICES, TJ_HUB, TJ_DISTRICTS, TJ_HUB_EXTRA
 
 def tj_list_html(title, files, muted=False, sid=""):
     # Kompakt lista med länkar i två kolumner (samma mönster som trp_list_html).
@@ -932,7 +932,7 @@ page(file="papptak.html",
         f"Vill du byta från papp till plåt bedömer vi underlaget och lutningen vid besöket. Sedan 1 december 2025 kräver byte av takmaterial på villa och radhus normalt inget bygglov, utom i skyddade miljöer – läs mer i {a('bygglov-takbyte.html','bygglov för takbyte')}. Jämför fler material i {a('takmaterial-livslangd.html','livslängd per takmaterial')}."], muted=True, sid="plat")
     + sec("Vad kostar ett papptak?", [
         "Priset beror på takets yta, lutning och form, om råsponten behöver bytas, antal genomföringar och plåtdetaljer samt ställning och åtkomst. Rivning och bortforsling av den gamla pappen ingår i ett komplett byte.",
-        f"Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag med fast pris. Vill du ha en första uppskattning per kvadratmeter kan du {a('https://takbytepris.nu/','räkna på papptak på takbytepris.nu')}. Mer om vad som styr priset finns i {a('vad-kostar-takbyte.html','vad kostar ett takbyte')}."], sid="pris")
+        f"Vi publicerar inga fasta priser. Vi kommer ut gratis och lämnar ett skriftligt kostnadsförslag med fast pris. Mer om vad som styr priset finns i {a('vad-kostar-takbyte.html','vad kostar ett takbyte')}."], sid="pris")
     + rot_box("Arbetskostnaden för att byta papptak på villa ger ROT-avdrag. Vi gör avdraget direkt på fakturan.")
     + links_block("Papptak i ditt område", [
         ("taklaggare-bromma.html","Bromma","Funkisvillor med låga tak."),
@@ -1726,6 +1726,8 @@ def _tj_parts(d):
         if i == len(d["sections"]) - 1 and i > 0 and len(d["img"]) > 2:
             parts.append(lambda m, d=d: fig(d["file"][:-5] + "-3", d["img"][2][0], muted=m))
     parts.append(lambda m, d=d: sec_process(d["steps_h2"], d["steps"], muted=m, sid="process"))
+    if d.get("time"):  # 18.11: tidplan direkt efter stegen (hubbar för deltjänster + pilot golvslipning)
+        parts.append(lambda m, d=d: sec(d["time_h2"], d["time"], muted=m, sid="tid"))
     parts.append(lambda m, d=d: sec(d["rot_h2"], d["rot"], muted=m, sid="rot"))
     parts.append(lambda m, d=d: sec(d["price_h2"], d["price"], muted=m, sid="pris"))
     return parts
@@ -1734,7 +1736,8 @@ for _f, _d in TJ.items():
     _svc = TJ_SERVICES[_d["service"]]
     _hubf = TJ_HUB.get(_d["service"])
     if _d["kind"] == "hub":
-        _crumbs = TJ_CRUMB + [(_svc["crumb"], _f)]
+        # 18.11: hubb för deltjänst (t.ex. fasadmalning.html) – brödsmula via huvudtjänstens hubb.
+        _crumbs = TJ_CRUMB + ([_d["parent"]] if _d.get("parent") else []) + [(_d.get("crumb") or _svc["crumb"], _f)]
     else:
         _crumbs = TJ_CRUMB + ([(_svc["crumb"], _hubf)] if _hubf else []) + [(_d["ort"], _f)]
     _parts = _tj_parts(_d)
@@ -1743,7 +1746,7 @@ for _f, _d in TJ.items():
         if _others:
             _parts.append(lambda m, d=_d, o=_others: tj_list_html(f"{d['svc_label']} per område", o, muted=m, sid="omraden"))
         # v15: deltjänster med samma hubb (t.ex. fasadmålning och tapetsering under malare.html).
-        for _s2 in sorted(s for s, h in TJ_HUB.items() if h == _f and s != _d["service"] and TJ_DISTRICTS.get(s)):
+        for _s2 in sorted(s for s, h in list(TJ_HUB.items()) + TJ_HUB_EXTRA if h == _f and s != _d["service"] and TJ_DISTRICTS.get(s)):
             _fs2 = TJ_DISTRICTS[_s2]
             _parts.append(lambda m, fs=_fs2, s2=_s2: tj_list_html(f"{TJ[fs[0]]['svc_label']} per område", fs, muted=m, sid=f"omraden-{s2}"))
         _parts.append(lambda m, d=_d: links_block("Relaterade tjänster", d["related"], muted=m, sid="lankar"))
@@ -2165,7 +2168,7 @@ article("vad-kostar-takbyte.html",
           "<strong>1,27</strong> vid 38 graders lutning.",
           "<strong>1,41</strong> vid 45 graders lutning."]),
    ("p","Exempel: ett hus med 150 kvm under taket och 27 graders lutning har omkring 170 kvm takyta. Ett tak på 100, 150 eller 200 kvm takyta får alltså olika totalpris, men kvm-priset är sällan detsamma. Ställning, container, skorstensbeslag och andra plåtdetaljer kostar ungefär lika mycket oavsett yta, och kupor och ränndalar ökar arbetet."),
-   ("p",f"Vill du räkna på din egen takyta kan du använda vår {a('kalkylator-takbyte.html','takbyte-kalkylator')} eller räkna pris per kvm för betong, tegel, plåt och papp på {a('https://takbytepris.nu/','takbytepris.nu')}. Det ger ett spann – det fasta priset får du efter besöket."),
+   ("p",f"Vill du räkna på din egen takyta kan du använda vår {a('kalkylator-takbyte.html','takbyte-kalkylator')}. Det ger ett spann – det fasta priset får du efter besöket."),
    ("h2","Därför får du pris först efter ett gratis besök"),
    ("p","Siffror i olika prisguider varierar kraftigt och säger lite om just ditt tak. Ett pris som ges utan att någon sett taket blir antingen för högt för att täcka osäkerheten, eller för lågt och följs av tilläggsarbeten. Vi gör därför alltid ett kostnadsfritt besök och ger ett skriftligt kostnadsförslag med fast pris – så vet du vad takbytet kostar innan du bestämmer dig."),
    ("h2","Så jämför du offerter på takbyte"),
@@ -2194,8 +2197,7 @@ article("vad-kostar-takbyte.html",
   [("takbyte.html","Takbyte","Vår tjänst för komplett takbyte."),
    ("takbyte-eller-takrenovering.html","Takbyte eller takrenovering?","Så avgör du vilket som lönar sig."),
    ("rot-avdrag-takarbete.html","ROT-avdrag för takarbete","Så mycket kan du dra av."),
-   ("takbesiktning.html","Takbesiktning","Få takets skick bedömt först."),
-   ("https://takbytepris.nu/","Takbyte pris","Räkna på din takyta – pris per m² för betong, tegel och plåt.")],
+   ("takbesiktning.html","Takbesiktning","Få takets skick bedömt först.")],
   faq=[("Vad kostar ett takbyte?","Det beror på takets area och form, material, lutning, tillgänglighet och underlagets skick. Vi kommer ut gratis och ger ett kostnadsförslag med fast pris för just ditt tak."),
        ("Är takbyte dyrare med tegel eller plåt?","Det varierar. Materialen skiljer sig i pris, vikt och läggningstid, och valet påverkar även livslängd och underhåll. Vi går igenom alternativen vid besöket."),
        ("Ingår rivning i priset?","I en komplett offert från oss ingår rivning och bortforsling av det gamla taket. Kontrollera alltid att det ingår när du jämför offerter."),
@@ -2792,7 +2794,7 @@ page(file="villkor.html", no_cta=True,
 BYGG_CRUMB = [("Hem","/"),("Bygg & Renovering","bygg.html")]
 
 page(file="bygg.html", localbiz=True,
-  title="Bygg & Renovering i Stockholm – total entreprenad | Geal Entreprenad AB",
+  title="Bygg & Renovering i Stockholm – tillbyggnad och renovering",  # 11.11 (d54ee25c): byggfirma.html äger «total entreprenad»
   description="Vi bygger och renoverar hela villan: total entreprenad, villarenovering, tillbyggnad, attefallshus och nybyggnad i Stockholm. Begär kostnadsfri offert.",
   h1="Bygg & Renovering i Stockholm",
   crumbs=BYGG_CRUMB,
@@ -3319,8 +3321,7 @@ page(file="kalkylator-takbyte.html",
     + links_block("Nästa steg", [
         ("takbyte.html","Takbyte","Så går ett komplett takbyte till."),
         ("vad-kostar-takbyte.html","Vad kostar ett takbyte?","Prisguide och vad som påverkar kostnaden."),
-        ("rot-avdrag-takarbete.html","ROT-avdrag","Så mycket kan du dra av 2026."),
-        ("https://takbytepris.nu/","Takbyte pris","Detaljerad kalkyl med materiallista och ROT.")]))
+        ("rot-avdrag-takarbete.html","ROT-avdrag","Så mycket kan du dra av 2026.")]))
 
 # ====================== TACK (form success) ============================
 page(file="tack.html", no_cta=True, noindex=True, nolist=True,
