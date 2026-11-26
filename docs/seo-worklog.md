@@ -5,6 +5,17 @@
 > Sidor byggs via `tools/generate.py` (kör `python3 tools/generate.py`).
 
 ---
+## 🟢 2026-11-26 — SEO-poäng ≥ 80 på alla sidor (Rank Math-stil, ~/nordkod/scripts/seo-score.mjs)
+Före: 695 sidor, snitt 80,6, 122 under 80. Efter (lokalt, samma skript): snitt 90,1, 0 under 80, lägsta 80.
+- ✅ Nytt sista steg `tools/seo_score_fix.py` (körs efter seo_overrides.py i generate.py, idempotent, `--check`, `-v` listar sidor som saknar FAQ-rubrik/hero/description i formen «Tjänst i Ort:»):
+  dekorativa bilder (ikoner, logga) får aria-hidden; sökordet sist i hero-bildens alt; «Vanliga frågor» → «<Sökord> – vanliga frågor»; description «Tjänst i Ort:» → «Tjänst Ort:» när titel/H1 har den formen (också i OVERRIDES i seo_overrides.py); saknas extern länk länkas första «ROT-avdrag» till Skatteverket, annars «inget lov»/«bygglov» till Boverket (fasadändring); H1-tabell för takrenovering, takbesiktning, takläggare-sollentuna, byggföretag-hägersten (H1 inte i generatorn – landing_v1 läser tjänst/ort ur H1).
+- ✅ landing_v2: hero-bilden behåller galleriets alt (var tom på 688 sidor). ikoner_ds: aria-hidden på ikonerna. takbyte.html (pilot): logga aria-hidden + hero-alt.
+- ✅ `tools/bild_alt.py`: beskrivande alt från bildprompterna för 79 sidor där alt = H1 («Takläggare i Bromma») – används i landing_v1.add_gallery.
+- ✅ Fokussökord där titeln börjar med en fråga: FOCUS i seo_score_fix.py = ~/nordkod/scripts/seo-focus-keywords.json (mala-plattak, tegel-betong-plattak, takmaterial-livslangd, vad-kostar-takrenovering, vad-kostar-takbyte, rot-avdrag-takarbete).
+- ✅ Titlar utan «&» i sökordsfrasen: hängrännor och stuprör, villarenovering i Stockholm, takläggare i Danderyd / Säter, startsidan «Takläggare i Bromma och Stockholm» (title, H1, description, H2 i stället för «Intro och om tjänsten»).
+- ✅ om-oss: H1 «Om oss – Geal Entreprenad AB», ny sektion «Mer om oss och hur vi arbetar» (kontor, orter, tjänster, ROT-länk). kontakt: description + sektion «Kontakt inför takbyte…» med länkar. artiklar/faq/istappar/skorsten/kalkylator: description med sökordet.
+- ⚠️ Kvar (inte ändrat): «max 50 000 kr» ROT-taket står i texter/FAQ på många sidor (briefen: inga belopp ≥ 50 000 kr) – ägarbeslut behövs.
+
 ## 🟡 2026-11-13 — Offertformulär på startsidan och under kalkylatorn (branch leads-2026-11-13, ej pushad)
 Underlag: ~/sites-hub/audits/2026-11-13/leads-villatakservice.md, åtgärd 1 (ägaren «ок»).
 - ✅ index.html: ny sektion `#offert` (offer-grid: «Begär offert» + formulärkort «Få offert») mellan «Varför välja oss» och «Så går det till». Fält som kontakt.html: Namn, E-post (obligatorisk), Telefon (frivillig), Tjänst, Meddelande; integritetsrad under knappen. Sex offert-länkar på startsidan (header, hero, tre textlänkar, CTA-bandet) går till `#offert` i stället för kontakt.html.

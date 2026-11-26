@@ -192,7 +192,10 @@ def add_gallery(path):
         return False
     h1 = re.sub(r"<[^>]+>", "", H.unescape(H1.search(s).group(1))).strip()
     detalj = "Nytt underlag och läkt vid takarbete" if base.startswith("taklaggare-") else f"{h1} – detalj"
-    alts = [h1, detalj, "Färdigt tak med nock, plåtdetaljer och hängrännor"]
+    # 26.11: beskrivande alt från bildprompterna (tools/bild_alt.py) i stället för H1
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from bild_alt import hero_alt, detail_alt
+    alts = [hero_alt(base) or h1, detail_alt(base) or detalj, "Färdigt tak med nock, plåtdetaljer och hängrännor"]
     from PIL import Image
     imgs = []
     for n, alt in zip(names, alts):

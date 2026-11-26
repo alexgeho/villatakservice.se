@@ -688,7 +688,7 @@ page(file="takbyte.html",
 
 page(file="takrenovering.html",
   title="Takrenovering i Stockholm – takomläggning & reparation | Geal Entreprenad AB",
-  description="Takrenovering och takomläggning på villa i Stockholm: ny underlagspapp och läkt, omlagda pannor och tät plåt – utan nytt tak. Gratis besök och ROT.",
+  description="Takrenovering i Stockholm: takomläggning på villa med ny underlagspapp och läkt, omlagda pannor och tät plåt – utan nytt tak. Gratis besök och ROT.",
   h1="Takrenovering och takomläggning i Stockholm",
   service=True, service_type="Takrenovering", localbiz=False,
   howto=("Så går en takomläggning till", [
@@ -755,7 +755,7 @@ page(file="takrenovering.html",
 
 page(file="takbesiktning.html",
   title="Besikta tak i Stockholm – takbesiktning av villatak",
-  description="Besikta taket före husköp, efter storm eller inför takbyte. Vi kontrollerar pannor, plåt, underlag och vind och dokumenterar med foton. Stockholm.",
+  description="Besikta tak i Stockholm före husköp, efter storm eller inför takbyte. Vi kontrollerar pannor, plåt, underlag och vind och dokumenterar med foton.",
   h1="Takbesiktning i Stockholm – besikta taket på villan",
   service=True, service_type="Takbesiktning", localbiz=False,
   crumbs=SVC_CRUMB+[("Takbesiktning","takbesiktning.html")],
@@ -1503,8 +1503,8 @@ ORT_IMG.update({k: v for k, v in ORT_IMG_NEW.items()
 # title <= 65, description <= 155 tecken. Övriga orter använder mallen nedan.
 ORT_SEO = {
  "Danderyd": {
-   "title": "Takläggare i Danderyd & Djursholm – takbyte, takrenovering",
-   "desc": "Takbyte, takrenovering och takreparation i Danderyd, Djursholm och Stocksund. Gratis besök, fast pris och ROT-avdrag direkt på fakturan.",
+   "title": "Takläggare i Danderyd – takbyte och takrenovering, Djursholm",
+   "desc": "Takläggare i Danderyd för takbyte, takrenovering och takreparation, även i Djursholm och Stocksund. Gratis besök, fast pris och ROT-avdrag på fakturan.",
    "svc": ("Takbyte och takrenovering i Danderyd", [
      f"De flesta som hör av sig från Danderyd står inför samma val: räcker det att renovera taket, eller är det dags att byta? På äldre villor i Djursholm och Stocksund är teglet ofta i gott skick medan underlagspappen är uttjänt. Då kan en {a('takrenovering.html','takrenovering eller takomläggning')} räcka – pannorna tas ner, nytt underlag läggs och samma pannor läggs tillbaka.",
      f"Är både pannor och underlag slut blir ett {a('takbyte.html','takbyte på villan')} mer lönsamt i längden. Läcker det redan? Läs vad du gör vid {a('taklackage.html','takläckage')}."]),
@@ -1968,8 +1968,8 @@ page(file="dalarna.html",
 # GSC 28 d: "takläggare säter" pos 19,8, "takbyte säter" 24,6, "takbyte stora skedvi" 2,1.
 DAL_SEO = {
  "Säter": {
-   "title": "Takläggare i Säter & Stora Skedvi – takbyte i Dalarna",
-   "desc": "Takbyte och takrenovering i Säter, Gustafs och Stora Skedvi – varsamt på trästadens villor, via vår lokala partner i Dalarna. Fast pris efter besök.",
+   "title": "Takläggare i Säter – takbyte i Stora Skedvi och Dalarna",
+   "desc": "Takläggare i Säter för takbyte och takrenovering, även i Gustafs och Stora Skedvi – varsamt på trästadens villor, via vår partner. Fast pris efter besök.",
  },
 }
 for _ort, _d in DAL.items():
@@ -2445,7 +2445,7 @@ article("mossa-pa-taket.html",
 
 article("istappar-isbildning.html",
   "Istappar och isbildning på tak – orsaker & åtgärd | Geal Entreprenad AB",
-  "Istappar och isbildning på taket: varför det uppstår, riskerna och hur du förebygger med isolering, ventilation och snöskottning.",
+  "Istappar och isbildning på tak: varför det uppstår, riskerna och hur du förebygger med isolering, ventilation och snöskottning.",
   "Istappar och isbildning på tak",
   "Istappar och isvallar vid takfoten är vanligt vintertid och kan skada både tak och avvattning. Här är orsakerna och hur du förebygger problemet.",
   [("p","Isbildning uppstår när värme läcker upp genom taket, smälter snö som sedan fryser vid den kallare takfoten. Resultatet blir isvallar och istappar som kan tvinga in smältvatten under pannorna."),
@@ -2465,7 +2465,7 @@ article("istappar-isbildning.html",
 
 # ---- components ----
 article("hangrannor-stupror.html",
-  "Hängrännor & stuprör – byte, rensning och renovering | Geal Entreprenad AB",
+  "Hängrännor och stuprör – byte, rensning och renovering | Geal Entreprenad AB",
   "Hängrännor och stuprör: byte, rensning och renovering av takavvattning. Undvik fukt- och fasadskador. Takläggare i Stockholm och Sundbyberg.",
   "Hängrännor och stuprör",
   "Fungerande takavvattning skyddar både tak och fasad. Här går vi igenom när hängrännor och stuprör behöver rensas, renoveras eller bytas.",
@@ -2523,7 +2523,7 @@ article("taksakerhet-snorasskydd.html",
 
 article("skorstensrenovering.html",
   "Skorstensrenovering och skorstensbeslag | Geal Entreprenad AB",
-  "Skorstensrenovering: tätning, skorstensbeslag och plåtarbeten kring skorsten. Åtgärda läckage och slitage vid skorstenen. Takläggare i Stockholm.",
+  "Skorstensrenovering och skorstensbeslag: tätning och plåtarbeten kring skorsten. Åtgärda läckage och slitage vid skorstenen. Takläggare i Stockholm.",
   "Skorstensrenovering och skorstensbeslag",
   "Skorstenen är en av takets vanligaste läckagepunkter. Här går vi igenom beslag, tätning och renovering av plåtarbetet kring skorstenen.",
   [("p","Anslutningen mellan skorsten och tak är utsatt. Gamla eller dåligt utförda skorstensbeslag släpper in vatten, och murad skorsten kan vittra över tid. Rätt plåtarbete kring skorstenen är avgörande för ett tätt tak."),
@@ -2714,11 +2714,11 @@ article("var-checklista-tak.html",
 # ====================== FAQ + INTEGRITETSPOLICY ==========================
 page(file="faq.html",
   title="Vanliga frågor om tak och takarbete | Geal Entreprenad AB",
-  description="Vanliga frågor om takbyte, takrenovering, ROT-avdrag, pris, garanti och besiktning. Svar från takläggare i Bromma, Sundbyberg och Stockholm.",
-  h1="Vanliga frågor om tak",
+  description="Vanliga frågor om tak och takarbete: takbyte, takrenovering, ROT-avdrag, pris, garanti och besiktning. Svar från takläggare i Bromma och Stockholm.",
+  h1="Vanliga frågor om tak och takarbete",
   crumbs=[("Hem","/"),("Vanliga frågor","faq.html")],
   cta=("Har du en fråga vi inte besvarat?","Kontakta oss så hjälper vi dig – gratis platsbesök och kostnadsförslag."),
-  body=hero("Vanliga frågor om tak",
+  body=hero("Vanliga frågor om tak och takarbete",
     "Här har vi samlat de vanligaste frågorna vi får om takbyte, takrenovering, pris, ROT-avdrag och garanti. Hittar du inte svaret är du välkommen att kontakta oss.",
     [("Hem","/"),("Vanliga frågor","faq.html")])
     + links_block("Läs mer om våra tjänster", [
@@ -2907,8 +2907,8 @@ page(file="hyra-taklaggare.html", service=True,
     ("Var kan ni jobba?","I Stockholm med omnejd. Fråga oss gärna om andra orter.")])
 
 page(file="villarenovering.html", service=True, service_type="Villarenovering",
-  title="Villarenovering & totalrenovering i Stockholm | Geal Entreprenad AB",
-  description="Villarenovering och totalrenovering i Stockholm: kök, badrum, fasad och helhet med ROT-avdrag. Total entreprenad från en byggpartner. Kostnadsfri offert.",
+  title="Villarenovering i Stockholm – totalrenovering av villa | Geal Entreprenad AB",
+  description="Villarenovering i Stockholm: kök, badrum, fasad eller totalrenovering med ROT-avdrag. Total entreprenad från en byggpartner. Kostnadsfri offert.",
   h1="Villarenovering i Stockholm",
   crumbs=BYGG_CRUMB+[("Villarenovering","villarenovering.html")],
   cta=("Ska du renovera villan?","Vi tar helheten och drar av ROT direkt på fakturan. Begär offert."),
@@ -3311,7 +3311,7 @@ _kalkyl_tool = """      <section class="section seo-section" id="offert">
 
 page(file="kalkylator-takbyte.html",
   title="Takbyte-kalkylator – uppskatta priset direkt | Geal Entreprenad AB",
-  description="Räkna ut ett ungefärligt pris för takbyte på villa: ange area, material och taklutning och få ett prisspann före och efter ROT. Ingen offert.",
+  description="Takbyte-kalkylator: räkna ut ett ungefärligt pris för takbyte på villa. Ange area, material och taklutning och få ett prisspann före och efter ROT.",
   h1="Takbyte-kalkylator – uppskatta priset",
   crumbs=[("Hem","/"),("Tjänster","tjanster.html"),("Takbyte-kalkylator","kalkylator-takbyte.html")],
   cta=("Vill du ha ett exakt pris?","En kalkylator ger ett spann – vi ger ett fast pris efter kostnadsfritt platsbesök. Begär offert."),
@@ -3500,3 +3500,5 @@ if __name__ == "__main__":
     # SEO-overrides (13.11.2026): title/description/lead styrda av GSC + länk takrenovering→takbyte.
     # Måste ligga SIST – annars skrivs texterna över av generatorerna (hände 09.11).
     _sp.run([sys.executable, os.path.join(ROOT, "tools", "seo_overrides.py")], check=True)
+    # SEO-poäng ≥ 80 (26.11.2026): alt/aria-hidden, sökord i H2/alt/description. Allra sist.
+    _sp.run([sys.executable, os.path.join(ROOT, "tools", "seo_score_fix.py")], check=True)

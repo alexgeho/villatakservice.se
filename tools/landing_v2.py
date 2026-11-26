@@ -22,6 +22,9 @@ def transform(path):
     src = re.search(r'src="([^"]+)"', first).group(1)
     ss = re.search(r'srcset="([^"]+)"', first)
     ss = f' srcset="{ss.group(1)}" sizes="100vw"' if ss else ""
+    # 26.11: hero-bilden behåller galleriets alt-text (var tom → «bild utan alt» i SEO-poängen)
+    al = re.search(r'alt="([^"]*)"', first)
+    al = al.group(1) if al else ""
     # bort med första bilden ur galleriet
     rest = figs[1:]
     if rest:
@@ -33,7 +36,7 @@ def transform(path):
     s = s.replace(gal, "", 1)
     # hero med bakgrundsbild
     s = s.replace('<section class="page-hero">',
-                  f'<section class="page-hero page-hero--bg">\n        <img class="hero-bg" src="{src}"{ss} alt="" fetchpriority="high" decoding="async" />', 1)
+                  f'<section class="page-hero page-hero--bg">\n        <img class="hero-bg" src="{src}"{ss} alt="{al}" fetchpriority="high" decoding="async" />', 1)
     # fördelar flyttas direkt under hero, galleriet efter
     t = TRUST.search(s)
     trust = t.group(0) if t else ""

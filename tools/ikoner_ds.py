@@ -58,7 +58,7 @@ def img(name, cls):
     import hashlib
     v = hashlib.md5(open(os.path.join(IC, name + e), "rb").read()).hexdigest()[:8]
     sz = 480 if e == ".webp" else 56
-    return f'<img class="{cls}" src="assets/icons/{name}{e}?v={v}" width="{sz}" height="{sz}" alt="" loading="lazy" decoding="async" data-ikon />'
+    return f'<img class="{cls}" src="assets/icons/{name}{e}?v={v}" width="{sz}" height="{sz}" alt="" aria-hidden="true" loading="lazy" decoding="async" data-ikon />'
 
 
 def steps(m):
